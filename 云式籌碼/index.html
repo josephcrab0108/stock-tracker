@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>云式籌碼 6 月整理｜Joseph LifeOS</title>
+<style>
+  :root {
+    --bg: #0f1117;
+    --surface: #1a1d27;
+    --border: #2a2d3a;
+    --text: #e2e8f0;
+    --muted: #64748b;
+    --accent: #7c6af5;
+    --green: #22c55e;
+    --red: #ef4444;
+    --yellow: #f59e0b;
+    --blue: #3b82f6;
+    --orange: #f97316;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: -apple-system, 'Helvetica Neue', sans-serif; font-size: 15px; line-height: 1.7; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .header { background: var(--surface); border-bottom: 1px solid var(--border); padding: 20px 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  .header-title { font-size: 20px; font-weight: 700; color: var(--text); }
+  .header-meta { font-size: 13px; color: var(--muted); }
+  .back-link { font-size: 13px; color: var(--accent); }
+
+  .container { max-width: 960px; margin: 0 auto; padding: 24px 16px 60px; }
+
+  .section { margin-bottom: 36px; }
+  .section-title {
+    font-size: 13px; font-weight: 600; letter-spacing: .08em;
+    text-transform: uppercase; color: var(--accent);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 8px; margin-bottom: 16px;
+  }
+
+  /* 大盤氛圍 */
+  .market-row { display: flex; gap: 10px; padding: 10px 0; border-bottom: 1px solid var(--border); }
+  .market-date { color: var(--muted); font-size: 13px; min-width: 48px; padding-top: 2px; }
+  .market-text { font-size: 14px; }
+  .market-row:last-child { border-bottom: none; }
+
+  /* 個股卡片 */
+  .stock-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
+  .stock-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; }
+  .stock-card.buy { border-left: 3px solid var(--green); }
+  .stock-card.warn { border-left: 3px solid var(--red); }
+  .stock-card.mixed { border-left: 3px solid var(--yellow); }
+
+  .stock-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
+  .stock-ticker { font-size: 17px; font-weight: 700; }
+  .stock-badge { font-size: 11px; padding: 2px 8px; border-radius: 20px; font-weight: 600; }
+  .badge-buy { background: rgba(34,197,94,.15); color: var(--green); }
+  .badge-warn { background: rgba(239,68,68,.15); color: var(--red); }
+  .badge-mixed { background: rgba(245,158,11,.15); color: var(--yellow); }
+  .badge-watch { background: rgba(59,130,246,.15); color: var(--blue); }
+
+  .stock-stars { color: var(--yellow); font-size: 13px; margin-bottom: 4px; }
+  .stock-desc { font-size: 13px; color: var(--muted); }
+
+  /* 題材標籤 */
+  .tag-list { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag { background: rgba(124,106,245,.12); border: 1px solid rgba(124,106,245,.25); color: var(--accent); font-size: 13px; padding: 4px 12px; border-radius: 20px; }
+  .tag.hot { background: rgba(249,115,22,.12); border-color: rgba(249,115,22,.25); color: var(--orange); }
+
+  /* 特別訊息 */
+  .info-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; margin-bottom: 10px; display: flex; gap: 12px; }
+  .info-icon { font-size: 18px; }
+  .info-text { font-size: 14px; }
+  .info-text strong { color: var(--accent); }
+
+  /* 警示表格 */
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th { text-align: left; padding: 8px 12px; color: var(--muted); font-size: 12px; font-weight: 600; text-transform: uppercase; border-bottom: 1px solid var(--border); }
+  td { padding: 10px 12px; border-bottom: 1px solid var(--border); }
+  tr:last-child td { border-bottom: none; }
+  .ticker-cell { font-weight: 700; color: var(--text); }
+  .warn-cell { color: var(--red); font-size: 13px; }
+
+  .footer { text-align: center; color: var(--muted); font-size: 12px; padding: 24px; border-top: 1px solid var(--border); margin-top: 40px; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div>
+    <div class="header-title">云式籌碼 — 6 月籌碼整理</div>
+    <div class="header-meta">2026-06-01 ～ 2026-06-10 · 6 篇 · 台股</div>
+  </div>
+  <a class="back-link" href="/">← 回總覽</a>
+</div>
+
+<div class="nav-tabs" style="display:flex;gap:8px;padding:10px 20px;background:var(--surface);border-bottom:1px solid var(--border);">
+  <a href="index.html" style="font-size:12px;padding:4px 10px;border-radius:16px;background:rgba(124,106,245,.12);border:1px solid rgba(124,106,245,.3);color:var(--accent);text-decoration:none;">📊 6 月整理</a>
+  <a href="tracker.html" style="font-size:12px;padding:4px 10px;border-radius:16px;color:var(--muted);border:1px solid transparent;text-decoration:none;">📈 累積追蹤</a>
+</div>
+
+<div class="container">
+
+  <!-- 大盤氛圍 -->
+  <div class="section">
+    <div class="section-title">大盤氛圍</div>
+    <div class="market-row"><div class="market-date">6/1–6/3</div><div class="market-text">各交易室對部位感受不適，整體偏觀望；券商開始區間震盪整理籌碼</div></div>
+    <div class="market-row"><div class="market-date">6/5</div><div class="market-text">反指標投顧空單投降（偏多訊號）；但國際盤齊跌，夜盤台積電一度觸跌停，需留意波動</div></div>
+    <div class="market-row"><div class="market-date">6/6</div><div class="market-text">大戶在熱門股先降部位，散戶在低接，籌碼出現分歧</div></div>
+    <div class="market-row"><div class="market-date">6/8</div><div class="market-text">上市櫃融資減少 248 億，微台散戶多單也在減；公司派仍在佈局被動元件</div></div>
+    <div class="market-row"><div class="market-date">6/10</div><div class="market-text">微台散戶多單回升；但反指標投顧停止放空後盤面轉弱，各交易室降槓桿感受不適</div></div>
+  </div>
+
+  <!-- 建議注意個股 -->
+  <div class="section">
+    <div class="section-title">值得注意個股（加碼 / 囤積）</div>
+    <div class="stock-grid">
+
+      <div class="stock-card buy">
+        <div class="stock-header">
+          <div class="stock-ticker">威剛 <span style="font-size:13px;font-weight:400;color:var(--muted)">2388</span></div>
+          <span class="stock-badge badge-buy">高勝率 + 公司派</span>
+        </div>
+        <div class="stock-stars">★★ 0605、0608</div>
+        <div class="stock-desc">高勝率分點連續加碼，同時有地緣/公司派分點進場，兩篇都有提到</div>
+      </div>
+
+      <div class="stock-card buy">
+        <div class="stock-header">
+          <div class="stock-ticker">智邦 <span style="font-size:13px;font-weight:400;color:var(--muted)">2345</span></div>
+          <span class="stock-badge badge-buy">公司派連續</span>
+        </div>
+        <div class="stock-stars">★★ 0605、0608</div>
+        <div class="stock-desc">地緣/公司派分點連續兩篇加碼，訊號一致</div>
+      </div>
+
+      <div class="stock-card buy">
+        <div class="stock-header">
+          <div class="stock-ticker">今國光 <span style="font-size:13px;font-weight:400;color:var(--muted)">2467</span></div>
+          <span class="stock-badge badge-buy">權證高手</span>
+        </div>
+        <div class="stock-stars">★★ 0608、0610</div>
+        <div class="stock-desc">權證高手連兩篇加碼囤積，通常代表有方向感的資金在佈局</div>
+      </div>
+
+      <div class="stock-card mixed">
+        <div class="stock-header">
+          <div class="stock-ticker">大立光 <span style="font-size:13px;font-weight:400;color:var(--muted)">3008</span></div>
+          <span class="stock-badge badge-mixed">訊號分歧</span>
+        </div>
+        <div class="stock-stars">★★ 0601、0610</div>
+        <div class="stock-desc">CPO 題材切入 + 政府官股持續買入；但 0610 高勝率分點在減碼，注意矛盾</div>
+      </div>
+
+      <div class="stock-card buy">
+        <div class="stock-header">
+          <div class="stock-ticker">華碩 <span style="font-size:13px;font-weight:400;color:var(--muted)">2357</span></div>
+          <span class="stock-badge badge-buy">波段囤積</span>
+        </div>
+        <div class="stock-stars">0610</div>
+        <div class="stock-desc">波段持續加碼並囤積，長週期訊號</div>
+      </div>
+
+      <div class="stock-card buy">
+        <div class="stock-header">
+          <div class="stock-ticker">南亞科 <span style="font-size:13px;font-weight:400;color:var(--muted)">2408</span></div>
+          <span class="stock-badge badge-buy">抄底進場</span>
+        </div>
+        <div class="stock-stars">0608</div>
+        <div class="stock-desc">特定分點本日抄底進場 18 億，量大有意義</div>
+      </div>
+
+      <div class="stock-card buy">
+        <div class="stock-header">
+          <div class="stock-ticker">直得 <span style="font-size:13px;font-weight:400;color:var(--muted)">1597</span></div>
+          <span class="stock-badge badge-watch">囤碼追蹤</span>
+        </div>
+        <div class="stock-stars">0610</div>
+        <div class="stock-desc">近日分點囤的籌碼加碼直得，持續觀察</div>
+      </div>
+
+      <div class="stock-card buy">
+        <div class="stock-header">
+          <div class="stock-ticker">聯發科 <span style="font-size:13px;font-weight:400;color:var(--muted)">2454</span></div>
+          <span class="stock-badge badge-watch">囤碼追蹤</span>
+        </div>
+        <div class="stock-stars">0603</div>
+        <div class="stock-desc">近日分點囤的籌碼加碼，長週期視角</div>
+      </div>
+
+      <div class="stock-card buy">
+        <div class="stock-header">
+          <div class="stock-ticker">光環 <span style="font-size:13px;font-weight:400;color:var(--muted)">4227</span></div>
+          <span class="stock-badge badge-watch">特殊限制</span>
+        </div>
+        <div class="stock-stars">0603</div>
+        <div class="stock-desc">短週期再次買超；注意：此股不能融資券跟當沖</div>
+      </div>
+
+      <div class="stock-card buy">
+        <div class="stock-header">
+          <div class="stock-ticker">台積電 <span style="font-size:13px;font-weight:400;color:var(--muted)">2330</span></div>
+          <span class="stock-badge badge-mixed">長短矛盾</span>
+        </div>
+        <div class="stock-stars">0608</div>
+        <div class="stock-desc">近日分點加碼台積電；但長週期 0610 波段持續減碼，長短訊號相反</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 避開警示 -->
+  <div class="section">
+    <div class="section-title">避開 / 警示個股</div>
+    <table>
+      <thead><tr><th>個股</th><th>警示說明</th></tr></thead>
+      <tbody>
+        <tr><td class="ticker-cell">台積電長週期</td><td class="warn-cell">近幾月波段持續減碼，長線資金在撤</td></tr>
+        <tr><td class="ticker-cell">愛普 (6531)</td><td class="warn-cell">0601、0605 多篇減碼出清，持續出貨</td></tr>
+        <tr><td class="ticker-cell">國巨 (2327)</td><td class="warn-cell">0601 短週期加碼 → 0610 大幅減碼庫存一半，方向急速反轉</td></tr>
+        <tr><td class="ticker-cell">群創 (3481)</td><td class="warn-cell">0603 進入處置 + 0605 也在減碼，雙重負面</td></tr>
+        <tr><td class="ticker-cell">頎邦 (6239)</td><td class="warn-cell">0601 波段大幅減碼</td></tr>
+        <tr><td class="ticker-cell">晶豪科 (3006)</td><td class="warn-cell">0601 持續減碼，部位剩不到原本一半</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 熱門題材 -->
+  <div class="section">
+    <div class="section-title">熱門題材（多篇連續）</div>
+    <div class="tag-list">
+      <span class="tag hot">被動元件 / MLCC ×6篇</span>
+      <span class="tag">記憶體 ×3篇</span>
+      <span class="tag">ABF 載板</span>
+      <span class="tag">光通訊</span>
+      <span class="tag">MCU 微控制器</span>
+      <span class="tag">BMC 伺服器管理晶片</span>
+      <span class="tag">CPO（大立光切入）</span>
+    </div>
+  </div>
+
+  <!-- 特別訊息 -->
+  <div class="section">
+    <div class="section-title">特別訊息</div>
+    <div class="info-card">
+      <div class="info-icon">📌</div>
+      <div class="info-text"><strong>MCU 漲價潮</strong>：全球微控制器供需結構質變，漲價潮預計延續到 2027 年</div>
+    </div>
+    <div class="info-card">
+      <div class="info-icon">📌</div>
+      <div class="info-text"><strong>BMC 爆發</strong>：伺服器遠端管理晶片需求遠超預期，受益股值得追蹤</div>
+    </div>
+    <div class="info-card">
+      <div class="info-icon">📌</div>
+      <div class="info-text"><strong>台積電 EPS 100 元</strong>：外資最新財務模型預估台積電今年 EPS 直接來到 100 元</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  云式籌碼 × Joseph LifeOS · 2026-06-12 · 僅供個人學習參考，不構成投資建議
+</div>
+
+</body>
+</html>

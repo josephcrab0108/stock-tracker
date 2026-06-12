@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MimiVsJames｜2026-06-12 策略整理</title>
+<style>
+  :root {
+    --bg: #0f1117;
+    --surface: #1a1d27;
+    --surface2: #22263a;
+    --border: #2e3248;
+    --text: #e2e4f0;
+    --muted: #8890b0;
+    --green: #3ddc84;
+    --green-bg: #1a2e22;
+    --yellow: #f5c518;
+    --yellow-bg: #2a2510;
+    --red: #ff6b6b;
+    --red-bg: #2a1515;
+    --blue: #5b8af5;
+    --blue-bg: #141c2e;
+    --accent: #7c6af5;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+    padding: 40px 20px 80px;
+  }
+
+  .container { max-width: 860px; margin: 0 auto; }
+
+  /* Header */
+  .header {
+    border-left: 4px solid var(--accent);
+    padding-left: 18px;
+    margin-bottom: 40px;
+  }
+  .header h1 { font-size: 22px; font-weight: 700; color: #fff; }
+  .header .meta { color: var(--muted); font-size: 13px; margin-top: 6px; }
+  .header .meta span { margin-right: 16px; }
+
+  /* Section */
+  .section { margin-bottom: 36px; }
+  .section-title {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* Market overview cards */
+  .overview-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  @media (max-width: 600px) { .overview-grid { grid-template-columns: 1fr; } }
+
+  .overview-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 18px;
+  }
+  .overview-card .card-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+  .overview-card p { color: var(--muted); font-size: 13.5px; }
+  .overview-card strong { color: var(--text); }
+
+  /* Stock cards */
+  .stock-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin-bottom: 12px;
+    position: relative;
+    overflow: hidden;
+  }
+  .stock-card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 4px;
+  }
+  .stock-card.buy::before { background: var(--green); }
+  .stock-card.watch::before { background: var(--yellow); }
+  .stock-card.caution::before { background: var(--red); }
+  .stock-card.neutral::before { background: var(--blue); }
+
+  .stock-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    gap: 12px;
+  }
+  .stock-ticker {
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+  }
+  .stock-label {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 9px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+  .label-buy { background: var(--green-bg); color: var(--green); }
+  .label-watch { background: var(--yellow-bg); color: var(--yellow); }
+  .label-caution { background: var(--red-bg); color: var(--red); }
+  .label-neutral { background: var(--blue-bg); color: var(--blue); }
+
+  .stock-price-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+  }
+  .price-now {
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+  }
+  .price-range {
+    font-size: 12px;
+    color: var(--muted);
+    background: var(--surface2);
+    padding: 3px 8px;
+    border-radius: 5px;
+  }
+
+  .verdict {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 6px;
+    margin-bottom: 12px;
+  }
+  .verdict.correct { background: var(--green-bg); color: var(--green); }
+  .verdict.waiting { background: var(--yellow-bg); color: var(--yellow); }
+  .verdict.alert { background: var(--red-bg); color: var(--red); }
+  .verdict.rising { background: var(--blue-bg); color: var(--blue); }
+
+  .stock-body { font-size: 13.5px; color: var(--muted); }
+  .stock-body strong { color: var(--text); }
+  .stock-body ul { padding-left: 18px; margin-top: 6px; }
+  .stock-body li { margin-bottom: 4px; }
+  .entry-hint {
+    margin-top: 10px;
+    padding: 8px 12px;
+    background: var(--surface2);
+    border-radius: 6px;
+    font-size: 13px;
+    color: var(--text);
+  }
+  .entry-hint .label { color: var(--muted); font-size: 12px; display: block; margin-bottom: 2px; }
+
+  /* AI PC table */
+  .tier-table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  .tier-table th {
+    text-align: left;
+    padding: 9px 12px;
+    background: var(--surface2);
+    color: var(--muted);
+    font-weight: 600;
+    font-size: 12px;
+  }
+  .tier-table td {
+    padding: 9px 12px;
+    border-top: 1px solid var(--border);
+    color: var(--text);
+  }
+  .tier-table tr:first-child td { border-top: none; }
+
+  /* Principles */
+  .principle-list { list-style: none; }
+  .principle-list li {
+    display: flex;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 13.5px;
+    color: var(--muted);
+  }
+  .principle-list li:last-child { border-bottom: none; }
+  .principle-list li strong { color: var(--text); }
+  .principle-num {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--surface2);
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2px;
+  }
+
+  /* Watch indicators */
+  .watch-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+  }
+  .pill {
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    color: var(--text);
+  }
+
+  /* TradingView chart */
+  .tv-chart-wrap {
+    margin-top: 16px;
+    border-top: 1px solid var(--border);
+    padding-top: 4px;
+    height: 230px;
+  }
+  .tv-chart-wrap .tradingview-widget-container,
+  .tv-chart-wrap .tradingview-widget-container__widget {
+    height: 100%;
+    width: 100%;
+  }
+
+  /* Footer */
+  .footer {
+    margin-top: 48px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+    font-size: 12px;
+    color: var(--muted);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Header -->
+  <div class="header">
+    <h1>MimiVsJames｜6 月即時策略整理</h1>
+    <div class="meta">
+      <span>📅 整理日期：2026-06-12</span>
+      <span>📄 來源：Vocus 即時策略分享</span>
+      <span>6 篇文章（6/01–6/12）</span>
+    </div>
+  </div>
+
+  <!-- 大環境 -->
+  <div class="section">
+    <div class="section-title">大環境判斷</div>
+    <div class="overview-grid">
+      <div class="overview-card">
+        <div class="card-title">AI 硬體短線題材已用完</div>
+        <p>NVDA beat 都噴不動，AVGO 財報後大跌。等 <strong>Rubin 出貨前</strong>可能先整理。下一個故事是「<strong>算力誰賺到錢</strong>」，資金往 AI 軟體應用層輪動。</p>
+      </div>
+      <div class="overview-card">
+        <div class="card-title">升息預期重新升溫</div>
+        <p>費半暴跌後高估值科技股面臨本益比壓縮，資金輪向<strong>現金流穩的醫療股</strong>。觀察：CPI、Fed 會議、美債殖利率。</p>
+      </div>
+      <div class="overview-card">
+        <div class="card-title">AI 訂單資金結構警訊（6/09）</div>
+        <p>Google 股權融資（稀釋股東）、Amazon 大量發債、Meta 也傳要增發。CSP 已從現金流轉向「<strong>借錢/發新股</strong>」燒，長線隱患。</p>
+      </div>
+      <div class="overview-card">
+        <div class="card-title">操作方向</div>
+        <p>兩手策略：分批布局<strong>具現金流的醫療龍頭</strong>，同時保留現金，等優質 AI 硬體出現更好價格再補。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 建議買入 -->
+  <div class="section">
+    <div class="section-title">建議買入</div>
+
+    <div class="stock-card buy">
+      <div class="stock-header">
+        <div>
+          <div class="stock-ticker">ABBV <span style="font-size:14px;font-weight:400;color:var(--muted)">AbbVie</span></div>
+        </div>
+        <span class="stock-label label-buy">第一順位</span>
+      </div>
+      <div class="stock-price-row">
+        <span class="price-now">$224.77</span>
+        <span class="price-range">52W：$181 – $245</span>
+      </div>
+      <div class="verdict waiting">⏳ 尚未回踩進場點，繼續等</div>
+      <div class="stock-body">
+        <ul>
+          <li>估值便宜（約 16 倍），Skyrizi / Rinvoq <strong>雙位數成長</strong></li>
+          <li>就算 AI 題材市場不買單，基本面也撐得住估值</li>
+        </ul>
+        <div class="entry-hint">
+          <span class="label">進場條件</span>
+          回踩 <strong>~$217</strong>（10MA / 年線）附近 + 量縮 → 建倉。不要連漲後追。
+        </div>
+      </div>
+      <div class="tv-chart-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"autosize":true,"symbol":"NYSE:ABBV","interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":230}
+          </script>
+        </div>
+      </div>
+    </div>
+
+    <div class="stock-card buy">
+      <div class="stock-header">
+        <div>
+          <div class="stock-ticker">LLY <span style="font-size:14px;font-weight:400;color:var(--muted)">Eli Lilly</span></div>
+        </div>
+        <span class="stock-label label-buy">第二順位</span>
+      </div>
+      <div class="stock-price-row">
+        <span class="price-now">$1,160.95</span>
+        <span class="price-range">52W：$624 – $1,183</span>
+      </div>
+      <div class="verdict rising">📈 接近 52 週高點，強勢確認</div>
+      <div class="stock-body">
+        <ul>
+          <li>Mounjaro / Zepbound 高成長，獲利曲線持續往上修</li>
+          <li>高預期已 price in，<strong>容錯空間小</strong>，等回踩再切入</li>
+        </ul>
+        <div class="entry-hint">
+          <span class="label">進場條件</span>
+          未給具體點位，搭配升息預期劇本，等拉回機會。
+        </div>
+      </div>
+      <div class="tv-chart-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"autosize":true,"symbol":"NYSE:LLY","interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":230}
+          </script>
+        </div>
+      </div>
+    </div>
+
+    <div class="stock-card buy">
+      <div class="stock-header">
+        <div>
+          <div class="stock-ticker">PANW <span style="font-size:14px;font-weight:400;color:var(--muted)">Palo Alto Networks</span></div>
+        </div>
+        <span class="stock-label label-buy">AI 軟體輪動</span>
+      </div>
+      <div class="stock-price-row">
+        <span class="price-now">$279.53</span>
+        <span class="price-range">52W：$140 – $303</span>
+      </div>
+      <div class="verdict correct">✅ 今日 +6%，方向完全正確</div>
+      <div class="stock-body">
+        <ul>
+          <li>資安平台化定價權，不受「AI 取代 SaaS 人頭數」衝擊</li>
+          <li>IGV 前十大成份股，6/3 財報後方向確認</li>
+        </ul>
+        <div class="entry-hint">
+          <span class="label">注意</span>
+          今日跳空大漲，短線追高盈虧比差，<strong>等拉回再進</strong>。
+        </div>
+      </div>
+      <div class="tv-chart-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"autosize":true,"symbol":"NASDAQ:PANW","interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":230}
+          </script>
+        </div>
+      </div>
+    </div>
+
+    <div class="stock-card buy">
+      <div class="stock-header">
+        <div>
+          <div class="stock-ticker">CRWD <span style="font-size:14px;font-weight:400;color:var(--muted)">CrowdStrike</span></div>
+        </div>
+        <span class="stock-label label-buy">AI 軟體輪動</span>
+      </div>
+      <div class="stock-price-row">
+        <span class="price-now">$691.53</span>
+        <span class="price-range">52W：$343 – $786</span>
+      </div>
+      <div class="verdict correct">✅ 今日跳空大漲，財報後走勢強</div>
+      <div class="stock-body">
+        <ul>
+          <li>與 PANW 並列資安軟體優選，6/3 財報後表現強勁</li>
+        </ul>
+        <div class="entry-hint">
+          <span class="label">注意</span>
+          今日從 $644 跳空至 $691，<strong>等拉回再進</strong>。
+        </div>
+      </div>
+      <div class="tv-chart-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"autosize":true,"symbol":"NASDAQ:CRWD","interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":230}
+          </script>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 觀察名單 -->
+  <div class="section">
+    <div class="section-title">觀察名單</div>
+
+    <div class="stock-card watch">
+      <div class="stock-header">
+        <div>
+          <div class="stock-ticker">UNH <span style="font-size:14px;font-weight:400;color:var(--muted)">UnitedHealth</span></div>
+        </div>
+        <span class="stock-label label-watch">基本面修復交易</span>
+      </div>
+      <div class="stock-price-row">
+        <span class="price-now">$405.55</span>
+        <span class="price-range">52W：$235 – $416</span>
+      </div>
+      <div class="verdict rising">📈 已突破年線，向缺口推進</div>
+      <div class="stock-body">
+        <ul>
+          <li>前瞻本益比 17.2 倍，比歷史低約 28%</li>
+          <li>年線：$318–328（已突破）；目標缺口：<strong>$478–564</strong></li>
+          <li>Q1 EPS 7.23，全年指引上修至 18.25 元</li>
+          <li>等 Q2 醫療成本率持續改善再確認加碼</li>
+        </ul>
+      </div>
+      <div class="tv-chart-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"autosize":true,"symbol":"NYSE:UNH","interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":230}
+          </script>
+        </div>
+      </div>
+    </div>
+
+    <div class="stock-card watch">
+      <div class="stock-header">
+        <div>
+          <div class="stock-ticker">AVGO <span style="font-size:14px;font-weight:400;color:var(--muted)">Broadcom</span></div>
+        </div>
+        <span class="stock-label label-watch">等更好買點</span>
+      </div>
+      <div class="stock-price-row">
+        <span class="price-now">$385.42</span>
+        <span class="price-range">52W：$244 – $495</span>
+      </div>
+      <div class="verdict waiting">⏳ 從 $372 反彈中，仍在等買點</div>
+      <div class="stock-body">
+        <ul>
+          <li>Q2 AI 半導體 $108 億，年增一倍，基本面仍強</li>
+          <li>財報後大跌原因：沒有上修 2027 年 &gt;$1000 億目標</li>
+          <li>距 52 週高點 $495 仍有約 22% 空間</li>
+        </ul>
+      </div>
+      <div class="tv-chart-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"autosize":true,"symbol":"NASDAQ:AVGO","interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":230}
+          </script>
+        </div>
+      </div>
+    </div>
+
+    <div class="stock-card neutral">
+      <div class="stock-header">
+        <div>
+          <div class="stock-ticker">JNJ <span style="font-size:14px;font-weight:400;color:var(--muted)">Johnson & Johnson</span></div>
+        </div>
+        <span class="stock-label label-neutral">純防禦</span>
+      </div>
+      <div class="stock-body" style="margin-top:4px;">
+        最純防禦，適合<strong>降低組合波動</strong>時停靠用。預期差小，不主動期待估值重評，不主動買進。
+      </div>
+      <div class="tv-chart-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"autosize":true,"symbol":"NYSE:JNJ","interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":230}
+          </script>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 保護獲利 -->
+  <div class="section">
+    <div class="section-title">保護獲利 / 警示</div>
+
+    <div class="stock-card caution">
+      <div class="stock-header">
+        <div>
+          <div class="stock-ticker">AAPL <span style="font-size:14px;font-weight:400;color:var(--muted)">Apple</span></div>
+        </div>
+        <span class="stock-label label-caution">分批落袋</span>
+      </div>
+      <div class="stock-price-row">
+        <span class="price-now">$295.63</span>
+        <span class="price-range">52W：$195 – $317</span>
+      </div>
+      <div class="verdict correct">✅ 買消息賣事實完全應驗</div>
+      <div class="stock-body">
+        <ul>
+          <li>WWDC 前推薦部位已<strong>大獲全勝</strong></li>
+          <li>WWDC 後未再創高（高點 $317），Siri 2.0 預期已提前消化</li>
+          <li>防守線：10MA 與 20MA</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="stock-card caution">
+      <div class="stock-header">
+        <div>
+          <div class="stock-ticker">GOOG <span style="font-size:14px;font-weight:400;color:var(--muted)">Alphabet</span></div>
+        </div>
+        <span class="stock-label label-caution">長線警訊</span>
+      </div>
+      <div class="stock-price-row">
+        <span class="price-now">$356.56</span>
+        <span class="price-range">52W：$163 – $404</span>
+      </div>
+      <div class="stock-body" style="margin-top:4px;">
+        股權融資永久稀釋原股東，是長線警訊。短線未崩跌，但長期持有者需留意。
+      </div>
+    </div>
+  </div>
+
+  <!-- AI PC -->
+  <div class="section">
+    <div class="section-title">AI PC 受惠股（中長線，未給進場價）</div>
+    <div class="stock-card neutral" style="padding: 0; overflow: hidden;">
+      <table class="tier-table">
+        <thead>
+          <tr>
+            <th>層級</th>
+            <th>個股</th>
+            <th>邏輯</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>第一層</td>
+            <td><strong>NVDA、ARM、MSFT</strong></td>
+            <td style="color:var(--muted)">平台架構，CUDA 生態延伸至 PC</td>
+          </tr>
+          <tr>
+            <td>第二層</td>
+            <td><strong>DELL、HPQ、華碩、宏碁、仁寶</strong></td>
+            <td style="color:var(--muted)">品牌組裝，直接受惠換機潮</td>
+          </tr>
+          <tr>
+            <td>第三層</td>
+            <td><strong>記憶體、散熱相關</strong></td>
+            <td style="color:var(--muted)">單機含量提升</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="margin-top:10px; font-size:13px; color:var(--muted)">
+      NVDA 今日 <strong style="color:var(--text)">$204.87</strong>，52 週區間 $141–$237，目前中段整理，無明顯方向訊號。
+    </div>
+  </div>
+
+  <!-- 反彈操作原則 -->
+  <div class="section">
+    <div class="section-title">反彈操作原則（6/12 最新）</div>
+    <ul class="principle-list">
+      <li>
+        <span class="principle-num">1</span>
+        <div>搶反彈的目標是取<strong>超跌修復的短線價差</strong>，不是猜最低點。別把短線反彈誤當反轉。</div>
+      </li>
+      <li>
+        <span class="principle-num">2</span>
+        <div>不要追<strong>第一根大紅 K</strong>，上方均線、缺口、套牢賣壓都在，追高讓盈虧比惡化。</div>
+      </li>
+      <li>
+        <span class="principle-num">3</span>
+        <div>選<strong>率先止跌、相對抗跌</strong>的股票，不是跌最深的。</div>
+      </li>
+      <li>
+        <span class="principle-num">4</span>
+        <div>倉位、停損、分批進場與最大損失<strong>事先計算好</strong>，不能等股價下跌後才改計畫。</div>
+      </li>
+    </ul>
+    <div style="margin-top:14px; font-size:13px; color:var(--muted)">
+      持續觀察指標：
+      <div class="watch-pills">
+        <span class="pill">CPI</span>
+        <span class="pill">Fed 會議</span>
+        <span class="pill">美債殖利率</span>
+        <span class="pill">XLV vs SPY/QQQ 強弱</span>
+        <span class="pill">AVGO 後續走勢</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    整理自 MimiVsJames Vocus 即時策略分享專欄 · 僅供個人參考，不構成投資建議<br>
+    下次更新：Substack 解鎖後補充其他分析師觀點
+  </div>
+
+</div>
+</body>
+</html>
