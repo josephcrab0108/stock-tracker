@@ -8,32 +8,99 @@
   :root {
     --bg: #0f1117;
     --surface: #1a1d27;
+    --surface2: #20243380;
     --border: #2a2d3a;
     --text: #e2e8f0;
     --muted: #64748b;
     --accent: #7c6af5;
+    --green: #22c55e;
+    --blue: #3b82f6;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { background: var(--bg); color: var(--text); font-family: -apple-system, 'Helvetica Neue', sans-serif; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: -apple-system, 'Helvetica Neue', sans-serif;
+    min-height: 100vh;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    padding: 32px 24px;
+  }
 
-  .title { font-size: 28px; font-weight: 700; margin-bottom: 6px; }
-  .subtitle { color: var(--muted); font-size: 14px; margin-bottom: 40px; }
+  .title { font-size: 26px; font-weight: 700; margin-bottom: 4px; }
+  .subtitle { color: var(--muted); font-size: 13px; margin-bottom: 48px; }
 
-  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; width: 100%; max-width: 800px; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 740px;
+  }
 
-  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px 22px; text-decoration: none; color: var(--text); transition: border-color .2s, transform .2s; }
-  .card:hover { border-color: var(--accent); transform: translateY(-2px); }
+  /* 市場卡片外框（非連結，只是容器） */
+  .market-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px 22px 16px;
+  }
 
-  .card-label { font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
-  .card-title { font-size: 18px; font-weight: 700; margin-bottom: 6px; }
-  .card-desc { font-size: 13px; color: var(--muted); line-height: 1.5; }
-  .card-meta { margin-top: 14px; font-size: 12px; color: var(--muted); }
+  .market-flag { font-size: 22px; margin-bottom: 10px; }
 
-  .tag { display: inline-block; background: rgba(124,106,245,.12); border: 1px solid rgba(124,106,245,.2); color: var(--accent); font-size: 11px; padding: 2px 8px; border-radius: 10px; margin-right: 4px; }
-  .tag.tw { background: rgba(34,197,94,.1); border-color: rgba(34,197,94,.2); color: #22c55e; }
-  .tag.us { background: rgba(59,130,246,.1); border-color: rgba(59,130,246,.2); color: #3b82f6; }
+  .market-name {
+    font-size: 20px; font-weight: 700; margin-bottom: 4px;
+  }
+  .market-name.tw { color: var(--green); }
+  .market-name.us { color: var(--blue); }
 
-  footer { margin-top: 40px; color: var(--muted); font-size: 12px; }
+  .market-desc {
+    font-size: 12px; color: var(--muted); line-height: 1.6;
+    margin-bottom: 18px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* 子連結列表 */
+  .source-list { display: flex; flex-direction: column; gap: 8px; }
+
+  .source-link {
+    display: flex; align-items: center; justify-content: space-between;
+    text-decoration: none; color: var(--text);
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 14px;
+    transition: border-color .15s, background .15s;
+  }
+  .source-link:hover {
+    border-color: var(--accent);
+    background: rgba(124,106,245,.07);
+  }
+
+  .source-info { display: flex; flex-direction: column; gap: 2px; }
+  .source-name { font-size: 14px; font-weight: 600; }
+  .source-tags { display: flex; gap: 5px; margin-top: 3px; flex-wrap: wrap; }
+
+  .tag {
+    font-size: 10px; padding: 1px 7px; border-radius: 8px; font-weight: 500;
+    background: rgba(124,106,245,.12); border: 1px solid rgba(124,106,245,.2);
+    color: var(--accent);
+  }
+  .tag.tw {
+    background: rgba(34,197,94,.1); border-color: rgba(34,197,94,.2); color: var(--green);
+  }
+  .tag.us {
+    background: rgba(59,130,246,.1); border-color: rgba(59,130,246,.2); color: var(--blue);
+  }
+
+  .source-arrow {
+    font-size: 16px; color: var(--muted);
+    transition: color .15s, transform .15s;
+    flex-shrink: 0;
+  }
+  .source-link:hover .source-arrow { color: var(--accent); transform: translateX(2px); }
+
+  footer { margin-top: 48px; color: var(--muted); font-size: 11px; }
 </style>
 </head>
 <body>
@@ -43,25 +110,42 @@
 
 <div class="grid">
 
-  <a class="card" href="MimiVsJames/">
-    <div class="card-label">美股分析</div>
-    <div class="card-title">MimiVsJames</div>
-    <div class="card-desc">Vocus 美股即時策略整理 — 個股建議、進場位置、大環境判斷</div>
-    <div class="card-meta">
-      <span class="tag us">美股</span>
-      <span class="tag">6 月更新</span>
+  <div class="market-card">
+    <div class="market-flag">🇹🇼</div>
+    <div class="market-name tw">台股</div>
+    <div class="market-desc">籌碼追蹤 · 分點動向 · 主動 ETF 持股 · 題材熱度</div>
+    <div class="source-list">
+      <a class="source-link" href="云式籌碼/">
+        <div class="source-info">
+          <span class="source-name">籌碼追蹤</span>
+          <div class="source-tags">
+            <span class="tag tw">分點</span>
+            <span class="tag tw">大戶散戶</span>
+            <span class="tag tw">ETF 持股</span>
+          </div>
+        </div>
+        <span class="source-arrow">›</span>
+      </a>
     </div>
-  </a>
+  </div>
 
-  <a class="card" href="云式籌碼/">
-    <div class="card-label">台股籌碼</div>
-    <div class="card-title">云式籌碼</div>
-    <div class="card-desc">Pressplay 每日籌碼日報 — 分點動向、大戶散戶變化、題材追蹤</div>
-    <div class="card-meta">
-      <span class="tag tw">台股</span>
-      <span class="tag">6 月更新</span>
+  <div class="market-card">
+    <div class="market-flag">🇺🇸</div>
+    <div class="market-name us">美股</div>
+    <div class="market-desc">即時策略 · 個股建議 · 進出場位置 · 大環境判斷</div>
+    <div class="source-list">
+      <a class="source-link" href="MimiVsJames/">
+        <div class="source-info">
+          <span class="source-name">即時策略</span>
+          <div class="source-tags">
+            <span class="tag us">個股</span>
+            <span class="tag us">進出場</span>
+          </div>
+        </div>
+        <span class="source-arrow">›</span>
+      </a>
     </div>
-  </a>
+  </div>
 
 </div>
 
