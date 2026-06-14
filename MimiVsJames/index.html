@@ -290,34 +290,19 @@ body {
 .group-header::-webkit-details-marker { display: none; }
 .group-header:hover { background: rgba(124,106,245,.06); }
 .stock-group[open] > .group-header { border-bottom-color: var(--border); }
-.group-summary-left { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px; }
-.group-date { font-size: 11px; color: var(--muted); }
-.group-title { font-size: 13px; font-weight: 600; }
-.group-tickers { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px; }
+.group-summary-left { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+.group-label { font-size: 14px; font-weight: 700; color: var(--text); }
+.group-tickers { display: flex; flex-wrap: wrap; gap: 4px; }
 .grp-tick {
   font-size: 11px; padding: 2px 8px; border-radius: 6px;
   background: var(--surface); border: 1px solid var(--border);
   color: var(--text);
 }
-.grp-tick-more { font-size: 11px; color: var(--muted); padding: 2px 4px; }
-.group-count {
-  font-size: 12px; color: var(--accent); font-weight: 600;
-  white-space: nowrap; flex-shrink: 0;
-}
+.group-meta { display: flex; flex-direction: column; align-items: flex-end; gap: 3px; flex-shrink: 0; }
+.group-date { font-size: 11px; color: var(--muted); }
+.group-count { font-size: 12px; color: var(--accent); font-weight: 600; white-space: nowrap; }
 .group-body { padding: 8px; display: flex; flex-direction: column; gap: 6px; }
 .group-body .card { border-radius: 8px; margin-bottom: 0; }
-
-/* 族群子分類標題 */
-.sub-group-header {
-  font-size: 11px; font-weight: 600; color: var(--muted);
-  padding: 8px 8px 2px;
-  display: flex; align-items: center; gap: 6px;
-  letter-spacing: .04em;
-  border-bottom: 1px solid var(--border);
-  margin: 4px 0 2px;
-}
-.sub-group-header:first-child { margin-top: 0; }
-.sub-count { font-size: 10px; color: var(--accent); font-weight: 600; margin-left: 4px; }
 
 /* Watch pills */
 .watch-pills { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
@@ -397,16 +382,7 @@ body {
   </section>
 <section class="section">
     <div class="section-title">建議買入（19 檔）</div>
-    <details class="stock-group" open>
-      <summary class="group-header">
-        <div class="group-summary-left">
-          <span class="group-date mono">2026-06-14</span>
-          <span class="group-title"><a href="https://vocus.cc/article/6a2e5d15fd897800015c4b76" target="_blank" class="art-link">個股推薦：費半大跌，但它們相對抗跌，當Rubin即將出貨，股價創高的卻不是NVDA，華爾街 ↗</a></span>
-          <div class="group-tickers"><span class="grp-tick mono">NPO</span><span class="grp-tick mono">AMAT</span><span class="grp-tick mono">ASML</span><span class="grp-tick mono">LRCX</span><span class="grp-tick mono">KLAC</span><span class="grp-tick-more">+3</span></div>
-        </div>
-        <span class="group-count">8 檔</span>
-      </summary>
-      <div class="group-body"><div class="sub-group-header">今日新增推薦<span class="sub-count">1 檔</span></div><div class="card buy" data-ticker="NPO" data-name="Enpro">
+    <div class="card buy" data-ticker="NPO" data-name="Enpro">
       <div class="card-header">
         <div class="ticker-row">
           <span class="ticker mono">NPO</span>
@@ -443,7 +419,18 @@ body {
           <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">今日新增推薦</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">美股中少數與AMAT與ASML連結的二階供應鏈概念股，清洗、塗層與翻修具售後市場特性，當設備裝機基數提高、使用時間拉長，後續服務需求增加。半導體僅占部分收入，穩定性比UCTT和ICHR相對較高，股價屬穩定波段向上</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">大型客戶集中度仍存在</td></tr></table>
         </div></div>
       </details>
-    </div><div class="sub-group-header">設備龍頭<span class="sub-count">4 檔</span></div><div class="card buy" data-ticker="AMAT" data-name="Applied Materials">
+    </div><details class="stock-group" open>
+      <summary class="group-header">
+        <div class="group-summary-left">
+          <span class="group-label">設備龍頭</span>
+          <div class="group-tickers"><span class="grp-tick mono">AMAT</span><span class="grp-tick mono">ASML</span><span class="grp-tick mono">LRCX</span><span class="grp-tick mono">KLAC</span></div>
+        </div>
+        <div class="group-meta">
+          <span class="group-date mono">2026-06-14</span>
+          <span class="group-count">4 檔</span>
+        </div>
+      </summary>
+      <div class="group-body"><div class="card buy" data-ticker="AMAT" data-name="Applied Materials">
       <div class="card-header">
         <div class="ticker-row">
           <span class="ticker mono">AMAT</span>
@@ -591,7 +578,19 @@ body {
           <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">設備龍頭</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">量測設備龍頭，受惠先進封裝檢測需求上升與2027年WFE重新定價</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">與AMAT、ASML、LRCX一起創高</td></tr><tr><td class="ml-key">現況</td><td class="ml-val">📈 設備股同步創高</td></tr></table>
         </div></div>
       </details>
-    </div><div class="sub-group-header">重申買進<span class="sub-count">3 檔</span></div><div class="card buy" data-ticker="UCTT" data-name="Ultra Clean Holdings">
+    </div></div>
+    </details><details class="stock-group" open>
+      <summary class="group-header">
+        <div class="group-summary-left">
+          <span class="group-label">重申買進</span>
+          <div class="group-tickers"><span class="grp-tick mono">UCTT</span><span class="grp-tick mono">ICHR</span><span class="grp-tick mono">MKSI</span></div>
+        </div>
+        <div class="group-meta">
+          <span class="group-date mono">2026-06-14</span>
+          <span class="group-count">3 檔</span>
+        </div>
+      </summary>
+      <div class="group-body"><div class="card buy" data-ticker="UCTT" data-name="Ultra Clean Holdings">
       <div class="card-header">
         <div class="ticker-row">
           <span class="ticker mono">UCTT</span>
@@ -703,16 +702,7 @@ body {
         </div></div>
       </details>
     </div></div>
-    </details><details class="stock-group" open>
-      <summary class="group-header">
-        <div class="group-summary-left">
-          <span class="group-date mono">2026-06-07</span>
-          <span class="group-title"><a href="https://vocus.cc/article/6a24b01bfd897800012902d3" target="_blank" class="art-link">美股大跌後，「短線」有利的第三種選擇：從降息交易到升息預期：費半暴跌後，資金輪動的方向 ↗</a></span>
-          <div class="group-tickers"><span class="grp-tick mono">ABBV</span><span class="grp-tick mono">LLY</span></div>
-        </div>
-        <span class="group-count">2 檔</span>
-      </summary>
-      <div class="group-body"><div class="sub-group-header">第一順位／核心<span class="sub-count">1 檔</span></div><div class="card buy" data-ticker="ABBV" data-name="AbbVie">
+    </details><div class="card buy" data-ticker="ABBV" data-name="AbbVie">
       <div class="card-header">
         <div class="ticker-row">
           <span class="ticker mono">ABBV</span>
@@ -749,7 +739,7 @@ body {
           <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">第一順位／核心</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">乾淨的低久期＋現金流，估值較低（前瞻本益比 16 倍，2026 EPS 指引 14.08-14.28 元、EPS 小幅上修），估值保護跟成長同時存在，靠業績後面的成長。</td></tr><tr><td class="ml-key">進場</td><td class="ml-val">等回踩，不要連漲後追，分批不一次買滿</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">資金配置建議 ABBV 六成，記得留資金買低點的AI硬體股</td></tr></table>
         </div></div>
       </details>
-    </div><div class="sub-group-header">第二順位／進攻<span class="sub-count">1 檔</span></div><div class="card buy" data-ticker="LLY" data-name="Eli Lilly">
+    </div><div class="card buy" data-ticker="LLY" data-name="Eli Lilly">
       <div class="card-header">
         <div class="ticker-row">
           <span class="ticker mono">LLY</span>
@@ -786,17 +776,7 @@ body {
           <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">第二順位／進攻</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">成長性動能最強，Mounjaro 與 Zepbound 兩台減肥藥印鈔機。上修最猛（2026 EPS 指引 35.5-37 元、中位 36.25，營收+EPS 雙上修），但前瞻本益比 31.2 倍、容錯空間最小，走垂直整合 AI 路線。風險為藥品集中度高。</td></tr><tr><td class="ml-key">進場</td><td class="ml-val">分批、不一次買滿</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">資金配置建議 LLY 四成，負責進攻</td></tr></table>
         </div></div>
       </details>
-    </div></div>
-    </details><details class="stock-group" open>
-      <summary class="group-header">
-        <div class="group-summary-left">
-          <span class="group-date mono">2026-05-28</span>
-          <span class="group-title"><a href="https://vocus.cc/article/6a17bb98fd89780001109ff5" target="_blank" class="art-link">個股推薦：當AI硬體與太空股先後放煙火後，下一個該佈局的板塊已經在路上。兩檔最推薦的個股 ↗</a></span>
-          <div class="group-tickers"><span class="grp-tick mono">LTRX</span><span class="grp-tick mono">PDYN</span></div>
-        </div>
-        <span class="group-count">2 檔</span>
-      </summary>
-      <div class="group-body"><div class="sub-group-header">主推（第二層）<span class="sub-count">1 檔</span></div><div class="card buy" data-ticker="LTRX" data-name="Lantronix">
+    </div><div class="card buy" data-ticker="LTRX" data-name="Lantronix">
       <div class="card-header">
         <div class="ticker-row">
           <span class="ticker mono">LTRX</span>
@@ -833,7 +813,7 @@ body {
           <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">主推（第二層）</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">嵌入式運算與邊緣AI，無人機安全通訊關鍵零件，賣鏟子的人；與UMAC合作出貨，UMAC漲LTRX沒理由不漲。圖表現價約$7.25，52週高7.6/低3.4</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">選LTRX不選ONDS，定位邊緣運算與安全通訊</td></tr></table>
         </div></div>
       </details>
-    </div><div class="sub-group-header">主推（第三層）<span class="sub-count">1 檔</span></div><div class="card buy" data-ticker="PDYN" data-name="Palladyne AI">
+    </div><div class="card buy" data-ticker="PDYN" data-name="Palladyne AI">
       <div class="card-header">
         <div class="ticker-row">
           <span class="ticker mono">PDYN</span>
@@ -870,8 +850,7 @@ body {
           <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">主推（第三層）</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">AI大腦與群體作戰軟體，SwarmOS整合進RCAT Black Widow系統；拿到AFRL合約、入選Relentless Wolfpack 14家決選名單；走PLTR政府背書劇本，被視為2008年版PLTR。圖表現價約$7.52</td></tr><tr><td class="ml-key">目標</td><td class="ml-val">第一壓力$10，第二壓力$13</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">從政府市場切入再複製到商業端，與PLTR路徑雷同；短線有題材噴出可獲利落袋</td></tr></table>
         </div></div>
       </details>
-    </div></div>
-    </details><div class="card buy" data-ticker="ACMR" data-name="ACM Research">
+    </div><div class="card buy" data-ticker="ACMR" data-name="ACM Research">
       <div class="card-header">
         <div class="ticker-row">
           <span class="ticker mono">ACMR</span>
