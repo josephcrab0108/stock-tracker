@@ -37,8 +37,24 @@ body{background:var(--bg);color:var(--text);
   transition:border-color .15s,color .15s}
 .yt-link:hover{color:var(--text);border-color:var(--accent)}
 .yt-dot{color:#ef4444;font-size:10px}
-.episode-title{font-size:11px;color:var(--muted);margin-bottom:14px;
+.episode-title{font-size:11px;color:var(--muted);margin-bottom:12px;
   white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+.ep-summary{font-size:12px;color:#c4cdd9;line-height:1.7;
+  margin-bottom:12px;padding:10px 12px;
+  background:#ffffff06;border-radius:8px;border-left:2px solid var(--accent)}
+
+.market-view{display:flex;flex-direction:column;gap:6px;margin-bottom:12px}
+.mv-row{display:flex;gap:8px;align-items:flex-start;font-size:12px}
+.mv-label{flex-shrink:0;color:var(--accent);font-weight:600;
+  width:30px;padding-top:1px}
+.mv-text{color:#94a3b8;line-height:1.6}
+
+.themes{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:12px}
+.theme-chip{font-size:10px;padding:2px 8px;border-radius:10px;
+  background:#7c6af520;border:1px solid #7c6af540;color:#a89bf7;font-weight:500}
+
+.section-div{height:1px;background:var(--border);margin-bottom:12px}
 
 .stock-list{display:flex;flex-direction:column;gap:10px}
 
@@ -53,6 +69,8 @@ body{background:var(--bg);color:var(--text);
 .rec-badge{font-size:10px;padding:2px 7px;border-radius:8px;
   border:1px solid;font-weight:600;white-space:nowrap}
 .time-range{font-size:10px;color:var(--muted);white-space:nowrap}
+
+.context{font-size:11px;color:#7c6af5aa;margin-bottom:4px;font-style:italic}
 
 .meta-row{display:flex;gap:12px;margin:5px 0;flex-wrap:wrap}
 .meta-item{font-size:11px;color:var(--muted)}
@@ -73,7 +91,7 @@ footer{max-width:800px;margin:32px auto 0;font-size:11px;
 <div class="page-header">
   <div>
     <div class="page-title">理財達人秀</div>
-    <div class="page-sub">EBC 東森財經台 · 個股追蹤</div>
+    <div class="page-sub">EBC 東森財經台 · 節目分析</div>
   </div>
   <div class="header-right">
     <span class="last-updated">更新 2026-06-14</span>
@@ -90,15 +108,16 @@ footer{max-width:800px;margin:32px auto 0;font-size:11px;
     </a>
   </div>
   <div class="episode-title">【理財達人秀】川普畫線 4萬3以下越跌就越買？下週FOMC撿誰 PCB.CPO盯大戶持股？記憶抱製造 被動.設備營收高 3招打天下？｜李兆華、鍾國忠、雷老闆、翁士峻2026.06.12【電視完整版】</div>
+  <div class="ep-summary">本集探討台股劇烈震盪行情，雖週線僅跌901點但個股振幅大。三位來賓認為AI基本面與市場熱情未減，台股長線看好可挑戰5萬點及全球第四大市值。下週聯準會會議、台指期結算與端午連假帶來不確定性，建議愈跌愈買，43000點以下分批布局，並聚焦高息成長股、記憶體、被動元件、PCB/CCL、CPO光通訊及半導體設備族群。</div><div class="market-view"><div class="mv-row"><span class="mv-label">台股</span><span class="mv-text">本週量縮價跌至5.98兆，週線收黑901點，高點46552難過。鍾國忠認為45000點上方高檔橫盤整理，43000點以下分批找買點，42500點或更低做低接。雷老闆看好台股明年成全球第四大市值市場，等外資回頭可看5萬點以上，建議過10日線、5日線後再加碼。翁士峻指三大法人都買超，下週上半週較穩、下半週因變數轉謹慎。</span></div><div class="mv-row"><span class="mv-label">美股</span><span class="mv-text">聯準會下週開會（台灣時間18號凌晨2點），不降息機率97.4%，預期偏中立鷹派。新主席華許首次記者會受關注。美股四巫日週五結算正逢台灣端午連假。川普第39次稱美伊和談，市場仍歡欣鼓舞。PPI生產者物價指數通膨壓力增加。美元指數接近100.64頸線位置區。</span></div><div class="mv-row"><span class="mv-label">總經</span><span class="mv-text">AI基本面與多頭熱情未被澆熄。第一季因AI擴產爆發，全球半導體設備銷售額創新高，台灣年增率最高。記憶體6/24美光財報為催化點，外資已上修Top Price。PCB朝又大又厚又硬升級，鑽針佔比從48%攀升至2026年53%。TPU採用M8銅箔基板。SpaceX V3衛星規格升級用量翻倍。</span></div></div><div class="themes"><span class="theme-chip">AI伺服器</span><span class="theme-chip">記憶體</span><span class="theme-chip">被動元件</span><span class="theme-chip">PCB ABF載板</span><span class="theme-chip">CPO光通訊</span><span class="theme-chip">半導體設備</span></div><div class="section-div"></div>
   <div class="stock-list"><div class="stock-card">
   <div class="stock-header">
     <div class="stock-id">
       <span class="stock-code">2344</span>
       <span class="stock-name">華邦電</span>
     </div>
-    <div class="stock-right"><span class="rec-badge" style="color:#4ade80;border-color:#4ade8040;background:#1e3a2e">推薦</span><span class="time-range">00:09:51 – 00:10:55</span></div>
+    <div class="stock-right"><span class="rec-badge" style="color:#4ade80;border-color:#4ade8040;background:#1e3a2e">推薦</span><span class="time-range">00:09:51 – 00:10:48</span></div>
   </div>
-  <div class="meta-row"><span class="meta-item">目標價 <strong>193</strong></span></div><div class="summary">去年EPS 0.88塊，今天漲停板。同時具備記憶體與被動元件題材。6月24號美光財報，市場上有外資機構把Top Price往上調，上檔套牢量不多，低檔有量，已過頸線位置區。大戶持股增加，市場會伺機點火攻擊，拉回都是找買點。也屬南亞科、群聯同族群。</div><div class="cg-notes">去年EPS約0.88元，26Q1EPS約2.25元，虧轉盈；華新麗華集團，上漲族群有記憶體與被動元件等；6/24美光財報將公布；價守前高點與月線，高檔相對套牢量較小；還原日K，最高193，漲幅+37.6%，成交量另顯示，大戶持股1000張</div>
+  <div class="context">討論記憶體DRAM族群點火攻擊時提及</div><div class="meta-row"><span class="meta-item">目標價 <strong>193</strong></span></div><div class="summary">今天漲停板，5/22以來一個月已漲快4成。去年EPS 0.88元，6/24美光財報為催化點，外資機構已把Top Price往上調。上檔套牢量不多，低檔有量且過頸線，大戶持股增加，鍾國忠認為具很大支撐，會是市場伺機點火攻擊的類股，拉回都是找買點。</div><div class="cg-notes">去年EPS約0.88元，26Q1EPS約2.25元，虧轉盈；華新麗華集團，上漲族群有記憶體與被動元件等；6/24美光財報將公布；價守前高點與月線，高檔相對套牢量較小；高點193，低點51.93，漲幅+37.6%；大戶持股1000張</div>
 </div>
 <div class="stock-card">
   <div class="stock-header">
@@ -106,49 +125,9 @@ footer{max-width:800px;margin:32px auto 0;font-size:11px;
       <span class="stock-code">2303</span>
       <span class="stock-name">聯電</span>
     </div>
-    <div class="stock-right"><span class="rec-badge" style="color:#4ade80;border-color:#4ade8040;background:#1e3a2e">推薦</span><span class="time-range">00:11:02 – 00:11:44</span></div>
+    <div class="stock-right"><span class="rec-badge" style="color:#4ade80;border-color:#4ade8040;background:#1e3a2e">推薦</span><span class="time-range">00:11:03 – 00:11:44</span></div>
   </div>
-  <div class="meta-row"><span class="meta-item">支撐 <strong>52.8</strong></span></div><div class="summary">晶圓二哥，今天一度漲停板。之前講過，這禮拜震盪很大但股價走勢穩定，表示籌碼還很穩健，外資加持，後勢看好。被動元件下禮拜出關潮，每天都有在漲。</div><div class="cg-notes">聯電日K漲幅+115%，高點155.5；現價134.0漲幅+6.69%；另一檔立隆電(2472)高點408，現價357.00漲幅+6.14%，預估6/15(一)出量；標題:立隆電.聯電翻倍漲 續攻機會又來?</div>
-</div>
-<div class="stock-card">
-  <div class="stock-header">
-    <div class="stock-id">
-      <span class="stock-code">5410</span>
-      <span class="stock-name">國眾</span>
-    </div>
-    <div class="stock-right"><span class="rec-badge" style="color:#4ade80;border-color:#4ade8040;background:#1e3a2e">推薦</span><span class="time-range">00:12:23 – 00:14:42</span></div>
-  </div>
-  <div class="meta-row"><span class="meta-item">目標價 <strong>47.8</strong></span><span class="meta-item">支撐 <strong>29.1</strong></span></div><div class="summary">大眾集團子公司，提供企業IT顧問諮詢與AI、品G運用。近三個月營收YoY百分百增長，5月接近兩百，前五個月營收成長60%。營益率跳升10.3%，過去僅4-5%，第一季EPS 1.48塊（去年全年2.35塊）。預估今年EPS約3塊，明年可配2.7塊。本益比約13倍，殖利率約5%。週KD、MACD往上，整理多年無套牢量，外資開始加碼，跳空缺口剛過。</div><div class="cg-notes">還原日K，2026/08/12收盤45.35元，漲1.50元(+3.40%)，最高47.80，最低44.10；SMA5 41.891、SMA20 39.851、SMA60 34.911、SMA240 32.001；成交量增，外資持續買超創高；節目字幕提及『從今年放到明年的大概7月、8月』長期持有觀點</div>
-</div>
-<div class="stock-card">
-  <div class="stock-header">
-    <div class="stock-id">
-      <span class="stock-code">3029</span>
-      <span class="stock-name">零壹</span>
-    </div>
-    <div class="stock-right"><span class="rec-badge" style="color:#4ade80;border-color:#4ade8040;background:#1e3a2e">推薦</span><span class="time-range">00:14:46 – 00:17:31</span></div>
-  </div>
-  <div class="meta-row"><span class="meta-item">支撐 <strong>96.5</strong></span></div><div class="summary">軟體股，營收YoY出現兩位數成長，每年營收、EPS都成長。黃仁勳GTC大會看好軟體。實施庫藏股，已買1800張、均價約95.62塊，預計買2000張，剩200張按今天成交價算約96塊半。今年已配5塊半股利，殖利率約5.5%。本益比偏低，下檔有限，跟著公司庫藏股持有風險有限。線型較差但有庫藏股支撐，外資開始布局。</div><div class="cg-notes">國眾量增外資買到創高，銅板價仍甜？Q1營益率5.61%，EPS 1.77元，YOY+16%，獲利雙增。電子業約-1.66%，今年EPS續看連續成長。1/16起回到自己籌碼處最高約1860張，預估第四季逾2000張。前期毛利率約5.5，發放率約4% (已配)，月毛利率約5.5。畫面資訊模糊，僅供參考</div>
-</div>
-<div class="stock-card">
-  <div class="stock-header">
-    <div class="stock-id">
-      <span class="stock-code">3479</span>
-      <span class="stock-name">安勤</span>
-    </div>
-    <div class="stock-right"><span class="rec-badge" style="color:#60a5fa;border-color:#60a5fa40;background:#1e3552">持有</span><span class="time-range">00:11:53 – 00:12:13</span></div>
-  </div>
-  <div class="summary">高息成長股，長假效應下可留意。今年股利約3.5%以上，若今年賺錢明年配發更高，本益比用去年EPS算都在20倍以下。不怕大跌，進可攻退可守。</div>
-</div>
-<div class="stock-card">
-  <div class="stock-header">
-    <div class="stock-id">
-      <span class="stock-code">3231</span>
-      <span class="stock-name">緯創</span>
-    </div>
-    <div class="stock-right"><span class="rec-badge" style="color:#60a5fa;border-color:#60a5fa40;background:#1e3552">持有</span><span class="time-range">00:11:53 – 00:12:13</span></div>
-  </div>
-  <div class="summary">高息成長股，籌碼不太會漲，但今年股利約3.5%以上，本益比用去年EPS算都在20倍以下。若今年賺錢明年配發更高，不怕大跌，進可攻退可守。</div>
+  <div class="context">晶圓二哥在被動元件出關潮中提及</div><div class="meta-row"><span class="meta-item">支撐 <strong>52.8</strong></span></div><div class="summary">晶圓二哥今天一度漲停板，之前講過。這禮拜震盪那麼大但股價走勢很穩定，表示籌碼還很穩健，外資加持。鍾國忠認為後勢很看好，應該還有很大支撐。</div><div class="cg-notes">聯電日K漲幅+115%，高點155.5，低點52.8；今天一度漲停板；現價134.0(+8.50, +6.80%)，開盤132.50，最高133.50</div>
 </div>
 <div class="stock-card">
   <div class="stock-header">
@@ -156,9 +135,39 @@ footer{max-width:800px;margin:32px auto 0;font-size:11px;
       <span class="stock-code">3260</span>
       <span class="stock-name">威剛</span>
     </div>
-    <div class="stock-right"><span class="rec-badge" style="color:#60a5fa;border-color:#60a5fa40;background:#1e3552">持有</span><span class="time-range">00:11:53 – 00:12:13</span></div>
+    <div class="stock-right"><span class="rec-badge" style="color:#60a5fa;border-color:#60a5fa40;background:#1e3552">持有</span><span class="time-range">00:11:54 – 00:12:21</span></div>
   </div>
-  <div class="summary">高息成長股，籌碼不太會漲，但今年股利約3.5%以上，本益比用去年EPS算都在20倍以下。若今年賺錢明年配發更高，不怕大跌，進可攻退可守。</div>
+  <div class="context">長假效應下推薦高息成長股時提及</div><div class="summary">雖籌碼不太會漲，但今年股利約3.5%以上，本益比用去年EPS算在20倍以下。鍾國忠認為這類公司不怕大跌、就怕不跌，進可攻退可守，大跌愈好。</div>
+</div>
+<div class="stock-card">
+  <div class="stock-header">
+    <div class="stock-id">
+      <span class="stock-code">3231</span>
+      <span class="stock-name">緯創</span>
+    </div>
+    <div class="stock-right"><span class="rec-badge" style="color:#60a5fa;border-color:#60a5fa40;background:#1e3552">持有</span><span class="time-range">00:11:54 – 00:12:21</span></div>
+  </div>
+  <div class="context">長假效應下推薦高息成長股時提及</div><div class="summary">與威剛同列高息成長股，籌碼不太會漲，今年股利約3.5%以上，本益比20倍以下，明年若賺錢配發更高。進可攻退可守的抗震標的。</div>
+</div>
+<div class="stock-card">
+  <div class="stock-header">
+    <div class="stock-id">
+      <span class="stock-code">5410</span>
+      <span class="stock-name">國眾</span>
+    </div>
+    <div class="stock-right"><span class="rec-badge" style="color:#4ade80;border-color:#4ade8040;background:#1e3a2e">推薦</span><span class="time-range">00:12:22 – 00:14:46</span></div>
+  </div>
+  <div class="context">推薦高息成長電子股第一家公司</div><div class="summary">大眾集團公司，提供企業IT顧問諮詢及AI、品牌運用。連續三個月營收YoY百分百增長，5月近200%，前五月營收成長60%。營益率跳升至10.3%（過去僅4-5%），第一季EPS 1.48元（去年全年2.35元），今年EPS估3元，明年可配2.7元，兩年合計5元股利。本益比約13倍，殖利率約5%。線型整理已久、無套牢量，週KD與MACD往上，創波段新高，外資開始加碼，跳空缺口剛過乖離有限。</div><div class="cg-notes">標題提及：國眾量增外資買到創高，銅板價仍甜？圖中標示價位包含47.8、29.1、20.28，MACD指標及成交量分析</div>
+</div>
+<div class="stock-card">
+  <div class="stock-header">
+    <div class="stock-id">
+      <span class="stock-code">3029</span>
+      <span class="stock-name">零壹</span>
+    </div>
+    <div class="stock-right"><span class="rec-badge" style="color:#4ade80;border-color:#4ade8040;background:#1e3a2e">推薦</span><span class="time-range">00:14:46 – 00:17:33</span></div>
+  </div>
+  <div class="context">推薦高息成長電子股第二家公司，穩健牌</div><div class="meta-row"><span class="meta-item">支撐 <strong>95.6</strong></span></div><div class="summary">軟體股，營收YoY出現兩位數成長，每年營收與EPS都成長。黃仁勳GTC大會看好軟體。今年已除息配5.5元，今年獲利若比去年增長殖利率約5.5%。重點是買庫藏股：已買1800張、均價約95.62元，預計買2000張，剩200張若用今天成交價算約96塊多。股價相對抗跌，外資機構開始布局。鍾國忠認為跟著公司庫藏股持有，風險相對有限，買在不超過一根停板價位。</div><div class="cg-notes">國眾量增外資買到創高，銅板價仍甜？Q1營益率5.61%，EPS 1.77元，YOY+16%，毛利率約1.66%，今年EPS續看續揚；1/8公司已買進庫藏股約1600張，預計買進區間200萬股；前期股利5.5元，殖利率約4%，現金股利5.5元，股利連續配發。本資訊僅供參考，投資有風險，請謹慎評估。</div>
 </div>
 <div class="stock-card">
   <div class="stock-header">
@@ -166,29 +175,9 @@ footer{max-width:800px;margin:32px auto 0;font-size:11px;
       <span class="stock-code">2330</span>
       <span class="stock-name">台積電</span>
     </div>
-    <div class="stock-right"><span class="rec-badge" style="color:#60a5fa;border-color:#60a5fa40;background:#1e3552">持有</span><span class="time-range">00:19:30 – 00:20:53</span></div>
+    <div class="stock-right"><span class="rec-badge" style="color:#60a5fa;border-color:#60a5fa40;background:#1e3552">持有</span><span class="time-range">00:19:22 – 00:20:54</span></div>
   </div>
-  <div class="meta-row"><span class="meta-item">目標價 <strong>2900</strong></span><span class="meta-item">支撐 <strong>29925</strong></span></div><div class="summary">外資報告中高標目標價約2800-3000塊，每1塊貢獻約8點多權值點。只要台積電過高達到外資目標價，大型權值股就有機會開始過高。現在情形類似去年12月中，回檔整理到月線附近，要再衝下一波需台積電過高。</div><div class="cg-notes">日K線圖，日期2026/08/12；當前指數約43587.63；關注FOMC、日本相關因素；挑戰5萬點、預言台股成為亞洲最強、台股低點。圖表包含成交量、外資、融資資訊。</div>
-</div>
-<div class="stock-card">
-  <div class="stock-header">
-    <div class="stock-id">
-      <span class="stock-code">5289</span>
-      <span class="stock-name">宜鼎</span>
-    </div>
-    <div class="stock-right"><span class="rec-badge" style="color:#4ade80;border-color:#4ade8040;background:#1e3a2e">推薦</span><span class="time-range">00:23:06 – 00:24:08</span></div>
-  </div>
-  <div class="meta-row"><span class="meta-item">目標價 <strong>1815</strong></span></div><div class="summary">處置期間千張大戶持股一直增加（4/10持股1000張），過高後大戶繼續加碼買，成本跟散戶差不多。記憶體族群，今天禮拜五看數值若持平或小增，代表大戶不願走，終究覺得會過高，可注意。同族群有群聯、南亞科、華邦電。</div><div class="cg-notes">日K線圖，4/10最高點漲幅125%，前低441，2005參考點位；節目為理財達人秀，提醒投資有風險請謹慎評估</div>
-</div>
-<div class="stock-card">
-  <div class="stock-header">
-    <div class="stock-id">
-      <span class="stock-code">8299</span>
-      <span class="stock-name">群聯</span>
-    </div>
-    <div class="stock-right"><span class="rec-badge" style="color:#94a3b8;border-color:#94a3b840;background:#252830">觀望</span><span class="time-range">00:24:04 – 00:24:11</span></div>
-  </div>
-  <div class="summary">記憶體同族群，跟宜鼎很像。若是這樣型態大概會再稍微下來一點。</div><div class="cg-notes">日K線圖顯示4/10最高點漲幅125%，高點1815，大戶持股1000張；與台光電同一族群；創高後回檔。畫面標示『投資有風險 請謹慎評估』。另提及宜鼎。</div>
+  <div class="context">雷老闆分析台股過高關鍵權值股</div><div class="meta-row"><span class="meta-item">目標價 <strong>2800-3000</strong></span><span class="meta-item">支撐 <strong>29925</strong></span></div><div class="summary">雷老闆以台積電目標價推算大盤。一般中高標2800-3000元，1元貢獻約8點多權值點，若再漲700-800元可貢獻近6000點，大盤過高不難。現況很像去年12月中，台積電要開始達到外資目標價、過高後才會帶動其他大型權值股過高，進而等外資回頭。</div><div class="cg-notes">日K線圖，當前指數43587.63，上漲1019.58(+2.36%)，收44169.04，成交量11176.45億；均線SMA5 43750.25、SMA20 43568.72、SMA60 39157.44；歷史高點46552、低點29925；提及沒有聯發科的上修</div>
 </div>
 <div class="stock-card">
   <div class="stock-header">
@@ -196,9 +185,9 @@ footer{max-width:800px;margin:32px auto 0;font-size:11px;
       <span class="stock-code">6274</span>
       <span class="stock-name">台燿</span>
     </div>
-    <div class="stock-right"><span class="rec-badge" style="color:#f59e0b;border-color:#f59e0b40;background:#3a2e1a">等回測</span><span class="time-range">00:24:11 – 00:25:09</span></div>
+    <div class="stock-right"><span class="rec-badge" style="color:#60a5fa;border-color:#60a5fa40;background:#1e3552">持有</span><span class="time-range">00:24:11 – 00:25:09</span></div>
   </div>
-  <div class="summary">跟台光電同族群，千張大戶（1200→900張）僅微幅小掉，仍在高檔區間。今天稍微破線但隨大盤整理屬合理。TPU確定用M8銅箔基板，今年EPS 30幾塊，明年估60幾塊、最高85塊，甚至有機會90-100塊。若被吃下訂單，明年高階伺服器占比可能60幾%以上，大幅上修。利空解除後可留意。</div><div class="cg-notes">節目主題討論PCB族群：AI伺服器規格提升，高階材料及板塊需求爆發，價格持續上漲；光通族群：AI資料中心算力狂飆，傳輸規格升級800G/1.6T</div>
+  <div class="context">與台光電同族群CCL，TPU採M8銅箔基板受惠股</div><div class="summary">與台光電同族群，千張大戶僅微幅小掉，仍在高檔區間，今天稍微破線但屬合理調整。今年EPS 30幾元，明年估60幾元、最高估85元，雷老闆甚至認為有機會90-100元。TPU確定用M8銅箔基板，若被吃下明年高階伺服器占比可達60幾%以上，將大幅上修，以20幾倍本益比算空間很大。建議觀察晚上千張大戶是否續掉，利空解除後看好。</div><div class="cg-notes">節目討論PCB與光通族群。PCB看好原因：AI伺服器規格提升，高階材料及板塊需求爆發，價格持續上漲。光通看好原因：AI資料中心算力狂飆，傳輸規格升級800G/1.6T。另提及台燿同為討論個股。</div>
 </div>
 <div class="stock-card">
   <div class="stock-header">
@@ -206,19 +195,19 @@ footer{max-width:800px;margin:32px auto 0;font-size:11px;
       <span class="stock-code">2383</span>
       <span class="stock-name">台光電</span>
     </div>
-    <div class="stock-right"><span class="rec-badge" style="color:#f59e0b;border-color:#f59e0b40;background:#3a2e1a">等回測</span><span class="time-range">00:27:03 – 00:28:18</span></div>
+    <div class="stock-right"><span class="rec-badge" style="color:#f59e0b;border-color:#f59e0b40;background:#3a2e1a">等回測</span><span class="time-range">00:27:02 – 00:28:23</span></div>
   </div>
-  <div class="meta-row"><span class="meta-item">目標價 <strong>5635</strong></span><span class="meta-item">支撐 <strong>2125</strong></span></div><div class="summary">PCB龍頭，今天收一根大黑K，高低點約18%。盤中傳出銅箔基板被玻璃基板取代的利空，三井金屬已澄清。龍頭不會短短一兩季被取代（類比貿聯-KY光進銅退仍活得好好）。大盤回檔時已先修正，只跌約10幾%算少。整理籌碼，下禮拜在區間內整理算安全。大戶持股略為下降，今晚是觀察好時機。</div><div class="cg-notes">PCB迎黃金期 台光電等籌碼穩；CSP資本支出2026年預估90%的爆發性成長；高階材料供需吃緊 銅箔與玻纖布啟動漲價</div>
+  <div class="context">PCB龍頭今天收大黑K，解釋盤中利空</div><div class="meta-row"><span class="meta-item">目標價 <strong>5635</strong></span><span class="meta-item">支撐 <strong>2125</strong></span></div><div class="summary">PCB龍頭今天收大黑K（高低點約18%），這段大盤回檔已先修正，僅約10幾%修得比大盤少。利空是傳銅箔基板要改用玻璃基板，但三井金屬已澄清。雷老闆認為龍頭做最昂貴AI伺服器不會一兩季被取代（如貿聯-KY光進銅退後仍活得好好的）。只要下週在區間整理、千張大戶沒續掉很嚴重就算安全，今晚是觀察好時機。</div><div class="cg-notes">CSP資本支出2026年預估90%的爆發性成長，AI伺服器規格持續攀升，高階材料與載板需求持續爆發，PCB供應鏈正迎來結構性的供需失衡。高階材料供需吃緊，銅箔與玻纖布啟動漲價。AI算力爆發加劇缺料，PCB上游與載板迎黃金期：欣興、台光電、金像電。EPS往上修。日K線圖</div>
 </div>
 <div class="stock-card">
   <div class="stock-header">
     <div class="stock-id">
-      <span class="stock-code">2313</span>
-      <span class="stock-name">華通</span>
+      <span class="stock-code">3665</span>
+      <span class="stock-name">貿聯-KY</span>
     </div>
-    <div class="stock-right"><span class="rec-badge" style="color:#4ade80;border-color:#4ade8040;background:#1e3a2e">推薦</span><span class="time-range">00:25:35 – 00:31:32</span></div>
+    <div class="stock-right"><span class="time-range">00:27:55 – 00:28:14</span></div>
   </div>
-  <div class="summary">兼具光通訊與PCB題材，回檔不多。與低軌衛星相關，SpaceX掛牌、V3衛星規格升級量增。台灣未抽到配額但有衛星跟光膜雙動能。前面基本面穩，接下來靠光膜驅動，跟著光通訊反彈有機會。本益比約20倍、40000多點不算高。</div><div class="cg-notes">節目為理財達人秀(MONEYSHOW)，主題為「PCB.CPO迎下半年黃金時刻 布局誰?」。圖卡顯示族群分析：PCB族群看好原因為AI伺服器規格提升、高階材料及板塊需求爆發、價格持續上漲；光通族群看好原因為AI資料中心算力狂飆、傳輸規格升級至800G/1.6T。圖卡未提供個股代號、名稱、目標價、支撐價或停損價等具體個股資訊。</div>
+  <div class="context">舉例說明龍頭不會被一次取代</div><div class="meta-row"><span class="meta-item">目標價 <strong>5635</strong></span><span class="meta-item">支撐 <strong>2125</strong></span></div><div class="summary">雷老闆舉例：當初光進銅退、跟銅纜連接器有關的全部退，但貿聯-KY現在還是活得好好的，因為沒人敢一次把AI伺服器最新規格的東西全部替換掉，藉此說明台光電不會被快速取代。</div><div class="cg-notes">日K線圖，2026/06/12收5500，外資略為有下降的趨勢</div>
 </div>
 <div class="stock-card">
   <div class="stock-header">
@@ -226,9 +215,9 @@ footer{max-width:800px;margin:32px auto 0;font-size:11px;
       <span class="stock-code">8021</span>
       <span class="stock-name">尖點</span>
     </div>
-    <div class="stock-right"><span class="rec-badge" style="color:#4ade80;border-color:#4ade8040;background:#1e3a2e">推薦</span><span class="time-range">00:25:40 – 00:30:37</span></div>
+    <div class="stock-right"><span class="rec-badge" style="color:#4ade80;border-color:#4ade8040;background:#1e3a2e">推薦</span><span class="time-range">00:25:38 – 00:30:37</span></div>
   </div>
-  <div class="meta-row"><span class="meta-item">目標價 <strong>5635</strong></span><span class="meta-item">支撐 <strong>2125</strong></span></div><div class="summary">站在PCB供應鏈最上游的鑽針龍頭，沒得選，擴產漲價客戶都接受，很難跌。PCB愈來愈多層難鑽，需求愈來愈大。台股回檔時不回檔反創歷史新高。今天高低點約18%，漲停板打開殺到跌停只是回測區間高點，可能是大戶買不夠壓回來買的地方。要等區間跌破才出場。明年擴完產若營收一開出超級好結果股價不漲，才是動能差不多。</div><div class="cg-notes">日K線圖，2026/06/12收盤4830元，跌265點(-5.20%)。本益比相關數據：高點5635、低點2125。投資有風險，請謹慎評估。主題：迎PCB黃金期，台光電等籌碼穩再攻？</div>
+  <div class="context">PCB供應鏈最上游鑽針廠，雷老闆看好</div><div class="meta-row"><span class="meta-item">支撐 <strong>2125</strong></span></div><div class="summary">站在PCB供應鏈最上游做鑽針，PCB愈來愈多層、愈難鑽，所有板材廠都需要它的鑽針，沒得選、擴產漲價客戶都要接受，籌碼相對強難跌。台股回檔期間不回檔還創歷史新高，今天高低點約18%、漲停打開殺到快跌停是回測區間高點。除非破區間（如下週遇事件）才出場，否則拉回是大戶補買的地方，要計算上下盈虧比。鑽針需求愈來愈大，何時停止要看明年擴完產、營收開出超好但股價不漲才是動能轉弱訊號。</div><div class="cg-notes">日K線圖，高點5635，低點2125，當前約5500，跌幅-5.20%；圖卡顯示成交量、外資、大戶持股100張等資訊；提及大家要改去用玻璃基板</div>
 </div>
 <div class="stock-card">
   <div class="stock-header">
@@ -236,9 +225,9 @@ footer{max-width:800px;margin:32px auto 0;font-size:11px;
       <span class="stock-code">4958</span>
       <span class="stock-name">臻鼎-KY</span>
     </div>
-    <div class="stock-right"><span class="rec-badge" style="color:#4ade80;border-color:#4ade8040;background:#1e3a2e">推薦</span><span class="time-range">00:26:53 – 00:43:00</span></div>
+    <div class="stock-right"><span class="rec-badge" style="color:#4ade80;border-color:#4ade8040;background:#1e3a2e">推薦</span><span class="time-range">00:29:18 – 00:39:30</span></div>
   </div>
-  <div class="meta-row"><span class="meta-item">目標價 <strong>690</strong></span><span class="meta-item">支撐 <strong>2125</strong></span></div><div class="summary">ABF載板四雄中最看好，籌碼最漂亮，土洋同買。雖未創歷史新高但5月年增率37%、前5月累計10%。剛出關籌碼整理完有再多補漲一段機會。納入台灣50，是輝達新背板股。凱基目標價690塊。約20倍本益比、40000多點不算高。</div><div class="cg-notes">日K線圖，圖中標示高點5635、低點2125；當日股價4830，下跌265 (-5.20%)；提及盤中利空消息；主題為PCB銅箔、載板需求；大戶持股100張資訊</div>
+  <div class="context">ABF載板四雄中雷老闆與翁士峻最看好者</div><div class="meta-row"><span class="meta-item">目標價 <strong>690</strong></span></div><div class="summary">雷老闆認為載板四雄隨便選都用不完，最喜歡臻鼎-KY與景碩，剛出關籌碼整理完有再補漲機會。翁士峻指ABF四雄中臻鼎-KY籌碼最漂亮、土洋同買，雖未創歷史新高但5月年增率37%、前五月累計年增10%。題材多納入台灣50、又是輝達新背板股，凱基目標價690元。</div><div class="cg-notes">預計2027年產能將從3500萬增至6300萬以上（下半年+1000萬針，4Q26-2027中超量+800萬針，2027上海廠+1000萬針）；毛利率走勢從22.67%提升至36.59%；PCB板材朝向「又大、又厚、又硬」趨勢，高階鍍鎳鑽針占比已從48%攀升至1Q26的53%，全升至55%以上；主要客戶包含台灣的載板四雄，近期也新增韓國的大型PCB客戶，客戶展望上修</div>
 </div>
 <div class="stock-card">
   <div class="stock-header">
@@ -246,9 +235,9 @@ footer{max-width:800px;margin:32px auto 0;font-size:11px;
       <span class="stock-code">3189</span>
       <span class="stock-name">景碩</span>
     </div>
-    <div class="stock-right"><span class="rec-badge" style="color:#4ade80;border-color:#4ade8040;background:#1e3a2e">推薦</span><span class="time-range">00:29:19 – 00:29:31</span></div>
+    <div class="stock-right"><span class="rec-badge" style="color:#4ade80;border-color:#4ade8040;background:#1e3a2e">推薦</span><span class="time-range">00:29:18 – 00:29:30</span></div>
   </div>
-  <div class="summary">ABF載板四雄之一，跟臻鼎-KY一樣較喜歡，這裡有再多補漲一段的機會。載板只有四家，選來選去就是ABF四雄。</div><div class="cg-notes">預計2027年產能將從3500萬提升至6300萬以上（下半年+1000萬針、2027上海廠+1000萬針、4Q26-2027中砂廠+800萬針）；毛利率走勢從22.67%(1Q24)提升至36.59%(1Q26)；PCB板材朝向又大、又厚、又硬趨勢升級，高階鍍鎳針佔比已從48%攀升至1Q26的53%，全年升55%以上；主要客戶包含台灣載板四雄，近期新增韓國大廠PCB客戶，客戶展望上修</div>
+  <div class="context">ABF載板雷老闆偏好標的之一</div><div class="summary">雷老闆與臻鼎-KY並列為下半年載板最喜歡的標的，認為剛整理完籌碼有補漲一段機會。</div><div class="cg-notes">預計2027年產能將從3500萬提升至6300萬以上；2027年目標+1000萬針，下半年+1000萬針，4Q26-2027中報+800萬針；毛利率走勢由22.67%提升至36.59%；高階鍍鎳鈀金針剛性需求，PCB板材朝向又大又厚又硬趨勢，階梯鍍鎳針估比已從48%攀升至1Q26的53%，全升至55%以上；缺針狀況最嚴，賣方市場；主要客戶包含台灣載板四雄，近期新增韓國大廠PCB客戶，客戶展望上修</div>
 </div>
 <div class="stock-card">
   <div class="stock-header">
@@ -258,27 +247,17 @@ footer{max-width:800px;margin:32px auto 0;font-size:11px;
     </div>
     <div class="stock-right"><span class="rec-badge" style="color:#4ade80;border-color:#4ade8040;background:#1e3a2e">推薦</span><span class="time-range">00:29:29 – 00:29:33</span></div>
   </div>
-  <div class="summary">ABF載板四雄之一，若真的不知道選誰就選欣興，因為最大、最安全、最穩。載板需求都用不完。</div><div class="cg-notes">尖點受惠規格升級，ABF四雄都是客戶。目前產能3500萬針，下半年+1000萬針，2027上海廠+1000萬針，4Q26-2027中壢廠+800萬針，預計2027年產能將從3500萬提升至6300萬以上。毛利率走勢：1Q24為22.67%，至1Q26達36.59%。日K最高627，最低239.5。大戶持股200張。高階鍍膜鑽針剛性需求：PCB板材正朝向「又大、又厚、又硬」趨勢升級，高階鍍膜鑽針佔比已從48%攀升至1Q26的53%，全年預估升至55%以上。缺針狀況嚴重，穩居有利的賣方市場，擁有強大的議價能力。主要客戶包含台灣的載板四雄，近期也新增了韓國的大型PCB客戶，客戶展望上修。</div>
+  <div class="context">ABF載板四雄中最安全選擇</div><div class="summary">雷老闆建議若真的不知道選誰，就選欣興，因為最大、最安全、最穩。</div><div class="cg-notes">尖點受惠規格升級，ABF四雄都是客戶。目前產能3500萬針，下半年+1000萬針，2027上海廠+1000萬針，4Q26-2027中壢廠+800萬針，預計2027年產能將從3500萬提升至6300萬以上。毛利率走勢：1Q24 22.67%、2Q24 26.51%、3Q24 27.64%、4Q24 27.14%、1Q25 25.81%、2Q25 29.44%、3Q25 31.32%、4Q25 34.84%、1Q26 36.59%。高階鍍膜鑽針剛性需求：PCB板材正朝向「又大、又厚、又硬」的趨勢升級，高階鍍膜鑽針佔比已從48%攀升至1Q26的53%，全年預估升至55%以上；缺針狀況嚴重，穩居有利的賣方市場，擁有強大的議價能力；主要客戶包含台灣的載板四雄，近期也新增了韓國的大型PCB客戶，客戶展望上修。日K最高627，最低239.5，大戶持股200張。</div>
 </div>
 <div class="stock-card">
   <div class="stock-header">
     <div class="stock-id">
-      <span class="stock-code">8046</span>
-      <span class="stock-name">南電</span>
+      <span class="stock-code">2313</span>
+      <span class="stock-name">華通</span>
     </div>
-    <div class="stock-right"><span class="rec-badge" style="color:#4ade80;border-color:#4ade8040;background:#1e3a2e">推薦</span><span class="time-range">00:28:43 – 00:28:55</span></div>
+    <div class="stock-right"><span class="rec-badge" style="color:#60a5fa;border-color:#60a5fa40;background:#1e3552">持有</span><span class="time-range">00:30:55 – 00:31:32</span></div>
   </div>
-  <div class="summary">ABF載板四雄之一，與光通訊一樣是長遠利多一直加持，AI伺服器走到下一段時是長遠利多，不用害怕。</div><div class="cg-notes">尖點受惠規模：目前產能3500萬計，下半年+1000萬計，預計2027年產能將從3500萬增至6300萬。尖點毛利率走勢：22.67、26.51、27.64、27.14、25.81、29.44、31.3（1Q24至約2Q26期間）。節目主題：PCB與載板供不應求，怎卡位大商機？提及載板四雄。</div>
-</div>
-<div class="stock-card">
-  <div class="stock-header">
-    <div class="stock-id">
-      <span class="stock-code">3665</span>
-      <span class="stock-name">貿聯-KY</span>
-    </div>
-    <div class="stock-right"><span class="rec-badge" style="color:#60a5fa;border-color:#60a5fa40;background:#1e3552">持有</span><span class="time-range">00:27:55 – 00:28:14</span></div>
-  </div>
-  <div class="meta-row"><span class="meta-item">支撐 <strong>2125</strong></span></div><div class="summary">光進銅退傳聞下，當時光通訊超強凡跟銅纜連接器有關都退，但後來發現貿聯-KY還活得好好的，因為沒有人敢一次在AI伺服器最新規格把東西全部替換。用以說明龍頭不會短期被取代。</div><div class="cg-notes">日K線圖，2026/06/12收盤4830.00跌265.00(-5.20%)；高點5635；外資略為有下降的趨勢；投資有風險請謹慎評估</div>
+  <div class="context">PCB兼光通訊低軌衛星題材股</div><div class="meta-row"><span class="meta-item">目標價 <strong>305.5</strong></span><span class="meta-item">支撐 <strong>183</strong></span></div><div class="summary">這波一直震盪，與低軌衛星連動。SpaceX V3衛星規格升級用量翻倍，菲律賓廠已取得訂單，雖台灣沒抽到配額但無關係，因為它是衛星與光膜雙動能。上次來說可能套一陣子但不會套一輩子，會跟著光通訊反彈，訂單能見度延伸至3Q26、菲律賓廠產能利用率已達高檔。</div><div class="cg-notes">全球400G+光收發模組出貨量預測：2025年45M pcs、2026年77M pcs(+71%)、2027年142M pcs(+84%)、2028年168M pcs。大摩今天再度上修2026-2028年光收發器出貨量預估。台灣最具量產能力PCB廠商：華通(2313)、臻鼎-KY(4958)、欣興(3037)。SPACEX上市+展望強：全球最大衛星板供應商，SpaceX最新一代V3衛星所需PCB數量較上代翻倍成長；AI硬體升級帶動800G及1.6T高階光模需求；美系與陸系客戶訂單，預期機利將倍數成長；預期AI與衛星兩大業務在2027年佔比將超過40%，產品組合優化</div>
 </div>
 <div class="stock-card">
   <div class="stock-header">
@@ -288,7 +267,7 @@ footer{max-width:800px;margin:32px auto 0;font-size:11px;
     </div>
     <div class="stock-right"><span class="rec-badge" style="color:#4ade80;border-color:#4ade8040;background:#1e3a2e">推薦</span><span class="time-range">00:31:33 – 00:32:23</span></div>
   </div>
-  <div class="meta-row"><span class="meta-item">目標價 <strong>2460</strong></span><span class="meta-item">支撐 <strong>1615</strong></span></div><div class="summary">光通訊產業資優生，EPS獲利最好。很多人說本益比太高但不會，最新月營收全部優於市場預期。若光通訊反彈，營收優於預期不受大盤事件影響。最重要是大戶已進來布局，千張大戶快賣到沒柱子，從36%以下提升到38%以上。今晚若看到大戶連續增加兩週可不用怕。</div><div class="cg-notes">大客戶GOOGLE；新產品1.6T；新市場AI伺服器；光聖是全球唯一具備超高芯數光纖量產能力的供應商，競爭優勢顯著；隨資料中心傳輸規格由800G邁向1.6T，高芯數產品營收占比已過半，13,824芯品預計2026年開始出貨；訂單能見度延伸至非淡季，實廠產能利用率達100%，並啟動兩班制生產以因應需求</div>
+  <div class="context">光通訊CPO產業資優生，雷老闆送暖標的</div><div class="meta-row"><span class="meta-item">目標價 <strong>2460</strong></span><span class="meta-item">支撐 <strong>1615</strong></span></div><div class="summary">光通訊不知選誰就選產業資優生，EPS獲利最好。很多人說本益比太高但它不會，最新一個月營收全部優於市場預期。若光通訊反彈、營收又優於預期，大盤任何事件都影響不了它。最重要是大戶已進來布局，千張快賣到沒柱子（2000元的股票），千張大戶從36%以下提升到38%以上，若今晚看到大戶連續增加兩週就不必怕。</div><div class="cg-notes">大客戶GOOGLE，新產品1.6T，新市場AI伺服器。光聖是全球唯一具備超高芯數光纖量產能力的供應商，競爭優勢顯著。隨資料中心傳輸規格由800G邁向1.6T，高芯數產品營收占比已過半，13,824芯品預計2026年開始出貨。訂單能見度延伸至非淡季，實廠產能利用率近100%，並啟動兩班制生產以因應需求</div>
 </div>
 <div class="stock-card">
   <div class="stock-header">
@@ -296,9 +275,29 @@ footer{max-width:800px;margin:32px auto 0;font-size:11px;
       <span class="stock-code">4979</span>
       <span class="stock-name">華星光</span>
     </div>
-    <div class="stock-right"><span class="rec-badge" style="color:#f59e0b;border-color:#f59e0b40;background:#3a2e1a">等回測</span><span class="time-range">00:32:27 – 00:32:41</span></div>
+    <div class="stock-right"><span class="rec-badge" style="color:#f59e0b;border-color:#f59e0b40;background:#3a2e1a">等回測</span><span class="time-range">00:32:24 – 00:32:41</span></div>
   </div>
-  <div class="meta-row"><span class="meta-item">支撐 <strong>1615</strong></span></div><div class="summary">光通訊族群，獲利沒那麼亮眼、本益比較高，但已修正4成，本益比剛修正到合理。跌過30幾%到4成的公司，只要光聖反彈，超跌的也會跟著反彈。</div><div class="cg-notes">TPU晶片市場商機暴衝，光聖、華星光訂單一同暢旺。大客戶GOOGLE，新產品1.6T，新市場AI伺服器，已開始有實質獲利開出。大猩猩理論：光聖是全球唯一具備超高芯數光纜量產能力的供應商，競爭優勢顯著。隨資料中心傳輸規格由800G邁向1.6T，高芯數產品營收占比已過半，13,824芯產品預計2026年開始出貨。訂單能見度延伸至3Q26，菲律賓廠產能利用率已達100%，並啟動兩班制生產以因應需求。股價約2460，K線圖標示反彈訊號。</div>
+  <div class="context">獲利較不亮眼但超跌的光通訊股</div><div class="meta-row"><span class="meta-item">目標價 <strong>2460</strong></span><span class="meta-item">支撐 <strong>1615</strong></span></div><div class="summary">本益比較高已修正4成，本益比修正到合理水準。雷老闆認為跌過大概30幾%到4成的公司，只要光聖這種資優生開始反彈，這些超跌的也會跟著反彈。</div><div class="cg-notes">大客戶GOOGLE，新產品1.6T，新市場AI伺服器，已開始有實質獲利開出。大猩猩理論：光聖為全球唯一具備超高芯數光纖量產能力的供應商，競爭優勢顯著。隨資料中心傳輸規格由800G邁向1.6T，高芯數產品營收占比已過半13,824芯品預計於2026年開始出貨。訂單能見度延伸至3Q26，菲律賓廠產能利用率已達100%，並啟動兩班制生產以因應需求。當日K線約6442附近</div>
+</div>
+<div class="stock-card">
+  <div class="stock-header">
+    <div class="stock-id">
+      <span class="stock-code">5289</span>
+      <span class="stock-name">宜鼎</span>
+    </div>
+    <div class="stock-right"><span class="rec-badge" style="color:#60a5fa;border-color:#60a5fa40;background:#1e3552">持有</span><span class="time-range">00:24:00 – 00:24:03</span></div>
+  </div>
+  <div class="context">處置期間大戶仍敢買的記憶體相關股</div><div class="summary">雷老闆指出宜鼎在處置期間大戶仍持續買、加碼，是玩真的，千張大戶才剛上升、成本與散戶差不多。記憶體看法一樣只是時機不好抓，但終究會過高。</div><div class="cg-notes">日K線圖顯示高點1815，4/10最高漲幅125%，大戶持股1000張，節目提醒投資有風險請謹慎評估。另提及宜鼎為討論標的。</div>
+</div>
+<div class="stock-card">
+  <div class="stock-header">
+    <div class="stock-id">
+      <span class="stock-code">8299</span>
+      <span class="stock-name">群聯</span>
+    </div>
+    <div class="stock-right"><span class="rec-badge" style="color:#60a5fa;border-color:#60a5fa40;background:#1e3552">持有</span><span class="time-range">00:24:04 – 00:24:10</span></div>
+  </div>
+  <div class="context">與宜鼎同記憶體族群提及</div><div class="summary">與南亞科、華邦電同記憶體族群，雷老闆認為若是這樣型態，群聯可能會再稍微下來一點。</div><div class="cg-notes">台燿日K線圖；4/10最高點漲幅125%；高點1815；大戶持股1000張；與台光電同一族群；創高後回檔。畫面同時提及宜鼎</div>
 </div>
 <div class="stock-card">
   <div class="stock-header">
@@ -306,19 +305,19 @@ footer{max-width:800px;margin:32px auto 0;font-size:11px;
       <span class="stock-code">2327</span>
       <span class="stock-name">國巨</span>
     </div>
-    <div class="stock-right"><span class="rec-badge" style="color:#4ade80;border-color:#4ade8040;background:#1e3a2e">推薦</span><span class="time-range">00:38:51 – 00:41:46</span></div>
+    <div class="stock-right"><span class="rec-badge" style="color:#4ade80;border-color:#4ade8040;background:#1e3a2e">推薦</span><span class="time-range">00:38:54 – 00:41:46</span></div>
   </div>
-  <div class="meta-row"><span class="meta-item">目標價 <strong>1500</strong></span></div><div class="summary">被動元件龍頭，今天一度漲停但鎖不住。5月營收創歷史新高，年增率48%大於前5月累計27%。大戶持股70%以上最強。高檔時投信這3天大買好幾千張，支持出關，因2-3週後季底作帳是投信作帳題材。收黑K易開高走低，10日線以下偏多，逢回做多。大戶持股比例基本50%以上。</div><div class="cg-notes">全球最大的電阻與鉭質電容供應商；AI相關應用需求持續強勁帶動5月營收創高；外資認為高階MLCC市場已由局部缺貨演變為產業性供給緊縮；花旗目標價1500，投信五日買超1.8萬張；5/15至今漲87.7%；收855元，漲13.00(+1.54%)；除息秒填息，漲停鎖不住</div>
+  <div class="context">被動元件龍頭，速戰速決族群指標股</div><div class="meta-row"><span class="meta-item">目標價 <strong>1500</strong></span><span class="meta-item">支撐 <strong>715.6</strong></span></div><div class="summary">被動元件龍頭今天一度漲停但鎖不住。5月營收創歷史新高，年增率48%大於前五月累計27%，大戶持股約70%最強。高檔時投信連三天大買好幾千張，再過2-3週季底作帳，是投信作帳題材股。翁士峻策略：10日線以下偏多，因常開高走低不要追，回到10日線有三次都是買點，逢回做多OK。</div><div class="cg-notes">全球最大的電阻與鉭質電容供應商；AI相關應用需求持續強勁帶動5月營收創高；外資認為高階MLCC市場已由局部缺貨演變為產業性供給緊縮；花旗目標價1500，投信五日買超1.8萬張；日線2026/06/12 開919.00 高919.00 低852.00 收855.00s元 量85848張 +13.00(+1.54%)；5/15至今漲87.7%；外資持股比例48.85%；投信持股比例8.32%</div>
 </div>
 <div class="stock-card">
   <div class="stock-header">
     <div class="stock-id">
       <span class="stock-code">3357</span>
-      <span class="stock-name">臺慶科</span>
+      <span class="stock-name">台慶科</span>
     </div>
-    <div class="stock-right"><span class="rec-badge" style="color:#f59e0b;border-color:#f59e0b40;background:#3a2e1a">等回測</span><span class="time-range">00:38:56 – 00:42:57</span></div>
+    <div class="stock-right"><span class="rec-badge" style="color:#f59e0b;border-color:#f59e0b40;background:#3a2e1a">等回測</span><span class="time-range">00:41:47 – 00:42:57</span></div>
   </div>
-  <div class="meta-row"><span class="meta-item">目標價 <strong>1500</strong></span><span class="meta-item">支撐 <strong>715.6</strong></span></div><div class="summary">電感大廠，傳出電感漲價並跟日韓大廠對接，營收人占比拉高。AI占比今年可能慢慢拉到14%，並跨入CPO，單用與AI雙引擎推動，5月營收創歷史新高。漲得緩、屬區間箱型，投信慢慢買有點動能。策略：區間下緣是買點，表態要看突破前高（禮拜三碰漲停爆大量但低點守住，再突破一次就有機會走一段）。</div><div class="cg-notes">全球最大的電阻與鉭質電容供應商；AI相關應用需求持續強勁帶動5月營收創高；外資認為高階MLCC市場已由局部缺貨演變為產業性供給緊縮；花旗目標價1500，投信五日買超1.8萬張；5/15至今漲87.7%；除息秒填息漲停；開919 高919 低852 收855 量85848張 +13.00 (+1.54%)；外資持股比例48.85%，投信持股比例8.32%</div>
+  <div class="context">電感大廠，被動元件區間操作標的</div><div class="summary">電感大廠，與日韓大廠連動且漲價、單價佔比拉高。AI占比公司派稱今年慢慢拉到14%，且跨入CPO，單用與AI雙引擎推動，5月營收創歷史新高。投信慢慢小買有一點動能。漲得緩、從140元一段段漲，屬區間箱型不像其他被動元件刺激。策略：區間下緣買點，突破前高（禮拜三碰漲停爆大量但低點守住）表態再走一段。</div><div class="cg-notes">除息秒填息，漲停鎖不住還能追？節目標題討論是否可追高；畫面顯示價格85848 +13.00 (+1.54%)、919、55449、48.85%、投信持股比8.32%等資訊。投資有風險請謹慎評估。</div>
 </div>
 <div class="stock-card">
   <div class="stock-header">
@@ -326,9 +325,9 @@ footer{max-width:800px;margin:32px auto 0;font-size:11px;
       <span class="stock-code">6175</span>
       <span class="stock-name">立敦</span>
     </div>
-    <div class="stock-right"><span class="rec-badge" style="color:#4ade80;border-color:#4ade8040;background:#1e3a2e">推薦</span><span class="time-range">00:38:56 – 00:40:59</span></div>
+    <div class="stock-right"><span class="rec-badge" style="color:#4ade80;border-color:#4ade8040;background:#1e3a2e">推薦</span><span class="time-range">00:38:55 – 00:40:38</span></div>
   </div>
-  <div class="meta-row"><span class="meta-item">目標價 <strong>1500</strong></span><span class="meta-item">支撐 <strong>715.6</strong></span></div><div class="summary">被動元件，5月營收創歷史新高，漲得比較緩，離前高也非常接近。投信有買，若投信加持、看到投信買的第一天後面往上衝很快。月線沒破來回操作沒問題，可偏多操作。</div><div class="cg-notes">全球最大的電阻與鉭質電容供應商；AI相關應用需求持續強勁帶動5月營收創高；外資認為高階MLCC市場已由局部缺貨演變為產業性供給緊縮；花旗目標價1500，投信五日買超1.8萬張；5/15至今漲87.7%；收855元，漲13元(+1.54%)，量85848張</div>
+  <div class="context">被動元件5月營收創歷史新高三檔之一</div><div class="summary">被動元件5月營收創歷史新高，年增率高於前五月累計。漲得比較緩，但離前高也非常接近，剛好投信有買。翁士峻認為投信加持下偏多操作。</div><div class="cg-notes">節目為「理財達人秀MoneyShow」，主題討論被動元件、PCB、設備類股操作及節奏快慢差別。圖卡分類：被動元件（國巨*、臺慶科、立敦）、PCB（台光電、聯茂、大量、臻鼎-KY）、設備（萬潤、漢唐）。字幕提及『常常會說有季底入帳』。各股代號與數字資訊在圖中未完整顯示。</div>
 </div>
 <div class="stock-card">
   <div class="stock-header">
@@ -336,9 +335,9 @@ footer{max-width:800px;margin:32px auto 0;font-size:11px;
       <span class="stock-code">3090</span>
       <span class="stock-name">日電貿</span>
     </div>
-    <div class="stock-right"><span class="rec-badge" style="color:#4ade80;border-color:#4ade8040;background:#1e3a2e">推薦</span><span class="time-range">00:40:26 – 00:41:00</span></div>
+    <div class="stock-right"><span class="rec-badge" style="color:#4ade80;border-color:#4ade8040;background:#1e3a2e">推薦</span><span class="time-range">00:40:25 – 00:41:01</span></div>
   </div>
-  <div class="meta-row"><span class="meta-item">目標價 <strong>1500</strong></span><span class="meta-item">支撐 <strong>715.6</strong></span></div><div class="summary">被動元件，出關後創歷史新高漲到256塊，5月15號已漲8成。投信有買，這一波漲得兇，月線沒破來回操作沒問題，最快用噴的，可偏多操作。</div><div class="cg-notes">全球最大的電阻與鉭質電容供應商；AI相關應用需求持續強勁帶動5月營收創高；外資認為高階MLCC市場已由局部缺貨演變為產業性供給緊縮；花旗目標價1500，投信五日買超1.8萬張；除息秒填息，漲停鎖不住；收盤855元，上漲13元(+1.54%)；5/15至今漲87.7%</div>
+  <div class="context">被動元件出關後創歷史新高強勢股</div><div class="meta-row"><span class="meta-item">目標價 <strong>1500</strong></span></div><div class="summary">出關後創歷史新高，漲到256元，5/15以來已漲8成，這波漲很兇。投信第一天買進後往上衝很快、用噴的。翁士峻策略：抓月線若沒破來回操作沒問題，可偏多操作。</div><div class="cg-notes">全球最大的電阻與鉭質電容供應商；AI相關應用需求持續強勁帶動5月營收創高；外資認為高階MLCC市場已由局部缺貨演變為產業性供給緊縮；花旗目標價1500，投信五日買超1.8萬張；2026/06/12 開919.00 高919.00 低852.00 收855.00；漲13.00(+1.54%)；5/15至今漲87.7%；外資持股比例48.85%；投信持股比例8.32%；再過2、3週就是季底作帳</div>
 </div>
 <div class="stock-card">
   <div class="stock-header">
@@ -346,9 +345,9 @@ footer{max-width:800px;margin:32px auto 0;font-size:11px;
       <span class="stock-code">6213</span>
       <span class="stock-name">聯茂</span>
     </div>
-    <div class="stock-right"><span class="rec-badge" style="color:#f59e0b;border-color:#f59e0b40;background:#3a2e1a">等回測</span><span class="time-range">00:42:59 – 00:44:14</span></div>
+    <div class="stock-right"><span class="rec-badge" style="color:#f59e0b;border-color:#f59e0b40;background:#3a2e1a">等回測</span><span class="time-range">00:43:01 – 00:44:13</span></div>
   </div>
-  <div class="meta-row"><span class="meta-item">目標價 <strong>342</strong></span><span class="meta-item">支撐 <strong>322</strong></span></div><div class="summary">CCL三哥，價格較親民。一口氣回到季線，有漲價題材、5月營收創新高。中信目標價340塊、凱基345塊，仍有距離。之前暴衝一段後整理約三個月已末端。策略：季線支撐是買點（禮拜一、禮拜四碰季線反彈），短均尚未站上，若全部站上短均有機會表態挑戰前高。</div><div class="cg-notes">M7+ASIC點火，聯茂Q2營收看增20%？9月營收創3年新高，月成長8.2%，年增29.3%；2026年高階電子材料產能將至少翻倍一倍；M7材料導過各大伺服器廠認證，開發下一代M9等級高階材料；中值目標價340元，最高345元；日K線資訊：開盤260.00、最高265.50、最低249.50、收盤8924、+4.50（+1.81%）</div>
+  <div class="context">CCL三哥，價格較親民的銅箔基板股</div><div class="meta-row"><span class="meta-item">目標價 <strong>340-345</strong></span><span class="meta-item">支撐 <strong>322</strong></span><span class="meta-item">停損 <strong>345</strong></span></div><div class="summary">CCL三哥，相對台光電、台燿價格親民。有漲價題材，5月營收創新高，一口氣回到季線。中信目標價340元、凱基345元都還有距離。之前暴衝一段後整理約三個月已末端，只要出量有機會表態。翁士峻策略：季線支撐是買點（禮拜一、禮拜四碰季線反彈），全部站上短均有機會挑戰前高。</div><div class="cg-notes">M7+ASIC點火，聯茂Q2營收看增20%；5月營收38億元創高，月成長8.2%，年增29.3%；2026年高階電子材料產能將擴增一倍；M7材料通過各大伺服器廠認證，開發下一代M9等級高階材料；中信目標價340元，攻基345元</div>
 </div>
 <div class="stock-card">
   <div class="stock-header">
@@ -358,7 +357,7 @@ footer{max-width:800px;margin:32px auto 0;font-size:11px;
     </div>
     <div class="stock-right"><span class="rec-badge" style="color:#4ade80;border-color:#4ade8040;background:#1e3a2e">推薦</span><span class="time-range">00:44:15 – 00:45:33</span></div>
   </div>
-  <div class="meta-row"><span class="meta-item">目標價 <strong>1220</strong></span><span class="meta-item">支撐 <strong>950</strong></span></div><div class="summary">PCB高階設備廠，受惠單一板子鑽孔，從200多漲到1000塊，約9成做PCB高階設備。統一投顧預估今年賺27塊、明年43塊，目標價1220塊（現約800塊）。投信今天買400多張，跌時站買方且已賣好幾天，持股約7000多張加400多張變8000多張、持股比例約9%多，若升到10%有機會是半年作帳股票。策略：月線支撐攻防、突破區間。</div><div class="cg-notes">月線支撐攻防，突破區間上緣950元轉強；M7新料+ASIC點火，聯茂Q2營收看增20%；標題：成設備訂單滿手 大量獲利大爆發</div>
+  <div class="context">PCB高階設備鑽孔機股，半年作帳題材</div><div class="meta-row"><span class="meta-item">目標價 <strong>1220</strong></span><span class="meta-item">支撐 <strong>950</strong></span></div><div class="summary">從200多元漲到1000元（最近沒漲），約9成做PCB高階設備受惠升級潮。統一投顧預估今年賺27元、明年43元，目標價1220元（已跌到800元，未消化太多空間）。吃投信籌碼，今天開高走低但投信買400多張、跌時站買方，持有約7000多張加進後8000多張、持股比例升至9%多，若升到10%有機會成半年作帳股票。</div><div class="cg-notes">題材：搭上AI伺服器與PCB升級與先進封裝HBM量測商機；資料機殼單位需求量與雲端需求帶動未來三年資讀儲值放量增；受惠單一板子鑽孔時間增加，預期今年產能年增六成；統一預估今明年EPS為27與43元，目標價1220元。策略：月線支撐攻防，突破區間上緣950元轉強。</div>
 </div>
 <div class="stock-card">
   <div class="stock-header">
@@ -366,9 +365,9 @@ footer{max-width:800px;margin:32px auto 0;font-size:11px;
       <span class="stock-code">6139</span>
       <span class="stock-name">亞翔</span>
     </div>
-    <div class="stock-right"><span class="rec-badge" style="color:#4ade80;border-color:#4ade8040;background:#1e3a2e">推薦</span><span class="time-range">00:39:42 – 00:44:18</span></div>
+    <div class="stock-right"><span class="rec-badge" style="color:#4ade80;border-color:#4ade8040;background:#1e3a2e">推薦</span><span class="time-range">00:39:43 – 00:40:18</span></div>
   </div>
-  <div class="summary">設備股，5月營收年增率103%，今天開盤沒多久漲停板最強。半導體設備銷售額創新高、台灣年增率最高，設備長線可買。法說講下半年是入帳高峰，營收會持續往上。策略：靜待花開，下禮拜還有機會續漲。</div><div class="cg-notes">圖卡標題為「快慢有別?」，顯示多檔個股的投信5日買賣超張數（如+18330、+335、+0、+488、-6、-15、+168、+1318）及400張大戶持股比例（74%、63%、64%、68%、56%、61%、74%等）。節目主題為「被動.PCB.設備怎操作 節奏快慢有別?」。個股代號與名稱因畫面遮擋無法完整辨識。</div>
+  <div class="context">半導體設備族群，靜待花開策略</div><div class="summary">設備股今天很多漲停板休息很久。5月營收年增率103%很高，今天最強幾乎開盤沒多久漲停。法說稱下半年是入帳時間高峰，營收可能持續往上。設備受惠台積電、封測雙雄資本支出爆棚，第一季全球半導體設備銷售額創新高、台灣年增率最高，長線可買。策略：靜待花開。</div><div class="cg-notes">圖卡為個股法人買賣超與大戶持股比較表，欄位包含：外資5日、投信5日、400張大戶(%)。可見資料列：投信+18330且400張大戶74%、投信+335且63%、投信+0且64%、投信+488且68%、投信-6且56%、投信-15且61%、投信+168且74%、投信+1318。標題為『被動.PCB.設備怎操作 節奏快慢有別?』，節目為理財達人秀MONEYSHOW。代號與名稱部分被遮擋無法辨識完整。</div>
 </div>
 <div class="stock-card">
   <div class="stock-header">
@@ -378,17 +377,17 @@ footer{max-width:800px;margin:32px auto 0;font-size:11px;
     </div>
     <div class="stock-right"><span class="rec-badge" style="color:#4ade80;border-color:#4ade8040;background:#1e3a2e">推薦</span><span class="time-range">00:39:54 – 00:40:18</span></div>
   </div>
-  <div class="summary">設備股，5月營收年增率85%，今天開盤沒多久漲停板，是今天最強之一。AI擴產爆發、半導體設備銷售額創新高，設備長線可買，下半年是入帳高峰，下禮拜還有機會續漲。</div><div class="cg-notes">畫面為理財節目，標題「日電貿獲投信大戶加碼 立敦漲多拉回?」，左側圖表顯示股價約151.67元、跌6.60(-4.27%)，價格區間40.0-120.0，並有投資有風險請謹慎評估警語，但無明確個股代號與名稱對應資訊</div>
+  <div class="context">半導體設備族群，今天最強之一</div><div class="summary">設備股5月營收年增率85%很高，與亞翔同為今天最強，幾乎開盤沒多久就漲停板。設備受惠資本支出爆棚、台灣年增率最高，長線可買，下禮拜還有機會續漲。</div><div class="cg-notes">2026/06/12 收256.00元，漲23.00 (+9.87%)，開247.50，高256.00，低241.00，量38521張。SMA5 228.10、SMA10 225.00、SMA20 214.35、SMA60 140.39。5/15至今漲80.3%，投信首度買超920張，大戶持股400張。另一檔6175立敦：2026/06/12收98.50元，跌4.40 (-4.27%)，開107.00，高109.00，低98.50，量15167張，4/17至今漲52.6%，立敦營收歷史新高，外資10天賣超3900多張</div>
 </div>
 <div class="stock-card">
   <div class="stock-header">
     <div class="stock-id">
-      <span class="stock-code">3131</span>
-      <span class="stock-name">弘塑</span>
+      <span class="stock-code">美光</span>
+      <span class="stock-name">美光</span>
     </div>
-    <div class="stock-right"><span class="rec-badge" style="color:#94a3b8;border-color:#94a3b840;background:#252830">觀望</span><span class="time-range">00:15:42 – 00:15:48</span></div>
+    <div class="stock-right"><span class="time-range">00:10:26 – 00:10:42</span></div>
   </div>
-  <div class="summary">之前講過的庫藏股換類股案例，高檔套牢是公司自己套牢，按均價現在還在均價之下，表示公司套牢。</div><div class="cg-notes">整合NVIDIA GPU等關鍵硬體與雲端等四大整合能力以迎接AI Agent；獲利增二位數，略優於去年Q4各月表現；殖利率5.61%，EPS約1.77元，今年EPS機會延續近似水準；公司庫藏股約1800張，均價約95.62元；股利5.5元，發放率約84%，現金殖利率約5.5%；年均收盤價106/年均現金殖利率5.21、4.11、4.39等。資料參考來源：goodinfo/三竹</div>
+  <div class="context">記憶體催化點，財報日期與目標價上調</div><div class="meta-row"><span class="meta-item">目標價 <strong>193</strong></span></div><div class="summary">6/24美光財報是記憶體族群催化點，目前市場上美光的訂單能見度尚未開出，一些外資機構已把Top Price往上調，鍾國忠視其為記憶體點火攻擊的關鍵時點。</div><div class="cg-notes">漲幅+37.6%；高檔相對套牢量較小；投資有風險，請謹慎評估</div>
 </div></div>
 </div>
 </div>
