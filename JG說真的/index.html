@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JG說真的 — 個股追蹤</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
+
+:root {
+  --bg:#0a0d14; --surface:#131720; --surface2:rgba(28,33,48,.5);
+  --border:#232839; --text:#e2e8f0; --muted:#64748b;
+  --accent:#7c6af5; --green:#22c55e;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);
+  font-family:'IBM Plex Sans',-apple-system,'Helvetica Neue',sans-serif;
+  padding:0 0 60px;min-height:100vh}
+
+.page-header{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px 20px;
+  border-bottom:1px solid var(--border);
+  background:rgba(10,13,20,.9);
+  backdrop-filter:blur(10px);
+  position:sticky;top:0;z-index:30;
+}
+.page-title{font-size:17px;font-weight:700;letter-spacing:-.01em}
+.page-sub{font-size:11px;color:var(--muted);margin-top:1px}
+.header-right{display:flex;align-items:center;gap:10px}
+.last-updated{font-size:11px;color:var(--muted);
+  font-family:'JetBrains Mono',monospace}
+.back-link{font-size:12px;color:var(--accent);text-decoration:none;opacity:.85;
+  transition:opacity .15s}
+.back-link:hover{opacity:1}
+
+.episodes{max-width:800px;margin:28px auto 0;
+  padding:0 16px;display:flex;flex-direction:column;gap:20px}
+
+.episode-card{background:var(--surface);border:1px solid var(--border);
+  border-radius:14px;padding:18px;
+  transition:border-color .2s,box-shadow .2s}
+.episode-card:hover{
+  border-color:rgba(124,106,245,.25);
+  box-shadow:0 4px 24px rgba(0,0,0,.35)}
+
+.episode-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
+.episode-date{font-size:13px;font-weight:600;color:var(--accent);
+  font-family:'JetBrains Mono',monospace}
+.yt-link{font-size:11px;color:var(--muted);text-decoration:none;
+  display:flex;align-items:center;gap:4px;
+  border:1px solid var(--border);padding:3px 9px;border-radius:5px;
+  transition:border-color .15s,color .15s}
+.yt-link:hover{color:var(--text);border-color:var(--accent)}
+.yt-dot{color:#ef4444;font-size:10px}
+.episode-title{font-size:12px;color:var(--muted);margin-bottom:14px;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+.ep-summary{font-size:12px;color:#c4cdd9;line-height:1.7;
+  margin-bottom:12px;padding:10px 13px;
+  background:rgba(255,255,255,.03);border-radius:8px;
+  border-left:2px solid var(--accent)}
+
+.market-view{display:flex;flex-direction:column;gap:5px;margin-bottom:12px}
+.mv-row{display:flex;gap:8px;align-items:flex-start;font-size:12px}
+.mv-label{flex-shrink:0;color:var(--accent);font-weight:600;
+  width:30px;padding-top:1px}
+.mv-text{color:#94a3b8;line-height:1.6}
+
+.themes{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:12px}
+.theme-chip{font-size:10px;padding:2px 9px;border-radius:10px;
+  background:rgba(124,106,245,.1);border:1px solid rgba(124,106,245,.25);
+  color:#a89bf7;font-weight:500}
+
+.section-div{height:1px;background:var(--border);margin-bottom:14px}
+
+.stock-list{display:flex;flex-direction:column;gap:8px}
+
+.stock-card{background:var(--surface2);border:1px solid var(--border);
+  border-radius:9px;padding:10px 13px;
+  transition:border-color .15s}
+.stock-card:hover{border-color:rgba(255,255,255,.12)}
+
+.stock-header{display:flex;align-items:flex-start;justify-content:space-between;
+  gap:8px;margin-bottom:4px}
+.stock-id{display:flex;align-items:center;gap:7px}
+.stock-code{font-size:13px;font-weight:600;color:var(--green);
+  font-family:'JetBrains Mono',monospace}
+.stock-name{font-size:13px;font-weight:600}
+.stock-right{display:flex;flex-direction:column;align-items:flex-end;gap:3px;flex-shrink:0}
+.rec-badge{font-size:10px;padding:2px 8px;border-radius:8px;
+  border:1px solid;font-weight:600;white-space:nowrap}
+.time-range{font-size:10px;color:var(--muted);white-space:nowrap;
+  font-family:'JetBrains Mono',monospace;font-weight:400}
+
+.context{font-size:11px;color:rgba(124,106,245,.7);margin-bottom:5px;font-style:italic}
+
+.meta-row{display:flex;gap:14px;margin:5px 0;flex-wrap:wrap}
+.meta-item{font-size:11px;color:var(--muted)}
+.meta-item strong{color:var(--text);font-family:'JetBrains Mono',monospace;font-weight:600}
+
+.summary{font-size:12px;color:#94a3b8;line-height:1.7;
+  margin-top:7px;padding-top:7px;border-top:1px solid var(--border)}
+.cg-notes{font-size:11px;color:var(--muted);margin-top:6px;
+  padding:5px 9px;background:rgba(255,255,255,.04);
+  border-radius:5px;border:1px solid var(--border)}
+
+.empty{color:var(--muted);text-align:center;padding:60px 0;font-size:14px}
+footer{max-width:800px;margin:32px auto 0;padding:0 16px;
+  font-size:11px;color:var(--muted);text-align:center}
+
+@media(max-width:480px){
+  .episodes{padding:0 10px;margin-top:20px}
+  .episode-card{padding:14px}
+  .page-header{padding:12px 14px}
+}
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <div class="header-left">
+    <div class="page-title">JG說真的</div>
+    <div class="page-sub">YouTube 會員直播 · 個股追蹤</div>
+  </div>
+  <div class="header-right">
+    <span class="last-updated">更新 2026-06-14</span>
+    <a class="back-link" href="../">← 回總覽</a>
+  </div>
+</div>
+
+<div class="episodes">
+<div class="episode-card">
+  <div class="episode-header">
+    <span class="episode-date">2026/06/11</span>
+    <a class="yt-link" href="https://www.youtube.com/watch?v=24pIf5fknEY" target="_blank" rel="noopener">
+      <span class="yt-dot">▶</span> 觀看影片
+    </a>
+  </div>
+  <div class="episode-title">2026.6.11 #288 甲骨文財報中的秘密產業</div>
+  <div class="ep-summary">JG回顧過去追蹤的AI與生技標的近況，並深入解析甲骨文法說會背後透露的AI資本支出趨勢，從電力、資料中心供應鏈找尋飆股。同時剖析GLP1減重藥的長期趨勢，認為保險化、口服化、價格下降將推升需求。核心觀念為布局長坡道產業，回檔多就買、回檔不夠就買強勢股。</div><div class="market-view"><div class="mv-row"><span class="mv-label">美股</span><span class="mv-text">近期股市下跌主因是殺估值，非股災級。熱錢與ETF資金龐大，經濟好、失業率低，就算下跌25%也難成股災。博通財報暗示資本支出沒那麼凶，是本波殺估值的暗示。戰爭與物價指數(4.2)暫不影響操作判斷。</span></div><div class="mv-row"><span class="mv-label">總經</span><span class="mv-text">全球化時代欧洲景氣不佳將下修經濟並可能升息，資金可能流向美國股市(股市如選美)。AI資本支出持續升高且方向一致，電力與資料中心供應鏈成為訂單焦點。GLP1為大型慢性病市場非網紅藥。</span></div></div><div class="themes"><span class="theme-chip">AI資料中心</span><span class="theme-chip">電力供應鏈</span><span class="theme-chip">記憶體HBM</span><span class="theme-chip">生技醫療GLP1</span><span class="theme-chip">衛星通訊</span><span class="theme-chip">資安</span></div><div class="section-div"></div>
+  <div class="stock-list"><div class="stock-card" style="border-left:3px solid #60a5fa">
+  <div class="stock-header">
+    <div class="stock-id">
+      <span class="stock-code">MU</span>
+      <span class="stock-name">MU</span>
+    </div>
+    <div class="stock-right"><span class="rec-badge" style="color:#60a5fa;border-color:#60a5fa40;background:#0c1a30">持有</span><span class="time-range">00:04:05 – 00:05:21</span></div>
+  </div>
+  <div class="context">回顧記憶體HBM必須需求廠商近況更新</div><div class="summary">美光是記憶體HBM必須需求廠商，6月底7月初將公布財報，肯定是好的不會不好。產能一直滿載，6月5號宣布要擴大產能，6月9號AI Server又多下訂單。從講解到現在已漲非常多，需求仍在。屬於必須需求廠商，財報應為正面。</div><div class="cg-notes">NASDAQ上市，日線圖。開88.60，高93.10，低87.12，收87.32，下跌1.39（-1.57%）。當前股價自高點約132回落，目前在87附近，前期高點約116-132形成壓力區，下方支撐約68-76區間</div>
+</div>
+<div class="stock-card" style="border-left:3px solid #60a5fa">
+  <div class="stock-header">
+    <div class="stock-id">
+      <span class="stock-code">APLD</span>
+      <span class="stock-name">APLD</span>
+    </div>
+    <div class="stock-right"><span class="rec-badge" style="color:#60a5fa;border-color:#60a5fa40;background:#0c1a30">持有</span><span class="time-range">00:05:22 – 00:06:18</span></div>
+  </div>
+  <div class="context">AI資料中心標的近況更新</div><div class="summary">APLD是AI資料中心公司，財報在7月底。5月初至今很強，在股災回檔時沒有感覺，短線挺強，但成交量與市值相對沒那麼大。6月9號有完成借款（暗鈴/借到錢），JG認為借到錢是好事，最近消息都是正面的。</div><div class="cg-notes">日線圖；當前下跌約-4.70%，最高1080附近後回落；近期高點約1080，從約917買入；圖中有一條水平支撐線位於約560-570區域；NASDAQ；計價單位USD；開盤905.13，最高957.46，最低883.25，收891.88</div>
+</div>
+<div class="stock-card" style="border-left:3px solid #f59e0b">
+  <div class="stock-header">
+    <div class="stock-id">
+      <span class="stock-code">ASTS</span>
+      <span class="stock-name">ASTS</span>
+    </div>
+    <div class="stock-right"><span class="rec-badge" style="color:#f59e0b;border-color:#f59e0b40;background:#231a07">等回測</span><span class="time-range">00:06:24 – 00:08:39</span></div>
+  </div>
+  <div class="context">跟著SpaceX的衛星通訊標的，剛好回檔</div><div class="meta-row"><span class="meta-item">支撐 <strong>11.2</strong></span></div><div class="summary">ASTS是跟著SpaceX的衛星通訊公司。先前在噴出最高點時提醒不要追，現在回檔了。7月會有Bluebird Block 2號發射，後續可能在Q3執行。看了SpaceX的S1招股書認為衛星通訊值得注意。若發射窗口順利，通訊有優勢。現落在大開大合位置。6月8號跌1%、6月9號跌3%，昨天美股大跌時它有撐，短線有力量，可能是SpaceX IPO在撐。</div><div class="cg-notes">開11.30 高11.40 低11.25 收11.40 +0.05 (+0.44%)；日線圖；近期自高點回落後反彈，目前價格位於11.40附近並接近近期高點區域</div>
+</div>
+<div class="stock-card" style="border-left:3px solid #475569">
+  <div class="stock-header">
+    <div class="stock-id">
+      <span class="stock-code">OKLO</span>
+      <span class="stock-name">OKLO</span>
+    </div>
+    <div class="stock-right"><span class="rec-badge" style="color:#94a3b8;border-color:#94a3b840;background:#1c2130">觀望</span><span class="time-range">00:08:40 – 00:09:48</span></div>
+  </div>
+  <div class="context">小型核能標的，7月可能宣布Aurora申請結果</div><div class="summary">Oklo是小型核能公司，7月可能宣布Aurora的申請許可結果。目前股價不太強，不想現在建倉因布局要等很久。基於反市場思維，寧願它的Aurora申請被打槍下跌後再買進。兩個理由：股價不強不想放錢、寧願被打槍後再進場。</div><div class="cg-notes">NASDAQ上市，1天線圖。開盤68.80，最高93.10，最低87.12，收盤87.32（-1.39，-1.57%）。圖表顯示近期股價大幅波動，曾達132附近高點後回落，目前處於回調階段</div>
+</div>
+<div class="stock-card" style="border-left:3px solid #4ade80">
+  <div class="stock-header">
+    <div class="stock-id">
+      <span class="stock-code">LLY</span>
+      <span class="stock-name">LLY</span>
+    </div>
+    <div class="stock-right"><span class="rec-badge" style="color:#4ade80;border-color:#4ade8040;background:#0f2318">推薦</span><span class="time-range">00:09:49 – 00:11:00</span></div>
+  </div>
+  <div class="context">禮來GLP1生技醫療，股價很強</div><div class="summary">禮來(里來)股價很強。FDA於6月10號批准失眠治療相關東西，產品一直被批准。7月有心臟衰竭適應症批准日期，若過將是強化。6月5號同時提高2026全年指引，原因就是GLP1需求。在股災時把一部分資金放到這邊沒問題。GLP1為核心成長動能。</div><div class="cg-notes">日線圖，當日下跌2.46 (-4.36%)；開55.43 高57.88 低53.33 收54.02；近期股價自高點回落，呈現下跌走勢，目前處於波段回檔階段</div>
+</div>
+<div class="stock-card" style="border-left:3px solid #475569">
+  <div class="stock-header">
+    <div class="stock-id">
+      <span class="stock-code">ABBV</span>
+      <span class="stock-name">ABBV</span>
+    </div>
+    <div class="stock-right"><span class="rec-badge" style="color:#94a3b8;border-color:#94a3b840;background:#1c2130">觀望</span><span class="time-range">00:11:01 – 00:11:59</span></div>
+  </div>
+  <div class="context">生技醫療，FDA不批准但股價反向上漲</div><div class="summary">ABBV(艾伯維)現在市場往上走不是好買點。6月10號FDA對其提出的臨床實驗發出CRL(不批准)，但股價還一直往上走，非常奇怪。本來預期不被批准會往下打可以買，結果不批准還往上走。JG將繼續追蹤這檔特別的標的。</div><div class="cg-notes">NYSE股票，當日下跌-4.36%(-2.46)，日線圖。當日高55.43、低53.83、收54.02。圖表顯示股價從高點回落後形成下降趨勢，近期反彈至約58後再度走弱。觀察名單中其他標的多為下跌（LLY、ABBV、AMGN、VRTX、DXCM、MU、APLD、ASTS、CAPR、SION皆綠跌，TSHA微漲）</div>
+</div>
+<div class="stock-card" style="border-left:3px solid #f59e0b">
+  <div class="stock-header">
+    <div class="stock-id">
+      <span class="stock-code">AMGN</span>
+      <span class="stock-name">AMGN</span>
+    </div>
+    <div class="stock-right"><span class="rec-badge" style="color:#f59e0b;border-color:#f59e0b40;background:#231a07">等回測</span><span class="time-range">00:11:58 – 00:13:29</span></div>
+  </div>
+  <div class="context">安進生技醫療，出現小回檔，7月有臨床數據</div><div class="summary">安進(AMGN)現在位置舒服，出現小小回檔。7月有第三期臨床實驗，可能7到9月批准，7月有醫療會議。第三期會披露數據好壞不重要，若是壞的就買。現在剛好有回檔，很樂意在此布一點小局去等。反市場觀念：已被打下來就買，沒被打下來就等被打下來再買。</div><div class="cg-notes">NYSE上市，日線圖。開盤226.93，最高227.14，最低224.12，收盤224.95，跌幅-0.21%（-0.47）。圖表時間框架為1天。價格自低位區（約190-200）反彈上行，近期在228附近遇阻回落，呈現箱型震盪後再度上攻型態</div>
+</div>
+<div class="stock-card" style="border-left:3px solid #60a5fa">
+  <div class="stock-header">
+    <div class="stock-id">
+      <span class="stock-code">VRTX</span>
+      <span class="stock-name">VRTX</span>
+    </div>
+    <div class="stock-right"><span class="rec-badge" style="color:#60a5fa;border-color:#60a5fa40;background:#0c1a30">持有</span><span class="time-range">00:13:30 – 00:14:43</span></div>
+  </div>
+  <div class="context">與AI強力掛鉤的生技公司，回檔期</div><div class="meta-row"><span class="meta-item">支撐 <strong>337.5</strong></span></div><div class="summary">VRTX目前在回檔期，市場崩盤時不像博通、高通那種有那麼多波動，反而沒有那種質感。目前沒有什麼消息。JG認為這是與AI強力掛鉤的生技醫療公司，是真的有綁定AI（非只是部門AI化），這點很重要。</div><div class="cg-notes">日線圖，當日下跌-1.98%，最高346.86，最低337.49，收337.73。股價從高點約390回落整理，近期約330-350區間震盪，340.41為買入參考價，336.00為賣出參考價</div>
+</div>
+<div class="stock-card" style="border-left:3px solid #60a5fa">
+  <div class="stock-header">
+    <div class="stock-id">
+      <span class="stock-code">DXCM</span>
+      <span class="stock-name">DXCM</span>
+    </div>
+    <div class="stock-right"><span class="rec-badge" style="color:#60a5fa;border-color:#60a5fa40;background:#0c1a30">持有</span><span class="time-range">00:14:44 – 00:15:30</span></div>
+  </div>
+  <div class="context">糖尿病系列產品，超級強</div><div class="meta-row"><span class="meta-item">支撐 <strong>430</strong></span></div><div class="summary">Dexcom(DXCM)超級強，糖尿病系列產品值得尊重。在股市崩盤時都不為所動。雖然從低檔往上漲了30%，但拉遠看不算高檔、不算太嚴重。還沒買的不要在此追高，不喜歡可以等。</div><div class="cg-notes">NASDAQ日線圖，當日下跌2.26%(-10.06)，開447.27，高447.50，低433.80，收435.71。價格接近430支撐位。從高點約530回落，呈下降趨勢。畫面右側清單顯示多檔股票，VRTX被選取。</div>
+</div>
+<div class="stock-card" style="border-left:3px solid #60a5fa">
+  <div class="stock-header">
+    <div class="stock-id">
+      <span class="stock-code">CRWD</span>
+      <span class="stock-name">CRWD</span>
+    </div>
+    <div class="stock-right"><span class="rec-badge" style="color:#60a5fa;border-color:#60a5fa40;background:#0c1a30">持有</span><span class="time-range">00:17:26 – 00:18:11</span></div>
+  </div>
+  <div class="context">資安股，2月底買進後大漲</div><div class="summary">CRWD從2月底買進，已漲一倍(100%)後回檔20%。從產業觀察坡道還很早。透過SpaceX IPO、甲骨文財報及各種財報交叉比對，認為坡道還非常長。甲骨文法說會顯示企業已從推論進入企業整合、企業代理階段，資安絕對坡道非常長。</div><div class="cg-notes">NASDAQ上市；當前下跌-4.37%（-3.42），開78.82，高78.91，低74.64，收74.77；日線圖；五月會員頻道觀察清單中其他標的包含LLY 1136.37、MU 891.88、ASTS 87.32等</div>
+</div>
+<div class="stock-card" style="border-left:3px solid #60a5fa">
+  <div class="stock-header">
+    <div class="stock-id">
+      <span class="stock-code">ORCL</span>
+      <span class="stock-name">ORCL</span>
+    </div>
+    <div class="stock-right"><span class="rec-badge" style="color:#60a5fa;border-color:#60a5fa40;background:#0c1a30">持有</span><span class="time-range">00:18:43 – 00:24:50</span></div>
+  </div>
+  <div class="context">甲骨文法說會解析，從中找出供應鏈飆股</div><div class="summary">甲骨文法說會重點不在云端成長，而是企業AI需求正把電力與資料中心供應鏈變成訂單。已簽約合約RPO達6300億，未來一定會花這筆云端支出。GPU沒有閒置、耗電不停。已從推論進入企業整合階段，資料庫成長400%。資本支出700億花在資料中心、電力、散熱、施工、電網。重點是找出接單的供應鏈公司，而非甲骨文股票本身。</div>
+</div>
+<div class="stock-card" style="border-left:3px solid #475569">
+  <div class="stock-header">
+    <div class="stock-id">
+      <span class="stock-code">FIX</span>
+      <span class="stock-name">FIX</span>
+    </div>
+    <div class="stock-right"><span class="rec-badge" style="color:#94a3b8;border-color:#94a3b840;background:#1c2130">觀望</span><span class="time-range">00:27:53 – 00:28:11</span></div>
+  </div>
+  <div class="context">甲骨文資本支出受惠的供應鏈名單</div><div class="summary">FIX是甲骨文資本支出採購金額分配的受惠供應鏈之一。沒說現在買，只是要理解這個世界運作。出現回檔時覺得和藹可親，只是回檔不夠多，或有更好的標的。一定要從產業供應鏈角度理解這些公司。</div><div class="cg-notes">1天線圖。開25010.25，高25380.00，低24673.00，收24983.50 (+0.93%)。價格從低點強勁反彈後創高，目前出現回檔修正。圖表symbol顯示為NASDAQ:AAVGO，右側觀察清單為五月會員頻道個股(LLY、ABBV、AMGN、VRTX、DXCM、MU、APLD、ASTS、OKLO、CAPR、SION、TSHA)，多數呈現下跌。</div>
+</div>
+<div class="stock-card" style="border-left:3px solid #60a5fa">
+  <div class="stock-header">
+    <div class="stock-id">
+      <span class="stock-code">VRT</span>
+      <span class="stock-name">VRT</span>
+    </div>
+    <div class="stock-right"><span class="rec-badge" style="color:#60a5fa;border-color:#60a5fa40;background:#0c1a30">持有</span><span class="time-range">00:31:48 – 00:33:00</span></div>
+  </div>
+  <div class="context">資料中心散熱供電供應鏈，先前已大漲</div><div class="meta-row"><span class="meta-item">目標價 <strong>374.3</strong></span><span class="meta-item">支撐 <strong>281.0</strong></span></div><div class="summary">VRT講過很久了，從幾塊講到現在，JG自己拉起來都賣光了，但有一個帳戶還留著。屬於甲骨文資本支出受惠的資料中心冷卻供電供應鏈。冷卻不是過去的議題，整天講不會停止。是配電與資料中心供應鏈重要標的。</div><div class="cg-notes">日線圖。近期高點約374，當前價格280.98下跌2.95%。從低點約30大幅上漲後回檔，目前測試280附近支撐位（橘色標示285/280.98區間）。356.23為上方阻力參考。整體呈強勢上升趨勢後的回調</div>
+</div>
+<div class="stock-card" style="border-left:3px solid #475569">
+  <div class="stock-header">
+    <div class="stock-id">
+      <span class="stock-code">ETN</span>
+      <span class="stock-name">ETN</span>
+    </div>
+    <div class="stock-right"><span class="rec-badge" style="color:#94a3b8;border-color:#94a3b840;background:#1c2130">觀望</span><span class="time-range">00:29:46 – 00:30:04</span></div>
+  </div>
+  <div class="context">電力相關供應鏈，回檔約10幾%</div><div class="meta-row"><span class="meta-item">支撐 <strong>655</strong></span></div><div class="summary">ETN(伊頓)回檔了百分之十幾，但JG覺得好像不夠過癮。是甲骨文資料中心受惠的電力供應鏈標的。一直強調想要買強勢股就是這個原因，回檔不夠多。</div><div class="cg-notes">NYSE上市，1天K線圖。開729.18，高729.71，收709.93，跌幅-0.59%。現價653.00/658.00買賣盤。圖表顯示股價從低點約100強勁上漲至高點約780後回落，目前在655附近震盪，前期高點780為阻力區。當日報價顯示-4.20。</div>
+</div>
+<div class="stock-card" style="border-left:3px solid #475569">
+  <div class="stock-header">
+    <div class="stock-id">
+      <span class="stock-code">PWR</span>
+      <span class="stock-name">PWR</span>
+    </div>
+    <div class="stock-right"><span class="rec-badge" style="color:#94a3b8;border-color:#94a3b840;background:#1c2130">觀望</span><span class="time-range">00:30:04 – 00:30:30</span></div>
+  </div>
+  <div class="context">電網施工供應鏈，回檔約16%剛好把跳空吃掉</div><div class="meta-row"><span class="meta-item">支撐 <strong>370</strong></span></div><div class="summary">PWR(廣達服務)回檔比較多，達16%，剛好把跳空吃掉。屬於比較有未來性的電網施工供應鏈標的。JG不只看甲骨文，還比對好幾間公司法說會，用甲骨文最新財報再確認這個趨勢。</div><div class="cg-notes">NYSE上市，當日下跌-26.26 (-6.54%)，開盤395.55，最高399.83，最低375.04，收375.46。價格自高點約430回落，目前測試370附近支撐區。賣出價381.40，買入價383.00。</div>
+</div>
+<div class="stock-card" style="border-left:3px solid #475569">
+  <div class="stock-header">
+    <div class="stock-id">
+      <span class="stock-code">BE</span>
+      <span class="stock-name">BE</span>
+    </div>
+    <div class="stock-right"><span class="rec-badge" style="color:#94a3b8;border-color:#94a3b840;background:#1c2130">觀望</span><span class="time-range">00:30:38 – 00:32:18</span></div>
+  </div>
+  <div class="context">燃料電池，現場部署電力</div><div class="meta-row"><span class="meta-item">支撐 <strong>230.6</strong></span></div><div class="summary">BE(B1，Bloom Energy)是燃料電池公司，當電網介入時會用到現場部署。股價不算很弱，回檔25%還OK。會追蹤其資料中心客戶揭露。若AI server客戶用公用電網而BE無法提供時會有問題，但缺電是世界的問題，不認為公用電網跟得上，所以看好。大家沒聽過可能不太感冒。</div><div class="cg-notes">NYSE 1天線圖。當日下跌 -9.78%（-25.38），開盤248.19，最高258.63，最低230.61，收234.23。股價自高點約316.87回落，近期創新高後出現回調，目前測試前波支撑區。右側自選股清單包含 LLY、ABBV、AMGN、VRTX、DXCM、MU、APLD、ASTS、OKLO、CAPR、SION、TSHA 等多檔下跌股票。</div>
+</div>
+<div class="stock-card" style="border-left:3px solid #475569">
+  <div class="stock-header">
+    <div class="stock-id">
+      <span class="stock-code">CEG</span>
+      <span class="stock-name">CEG</span>
+    </div>
+    <div class="stock-right"><span class="rec-badge" style="color:#94a3b8;border-color:#94a3b840;background:#1c2130">觀望</span><span class="time-range">00:31:37 – 00:31:48</span></div>
+  </div>
+  <div class="context">大型資料中心電力需求</div><div class="summary">CEG現在跌很慘，但JG認為大型資料中心還是需要的。屬於資料中心電力供應標的。</div>
+</div>
+<div class="stock-card" style="border-left:3px solid #f59e0b">
+  <div class="stock-header">
+    <div class="stock-id">
+      <span class="stock-code">CIEN</span>
+      <span class="stock-name">CIEN</span>
+    </div>
+    <div class="stock-right"><span class="rec-badge" style="color:#f59e0b;border-color:#f59e0b40;background:#231a07">等回測</span><span class="time-range">00:33:31 – 00:34:36</span></div>
+  </div>
+  <div class="context">光網路低延遲高頻寬互聯供應鏈，回檔30%</div><div class="meta-row"><span class="meta-item">支撐 <strong>400</strong></span></div><div class="summary">CIEN在光網路這塊，做低延遲高頻寬互聯，很重要。回檔30%，這種JG就喜歡了。絕對有未來性，看起來沒什麼大問題，只是遇到回檔。屬於甲骨文資料中心互聯供應鏈。針對近期有文章說光通訊沒那麼好，JG反駁，甲骨文與SpaceX都花錢在上面。</div><div class="cg-notes">NYSE上市，1天線圖。最新報價開376.00、高376.00、收385.26、漲15.21(+4.11%)。股價自低點長期上升趨勢後，近期自高點約690回落至385附近，出現明顯回調。當前價格434.65（圖右標示），需觀察400整數關卡支撐。買賣掛單437.00/446.00。</div>
+</div>
+<div class="stock-card" style="border-left:3px solid #4ade80">
+  <div class="stock-header">
+    <div class="stock-id">
+      <span class="stock-code">NVO</span>
+      <span class="stock-name">NVO</span>
+    </div>
+    <div class="stock-right"><span class="rec-badge" style="color:#4ade80;border-color:#4ade8040;background:#0f2318">推薦</span><span class="time-range">00:38:25 – 00:47:31</span></div>
+  </div>
+  <div class="context">GLP1減重藥長期趨勢，諾和諾德</div><div class="meta-row"><span class="meta-item">支撐 <strong>1133.5</strong></span></div><div class="summary">諾和諾德(諾汉諾德)是GLP1主要藥廠之一，很強。GLP1非減肥網紅藥，是大型慢性病/代謝疾病市場。2027後在美國可能口服化、保險化，價格下降反而擴大需求(如星鏈降價)。美國糖尿病患26.5%在用GLP1注射劑、成人每100人有6人在用，但約一半人覺得難以負擔。只要保險覆蓋與價格下降，使用率將增加。市場到2030估還有2.5-3倍空間。</div><div class="cg-notes">開1152.50 高1166.42 低1133.53 收1136.37 跌幅-0.73%(-8.31)。日線NYSE，價格接近近期高點1175附近回落，上方測試新高後出現回檔。下方支撐約1100整數關卡。MA移動平均線顯示上升趨勢。</div>
+</div>
+<div class="stock-card" style="border-left:3px solid #475569">
+  <div class="stock-header">
+    <div class="stock-id">
+      <span class="stock-code">VKTX</span>
+      <span class="stock-name">VKTX</span>
+    </div>
+    <div class="stock-right"><span class="rec-badge" style="color:#94a3b8;border-color:#94a3b840;background:#1c2130">觀望</span><span class="time-range">00:46:30 – 00:46:53</span></div>
+  </div>
+  <div class="context">GLP1口服與注射型新藥，臨床階段</div><div class="summary">VKTX(BKT)現在剛好在較低檔回檔位置。是口服與注射型GLP1藥物，還沒商業化但臨床蠻具吸引力。需注意臨床風險。若想拼很爆、一根拉起來的可以拼它，不然就拼其他下跌時防守型的標的。</div><div class="cg-notes">開442.00，高450.78，低424.45，收434.65，跌幅-1.07%(-4.69)；NYSE上市，日線圖。價格從高點約690回落，目前處於下跌調整階段</div>
+</div></div>
+</div>
+</div>
+
+<footer>僅供個人學習參考，不構成投資建議</footer>
+</body>
+</html>
