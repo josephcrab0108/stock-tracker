@@ -4,22 +4,23 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MimiVsJames｜2026-06-12 策略整理</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #0f1117;
-    --surface: #1a1d27;
-    --surface2: #22263a;
-    --border: #2e3248;
-    --text: #e2e4f0;
-    --muted: #8890b0;
-    --green: #3ddc84;
-    --green-bg: #1a2e22;
-    --yellow: #f5c518;
-    --yellow-bg: #2a2510;
-    --red: #ff6b6b;
-    --red-bg: #2a1515;
-    --blue: #5b8af5;
-    --blue-bg: #141c2e;
+    --bg: #0a0d14;
+    --surface: #131720;
+    --surface2: #1c2130;
+    --border: #232839;
+    --text: #e2e8f0;
+    --muted: #64748b;
+    --green: #22c55e;
+    --green-bg: #0f2318;
+    --yellow: #eab308;
+    --yellow-bg: #1f1a05;
+    --red: #ef4444;
+    --red-bg: #1f0909;
+    --blue: #3b82f6;
+    --blue-bg: #0c1526;
     --accent: #7c6af5;
   }
 
@@ -28,7 +29,7 @@
   body {
     background: var(--bg);
     color: var(--text);
-    font-family: -apple-system, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+    font-family: 'IBM Plex Sans', -apple-system, 'Helvetica Neue', Arial, sans-serif;
     font-size: 15px;
     line-height: 1.7;
     padding: 40px 20px 80px;
@@ -257,17 +258,43 @@
     font-size: 12px;
     color: var(--muted);
   }
+
+  /* Mono 數字 */
+  .price-now, .price-range {
+    font-family: 'IBM Plex Mono', monospace;
+  }
+
+  /* 頂部導覽 */
+  .top-nav {
+    margin-bottom: 28px;
+  }
+  .top-nav a {
+    font-size: 12px; color: var(--accent);
+    text-decoration: none; opacity: .8;
+    transition: opacity .15s;
+  }
+  .top-nav a:hover { opacity: 1; }
+
+  /* 手機 RWD */
+  @media (max-width: 480px) {
+    .overview-grid { grid-template-columns: 1fr; }
+    body { padding: 24px 14px 60px; }
+    .header h1 { font-size: 18px; }
+    .price-now { font-size: 17px; }
+  }
 </style>
 </head>
 <body>
 <div class="container">
 
+  <div class="top-nav"><a href="/">← 回總覽</a></div>
+
   <!-- Header -->
   <div class="header">
     <h1>MimiVsJames｜6 月即時策略整理</h1>
     <div class="meta">
-      <span>📅 整理日期：2026-06-12</span>
-      <span>📄 來源：Vocus 即時策略分享</span>
+      <span>整理日期：2026-06-12</span>
+      <span>來源：Vocus 即時策略分享</span>
       <span>6 篇文章（6/01–6/12）</span>
     </div>
   </div>

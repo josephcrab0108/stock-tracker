@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Joseph LifeOS — 投資筆記</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #0f1117;
-    --surface: #1a1d27;
-    --surface2: #20243380;
-    --border: #2a2d3a;
+    --bg: #0a0d14;
+    --surface: #131720;
+    --border: #232839;
     --text: #e2e8f0;
     --muted: #64748b;
     --accent: #7c6af5;
@@ -19,101 +19,140 @@
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
     background: var(--bg); color: var(--text);
-    font-family: -apple-system, 'Helvetica Neue', sans-serif;
+    font-family: 'IBM Plex Sans', -apple-system, 'Helvetica Neue', sans-serif;
     min-height: 100vh;
     display: flex; flex-direction: column;
     align-items: center; justify-content: center;
-    padding: 32px 24px;
+    padding: 40px 24px;
   }
 
-  .title { font-size: 26px; font-weight: 700; margin-bottom: 4px; }
-  .subtitle { color: var(--muted); font-size: 13px; margin-bottom: 48px; }
+  .logo {
+    display: flex; align-items: center; gap: 10px; margin-bottom: 6px;
+  }
+  .logo-icon {
+    width: 36px; height: 36px; border-radius: 10px;
+    background: linear-gradient(135deg, #7c6af5, #3b82f6);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .logo-icon svg { width: 18px; height: 18px; color: white; }
+  .title { font-size: 22px; font-weight: 700; letter-spacing: -.02em; }
+  .subtitle { color: var(--muted); font-size: 12px; margin-bottom: 40px; margin-left: 46px; }
 
   .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
+    gap: 16px;
     width: 100%;
     max-width: 740px;
   }
 
-  /* 市場卡片外框（非連結，只是容器） */
   .market-card {
     background: var(--surface);
     border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 22px 22px 16px;
+    border-radius: 16px;
+    padding: 20px 20px 16px;
+    transition: border-color .2s, box-shadow .2s;
+  }
+  .market-card:hover {
+    border-color: rgba(124,106,245,.3);
+    box-shadow: 0 4px 24px rgba(0,0,0,.4);
   }
 
-  .market-flag { font-size: 22px; margin-bottom: 10px; }
+  .market-header { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
 
-  .market-name {
-    font-size: 20px; font-weight: 700; margin-bottom: 4px;
+  .market-badge {
+    width: 42px; height: 42px; border-radius: 11px; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 15px; font-weight: 700; letter-spacing: -.02em;
   }
+  .market-badge.tw {
+    background: rgba(34,197,94,.1); color: var(--green);
+    border: 1px solid rgba(34,197,94,.2);
+  }
+  .market-badge.us {
+    background: rgba(59,130,246,.1); color: var(--blue);
+    border: 1px solid rgba(59,130,246,.2);
+  }
+
+  .market-info {}
+  .market-name { font-size: 17px; font-weight: 700; letter-spacing: -.01em; }
   .market-name.tw { color: var(--green); }
   .market-name.us { color: var(--blue); }
+  .market-desc { font-size: 11px; color: var(--muted); margin-top: 2px; line-height: 1.5; }
 
-  .market-desc {
-    font-size: 12px; color: var(--muted); line-height: 1.6;
-    margin-bottom: 18px;
-    padding-bottom: 16px;
-    border-bottom: 1px solid var(--border);
-  }
+  .divider { height: 1px; background: var(--border); margin-bottom: 12px; }
 
-  /* 子連結列表 */
-  .source-list { display: flex; flex-direction: column; gap: 8px; }
+  .source-list { display: flex; flex-direction: column; gap: 7px; }
 
   .source-link {
     display: flex; align-items: center; justify-content: space-between;
     text-decoration: none; color: var(--text);
-    background: var(--surface2);
+    background: rgba(255,255,255,.03);
     border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 10px 14px;
+    border-radius: 10px;
+    padding: 10px 13px;
     transition: border-color .15s, background .15s;
+    cursor: pointer;
   }
   .source-link:hover {
     border-color: var(--accent);
-    background: rgba(124,106,245,.07);
+    background: rgba(124,106,245,.06);
   }
 
-  .source-info { display: flex; flex-direction: column; gap: 2px; }
-  .source-name { font-size: 14px; font-weight: 600; }
-  .source-tags { display: flex; gap: 5px; margin-top: 3px; flex-wrap: wrap; }
+  .source-info { display: flex; flex-direction: column; gap: 4px; }
+  .source-name { font-size: 13px; font-weight: 600; }
+  .source-tags { display: flex; gap: 4px; flex-wrap: wrap; }
 
   .tag {
     font-size: 10px; padding: 1px 7px; border-radius: 8px; font-weight: 500;
-    background: rgba(124,106,245,.12); border: 1px solid rgba(124,106,245,.2);
-    color: var(--accent);
   }
   .tag.tw {
-    background: rgba(34,197,94,.1); border-color: rgba(34,197,94,.2); color: var(--green);
+    background: rgba(34,197,94,.08); border: 1px solid rgba(34,197,94,.18); color: var(--green);
   }
   .tag.us {
-    background: rgba(59,130,246,.1); border-color: rgba(59,130,246,.2); color: var(--blue);
+    background: rgba(59,130,246,.08); border: 1px solid rgba(59,130,246,.18); color: var(--blue);
   }
 
   .source-arrow {
-    font-size: 16px; color: var(--muted);
-    transition: color .15s, transform .15s;
-    flex-shrink: 0;
+    width: 22px; height: 22px; border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--muted); background: rgba(255,255,255,.04);
+    font-size: 14px; flex-shrink: 0;
+    transition: color .15s, background .15s, transform .15s;
   }
-  .source-link:hover .source-arrow { color: var(--accent); transform: translateX(2px); }
+  .source-link:hover .source-arrow {
+    color: var(--accent);
+    background: rgba(124,106,245,.1);
+    transform: translateX(2px);
+  }
 
-  footer { margin-top: 48px; color: var(--muted); font-size: 11px; }
+  footer { margin-top: 40px; color: var(--muted); font-size: 11px; }
 </style>
 </head>
 <body>
 
-<div class="title">Joseph LifeOS</div>
+<div class="logo">
+  <div class="logo-icon">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+      <polyline points="16 7 22 7 22 13"></polyline>
+    </svg>
+  </div>
+  <span class="title">Joseph LifeOS</span>
+</div>
 <div class="subtitle">投資分析筆記整合</div>
 
 <div class="grid">
 
   <div class="market-card">
-    <div class="market-flag">🇹🇼</div>
-    <div class="market-name tw">台股</div>
-    <div class="market-desc">籌碼追蹤 · 分點動向 · 主動 ETF 持股 · 題材熱度</div>
+    <div class="market-header">
+      <div class="market-badge tw">台</div>
+      <div class="market-info">
+        <div class="market-name tw">台股</div>
+        <div class="market-desc">籌碼追蹤 · 分點動向 · ETF 持股 · 節目個股</div>
+      </div>
+    </div>
+    <div class="divider"></div>
     <div class="source-list">
       <a class="source-link" href="云式籌碼/">
         <div class="source-info">
@@ -124,15 +163,31 @@
             <span class="tag tw">ETF 持股</span>
           </div>
         </div>
-        <span class="source-arrow">›</span>
+        <div class="source-arrow">›</div>
+      </a>
+      <a class="source-link" href="理財達人秀/">
+        <div class="source-info">
+          <span class="source-name">理財達人秀</span>
+          <div class="source-tags">
+            <span class="tag tw">個股分析</span>
+            <span class="tag tw">目標價</span>
+            <span class="tag tw">操作建議</span>
+          </div>
+        </div>
+        <div class="source-arrow">›</div>
       </a>
     </div>
   </div>
 
   <div class="market-card">
-    <div class="market-flag">🇺🇸</div>
-    <div class="market-name us">美股</div>
-    <div class="market-desc">即時策略 · 個股建議 · 進出場位置 · 大環境判斷</div>
+    <div class="market-header">
+      <div class="market-badge us">US</div>
+      <div class="market-info">
+        <div class="market-name us">美股</div>
+        <div class="market-desc">即時策略 · 個股建議 · 進出場位置 · 大環境判斷</div>
+      </div>
+    </div>
+    <div class="divider"></div>
     <div class="source-list">
       <a class="source-link" href="MimiVsJames/">
         <div class="source-info">
@@ -142,7 +197,7 @@
             <span class="tag us">進出場</span>
           </div>
         </div>
-        <span class="source-arrow">›</span>
+        <div class="source-arrow">›</div>
       </a>
     </div>
   </div>
