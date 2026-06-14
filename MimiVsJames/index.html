@@ -4,715 +4,1363 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MimiVsJames｜美股即時策略整理</title>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg: #0a0d14;
-    --surface: #131720;
-    --surface2: #1c2130;
-    --border: #232839;
-    --text: #e2e8f0;
-    --muted: #64748b;
-    --green: #22c55e;
-    --green-bg: #0f2318;
-    --yellow: #eab308;
-    --yellow-bg: #1f1a05;
-    --red: #ef4444;
-    --red-bg: #1f0909;
-    --blue: #3b82f6;
-    --blue-bg: #0c1526;
-    --accent: #7c6af5;
-  }
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
 
-  * { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg:      #0a0d14;
+  --surface: #131720;
+  --surface2: #1c2130;
+  --border:  #232839;
+  --text:    #e2e8f0;
+  --muted:   #64748b;
+  --accent:  #7c6af5;
+  --green:   #22c55e;
+  --yellow:  #eab308;
+  --red:     #ef4444;
+  --blue:    #3b82f6;
+}
 
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'IBM Plex Sans', -apple-system, 'Helvetica Neue', Arial, sans-serif;
-    font-size: 15px;
-    line-height: 1.7;
-    padding: 40px 20px 80px;
-  }
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
-  .container { max-width: 860px; margin: 0 auto; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'IBM Plex Sans', -apple-system, 'Helvetica Neue', sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+  padding: 0 20px 80px;
+}
+.mono { font-family: 'JetBrains Mono', monospace; }
 
-  /* Header */
-  .header {
-    border-left: 4px solid var(--accent);
-    padding-left: 18px;
-    margin-bottom: 40px;
-  }
-  .header h1 { font-size: 22px; font-weight: 700; color: #fff; }
-  .header .meta { color: var(--muted); font-size: 13px; margin-top: 6px; }
-  .header .meta span { margin-right: 16px; }
+/* Sticky header */
+.sticky-header {
+  position: sticky; top: 0; z-index: 40;
+  background: rgba(10,13,20,.88);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 12px 0;
+  margin: 0 -20px 32px;
+  padding-left: 20px;
+  display: flex; align-items: center; gap: 16px;
+}
+.sticky-header .back-link {
+  font-size: 12px; color: var(--accent);
+  text-decoration: none; opacity: .8;
+  transition: opacity .15s;
+}
+.sticky-header .back-link:hover { opacity: 1; }
+.sticky-header h2 { font-size: 15px; font-weight: 600; }
+.updated-chip { font-size: 11px; color: var(--muted); margin-left: auto; margin-right: 20px; }
 
-  /* Section */
-  .section { margin-bottom: 36px; }
-  .section-title {
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 14px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid var(--border);
-  }
+.container { max-width: 860px; margin: 0 auto; }
 
-  /* Market overview cards */
-  .overview-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-  }
-  @media (max-width: 600px) { .overview-grid { grid-template-columns: 1fr; } }
+/* Section title */
+.section-title {
+  font-size: 11px; font-weight: 600;
+  letter-spacing: .12em; text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
 
-  .overview-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 16px 18px;
-  }
-  .overview-card .card-title {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--accent);
-    margin-bottom: 8px;
-  }
-  .overview-card p { color: var(--muted); font-size: 13.5px; }
-  .overview-card strong { color: var(--text); }
+/* Card */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px 20px;
+  margin-bottom: 14px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color .2s, box-shadow .2s;
+}
+.card:hover {
+  border-color: rgba(124,106,245,.25);
+  box-shadow: 0 4px 24px rgba(0,0,0,.4);
+}
+.card::before {
+  content: ''; position: absolute;
+  left: 0; top: 0; bottom: 0; width: 4px;
+}
+.card.buy::before     { background: var(--green); }
+.card.watch::before   { background: var(--yellow); }
+.card.caution::before { background: var(--red); }
+.card.neutral::before { background: var(--blue); }
 
-  /* Stock cards */
-  .stock-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 18px 20px;
-    margin-bottom: 12px;
-    position: relative;
-    overflow: hidden;
-  }
-  .stock-card::before {
-    content: '';
-    position: absolute;
-    left: 0; top: 0; bottom: 0;
-    width: 4px;
-  }
-  .stock-card.buy::before     { background: var(--green); }
-  .stock-card.watch::before   { background: var(--yellow); }
-  .stock-card.caution::before { background: var(--red); }
-  .stock-card.neutral::before { background: var(--blue); }
+/* Card header */
+.card-header {
+  display: flex; align-items: flex-start;
+  justify-content: space-between; gap: 12px;
+  margin-bottom: 10px;
+}
+.ticker-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.ticker { font-size: 20px; font-weight: 600; color: #fff; }
+.stock-name { font-size: 13px; color: var(--muted); }
+.pri-chip {
+  font-size: 10px; font-weight: 600;
+  padding: 2px 8px; border-radius: 10px;
+  background: rgba(124,106,245,.12);
+  color: #a78bfa;
+  border: 1px solid rgba(124,106,245,.25);
+}
 
-  .stock-header {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    margin-bottom: 10px;
-    gap: 12px;
-  }
-  .stock-ticker {
-    font-size: 18px;
-    font-weight: 700;
-    color: #fff;
-  }
-  .stock-label {
-    font-size: 11px;
-    font-weight: 600;
-    padding: 3px 9px;
-    border-radius: 20px;
-    white-space: nowrap;
-  }
-  .label-buy     { background: var(--green-bg); color: var(--green); }
-  .label-watch   { background: var(--yellow-bg); color: var(--yellow); }
-  .label-caution { background: var(--red-bg); color: var(--red); }
-  .label-neutral { background: var(--blue-bg); color: var(--blue); }
+/* Badge */
+.badge {
+  font-size: 10px; font-weight: 600;
+  padding: 2px 8px; border-radius: 8px;
+  border: 1px solid; white-space: nowrap; flex-shrink: 0;
+}
+.badge-green  { color: var(--green); background: rgba(34,197,94,.1);  border-color: rgba(34,197,94,.25); }
+.badge-yellow { color: var(--yellow);background: rgba(234,179,8,.1);  border-color: rgba(234,179,8,.25); }
+.badge-red    { color: var(--red);   background: rgba(239,68,68,.1);  border-color: rgba(239,68,68,.25); }
+.badge-blue   { color: var(--blue);  background: rgba(59,130,246,.1); border-color: rgba(59,130,246,.25); }
+.badge-purple { color: #a78bfa;      background: rgba(167,139,250,.1);border-color: rgba(167,139,250,.25); }
 
-  .stock-price-row {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 12px;
-    flex-wrap: wrap;
-  }
-  .price-now {
-    font-size: 20px;
-    font-weight: 700;
-    color: #fff;
-  }
-  .price-range {
-    font-size: 12px;
-    color: var(--muted);
-    background: var(--surface2);
-    padding: 3px 8px;
-    border-radius: 5px;
-  }
+/* Verdict */
+.verdict {
+  display: inline-block;
+  font-size: 12px; font-weight: 600;
+  padding: 3px 10px; border-radius: 6px;
+  margin-bottom: 10px;
+}
+.verdict.correct { background: rgba(34,197,94,.1);  color: var(--green); }
+.verdict.waiting { background: rgba(234,179,8,.1);  color: var(--yellow); }
+.verdict.alert   { background: rgba(239,68,68,.1);  color: var(--red); }
+.verdict.rising  { background: rgba(59,130,246,.1); color: var(--blue); }
 
-  .verdict {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 13px;
-    font-weight: 600;
-    padding: 4px 10px;
-    border-radius: 6px;
-    margin-bottom: 12px;
-  }
-  .verdict.correct { background: var(--green-bg); color: var(--green); }
-  .verdict.waiting { background: var(--yellow-bg); color: var(--yellow); }
-  .verdict.alert   { background: var(--red-bg); color: var(--red); }
-  .verdict.rising  { background: var(--blue-bg); color: var(--blue); }
+/* Stock logic */
+.stock-logic { font-size: 13px; color: var(--muted); margin-bottom: 10px; }
 
-  .stock-body { font-size: 13.5px; color: var(--muted); }
-  .stock-body strong { color: var(--text); }
-  .stock-body ul { padding-left: 18px; margin-top: 6px; }
-  .stock-body li { margin-bottom: 4px; }
-  .entry-hint {
-    margin-top: 10px;
-    padding: 8px 12px;
-    background: var(--surface2);
-    border-radius: 6px;
-    font-size: 13px;
-    color: var(--text);
-  }
-  .entry-hint .label { color: var(--muted); font-size: 12px; display: block; margin-bottom: 2px; }
+/* Price chips */
+.price-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+.price-chip {
+  font-size: 12px; font-family: 'JetBrains Mono', monospace;
+  padding: 4px 10px; border-radius: 6px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+.chip-label { font-size: 10px; font-weight: 400; color: var(--muted); margin-right: 5px; }
 
-  /* Principles */
-  .principle-list { list-style: none; }
-  .principle-list li {
-    display: flex;
-    gap: 12px;
-    padding: 10px 0;
-    border-bottom: 1px solid var(--border);
-    font-size: 13.5px;
-    color: var(--muted);
-  }
-  .principle-list li:last-child { border-bottom: none; }
-  .principle-list li strong { color: var(--text); }
-  .principle-num {
-    flex-shrink: 0;
-    width: 22px;
-    height: 22px;
-    border-radius: 50%;
-    background: var(--surface2);
-    color: var(--accent);
-    font-size: 12px;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 2px;
-  }
+/* TradingView */
+.tv-wrap {
+  margin-top: 14px;
+  border-top: 1px solid var(--border);
+  padding-top: 6px;
+  height: 220px;
+}
+.tv-wrap .tradingview-widget-container,
+.tv-wrap .tradingview-widget-container__widget { height: 100%; width: 100%; }
 
-  /* Watch indicators */
-  .watch-pills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 8px;
-  }
-  .pill {
-    font-size: 12px;
-    padding: 4px 10px;
-    border-radius: 20px;
-    background: var(--surface2);
-    border: 1px solid var(--border);
-    color: var(--text);
-  }
+/* Context fold */
+.context-fold {
+  margin-top: 14px;
+  border-top: 1px solid var(--border);
+  padding-top: 10px;
+}
+.context-toggle {
+  font-size: 12px; color: var(--muted);
+  cursor: pointer; list-style: none;
+  transition: color .15s;
+}
+.context-toggle:hover { color: var(--accent); }
+.context-fold[open] .context-toggle { color: var(--accent); }
 
-  /* TradingView chart */
-  .tv-chart-wrap {
-    margin-top: 16px;
-    border-top: 1px solid var(--border);
-    padding-top: 4px;
-    height: 230px;
-  }
-  .tv-chart-wrap .tradingview-widget-container,
-  .tv-chart-wrap .tradingview-widget-container__widget {
-    height: 100%;
-    width: 100%;
-  }
+.context-body { margin-top: 10px; }
+.mention-item {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+.mention-item:last-child { border-bottom: none; }
+.mention-meta {
+  display: flex; align-items: center; gap: 8px;
+  flex-wrap: wrap; margin-bottom: 6px;
+}
+.date-chip {
+  font-size: 10px; font-weight: 400;
+  color: var(--muted);
+}
+.art-link { font-size: 12px; color: var(--accent); text-decoration: none; }
+.art-link:hover { text-decoration: underline; }
 
-  /* Footer */
-  .footer {
-    margin-top: 48px;
-    padding-top: 16px;
-    border-top: 1px solid var(--border);
-    font-size: 12px;
-    color: var(--muted);
-  }
+.mention-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.ml-key { color: var(--muted); padding: 2px 8px 2px 0; width: 52px; vertical-align: top; }
+.ml-val { color: var(--text); padding: 2px 0; }
 
-  /* Mono 數字 */
-  .price-now, .price-range {
-    font-family: 'IBM Plex Mono', monospace;
-  }
+/* Sector signals */
+.signals-row {
+  display: flex; gap: 10px; flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+.sig-chip {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 14px;
+  min-width: 110px;
+  transition: border-color .2s;
+}
+.sig-chip:hover { border-color: rgba(124,106,245,.3); }
+.sig-etf { font-size: 15px; font-weight: 600; color: #fff; }
+.sig-name { font-size: 10px; color: var(--muted); margin: 2px 0 4px; }
+.sig-dir { font-size: 11px; font-weight: 600; }
+.sig-bull .sig-dir { color: var(--green); }
+.sig-bear .sig-dir { color: var(--red); }
+.sig-neutral .sig-dir { color: var(--muted); }
+.sig-bull { border-left: 3px solid var(--green); }
+.sig-bear { border-left: 3px solid var(--red); }
+.sig-neutral { border-left: 3px solid var(--muted); }
+.sig-related { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 6px; }
+.rel-tick {
+  font-size: 10px; font-weight: 400;
+  padding: 1px 5px; border-radius: 4px;
+  background: var(--surface2);
+  color: var(--muted);
+}
 
-  /* 頂部導覽 */
-  .top-nav {
-    margin-bottom: 28px;
-  }
-  .top-nav a {
-    font-size: 12px; color: var(--accent);
-    text-decoration: none; opacity: .8;
-    transition: opacity .15s;
-  }
-  .top-nav a:hover { opacity: 1; }
+/* Summary card (筆記) */
+.summary-title { font-size: 14px; font-weight: 600; color: var(--text); margin-top: 4px; }
+.summary-list { list-style: none; margin: 10px 0; font-size: 12px; color: var(--muted); }
+.summary-list li { padding: 4px 0; border-bottom: 1px solid var(--border); }
+.summary-list li:last-child { border-bottom: none; }
+.summary-list strong { color: var(--text); }
 
-  /* 手機 RWD */
-  @media (max-width: 480px) {
-    .overview-grid { grid-template-columns: 1fr; }
-    body { padding: 24px 14px 60px; }
-    .header h1 { font-size: 18px; }
-    .price-now { font-size: 17px; }
-  }
+/* Watch pills */
+.watch-pills { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.pill {
+  font-size: 11px; padding: 3px 9px; border-radius: 20px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+/* Footer */
+.footer {
+  margin-top: 48px; padding-top: 16px;
+  border-top: 1px solid var(--border);
+  font-size: 11px; color: var(--muted);
+}
+
+/* RWD */
+@media (max-width: 480px) {
+  body { padding: 0 12px 60px; }
+  .sticky-header { padding-left: 12px; }
+  .card { padding: 14px 14px; }
+  .ticker { font-size: 17px; }
+  .signals-row .sig-chip { min-width: 90px; }
+}
 </style>
 </head>
 <body>
+
+<header class="sticky-header">
+  <a href="../" class="back-link">← 回總覽</a>
+  <h2>MimiVsJames 美股策略</h2>
+  <span class="updated-chip mono">2026-06-01 – 2026-06-14 · 更新 2026-06-14 18:35</span>
+</header>
+
 <div class="container">
 
-  <div class="top-nav"><a href="/">← 回總覽</a></div>
-
-
-
-  <!-- 文章 1：2026-06-01 -->
-  <div class="header">
-    <h1><a href="https://vocus.cc/article/6a1cb67ffd89780001396662" target="_blank" style="color:inherit;text-decoration:none;">WWDC 2026 倒數：史上最重要的一場蘋果大秀，我們推薦的「蘋果」短線已「大獲全勝」，接下來才是重點 ↗</a></h1>
-    <div class="meta">
-      <span>整理日期：2026-06-01</span>
-      <span>來源：Vocus 美股即時策略分享</span>
-      <span>第 4 篇</span>
-    </div>
-  </div>
-
-  <div class="section">
-    <div class="section-title">大環境判斷</div>
-    <div class="overview-grid">
-      <div class="overview-card">
-        <div class="card-title">本週雙主軸：WWDC + 重點財報週</div>
-        <p>本週真正要看的是 WWDC 2026 和大科技財報（AVGO/PANW/CRWD/HPE），加上 6/5 非農數據，共同對短線高檔進行價格壓力測試，決定 AI 硬體、軟體與大型科技股是輪動還是整理。</p>
+<section class="section">
+    <div class="section-title">板塊訊號</div>
+    <div class="signals-row"><div class="sig-chip sig-neutral">
+        <div class="sig-etf mono">SOXX</div>
+        <div class="sig-name">費城半導體</div>
+        <div class="sig-dir">→ 中性</div>
+        <div class="sig-related"><span class="rel-tick mono">AMAT</span><span class="rel-tick mono">ASML</span><span class="rel-tick mono">LRCX</span><span class="rel-tick mono">KLAC</span></div>
+      </div><div class="sig-chip sig-bear">
+        <div class="sig-etf mono">QQQ</div>
+        <div class="sig-name">那斯達克100</div>
+        <div class="sig-dir">↓ 弱勢</div>
+        <div class="sig-related"><span class="rel-tick mono">NVDA</span></div>
+      </div><div class="sig-chip sig-bull">
+        <div class="sig-etf mono">XLV</div>
+        <div class="sig-name">醫療保健</div>
+        <div class="sig-dir">↑ 強勢</div>
+        <div class="sig-related"><span class="rel-tick mono">LLY</span><span class="rel-tick mono">ABBV</span><span class="rel-tick mono">UNH</span><span class="rel-tick mono">JNJ</span></div>
+      </div><div class="sig-chip sig-bear">
+        <div class="sig-etf mono">XBI</div>
+        <div class="sig-name">生技（中小型）</div>
+        <div class="sig-dir">↓ 弱勢</div>
+        
+      </div></div>
+  </section>
+<section class="section">
+    <div class="section-title">建議買入（10 檔）</div>
+    <div class="card buy">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">ABBV</span>
+          <span class="stock-name">AbbVie</span>
+          <span class="pri-chip">第一順位／核心</span>
+        </div>
+        <span class="badge badge-green">買入</span>
       </div>
-      <div class="overview-card">
-        <div class="card-title">蘋果事件已 price in，只剩符合預期或不如預期</div>
-        <p>WWDC 驚喜已提前洩漏，資訊對稱下幾乎不可能出現「驚喜」選項。歷史上 AAPL 發表會前一個月平均 +5.2%，WWDC 當週平均 -5.4%，吃的是事件前漲、事件後修正的價差。</p>
-      </div>
-      <div class="overview-card">
-        <div class="card-title">AI 硬體短線催化劑可能接近尾聲</div>
-        <p>AI 硬體經一輪強勢行情後短線可能休息（有可能在 Rubin 出貨前），接下來觀察軟體股、量子電腦與太空板塊是否接棒輪動。</p>
-      </div>
-      <div class="overview-card">
-        <div class="card-title">Siri 2.0 真正重點是 Apple 把 AI 外包給 Google</div>
-        <p>前沿大語言模型門檻高到連 Apple 都要借助 Google Gemini，反映 Google 在模型層與雲端 AI 的戰略地位。但『數億 iPhone 用 Gemini → Google 大賺』的推論是錯的，蘋果模型跑在自家私有雲，非直接金流。</p>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="section">
-    <div class="section-title">觀察名單</div>
-    
-    <div class="stock-card watch">
-      <div class="stock-header">
-        <div class="stock-ticker">AVGO <span style="font-size:14px;font-weight:400;color:var(--muted)">Broadcom</span></div>
-        <span class="stock-label label-watch">觀察</span>
-      </div>
-      <div class="verdict alert">⚠️ 財報好但可能不漲，賣事實風險</div>
-
-      <div class="stock-body"><ul><li>Google TPU 與客製 AI 晶片重要收費站，730 億美元在手訂單，需求端要多少有多少，但供給瓶頸在台積電先進製程與封裝。財報關鍵不是 beat（幾乎一定超預期），而是高位能否再被推升。</li></ul>
-<div class="entry-hint"><span class="label">目標區間</span>支撐區守 400，跌破 400 才比較危險</div>
-</div>
       
-      <div class="tv-chart-wrap">
+      <p class="stock-logic">乾淨的低久期＋現金流，估值較低（前瞻本益比 16 倍，2026 EPS 指引 14.08-14.28 元、EPS 小幅上修），估值保護跟成長同時存在，靠業績後面的成長。</p>
+      <div class="price-row"><span class="price-chip"><span class="chip-label">進場</span>等回踩，不要連漲後追，分批不一次買滿</span></div>
+      <div class="tv-wrap">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-          {{"symbol":"NASDAQ:AVGO","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{{"id":"MASimple@tv-basicstudies","inputs":{{"length":10}}}}],"width":"100%","height":230}}
+          {"symbol":"NYSE:ABBV","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
           </script>
         </div>
       </div>
-    </div>
-    <div class="stock-card watch">
-      <div class="stock-header">
-        <div class="stock-ticker">GOOGL <span style="font-size:14px;font-weight:400;color:var(--muted)">Alphabet</span></div>
-        <span class="stock-label label-watch">觀察</span>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-06-07</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://vocus.cc/article/6a24b01bfd897800012902d3" target="_blank" class="art-link">美股大跌後，「短線」有利的第三種選擇：從降息交易到升息預期：費半暴跌後，資金輪動的方向 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">第一順位／核心</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">乾淨的低久期＋現金流，估值較低（前瞻本益比 16 倍，2026 EPS 指引 14.08-14.28 元、EPS 小幅上修），估值保護跟成長同時存在，靠業績後面的成長。</td></tr><tr><td class="ml-key">進場</td><td class="ml-val">等回踩，不要連漲後追，分批不一次買滿</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">資金配置建議 ABBV 六成，記得留資金買低點的AI硬體股</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card buy">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">LLY</span>
+          <span class="stock-name">Eli Lilly</span>
+          <span class="pri-chip">第二順位／進攻</span>
+        </div>
+        <span class="badge badge-green">買入</span>
       </div>
-      <div class="verdict rising">📈 模型層戰略地位受惠長線趨勢</div>
-
-      <div class="stock-body"><ul><li>前沿模型層與雲端 AI 戰略地位提升，Apple 透過 Gemini 補 AI 缺口。但市場『iPhone 用 Gemini → Google 流量炸裂』邏輯被作者認為推論錯誤（蘋果模型跑自家私有雲）。</li></ul>
-</div>
       
-      <div class="tv-chart-wrap">
+      <p class="stock-logic">成長性動能最強，Mounjaro 與 Zepbound 兩台減肥藥印鈔機。上修最猛（2026 EPS 指引 35.5-37 元、中位 36.25，營收+EPS 雙上修），但前瞻本益比 31.2 倍、容錯空間最小，走垂直整合 AI 路線。風險為藥品集中度高。</p>
+      <div class="price-row"><span class="price-chip"><span class="chip-label">進場</span>分批、不一次買滿</span></div>
+      <div class="tv-wrap">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-          {{"symbol":"NASDAQ:GOOGL","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{{"id":"MASimple@tv-basicstudies","inputs":{{"length":10}}}}],"width":"100%","height":230}}
+          {"symbol":"NYSE:LLY","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
           </script>
         </div>
       </div>
-    </div>
-  </div>
-
-  <div class="section">
-    <div class="section-title">保護獲利 / 警示</div>
-    
-    <div class="stock-card caution">
-      <div class="stock-header">
-        <div class="stock-ticker">AAPL <span style="font-size:14px;font-weight:400;color:var(--muted)">Apple</span></div>
-        <span class="stock-label label-caution">警示</span>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-06-07</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://vocus.cc/article/6a24b01bfd897800012902d3" target="_blank" class="art-link">美股大跌後，「短線」有利的第三種選擇：從降息交易到升息預期：費半暴跌後，資金輪動的方向 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">第二順位／進攻</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">成長性動能最強，Mounjaro 與 Zepbound 兩台減肥藥印鈔機。上修最猛（2026 EPS 指引 35.5-37 元、中位 36.25，營收+EPS 雙上修），但前瞻本益比 31.2 倍、容錯空間最小，走垂直整合 AI 路線。風險為藥品集中度高。</td></tr><tr><td class="ml-key">進場</td><td class="ml-val">分批、不一次買滿</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">資金配置建議 LLY 四成，負責進攻</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card buy">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">UCTT</span>
+          <span class="stock-name">Ultra Clean Holdings</span>
+          <span class="pri-chip">重申買進</span>
+        </div>
+        <span class="badge badge-green">買入</span>
       </div>
-      <div class="verdict correct">✅ 短線大獲全勝，現在保護獲利</div>
-
-      <div class="stock-body"><ul><li>WWDC 前股價已大幅反映 Siri 2.0 與 Apple Intelligence 預期，買消息賣事實風險高。日線顯示區間 268-310 整理。建議分批落袋為安，不盲目追高。</li></ul>
-<ul><li>賣一半 → 破 10MA 再砍一半 → 破 20MA 全清，一層一層往下</li></ul>
-</div>
       
-      <div class="tv-chart-wrap">
+      <p class="stock-logic">設備模組與外包製造，二階供應鏈受惠Build Plan傳導，營運槓桿擴增，股價彈性高於設備龍頭，前一輪景氣低潮有較低基期</p>
+      <div class="price-row"></div>
+      <div class="tv-wrap">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-          {{"symbol":"NASDAQ:AAPL","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{{"id":"MASimple@tv-basicstudies","inputs":{{"length":10}}}}],"width":"100%","height":230}}
+          {"symbol":"NASDAQ:UCTT","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
           </script>
         </div>
       </div>
-    </div>
-    <div class="stock-card caution">
-      <div class="stock-header">
-        <div class="stock-ticker">PANW <span style="font-size:14px;font-weight:400;color:var(--muted)">Palo Alto Networks</span></div>
-        <span class="stock-label label-caution">警示</span>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-06-14</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://vocus.cc/article/6a2e5d15fd897800015c4b76" target="_blank" class="art-link">個股推薦：費半大跌，但它們相對抗跌，當Rubin即將出貨，股價創高的卻不是NVDA，華爾街在半導體「 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">重申買進</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">設備模組與外包製造，二階供應鏈受惠Build Plan傳導，營運槓桿擴增，股價彈性高於設備龍頭，前一輪景氣低潮有較低基期</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">之前講過，重申買進</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card buy">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">ICHR</span>
+          <span class="stock-name">Ichor Holdings</span>
+          <span class="pri-chip">重申買進</span>
+        </div>
+        <span class="badge badge-green">買入</span>
       </div>
-      <div class="verdict alert">⚠️ 財報前先了結一半以上</div>
-
-      <div class="stock-body"><ul><li>資安雙雄之一，財報前不要追高。建議財報前先出場一趟，至少了結一半以上，或設立移動止贏單。</li></ul>
-<ul><li>財報前落袋為安，設移動止盈單</li></ul>
-</div>
       
-      <div class="tv-chart-wrap">
+      <p class="stock-logic">氣體與流體輸送系統，二階供應鏈受惠設備訂單從晶圓廠傳導，營運槓桿高、具低基期</p>
+      <div class="price-row"></div>
+      <div class="tv-wrap">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-          {{"symbol":"NASDAQ:PANW","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{{"id":"MASimple@tv-basicstudies","inputs":{{"length":10}}}}],"width":"100%","height":230}}
+          {"symbol":"NASDAQ:ICHR","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
           </script>
         </div>
       </div>
-    </div>
-    <div class="stock-card caution">
-      <div class="stock-header">
-        <div class="stock-ticker">CRWD <span style="font-size:14px;font-weight:400;color:var(--muted)">CrowdStrike</span></div>
-        <span class="stock-label label-caution">警示</span>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-06-14</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://vocus.cc/article/6a2e5d15fd897800015c4b76" target="_blank" class="art-link">個股推薦：費半大跌，但它們相對抗跌，當Rubin即將出貨，股價創高的卻不是NVDA，華爾街在半導體「 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">重申買進</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">氣體與流體輸送系統，二階供應鏈受惠設備訂單從晶圓廠傳導，營運槓桿高、具低基期</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">之前講過，重申買進</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card buy">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">MKSI</span>
+          <span class="stock-name">MKS Instruments</span>
+          <span class="pri-chip">重申買進</span>
+        </div>
+        <span class="badge badge-green">買入</span>
       </div>
-      <div class="verdict alert">⚠️ 財報前先了結一半以上</div>
-
-      <div class="stock-body"><ul><li>資安雙雄之一，財報前不要追高。建議財報前先出場一趟，至少了結一半以上，或設立移動止贏單。</li></ul>
-<ul><li>財報前落袋為安，設移動止盈單</li></ul>
-</div>
       
-      <div class="tv-chart-wrap">
+      <p class="stock-logic">WFE週期的平台供應商，二階供應鏈受惠Build Plan傳導與EPS槓桿</p>
+      <div class="price-row"></div>
+      <div class="tv-wrap">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-          {{"symbol":"NASDAQ:CRWD","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{{"id":"MASimple@tv-basicstudies","inputs":{{"length":10}}}}],"width":"100%","height":230}}
+          {"symbol":"NASDAQ:MKSI","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
           </script>
         </div>
       </div>
-    </div>
-  </div>
-
-  <div class="section">
-    <div class="section-title">操作心態</div>
-    <ul class="principle-list"><li><span class="principle-num">1</span><div>事件 price in 又資訊對稱時，結果只剩符合預期或不如預期，沒有驚喜</div></li><li><span class="principle-num">2</span><div>財報前不要追高，反而要落袋為安</div></li><li><span class="principle-num">3</span><div>止盈單 = 只贏單，只會贏的單</div></li><li><span class="principle-num">4</span><div>分層退出：賣一半 → 破 10MA 砍一半 → 破 20MA 全清</div></li><li><span class="principle-num">5</span><div>好消息是否已定價，是高檔財報股最大風險</div></li></ul>
-  </div>
-
-  <div class="section">
-    <div class="section-title">主要主題</div>
-    <div class="watch-pills"><span class="pill">WWDC 事件交易</span><span class="pill">AI 硬體輪動到軟體</span><span class="pill">AI 變現層</span><span class="pill">量子電腦</span><span class="pill">太空板塊</span><span class="pill">資安股財報</span></div>
-  </div>
-
-<hr style="border:none;border-top:1px solid var(--border);margin:48px 0;">
-  <!-- 文章 2：2026-06-04 -->
-  <div class="header">
-    <h1><a href="https://vocus.cc/article/6a211dc1fd89780001a77457" target="_blank" style="color:inherit;text-decoration:none;">AVGO 財報其實不錯，但盤後還是大跌？市場在擔心什麼？從 AI 晶片、VMware 到毛利率的關鍵 ↗</a></h1>
-    <div class="meta">
-      <span>整理日期：2026-06-04</span>
-      <span>來源：Vocus 美股即時策略分享</span>
-      <span>第 3 篇</span>
-    </div>
-  </div>
-
-  <div class="section">
-    <div class="section-title">大環境判斷</div>
-    <div class="overview-grid">
-      <div class="overview-card">
-        <div class="card-title">AI 硬體催化劑用完，財報好也大跌</div>
-        <p>AVGO 盤後大跌不是因為財報差，而是市場期望值被拉太高。Q2 營收 221.9 億、EPS 2.44、AI 半導體營收 108 億（YoY 翻倍），半導體部門 YoY 79%，總營收 YoY 48% 創新高，但仍因『差一點點』遭重懲。</p>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-06-14</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://vocus.cc/article/6a2e5d15fd897800015c4b76" target="_blank" class="art-link">個股推薦：費半大跌，但它們相對抗跌，當Rubin即將出貨，股價創高的卻不是NVDA，華爾街在半導體「 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">重申買進</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">WFE週期的平台供應商，二階供應鏈受惠Build Plan傳導與EPS槓桿</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">之前講過，重申買進</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card buy">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">NPO</span>
+          <span class="stock-name">Enpro</span>
+          <span class="pri-chip">今日新增推薦</span>
+        </div>
+        <span class="badge badge-green">買入</span>
       </div>
-      <div class="overview-card">
-        <div class="card-title">沒上修 2027 目標是盤後跌幅擴大主因</div>
-        <p>電話會議後跌幅擴大，市場失望的不是 Q2 數字，而是公司只重申 2027 年 AI 晶片營收超過 1000 億，沒進一步上修。對被定價為 AI ASIC 大贏家的 AVGO，『維持目標』被解讀成成長未加速，反映『賣事實』走勢。</p>
-      </div>
-      <div class="overview-card">
-        <div class="card-title">敘事從整合系統退回只賣晶片</div>
-        <p>AVGO 將敘事從『完整整合式 AI 系統』退回『只賣晶片』。賣系統營收更高但毛利低；只賣晶片利於保毛利率，卻壓縮營收規模與 2027 上修想像空間，敘事反轉導致盤後擴大下跌。</p>
-      </div>
-      <div class="overview-card">
-        <div class="card-title">毛利結構惡化：高毛利軟體放緩、低毛利 ASIC 主導</div>
-        <p>VMware 所屬基礎設施軟體毛利率高但成長正常化，本季營收 71.8 億 YoY 9%，低於預期的 73.2 億。整合後訂閱轉換與成本優化紅利已過最佳階段，毛利率高的減速、毛利率低的 AI ASIC 增加。</p>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="section">
-    <div class="section-title">觀察名單</div>
-    
-    <div class="stock-card watch">
-      <div class="stock-header">
-        <div class="stock-ticker">AVGO <span style="font-size:14px;font-weight:400;color:var(--muted)">Broadcom</span></div>
-        <span class="stock-label label-watch">觀察</span>
-      </div>
-      <div class="verdict alert">⚠️ 估值偏高、AI 交易擁擠，敘事退回只賣晶片，盤後大跌</div>
-
-      <div class="stock-body"><ul><li>Q2 營收 221.9 億、EPS 2.44、AI 半導體 108 億（YoY 翻倍），半導體部門 YoY 79%，總營收 YoY 48% 創新高。Q3 AI 半導體指引 160 億略低於預期 163.6 億。2027 AI 晶片營收維持超過 1000 億未上修。VMware 軟體 71.8 億 YoY 9% 低於預期。強項：高效能核心、SerDes、封裝；客戶含 Google（訓練）、META MTIA、OpenAI、Anthropic。長線地位仍穩固但短線敘事反轉與毛利壓力造成賣壓。</li></ul>
-</div>
       
-      <div class="tv-chart-wrap">
+      <p class="stock-logic">美股中少數與AMAT與ASML連結的二階供應鏈概念股，清洗、塗層與翻修具售後市場特性，當設備裝機基數提高、使用時間拉長，後續服務需求增加。半導體僅占部分收入，穩定性比UCTT和ICHR相對較高，股價屬穩定波段向上</p>
+      <div class="price-row"></div>
+      <div class="tv-wrap">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-          {{"symbol":"NASDAQ:AVGO","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{{"id":"MASimple@tv-basicstudies","inputs":{{"length":10}}}}],"width":"100%","height":230}}
+          {"symbol":"NYSE:NPO","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
           </script>
         </div>
       </div>
-    </div>
-    <div class="stock-card watch">
-      <div class="stock-header">
-        <div class="stock-ticker">MRVL <span style="font-size:14px;font-weight:400;color:var(--muted)">Marvell</span></div>
-        <span class="stock-label label-watch">觀察</span>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-06-14</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://vocus.cc/article/6a2e5d15fd897800015c4b76" target="_blank" class="art-link">個股推薦：費半大跌，但它們相對抗跌，當Rubin即將出貨，股價創高的卻不是NVDA，華爾街在半導體「 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">今日新增推薦</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">美股中少數與AMAT與ASML連結的二階供應鏈概念股，清洗、塗層與翻修具售後市場特性，當設備裝機基數提高、使用時間拉長，後續服務需求增加。半導體僅占部分收入，穩定性比UCTT和ICHR相對較高，股價屬穩定波段向上</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">大型客戶集中度仍存在</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card buy">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">AMAT</span>
+          <span class="stock-name">Applied Materials</span>
+          <span class="pri-chip">設備龍頭</span>
+        </div>
+        <span class="badge badge-green">買入</span>
       </div>
-      
-      <div class="stock-body"><ul><li>客戶含亞馬遜 Trainium（獨家）、微軟 Maia、META DPU、Google Axion CPU；強項為客製運算＋光互連。對 AVGO 的威脅主要在議價權，而非直接搶走 Google TPU 訂單。</li></ul>
-</div>
-      
-      <div class="tv-chart-wrap">
+      <div class="verdict rising">📈 收復跌幅並創歷史新高</div>
+      <p class="stock-logic">殺盤後迅速收復跌幅重回歷史高點，週五續創新高（圖表報價約$567.25，+2.65%）。從純週期股轉向結構成長＋週期彈性，交易需求能見度，受惠2027年WFE上修</p>
+      <div class="price-row"></div>
+      <div class="tv-wrap">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-          {{"symbol":"NASDAQ:MRVL","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{{"id":"MASimple@tv-basicstudies","inputs":{{"length":10}}}}],"width":"100%","height":230}}
+          {"symbol":"NASDAQ:AMAT","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
           </script>
         </div>
       </div>
-    </div>
-    <div class="stock-card watch">
-      <div class="stock-header">
-        <div class="stock-ticker">2454 <span style="font-size:14px;font-weight:400;color:var(--muted)">聯發科 MediaTek</span></div>
-        <span class="stock-label label-watch">觀察</span>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-06-14</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://vocus.cc/article/6a2e5d15fd897800015c4b76" target="_blank" class="art-link">個股推薦：費半大跌，但它們相對抗跌，當Rubin即將出貨，股價創高的卻不是NVDA，華爾街在半導體「 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">設備龍頭</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">殺盤後迅速收復跌幅重回歷史高點，週五續創新高（圖表報價約$567.25，+2.65%）。從純週期股轉向結構成長＋週期彈性，交易需求能見度，受惠2027年WFE上修</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">與設備市場三大引擎重新定價連動</td></tr><tr><td class="ml-key">現況</td><td class="ml-val">📈 收復跌幅並創歷史新高</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card buy">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">ASML</span>
+          <span class="stock-name">ASML Holding</span>
+          <span class="pri-chip">設備龍頭</span>
+        </div>
+        <span class="badge badge-green">買入</span>
       </div>
-      
-      <div class="stock-body"><ul><li>拿到 Google 訂單且成本更低，對 AVGO 威脅相對 MRVL 更大，主要衝擊議價權與毛利部分。</li></ul>
-</div>
-      
-      <div class="tv-chart-wrap">
+      <div class="verdict rising">📈 創歷史新高</div>
+      <p class="stock-logic">週四創歷史新高，EUV產能上限為第三個設備週期訊號。從純週期股轉向結構成長＋週期彈性，交易需求能見度</p>
+      <div class="price-row"></div>
+      <div class="tv-wrap">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-          {{"symbol":"NASDAQ:2454","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{{"id":"MASimple@tv-basicstudies","inputs":{{"length":10}}}}],"width":"100%","height":230}}
+          {"symbol":"NASDAQ:ASML","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
           </script>
         </div>
       </div>
-    </div>
-  </div>
-
-
-  <div class="section">
-    <div class="section-title">操作心態</div>
-    <ul class="principle-list"><li><span class="principle-num">1</span><div>財報好但不夠好仍會被重懲，期望值過高時要小心</div></li><li><span class="principle-num">2</span><div>敘事反轉（賣系統退回賣晶片）是估值天花板的關鍵轉折</div></li><li><span class="principle-num">3</span><div>區分『短期股價衝擊』與『長線地位穩固』，不要因盤後大跌否定基本面</div></li></ul>
-  </div>
-
-  <div class="section">
-    <div class="section-title">主要主題</div>
-    <div class="watch-pills"><span class="pill">AI ASIC 晶片</span><span class="pill">AI 硬體敘事重定價</span><span class="pill">毛利率壓力</span><span class="pill">半導體競爭與議價權</span></div>
-  </div>
-
-<hr style="border:none;border-top:1px solid var(--border);margin:48px 0;">
-  <!-- 文章 3：2026-06-12 -->
-  <div class="header">
-    <h1><a href="https://vocus.cc/article/6a2b2229fd8978000158aea8" target="_blank" style="color:inherit;text-decoration:none;">操作教學：美股大跌後終於反彈：美股大跌後怎麼搶反彈？最容易做錯的，不是沒有買在最低點 ↗</a></h1>
-    <div class="meta">
-      <span>整理日期：2026-06-12</span>
-      <span>來源：Vocus 美股即時策略分享</span>
-      <span>第 2 篇</span>
-    </div>
-  </div>
-
-  <div class="section">
-    <div class="section-title">大環境判斷</div>
-    <div class="overview-grid">
-      <div class="overview-card">
-        <div class="card-title">SPX 確認反彈，站上 5MA</div>
-        <p>前天提醒 SPX 四小時線出現低9訊號，原預期 CPI 符合預期後反彈但首日破功失敗，今日 SPX 終於反彈並收盤站上 5MA。</p>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-06-14</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://vocus.cc/article/6a2e5d15fd897800015c4b76" target="_blank" class="art-link">個股推薦：費半大跌，但它們相對抗跌，當Rubin即將出貨，股價創高的卻不是NVDA，華爾街在半導體「 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">設備龍頭</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">週四創歷史新高，EUV產能上限為第三個設備週期訊號。從純週期股轉向結構成長＋週期彈性，交易需求能見度</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">產能上限訊號</td></tr><tr><td class="ml-key">現況</td><td class="ml-val">📈 創歷史新高</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card buy">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">LRCX</span>
+          <span class="stock-name">Lam Research</span>
+          <span class="pri-chip">設備龍頭</span>
+        </div>
+        <span class="badge badge-green">買入</span>
       </div>
-      <div class="overview-card">
-        <div class="card-title">技術訊號只是預警，非進場指令</div>
-        <p>CPI 公布後市場沒有立即止跌，再次證明技術訊號只能提供轉折預警，真正能否進場仍要等待價格與市場結構進一步確認。</p>
-      </div>
-      <div class="overview-card">
-        <div class="card-title">先分清反彈與反轉</div>
-        <p>真正反轉需要市場從頭頭低、底底低轉為頭頭高、底底高的型態驗證。把短線反彈誤當反轉，容易錯過原本應該離場的時機。前面文章提到有幾天的反彈缺口要先知道。</p>
-      </div>
-      <div class="overview-card">
-        <div class="card-title">搶反彈目標是超跌修復價差</div>
-        <p>空單回補、技術面超賣與資金回流都可能推動快速反彈，目標是取得短線價差，不是猜最低點。三爺時代雖然出現 V 轉機率比較大，但仍要建立正確觀念，不要把短線獲利重新做到變虧損。</p>
-      </div>
-    </div>
-  </div>
-
-
-
-
-  <div class="section">
-    <div class="section-title">操作心態</div>
-    <ul class="principle-list"><li><span class="principle-num">1</span><div>搶反彈不是猜最低點，而是取得超跌修復的短線價差</div></li><li><span class="principle-num">2</span><div>不要看到第一根大紅K就追，追高會讓盈虧比惡化</div></li><li><span class="principle-num">3</span><div>搶反彈倉位要比正常趨勢交易更小</div></li><li><span class="principle-num">4</span><div>先決定最多願意賠多少，再計算可以買多少</div></li><li><span class="principle-num">5</span><div>停損放在結構失敗的位置，不是隨便設一個百分比</div></li><li><span class="principle-num">6</span><div>挑最早止跌、相對抗跌的股票，不要挑跌最深的</div></li><li><span class="principle-num">7</span><div>觀察反彈廣度，看板塊個股廣度而非只看大盤漲多少</div></li><li><span class="principle-num">8</span><div>反彈交易最好設時間停損</div></li><li><span class="principle-num">9</span><div>不要在反彈途中向下攤平，要向上加碼或確認後加碼</div></li><li><span class="principle-num">10</span><div>停利位置要事先設定，不要等漲了才決定</div></li><li><span class="principle-num">11</span><div>犯的錯比別人少，贏錢機會就比別人大，謙虛尊重市場</div></li></ul>
-  </div>
-
-  <div class="section">
-    <div class="section-title">主要主題</div>
-    <div class="watch-pills"><span class="pill">搶反彈操作</span><span class="pill">超跌修復</span><span class="pill">相對抗跌股</span><span class="pill">板塊廣度</span></div>
-  </div>
-
-<hr style="border:none;border-top:1px solid var(--border);margin:48px 0;">
-  <!-- 文章 4：2026-06-07 -->
-  <div class="header">
-    <h1><a href="https://vocus.cc/article/6a24b01bfd897800012902d3" target="_blank" style="color:inherit;text-decoration:none;">美股大跌後，「短線」有利的第三種選擇：從降息交易到升息預期：費半暴跌後，資金輪動的方向 ↗</a></h1>
-    <div class="meta">
-      <span>整理日期：2026-06-07</span>
-      <span>來源：Vocus 美股即時策略分享</span>
-      <span>第 1 篇</span>
-    </div>
-  </div>
-
-  <div class="section">
-    <div class="section-title">大環境判斷</div>
-    <div class="overview-grid">
-      <div class="overview-card">
-        <div class="card-title">美股短線主軸從降息交易轉向升息預期</div>
-        <p>費半 SOXX 單日暴跌 -10.44%、QQQ -4.0%，市場不再只交易降息＋AI高成長，開始重新評估升息預期、美債殖利率與高估值科技股風險。AI長期趨勢沒變，但短線買點與選股標準已不同。</p>
-      </div>
-      <div class="overview-card">
-        <div class="card-title">不能盲目抄底所有AI股</div>
-        <p>高估值科技股在利率上升時容易面臨本益比壓縮，即使基本面沒惡化股價仍可能被重新定價。低接AI硬體應優先選現金流強的龍頭，分批布局。</p>
-      </div>
-      <div class="overview-card">
-        <div class="card-title">防禦股也不全安全</div>
-        <p>資金開始流向醫療、必需消費與公用事業，但高股息不是沒風險，美債殖利率上升時部分高股息股反而失去吸引力。應選有穩定現金流、獲利能見度與催化劑的公司。</p>
-      </div>
-      <div class="overview-card">
-        <div class="card-title">大型醫療股出現早期資金輪動訊號</div>
-        <p>資金偏好已有營收、產品與現金流的大型藥廠，而非尚未獲利的中小型公司。市場買的是獲利確定性高、久期風險低的公司，不是整個板塊。XLV真正在漲的是大型現金流醫療股，XBI（中小型生技）表現相對弱。</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="section">
-    <div class="section-title">建議買入</div>
-    
-    <div class="stock-card buy">
-      <div class="stock-header">
-        <div class="stock-ticker">ABBV <span style="font-size:14px;font-weight:400;color:var(--muted)">AbbVie</span></div>
-        <span class="stock-label label-buy">第一順位（核心，六成）</span>
-      </div>
-      <div class="verdict waiting">⏳ 等回踩進場，不要追高</div>
-
-      <div class="stock-body"><ul><li>乾淨的低久期＋現金流，估值便宜（前瞻本益比約16倍），靠業績後續成長，2026 EPS指引14.08-14.28元，EPS小幅上修。估值保護跟成長同時存在。</li></ul>
-<div class="entry-hint"><span class="label">進場條件</span>等回踩，不要連漲後追；分批不一次買滿</div>
-<ul><li>ABBV 為核心，負責防守；留資金買低點AI硬體股</li></ul>
-</div>
-      
-      <div class="tv-chart-wrap">
+      <div class="verdict rising">📈 設備股同步創高</div>
+      <p class="stock-logic">設備龍頭同步創高，受惠先進邏輯＋HBM/DRAM＋先進封裝三大資本支出週期</p>
+      <div class="price-row"></div>
+      <div class="tv-wrap">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-          {{"symbol":"NYSE:ABBV","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{{"id":"MASimple@tv-basicstudies","inputs":{{"length":10}}}}],"width":"100%","height":230}}
+          {"symbol":"NASDAQ:LRCX","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
           </script>
         </div>
       </div>
-    </div>
-    <div class="stock-card buy">
-      <div class="stock-header">
-        <div class="stock-ticker">LLY <span style="font-size:14px;font-weight:400;color:var(--muted)">Eli Lilly</span></div>
-        <span class="stock-label label-buy">第二順位（進攻，四成）</span>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-06-14</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://vocus.cc/article/6a2e5d15fd897800015c4b76" target="_blank" class="art-link">個股推薦：費半大跌，但它們相對抗跌，當Rubin即將出貨，股價創高的卻不是NVDA，華爾街在半導體「 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">設備龍頭</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">設備龍頭同步創高，受惠先進邏輯＋HBM/DRAM＋先進封裝三大資本支出週期</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">與AMAT、ASML、KLAC一起創高</td></tr><tr><td class="ml-key">現況</td><td class="ml-val">📈 設備股同步創高</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card buy">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">KLAC</span>
+          <span class="stock-name">KLA Corporation</span>
+          <span class="pri-chip">設備龍頭</span>
+        </div>
+        <span class="badge badge-green">買入</span>
       </div>
-      <div class="verdict waiting">⏳ 分批進場，控制部位</div>
-
-      <div class="stock-body"><ul><li>成長性動能最強，Mounjaro 與 Zepbound 兩台減肥藥印鈔機。走AI垂直整合路徑。2026 EPS指引35.5-37元（中位36.25），前瞻本益比31.2倍，營收+EPS雙上修。上修最猛但容錯空間最小，風險為藥品集中度高。</li></ul>
-<div class="entry-hint"><span class="label">進場條件</span>分批布局，不一次買滿</div>
-<ul><li>負責進攻，估值高容錯空間小</li></ul>
-</div>
-      
-      <div class="tv-chart-wrap">
+      <div class="verdict rising">📈 設備股同步創高</div>
+      <p class="stock-logic">量測設備龍頭，受惠先進封裝檢測需求上升與2027年WFE重新定價</p>
+      <div class="price-row"></div>
+      <div class="tv-wrap">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-          {{"symbol":"NYSE:LLY","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{{"id":"MASimple@tv-basicstudies","inputs":{{"length":10}}}}],"width":"100%","height":230}}
+          {"symbol":"NASDAQ:KLAC","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
           </script>
         </div>
       </div>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-06-14</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://vocus.cc/article/6a2e5d15fd897800015c4b76" target="_blank" class="art-link">個股推薦：費半大跌，但它們相對抗跌，當Rubin即將出貨，股價創高的卻不是NVDA，華爾街在半導體「 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">設備龍頭</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">量測設備龍頭，受惠先進封裝檢測需求上升與2027年WFE重新定價</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">與AMAT、ASML、LRCX一起創高</td></tr><tr><td class="ml-key">現況</td><td class="ml-val">📈 設備股同步創高</td></tr></table>
+        </div></div>
+      </details>
     </div>
-  </div>
-
-  <div class="section">
-    <div class="section-title">觀察名單</div>
-    
-    <div class="stock-card watch">
-      <div class="stock-header">
-        <div class="stock-ticker">UNH <span style="font-size:14px;font-weight:400;color:var(--muted)">UnitedHealth</span></div>
-        <span class="stock-label label-watch">觀察</span>
+  </section><section class="section">
+    <div class="section-title">觀察名單（14 檔）</div>
+    <div class="card watch">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">UNH</span>
+          <span class="stock-name">UnitedHealth</span>
+          
+        </div>
+        <span class="badge badge-yellow">觀察</span>
       </div>
-      <div class="verdict rising">📈 獲利修復題材，留意賣方轉向</div>
-
-      <div class="stock-body"><ul><li>已不是相對便宜的防禦股，屬「獲利修復＋賣方轉向」交易。2026 EPS指引大於18.25元，前瞻本益比21.9倍，最低目標上修，Q2偏向會好。</li></ul>
-</div>
       
-      <div class="tv-chart-wrap">
+      <p class="stock-logic">已不是相對便宜的防禦股，屬於『獲利修復＋賣方轉向』交易，最低目標上修，前瞻本益比 21.9 倍，2026 EPS 指引大於 18.25 元，Q2 偏向會好。</p>
+      <div class="price-row"></div>
+      <div class="tv-wrap">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-          {{"symbol":"NYSE:UNH","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{{"id":"MASimple@tv-basicstudies","inputs":{{"length":10}}}}],"width":"100%","height":230}}
+          {"symbol":"NYSE:UNH","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
           </script>
         </div>
       </div>
-    </div>
-    <div class="stock-card watch">
-      <div class="stock-header">
-        <div class="stock-ticker">JNJ <span style="font-size:14px;font-weight:400;color:var(--muted)">Johnson &amp; Johnson</span></div>
-        <span class="stock-label label-watch">觀察</span>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-06-07</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://vocus.cc/article/6a24b01bfd897800012902d3" target="_blank" class="art-link">美股大跌後，「短線」有利的第三種選擇：從降息交易到升息預期：費半暴跌後，資金輪動的方向 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">已不是相對便宜的防禦股，屬於『獲利修復＋賣方轉向』交易，最低目標上修，前瞻本益比 21.9 倍，2026 EPS 指引大於 18.25 元，Q2 偏向會好。</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card watch">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">JNJ</span>
+          <span class="stock-name">Johnson &amp; Johnson</span>
+          
+        </div>
+        <span class="badge badge-yellow">觀察</span>
       </div>
-      <div class="verdict waiting">🛡️ 純防禦但上漲動能有限</div>
-
-      <div class="stock-body"><ul><li>最純的防禦股，但預期差最小。2026 EPS指引11.45-11.65元（中位11.55），前瞻本益比20.2倍，指引小幅上修。</li></ul>
-</div>
       
-      <div class="tv-chart-wrap">
+      <p class="stock-logic">最純的防禦，但預期差也最小，前瞻本益比 20.2 倍，2026 EPS 指引 11.45-11.65 元（中位 11.55）、指引小幅上修。</p>
+      <div class="price-row"></div>
+      <div class="tv-wrap">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-          {{"symbol":"NYSE:JNJ","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{{"id":"MASimple@tv-basicstudies","inputs":{{"length":10}}}}],"width":"100%","height":230}}
+          {"symbol":"NYSE:JNJ","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
           </script>
         </div>
       </div>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-06-07</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://vocus.cc/article/6a24b01bfd897800012902d3" target="_blank" class="art-link">美股大跌後，「短線」有利的第三種選擇：從降息交易到升息預期：費半暴跌後，資金輪動的方向 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">最純的防禦，但預期差也最小，前瞻本益比 20.2 倍，2026 EPS 指引 11.45-11.65 元（中位 11.55）、指引小幅上修。</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card watch">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">MRVL</span>
+          <span class="stock-name">Marvell</span>
+          
+        </div>
+        <span class="badge badge-yellow">觀察</span>
+      </div>
+      
+      <p class="stock-logic">客戶含亞馬遜 Trainium（獨家）、微軟 Maia、META 的 DPU、Google Axion CPU，強項為客製運算與光互連。對 AVGO 的威脅在於議價權，但不會馬上搶走 Google TPU 訂單或取代其地位。</p>
+      <div class="price-row"></div>
+      <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NASDAQ:MRVL","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-06-04</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://vocus.cc/article/6a211dc1fd89780001a77457" target="_blank" class="art-link">AVGO 財報其實不錯，但盤後還是大跌？市場在擔心什麼？從 AI 晶片、VMware 到毛利率的關鍵 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">客戶含亞馬遜 Trainium（獨家）、微軟 Maia、META 的 DPU、Google Axion CPU，強項為客製運算與光互連。對 AVGO 的威脅在於議價權，但不會馬上搶走 Google TPU 訂單或取代其地位。</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card watch">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">NVDA</span>
+          <span class="stock-name">NVIDIA</span>
+          
+        </div>
+        <span class="badge badge-yellow">觀察</span>
+      </div>
+      <div class="verdict rising">📈 事件溢價階段，資金先追逐</div>
+      <p class="stock-logic">平台核心、RTX Spark 平台定義者。Blackwell RTX GPU 1 PetaFLOP FP4 算力、20 核 Grace CPU（與聯發科合作）、128GB 統一記憶體、600GB/s NVLink C2C，完整 NVIDIA Stack（CUDA/TensorRT/DLSS）。第一層平台與架構受惠者。</p>
+      <div class="price-row"></div>
+      <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NASDAQ:NVDA","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-06-02</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://vocus.cc/article/6a1e6a43fd8978000164aa53" target="_blank" class="art-link">「AI PC 」這次真的不一樣，NVDA 宣布的AI PC為什麼讓整個台美股的PC 供應鏈重新沸騰？ ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">平台核心、RTX Spark 平台定義者。Blackwell RTX GPU 1 PetaFLOP FP4 算力、20 核 Grace CPU（與聯發科合作）、128GB 統一記憶體、600GB/s NVLink C2C，完整 NVIDIA Stack（CUDA/TensorRT/DLSS）。第一層平台與架構受惠者。</td></tr><tr><td class="ml-key">現況</td><td class="ml-val">📈 事件溢價階段，資金先追逐</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card watch">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">ARM</span>
+          <span class="stock-name">Arm Holdings</span>
+          
+        </div>
+        <span class="badge badge-yellow">觀察</span>
+      </div>
+      <div class="verdict alert">⚠️ 短線漲幅過大，估值乖離風險</div>
+      <p class="stock-logic">賣鏟子的架構 IP 受惠者，權利金照收。RTX Spark 採用 ARM 架構 20 核心 Grace CPU。第一層平台架構受惠者，但短線漲幅過大，估值與乖離風險要留意。</p>
+      <div class="price-row"></div>
+      <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NASDAQ:ARM","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-06-02</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://vocus.cc/article/6a1e6a43fd8978000164aa53" target="_blank" class="art-link">「AI PC 」這次真的不一樣，NVDA 宣布的AI PC為什麼讓整個台美股的PC 供應鏈重新沸騰？ ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">賣鏟子的架構 IP 受惠者，權利金照收。RTX Spark 採用 ARM 架構 20 核心 Grace CPU。第一層平台架構受惠者，但短線漲幅過大，估值與乖離風險要留意。</td></tr><tr><td class="ml-key">現況</td><td class="ml-val">⚠️ 短線漲幅過大，估值乖離風險</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card watch">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">MSFT</span>
+          <span class="stock-name">Microsoft</span>
+          
+        </div>
+        <span class="badge badge-yellow">觀察</span>
+      </div>
+      
+      <p class="stock-logic">與 NVDA 共同 Reinvent PC，旗艦 Surface 採用 RTX Spark。第一層平台與架構受惠者。</p>
+      <div class="price-row"></div>
+      <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NASDAQ:MSFT","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-06-02</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://vocus.cc/article/6a1e6a43fd8978000164aa53" target="_blank" class="art-link">「AI PC 」這次真的不一樣，NVDA 宣布的AI PC為什麼讓整個台美股的PC 供應鏈重新沸騰？ ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">與 NVDA 共同 Reinvent PC，旗艦 Surface 採用 RTX Spark。第一層平台與架構受惠者。</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card watch">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">DELL</span>
+          <span class="stock-name">Dell Technologies</span>
+          
+        </div>
+        <span class="badge badge-yellow">觀察</span>
+      </div>
+      <div class="verdict rising">📈 整機品牌今天漲最多</div>
+      <p class="stock-logic">第二層品牌與變現受惠者，整機品牌商，今天賣整機的品牌漲最多。單機含量提升、高單價、換機潮受惠。</p>
+      <div class="price-row"></div>
+      <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NYSE:DELL","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-06-02</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://vocus.cc/article/6a1e6a43fd8978000164aa53" target="_blank" class="art-link">「AI PC 」這次真的不一樣，NVDA 宣布的AI PC為什麼讓整個台美股的PC 供應鏈重新沸騰？ ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">第二層品牌與變現受惠者，整機品牌商，今天賣整機的品牌漲最多。單機含量提升、高單價、換機潮受惠。</td></tr><tr><td class="ml-key">現況</td><td class="ml-val">📈 整機品牌今天漲最多</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card watch">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">HPQ</span>
+          <span class="stock-name">HP Inc.</span>
+          
+        </div>
+        <span class="badge badge-yellow">觀察</span>
+      </div>
+      <div class="verdict rising">📈 整機品牌今天漲最多</div>
+      <p class="stock-logic">第二層品牌與變現受惠者，整機品牌商，高單價、換機潮受惠。</p>
+      <div class="price-row"></div>
+      <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NYSE:HPQ","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-06-02</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://vocus.cc/article/6a1e6a43fd8978000164aa53" target="_blank" class="art-link">「AI PC 」這次真的不一樣，NVDA 宣布的AI PC為什麼讓整個台美股的PC 供應鏈重新沸騰？ ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">第二層品牌與變現受惠者，整機品牌商，高單價、換機潮受惠。</td></tr><tr><td class="ml-key">現況</td><td class="ml-val">📈 整機品牌今天漲最多</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card watch">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">SNDK</span>
+          <span class="stock-name">SanDisk / Storage</span>
+          
+        </div>
+        <span class="badge badge-yellow">觀察</span>
+      </div>
+      
+      <p class="stock-logic">第三層儲存/控制受惠者，本機 AI 要儲存大量檔案、模型、素材，拉高單機儲存含量。</p>
+      <div class="price-row"></div>
+      <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NASDAQ:SNDK","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-06-02</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://vocus.cc/article/6a1e6a43fd8978000164aa53" target="_blank" class="art-link">「AI PC 」這次真的不一樣，NVDA 宣布的AI PC為什麼讓整個台美股的PC 供應鏈重新沸騰？ ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">第三層儲存/控制受惠者，本機 AI 要儲存大量檔案、模型、素材，拉高單機儲存含量。</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card watch">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">WDC</span>
+          <span class="stock-name">Western Digital</span>
+          
+        </div>
+        <span class="badge badge-yellow">觀察</span>
+      </div>
+      
+      <p class="stock-logic">第三層儲存/控制受惠者，本機 AI 拉高單機儲存含量（SSD/HDD）。</p>
+      <div class="price-row"></div>
+      <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NASDAQ:WDC","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-06-02</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://vocus.cc/article/6a1e6a43fd8978000164aa53" target="_blank" class="art-link">「AI PC 」這次真的不一樣，NVDA 宣布的AI PC為什麼讓整個台美股的PC 供應鏈重新沸騰？ ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">第三層儲存/控制受惠者，本機 AI 拉高單機儲存含量（SSD/HDD）。</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card watch">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">STX</span>
+          <span class="stock-name">Seagate Technology</span>
+          
+        </div>
+        <span class="badge badge-yellow">觀察</span>
+      </div>
+      
+      <p class="stock-logic">第三層儲存/控制受惠者，本機 AI 要存大量檔案、模型、素材，拉高單機儲存含量。</p>
+      <div class="price-row"></div>
+      <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NASDAQ:STX","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-06-02</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://vocus.cc/article/6a1e6a43fd8978000164aa53" target="_blank" class="art-link">「AI PC 」這次真的不一樣，NVDA 宣布的AI PC為什麼讓整個台美股的PC 供應鏈重新沸騰？ ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">第三層儲存/控制受惠者，本機 AI 要存大量檔案、模型、素材，拉高單機儲存含量。</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card watch">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">ADBE</span>
+          <span class="stock-name">Adobe</span>
+          
+        </div>
+        <span class="badge badge-yellow">觀察</span>
+      </div>
+      
+      <p class="stock-logic">軟體層受惠者，Photoshop、Premiere 為 RTX Spark 重構優化，配合 NVDA 平台模式。</p>
+      <div class="price-row"></div>
+      <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NASDAQ:ADBE","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-06-02</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://vocus.cc/article/6a1e6a43fd8978000164aa53" target="_blank" class="art-link">「AI PC 」這次真的不一樣，NVDA 宣布的AI PC為什麼讓整個台美股的PC 供應鏈重新沸騰？ ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">軟體層受惠者，Photoshop、Premiere 為 RTX Spark 重構優化，配合 NVDA 平台模式。</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card watch">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">QCOM</span>
+          <span class="stock-name">Qualcomm</span>
+          
+        </div>
+        <span class="badge badge-yellow">觀察</span>
+      </div>
+      <div class="verdict alert">⚠️ 短線股價反應最大</div>
+      <p class="stock-logic">Snapdragon X2 Elite 為現有 ARM AI PC 玩家（18 核心 5.0GHz、Adreno 內顯、NPU 80 TOPS），今天短線股價反應最大。受 NVDA 進入競爭影響。</p>
+      <div class="price-row"></div>
+      <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NASDAQ:QCOM","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-06-02</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://vocus.cc/article/6a1e6a43fd8978000164aa53" target="_blank" class="art-link">「AI PC 」這次真的不一樣，NVDA 宣布的AI PC為什麼讓整個台美股的PC 供應鏈重新沸騰？ ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">Snapdragon X2 Elite 為現有 ARM AI PC 玩家（18 核心 5.0GHz、Adreno 內顯、NPU 80 TOPS），今天短線股價反應最大。受 NVDA 進入競爭影響。</td></tr><tr><td class="ml-key">現況</td><td class="ml-val">⚠️ 短線股價反應最大</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card watch">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">GOOGL</span>
+          <span class="stock-name">Alphabet</span>
+          
+        </div>
+        <span class="badge badge-yellow">觀察</span>
+      </div>
+      
+      <p class="stock-logic">Apple Siri 2.0 採用 Gemini 模型，反映 Google 在模型層與雲端 AI 的戰略地位；但『iPhone 用 Gemini → 自研晶片收費站大賺』的推論被作者認為是錯的，真正受益在模型與雲端層</p>
+      <div class="price-row"></div>
+      <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NASDAQ:GOOGL","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-06-01</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://vocus.cc/article/6a1cb67ffd89780001396662" target="_blank" class="art-link">WWDC 2026 倒數：史上最重要的一場蘋果大秀，我們推薦的「蘋果」短線已「大獲全勝」，接下來才是 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">Apple Siri 2.0 採用 Gemini 模型，反映 Google 在模型層與雲端 AI 的戰略地位；但『iPhone 用 Gemini → 自研晶片收費站大賺』的推論被作者認為是錯的，真正受益在模型與雲端層</td></tr></table>
+        </div></div>
+      </details>
     </div>
-  </div>
-
-
-  <div class="section">
-    <div class="section-title">操作心態</div>
-    <ul class="principle-list"><li><span class="principle-num">1</span><div>世上沒有天天在過年的，出來混的總有一天要還的</div></li><li><span class="principle-num">2</span><div>兩個反射動作（盲目抄底AI／全部躲防禦股）都可能讓你受傷</div></li><li><span class="principle-num">3</span><div>資金流只是早期訊號，要確認是否從一天避險變成走幾週的輪動</div></li><li><span class="principle-num">4</span><div>一開始部位不要太重，利用之後較確定訊息出來再慢慢加碼</div></li><li><span class="principle-num">5</span><div>分批、不一次買滿，記得留資金買低點AI硬體股</div></li><li><span class="principle-num">6</span><div>後面利空與大盤不確定性會比利多多，直到六月底以及下一次財報前</div></li></ul>
-  </div>
-
-  <div class="section">
-    <div class="section-title">主要主題</div>
-    <div class="watch-pills"><span class="pill">升息預期交易</span><span class="pill">大型醫療股資金輪動</span><span class="pill">AI製藥</span><span class="pill">現金流＋低久期</span><span class="pill">防禦板塊輪動</span></div>
-  </div>
+  </section><section class="section">
+    <div class="section-title">保護獲利 / 警示（9 檔）</div>
+    <div class="card caution">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">GOOG</span>
+          <span class="stock-name">Alphabet</span>
+          
+        </div>
+        <span class="badge badge-red">警示</span>
+      </div>
+      
+      
+      <div class="price-row"></div>
+      <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NASDAQ:GOOG","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-06-09</span>
+            <span class="badge badge-red">警示</span>
+            <a href="https://vocus.cc/article/6a279679fd897800015f430f" target="_blank" class="art-link">AI不是沒有訂單，而是訂單的錢從哪裡來？AI 硬體股的繁榮，建立在四家 CSP 的股權與債務融資上 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">原因</td><td class="ml-val">宣布 847.5 億股權融資計畫，AI 支出不再由原股東獨自承擔。發股比發債更值得既有股東警惕：永久增加完全稀釋後股數，新股東分享未來盈餘與上行空間。依融資順位理論與市場時機理論，現金流強勁的成熟企業開始發新股通常是警訊。</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">風險提醒，非操作建議；觀察股權稀釋對原股東影響</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card caution">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">AVGO</span>
+          <span class="stock-name">Broadcom</span>
+          
+        </div>
+        <span class="badge badge-red">警示</span>
+      </div>
+      
+      
+      <div class="price-row"></div>
+      <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NASDAQ:AVGO","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（3 篇文章提及）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-06-09</span>
+            <span class="badge badge-red">警示</span>
+            <a href="https://vocus.cc/article/6a279679fd897800015f430f" target="_blank" class="art-link">AI不是沒有訂單，而是訂單的錢從哪裡來？AI 硬體股的繁榮，建立在四家 CSP 的股權與債務融資上 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">原因</td><td class="ml-val">前瞻本益比看似便宜，是建立在 CSP 資本支出高速成長到 2028 的假設上，分母用 2027、2028 盈餘估算。一旦 CSP 減速，盈餘估計與估值倍數同步下修，便宜立刻變昂貴。</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">Sell Side 上修/下修潮的馬後炮特性需警覺</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-06-04</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://vocus.cc/article/6a211dc1fd89780001a77457" target="_blank" class="art-link">AVGO 財報其實不錯，但盤後還是大跌？市場在擔心什麼？從 AI 晶片、VMware 到毛利率的關鍵 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">Q2 營收 221.9 億、EPS 2.44、AI 半導體營收 108 億（年增超過一倍），半導體部門年增 79%。財報其實不錯，盤後大跌主因是未上修 2027 年 1000 億 AI 晶片目標、敘事退回只賣晶片，以及高毛利軟體放緩。短期受 MRVL、聯發科在議價權與毛利上的衝擊，但長線地位仍穩固。客戶含 Google（訓練）、META(MTIA)、OpenAI、Anthropic，強項為高效能核心、SerDes、封裝。</td></tr><tr><td class="ml-key">目標</td><td class="ml-val">2027 AI 晶片營收目標 &gt;1000 億美元</td></tr><tr><td class="ml-key">現況</td><td class="ml-val">📈 財報不錯但盤後大跌，長線邏輯未破壞</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-06-01</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://vocus.cc/article/6a1cb67ffd89780001396662" target="_blank" class="art-link">WWDC 2026 倒數：史上最重要的一場蘋果大秀，我們推薦的「蘋果」短線已「大獲全勝」，接下來才是 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">6/3 盤後財報，長線看好，為 Google TPU 與客製化 AI 晶片重要收費站，手握 730 億美元在手訂單。短線隱憂在於股價歷史新高，光是 beat 不夠推升股價，且供給端瓶頸在台積電先進製程與封裝。關鍵是能否提供新客戶、2027 指引或訂單上修</td></tr><tr><td class="ml-key">目標</td><td class="ml-val">支撐區約 $400，若跌破 400 才比較危險</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card caution">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">CRWV</span>
+          <span class="stock-name">CoreWeave</span>
+          
+        </div>
+        <span class="badge badge-red">警示</span>
+      </div>
+      
+      
+      <div class="price-row"></div>
+      <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NASDAQ:CRWV","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-06-09</span>
+            <span class="badge badge-red">警示</span>
+            <a href="https://vocus.cc/article/6a279679fd897800015f430f" target="_blank" class="art-link">AI不是沒有訂單，而是訂單的錢從哪裡來？AI 硬體股的繁榮，建立在四家 CSP 的股權與債務融資上 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">原因</td><td class="ml-val">老黃（NVDA）投資 CRWV，長約變成漂亮的 backlog，再變成向市場借錢的擔保品，類似 2008 次貸 MBS 的循環入帳金融工程，屬反身性循環核心，訂單存在不代表撐得下去。</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">循環入帳＋表外槓桿風險，脆弱性高</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card caution">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">INTC</span>
+          <span class="stock-name">Intel</span>
+          
+        </div>
+        <span class="badge badge-red">警示</span>
+      </div>
+      <div class="verdict alert">⚠️ NVDA 進入後受傷</div>
+      
+      <div class="price-row"></div>
+      <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NASDAQ:INTC","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-06-02</span>
+            <span class="badge badge-red">警示</span>
+            <a href="https://vocus.cc/article/6a1e6a43fd8978000164aa53" target="_blank" class="art-link">「AI PC 」這次真的不一樣，NVDA 宣布的AI PC為什麼讓整個台美股的PC 供應鏈重新沸騰？ ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">原因</td><td class="ml-val">x86 陣營（Core Ultra 300 Panther Lake，NPU 約 50 TOPS），NVDA 進入本機大模型運算後 x86 相容優勢被弱化，當然也會受傷。</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">x86 過去靠相容性吃飯，AI 競爭標準改變後受壓</td></tr><tr><td class="ml-key">現況</td><td class="ml-val">⚠️ NVDA 進入後受傷</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card caution">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">AMD</span>
+          <span class="stock-name">AMD</span>
+          
+        </div>
+        <span class="badge badge-red">警示</span>
+      </div>
+      <div class="verdict alert">⚠️ NVDA 進入後受傷</div>
+      
+      <div class="price-row"></div>
+      <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NASDAQ:AMD","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-06-02</span>
+            <span class="badge badge-red">警示</span>
+            <a href="https://vocus.cc/article/6a1e6a43fd8978000164aa53" target="_blank" class="art-link">「AI PC 」這次真的不一樣，NVDA 宣布的AI PC為什麼讓整個台美股的PC 供應鏈重新沸騰？ ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">原因</td><td class="ml-val">x86 陣營（Ryzen AI Max Strix Halo，NPU 約 50 TOPS、最高 128GB 統一記憶體），NVDA 進入本機大模型運算後也會受傷。</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">x86 相容優勢被弱化</td></tr><tr><td class="ml-key">現況</td><td class="ml-val">⚠️ NVDA 進入後受傷</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card caution">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">AAPL</span>
+          <span class="stock-name">Apple</span>
+          
+        </div>
+        <span class="badge badge-red">警示</span>
+      </div>
+      <div class="verdict correct">✅ 先前看好的這波行情已大獲全勝</div>
+      
+      <div class="price-row"></div>
+      <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NASDAQ:AAPL","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-06-01</span>
+            <span class="badge badge-red">警示</span>
+            <a href="https://vocus.cc/article/6a1cb67ffd89780001396662" target="_blank" class="art-link">WWDC 2026 倒數：史上最重要的一場蘋果大秀，我們推薦的「蘋果」短線已「大獲全勝」，接下來才是 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">原因</td><td class="ml-val">WWDC 預期已大幅反映，驚喜提前洩光，事件後恐修正（WWDC 當週歷史平均 -5.4%）。短線與波段建議分批落袋，長線可續抱</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">賣一半 → 破 10MA 再砍一半 → 破 20MA 全清，一層一層往下；防守線 10MA 與 20MA</td></tr><tr><td class="ml-key">現況</td><td class="ml-val">✅ 先前看好的這波行情已大獲全勝</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card caution">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">PANW</span>
+          <span class="stock-name">Palo Alto Networks</span>
+          
+        </div>
+        <span class="badge badge-red">警示</span>
+      </div>
+      
+      
+      <div class="price-row"></div>
+      <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NASDAQ:PANW","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-06-01</span>
+            <span class="badge badge-red">警示</span>
+            <a href="https://vocus.cc/article/6a1cb67ffd89780001396662" target="_blank" class="art-link">WWDC 2026 倒數：史上最重要的一場蘋果大秀，我們推薦的「蘋果」短線已「大獲全勝」，接下來才是 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">原因</td><td class="ml-val">資安雙雄之一，本週財報，財報前不要追高，建議先出場一趟至少了結一半以上</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">不想主動落袋就設立移動止贏單（只贏單）</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card caution">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">CRWD</span>
+          <span class="stock-name">CrowdStrike</span>
+          
+        </div>
+        <span class="badge badge-red">警示</span>
+      </div>
+      
+      
+      <div class="price-row"></div>
+      <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NASDAQ:CRWD","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-06-01</span>
+            <span class="badge badge-red">警示</span>
+            <a href="https://vocus.cc/article/6a1cb67ffd89780001396662" target="_blank" class="art-link">WWDC 2026 倒數：史上最重要的一場蘋果大秀，我們推薦的「蘋果」短線已「大獲全勝」，接下來才是 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">原因</td><td class="ml-val">資安雙雄之一，本週財報，財報前不要追高，建議先出場一趟至少了結一半以上</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">不想主動落袋就設立移動止贏單（只贏單）</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card caution">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">HPE</span>
+          <span class="stock-name">Hewlett Packard Enterprise</span>
+          
+        </div>
+        <span class="badge badge-red">警示</span>
+      </div>
+      
+      
+      <div class="price-row"></div>
+      <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NYSE:HPE","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-06-01</span>
+            <span class="badge badge-red">警示</span>
+            <a href="https://vocus.cc/article/6a1cb67ffd89780001396662" target="_blank" class="art-link">WWDC 2026 倒數：史上最重要的一場蘋果大秀，我們推薦的「蘋果」短線已「大獲全勝」，接下來才是 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">原因</td><td class="ml-val">本週重點財報之一，屬 AI 基建硬體相關，財報前需提防高檔風險</td></tr></table>
+        </div></div>
+      </details>
+    </div>
+  </section>
+<section class="section">
+    <div class="section-title">學習筆記</div>
+    <div class="card neutral summary-card">
+      <div class="card-header">
+        <div>
+          <span class="mono date-chip">2026-06-14</span>
+          <div class="summary-title"><a href="https://vocus.cc/article/6a2de4e3fd897800013303c2" target="_blank" class="art-link">美股輕鬆談：設了停損，還要對沖嗎？美股投資小白一定要懂的風控順序 ↗</a></div>
+        </div>
+        <span class="badge badge-blue">筆記</span>
+      </div>
+      <ul class="summary-list"><li><strong>停損能處理的風險有限</strong>—市場劇烈波動時股價可能隔夜跳空、直接跳過停損價，也可能盤中瞬間跌破後快速拉回。停損很重要但能處理的風險比多數人想像得有限。</li><li><strong>持股多不等於風險分散</strong>—買進十家不同公司看似分散，但若都集中在AI、半導體等資料中心供應鏈，背後風險來源相同。一旦科技股估值重新定價或市場全面降低風險曝險，這十檔股票一起破位機率很高，</li><li><strong>風控的重點是順序而非工具</strong>—有效風控重點不只是用什麼工具，而是先做什麼、後做什麼。出現風險訊號時要先分辨是單一公司、整個產業還是市場層級的系統性風險，不同來源用不同處理方式，判斷錯會浪費對</li></ul>
+      <div class="watch-pills"><span class="pill">風控順序</span><span class="pill">停損與對沖</span><span class="pill">持股相關性風險</span><span class="pill">AI/半導體集中度</span></div>
+    </div><div class="card neutral summary-card">
+      <div class="card-header">
+        <div>
+          <span class="mono date-chip">2026-06-12</span>
+          <div class="summary-title"><a href="https://vocus.cc/article/6a2b2229fd8978000158aea8" target="_blank" class="art-link">操作教學：美股大跌後終於反彈：美股大跌後怎麼搶反彈？最容易做錯的，不是沒有買在最低點 ↗</a></div>
+        </div>
+        <span class="badge badge-blue">筆記</span>
+      </div>
+      <ul class="summary-list"><li><strong>SPX 終於反彈，站上 5MA</strong>—前天提醒 SPX 四小時有低9訊號，本預期 CPI 符合預期後反彈但破功失敗，今天 SPX 終於出現反彈並收盤站上 5MA。CPI 公布後市場沒有立即止跌，再次</li><li><strong>先分清反彈與反轉</strong>—搶反彈的目標不是猜最低點，而是取得超跌修復的短線價差。空單回補、技術超賣與資金回流都可能推動快速反彈，但把短線交易誤當反轉，容易錯過離場時機。真正的反轉需要市場</li><li><strong>搶反彈須先控制整筆交易風險</strong>—反彈階段波動仍偏高，倉位必須比正常趨勢交易時小，停損、分批進場與最大損失都要事先計算。停損放在結構失敗位置而非隨意百分比，並設時間停損；不要在反彈途中向下攤平，</li></ul>
+      <div class="watch-pills"><span class="pill">美股反彈</span><span class="pill">超跌修復</span><span class="pill">風險控制</span></div>
+    </div>
+  </section>
 
   <div class="footer">
-    整理自 MimiVsJames Vocus 即時策略分享專欄 · 僅供個人參考，不構成投資建議<br>最後更新：2026-06-14 18:04
+    整理自 MimiVsJames Vocus 即時策略分享專欄 · 僅供個人參考，不構成投資建議
   </div>
 
 </div>
