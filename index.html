@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Joseph LifeOS — 投資筆記</title>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #0a0d14;
@@ -112,6 +112,14 @@
   .tag.us {
     background: rgba(59,130,246,.08); border: 1px solid rgba(59,130,246,.18); color: var(--blue);
   }
+  .tag.macro {
+    background: rgba(124,106,245,.08); border: 1px solid rgba(124,106,245,.18); color: var(--accent);
+  }
+  .market-badge.macro {
+    background: rgba(124,106,245,.1); color: var(--accent);
+    border: 1px solid rgba(124,106,245,.2);
+  }
+  .market-name.macro { color: var(--accent); }
 
   .source-arrow {
     width: 22px; height: 22px; border-radius: 6px;
@@ -176,6 +184,17 @@
         </div>
         <div class="source-arrow">›</div>
       </a>
+      <a class="source-link" href="JG說真的/">
+        <div class="source-info">
+          <span class="source-name">JG說真的</span>
+          <div class="source-tags">
+            <span class="tag tw">會員直播</span>
+            <span class="tag tw">個股分析</span>
+            <span class="tag tw">週更</span>
+          </div>
+        </div>
+        <div class="source-arrow">›</div>
+      </a>
     </div>
   </div>
 
@@ -195,6 +214,30 @@
           <div class="source-tags">
             <span class="tag us">個股</span>
             <span class="tag us">進出場</span>
+          </div>
+        </div>
+        <div class="source-arrow">›</div>
+      </a>
+    </div>
+  </div>
+
+  <div class="market-card">
+    <div class="market-header">
+      <div class="market-badge macro">總經</div>
+      <div class="market-info">
+        <div class="market-name macro">總體市場</div>
+        <div class="market-desc">總經分析 · 市場觀點 · Podcast 筆記</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="source-list">
+      <a class="source-link" href="股癌/">
+        <div class="source-info">
+          <span class="source-name">股癌 Gooaye</span>
+          <div class="source-tags">
+            <span class="tag macro">總經</span>
+            <span class="tag macro">市場觀點</span>
+            <span class="tag macro">週更</span>
           </div>
         </div>
         <div class="source-arrow">›</div>
