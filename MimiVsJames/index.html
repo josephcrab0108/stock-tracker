@@ -259,6 +259,19 @@ body {
 .reduce-row { display: flex; align-items: center; gap: 6px; margin: 6px 0; flex-wrap: wrap; }
 .reduce-label { font-size: 10px; font-weight: 600; color: var(--red); text-transform: uppercase; }
 
+/* 最近提及日期 */
+.latest-date { font-size: 10px; color: var(--muted); font-weight: 400; }
+
+/* K 線圖折疊 */
+.chart-fold { margin: 10px 0 4px; }
+.chart-toggle {
+  font-size: 11px; color: var(--muted); cursor: pointer;
+  list-style: none; user-select: none;
+}
+.chart-toggle::-webkit-details-marker { display: none; }
+.chart-fold[open] .chart-toggle { color: var(--accent); }
+.chart-fold[open] .tv-wrap { margin-top: 8px; }
+
 /* Watch pills */
 .watch-pills { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
 .pill {
@@ -337,236 +350,24 @@ body {
   </section>
 <section class="section">
     <div class="section-title">建議買入（19 檔）</div>
-    <div class="card buy" data-ticker="ABBV" data-name="AbbVie">
-      <div class="card-header">
-        <div class="ticker-row">
-          <span class="ticker mono">ABBV</span>
-          <span class="stock-name">AbbVie</span>
-          <span class="pri-chip">第一順位／核心</span>
-        </div>
-        <span class="badge badge-green">買入</span>
-      </div>
-      
-      <p class="stock-logic">乾淨的低久期＋現金流，估值較低（前瞻本益比 16 倍，2026 EPS 指引 14.08-14.28 元、EPS 小幅上修），估值保護跟成長同時存在，靠業績後面的成長。</p>
-      <div class="price-row"><span class="price-chip"><span class="chip-label">進場</span>等回踩，不要連漲後追，分批不一次買滿</span></div>
-      <div class="tv-wrap">
-        <div class="tradingview-widget-container">
-          <div class="tradingview-widget-container__widget"></div>
-          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-          {"symbol":"NYSE:ABBV","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
-          </script>
-        </div>
-      </div>
-      <details class="context-fold">
-        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
-        <div class="context-body"><div class="mention-item">
-          <div class="mention-meta">
-            <span class="mono date-chip">2026-06-07</span>
-            <span class="badge badge-green">買入</span>
-            <a href="https://vocus.cc/article/6a24b01bfd897800012902d3" target="_blank" class="art-link">美股大跌後，「短線」有利的第三種選擇：從降息交易到升息預期：費半暴跌後，資金輪動的方向 ↗</a>
-          </div>
-          <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">第一順位／核心</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">乾淨的低久期＋現金流，估值較低（前瞻本益比 16 倍，2026 EPS 指引 14.08-14.28 元、EPS 小幅上修），估值保護跟成長同時存在，靠業績後面的成長。</td></tr><tr><td class="ml-key">進場</td><td class="ml-val">等回踩，不要連漲後追，分批不一次買滿</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">資金配置建議 ABBV 六成，記得留資金買低點的AI硬體股</td></tr></table>
-        </div></div>
-      </details>
-    </div><div class="card buy" data-ticker="LLY" data-name="Eli Lilly">
-      <div class="card-header">
-        <div class="ticker-row">
-          <span class="ticker mono">LLY</span>
-          <span class="stock-name">Eli Lilly</span>
-          <span class="pri-chip">第二順位／進攻</span>
-        </div>
-        <span class="badge badge-green">買入</span>
-      </div>
-      
-      <p class="stock-logic">成長性動能最強，Mounjaro 與 Zepbound 兩台減肥藥印鈔機。上修最猛（2026 EPS 指引 35.5-37 元、中位 36.25，營收+EPS 雙上修），但前瞻本益比 31.2 倍、容錯空間最小，走垂直整合 AI 路線。風險為藥品集中度高。</p>
-      <div class="price-row"><span class="price-chip"><span class="chip-label">進場</span>分批、不一次買滿</span></div>
-      <div class="tv-wrap">
-        <div class="tradingview-widget-container">
-          <div class="tradingview-widget-container__widget"></div>
-          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-          {"symbol":"NYSE:LLY","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
-          </script>
-        </div>
-      </div>
-      <details class="context-fold">
-        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
-        <div class="context-body"><div class="mention-item">
-          <div class="mention-meta">
-            <span class="mono date-chip">2026-06-07</span>
-            <span class="badge badge-green">買入</span>
-            <a href="https://vocus.cc/article/6a24b01bfd897800012902d3" target="_blank" class="art-link">美股大跌後，「短線」有利的第三種選擇：從降息交易到升息預期：費半暴跌後，資金輪動的方向 ↗</a>
-          </div>
-          <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">第二順位／進攻</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">成長性動能最強，Mounjaro 與 Zepbound 兩台減肥藥印鈔機。上修最猛（2026 EPS 指引 35.5-37 元、中位 36.25，營收+EPS 雙上修），但前瞻本益比 31.2 倍、容錯空間最小，走垂直整合 AI 路線。風險為藥品集中度高。</td></tr><tr><td class="ml-key">進場</td><td class="ml-val">分批、不一次買滿</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">資金配置建議 LLY 四成，負責進攻</td></tr></table>
-        </div></div>
-      </details>
-    </div><div class="card buy" data-ticker="LTRX" data-name="Lantronix">
-      <div class="card-header">
-        <div class="ticker-row">
-          <span class="ticker mono">LTRX</span>
-          <span class="stock-name">Lantronix</span>
-          <span class="pri-chip">主推（第二層）</span>
-        </div>
-        <span class="badge badge-green">買入</span>
-      </div>
-      
-      <p class="stock-logic">嵌入式運算與邊緣AI，無人機安全通訊關鍵零件，賣鏟子的人；與UMAC合作出貨，UMAC漲LTRX沒理由不漲。圖表現價約$7.25，52週高7.6/低3.4</p>
-      <div class="price-row"></div>
-      <div class="tv-wrap">
-        <div class="tradingview-widget-container">
-          <div class="tradingview-widget-container__widget"></div>
-          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-          {"symbol":"NASDAQ:LTRX","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
-          </script>
-        </div>
-      </div>
-      <details class="context-fold">
-        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
-        <div class="context-body"><div class="mention-item">
-          <div class="mention-meta">
-            <span class="mono date-chip">2026-05-28</span>
-            <span class="badge badge-green">買入</span>
-            <a href="https://vocus.cc/article/6a17bb98fd89780001109ff5" target="_blank" class="art-link">個股推薦：當AI硬體與太空股先後放煙火後，下一個該佈局的板塊已經在路上。兩檔最推薦的個股 ↗</a>
-          </div>
-          <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">主推（第二層）</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">嵌入式運算與邊緣AI，無人機安全通訊關鍵零件，賣鏟子的人；與UMAC合作出貨，UMAC漲LTRX沒理由不漲。圖表現價約$7.25，52週高7.6/低3.4</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">選LTRX不選ONDS，定位邊緣運算與安全通訊</td></tr></table>
-        </div></div>
-      </details>
-    </div><div class="card buy" data-ticker="PDYN" data-name="Palladyne AI">
-      <div class="card-header">
-        <div class="ticker-row">
-          <span class="ticker mono">PDYN</span>
-          <span class="stock-name">Palladyne AI</span>
-          <span class="pri-chip">主推（第三層）</span>
-        </div>
-        <span class="badge badge-green">買入</span>
-      </div>
-      
-      <p class="stock-logic">AI大腦與群體作戰軟體，SwarmOS整合進RCAT Black Widow系統；拿到AFRL合約、入選Relentless Wolfpack 14家決選名單；走PLTR政府背書劇本，被視為2008年版PLTR。圖表現價約$7.52</p>
-      <div class="price-row"><span class="price-chip"><span class="chip-label">目標</span>第一壓力$10，第二壓力$13</span></div>
-      <div class="tv-wrap">
-        <div class="tradingview-widget-container">
-          <div class="tradingview-widget-container__widget"></div>
-          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-          {"symbol":"NASDAQ:PDYN","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
-          </script>
-        </div>
-      </div>
-      <details class="context-fold">
-        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
-        <div class="context-body"><div class="mention-item">
-          <div class="mention-meta">
-            <span class="mono date-chip">2026-05-28</span>
-            <span class="badge badge-green">買入</span>
-            <a href="https://vocus.cc/article/6a17bb98fd89780001109ff5" target="_blank" class="art-link">個股推薦：當AI硬體與太空股先後放煙火後，下一個該佈局的板塊已經在路上。兩檔最推薦的個股 ↗</a>
-          </div>
-          <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">主推（第三層）</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">AI大腦與群體作戰軟體，SwarmOS整合進RCAT Black Widow系統；拿到AFRL合約、入選Relentless Wolfpack 14家決選名單；走PLTR政府背書劇本，被視為2008年版PLTR。圖表現價約$7.52</td></tr><tr><td class="ml-key">目標</td><td class="ml-val">第一壓力$10，第二壓力$13</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">從政府市場切入再複製到商業端，與PLTR路徑雷同；短線有題材噴出可獲利落袋</td></tr></table>
-        </div></div>
-      </details>
-    </div><div class="card buy" data-ticker="UCTT" data-name="Ultra Clean Holdings">
-      <div class="card-header">
-        <div class="ticker-row">
-          <span class="ticker mono">UCTT</span>
-          <span class="stock-name">Ultra Clean Holdings</span>
-          <span class="pri-chip">重申買進</span>
-        </div>
-        <span class="badge badge-green">買入</span>
-      </div>
-      
-      <p class="stock-logic">設備模組與外包製造，二階供應鏈受惠Build Plan傳導，營運槓桿擴增，股價彈性高於設備龍頭，前一輪景氣低潮有較低基期</p>
-      <div class="price-row"></div>
-      <div class="tv-wrap">
-        <div class="tradingview-widget-container">
-          <div class="tradingview-widget-container__widget"></div>
-          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-          {"symbol":"NASDAQ:UCTT","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
-          </script>
-        </div>
-      </div>
-      <details class="context-fold">
-        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
-        <div class="context-body"><div class="mention-item">
-          <div class="mention-meta">
-            <span class="mono date-chip">2026-06-14</span>
-            <span class="badge badge-green">買入</span>
-            <a href="https://vocus.cc/article/6a2e5d15fd897800015c4b76" target="_blank" class="art-link">個股推薦：費半大跌，但它們相對抗跌，當Rubin即將出貨，股價創高的卻不是NVDA，華爾街在半導體「 ↗</a>
-          </div>
-          <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">重申買進</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">設備模組與外包製造，二階供應鏈受惠Build Plan傳導，營運槓桿擴增，股價彈性高於設備龍頭，前一輪景氣低潮有較低基期</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">之前講過，重申買進</td></tr></table>
-        </div></div>
-      </details>
-    </div><div class="card buy" data-ticker="ICHR" data-name="Ichor Holdings">
-      <div class="card-header">
-        <div class="ticker-row">
-          <span class="ticker mono">ICHR</span>
-          <span class="stock-name">Ichor Holdings</span>
-          <span class="pri-chip">重申買進</span>
-        </div>
-        <span class="badge badge-green">買入</span>
-      </div>
-      
-      <p class="stock-logic">氣體與流體輸送系統，二階供應鏈受惠設備訂單從晶圓廠傳導，營運槓桿高、具低基期</p>
-      <div class="price-row"></div>
-      <div class="tv-wrap">
-        <div class="tradingview-widget-container">
-          <div class="tradingview-widget-container__widget"></div>
-          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-          {"symbol":"NASDAQ:ICHR","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
-          </script>
-        </div>
-      </div>
-      <details class="context-fold">
-        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
-        <div class="context-body"><div class="mention-item">
-          <div class="mention-meta">
-            <span class="mono date-chip">2026-06-14</span>
-            <span class="badge badge-green">買入</span>
-            <a href="https://vocus.cc/article/6a2e5d15fd897800015c4b76" target="_blank" class="art-link">個股推薦：費半大跌，但它們相對抗跌，當Rubin即將出貨，股價創高的卻不是NVDA，華爾街在半導體「 ↗</a>
-          </div>
-          <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">重申買進</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">氣體與流體輸送系統，二階供應鏈受惠設備訂單從晶圓廠傳導，營運槓桿高、具低基期</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">之前講過，重申買進</td></tr></table>
-        </div></div>
-      </details>
-    </div><div class="card buy" data-ticker="MKSI" data-name="MKS Instruments">
-      <div class="card-header">
-        <div class="ticker-row">
-          <span class="ticker mono">MKSI</span>
-          <span class="stock-name">MKS Instruments</span>
-          <span class="pri-chip">重申買進</span>
-        </div>
-        <span class="badge badge-green">買入</span>
-      </div>
-      
-      <p class="stock-logic">WFE週期的平台供應商，二階供應鏈受惠Build Plan傳導與EPS槓桿</p>
-      <div class="price-row"></div>
-      <div class="tv-wrap">
-        <div class="tradingview-widget-container">
-          <div class="tradingview-widget-container__widget"></div>
-          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-          {"symbol":"NASDAQ:MKSI","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
-          </script>
-        </div>
-      </div>
-      <details class="context-fold">
-        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
-        <div class="context-body"><div class="mention-item">
-          <div class="mention-meta">
-            <span class="mono date-chip">2026-06-14</span>
-            <span class="badge badge-green">買入</span>
-            <a href="https://vocus.cc/article/6a2e5d15fd897800015c4b76" target="_blank" class="art-link">個股推薦：費半大跌，但它們相對抗跌，當Rubin即將出貨，股價創高的卻不是NVDA，華爾街在半導體「 ↗</a>
-          </div>
-          <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">重申買進</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">WFE週期的平台供應商，二階供應鏈受惠Build Plan傳導與EPS槓桿</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">之前講過，重申買進</td></tr></table>
-        </div></div>
-      </details>
-    </div><div class="card buy" data-ticker="NPO" data-name="Enpro">
+    <div class="card buy" data-ticker="NPO" data-name="Enpro">
       <div class="card-header">
         <div class="ticker-row">
           <span class="ticker mono">NPO</span>
           <span class="stock-name">Enpro</span>
-          <span class="pri-chip">今日新增推薦</span>
+          <span class="pri-chip">第一順位</span>
         </div>
-        <span class="badge badge-green">買入</span>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-06-14</span>
+          <span class="badge badge-green">買入</span>
+        </div>
       </div>
       
       <p class="stock-logic">美股中少數與AMAT與ASML連結的二階供應鏈概念股，清洗、塗層與翻修具售後市場特性，當設備裝機基數提高、使用時間拉長，後續服務需求增加。半導體僅占部分收入，穩定性比UCTT和ICHR相對較高，股價屬穩定波段向上</p>
       <div class="price-row"></div>
-      <div class="tv-wrap">
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（NPO）</summary>
+        <div class="tv-wrap">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
@@ -574,6 +375,7 @@ body {
           </script>
         </div>
       </div>
+      </details>
       <details class="context-fold">
         <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
         <div class="context-body"><div class="mention-item">
@@ -590,14 +392,19 @@ body {
         <div class="ticker-row">
           <span class="ticker mono">AMAT</span>
           <span class="stock-name">Applied Materials</span>
-          <span class="pri-chip">設備龍頭</span>
+          <span class="pri-chip">第一順位</span>
         </div>
-        <span class="badge badge-green">買入</span>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-06-14</span>
+          <span class="badge badge-green">買入</span>
+        </div>
       </div>
       <div class="verdict rising">📈 收復跌幅並創歷史新高</div>
       <p class="stock-logic">殺盤後迅速收復跌幅重回歷史高點，週五續創新高（圖表報價約$567.25，+2.65%）。從純週期股轉向結構成長＋週期彈性，交易需求能見度，受惠2027年WFE上修</p>
       <div class="price-row"></div>
-      <div class="tv-wrap">
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（AMAT）</summary>
+        <div class="tv-wrap">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
@@ -605,6 +412,7 @@ body {
           </script>
         </div>
       </div>
+      </details>
       <details class="context-fold">
         <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
         <div class="context-body"><div class="mention-item">
@@ -621,14 +429,19 @@ body {
         <div class="ticker-row">
           <span class="ticker mono">ASML</span>
           <span class="stock-name">ASML Holding</span>
-          <span class="pri-chip">設備龍頭</span>
+          <span class="pri-chip">第一順位</span>
         </div>
-        <span class="badge badge-green">買入</span>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-06-14</span>
+          <span class="badge badge-green">買入</span>
+        </div>
       </div>
       <div class="verdict rising">📈 創歷史新高</div>
       <p class="stock-logic">週四創歷史新高，EUV產能上限為第三個設備週期訊號。從純週期股轉向結構成長＋週期彈性，交易需求能見度</p>
       <div class="price-row"></div>
-      <div class="tv-wrap">
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（ASML）</summary>
+        <div class="tv-wrap">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
@@ -636,6 +449,7 @@ body {
           </script>
         </div>
       </div>
+      </details>
       <details class="context-fold">
         <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
         <div class="context-body"><div class="mention-item">
@@ -652,14 +466,19 @@ body {
         <div class="ticker-row">
           <span class="ticker mono">LRCX</span>
           <span class="stock-name">Lam Research</span>
-          <span class="pri-chip">設備龍頭</span>
+          <span class="pri-chip">第一順位</span>
         </div>
-        <span class="badge badge-green">買入</span>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-06-14</span>
+          <span class="badge badge-green">買入</span>
+        </div>
       </div>
       <div class="verdict rising">📈 設備股同步創高</div>
       <p class="stock-logic">設備龍頭同步創高，受惠先進邏輯＋HBM/DRAM＋先進封裝三大資本支出週期</p>
       <div class="price-row"></div>
-      <div class="tv-wrap">
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（LRCX）</summary>
+        <div class="tv-wrap">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
@@ -667,6 +486,7 @@ body {
           </script>
         </div>
       </div>
+      </details>
       <details class="context-fold">
         <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
         <div class="context-body"><div class="mention-item">
@@ -683,14 +503,19 @@ body {
         <div class="ticker-row">
           <span class="ticker mono">KLAC</span>
           <span class="stock-name">KLA Corporation</span>
-          <span class="pri-chip">設備龍頭</span>
+          <span class="pri-chip">第一順位</span>
         </div>
-        <span class="badge badge-green">買入</span>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-06-14</span>
+          <span class="badge badge-green">買入</span>
+        </div>
       </div>
       <div class="verdict rising">📈 設備股同步創高</div>
       <p class="stock-logic">量測設備龍頭，受惠先進封裝檢測需求上升與2027年WFE重新定價</p>
       <div class="price-row"></div>
-      <div class="tv-wrap">
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（KLAC）</summary>
+        <div class="tv-wrap">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
@@ -698,6 +523,7 @@ body {
           </script>
         </div>
       </div>
+      </details>
       <details class="context-fold">
         <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
         <div class="context-body"><div class="mention-item">
@@ -709,35 +535,41 @@ body {
           <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">設備龍頭</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">量測設備龍頭，受惠先進封裝檢測需求上升與2027年WFE重新定價</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">與AMAT、ASML、LRCX一起創高</td></tr><tr><td class="ml-key">現況</td><td class="ml-val">📈 設備股同步創高</td></tr></table>
         </div></div>
       </details>
-    </div><div class="card buy" data-ticker="ACMR" data-name="ACM Research">
+    </div><div class="card buy" data-ticker="ABBV" data-name="AbbVie">
       <div class="card-header">
         <div class="ticker-row">
-          <span class="ticker mono">ACMR</span>
-          <span class="stock-name">ACM Research</span>
-          <span class="pri-chip">短線推薦</span>
+          <span class="ticker mono">ABBV</span>
+          <span class="stock-name">AbbVie</span>
+          <span class="pri-chip">第一順位</span>
         </div>
-        <span class="badge badge-green">買入</span>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-06-07</span>
+          <span class="badge badge-green">買入</span>
+        </div>
       </div>
-      <div class="verdict rising">📈 短線動能轉強，出貨領先營收，後續成長確定</div>
-      <p class="stock-logic">半導體濕製程設備商（美版弘塑），SAPS/TEBO/Tahoe 清洗技術。Q1 出貨成長 54%、營收成長 34%，backlog 達 12.7 億美元，未來幾季營收能見度高。NAV 拆解：73.6% ACM Shanghai 持股市值 81 億美元、現金與短投 12.5 億美元、其他資產 5-10 億，總 NAV 98-103 億美元，但 ACMR 市值僅 43.5 億（5/19 收盤），隱含控股公司折價 55-58%。受惠中國國產替代、子公司估值套利、FOPLP 卡位。DCF 保守 40 元 / 基本 72 元 / 樂觀 98 元。</p>
-      <div class="price-row"><span class="price-chip"><span class="chip-label">進場</span>未給具體進場價（短線動能轉強，現價約 43.5 美元附近）</span></div>
-      <div class="tv-wrap">
+      
+      <p class="stock-logic">乾淨的低久期＋現金流，估值較低（前瞻本益比 16 倍，2026 EPS 指引 14.08-14.28 元、EPS 小幅上修），估值保護跟成長同時存在，靠業績後面的成長。</p>
+      <div class="price-row"><span class="price-chip"><span class="chip-label">進場</span>等回踩，不要連漲後追，分批不一次買滿</span></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（ABBV）</summary>
+        <div class="tv-wrap">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-          {"symbol":"NASDAQ:ACMR","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          {"symbol":"NYSE:ABBV","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
           </script>
         </div>
       </div>
+      </details>
       <details class="context-fold">
         <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
         <div class="context-body"><div class="mention-item">
           <div class="mention-meta">
-            <span class="mono date-chip">2026-05-20</span>
+            <span class="mono date-chip">2026-06-07</span>
             <span class="badge badge-green">買入</span>
-            <a href="https://vocus.cc/article/6a0d41a8fd897800017d504c" target="_blank" class="art-link">個股推薦：AI 硬體漲了一大圈，但一家還沒被市場完全定價的半導體設備商 ↗</a>
+            <a href="https://vocus.cc/article/6a24b01bfd897800012902d3" target="_blank" class="art-link">美股大跌後，「短線」有利的第三種選擇：從降息交易到升息預期：費半暴跌後，資金輪動的方向 ↗</a>
           </div>
-          <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">短線推薦</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">半導體濕製程設備商（美版弘塑），SAPS/TEBO/Tahoe 清洗技術。Q1 出貨成長 54%、營收成長 34%，backlog 達 12.7 億美元，未來幾季營收能見度高。NAV 拆解：73.6% ACM Shanghai 持股市值 81 億美元、現金與短投 12.5 億美元、其他資產 5-10 億，總 NAV 98-103 億美元，但 ACMR 市值僅 43.5 億（5/19 收盤），隱含控股公司折價 55-58%。受惠中國國產替代、子公司估值套利、FOPLP 卡位。DCF 保守 40 元 / 基本 72 元 / 樂觀 98 元。</td></tr><tr><td class="ml-key">進場</td><td class="ml-val">未給具體進場價（短線動能轉強，現價約 43.5 美元附近）</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">最大風險為中美政策變數；實際營運重心在中國大陸。爭取打入台積電與 INTC 供應鏈，風險在政治而非技術。</td></tr><tr><td class="ml-key">現況</td><td class="ml-val">📈 短線動能轉強，出貨領先營收，後續成長確定</td></tr></table>
+          <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">第一順位／核心</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">乾淨的低久期＋現金流，估值較低（前瞻本益比 16 倍，2026 EPS 指引 14.08-14.28 元、EPS 小幅上修），估值保護跟成長同時存在，靠業績後面的成長。</td></tr><tr><td class="ml-key">進場</td><td class="ml-val">等回踩，不要連漲後追，分批不一次買滿</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">資金配置建議 ABBV 六成，記得留資金買低點的AI硬體股</td></tr></table>
         </div></div>
       </details>
     </div><div class="card buy" data-ticker="VUZI" data-name="Vuzix">
@@ -745,14 +577,19 @@ body {
         <div class="ticker-row">
           <span class="ticker mono">VUZI</span>
           <span class="stock-name">Vuzix</span>
-          <span class="pri-chip">本篇核心標的</span>
+          <span class="pri-chip">第一順位</span>
         </div>
-        <span class="badge badge-green">買入</span>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-05-18</span>
+          <span class="badge badge-green">買入</span>
+        </div>
       </div>
       <div class="verdict waiting">⏳ 階段(1)股價情緒曙光 2026/5-8 月，靠 Google I/O、AAPL 等催化劑提前卡位</div>
       <p class="stock-logic">唯一可買到的純 waveguide + 智慧眼鏡 OEM 美股標的。低基期、稀缺性、催化劑驅動的波段轉機股。重點不是財報漂亮（2025 全年僅 628 萬美元營收，未來半年季報仍弱），而是市場認知改變。戰略從自有品牌轉向 OEM/ODM，已有 Amazon Ultralite Pro 訂單、與 Himax 聯合光學參考設計、Collins Aerospace 軍用 HUD 合作、廣達 2,000 萬美元入股。</p>
       <div class="price-row"><span class="price-chip"><span class="chip-label">進場</span>未給具體進場價（上週五股價約 $3.00，單日 +9.49% 帶量上漲）</span></div>
-      <div class="tv-wrap">
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（VUZI）</summary>
+        <div class="tv-wrap">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
@@ -760,6 +597,7 @@ body {
           </script>
         </div>
       </div>
+      </details>
       <details class="context-fold">
         <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
         <div class="context-body"><div class="mention-item">
@@ -776,14 +614,19 @@ body {
         <div class="ticker-row">
           <span class="ticker mono">BA</span>
           <span class="stock-name">Boeing</span>
-          <span class="pri-chip">唯一滿足做波段條件</span>
+          <span class="pri-chip">第一順位</span>
         </div>
-        <span class="badge badge-green">買入</span>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-05-11</span>
+          <span class="badge badge-green">買入</span>
+        </div>
       </div>
       
       <p class="stock-logic">近 30 天僅上漲 9%，資金尚未進入擁擠區（部分反映區）。具訂單題材（預期簽署 500 架 737MAX 與寬體客機），是唯一能直接套入財務模型、讓分析師立即上修營收與 EPS 的標的，最有機會從事件交易延伸為波段行情。2017→2018 那次 BA 是唯一受惠標的，從基準漲到歷史 ATH ≈ $371（+40%）</p>
       <div class="price-row"><span class="price-chip"><span class="chip-label">進場</span>現價約 $237.36，回測支撐約 $200-218 區間</span></div>
-      <div class="tv-wrap">
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（BA）</summary>
+        <div class="tv-wrap">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
@@ -791,6 +634,7 @@ body {
           </script>
         </div>
       </div>
+      </details>
       <details class="context-fold">
         <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
         <div class="context-body"><div class="mention-item">
@@ -807,14 +651,19 @@ body {
         <div class="ticker-row">
           <span class="ticker mono">KLIC</span>
           <span class="stock-name">Kulicke and Soffa（庫力索法）</span>
-          <span class="pri-chip">核心推薦</span>
+          <span class="pri-chip">第一順位</span>
         </div>
-        <span class="badge badge-green">買入</span>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-05-07</span>
+          <span class="badge badge-green">買入</span>
+        </div>
       </div>
       <div class="verdict rising">📈 從 46 漲到 109 盤後，已漲 2.3 倍，週期仍在第三季</div>
       <p class="stock-logic">從打線封裝轉型 AI 先進封裝。Q2 營收 2.42 億超預期 2.28 億，EPS 0.79 超預期 0.67，毛利率 49.3%。Q3 指引營收中位數 3.1 億（QoQ +27.78%、YoY +108.8%），EPS 1 元。2026 資本支出從 1200 萬上修至 2200 萬，TCB 產能擴至 4 億。TCB 已獲 SK Hynix、MU 的 HBM 擴產訂單，打入日月光 ASX、AMKR 次世代 AI 加速器封裝供應鏈。保守情境（27年營收14億、EPS 7）合理股價 115-135；基本情境（營收15-16億、EPS 8）145-170；樂觀情境 190-250 美元</p>
       <div class="price-row"><span class="price-chip"><span class="chip-label">進場</span>第一進場點 95 元；第二加碼點 86 美元（約 10MA）</span></div>
-      <div class="tv-wrap">
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（KLIC）</summary>
+        <div class="tv-wrap">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
@@ -822,6 +671,7 @@ body {
           </script>
         </div>
       </div>
+      </details>
       <details class="context-fold">
         <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
         <div class="context-body"><div class="mention-item">
@@ -833,6 +683,265 @@ body {
           <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">核心推薦</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">從打線封裝轉型 AI 先進封裝。Q2 營收 2.42 億超預期 2.28 億，EPS 0.79 超預期 0.67，毛利率 49.3%。Q3 指引營收中位數 3.1 億（QoQ +27.78%、YoY +108.8%），EPS 1 元。2026 資本支出從 1200 萬上修至 2200 萬，TCB 產能擴至 4 億。TCB 已獲 SK Hynix、MU 的 HBM 擴產訂單，打入日月光 ASX、AMKR 次世代 AI 加速器封裝供應鏈。保守情境（27年營收14億、EPS 7）合理股價 115-135；基本情境（營收15-16億、EPS 8）145-170；樂觀情境 190-250 美元</td></tr><tr><td class="ml-key">進場</td><td class="ml-val">第一進場點 95 元；第二加碼點 86 美元（約 10MA）</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">從去年底推薦已漲 2.3 倍（46 到 109 盤後），但週期才走到第三季。明年有機會創歷史新高 70.285（前次推薦時的目標）</td></tr><tr><td class="ml-key">現況</td><td class="ml-val">📈 從 46 漲到 109 盤後，已漲 2.3 倍，週期仍在第三季</td></tr></table>
         </div></div>
       </details>
+    </div><div class="card buy" data-ticker="UCTT" data-name="Ultra Clean Holdings">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">UCTT</span>
+          <span class="stock-name">Ultra Clean Holdings</span>
+          <span class="pri-chip">第二順位</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-06-14</span>
+          <span class="badge badge-green">買入</span>
+        </div>
+      </div>
+      
+      <p class="stock-logic">設備模組與外包製造，二階供應鏈受惠Build Plan傳導，營運槓桿擴增，股價彈性高於設備龍頭，前一輪景氣低潮有較低基期</p>
+      <div class="price-row"></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（UCTT）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NASDAQ:UCTT","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-06-14</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://vocus.cc/article/6a2e5d15fd897800015c4b76" target="_blank" class="art-link">個股推薦：費半大跌，但它們相對抗跌，當Rubin即將出貨，股價創高的卻不是NVDA，華爾街在半導體「 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">重申買進</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">設備模組與外包製造，二階供應鏈受惠Build Plan傳導，營運槓桿擴增，股價彈性高於設備龍頭，前一輪景氣低潮有較低基期</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">之前講過，重申買進</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card buy" data-ticker="ICHR" data-name="Ichor Holdings">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">ICHR</span>
+          <span class="stock-name">Ichor Holdings</span>
+          <span class="pri-chip">第二順位</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-06-14</span>
+          <span class="badge badge-green">買入</span>
+        </div>
+      </div>
+      
+      <p class="stock-logic">氣體與流體輸送系統，二階供應鏈受惠設備訂單從晶圓廠傳導，營運槓桿高、具低基期</p>
+      <div class="price-row"></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（ICHR）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NASDAQ:ICHR","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-06-14</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://vocus.cc/article/6a2e5d15fd897800015c4b76" target="_blank" class="art-link">個股推薦：費半大跌，但它們相對抗跌，當Rubin即將出貨，股價創高的卻不是NVDA，華爾街在半導體「 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">重申買進</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">氣體與流體輸送系統，二階供應鏈受惠設備訂單從晶圓廠傳導，營運槓桿高、具低基期</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">之前講過，重申買進</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card buy" data-ticker="MKSI" data-name="MKS Instruments">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">MKSI</span>
+          <span class="stock-name">MKS Instruments</span>
+          <span class="pri-chip">第二順位</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-06-14</span>
+          <span class="badge badge-green">買入</span>
+        </div>
+      </div>
+      
+      <p class="stock-logic">WFE週期的平台供應商，二階供應鏈受惠Build Plan傳導與EPS槓桿</p>
+      <div class="price-row"></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（MKSI）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NASDAQ:MKSI","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-06-14</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://vocus.cc/article/6a2e5d15fd897800015c4b76" target="_blank" class="art-link">個股推薦：費半大跌，但它們相對抗跌，當Rubin即將出貨，股價創高的卻不是NVDA，華爾街在半導體「 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">重申買進</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">WFE週期的平台供應商，二階供應鏈受惠Build Plan傳導與EPS槓桿</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">之前講過，重申買進</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card buy" data-ticker="LLY" data-name="Eli Lilly">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">LLY</span>
+          <span class="stock-name">Eli Lilly</span>
+          <span class="pri-chip">第二順位</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-06-07</span>
+          <span class="badge badge-green">買入</span>
+        </div>
+      </div>
+      
+      <p class="stock-logic">成長性動能最強，Mounjaro 與 Zepbound 兩台減肥藥印鈔機。上修最猛（2026 EPS 指引 35.5-37 元、中位 36.25，營收+EPS 雙上修），但前瞻本益比 31.2 倍、容錯空間最小，走垂直整合 AI 路線。風險為藥品集中度高。</p>
+      <div class="price-row"><span class="price-chip"><span class="chip-label">進場</span>分批、不一次買滿</span></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（LLY）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NYSE:LLY","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-06-07</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://vocus.cc/article/6a24b01bfd897800012902d3" target="_blank" class="art-link">美股大跌後，「短線」有利的第三種選擇：從降息交易到升息預期：費半暴跌後，資金輪動的方向 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">第二順位／進攻</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">成長性動能最強，Mounjaro 與 Zepbound 兩台減肥藥印鈔機。上修最猛（2026 EPS 指引 35.5-37 元、中位 36.25，營收+EPS 雙上修），但前瞻本益比 31.2 倍、容錯空間最小，走垂直整合 AI 路線。風險為藥品集中度高。</td></tr><tr><td class="ml-key">進場</td><td class="ml-val">分批、不一次買滿</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">資金配置建議 LLY 四成，負責進攻</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card buy" data-ticker="LTRX" data-name="Lantronix">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">LTRX</span>
+          <span class="stock-name">Lantronix</span>
+          <span class="pri-chip">第二順位</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-05-28</span>
+          <span class="badge badge-green">買入</span>
+        </div>
+      </div>
+      
+      <p class="stock-logic">嵌入式運算與邊緣AI，無人機安全通訊關鍵零件，賣鏟子的人；與UMAC合作出貨，UMAC漲LTRX沒理由不漲。圖表現價約$7.25，52週高7.6/低3.4</p>
+      <div class="price-row"></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（LTRX）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NASDAQ:LTRX","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-05-28</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://vocus.cc/article/6a17bb98fd89780001109ff5" target="_blank" class="art-link">個股推薦：當AI硬體與太空股先後放煙火後，下一個該佈局的板塊已經在路上。兩檔最推薦的個股 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">主推（第二層）</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">嵌入式運算與邊緣AI，無人機安全通訊關鍵零件，賣鏟子的人；與UMAC合作出貨，UMAC漲LTRX沒理由不漲。圖表現價約$7.25，52週高7.6/低3.4</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">選LTRX不選ONDS，定位邊緣運算與安全通訊</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card buy" data-ticker="ACMR" data-name="ACM Research">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">ACMR</span>
+          <span class="stock-name">ACM Research</span>
+          <span class="pri-chip">第二順位</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-05-20</span>
+          <span class="badge badge-green">買入</span>
+        </div>
+      </div>
+      <div class="verdict rising">📈 短線動能轉強，出貨領先營收，後續成長確定</div>
+      <p class="stock-logic">半導體濕製程設備商（美版弘塑），SAPS/TEBO/Tahoe 清洗技術。Q1 出貨成長 54%、營收成長 34%，backlog 達 12.7 億美元，未來幾季營收能見度高。NAV 拆解：73.6% ACM Shanghai 持股市值 81 億美元、現金與短投 12.5 億美元、其他資產 5-10 億，總 NAV 98-103 億美元，但 ACMR 市值僅 43.5 億（5/19 收盤），隱含控股公司折價 55-58%。受惠中國國產替代、子公司估值套利、FOPLP 卡位。DCF 保守 40 元 / 基本 72 元 / 樂觀 98 元。</p>
+      <div class="price-row"><span class="price-chip"><span class="chip-label">進場</span>未給具體進場價（短線動能轉強，現價約 43.5 美元附近）</span></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（ACMR）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NASDAQ:ACMR","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-05-20</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://vocus.cc/article/6a0d41a8fd897800017d504c" target="_blank" class="art-link">個股推薦：AI 硬體漲了一大圈，但一家還沒被市場完全定價的半導體設備商 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">短線推薦</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">半導體濕製程設備商（美版弘塑），SAPS/TEBO/Tahoe 清洗技術。Q1 出貨成長 54%、營收成長 34%，backlog 達 12.7 億美元，未來幾季營收能見度高。NAV 拆解：73.6% ACM Shanghai 持股市值 81 億美元、現金與短投 12.5 億美元、其他資產 5-10 億，總 NAV 98-103 億美元，但 ACMR 市值僅 43.5 億（5/19 收盤），隱含控股公司折價 55-58%。受惠中國國產替代、子公司估值套利、FOPLP 卡位。DCF 保守 40 元 / 基本 72 元 / 樂觀 98 元。</td></tr><tr><td class="ml-key">進場</td><td class="ml-val">未給具體進場價（短線動能轉強，現價約 43.5 美元附近）</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">最大風險為中美政策變數；實際營運重心在中國大陸。爭取打入台積電與 INTC 供應鏈，風險在政治而非技術。</td></tr><tr><td class="ml-key">現況</td><td class="ml-val">📈 短線動能轉強，出貨領先營收，後續成長確定</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card buy" data-ticker="PDYN" data-name="Palladyne AI">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">PDYN</span>
+          <span class="stock-name">Palladyne AI</span>
+          <span class="pri-chip">第三順位</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-05-28</span>
+          <span class="badge badge-green">買入</span>
+        </div>
+      </div>
+      
+      <p class="stock-logic">AI大腦與群體作戰軟體，SwarmOS整合進RCAT Black Widow系統；拿到AFRL合約、入選Relentless Wolfpack 14家決選名單；走PLTR政府背書劇本，被視為2008年版PLTR。圖表現價約$7.52</p>
+      <div class="price-row"><span class="price-chip"><span class="chip-label">目標</span>第一壓力$10，第二壓力$13</span></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（PDYN）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NASDAQ:PDYN","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-05-28</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://vocus.cc/article/6a17bb98fd89780001109ff5" target="_blank" class="art-link">個股推薦：當AI硬體與太空股先後放煙火後，下一個該佈局的板塊已經在路上。兩檔最推薦的個股 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">主推（第三層）</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">AI大腦與群體作戰軟體，SwarmOS整合進RCAT Black Widow系統；拿到AFRL合約、入選Relentless Wolfpack 14家決選名單；走PLTR政府背書劇本，被視為2008年版PLTR。圖表現價約$7.52</td></tr><tr><td class="ml-key">目標</td><td class="ml-val">第一壓力$10，第二壓力$13</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">從政府市場切入再複製到商業端，與PLTR路徑雷同；短線有題材噴出可獲利落袋</td></tr></table>
+        </div></div>
+      </details>
     </div><div class="card buy" data-ticker="VSH" data-name="Vishay Intertechnology">
       <div class="card-header">
         <div class="ticker-row">
@@ -840,12 +949,17 @@ body {
           <span class="stock-name">Vishay Intertechnology</span>
           
         </div>
-        <span class="badge badge-green">買入</span>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-05-14</span>
+          <span class="badge badge-green">買入</span>
+        </div>
       </div>
       <div class="verdict waiting">⏳ 短線漲多乖離大，逢高獲利一半，剩餘倉位長線持有</div>
       <p class="stock-logic">Q1 營收 8.39 億美元（季增 4.8%、年增 17.3%），優於 guidance 上緣與市場預期。EPS 0.05 大幅 beat 預期 0.01（surprise ~400%）。毛利率 21%（前季 19%）。B/B 值 1.34（半導體 1.47、被動 1.23），在手訂單能見度拉長至 5.7 個月。Q2 指引營收 8.75~9.05 億、毛利率 22%±50bps。產品線含 MOSFET、鉭電容、電阻、電感，位於 AI 電源架構升級重要位置。AI 營收佔比 3-4%、2026 年突破 1 億美元。Forward P/E 66x、EV/Sales 1.8x（同業最低）。市值 52.4 億。打底約兩年（2024 到 2026/4）。</p>
       <div class="price-row"><span class="price-chip"><span class="chip-label">進場</span>未給具體進場價（日線乖離大，建議參考週線）</span></div>
-      <div class="tv-wrap">
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（VSH）</summary>
+        <div class="tv-wrap">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
@@ -853,6 +967,7 @@ body {
           </script>
         </div>
       </div>
+      </details>
       <details class="context-fold">
         <summary class="context-toggle">▸ 文章脈絡（2 篇文章提及）</summary>
         <div class="context-body"><div class="mention-item">
@@ -878,12 +993,17 @@ body {
           <span class="stock-name">Ouster</span>
           
         </div>
-        <span class="badge badge-green">買入</span>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-05-06</span>
+          <span class="badge badge-green">買入</span>
+        </div>
       </div>
       <div class="verdict waiting">⏳ 等下半年訂單認列與題材共振，業績拐點在 Q3-Q4</div>
       <p class="stock-logic">從硬體商升級為物理 AI 感知平台（Lidar+鏡頭+AI 運算+感知軟體），可享更高 P/S 估值。Q1 營收 4860 萬美元、產品營收連 13 季成長。Rev8 OS 於 5/5 發表定位升級、整合 NVDA Jetson 機器人大腦、收購 Stereolabs（每秒 120 幀神經網路深度感知，對標人形機器人手腕、cobot 機械手臂、工廠視覺系統）。下半年為基本面爆發點，Q3-Q4 出現營收斜率轉折。LSEG/IBES 預估 2026 起營收明顯向上。</p>
       <div class="price-row"><span class="price-chip"><span class="chip-label">進場</span>未給具體進場價（財報後盤後 -9.02% 修正中）</span></div>
-      <div class="tv-wrap">
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（OUST）</summary>
+        <div class="tv-wrap">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
@@ -891,6 +1011,7 @@ body {
           </script>
         </div>
       </div>
+      </details>
       <details class="context-fold">
         <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
         <div class="context-body"><div class="mention-item">
@@ -909,12 +1030,17 @@ body {
           <span class="stock-name">Materion</span>
           
         </div>
-        <span class="badge badge-green">買入</span>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-05-04</span>
+          <span class="badge badge-green">買入</span>
+        </div>
       </div>
       <div class="verdict rising">📈 自 1/9 推薦約 100 多元已漲至 188 元</div>
       <p class="stock-logic">全球鈹金屬壟斷級龍頭，美國境內唯一鈹礦場，國防戰略物資與 NASA 韋伯太空望遠鏡核心材料。三大部門：電子材料（HBM3E/HBM4 先進封裝、HAMR 硬碟靶材，EBITDA 年增 95%）、精密光學（CPO 共封裝光學，營收創 2021 來最強季度）、性能材料（國防訂單增 50%，核能 SMR 長線潛力）。Backlog 創歷史新高，未來 2-3 季營收動能鎖定。PEG 約 1 仍屬合理區間，Beta 僅 0.91 股性穩定。處於 PEAD 60 天盈餘公告後動能窗口，sell-side 升評循環尚未走完。</p>
       <div class="price-row"><span class="price-chip"><span class="chip-label">進場</span>空手者不建議追高，等回測 170-175 元區間再分批佈局（20MA 約 172 元）</span></div>
-      <div class="tv-wrap">
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（MTRN）</summary>
+        <div class="tv-wrap">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
@@ -922,6 +1048,7 @@ body {
           </script>
         </div>
       </div>
+      </details>
       <details class="context-fold">
         <summary class="context-toggle">▸ 文章脈絡（2 篇文章提及）</summary>
         <div class="context-body"><div class="mention-item">
@@ -950,12 +1077,17 @@ body {
           <span class="stock-name">UnitedHealth</span>
           
         </div>
-        <span class="badge badge-yellow">觀察</span>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-06-07</span>
+          <span class="badge badge-yellow">觀察</span>
+        </div>
       </div>
       
       <p class="stock-logic">已不是相對便宜的防禦股，屬於『獲利修復＋賣方轉向』交易，最低目標上修，前瞻本益比 21.9 倍，2026 EPS 指引大於 18.25 元，Q2 偏向會好。</p>
       <div class="price-row"></div>
-      <div class="tv-wrap">
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（UNH）</summary>
+        <div class="tv-wrap">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
@@ -963,6 +1095,7 @@ body {
           </script>
         </div>
       </div>
+      </details>
       <details class="context-fold">
         <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
         <div class="context-body"><div class="mention-item">
@@ -981,12 +1114,17 @@ body {
           <span class="stock-name">Johnson &amp; Johnson</span>
           
         </div>
-        <span class="badge badge-yellow">觀察</span>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-06-07</span>
+          <span class="badge badge-yellow">觀察</span>
+        </div>
       </div>
       
       <p class="stock-logic">最純的防禦，但預期差也最小，前瞻本益比 20.2 倍，2026 EPS 指引 11.45-11.65 元（中位 11.55）、指引小幅上修。</p>
       <div class="price-row"></div>
-      <div class="tv-wrap">
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（JNJ）</summary>
+        <div class="tv-wrap">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
@@ -994,6 +1132,7 @@ body {
           </script>
         </div>
       </div>
+      </details>
       <details class="context-fold">
         <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
         <div class="context-body"><div class="mention-item">
@@ -1012,12 +1151,17 @@ body {
           <span class="stock-name">Broadcom</span>
           
         </div>
-        <span class="badge badge-yellow">觀察</span>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-06-04</span>
+          <span class="badge badge-yellow">觀察</span>
+        </div>
       </div>
       <div class="verdict alert">📈 財報不錯但盤後大跌，長線邏輯未破壞</div>
       <p class="stock-logic">Q2 營收 221.9 億、EPS 2.44、AI 半導體營收 108 億（年增超過一倍），半導體部門年增 79%。財報其實不錯，盤後大跌主因是未上修 2027 年 1000 億 AI 晶片目標、敘事退回只賣晶片，以及高毛利軟體放緩。短期受 MRVL、聯發科在議價權與毛利上的衝擊，但長線地位仍穩固。客戶含 Google（訓練）、META(MTIA)、OpenAI、Anthropic，強項為高效能核心、SerDes、封裝。</p>
       <div class="price-row"><span class="price-chip"><span class="chip-label">目標</span>2027 AI 晶片營收目標 &gt;1000 億美元</span></div>
-      <div class="tv-wrap">
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（AVGO）</summary>
+        <div class="tv-wrap">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
@@ -1025,6 +1169,7 @@ body {
           </script>
         </div>
       </div>
+      </details>
       <details class="context-fold">
         <summary class="context-toggle">▸ 文章脈絡（2 篇文章提及）</summary>
         <div class="context-body"><div class="mention-item">
@@ -1050,12 +1195,17 @@ body {
           <span class="stock-name">Marvell</span>
           
         </div>
-        <span class="badge badge-yellow">觀察</span>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-06-04</span>
+          <span class="badge badge-yellow">觀察</span>
+        </div>
       </div>
       
       <p class="stock-logic">客戶含亞馬遜 Trainium（獨家）、微軟 Maia、META 的 DPU、Google Axion CPU，強項為客製運算與光互連。對 AVGO 的威脅在於議價權，但不會馬上搶走 Google TPU 訂單或取代其地位。</p>
       <div class="price-row"></div>
-      <div class="tv-wrap">
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（MRVL）</summary>
+        <div class="tv-wrap">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
@@ -1063,6 +1213,7 @@ body {
           </script>
         </div>
       </div>
+      </details>
       <details class="context-fold">
         <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
         <div class="context-body"><div class="mention-item">
@@ -1081,12 +1232,17 @@ body {
           <span class="stock-name">NVIDIA</span>
           
         </div>
-        <span class="badge badge-yellow">觀察</span>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-06-02</span>
+          <span class="badge badge-yellow">觀察</span>
+        </div>
       </div>
       <div class="verdict rising">📈 事件溢價階段，資金先追逐</div>
       <p class="stock-logic">平台核心、RTX Spark 平台定義者。Blackwell RTX GPU 1 PetaFLOP FP4 算力、20 核 Grace CPU（與聯發科合作）、128GB 統一記憶體、600GB/s NVLink C2C，完整 NVIDIA Stack（CUDA/TensorRT/DLSS）。第一層平台與架構受惠者。</p>
       <div class="price-row"></div>
-      <div class="tv-wrap">
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（NVDA）</summary>
+        <div class="tv-wrap">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
@@ -1094,6 +1250,7 @@ body {
           </script>
         </div>
       </div>
+      </details>
       <details class="context-fold">
         <summary class="context-toggle">▸ 文章脈絡（3 篇文章提及）</summary>
         <div class="context-body"><div class="mention-item">
@@ -1126,12 +1283,17 @@ body {
           <span class="stock-name">Arm Holdings</span>
           
         </div>
-        <span class="badge badge-yellow">觀察</span>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-06-02</span>
+          <span class="badge badge-yellow">觀察</span>
+        </div>
       </div>
       <div class="verdict alert">⚠️ 短線漲幅過大，估值乖離風險</div>
       <p class="stock-logic">賣鏟子的架構 IP 受惠者，權利金照收。RTX Spark 採用 ARM 架構 20 核心 Grace CPU。第一層平台架構受惠者，但短線漲幅過大，估值與乖離風險要留意。</p>
       <div class="price-row"></div>
-      <div class="tv-wrap">
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（ARM）</summary>
+        <div class="tv-wrap">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
@@ -1139,6 +1301,7 @@ body {
           </script>
         </div>
       </div>
+      </details>
       <details class="context-fold">
         <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
         <div class="context-body"><div class="mention-item">
@@ -1157,12 +1320,17 @@ body {
           <span class="stock-name">Microsoft</span>
           
         </div>
-        <span class="badge badge-yellow">觀察</span>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-06-02</span>
+          <span class="badge badge-yellow">觀察</span>
+        </div>
       </div>
       
       <p class="stock-logic">與 NVDA 共同 Reinvent PC，旗艦 Surface 採用 RTX Spark。第一層平台與架構受惠者。</p>
       <div class="price-row"></div>
-      <div class="tv-wrap">
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（MSFT）</summary>
+        <div class="tv-wrap">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
@@ -1170,6 +1338,7 @@ body {
           </script>
         </div>
       </div>
+      </details>
       <details class="context-fold">
         <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
         <div class="context-body"><div class="mention-item">
@@ -1188,12 +1357,17 @@ body {
           <span class="stock-name">Dell Technologies</span>
           
         </div>
-        <span class="badge badge-yellow">觀察</span>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-06-02</span>
+          <span class="badge badge-yellow">觀察</span>
+        </div>
       </div>
       <div class="verdict rising">📈 整機品牌今天漲最多</div>
       <p class="stock-logic">第二層品牌與變現受惠者，整機品牌商，今天賣整機的品牌漲最多。單機含量提升、高單價、換機潮受惠。</p>
       <div class="price-row"></div>
-      <div class="tv-wrap">
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（DELL）</summary>
+        <div class="tv-wrap">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
@@ -1201,6 +1375,7 @@ body {
           </script>
         </div>
       </div>
+      </details>
       <details class="context-fold">
         <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
         <div class="context-body"><div class="mention-item">
@@ -1219,12 +1394,17 @@ body {
           <span class="stock-name">HP Inc.</span>
           
         </div>
-        <span class="badge badge-yellow">觀察</span>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-06-02</span>
+          <span class="badge badge-yellow">觀察</span>
+        </div>
       </div>
       <div class="verdict rising">📈 整機品牌今天漲最多</div>
       <p class="stock-logic">第二層品牌與變現受惠者，整機品牌商，高單價、換機潮受惠。</p>
       <div class="price-row"></div>
-      <div class="tv-wrap">
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（HPQ）</summary>
+        <div class="tv-wrap">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
@@ -1232,6 +1412,7 @@ body {
           </script>
         </div>
       </div>
+      </details>
       <details class="context-fold">
         <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
         <div class="context-body"><div class="mention-item">
@@ -1250,12 +1431,17 @@ body {
           <span class="stock-name">SanDisk / Storage</span>
           
         </div>
-        <span class="badge badge-yellow">觀察</span>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-06-02</span>
+          <span class="badge badge-yellow">觀察</span>
+        </div>
       </div>
       
       <p class="stock-logic">第三層儲存/控制受惠者，本機 AI 要儲存大量檔案、模型、素材，拉高單機儲存含量。</p>
       <div class="price-row"></div>
-      <div class="tv-wrap">
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（SNDK）</summary>
+        <div class="tv-wrap">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
@@ -1263,6 +1449,7 @@ body {
           </script>
         </div>
       </div>
+      </details>
       <details class="context-fold">
         <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
         <div class="context-body"><div class="mention-item">
@@ -1281,12 +1468,17 @@ body {
           <span class="stock-name">Western Digital</span>
           
         </div>
-        <span class="badge badge-yellow">觀察</span>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-06-02</span>
+          <span class="badge badge-yellow">觀察</span>
+        </div>
       </div>
       
       <p class="stock-logic">第三層儲存/控制受惠者，本機 AI 拉高單機儲存含量（SSD/HDD）。</p>
       <div class="price-row"></div>
-      <div class="tv-wrap">
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（WDC）</summary>
+        <div class="tv-wrap">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
@@ -1294,6 +1486,7 @@ body {
           </script>
         </div>
       </div>
+      </details>
       <details class="context-fold">
         <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
         <div class="context-body"><div class="mention-item">
@@ -1312,12 +1505,17 @@ body {
           <span class="stock-name">Seagate Technology</span>
           
         </div>
-        <span class="badge badge-yellow">觀察</span>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-06-02</span>
+          <span class="badge badge-yellow">觀察</span>
+        </div>
       </div>
       
       <p class="stock-logic">第三層儲存/控制受惠者，本機 AI 要存大量檔案、模型、素材，拉高單機儲存含量。</p>
       <div class="price-row"></div>
-      <div class="tv-wrap">
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（STX）</summary>
+        <div class="tv-wrap">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
@@ -1325,6 +1523,7 @@ body {
           </script>
         </div>
       </div>
+      </details>
       <details class="context-fold">
         <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
         <div class="context-body"><div class="mention-item">
@@ -1343,12 +1542,17 @@ body {
           <span class="stock-name">Adobe</span>
           
         </div>
-        <span class="badge badge-yellow">觀察</span>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-06-02</span>
+          <span class="badge badge-yellow">觀察</span>
+        </div>
       </div>
       
       <p class="stock-logic">軟體層受惠者，Photoshop、Premiere 為 RTX Spark 重構優化，配合 NVDA 平台模式。</p>
       <div class="price-row"></div>
-      <div class="tv-wrap">
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（ADBE）</summary>
+        <div class="tv-wrap">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
@@ -1356,6 +1560,7 @@ body {
           </script>
         </div>
       </div>
+      </details>
       <details class="context-fold">
         <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
         <div class="context-body"><div class="mention-item">
@@ -1374,12 +1579,17 @@ body {
           <span class="stock-name">Qualcomm</span>
           
         </div>
-        <span class="badge badge-yellow">觀察</span>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-06-02</span>
+          <span class="badge badge-yellow">觀察</span>
+        </div>
       </div>
       <div class="verdict alert">⚠️ 短線股價反應最大</div>
       <p class="stock-logic">Snapdragon X2 Elite 為現有 ARM AI PC 玩家（18 核心 5.0GHz、Adreno 內顯、NPU 80 TOPS），今天短線股價反應最大。受 NVDA 進入競爭影響。</p>
       <div class="price-row"></div>
-      <div class="tv-wrap">
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（QCOM）</summary>
+        <div class="tv-wrap">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
@@ -1387,6 +1597,7 @@ body {
           </script>
         </div>
       </div>
+      </details>
       <details class="context-fold">
         <summary class="context-toggle">▸ 文章脈絡（3 篇文章提及）</summary>
         <div class="context-body"><div class="mention-item">
@@ -1419,12 +1630,17 @@ body {
           <span class="stock-name">Alphabet</span>
           
         </div>
-        <span class="badge badge-yellow">觀察</span>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-06-01</span>
+          <span class="badge badge-yellow">觀察</span>
+        </div>
       </div>
       
       <p class="stock-logic">Apple Siri 2.0 採用 Gemini 模型，反映 Google 在模型層與雲端 AI 的戰略地位；但『iPhone 用 Gemini → 自研晶片收費站大賺』的推論被作者認為是錯的，真正受益在模型與雲端層</p>
       <div class="price-row"></div>
-      <div class="tv-wrap">
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（GOOGL）</summary>
+        <div class="tv-wrap">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
@@ -1432,6 +1648,7 @@ body {
           </script>
         </div>
       </div>
+      </details>
       <details class="context-fold">
         <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
         <div class="context-body"><div class="mention-item">
@@ -1450,12 +1667,17 @@ body {
           <span class="stock-name">Unusual Machines</span>
           
         </div>
-        <span class="badge badge-yellow">觀察</span>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-05-28</span>
+          <span class="badge badge-yellow">觀察</span>
+        </div>
       </div>
       <div class="verdict rising">📈 指標股開始出現發動跡象</div>
       <p class="stock-logic">無人機板塊領頭羊（第一層硬體），NDAA-compliant元件供應商、Red Cat FANG生態系、訂單到位產能擴張；整理4個多月有機會開始動。圖表現價約$18.83</p>
       <div class="price-row"></div>
-      <div class="tv-wrap">
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（UMAC）</summary>
+        <div class="tv-wrap">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
@@ -1463,6 +1685,7 @@ body {
           </script>
         </div>
       </div>
+      </details>
       <details class="context-fold">
         <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
         <div class="context-body"><div class="mention-item">
@@ -1481,12 +1704,17 @@ body {
           <span class="stock-name">Ondas</span>
           
         </div>
-        <span class="badge badge-yellow">觀察</span>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-05-28</span>
+          <span class="badge badge-yellow">觀察</span>
+        </div>
       </div>
       
       <p class="stock-logic">第二層邊緣運算，但文章選LTRX不選ONDS，列為觀察。圖表現價約$10.80</p>
       <div class="price-row"></div>
-      <div class="tv-wrap">
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（ONDS）</summary>
+        <div class="tv-wrap">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
@@ -1494,6 +1722,7 @@ body {
           </script>
         </div>
       </div>
+      </details>
       <details class="context-fold">
         <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
         <div class="context-body"><div class="mention-item">
@@ -1512,12 +1741,17 @@ body {
           <span class="stock-name">Red Cat</span>
           
         </div>
-        <span class="badge badge-yellow">觀察</span>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-05-28</span>
+          <span class="badge badge-yellow">觀察</span>
+        </div>
       </div>
       
       <p class="stock-logic">第一層硬體本體與零組件，FANG生態系；操作策略列為觀察</p>
       <div class="price-row"></div>
-      <div class="tv-wrap">
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（RCAT）</summary>
+        <div class="tv-wrap">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
@@ -1525,6 +1759,7 @@ body {
           </script>
         </div>
       </div>
+      </details>
       <details class="context-fold">
         <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
         <div class="context-body"><div class="mention-item">
@@ -1543,12 +1778,17 @@ body {
           <span class="stock-name">AeroVironment</span>
           
         </div>
-        <span class="badge badge-yellow">觀察</span>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-05-28</span>
+          <span class="badge badge-yellow">觀察</span>
+        </div>
       </div>
       
       <p class="stock-logic">第一層硬體，操作策略列為不碰；圖表顯示自高位大幅修正，現價約$181.28，從高點460附近回落</p>
       <div class="price-row"></div>
-      <div class="tv-wrap">
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（AVAV）</summary>
+        <div class="tv-wrap">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
@@ -1556,6 +1796,7 @@ body {
           </script>
         </div>
       </div>
+      </details>
       <details class="context-fold">
         <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
         <div class="context-body"><div class="mention-item">
@@ -1574,12 +1815,17 @@ body {
           <span class="stock-name">AXT Inc</span>
           
         </div>
-        <span class="badge badge-yellow">觀察</span>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-05-20</span>
+          <span class="badge badge-yellow">觀察</span>
+        </div>
       </div>
       <div class="verdict rising">📈 虧損仍拉到三位數，抗跌力強</div>
       <p class="stock-logic">與 ACMR 同為僅有的兩家美股母公司+中國科創板子公司掛牌的美國上市公司。雖虧損但股價可拉到三位數且不太會跌，作為估值套利劇本對照案例。AXTI 科創板劇本被卡死，而 ACMR 子公司已上市。</p>
       <div class="price-row"></div>
-      <div class="tv-wrap">
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（AXTI）</summary>
+        <div class="tv-wrap">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
@@ -1587,6 +1833,7 @@ body {
           </script>
         </div>
       </div>
+      </details>
       <details class="context-fold">
         <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
         <div class="context-body"><div class="mention-item">
@@ -1605,12 +1852,17 @@ body {
           <span class="stock-name">Himax (奇景光電)</span>
           
         </div>
-        <span class="badge badge-yellow">觀察</span>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-05-18</span>
+          <span class="badge badge-yellow">觀察</span>
+        </div>
       </div>
       
       <p class="stock-logic">LCoS 微顯示器供應商，與 VUZI 推出聯合光學參考設計的合作夥伴，屬顯示版微顯示器環節。</p>
       <div class="price-row"></div>
-      <div class="tv-wrap">
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（HIMX）</summary>
+        <div class="tv-wrap">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
@@ -1618,6 +1870,7 @@ body {
           </script>
         </div>
       </div>
+      </details>
       <details class="context-fold">
         <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
         <div class="context-body"><div class="mention-item">
@@ -1636,12 +1889,17 @@ body {
           <span class="stock-name">國巨</span>
           
         </div>
-        <span class="badge badge-yellow">觀察</span>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-05-14</span>
+          <span class="badge badge-yellow">觀察</span>
+        </div>
       </div>
       
       <p class="stock-logic">純被動為主 + 感測器，鉭電容卡位。Q1 營收 YoY 22.7%、毛利率 38.1%，已連續三波漲價且效益部分反映。市值 180 億美元（NT5768 億），為 VSH 的 3.4 倍。TTM 營收 39.7 億、TTM 毛利率 35.2%、Forward P/E 19x、EV/EBITDA 17.2x、AI 營收佔比 14-15%（鉭電容業務 AI 佔比 &gt;30%）。為 VSH 基本面領先指標，已處於漲價反映階段，VSH 還在漲價剛開始發酵階段。</p>
       <div class="price-row"></div>
-      <div class="tv-wrap">
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（YAGEO）</summary>
+        <div class="tv-wrap">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
@@ -1649,6 +1907,7 @@ body {
           </script>
         </div>
       </div>
+      </details>
       <details class="context-fold">
         <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
         <div class="context-body"><div class="mention-item">
@@ -1667,12 +1926,17 @@ body {
           <span class="stock-name">Tesla</span>
           
         </div>
-        <span class="badge badge-yellow">觀察</span>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-05-12</span>
+          <span class="badge badge-yellow">觀察</span>
+        </div>
       </div>
       <div class="verdict rising">📈 突破半年線後放量上攻，周線突破但20MA下彎可能拉扯</div>
       <p class="stock-logic">首度突破半年線後放量大漲，SOTP 合理價約 400（Piper Sandler DCF 17 條產線），目前交易價約 428，未計入 Optimus 價值；Optimus Gen 3 預計 2027 量產為真正長線催化劑。周線亦突破但 20MA 仍下彎，可能拉扯。</p>
       <div class="price-row"><span class="price-chip"><span class="chip-label">目標</span>$500（Piper Sandler）</span></div>
-      <div class="tv-wrap">
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（TSLA）</summary>
+        <div class="tv-wrap">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
@@ -1680,6 +1944,7 @@ body {
           </script>
         </div>
       </div>
+      </details>
       <details class="context-fold">
         <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
         <div class="context-body"><div class="mention-item">
@@ -1698,12 +1963,17 @@ body {
           <span class="stock-name">Circle</span>
           
         </div>
-        <span class="badge badge-yellow">觀察</span>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-05-11</span>
+          <span class="badge badge-yellow">觀察</span>
+        </div>
       </div>
       
       <p class="stock-logic">穩定幣龍頭，5/11 Q1 2026 財報為會前定錨。會前未見擁擠提前押注，搭配 CLARITY Act 法案從審議到立法還有 1-2 個月發酵期，具政策共振 Alpha 空間（合理定價、政策共振象限）</p>
       <div class="price-row"></div>
-      <div class="tv-wrap">
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（CRCL）</summary>
+        <div class="tv-wrap">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
@@ -1711,6 +1981,7 @@ body {
           </script>
         </div>
       </div>
+      </details>
       <details class="context-fold">
         <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
         <div class="context-body"><div class="mention-item">
@@ -1729,12 +2000,17 @@ body {
           <span class="stock-name">Coinbase</span>
           
         </div>
-        <span class="badge badge-yellow">觀察</span>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-05-11</span>
+          <span class="badge badge-yellow">觀察</span>
+        </div>
       </div>
       
       <p class="stock-logic">加密貨幣板塊受惠 CLARITY Act 清晰法案共振，訪中題材多已被提前定價，但加密相關個股會前並未擁擠押注，剩餘 Alpha 空間較大（合理定價、政策共振象限）</p>
       <div class="price-row"></div>
-      <div class="tv-wrap">
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（COIN）</summary>
+        <div class="tv-wrap">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
@@ -1742,6 +2018,7 @@ body {
           </script>
         </div>
       </div>
+      </details>
       <details class="context-fold">
         <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
         <div class="context-body"><div class="mention-item">
@@ -1760,12 +2037,17 @@ body {
           <span class="stock-name">AEHR Test Systems</span>
           
         </div>
-        <span class="badge badge-yellow">觀察</span>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-05-07</span>
+          <span class="badge badge-yellow">觀察</span>
+        </div>
       </div>
       
       <p class="stock-logic">第一層同業，負責 HBM 最後一道燒機測試（burn-in），確認晶片穩定。當 AEHR 股價或指引上來時，代表 KLIC 業績會起來。視為 KLIC 業績的領先觀察指標</p>
       <div class="price-row"></div>
-      <div class="tv-wrap">
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（AEHR）</summary>
+        <div class="tv-wrap">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
@@ -1773,6 +2055,7 @@ body {
           </script>
         </div>
       </div>
+      </details>
       <details class="context-fold">
         <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
         <div class="context-body"><div class="mention-item">
@@ -1791,12 +2074,17 @@ body {
           <span class="stock-name">BE Semiconductor</span>
           
         </div>
-        <span class="badge badge-yellow">觀察</span>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-05-07</span>
+          <span class="badge badge-yellow">觀察</span>
+        </div>
       </div>
       
       <p class="stock-logic">第一層同業，先進封裝設備廠，與 KLIC 同處 T0 季設備廠列營收階段</p>
       <div class="price-row"></div>
-      <div class="tv-wrap">
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（BESI）</summary>
+        <div class="tv-wrap">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
@@ -1804,6 +2092,7 @@ body {
           </script>
         </div>
       </div>
+      </details>
       <details class="context-fold">
         <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
         <div class="context-body"><div class="mention-item">
@@ -1822,12 +2111,17 @@ body {
           <span class="stock-name">Onto Innovation</span>
           
         </div>
-        <span class="badge badge-yellow">觀察</span>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-05-07</span>
+          <span class="badge badge-yellow">觀察</span>
+        </div>
       </div>
       
       <p class="stock-logic">第一層同業，先進封裝/檢測設備廠，與 KLIC 同處 T0 季設備廠列營收階段</p>
       <div class="price-row"></div>
-      <div class="tv-wrap">
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（ONTO）</summary>
+        <div class="tv-wrap">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
@@ -1835,6 +2129,7 @@ body {
           </script>
         </div>
       </div>
+      </details>
       <details class="context-fold">
         <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
         <div class="context-body"><div class="mention-item">
@@ -1853,12 +2148,17 @@ body {
           <span class="stock-name">Camtek</span>
           
         </div>
-        <span class="badge badge-yellow">觀察</span>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-05-07</span>
+          <span class="badge badge-yellow">觀察</span>
+        </div>
       </div>
       
       <p class="stock-logic">第一層同業，先進封裝檢測設備廠，與 KLIC 同處 T0 季設備廠列營收階段</p>
       <div class="price-row"></div>
-      <div class="tv-wrap">
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（CAMT）</summary>
+        <div class="tv-wrap">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
@@ -1866,6 +2166,7 @@ body {
           </script>
         </div>
       </div>
+      </details>
       <details class="context-fold">
         <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
         <div class="context-body"><div class="mention-item">
@@ -1884,12 +2185,17 @@ body {
           <span class="stock-name">Amkor Technology</span>
           
         </div>
-        <span class="badge badge-yellow">觀察</span>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-05-07</span>
+          <span class="badge badge-yellow">觀察</span>
+        </div>
       </div>
       
       <p class="stock-logic">第二層下游客戶（OSAT），打入其次世代 AI 加速器封裝供應鏈。傳導時序比 KLIC 晚 1-2 季（T+1、T+2 季）</p>
       <div class="price-row"></div>
-      <div class="tv-wrap">
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（AMKR）</summary>
+        <div class="tv-wrap">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
@@ -1897,6 +2203,7 @@ body {
           </script>
         </div>
       </div>
+      </details>
       <details class="context-fold">
         <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
         <div class="context-body"><div class="mention-item">
@@ -1915,12 +2222,17 @@ body {
           <span class="stock-name">Micron</span>
           
         </div>
-        <span class="badge badge-yellow">觀察</span>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-05-07</span>
+          <span class="badge badge-yellow">觀察</span>
+        </div>
       </div>
       
       <p class="stock-logic">記憶體大廠，HBM 關鍵客戶，TCB 設備已獲其 HBM 擴產訂單。傳導時序 T+2 季 HBM 開始出貨</p>
       <div class="price-row"></div>
-      <div class="tv-wrap">
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（MU）</summary>
+        <div class="tv-wrap">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
@@ -1928,6 +2240,7 @@ body {
           </script>
         </div>
       </div>
+      </details>
       <details class="context-fold">
         <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
         <div class="context-body"><div class="mention-item">
@@ -1946,12 +2259,17 @@ body {
           <span class="stock-name">Ambarella</span>
           
         </div>
-        <span class="badge badge-yellow">觀察</span>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-05-06</span>
+          <span class="badge badge-yellow">觀察</span>
+        </div>
       </div>
       <div class="verdict alert">⚠️ 看好但不要賭他的財報</div>
       <p class="stock-logic">與 OUST 相關公司，作者看好這家，後續會出報告分析。</p>
       <div class="price-row"></div>
-      <div class="tv-wrap">
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（AMBA）</summary>
+        <div class="tv-wrap">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
@@ -1959,6 +2277,7 @@ body {
           </script>
         </div>
       </div>
+      </details>
       <details class="context-fold">
         <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
         <div class="context-body"><div class="mention-item">
@@ -1980,12 +2299,17 @@ body {
           <span class="stock-name">Intel</span>
           
         </div>
-        <span class="badge badge-red">警示</span>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-06-02</span>
+          <span class="badge badge-red">警示</span>
+        </div>
       </div>
       <div class="verdict alert">⚠️ NVDA 進入後受傷</div>
       
       <div class="price-row"></div>
-      <div class="tv-wrap">
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（INTC）</summary>
+        <div class="tv-wrap">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
@@ -1993,6 +2317,7 @@ body {
           </script>
         </div>
       </div>
+      </details>
       <details class="context-fold">
         <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
         <div class="context-body"><div class="mention-item">
@@ -2011,12 +2336,17 @@ body {
           <span class="stock-name">AMD</span>
           
         </div>
-        <span class="badge badge-red">警示</span>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-06-02</span>
+          <span class="badge badge-red">警示</span>
+        </div>
       </div>
       <div class="verdict alert">⚠️ NVDA 進入後受傷</div>
       
       <div class="price-row"></div>
-      <div class="tv-wrap">
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（AMD）</summary>
+        <div class="tv-wrap">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
@@ -2024,6 +2354,7 @@ body {
           </script>
         </div>
       </div>
+      </details>
       <details class="context-fold">
         <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
         <div class="context-body"><div class="mention-item">
@@ -2042,12 +2373,17 @@ body {
           <span class="stock-name">Apple</span>
           
         </div>
-        <span class="badge badge-red">警示</span>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-06-01</span>
+          <span class="badge badge-red">警示</span>
+        </div>
       </div>
       <div class="verdict correct">✅ 先前看好的這波行情已大獲全勝</div>
       
       <div class="price-row"></div>
-      <div class="tv-wrap">
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（AAPL）</summary>
+        <div class="tv-wrap">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
@@ -2055,6 +2391,7 @@ body {
           </script>
         </div>
       </div>
+      </details>
       <details class="context-fold">
         <summary class="context-toggle">▸ 文章脈絡（2 篇文章提及）</summary>
         <div class="context-body"><div class="mention-item">
@@ -2080,12 +2417,17 @@ body {
           <span class="stock-name">Palo Alto Networks</span>
           
         </div>
-        <span class="badge badge-red">警示</span>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-06-01</span>
+          <span class="badge badge-red">警示</span>
+        </div>
       </div>
       
       
       <div class="price-row"></div>
-      <div class="tv-wrap">
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（PANW）</summary>
+        <div class="tv-wrap">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
@@ -2093,6 +2435,7 @@ body {
           </script>
         </div>
       </div>
+      </details>
       <details class="context-fold">
         <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
         <div class="context-body"><div class="mention-item">
@@ -2111,12 +2454,17 @@ body {
           <span class="stock-name">CrowdStrike</span>
           
         </div>
-        <span class="badge badge-red">警示</span>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-06-01</span>
+          <span class="badge badge-red">警示</span>
+        </div>
       </div>
       
       
       <div class="price-row"></div>
-      <div class="tv-wrap">
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（CRWD）</summary>
+        <div class="tv-wrap">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
@@ -2124,6 +2472,7 @@ body {
           </script>
         </div>
       </div>
+      </details>
       <details class="context-fold">
         <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
         <div class="context-body"><div class="mention-item">
@@ -2142,12 +2491,17 @@ body {
           <span class="stock-name">Hewlett Packard Enterprise</span>
           
         </div>
-        <span class="badge badge-red">警示</span>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-06-01</span>
+          <span class="badge badge-red">警示</span>
+        </div>
       </div>
       
       
       <div class="price-row"></div>
-      <div class="tv-wrap">
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（HPE）</summary>
+        <div class="tv-wrap">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
@@ -2155,6 +2509,7 @@ body {
           </script>
         </div>
       </div>
+      </details>
       <details class="context-fold">
         <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
         <div class="context-body"><div class="mention-item">
@@ -2173,12 +2528,17 @@ body {
           <span class="stock-name">MP Materials</span>
           
         </div>
-        <span class="badge badge-red">警示</span>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-05-11</span>
+          <span class="badge badge-red">警示</span>
+        </div>
       </div>
       
       
       <div class="price-row"></div>
-      <div class="tv-wrap">
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（MP）</summary>
+        <div class="tv-wrap">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
@@ -2186,6 +2546,7 @@ body {
           </script>
         </div>
       </div>
+      </details>
       <details class="context-fold">
         <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
         <div class="context-body"><div class="mention-item">
