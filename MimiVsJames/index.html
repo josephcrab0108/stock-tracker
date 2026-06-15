@@ -48,10 +48,11 @@ body {
   font-size: 12px; color: var(--accent);
   text-decoration: none; opacity: .8;
   transition: opacity .15s;
+  white-space: nowrap; margin-right: 20px;
 }
 .sticky-header .back-link:hover { opacity: 1; }
 .sticky-header h2 { font-size: 15px; font-weight: 600; }
-.updated-chip { font-size: 11px; color: var(--muted); margin-right: 20px; }
+.updated-chip { font-size: 11px; color: var(--muted); }
 .search-wrap {
   position: relative; margin-left: auto; display: flex; align-items: center;
 }
@@ -304,6 +305,33 @@ body {
 .group-body { padding: 8px; display: flex; flex-direction: column; gap: 6px; }
 .group-body .card { border-radius: 8px; margin-bottom: 0; }
 
+/* 第二層折疊（sub-group，2 股以上） */
+.sub-fold {
+  border: 1px solid var(--border); border-radius: 8px; overflow: hidden;
+}
+.sub-fold-header {
+  cursor: pointer; list-style: none; user-select: none;
+  display: flex; align-items: center; gap: 8px;
+  padding: 8px 12px;
+  background: var(--surface);
+  border-bottom: 1px solid transparent;
+  transition: background .15s, border-color .15s;
+}
+.sub-fold-header::-webkit-details-marker { display: none; }
+.sub-fold-header:hover { background: rgba(124,106,245,.05); }
+.sub-fold[open] > .sub-fold-header { border-bottom-color: var(--border); }
+.sub-fold-label { font-size: 12px; font-weight: 600; color: var(--text); }
+.sub-fold-ticks { display: flex; flex-wrap: wrap; gap: 3px; flex: 1; }
+.sub-fold-body { padding: 6px; display: flex; flex-direction: column; gap: 4px; }
+.sub-fold-body .card { border-radius: 6px; }
+
+/* 第二層非折疊（sub-group，1 股） */
+.sub-group-single-hd {
+  font-size: 11px; font-weight: 600; color: var(--muted);
+  padding: 6px 8px 2px;
+  letter-spacing: .04em;
+}
+
 /* Watch pills */
 .watch-pills { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
 .pill {
@@ -338,7 +366,6 @@ body {
 <body>
 
 <header class="sticky-header">
-  <a href="../" class="back-link">← 回總覽</a>
   <h2>MimiVsJames 美股策略</h2>
   <div class="search-wrap">
     <svg class="search-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
@@ -347,6 +374,7 @@ body {
     <input id="stock-search" class="search-input" type="text" placeholder="搜尋個股 ABBV / AbbVie">
   </div>
   <span class="updated-chip mono">2026-05-01 – 2026-06-14 · 更新 2026-06-14 23:03</span>
+  <a href="../" class="back-link">← 回總覽</a>
 </header>
 
 <div class="container">
@@ -393,7 +421,7 @@ body {
           <span class="group-count">8 檔</span>
         </div>
       </summary>
-      <div class="group-body"><div class="sub-group-header">今日新增推薦<span class="sub-count">1 檔</span></div><div class="card buy" data-ticker="NPO" data-name="Enpro">
+      <div class="group-body"><div class="sub-group-single-hd">今日新增推薦</div><div class="card buy" data-ticker="NPO" data-name="Enpro">
       <div class="card-header">
         <div class="ticker-row">
           <span class="ticker mono">NPO</span>
@@ -430,7 +458,13 @@ body {
           <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">今日新增推薦</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">美股中少數與AMAT與ASML連結的二階供應鏈概念股，清洗、塗層與翻修具售後市場特性，當設備裝機基數提高、使用時間拉長，後續服務需求增加。半導體僅占部分收入，穩定性比UCTT和ICHR相對較高，股價屬穩定波段向上</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">大型客戶集中度仍存在</td></tr></table>
         </div></div>
       </details>
-    </div><div class="sub-group-header">設備龍頭<span class="sub-count">4 檔</span></div><div class="card buy" data-ticker="AMAT" data-name="Applied Materials">
+    </div><details class="sub-fold" open>
+        <summary class="sub-fold-header">
+          <span class="sub-fold-label">設備龍頭</span>
+          <div class="sub-fold-ticks"><span class="grp-tick mono">AMAT</span><span class="grp-tick mono">ASML</span><span class="grp-tick mono">LRCX</span><span class="grp-tick mono">KLAC</span></div>
+          <span class="sub-count">4 檔</span>
+        </summary>
+        <div class="sub-fold-body"><div class="card buy" data-ticker="AMAT" data-name="Applied Materials">
       <div class="card-header">
         <div class="ticker-row">
           <span class="ticker mono">AMAT</span>
@@ -578,7 +612,14 @@ body {
           <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">設備龍頭</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">量測設備龍頭，受惠先進封裝檢測需求上升與2027年WFE重新定價</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">與AMAT、ASML、LRCX一起創高</td></tr><tr><td class="ml-key">現況</td><td class="ml-val">📈 設備股同步創高</td></tr></table>
         </div></div>
       </details>
-    </div><div class="sub-group-header">重申買進<span class="sub-count">3 檔</span></div><div class="card buy" data-ticker="UCTT" data-name="Ultra Clean Holdings">
+    </div></div>
+      </details><details class="sub-fold" open>
+        <summary class="sub-fold-header">
+          <span class="sub-fold-label">重申買進</span>
+          <div class="sub-fold-ticks"><span class="grp-tick mono">UCTT</span><span class="grp-tick mono">ICHR</span><span class="grp-tick mono">MKSI</span></div>
+          <span class="sub-count">3 檔</span>
+        </summary>
+        <div class="sub-fold-body"><div class="card buy" data-ticker="UCTT" data-name="Ultra Clean Holdings">
       <div class="card-header">
         <div class="ticker-row">
           <span class="ticker mono">UCTT</span>
@@ -690,10 +731,11 @@ body {
         </div></div>
       </details>
     </div></div>
+      </details></div>
     </details><details class="stock-group" open>
       <summary class="group-header">
         <div class="group-summary-left">
-          <span class="group-label">升息預期交易</span>
+          <span class="group-label">醫療/生技（升息預期交易）</span>
           <div class="group-tickers"><span class="grp-tick mono">ABBV</span><span class="grp-tick mono">LLY</span></div>
         </div>
         <div class="group-meta">
@@ -701,7 +743,7 @@ body {
           <span class="group-count">2 檔</span>
         </div>
       </summary>
-      <div class="group-body"><div class="sub-group-header">第一順位／核心<span class="sub-count">1 檔</span></div><div class="card buy" data-ticker="ABBV" data-name="AbbVie">
+      <div class="group-body"><div class="sub-group-single-hd">第一順位／核心</div><div class="card buy" data-ticker="ABBV" data-name="AbbVie">
       <div class="card-header">
         <div class="ticker-row">
           <span class="ticker mono">ABBV</span>
@@ -738,7 +780,7 @@ body {
           <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">第一順位／核心</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">乾淨的低久期＋現金流，估值較低（前瞻本益比 16 倍，2026 EPS 指引 14.08-14.28 元、EPS 小幅上修），估值保護跟成長同時存在，靠業績後面的成長。</td></tr><tr><td class="ml-key">進場</td><td class="ml-val">等回踩，不要連漲後追，分批不一次買滿</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">資金配置建議 ABBV 六成，記得留資金買低點的AI硬體股</td></tr></table>
         </div></div>
       </details>
-    </div><div class="sub-group-header">第二順位／進攻<span class="sub-count">1 檔</span></div><div class="card buy" data-ticker="LLY" data-name="Eli Lilly">
+    </div><div class="sub-group-single-hd">第二順位／進攻</div><div class="card buy" data-ticker="LLY" data-name="Eli Lilly">
       <div class="card-header">
         <div class="ticker-row">
           <span class="ticker mono">LLY</span>
@@ -787,7 +829,7 @@ body {
           <span class="group-count">2 檔</span>
         </div>
       </summary>
-      <div class="group-body"><div class="sub-group-header">主推（第二層）<span class="sub-count">1 檔</span></div><div class="card buy" data-ticker="LTRX" data-name="Lantronix">
+      <div class="group-body"><div class="sub-group-single-hd">主推（第二層）</div><div class="card buy" data-ticker="LTRX" data-name="Lantronix">
       <div class="card-header">
         <div class="ticker-row">
           <span class="ticker mono">LTRX</span>
@@ -824,7 +866,7 @@ body {
           <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">主推（第二層）</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">嵌入式運算與邊緣AI，無人機安全通訊關鍵零件，賣鏟子的人；與UMAC合作出貨，UMAC漲LTRX沒理由不漲。圖表現價約$7.25，52週高7.6/低3.4</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">選LTRX不選ONDS，定位邊緣運算與安全通訊</td></tr></table>
         </div></div>
       </details>
-    </div><div class="sub-group-header">主推（第三層）<span class="sub-count">1 檔</span></div><div class="card buy" data-ticker="PDYN" data-name="Palladyne AI">
+    </div><div class="sub-group-single-hd">主推（第三層）</div><div class="card buy" data-ticker="PDYN" data-name="Palladyne AI">
       <div class="card-header">
         <div class="ticker-row">
           <span class="ticker mono">PDYN</span>
