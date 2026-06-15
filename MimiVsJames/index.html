@@ -302,8 +302,14 @@ body {
 .group-meta { display: flex; flex-direction: column; align-items: flex-end; gap: 3px; flex-shrink: 0; }
 .group-date { font-size: 11px; color: var(--muted); }
 .group-count { font-size: 12px; color: var(--accent); font-weight: 600; white-space: nowrap; }
-.group-body { padding: 8px; display: flex; flex-direction: column; gap: 6px; }
-.group-body .card { border-radius: 8px; margin-bottom: 0; }
+/* 第一層展開內容（縮排 + 左側指示線） */
+.group-body {
+  margin: 0 8px 8px 20px;
+  padding-left: 12px;
+  border-left: 2px solid var(--border);
+  display: flex; flex-direction: column; gap: 6px;
+}
+.group-body .card { border-radius: 8px; }
 
 /* 第二層折疊（sub-group，2 股以上） */
 .sub-fold {
@@ -322,7 +328,14 @@ body {
 .sub-fold[open] > .sub-fold-header { border-bottom-color: var(--border); }
 .sub-fold-label { font-size: 12px; font-weight: 600; color: var(--text); }
 .sub-fold-ticks { display: flex; flex-wrap: wrap; gap: 3px; flex: 1; }
-.sub-fold-body { padding: 6px; display: flex; flex-direction: column; gap: 4px; }
+
+/* 第二層展開內容（再縮排 + 左側指示線） */
+.sub-fold-body {
+  margin: 0 6px 6px 18px;
+  padding-left: 10px;
+  border-left: 2px solid var(--border);
+  display: flex; flex-direction: column; gap: 4px;
+}
 .sub-fold-body .card { border-radius: 6px; }
 
 /* 第二層非折疊（sub-group，1 股） */
@@ -330,6 +343,56 @@ body {
   font-size: 11px; font-weight: 600; color: var(--muted);
   padding: 6px 8px 2px;
   letter-spacing: .04em;
+}
+
+/* 漢堡選單按鈕 */
+.nav-toggle {
+  background: none; border: none; cursor: pointer;
+  color: var(--text); padding: 4px 6px; border-radius: 6px;
+  display: flex; align-items: center;
+  transition: background .15s;
+}
+.nav-toggle:hover { background: rgba(255,255,255,.06); }
+.nav-toggle svg { width: 18px; height: 18px; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
+
+/* 遮罩 */
+.drawer-overlay {
+  display: none;
+  position: fixed; inset: 0; z-index: 100;
+  background: rgba(0,0,0,.45);
+  backdrop-filter: blur(2px);
+}
+.drawer-overlay.open { display: block; }
+
+/* 左側抽屜 */
+.side-drawer {
+  position: fixed; left: 0; top: 0; bottom: 0; z-index: 101;
+  width: 230px;
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  transform: translateX(-100%);
+  transition: transform .25s cubic-bezier(.4,0,.2,1);
+  display: flex; flex-direction: column;
+  padding: 20px 0 32px;
+}
+.side-drawer.open { transform: translateX(0); }
+.drawer-title {
+  font-size: 10px; font-weight: 600; color: var(--muted);
+  padding: 0 20px 14px; text-transform: uppercase; letter-spacing: .08em;
+}
+.drawer-item {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 13px 20px;
+  color: var(--text); text-decoration: none;
+  font-size: 14px; font-weight: 500;
+  border-left: 3px solid transparent;
+  transition: background .15s, border-color .15s;
+}
+.drawer-item:hover { background: rgba(124,106,245,.08); border-left-color: var(--accent); }
+.drawer-badge {
+  font-size: 11px; color: var(--muted); font-weight: 400;
+  background: var(--surface2); border: 1px solid var(--border);
+  padding: 1px 7px; border-radius: 10px;
 }
 
 /* Watch pills */
@@ -365,7 +428,34 @@ body {
 </head>
 <body>
 
+<!-- 遮罩 -->
+<div class="drawer-overlay" id="drawer-overlay" onclick="closeDrawer()"></div>
+
+<!-- 左側目錄抽屜 -->
+<nav class="side-drawer" id="side-drawer">
+  <div class="drawer-title">目錄</div>
+  <a class="drawer-item" href="#section-buy" onclick="closeDrawer()">
+    個股建議
+    <span class="drawer-badge">19 檔</span>
+  </a>
+  <a class="drawer-item" href="#section-research" onclick="closeDrawer()">
+    產業研究
+    <span class="drawer-badge">3 篇</span>
+  </a>
+  <a class="drawer-item" href="#section-tutorial" onclick="closeDrawer()">
+    操作教學
+    <span class="drawer-badge">2 篇</span>
+  </a>
+</nav>
+
 <header class="sticky-header">
+  <button class="nav-toggle" onclick="toggleDrawer()" aria-label="目錄">
+    <svg viewBox="0 0 20 20" fill="none">
+      <line x1="2" y1="5" x2="18" y2="5"/>
+      <line x1="2" y1="10" x2="18" y2="10"/>
+      <line x1="2" y1="15" x2="18" y2="15"/>
+    </svg>
+  </button>
   <h2>MimiVsJames 美股策略</h2>
   <div class="search-wrap">
     <svg class="search-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
@@ -408,7 +498,7 @@ body {
         
       </div></div>
   </section>
-<section class="section">
+<section class="section" id="section-buy">
     <div class="section-title">建議買入（19 檔）</div>
     <details class="stock-group" open>
       <summary class="group-header">
@@ -2670,7 +2760,7 @@ body {
       </details>
     </div>
   </section>
-<section class="section">
+<section class="section" id="section-research">
     <div class="section-title">產業研究</div>
     <div class="card neutral summary-card">
       <div class="card-header">
@@ -2710,7 +2800,7 @@ body {
       <div class="watch-pills"><span class="pill">AI變現能力</span><span class="pill">自研晶片ASIC崛起</span><span class="pill">GPU壟斷敘事鬆動</span><span class="pill">矽光子與光纖互連</span><span class="pill">邊緣運算</span></div>
     </div>
   </section>
-<section class="section">
+<section class="section" id="section-tutorial">
     <div class="section-title">操作教學</div>
     <div class="card neutral summary-card">
       <div class="card-header">
@@ -2744,6 +2834,17 @@ body {
 </div>
 
 <script>
+// 抽屜目錄
+function toggleDrawer() {
+  document.getElementById('side-drawer').classList.toggle('open');
+  document.getElementById('drawer-overlay').classList.toggle('open');
+}
+function closeDrawer() {
+  document.getElementById('side-drawer').classList.remove('open');
+  document.getElementById('drawer-overlay').classList.remove('open');
+}
+
+// 搜尋
 const inp = document.getElementById('stock-search');
 inp.addEventListener('input', function() {
   const q = this.value.trim().toLowerCase();
