@@ -302,6 +302,9 @@ body {
 .group-meta { display: flex; flex-direction: column; align-items: flex-end; gap: 3px; flex-shrink: 0; }
 .group-date { font-size: 11px; color: var(--muted); }
 .group-count { font-size: 12px; color: var(--accent); font-weight: 600; white-space: nowrap; }
+.source-badge { font-size: 10px; font-weight: 600; padding: 1px 5px; border-radius: 4px; white-space: nowrap; }
+.source-vocus { background: rgba(99,102,241,.15); color: #818cf8; }
+.source-substack { background: rgba(255,103,25,.15); color: #f97316; }
 /* 第一層展開內容（縮排 + 左側指示線） */
 .group-body {
   margin: 0 8px 8px 20px;
@@ -436,15 +439,15 @@ body {
   <div class="drawer-title">目錄</div>
   <a class="drawer-item" href="#section-buy" onclick="closeDrawer()">
     個股建議
-    <span class="drawer-badge">19 檔</span>
+    <span class="drawer-badge">40 檔</span>
   </a>
   <a class="drawer-item" href="#section-research" onclick="closeDrawer()">
     產業研究
-    <span class="drawer-badge">4 篇</span>
+    <span class="drawer-badge">24 篇</span>
   </a>
   <a class="drawer-item" href="#section-tutorial" onclick="closeDrawer()">
     操作教學
-    <span class="drawer-badge">2 篇</span>
+    <span class="drawer-badge">4 篇</span>
   </a>
 </nav>
 
@@ -463,7 +466,7 @@ body {
     </svg>
     <input id="stock-search" class="search-input" type="text" placeholder="搜尋 ABBV / 設備 / HBM">
   </div>
-  <span class="updated-chip mono">2026-05-01 – 2026-06-17 · 更新 2026-06-17 16:00</span>
+  <span class="updated-chip mono">2026-01-18 – 2026-06-17 · 更新 2026-06-18 01:33</span>
   <a href="../" class="back-link">← 回總覽</a>
 </header>
 
@@ -481,16 +484,26 @@ body {
         <div class="sig-name">半導體</div>
         <div class="sig-dir">↑ 強勢</div>
         <div class="sig-related"><span class="rel-tick mono">NVDA</span></div>
+      </div><div class="sig-chip sig-bear">
+        <div class="sig-etf mono">QQQ</div>
+        <div class="sig-name">那斯達克100</div>
+        <div class="sig-dir">↓ 弱勢</div>
+        <div class="sig-related"><span class="rel-tick mono">ORCL</span><span class="rel-tick mono">SNOW</span><span class="rel-tick mono">CRWV</span></div>
+      </div><div class="sig-chip sig-bear">
+        <div class="sig-etf mono">TLT</div>
+        <div class="sig-name">長天期美債</div>
+        <div class="sig-dir">↓ 弱勢</div>
+        
+      </div><div class="sig-chip sig-bear">
+        <div class="sig-etf mono">ARKK</div>
+        <div class="sig-name">創新成長</div>
+        <div class="sig-dir">↓ 弱勢</div>
+        <div class="sig-related"><span class="rel-tick mono">CRWV</span><span class="rel-tick mono">APLD</span></div>
       </div><div class="sig-chip sig-neutral">
         <div class="sig-etf mono">SOXX</div>
         <div class="sig-name">費城半導體</div>
         <div class="sig-dir">→ 中性</div>
         <div class="sig-related"><span class="rel-tick mono">AMAT</span><span class="rel-tick mono">ASML</span><span class="rel-tick mono">LRCX</span><span class="rel-tick mono">KLAC</span></div>
-      </div><div class="sig-chip sig-bear">
-        <div class="sig-etf mono">QQQ</div>
-        <div class="sig-name">那斯達克100</div>
-        <div class="sig-dir">↓ 弱勢</div>
-        <div class="sig-related"><span class="rel-tick mono">NVDA</span></div>
       </div><div class="sig-chip sig-bull">
         <div class="sig-etf mono">XLV</div>
         <div class="sig-name">醫療保健</div>
@@ -501,10 +514,135 @@ body {
         <div class="sig-name">生技（中小型）</div>
         <div class="sig-dir">↓ 弱勢</div>
         
+      </div><div class="sig-chip sig-bull">
+        <div class="sig-etf mono">SHY</div>
+        <div class="sig-name">短天期美債</div>
+        <div class="sig-dir">↑ 強勢</div>
+        
+      </div><div class="sig-chip sig-neutral">
+        <div class="sig-etf mono">QLD</div>
+        <div class="sig-name">二倍做多納斯達克100</div>
+        <div class="sig-dir">→ 中性</div>
+        
+      </div><div class="sig-chip sig-neutral">
+        <div class="sig-etf mono">SPY</div>
+        <div class="sig-name">標普500</div>
+        <div class="sig-dir">→ 中性</div>
+        
+      </div><div class="sig-chip sig-bull">
+        <div class="sig-etf mono">XLE</div>
+        <div class="sig-name">能源</div>
+        <div class="sig-dir">↑ 強勢</div>
+        
+      </div><div class="sig-chip sig-bull">
+        <div class="sig-etf mono">XLU</div>
+        <div class="sig-name">公用事業/電力基礎設施</div>
+        <div class="sig-dir">↑ 強勢</div>
+        
+      </div><div class="sig-chip sig-bear">
+        <div class="sig-etf mono">ITA</div>
+        <div class="sig-name">航空／軍工製造</div>
+        <div class="sig-dir">↓ 弱勢</div>
+        
+      </div><div class="sig-chip sig-bear">
+        <div class="sig-etf mono">EWG</div>
+        <div class="sig-name">歐洲股市</div>
+        <div class="sig-dir">↓ 弱勢</div>
+        
+      </div><div class="sig-chip sig-bear">
+        <div class="sig-etf mono">GLD</div>
+        <div class="sig-name">黃金</div>
+        <div class="sig-dir">↓ 弱勢</div>
+        
+      </div><div class="sig-chip sig-bear">
+        <div class="sig-etf mono">DIA</div>
+        <div class="sig-name">道瓊工業</div>
+        <div class="sig-dir">↓ 弱勢</div>
+        
+      </div><div class="sig-chip sig-bull">
+        <div class="sig-etf mono">VOO</div>
+        <div class="sig-name">標普500</div>
+        <div class="sig-dir">↑ 強勢</div>
+        
+      </div><div class="sig-chip sig-bear">
+        <div class="sig-etf mono">IGV</div>
+        <div class="sig-name">軟體類股</div>
+        <div class="sig-dir">↓ 弱勢</div>
+        
+      </div><div class="sig-chip sig-neutral">
+        <div class="sig-etf mono">XLF</div>
+        <div class="sig-name">金融股</div>
+        <div class="sig-dir">→ 中性</div>
+        
+      </div><div class="sig-chip sig-bear">
+        <div class="sig-etf mono">IWM</div>
+        <div class="sig-name">羅素2000中小型股</div>
+        <div class="sig-dir">↓ 弱勢</div>
+        <div class="sig-related"><span class="rel-tick mono">TTMI</span></div>
+      </div><div class="sig-chip sig-neutral">
+        <div class="sig-etf mono">XLP</div>
+        <div class="sig-name">必需消費品</div>
+        <div class="sig-dir">→ 中性</div>
+        
+      </div><div class="sig-chip sig-bull">
+        <div class="sig-etf mono">USO</div>
+        <div class="sig-name">原油</div>
+        <div class="sig-dir">↑ 強勢</div>
+        
+      </div><div class="sig-chip sig-bull">
+        <div class="sig-etf mono">VGK</div>
+        <div class="sig-name">歐洲股市</div>
+        <div class="sig-dir">↑ 強勢</div>
+        <div class="sig-related"><span class="rel-tick mono">ASML</span></div>
+      </div><div class="sig-chip sig-bull">
+        <div class="sig-etf mono">EWJ</div>
+        <div class="sig-name">日本股市</div>
+        <div class="sig-dir">↑ 強勢</div>
+        
+      </div><div class="sig-chip sig-bull">
+        <div class="sig-etf mono">EWT</div>
+        <div class="sig-name">台灣股市</div>
+        <div class="sig-dir">↑ 強勢</div>
+        <div class="sig-related"><span class="rel-tick mono">TSM</span></div>
+      </div><div class="sig-chip sig-bull">
+        <div class="sig-etf mono">EWY</div>
+        <div class="sig-name">韓國股市</div>
+        <div class="sig-dir">↑ 強勢</div>
+        
+      </div><div class="sig-chip sig-bull">
+        <div class="sig-etf mono">FXI</div>
+        <div class="sig-name">中國大型股</div>
+        <div class="sig-dir">↑ 強勢</div>
+        
+      </div><div class="sig-chip sig-bull">
+        <div class="sig-etf mono">AMLP</div>
+        <div class="sig-name">能源基礎設施</div>
+        <div class="sig-dir">↑ 強勢</div>
+        
+      </div><div class="sig-chip sig-bull">
+        <div class="sig-etf mono">VIG</div>
+        <div class="sig-name">股息成長</div>
+        <div class="sig-dir">↑ 強勢</div>
+        
+      </div><div class="sig-chip sig-bull">
+        <div class="sig-etf mono">COPX</div>
+        <div class="sig-name">銅礦業</div>
+        <div class="sig-dir">↑ 強勢</div>
+        <div class="sig-related"><span class="rel-tick mono">FCX</span></div>
+      </div><div class="sig-chip sig-bear">
+        <div class="sig-etf mono">CPER</div>
+        <div class="sig-name">銅期貨</div>
+        <div class="sig-dir">↓ 弱勢</div>
+        
+      </div><div class="sig-chip sig-bull">
+        <div class="sig-etf mono">SLV</div>
+        <div class="sig-name">白銀</div>
+        <div class="sig-dir">↑ 強勢</div>
+        <div class="sig-related"><span class="rel-tick mono">SLV</span><span class="rel-tick mono">SIL</span><span class="rel-tick mono">PAAS</span></div>
       </div></div>
   </section>
 <section class="section" id="section-buy">
-    <div class="section-title">建議買入（19 檔）</div>
+    <div class="section-title">建議買入（40 檔）</div>
     <details class="stock-group" data-label="半導體設備供應鏈受惠Rubin量產與WFE重新定價" data-themes="半導體設備股 2027年WFE重新定價 先進封裝 HBM與先進DRAM Rubin量產驗證 二階供應鏈 AI資本支出">
       <summary class="group-header">
         <div class="group-summary-left">
@@ -514,6 +652,7 @@ body {
         <div class="group-meta">
           <span class="group-date mono">2026-06-14</span>
           <span class="group-count">8 檔</span>
+          <span class="source-badge source-vocus">Vocus</span>
         </div>
       </summary>
       <div class="group-body"><div class="sub-group-single-hd">今日新增推薦</div><div class="card buy" data-ticker="NPO" data-name="Enpro">
@@ -623,7 +762,7 @@ body {
       </div>
       </details>
       <details class="context-fold">
-        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <summary class="context-toggle">▸ 文章脈絡（3 篇文章提及）</summary>
         <div class="context-body"><div class="mention-item">
           <div class="mention-meta">
             <span class="mono date-chip">2026-06-14</span>
@@ -631,6 +770,20 @@ body {
             <a href="https://vocus.cc/article/6a2e5d15fd897800015c4b76" target="_blank" class="art-link">個股推薦：費半大跌，但它們相對抗跌，當Rubin即將出貨，股價創高的卻不是NVDA，華爾街在半導體「 ↗</a>
           </div>
           <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">設備龍頭</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">週四創歷史新高，EUV產能上限為第三個設備週期訊號。從純週期股轉向結構成長＋週期彈性，交易需求能見度</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">產能上限訊號</td></tr><tr><td class="ml-key">現況</td><td class="ml-val">📈 創歷史新高</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-04-12</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://mimivsjames.substack.com/p/7002" target="_blank" class="art-link">告別盲目猜底！量化推演第二季美股「獲利突圍」的兩大關鍵轉折點。7002高點何時能突破？ ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">半導體設備龍頭，4/15財報打頭陣，EUV訂單穩健代表AI資本支出信心。須留意MATCH Act若限制對中DUV設備銷售可能衝擊EPS約10%，且財報撞Tax Day短線波動加大。</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-02-22</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://mimivsjames.substack.com/p/ai20268" target="_blank" class="art-link">AI撞上物理極限，2026年「銅與電」超級循環的長線8檔股票與投資組合 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">邏輯</td><td class="ml-val">獨家壟斷High-NA EUV曝光機，成就製程霸主的源頭，後續軟體升級與維護提供高毛利經常性收入，各國蓋晶圓廠就是賣鏟子</td></tr><tr><td class="ml-key">進場</td><td class="ml-val">週線拉回測10MA或20MA不破底建倉</td></tr></table>
         </div></div>
       </details>
     </div><div class="card buy" data-ticker="LRCX" data-name="Lam Research">
@@ -836,6 +989,7 @@ body {
         <div class="group-meta">
           <span class="group-date mono">2026-06-07</span>
           <span class="group-count">2 檔</span>
+          <span class="source-badge source-vocus">Vocus</span>
         </div>
       </summary>
       <div class="group-body"><div class="sub-group-single-hd">第一順位／核心</div><div class="card buy" data-ticker="ABBV" data-name="AbbVie">
@@ -913,6 +1067,151 @@ body {
         </div></div>
       </details>
     </div></div>
+    </details><details class="stock-group" data-label="AI軟體下半場變現驗證重定價" data-themes="AI軟體股重定價 非人頭計費商業模式 Rule of X篩選法則 AI production監控基礎設施 自由現金流與估值容錯率">
+      <summary class="group-header">
+        <div class="group-summary-left">
+          <span class="group-label">AI軟體下半場變現驗證重定價</span>
+          <div class="group-tickers"><span class="grp-tick mono">CRM</span><span class="grp-tick mono">NOW</span><span class="grp-tick mono">DDOG</span></div>
+        </div>
+        <div class="group-meta">
+          <span class="group-date mono">2026-05-31</span>
+          <span class="group-count">3 檔</span>
+          <span class="source-badge source-substack">Substack</span>
+        </div>
+      </summary>
+      <div class="group-body"><div class="sub-group-single-hd">第一順位</div><div class="card buy" data-ticker="CRM" data-name="Salesforce">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">CRM</span>
+          <span class="stock-name">Salesforce</span>
+          <span class="pri-chip">第一順位</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-05-31</span>
+          <span class="badge badge-green">買入</span>
+        </div>
+      </div>
+      
+      <p class="stock-logic">成熟企業應用龍頭的估值修復與現金流防禦。被市場錯殺成傳統人頭SaaS，實則轉型為企業客戶資料與AI Agent工作流平台。本季營收YoY 13%達111億、Non-GAAP營業利潤率34.8%、自由現金流66億、Non-GAAP EPS YoY 50%。Agentforce+Data 360的ARR合計34億。啟動250億美元加速回購提供長線防禦。forward P/E僅約14倍。</p>
+      <div class="price-row"></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（CRM）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NYSE:CRM","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（2 篇文章提及）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-05-31</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://mimivsjames.substack.com/p/ai-1-3" target="_blank" class="art-link">「AI 軟體股」重定價：哪些公司長線能放 1 到 3 年，哪些只能當彩蛋？ ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">第一順位</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">成熟企業應用龍頭的估值修復與現金流防禦。被市場錯殺成傳統人頭SaaS，實則轉型為企業客戶資料與AI Agent工作流平台。本季營收YoY 13%達111億、Non-GAAP營業利潤率34.8%、自由現金流66億、Non-GAAP EPS YoY 50%。Agentforce+Data 360的ARR合計34億。啟動250億美元加速回購提供長線防禦。forward P/E僅約14倍。</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">三檔中最偏防禦、最偏估值修復，類似價值股投資概念</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-05-31</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://mimivsjames.substack.com/p/ai-1-3-podcast" target="_blank" class="art-link">「AI 軟體股」重定價：哪些公司長線能放 1 到 3 年，哪些只能當彩蛋？Podcast ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">第一順位</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">長線佈局鐵三角之一，代表成熟防禦，具備強大自由現金流</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="sub-group-single-hd">第二順位</div><div class="card buy" data-ticker="NOW" data-name="ServiceNow">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">NOW</span>
+          <span class="stock-name">ServiceNow</span>
+          <span class="pri-chip">第二順位</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-05-31</span>
+          <span class="badge badge-green">買入</span>
+        </div>
+      </div>
+      
+      <p class="stock-logic">企業工作流自動化的成長核心。非綁定人頭計費，而是收企業自動化工作流稅。Q1訂閱收入36.71億YoY 22%、cRPO 126.4億YoY 22.5%、RPO 277億YoY 25%、自由現金流率44%。Rule of X數據漂亮（20%以上成長+30%營業利潤率）。高轉換成本構成護城河，AI Agent越多越需要其治理編排平台。</p>
+      <div class="price-row"></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（NOW）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NYSE:NOW","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（2 篇文章提及）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-05-31</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://mimivsjames.substack.com/p/ai-1-3" target="_blank" class="art-link">「AI 軟體股」重定價：哪些公司長線能放 1 到 3 年，哪些只能當彩蛋？ ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">第二順位</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">企業工作流自動化的成長核心。非綁定人頭計費，而是收企業自動化工作流稅。Q1訂閱收入36.71億YoY 22%、cRPO 126.4億YoY 22.5%、RPO 277億YoY 25%、自由現金流率44%。Rule of X數據漂亮（20%以上成長+30%營業利潤率）。高轉換成本構成護城河，AI Agent越多越需要其治理編排平台。</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">估值不便宜，建議拉回分批買，不要在市場情緒上來時衝進場買滿</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-05-31</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://mimivsjames.substack.com/p/ai-1-3-podcast" target="_blank" class="art-link">「AI 軟體股」重定價：哪些公司長線能放 1 到 3 年，哪些只能當彩蛋？Podcast ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">第一順位</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">長線佈局鐵三角之一，代表自動化，能將 AI 轉化為 EPS 成長</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="sub-group-single-hd">第三順位</div><div class="card buy" data-ticker="DDOG" data-name="Datadog">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">DDOG</span>
+          <span class="stock-name">Datadog</span>
+          <span class="pri-chip">第三順位</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-05-31</span>
+          <span class="badge badge-green">買入</span>
+        </div>
+      </div>
+      
+      <p class="stock-logic">AI進入production後企業一定需要的監控、安全、可觀測性與雲端成本管理基礎設施。靠用量、資料量、雲端工作負載計費，不綁人頭。最新一季營收10.06億YoY 32%、Non-GAAP營業利潤率22%、自由現金流2.89億。年經常性收入超10萬美元客戶數從3770增至4550家。LLM Observability、GPU Monitoring、Bits AI Security Agent為AI二階受惠者。</p>
+      <div class="price-row"></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（DDOG）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NASDAQ:DDOG","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（2 篇文章提及）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-05-31</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://mimivsjames.substack.com/p/ai-1-3" target="_blank" class="art-link">「AI 軟體股」重定價：哪些公司長線能放 1 到 3 年，哪些只能當彩蛋？ ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">第三順位</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">AI進入production後企業一定需要的監控、安全、可觀測性與雲端成本管理基礎設施。靠用量、資料量、雲端工作負載計費，不綁人頭。最新一季營收10.06億YoY 32%、Non-GAAP營業利潤率22%、自由現金流2.89億。年經常性收入超10萬美元客戶數從3770增至4550家。LLM Observability、GPU Monitoring、Bits AI Security Agent為AI二階受惠者。</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">三檔中Beta最高、成長性最高但估值最高，更需要買進紀律，長線看好不代表可隨便追高</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-05-31</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://mimivsjames.substack.com/p/ai-1-3-podcast" target="_blank" class="art-link">「AI 軟體股」重定價：哪些公司長線能放 1 到 3 年，哪些只能當彩蛋？Podcast ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">第一順位</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">長線佈局鐵三角之一，代表監控基礎設施</td></tr></table>
+        </div></div>
+      </details>
+    </div></div>
     </details><details class="stock-group" data-label="無人機國防AI軟硬體本土化替換受惠股" data-themes="無人機板塊輪動 國防AI化 本土化替換潮 近岸安全 群體作戰軟體">
       <summary class="group-header">
         <div class="group-summary-left">
@@ -922,6 +1221,7 @@ body {
         <div class="group-meta">
           <span class="group-date mono">2026-05-28</span>
           <span class="group-count">2 檔</span>
+          <span class="source-badge source-vocus">Vocus</span>
         </div>
       </summary>
       <div class="group-body"><div class="sub-group-single-hd">主推（第二層）</div><div class="card buy" data-ticker="LTRX" data-name="Lantronix">
@@ -1008,6 +1308,7 @@ body {
         <div class="group-meta">
           <span class="group-date mono">2026-05-20</span>
           <span class="group-count">1 檔</span>
+          <span class="source-badge source-vocus">Vocus</span>
         </div>
       </summary>
       <div class="group-body"><div class="card buy" data-ticker="ACMR" data-name="ACM Research">
@@ -1057,6 +1358,7 @@ body {
         <div class="group-meta">
           <span class="group-date mono">2026-05-18</span>
           <span class="group-count">1 檔</span>
+          <span class="source-badge source-vocus">Vocus</span>
         </div>
       </summary>
       <div class="group-body"><div class="card buy" data-ticker="VUZI" data-name="Vuzix">
@@ -1097,6 +1399,70 @@ body {
         </div></div>
       </details>
     </div></div>
+    </details><details class="stock-group" data-label="AI 下半場：誰掌握雲端入口與邊緣推論" data-themes="AI 資本支出回收結構分歧 AMZN 資本支出內循環飛輪 Trainium 自研晶片成本優勢 AI 算力二元化：中心雲端＋邊緣推論 邊緣雲基礎設施">
+      <summary class="group-header">
+        <div class="group-summary-left">
+          <span class="group-label">AI 下半場：誰掌握雲端入口與邊緣推論</span>
+          <div class="group-tickers"><span class="grp-tick mono">AMZN</span></div>
+        </div>
+        <div class="group-meta">
+          <span class="group-date mono">2026-05-17</span>
+          <span class="group-count">1 檔</span>
+          <span class="source-badge source-substack">Substack</span>
+        </div>
+      </summary>
+      <div class="group-body"><div class="card buy" data-ticker="AMZN" data-name="Amazon">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">AMZN</span>
+          <span class="stock-name">Amazon</span>
+          <span class="pri-chip">第一順位</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-05-17</span>
+          <span class="badge badge-green">買入</span>
+        </div>
+      </div>
+      <div class="verdict rising">飛輪已轉動，揭露時刻將至，市場有疑慮時用合理價格買入</div>
+      <p class="stock-logic">資本支出內循環飛輪：Trainium 自研晶片 TCO 低 30-50%、Anthropic 與 OpenAI 簽約回流 2000 億、零售加廣告 700 億現金流補貼、Rufus 開出新廣告品類。情境類似 2014-2017 AWS 揭露前，2027 FCF 預估反彈至 760 億，估值有上行空間。</p>
+      <div class="price-row"></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（AMZN）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NASDAQ:AMZN","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（3 篇文章提及）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-05-17</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://mimivsjames.substack.com/p/ai-ai" target="_blank" class="art-link">個股報告：揭開AI 下一條隱藏主線！AI 真正的下半場，不是誰買最多晶片，而是誰掌握下一個雲端入口 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">第一順位</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">資本支出內循環飛輪：Trainium 自研晶片 TCO 低 30-50%、Anthropic 與 OpenAI 簽約回流 2000 億、零售加廣告 700 億現金流補貼、Rufus 開出新廣告品類。情境類似 2014-2017 AWS 揭露前，2027 FCF 預估反彈至 760 億，估值有上行空間。</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">建議定期定額或分批買進，大跌加碼；現在位置類似 2014 年底的 AMZN。</td></tr><tr><td class="ml-key">現況</td><td class="ml-val">飛輪已轉動，揭露時刻將至，市場有疑慮時用合理價格買入</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-05-17</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://mimivsjames.substack.com/p/ai-ai-podcast" target="_blank" class="art-link">揭開AI 下一條隱藏主線！AI 真正的下半場，不是誰買最多晶片，而是誰掌握下一個雲端入口Podcas ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">第一順位</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">自研晶片 Trainium 與 Anthropic 長約建構資本支出內循環飛輪，零售與廣告現金流支撐 AI 投入，預期重演 2014 年 AWS 揭露後的估值上修行情。</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-05-03</span>
+            <span class="badge badge-red">警示</span>
+            <a href="https://mimivsjames.substack.com/p/ai-d1b" target="_blank" class="art-link">蘋果沒有站在 AI 聚光燈下，華爾街為什麼又開始回頭看它？蘋果股價長線還看好嗎？ ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">原因</td><td class="ml-val">TTM 自由現金流被 AI 投資吃到只剩 12 億美元，年營收 6000 億公司現金流崩潰，過去十年罕見。缺乏 OS 與晶片整合度，不符 AI 第二階段條件。</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">FCF 崩潰為機構最在意風險</td></tr><tr><td class="ml-key">現況</td><td class="ml-val">AI 投資吃光自由現金流</td></tr></table>
+        </div></div>
+      </details>
+    </div></div>
     </details><details class="stock-group" data-label="被動元件廠搭上AI伺服器電源需求財報營收毛利同步轉強" data-themes="AI 伺服器供應鏈 被動元件漲價循環 鉭電容 MOSFET AI 電源管理 景氣循環股估值重估">
       <summary class="group-header">
         <div class="group-summary-left">
@@ -1106,6 +1472,7 @@ body {
         <div class="group-meta">
           <span class="group-date mono">2026-05-14</span>
           <span class="group-count">1 檔</span>
+          <span class="source-badge source-vocus">Vocus</span>
         </div>
       </summary>
       <div class="group-body"><div class="card buy" data-ticker="VSH" data-name="Vishay Intertechnology">
@@ -1162,6 +1529,7 @@ body {
         <div class="group-meta">
           <span class="group-date mono">2026-05-11</span>
           <span class="group-count">1 檔</span>
+          <span class="source-badge source-vocus">Vocus</span>
         </div>
       </summary>
       <div class="group-body"><div class="card buy" data-ticker="BA" data-name="Boeing">
@@ -1202,6 +1570,135 @@ body {
         </div></div>
       </details>
     </div></div>
+    </details><details class="stock-group" data-label="AI 算力雙主線崛起 GOOG TPU 重估" data-themes="GPU+ASIC 雙主線 AI 推論成長重心 TPU 供應鏈崛起 NVDA 估值重定價 CoWoS 先進封裝">
+      <summary class="group-header">
+        <div class="group-summary-left">
+          <span class="group-label">AI 算力雙主線崛起 GOOG TPU 重估</span>
+          <div class="group-tickers"><span class="grp-tick mono">GOOG</span><span class="grp-tick mono">TSM</span></div>
+        </div>
+        <div class="group-meta">
+          <span class="group-date mono">2026-05-10</span>
+          <span class="group-count">2 檔</span>
+          <span class="source-badge source-substack">Substack</span>
+        </div>
+      </summary>
+      <div class="group-body"><div class="sub-group-single-hd">第一順位</div><div class="card buy" data-ticker="GOOG" data-name="Alphabet">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">GOOG</span>
+          <span class="stock-name">Alphabet</span>
+          <span class="pri-chip">第一順位</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-05-10</span>
+          <span class="badge badge-green">買入</span>
+        </div>
+      </div>
+      
+      <p class="stock-logic">市場長線尚未完全 pricing in 的 AI 龍頭，生態系強大。TPU 四 partner 供應鏈、Anthropic 4.5GW 長約鎖到 2031、TPU 外賣啟動、Waymo、GCP、YouTube AI、Gemini 訂閱五大機會，是 alpha 來源與評價重估標的。</p>
+      <div class="price-row"></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（GOOG）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NASDAQ:GOOG","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（3 篇文章提及）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-05-10</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://mimivsjames.substack.com/p/ai-3-5" target="_blank" class="art-link">AI 霸主爭奪戰：未來 3 到 5 年，誰才是下一輪超額報酬長線贏家？ ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">第一順位</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">市場長線尚未完全 pricing in 的 AI 龍頭，生態系強大。TPU 四 partner 供應鏈、Anthropic 4.5GW 長約鎖到 2031、TPU 外賣啟動、Waymo、GCP、YouTube AI、Gemini 訂閱五大機會，是 alpha 來源與評價重估標的。</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">建議配置比例最高，可達 40%，採核心定期定額+擇時加碼</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-05-03</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://mimivsjames.substack.com/p/ai-d1b" target="_blank" class="art-link">蘋果沒有站在 AI 聚光燈下，華爾街為什麼又開始回頭看它？蘋果股價長線還看好嗎？ ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">四大 CSP 中唯一財報股價上漲者，雲端營收年增 63%，是唯一能把燒錢翻譯成賺錢的公司，TPU 開始外賣被視為 AI 硬體供應鏈。提供蘋果 Gemini 客製模型，輕資產合作受益方。</td></tr><tr><td class="ml-key">現況</td><td class="ml-val">唯一能將 AI 燒錢變現的 CSP</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-04-12</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://mimivsjames.substack.com/p/7002" target="_blank" class="art-link">告別盲目猜底！量化推演第二季美股「獲利突圍」的兩大關鍵轉折點。7002高點何時能突破？ ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">AI需求端代表，四月底M7財報週觀察AI資本支出回報率是否讓市場滿意，M7預估EPS成長22.7%遠高於其他493家公司的12.5%。</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="sub-group-single-hd">第三順位</div><div class="card buy" data-ticker="TSM" data-name="台積電">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">TSM</span>
+          <span class="stock-name">台積電</span>
+          <span class="pri-chip">第三順位</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-05-10</span>
+          <span class="badge badge-green">買入</span>
+        </div>
+      </div>
+      
+      <p class="stock-logic">算力路線之爭唯一不需選邊的大贏家。TPU v8 跑 2nm、Rubin 跑 N3P、AMD MI400 也是 TSM。CoWoS 先進封裝 2026 滿載、2027 仍供不應求，是組合中可放三五年躺著賺的定錨股。</p>
+      <div class="price-row"></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（TSM）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NYSE:TSM","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（5 篇文章提及）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-05-10</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://mimivsjames.substack.com/p/ai-3-5" target="_blank" class="art-link">AI 霸主爭奪戰：未來 3 到 5 年，誰才是下一輪超額報酬長線贏家？ ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">第三順位</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">算力路線之爭唯一不需選邊的大贏家。TPU v8 跑 2nm、Rubin 跑 N3P、AMD MI400 也是 TSM。CoWoS 先進封裝 2026 滿載、2027 仍供不應求，是組合中可放三五年躺著賺的定錨股。</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">建議配置 20-25%，定位是 anchor 非 alpha，只需追蹤 CoWoS 產能擴建進度</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-05-10</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://mimivsjames.substack.com/p/ai-3-5-6f5" target="_blank" class="art-link">AI 霸主爭奪戰：未來 3 到 5 年，誰才是下一輪超額報酬長線贏家？ ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">第三順位</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">作為 AI 供應鏈核心製造端，確定性高，受惠整體算力需求成長。</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-04-12</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://mimivsjames.substack.com/p/7002" target="_blank" class="art-link">告別盲目猜底！量化推演第二季美股「獲利突圍」的兩大關鍵轉折點。7002高點何時能突破？ ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">AI硬體供應鏈供給端龍頭，4/16法說會確認520-560億美元資本支出計畫不變及毛利率往56%靠，將決定第一段行情操作方向，是AI硬體供應鏈EPS上修的關鍵信號。</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-02-22</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://mimivsjames.substack.com/p/ai20268" target="_blank" class="art-link">AI撞上物理極限，2026年「銅與電」超級循環的長線8檔股票與投資組合 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">第一順位</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">全球算力硬體製造霸主，2nm與CoWoS先進封裝壟斷，無論NVDA或自研ASIC都得排隊搶產能，實質全球算力壟斷者</td></tr><tr><td class="ml-key">進場</td><td class="ml-val">月線季線之上逢拉回量縮建倉</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">首選非NVDA因晚週期硬體估值波動劇烈</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-02-22</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://mimivsjames.substack.com/p/ai20268-b42" target="_blank" class="art-link">AI撞上物理極限，2026年「銅與電」超級循環的長線8檔股票與投資組合 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">邏輯</td><td class="ml-val">矽光子與先進製程龍頭，具備定價權與壟斷地位，受惠AI硬體超級循環</td></tr></table>
+        </div></div>
+      </details>
+    </div></div>
     </details><details class="stock-group" data-label="AI半導體封裝設備股受惠HBM熱壓鍵合強週期啟動" data-themes="AI 先進封裝 TCB 熱壓鍵合 HBM 記憶體 半導體強週期 供應鏈傳導時序">
       <summary class="group-header">
         <div class="group-summary-left">
@@ -1211,6 +1708,7 @@ body {
         <div class="group-meta">
           <span class="group-date mono">2026-05-07</span>
           <span class="group-count">1 檔</span>
+          <span class="source-badge source-vocus">Vocus</span>
         </div>
       </summary>
       <div class="group-body"><div class="card buy" data-ticker="KLIC" data-name="Kulicke and Soffa（庫力索法）">
@@ -1260,6 +1758,7 @@ body {
         <div class="group-meta">
           <span class="group-date mono">2026-05-06</span>
           <span class="group-count">1 檔</span>
+          <span class="source-badge source-vocus">Vocus</span>
         </div>
       </summary>
       <div class="group-body"><div class="card buy" data-ticker="OUST" data-name="Ouster">
@@ -1309,6 +1808,7 @@ body {
         <div class="group-meta">
           <span class="group-date mono">2026-05-04</span>
           <span class="group-count">1 檔</span>
+          <span class="source-badge source-vocus">Vocus</span>
         </div>
       </summary>
       <div class="group-body"><div class="card buy" data-ticker="MTRN" data-name="Materion">
@@ -1356,10 +1856,710 @@ body {
         </div></div>
       </details>
     </div></div>
+    </details><details class="stock-group" data-label="中東衝突下能源供應鏈重定價" data-themes="中東地緣衝突 能源供應鏈修復 美國頁岩油 煉油廠利差">
+      <summary class="group-header">
+        <div class="group-summary-left">
+          <span class="group-label">中東衝突下能源供應鏈重定價</span>
+          <div class="group-tickers"><span class="grp-tick mono">DVN</span><span class="grp-tick mono">FANG</span><span class="grp-tick mono">OXY</span><span class="grp-tick mono">VLO</span><span class="grp-tick mono">MPC</span><span class="grp-tick-more">+1</span></div>
+        </div>
+        <div class="group-meta">
+          <span class="group-date mono">2026-03-30</span>
+          <span class="group-count">6 檔</span>
+          <span class="source-badge source-substack">Substack</span>
+        </div>
+      </summary>
+      <div class="group-body"><div class="card buy" data-ticker="DVN" data-name="Devon Energy">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">DVN</span>
+          <span class="stock-name">Devon Energy</span>
+          
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-03-30</span>
+          <span class="badge badge-green">買入</span>
+        </div>
+      </div>
+      
+      <p class="stock-logic">產能位於北美的美國頁岩油商，避開荷姆茲海峽封鎖風險</p>
+      <div class="price-row"></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（DVN）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NYSE:DVN","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-03-30</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://mimivsjames.substack.com/p/pocast" target="_blank" class="art-link">中東地緣衝突風險下的重定價：市場低估的，不是戰爭時間，而是能源供應鏈的修復時間Pocast ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">邏輯</td><td class="ml-val">產能位於北美的美國頁岩油商，避開荷姆茲海峽封鎖風險</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card buy" data-ticker="FANG" data-name="Diamondback Energy">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">FANG</span>
+          <span class="stock-name">Diamondback Energy</span>
+          
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-03-30</span>
+          <span class="badge badge-green">買入</span>
+        </div>
+      </div>
+      
+      <p class="stock-logic">產能位於北美的美國頁岩油商，受惠供應鏈重組</p>
+      <div class="price-row"></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（FANG）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NASDAQ:FANG","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-03-30</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://mimivsjames.substack.com/p/pocast" target="_blank" class="art-link">中東地緣衝突風險下的重定價：市場低估的，不是戰爭時間，而是能源供應鏈的修復時間Pocast ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">邏輯</td><td class="ml-val">產能位於北美的美國頁岩油商，受惠供應鏈重組</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card buy" data-ticker="OXY" data-name="Occidental Petroleum">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">OXY</span>
+          <span class="stock-name">Occidental Petroleum</span>
+          
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-03-30</span>
+          <span class="badge badge-green">買入</span>
+        </div>
+      </div>
+      
+      <p class="stock-logic">產能位於北美的美國頁岩油商，避開中東曝險</p>
+      <div class="price-row"></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（OXY）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NYSE:OXY","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（3 篇文章提及）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-03-30</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://mimivsjames.substack.com/p/pocast" target="_blank" class="art-link">中東地緣衝突風險下的重定價：市場低估的，不是戰爭時間，而是能源供應鏈的修復時間Pocast ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">邏輯</td><td class="ml-val">產能位於北美的美國頁岩油商，避開中東曝險</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-03-22</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://mimivsjames.substack.com/p/6500" target="_blank" class="art-link">6500點是恐懼的底部還是噩夢的起點？美股下跌後的長線布局策略 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">油價飆升下能源板塊受惠，文中提及巴菲特引退前最漂亮一仗，股價已反映利多，可觀察油價走勢與後續獲利爆發</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-02-01</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://mimivsjames.substack.com/p/warsh" target="_blank" class="art-link">金銀的閃崩只是開始嗎？現在可以進場嗎？三爺與 Warsh 聯手按下的「重置鍵」 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">巴菲特概念股，槓桿率高對油價極度敏感，若走外科手術打擊或全面戰爭路徑，漲幅通常是XLE的1.5倍以上，適合短線或波段激進投資人</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card buy" data-ticker="VLO" data-name="Valero Energy">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">VLO</span>
+          <span class="stock-name">Valero Energy</span>
+          
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-03-30</span>
+          <span class="badge badge-green">買入</span>
+        </div>
+      </div>
+      
+      <p class="stock-logic">能處理中密度原油並受惠柴油與航空燃油利差擴大的核心受惠煉油廠</p>
+      <div class="price-row"></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（VLO）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NYSE:VLO","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-03-30</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://mimivsjames.substack.com/p/pocast" target="_blank" class="art-link">中東地緣衝突風險下的重定價：市場低估的，不是戰爭時間，而是能源供應鏈的修復時間Pocast ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">邏輯</td><td class="ml-val">能處理中密度原油並受惠柴油與航空燃油利差擴大的核心受惠煉油廠</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card buy" data-ticker="MPC" data-name="Marathon Petroleum">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">MPC</span>
+          <span class="stock-name">Marathon Petroleum</span>
+          
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-03-30</span>
+          <span class="badge badge-green">買入</span>
+        </div>
+      </div>
+      
+      <p class="stock-logic">受惠供應鏈重組與燃油利差擴大的核心煉油廠標的</p>
+      <div class="price-row"></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（MPC）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NYSE:MPC","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-03-30</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://mimivsjames.substack.com/p/pocast" target="_blank" class="art-link">中東地緣衝突風險下的重定價：市場低估的，不是戰爭時間，而是能源供應鏈的修復時間Pocast ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">邏輯</td><td class="ml-val">受惠供應鏈重組與燃油利差擴大的核心煉油廠標的</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card buy" data-ticker="DINO" data-name="HF Sinclair">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">DINO</span>
+          <span class="stock-name">HF Sinclair</span>
+          
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-03-30</span>
+          <span class="badge badge-green">買入</span>
+        </div>
+      </div>
+      
+      <p class="stock-logic">能處理中密度原油並受惠柴油與航空燃油利差擴大的煉油廠</p>
+      <div class="price-row"></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（DINO）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NYSE:DINO","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-03-30</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://mimivsjames.substack.com/p/pocast" target="_blank" class="art-link">中東地緣衝突風險下的重定價：市場低估的，不是戰爭時間，而是能源供應鏈的修復時間Pocast ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">邏輯</td><td class="ml-val">能處理中密度原油並受惠柴油與航空燃油利差擴大的煉油廠</td></tr></table>
+        </div></div>
+      </details>
+    </div></div>
+    </details><details class="stock-group" data-label="AI晚週期：銅與電基建超級循環" data-themes="AI物理極限超級循環 銅與電基建 矽光子CPO液冷 核電基載電力 黃金去美元化避險 國際地緣分散">
+      <summary class="group-header">
+        <div class="group-summary-left">
+          <span class="group-label">AI晚週期：銅與電基建超級循環</span>
+          <div class="group-tickers"><span class="grp-tick mono">ETN</span><span class="grp-tick mono">ISRG</span><span class="grp-tick mono">VRT</span><span class="grp-tick mono">FCX</span><span class="grp-tick mono">NEE</span><span class="grp-tick-more">+2</span></div>
+        </div>
+        <div class="group-meta">
+          <span class="group-date mono">2026-02-22</span>
+          <span class="group-count">7 檔</span>
+          <span class="source-badge source-substack">Substack</span>
+        </div>
+      </summary>
+      <div class="group-body"><div class="card buy" data-ticker="ETN" data-name="Eaton">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">ETN</span>
+          <span class="stock-name">Eaton</span>
+          
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-02-22</span>
+          <span class="badge badge-green">買入</span>
+        </div>
+      </div>
+      
+      <p class="stock-logic">全球電力管理與電網現代化龍頭，訂單能見度排到數年後，業務涵蓋資料中心、航太與工業重振，最穩健電網股</p>
+      <div class="price-row"><span class="price-chip"><span class="chip-label">進場</span>週線高檔整理逢回找日線買點</span></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（ETN）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NYSE:ETN","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（2 篇文章提及）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-02-22</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://mimivsjames.substack.com/p/ai20268" target="_blank" class="art-link">AI撞上物理極限，2026年「銅與電」超級循環的長線8檔股票與投資組合 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">邏輯</td><td class="ml-val">全球電力管理與電網現代化龍頭，訂單能見度排到數年後，業務涵蓋資料中心、航太與工業重振，最穩健電網股</td></tr><tr><td class="ml-key">進場</td><td class="ml-val">週線高檔整理逢回找日線買點</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-02-22</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://mimivsjames.substack.com/p/ai20268-b42" target="_blank" class="art-link">AI撞上物理極限，2026年「銅與電」超級循環的長線8檔股票與投資組合 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">邏輯</td><td class="ml-val">穩定供電的電網與電力管理龍頭，受惠資料中心電力需求爆發</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card buy" data-ticker="ISRG" data-name="Intuitive Surgical">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">ISRG</span>
+          <span class="stock-name">Intuitive Surgical</span>
+          
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-02-22</span>
+          <span class="badge badge-green">買入</span>
+        </div>
+      </div>
+      
+      <p class="stock-logic">達文西手術機器人龍頭，醫療剛需防禦輪動首選，轉換成本高，耗材與機械手臂持續貢獻自由現金流，物理AI落地</p>
+      <div class="price-row"><span class="price-chip"><span class="chip-label">進場</span>走勢穩健，科技股震盪時走獨立多頭</span></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（ISRG）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NASDAQ:ISRG","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-02-22</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://mimivsjames.substack.com/p/ai20268" target="_blank" class="art-link">AI撞上物理極限，2026年「銅與電」超級循環的長線8檔股票與投資組合 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">邏輯</td><td class="ml-val">達文西手術機器人龍頭，醫療剛需防禦輪動首選，轉換成本高，耗材與機械手臂持續貢獻自由現金流，物理AI落地</td></tr><tr><td class="ml-key">進場</td><td class="ml-val">走勢穩健，科技股震盪時走獨立多頭</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">晚週期價值輪動首選</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card buy" data-ticker="VRT" data-name="Vertiv">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">VRT</span>
+          <span class="stock-name">Vertiv</span>
+          
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-02-22</span>
+          <span class="badge badge-green">買入</span>
+        </div>
+      </div>
+      
+      <p class="stock-logic">液冷散熱與電力備援系統全球市佔第一，單機櫃功耗破100kW氣冷失效，液冷維護與冷卻液替換高毛利經常性收入，訂單排到2027後</p>
+      <div class="price-row"><span class="price-chip"><span class="chip-label">進場</span>上升趨勢線與季線之上逢回測量縮買進</span></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（VRT）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NYSE:VRT","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-02-22</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://mimivsjames.substack.com/p/ai20268" target="_blank" class="art-link">AI撞上物理極限，2026年「銅與電」超級循環的長線8檔股票與投資組合 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">邏輯</td><td class="ml-val">液冷散熱與電力備援系統全球市佔第一，單機櫃功耗破100kW氣冷失效，液冷維護與冷卻液替換高毛利經常性收入，訂單排到2027後</td></tr><tr><td class="ml-key">進場</td><td class="ml-val">上升趨勢線與季線之上逢回測量縮買進</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card buy" data-ticker="FCX" data-name="Freeport-McMoRan">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">FCX</span>
+          <span class="stock-name">Freeport-McMoRan</span>
+          
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-02-22</span>
+          <span class="badge badge-green">買入</span>
+        </div>
+      </div>
+      
+      <p class="stock-logic">美股最大純度最高銅礦龍頭，直接受惠AI每年新增47.5萬噸銅需求，新礦開採需10-15年供給赤字，兼具AI基建與抗通膨</p>
+      <div class="price-row"><span class="price-chip"><span class="chip-label">進場</span>突破整理區間站穩200日均線之上</span></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（FCX）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NYSE:FCX","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（4 篇文章提及）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-02-22</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://mimivsjames.substack.com/p/ai20268" target="_blank" class="art-link">AI撞上物理極限，2026年「銅與電」超級循環的長線8檔股票與投資組合 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">邏輯</td><td class="ml-val">美股最大純度最高銅礦龍頭，直接受惠AI每年新增47.5萬噸銅需求，新礦開採需10-15年供給赤字，兼具AI基建與抗通膨</td></tr><tr><td class="ml-key">進場</td><td class="ml-val">突破整理區間站穩200日均線之上</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">銅價超級循環啟動訊號</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-02-22</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://mimivsjames.substack.com/p/ai20268-b42" target="_blank" class="art-link">AI撞上物理極限，2026年「銅與電」超級循環的長線8檔股票與投資組合 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">邏輯</td><td class="ml-val">銅礦龍頭，受惠資料中心與電力建設帶來的銅消耗爆發式成長</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-01-25</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://mimivsjames.substack.com/p/ai-2026" target="_blank" class="art-link">貴金屬投資三部曲最終章，銅博士的 AI 進化論，2026 供需失衡下的投資戰略。本文有彩蛋股 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">第一順位</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">若只能買一支銅礦股就買它。擁有印尼Grasberg第二大銅礦且兼產黃金可抵銷成本，是有黃金避險對沖的銅礦股。2026-2027每年砸4.3B擴產，與銅價連動最高，銅價每漲獲利倍數爆發。</td></tr><tr><td class="ml-key">進場</td><td class="ml-val">回調時分批買進，做季節性交易</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">最大風險為印尼資源民族主義，可能禁出口或加稅</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-01-25</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://mimivsjames.substack.com/p/ai-2026-podcast" target="_blank" class="art-link">貴金屬投資三部曲最終章，銅博士的 AI 進化論，2026 供需失衡下的投資戰略。本文有彩蛋股Podc ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">第一順位</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">銅礦龍頭股，受惠於 AI 算力與能源轉型帶動的銅需求，2026 供需失衡下為積極策略首選。</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card buy" data-ticker="NEE" data-name="NextEra Energy">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">NEE</span>
+          <span class="stock-name">NextEra Energy</span>
+          
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-02-22</span>
+          <span class="badge badge-green">買入</span>
+        </div>
+      </div>
+      
+      <p class="stock-logic">AI電力加再生能源霸主，核加風太陽能雙動力，2026 EPS指引3.92-4.02成長8%+，穩定現金流與股利成長</p>
+      <div class="price-row"><span class="price-chip"><span class="chip-label">進場</span>週線RSI中性，50日均線在200日上方</span></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（NEE）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NYSE:NEE","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-02-22</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://mimivsjames.substack.com/p/ai20268" target="_blank" class="art-link">AI撞上物理極限，2026年「銅與電」超級循環的長線8檔股票與投資組合 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">邏輯</td><td class="ml-val">AI電力加再生能源霸主，核加風太陽能雙動力，2026 EPS指引3.92-4.02成長8%+，穩定現金流與股利成長</td></tr><tr><td class="ml-key">進場</td><td class="ml-val">週線RSI中性，50日均線在200日上方</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card buy" data-ticker="TEL" data-name="東京威力科創">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">TEL</span>
+          <span class="stock-name">東京威力科創</span>
+          
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-02-22</span>
+          <span class="badge badge-green">買入</span>
+        </div>
+      </div>
+      
+      <p class="stock-logic">全球塗佈顯影設備壟斷者，台積電2nm與先進封裝不可或缺推手，日本推動企業提升ROE外資湧入</p>
+      <div class="price-row"></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（TEL）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NASDAQ:TEL","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-02-22</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://mimivsjames.substack.com/p/ai20268" target="_blank" class="art-link">AI撞上物理極限，2026年「銅與電」超級循環的長線8檔股票與投資組合 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">邏輯</td><td class="ml-val">全球塗佈顯影設備壟斷者，台積電2nm與先進封裝不可或缺推手，日本推動企業提升ROE外資湧入</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">日本配置代表，注意此為日股代碼8035.T</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card buy" data-ticker="ASX" data-name="日月光">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">ASX</span>
+          <span class="stock-name">日月光</span>
+          
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-02-22</span>
+          <span class="badge badge-green">買入</span>
+        </div>
+      </div>
+      
+      <p class="stock-logic">受惠全球供應鏈重組的台灣製造，AI基建封裝測試紅利，台灣製造紅利代表</p>
+      <div class="price-row"></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（ASX）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NYSE:ASX","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-02-22</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://mimivsjames.substack.com/p/ai20268" target="_blank" class="art-link">AI撞上物理極限，2026年「銅與電」超級循環的長線8檔股票與投資組合 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">邏輯</td><td class="ml-val">受惠全球供應鏈重組的台灣製造，AI基建封裝測試紅利，台灣製造紅利代表</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">新興亞洲配置選項</td></tr></table>
+        </div></div>
+      </details>
+    </div></div>
+    </details><details class="stock-group" data-label="Warsh重置鍵：能源金融逢低、貴金屬短空" data-themes="Warsh 流動性重置 能源地緣溢價 金融去監管 貴金屬短空長多 國防軍工對沖 成長轉價值品質">
+      <summary class="group-header">
+        <div class="group-summary-left">
+          <span class="group-label">Warsh重置鍵：能源金融逢低、貴金屬短空</span>
+          <div class="group-tickers"><span class="grp-tick mono">XOM</span><span class="grp-tick mono">CVX</span></div>
+        </div>
+        <div class="group-meta">
+          <span class="group-date mono">2026-02-01</span>
+          <span class="group-count">2 檔</span>
+          <span class="source-badge source-substack">Substack</span>
+        </div>
+      </summary>
+      <div class="group-body"><div class="card buy" data-ticker="XOM" data-name="Exxon Mobil">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">XOM</span>
+          <span class="stock-name">Exxon Mobil</span>
+          <span class="pri-chip">第一順位</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-02-01</span>
+          <span class="badge badge-green">買入</span>
+        </div>
+      </div>
+      
+      <p class="stock-logic">能源龍頭，高自由現金流，霍爾木茲海峽風險溢價未被計入，即便油價不漲，資產負債表與回購計畫也能保護，類現金替代品進可攻退可守</p>
+      <div class="price-row"></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（XOM）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NYSE:XOM","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-02-01</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://mimivsjames.substack.com/p/warsh" target="_blank" class="art-link">金銀的閃崩只是開始嗎？現在可以進場嗎？三爺與 Warsh 聯手按下的「重置鍵」 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">第一順位</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">能源龍頭，高自由現金流，霍爾木茲海峽風險溢價未被計入，即便油價不漲，資產負債表與回購計畫也能保護，類現金替代品進可攻退可守</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">波段做多首選</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card buy" data-ticker="CVX" data-name="Chevron">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">CVX</span>
+          <span class="stock-name">Chevron</span>
+          <span class="pri-chip">第一順位</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-02-01</span>
+          <span class="badge badge-green">買入</span>
+        </div>
+      </div>
+      
+      <p class="stock-logic">能源龍頭，高自由現金流，年初元月開始有表現，地緣溢價下進可攻退可守，下檔有沙烏地財政損益平衡點支撐</p>
+      <div class="price-row"></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（CVX）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NYSE:CVX","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-02-01</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://mimivsjames.substack.com/p/warsh" target="_blank" class="art-link">金銀的閃崩只是開始嗎？現在可以進場嗎？三爺與 Warsh 聯手按下的「重置鍵」 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">第一順位</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">能源龍頭，高自由現金流，年初元月開始有表現，地緣溢價下進可攻退可守，下檔有沙烏地財政損益平衡點支撐</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">波段做多首選</td></tr></table>
+        </div></div>
+      </details>
+    </div></div>
     </details>
   </section><section class="section" id="section-watch">
-    <div class="section-title">觀察名單（32 檔）</div>
-    <details class="stock-group" data-label="醫療防禦股輪動避險升息預期下的現金流選股" data-themes="升息預期交易 醫療股資金輪動 AI 製藥 防禦股 Alpha 現金流選股">
+    <div class="section-title">觀察名單（52 檔）</div>
+    <details class="stock-group" data-label="COST跌破年線：高估值防禦股分批建倉" data-themes="會員制複利引擎 高久期防禦股 估值與實質利率 波動率拖累複利">
+      <summary class="group-header">
+        <div class="group-summary-left">
+          <span class="group-label">COST跌破年線：高估值防禦股分批建倉</span>
+          <div class="group-tickers"><span class="grp-tick mono">COST</span></div>
+        </div>
+        <div class="group-meta">
+          <span class="group-date mono">2026-06-08</span>
+          <span class="group-count">1 檔</span>
+          <span class="source-badge source-substack">Substack</span>
+        </div>
+      </summary>
+      <div class="group-body"><div class="card watch" data-ticker="COST" data-name="Costco">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">COST</span>
+          <span class="stock-name">Costco</span>
+          
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-06-08</span>
+          <span class="badge badge-yellow">觀察</span>
+        </div>
+      </div>
+      <div class="verdict waiting">長線看好但目前估值偏高，分批建倉以時間換空間</div>
+      <p class="stock-logic">會員制印鈔機，會員費占營收僅1.9%但相當於營業利益51%，續約率全球89.7%、美加92.2%，付費會員8290萬增4.1%，Executive會員4120萬增9.6%貢獻73.6%銷售。基本面飛輪完整，但目前約43倍前瞻本益比、PEG 4.3仍偏貴。盈餘殖利率2.31%僅高於10年期TIPS實質殖利率2.11%約0.2個百分點，補償偏薄。跌破年線只是沒那麼貴還未到便宜。定期定額者可開始建底倉/觀察倉位，採條件式階梯建倉分批買，組合中設8%目標權重上限10%。</p>
+      <div class="price-row"><span class="price-chip"><span class="chip-label">目標</span>估值低區間+盈餘殖利率對實質利率利差&gt;1.25個百分點可加碼</span></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（COST）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NASDAQ:COST","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（3 篇文章提及）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-06-08</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://mimivsjames.substack.com/p/costcost" target="_blank" class="art-link">科技股大跌後，買COST會相對安全嗎？COST跌破年線，長線投資可以買了嗎？ ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">會員制印鈔機，會員費占營收僅1.9%但相當於營業利益51%，續約率全球89.7%、美加92.2%，付費會員8290萬增4.1%，Executive會員4120萬增9.6%貢獻73.6%銷售。基本面飛輪完整，但目前約43倍前瞻本益比、PEG 4.3仍偏貴。盈餘殖利率2.31%僅高於10年期TIPS實質殖利率2.11%約0.2個百分點，補償偏薄。跌破年線只是沒那麼貴還未到便宜。定期定額者可開始建底倉/觀察倉位，採條件式階梯建倉分批買，組合中設8%目標權重上限10%。</td></tr><tr><td class="ml-key">目標</td><td class="ml-val">估值低區間+盈餘殖利率對實質利率利差&gt;1.25個百分點可加碼</td></tr><tr><td class="ml-key">現況</td><td class="ml-val">長線看好但目前估值偏高，分批建倉以時間換空間</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-06-08</span>
+            <span class="badge badge-red">警示</span>
+            <a href="https://mimivsjames.substack.com/p/costcost" target="_blank" class="art-link">科技股大跌後，買COST會相對安全嗎？COST跌破年線，長線投資可以買了嗎？ ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">原因</td><td class="ml-val">估值偏高減碼訊號：前瞻本益比衝過50倍、10年期實質利率高於2%、未來12個月EPS成長預期低於10%，三者出現兩項時把權重從8%逐漸降到5%-6%；本波高點1096元事實上已出現減碼訊號。股災時COST抗跌權重漲過12%時也應減碼回補被殺的AI龍頭做再平衡。</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">基本面減碼（砍一半）：付費會員成長低於2%、續約率年減、未來12個月EPS下修超過10%，其中兩項連續兩季出現</td></tr><tr><td class="ml-key">現況</td><td class="ml-val">高點減碼與權重再平衡</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-06-08</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://mimivsjames.substack.com/p/costcostpodcast" target="_blank" class="art-link">科技股大跌後，買COST會相對安全嗎？COST跌破年線，長線投資可以買了嗎？Podcast ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">核心競爭力來自穩定增長的會員費收入，基本面強勁且抗通膨。但目前股價高估值，即便跌破年線，若本益比未修正至合理區間仍有報酬稀釋風險。建議透過預期盈餘殖利率與利率利差判斷買點，可作為科技權重組合的穩定器。</td></tr></table>
+        </div></div>
+      </details>
+    </div></div>
+    </details><details class="stock-group" data-label="醫療防禦股輪動避險升息預期下的現金流選股" data-themes="升息預期交易 醫療股資金輪動 AI 製藥 防禦股 Alpha 現金流選股">
       <summary class="group-header">
         <div class="group-summary-left">
           <span class="group-label">醫療防禦股輪動避險升息預期下的現金流選股</span>
@@ -1368,6 +2568,7 @@ body {
         <div class="group-meta">
           <span class="group-date mono">2026-06-07</span>
           <span class="group-count">2 檔</span>
+          <span class="source-badge source-vocus">Vocus</span>
         </div>
       </summary>
       <div class="group-body"><div class="card watch" data-ticker="UNH" data-name="UnitedHealth">
@@ -1454,6 +2655,7 @@ body {
         <div class="group-meta">
           <span class="group-date mono">2026-06-04</span>
           <span class="group-count">2 檔</span>
+          <span class="source-badge source-vocus">Vocus</span>
         </div>
       </summary>
       <div class="group-body"><div class="card watch" data-ticker="AVGO" data-name="Broadcom">
@@ -1483,7 +2685,7 @@ body {
       </div>
       </details>
       <details class="context-fold">
-        <summary class="context-toggle">▸ 文章脈絡（2 篇文章提及）</summary>
+        <summary class="context-toggle">▸ 文章脈絡（8 篇文章提及）</summary>
         <div class="context-body"><div class="mention-item">
           <div class="mention-meta">
             <span class="mono date-chip">2026-06-04</span>
@@ -1498,6 +2700,48 @@ body {
             <a href="https://vocus.cc/article/6a1cb67ffd89780001396662" target="_blank" class="art-link">WWDC 2026 倒數：史上最重要的一場蘋果大秀，我們推薦的「蘋果」短線已「大獲全勝」，接下來才是 ↗</a>
           </div>
           <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">6/3 盤後財報，長線看好，為 Google TPU 與客製化 AI 晶片重要收費站，手握 730 億美元在手訂單。短線隱憂在於股價歷史新高，光是 beat 不夠推升股價，且供給端瓶頸在台積電先進製程與封裝。關鍵是能否提供新客戶、2027 指引或訂單上修</td></tr><tr><td class="ml-key">目標</td><td class="ml-val">支撐區約 $400，若跌破 400 才比較危險</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-05-10</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://mimivsjames.substack.com/p/ai-3-5" target="_blank" class="art-link">AI 霸主爭奪戰：未來 3 到 5 年，誰才是下一輪超額報酬長線贏家？ ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">第二順位</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">ASIC 崛起最直接受益者，與 Google co-design 合約延至 2031，Anthropic 4.5GW 全由 AVGO 設計，2026 年自 Anthropic AI 晶片營收達 210 億、2027 翻倍至 420 億，2027 整體 AI 晶片目標破 1000 億美元，是 TPU 路線最確定受惠者之一。</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">建議配置 30%，但有 Hock Tan 接班風險與客戶集中疑慮</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-05-10</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://mimivsjames.substack.com/p/ai-3-5-6f5" target="_blank" class="art-link">AI 霸主爭奪戰：未來 3 到 5 年，誰才是下一輪超額報酬長線贏家？ ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">第二順位</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">作為 AI 供應鏈核心，受惠 ASIC 自研晶片趨勢，具備確定性。</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-04-19</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://mimivsjames.substack.com/p/avgo-36d" target="_blank" class="art-link">個股報告：「AVGO這家公司，你真的懂了嗎？」 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">第二順位</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">ASIC 客戶從 4 家擴充到 6 家（GOOG、META、Anthropic、OpenAI 加兩家），20GW+ 長約支撐 2027 年千億 AI 營收；AI 網路第二引擎加速超越 ASIC 本身；技術四層護城河完整；連續 15 年調漲股息、FCF margin 42%、ROE 33%，對股東友善。上游供應鏈全面上修，Q2 財報高機率 beat，TER 等領先指標顯示 AVGO 補漲空間大。</td></tr><tr><td class="ml-key">進場</td><td class="ml-val">~$406.54</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">12-36 個月長線投資；分四步驟分批建倉（底倉 1/3、財報後 1/3、大盤回檔 1/3）；目標價 460-500，潛在上行 16-26%；配置科技龍頭倉位 5-10%，與 NVDA 形成 GPU+ASIC 互補（NVDA:AVGO=1:2）。減碼訊號：AI 在手訂單連兩季降至 650 億以下、CSP 資本支出下修超 20%、EBITDA margin 跌破 60%。</td></tr><tr><td class="ml-key">現況</td><td class="ml-val">長線買進評級，看好未來基本面與股價</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-04-19</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://mimivsjames.substack.com/p/avgopodcast-a1f" target="_blank" class="art-link">個股報告：「AVGO這家公司，你真的懂了嗎？」Podcast ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">第一順位</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">AI 基礎設施平台轉型被低估，客製化晶片客戶擴展至六大科技���頭並擁有三至五年長約；AI 網路設備增速超越晶片本體；強大自由現金流與穩定股息增長，具優於大盤的抗跌跟漲特性。</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">建議長線投資者善用估值落差，採分批建倉策略掌握長期複利。</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-02-22</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://mimivsjames.substack.com/p/ai20268" target="_blank" class="art-link">AI撞上物理極限，2026年「銅與電」超級循環的長線8檔股票與投資組合 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">邏輯</td><td class="ml-val">打破銅牆的CPO矽光子與網通交換器霸主，GOOG與META自研AI晶片主要推手，利潤率達60%以上，自由現金流極佳</td></tr><tr><td class="ml-key">進場</td><td class="ml-val">週線高檔強勢修正中</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">取代傳統SaaS股的最佳資產</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-02-22</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://mimivsjames.substack.com/p/ai20268-b42" target="_blank" class="art-link">AI撞上物理極限，2026年「銅與電」超級循環的長線8檔股票與投資組合 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">邏輯</td><td class="ml-val">突破傳輸限制的硬體龍頭，高自由現金流與壟斷地位</td></tr></table>
         </div></div>
       </details>
     </div><div class="card watch" data-ticker="MRVL" data-name="Marvell">
@@ -1527,7 +2771,7 @@ body {
       </div>
       </details>
       <details class="context-fold">
-        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <summary class="context-toggle">▸ 文章脈絡（2 篇文章提及）</summary>
         <div class="context-body"><div class="mention-item">
           <div class="mention-meta">
             <span class="mono date-chip">2026-06-04</span>
@@ -1535,6 +2779,13 @@ body {
             <a href="https://vocus.cc/article/6a211dc1fd89780001a77457" target="_blank" class="art-link">AVGO 財報其實不錯，但盤後還是大跌？市場在擔心什麼？從 AI 晶片、VMware 到毛利率的關鍵 ↗</a>
           </div>
           <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">客戶含亞馬遜 Trainium（獨家）、微軟 Maia、META 的 DPU、Google Axion CPU，強項為客製運算與光互連。對 AVGO 的威脅在於議價權，但不會馬上搶走 Google TPU 訂單或取代其地位。</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-05-10</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://mimivsjames.substack.com/p/ai-3-5" target="_blank" class="art-link">AI 霸主爭奪戰：未來 3 到 5 年，誰才是下一輪超額報酬長線贏家？ ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">正與 GOOG 談加入做第三家設計 partner，設計 MPU 記憶體處理單元，計劃生產 200 萬顆、2027 完成設計。NVDA 也投資其 20 億美元，wafer 量 3 年成長 180%。短線股價已反應不少。</td></tr></table>
         </div></div>
       </details>
     </div></div>
@@ -1547,6 +2798,7 @@ body {
         <div class="group-meta">
           <span class="group-date mono">2026-06-02</span>
           <span class="group-count">10 檔</span>
+          <span class="source-badge source-vocus">Vocus</span>
         </div>
       </summary>
       <div class="group-body"><div class="card watch" data-ticker="NVDA" data-name="NVIDIA">
@@ -1576,7 +2828,7 @@ body {
       </div>
       </details>
       <details class="context-fold">
-        <summary class="context-toggle">▸ 文章脈絡（3 篇文章提及）</summary>
+        <summary class="context-toggle">▸ 文章脈絡（6 篇文章提及）</summary>
         <div class="context-body"><div class="mention-item">
           <div class="mention-meta">
             <span class="mono date-chip">2026-06-02</span>
@@ -1593,11 +2845,32 @@ body {
           <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">會前 30 日漲幅 +18%，剛跨入高度反映區。真正催化劑不是 5/14 訪中而是 5/20 Q1 FY27 財報（訪中後 3 個交易日）。後續還有 6/1 GTC Taipei Keynote、下半年 Rubin 量產提前反應。若會後拉回整理反而提供波段資金進場契機</td></tr><tr><td class="ml-key">現況</td><td class="ml-val">⚠️ 會前最熱、驗證點最密，賣事實風險偏高</td></tr></table>
         </div><div class="mention-item">
           <div class="mention-meta">
+            <span class="mono date-chip">2026-05-10</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://mimivsjames.substack.com/p/ai-3-5" target="_blank" class="art-link">AI 霸主爭奪戰：未來 3 到 5 年，誰才是下一輪超額報酬長線贏家？ ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">短期 1-2 年 Rubin 仍是最佳完整解決方案，一條龍便利性溢價短期不會消失。但 5 年期面臨 hyperscaler 自研 ASIC 與 AMD 雙重夾擊，毛利與估值倍數恐被壓縮。Rubin 出貨時可能有最後一波明顯上漲，但長線估值重定價風險高。</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-05-10</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://mimivsjames.substack.com/p/ai-3-5-6f5" target="_blank" class="art-link">AI 霸主爭奪戰：未來 3 到 5 年，誰才是下一輪超額報酬長線贏家？ ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">目前穩坐 AI 算力龍頭，但面臨 Google TPU 生態崛起挑戰，需求從訓練轉向推論可能使其毛利與估值重新定價，須動態觀察權重調整。</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
             <span class="mono date-chip">2026-05-07</span>
             <span class="badge badge-yellow">觀察</span>
             <a href="https://vocus.cc/article/69fc2cacfd89780001c212ae" target="_blank" class="art-link">個股分析：下一個 AEHR？這檔「AI 設備股」上修資本支出，十年一遇的半導體強週期剛啟動 ↗</a>
           </div>
           <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">終端需求，每出一顆 H100/H200/Blackwell 配 6-8 顆 HBM，每顆 HBM 疊 8-12 層靠 TCB 黏合。可用 NVDA 訂單預判 KLIC 業績，傳導時序 T+3 季 GPU 營收落袋</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-03-22</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://mimivsjames.substack.com/p/6500" target="_blank" class="art-link">6500點是恐懼的底部還是噩夢的起點？美股下跌後的長線布局策略 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">AI龍頭但文中強調總體經濟與利率主宰市場，再好的基本面在升息環境下也會大跌，需以總經為優先觀察</td></tr></table>
         </div></div>
       </details>
     </div><div class="card watch" data-ticker="ARM" data-name="Arm Holdings">
@@ -1664,7 +2937,7 @@ body {
       </div>
       </details>
       <details class="context-fold">
-        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <summary class="context-toggle">▸ 文章脈絡（4 篇文章提及）</summary>
         <div class="context-body"><div class="mention-item">
           <div class="mention-meta">
             <span class="mono date-chip">2026-06-02</span>
@@ -1672,6 +2945,27 @@ body {
             <a href="https://vocus.cc/article/6a1e6a43fd8978000164aa53" target="_blank" class="art-link">「AI PC 」這次真的不一樣，NVDA 宣布的AI PC為什麼讓整個台美股的PC 供應鏈重新沸騰？ ↗</a>
           </div>
           <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">與 NVDA 共同 Reinvent PC，旗艦 Surface 採用 RTX Spark。第一層平台與架構受惠者。</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-05-17</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://mimivsjames.substack.com/p/ai-ai" target="_blank" class="art-link">個股報告：揭開AI 下一條隱藏主線！AI 真正的下半場，不是誰買最多晶片，而是誰掌握下一個雲端入口 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">資本支出上修至 1900 億、年增 61%，但 OpenAI 重組後失去獨家綁定，最大客戶可隨時走人。砸錢但訂單基礎薄弱，AI 營收目標僅 250 億對應 977-1500 億資本支出，回本期長，本益比上行空間受 FCF 壓縮限制。</td></tr><tr><td class="ml-key">現況</td><td class="ml-val">砸錢買票卻不知票會不會兌現</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-05-03</span>
+            <span class="badge badge-red">警示</span>
+            <a href="https://mimivsjames.substack.com/p/ai-d1b" target="_blank" class="art-link">蘋果沒有站在 AI 聚光燈下，華爾街為什麼又開始回頭看它？蘋果股價長線還看好嗎？ ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">原因</td><td class="ml-val">資本支出大增，財報後股價跌超 3%。沒有用戶終端裝置作 AI agent 入口，不符 AI 應用入口戰主角條件。</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">多頭情緒短暫救了股價</td></tr><tr><td class="ml-key">現況</td><td class="ml-val">缺乏終端入口，資本支出壓力大</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-04-12</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://mimivsjames.substack.com/p/7002" target="_blank" class="art-link">告別盲目猜底！量化推演第二季美股「獲利突圍」的兩大關鍵轉折點。7002高點何時能突破？ ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">AI需求端核心，觀察大科技在AI上投入是否開始回本，是M7財報週決定AI資本支出信心的重要指標。</td></tr></table>
         </div></div>
       </details>
     </div><div class="card watch" data-ticker="DELL" data-name="Dell Technologies">
@@ -1957,6 +3251,7 @@ body {
         <div class="group-meta">
           <span class="group-date mono">2026-06-01</span>
           <span class="group-count">1 檔</span>
+          <span class="source-badge source-vocus">Vocus</span>
         </div>
       </summary>
       <div class="group-body"><div class="card watch" data-ticker="GOOGL" data-name="Alphabet">
@@ -1986,7 +3281,7 @@ body {
       </div>
       </details>
       <details class="context-fold">
-        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <summary class="context-toggle">▸ 文章脈絡（2 篇文章提及）</summary>
         <div class="context-body"><div class="mention-item">
           <div class="mention-meta">
             <span class="mono date-chip">2026-06-01</span>
@@ -1994,6 +3289,151 @@ body {
             <a href="https://vocus.cc/article/6a1cb67ffd89780001396662" target="_blank" class="art-link">WWDC 2026 倒數：史上最重要的一場蘋果大秀，我們推薦的「蘋果」短線已「大獲全勝」，接下來才是 ↗</a>
           </div>
           <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">Apple Siri 2.0 採用 Gemini 模型，反映 Google 在模型層與雲端 AI 的戰略地位；但『iPhone 用 Gemini → 自研晶片收費站大賺』的推論被作者認為是錯的，真正受益在模型與雲端層</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-05-10</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://mimivsjames.substack.com/p/ai-3-5-6f5" target="_blank" class="art-link">AI 霸主爭奪戰：未來 3 到 5 年，誰才是下一輪超額報酬長線贏家？ ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">第一順位</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">作為 AI 生態造物者，透過 TPU 多供應商分包策略降低成本，結合雲端服務與 API 定價形成強大護城河，看好其長線生態潛力。</td></tr></table>
+        </div></div>
+      </details>
+    </div></div>
+    </details><details class="stock-group" data-label="AI軟體下半場變現驗證重定價" data-themes="AI軟體股重定價 非人頭計費商業模式 Rule of X篩選法則 AI production監控基礎設施 自由現金流與估值容錯率">
+      <summary class="group-header">
+        <div class="group-summary-left">
+          <span class="group-label">AI軟體下半場變現驗證重定價</span>
+          <div class="group-tickers"><span class="grp-tick mono">PLTR</span><span class="grp-tick mono">APP</span><span class="grp-tick mono">INTU</span></div>
+        </div>
+        <div class="group-meta">
+          <span class="group-date mono">2026-05-31</span>
+          <span class="group-count">3 檔</span>
+          <span class="source-badge source-substack">Substack</span>
+        </div>
+      </summary>
+      <div class="group-body"><div class="card watch" data-ticker="PLTR" data-name="Palantir">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">PLTR</span>
+          <span class="stock-name">Palantir</span>
+          
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-05-31</span>
+          <span class="badge badge-yellow">觀察</span>
+        </div>
+      </div>
+      
+      <p class="stock-logic">AI決策作業系統，基本面成長力與敘事性都很強，最新一季營收年增85%、Rule of 40極高。但屬進攻型衛星而非長線核心：forward P/E高達82-116倍，自2022年底已漲23倍，屬長久期資產對利率與情緒極度敏感。另有股權稀釋（單季SBC約2億）與收入結構集中度（政府部門8.58億略大於商業7.74億）風險。適合波段操作或小比重參與。</p>
+      <div class="price-row"></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（PLTR）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NASDAQ:PLTR","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（2 篇文章提及）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-05-31</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://mimivsjames.substack.com/p/ai-1-3" target="_blank" class="art-link">「AI 軟體股」重定價：哪些公司長線能放 1 到 3 年，哪些只能當彩蛋？ ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">AI決策作業系統，基本面成長力與敘事性都很強，最新一季營收年增85%、Rule of 40極高。但屬進攻型衛星而非長線核心：forward P/E高達82-116倍，自2022年底已漲23倍，屬長久期資產對利率與情緒極度敏感。另有股權稀釋（單季SBC約2億）與收入結構集中度（政府部門8.58億略大於商業7.74億）風險。適合波段操作或小比重參與。</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-05-31</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://mimivsjames.substack.com/p/ai-1-3-podcast" target="_blank" class="art-link">「AI 軟體股」重定價：哪些公司長線能放 1 到 3 年，哪些只能當彩蛋？Podcast ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">敘事強勁且成長爆發力十足，但因估值過高或營收不確定性，僅適合波段操作的進攻型衛星配置</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card watch" data-ticker="APP" data-name="AppLovin">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">APP</span>
+          <span class="stock-name">AppLovin</span>
+          
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-05-31</span>
+          <span class="badge badge-yellow">觀察</span>
+        </div>
+      </div>
+      
+      <p class="stock-logic">AI廣告變現引擎，Axon 2.0靠算量與成效抽稅，營收與利潤率爆發力強（Rule of X得分181.5%破表、EBITDA利潤率達85%、營收增長59%）。但商業模式深受總體景氣、平台政策、監管、做空報告影響。無任何長期RPO，營收能見度低與總經週期高度相關。股價極端波動（2025曾達745美元，2026初因做空報告兩個月內回撤50%）。適合波段操作的彩蛋股。</p>
+      <div class="price-row"></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（APP）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NASDAQ:APP","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（2 篇文章提及）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-05-31</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://mimivsjames.substack.com/p/ai-1-3" target="_blank" class="art-link">「AI 軟體股」重定價：哪些公司長線能放 1 到 3 年，哪些只能當彩蛋？ ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">AI廣告變現引擎，Axon 2.0靠算量與成效抽稅，營收與利潤率爆發力強（Rule of X得分181.5%破表、EBITDA利潤率達85%、營收增長59%）。但商業模式深受總體景氣、平台政策、監管、做空報告影響。無任何長期RPO，營收能見度低與總經週期高度相關。股價極端波動（2025曾達745美元，2026初因做空報告兩個月內回撤50%）。適合波段操作的彩蛋股。</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-05-31</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://mimivsjames.substack.com/p/ai-1-3-podcast" target="_blank" class="art-link">「AI 軟體股」重定價：哪些公司長線能放 1 到 3 年，哪些只能當彩蛋？Podcast ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">敘事強勁且成長爆發力十足，但因估值過高或營收不確定性，僅適合波段操作的進攻型衛星配置</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card watch" data-ticker="INTU" data-name="Intuit">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">INTU</span>
+          <span class="stock-name">Intuit</span>
+          
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-05-31</span>
+          <span class="badge badge-yellow">觀察</span>
+        </div>
+      </div>
+      
+      <p class="stock-logic">壓力測試標的，需要時間證明AI不會壓縮原本護城河。擁有TurboTax、QuickBooks、Credit Karma與小企業金融生態系，但AI降低報稅記帳複雜度時市場質疑其定價權是否被稀釋。財報後重挫但股價未繼續破底，低檔出現換手承接，代表AI競爭利空可能已反映完。持有者不建議在此砍掉砍在阿呆谷，但也不代表會成為主推標的。</p>
+      <div class="price-row"></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（INTU）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NASDAQ:INTU","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-05-31</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://mimivsjames.substack.com/p/ai-1-3" target="_blank" class="art-link">「AI 軟體股」重定價：哪些公司長線能放 1 到 3 年，哪些只能當彩蛋？ ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">壓力測試標的，需要時間證明AI不會壓縮原本護城河。擁有TurboTax、QuickBooks、Credit Karma與小企業金融生態系，但AI降低報稅記帳複雜度時市場質疑其定價權是否被稀釋。財報後重挫但股價未繼續破底，低檔出現換手承接，代表AI競爭利空可能已反映完。持有者不建議在此砍掉砍在阿呆谷，但也不代表會成為主推標的。</td></tr></table>
         </div></div>
       </details>
     </div></div>
@@ -2006,6 +3446,7 @@ body {
         <div class="group-meta">
           <span class="group-date mono">2026-05-28</span>
           <span class="group-count">4 檔</span>
+          <span class="source-badge source-vocus">Vocus</span>
         </div>
       </summary>
       <div class="group-body"><div class="card watch" data-ticker="UMAC" data-name="Unusual Machines">
@@ -2166,6 +3607,7 @@ body {
         <div class="group-meta">
           <span class="group-date mono">2026-05-20</span>
           <span class="group-count">1 檔</span>
+          <span class="source-badge source-vocus">Vocus</span>
         </div>
       </summary>
       <div class="group-body"><div class="card watch" data-ticker="AXTI" data-name="AXT Inc">
@@ -2215,6 +3657,7 @@ body {
         <div class="group-meta">
           <span class="group-date mono">2026-05-18</span>
           <span class="group-count">1 檔</span>
+          <span class="source-badge source-vocus">Vocus</span>
         </div>
       </summary>
       <div class="group-body"><div class="card watch" data-ticker="HIMX" data-name="Himax (奇景光電)">
@@ -2255,6 +3698,114 @@ body {
         </div></div>
       </details>
     </div></div>
+    </details><details class="stock-group" data-label="AI 下半場：誰掌握雲端入口與邊緣推論" data-themes="AI 資本支出回收結構分歧 AMZN 資本支出內循環飛輪 Trainium 自研晶片成本優勢 AI 算力二元化：中心雲端＋邊緣推論 邊緣雲基礎設施">
+      <summary class="group-header">
+        <div class="group-summary-left">
+          <span class="group-label">AI 下半場：誰掌握雲端入口與邊緣推論</span>
+          <div class="group-tickers"><span class="grp-tick mono">AKAM</span><span class="grp-tick mono">META</span></div>
+        </div>
+        <div class="group-meta">
+          <span class="group-date mono">2026-05-17</span>
+          <span class="group-count">2 檔</span>
+          <span class="source-badge source-substack">Substack</span>
+        </div>
+      </summary>
+      <div class="group-body"><div class="card watch" data-ticker="AKAM" data-name="Akamai">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">AKAM</span>
+          <span class="stock-name">Akamai</span>
+          
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-05-17</span>
+          <span class="badge badge-yellow">觀察</span>
+        </div>
+      </div>
+      <div class="verdict waiting">邊緣推論第二層基礎設施的潛在受惠者，估值框架轉換中</div>
+      <p class="stock-logic">本篇彩蛋，投資預期差。5/7 公布史上最大訂單 7 年 18 億美元 CIS 合約（推測客戶為 Anthropic）。受惠 AI 從集中式訓練走向分散式邊緣推論，全球 4300+ 節點是低延遲優勢，可能從成熟 CDN 股重定義為 AI 邊緣雲戰略資產。本益比僅 13-15 倍。</p>
+      <div class="price-row"></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（AKAM）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NASDAQ:AKAM","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（2 篇文章提及）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-05-17</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://mimivsjames.substack.com/p/ai-ai" target="_blank" class="art-link">個股報告：揭開AI 下一條隱藏主線！AI 真正的下半場，不是誰買最多晶片，而是誰掌握下一個雲端入口 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">本篇彩蛋，投資預期差。5/7 公布史上最大訂單 7 年 18 億美元 CIS 合約（推測客戶為 Anthropic）。受惠 AI 從集中式訓練走向分散式邊緣推論，全球 4300+ 節點是低延遲優勢，可能從成熟 CDN 股重定義為 AI 邊緣雲戰略資產。本益比僅 13-15 倍。</td></tr><tr><td class="ml-key">現況</td><td class="ml-val">邊緣推論第二層基礎設施的潛在受惠者，估值框架轉換中</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-05-17</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://mimivsjames.substack.com/p/ai-ai-podcast" target="_blank" class="art-link">揭開AI 下一條隱藏主線！AI 真正的下半場，不是誰買最多晶片，而是誰掌握下一個雲端入口Podcas ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">第二順位</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">AI 從中心化訓練轉向分散式邊緣推論的隱藏受益者，全球密集節點優勢滿足 AI 應用低延遲需求，成為 AI 基礎設施二元化時代關鍵角色。</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card watch" data-ticker="META" data-name="Meta">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">META</span>
+          <span class="stock-name">Meta</span>
+          
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-05-17</span>
+          <span class="badge badge-yellow">觀察</span>
+        </div>
+      </div>
+      <div class="verdict alert">砸錢蓋自家用廠房，被迫跟風而非結構性回報</div>
+      <p class="stock-logic">資本支出上修至 1250-1450 億，但純粹為自家廣告系統蓋廠，無任何對外客戶承諾回流，全是內部成本中心。MTIA 二代量產初期無外部客戶搶訂，被市場視為被迫跟著燒，近期股價疲弱。</p>
+      <div class="price-row"></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（META）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NASDAQ:META","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（3 篇文章提及）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-05-17</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://mimivsjames.substack.com/p/ai-ai" target="_blank" class="art-link">個股報告：揭開AI 下一條隱藏主線！AI 真正的下半場，不是誰買最多晶片，而是誰掌握下一個雲端入口 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">資本支出上修至 1250-1450 億，但純粹為自家廣告系統蓋廠，無任何對外客戶承諾回流，全是內部成本中心。MTIA 二代量產初期無外部客戶搶訂，被市場視為被迫跟著燒，近期股價疲弱。</td></tr><tr><td class="ml-key">現況</td><td class="ml-val">砸錢蓋自家用廠房，被迫跟風而非結構性回報</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-05-03</span>
+            <span class="badge badge-red">警示</span>
+            <a href="https://mimivsjames.substack.com/p/ai-d1b" target="_blank" class="art-link">蘋果沒有站在 AI 聚光燈下，華爾街為什麼又開始回頭看它？蘋果股價長線還看好嗎？ ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">原因</td><td class="ml-val">資本支出上修至 1250-1450 億美元，財報後股價直接跌 8% 以上。一邊燒錢一邊砍員工，缺乏支付與服務生態，無 AI 入口優勢，機構恐持續撤出轉進蘋果。</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">全靠多頭情緒短暫支撐股價</td></tr><tr><td class="ml-key">現況</td><td class="ml-val">燒錢無回報、缺乏 AI 入口生態</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-04-12</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://mimivsjames.substack.com/p/7002" target="_blank" class="art-link">告別盲目猜底！量化推演第二季美股「獲利突圍」的兩大關鍵轉折點。7002高點何時能突破？ ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">AI需求端龍頭，M7財報週若超預期可把整體S&amp;P 500企業獲利上修5-7%，反面風險集中於AI資本支出回報率敘事轉向。</td></tr></table>
+        </div></div>
+      </details>
+    </div></div>
     </details><details class="stock-group" data-label="被動元件廠搭上AI伺服器電源需求財報營收毛利同步轉強" data-themes="AI 伺服器供應鏈 被動元件漲價循環 鉭電容 MOSFET AI 電源管理 景氣循環股估值重估">
       <summary class="group-header">
         <div class="group-summary-left">
@@ -2264,6 +3815,7 @@ body {
         <div class="group-meta">
           <span class="group-date mono">2026-05-14</span>
           <span class="group-count">1 檔</span>
+          <span class="source-badge source-vocus">Vocus</span>
         </div>
       </summary>
       <div class="group-body"><div class="card watch" data-ticker="YAGEO" data-name="國巨">
@@ -2313,6 +3865,7 @@ body {
         <div class="group-meta">
           <span class="group-date mono">2026-05-12</span>
           <span class="group-count">1 檔</span>
+          <span class="source-badge source-vocus">Vocus</span>
         </div>
       </summary>
       <div class="group-body"><div class="card watch" data-ticker="TSLA" data-name="Tesla">
@@ -2362,6 +3915,7 @@ body {
         <div class="group-meta">
           <span class="group-date mono">2026-05-11</span>
           <span class="group-count">2 檔</span>
+          <span class="source-badge source-vocus">Vocus</span>
         </div>
       </summary>
       <div class="group-body"><div class="card watch" data-ticker="CRCL" data-name="Circle">
@@ -2428,7 +3982,7 @@ body {
       </div>
       </details>
       <details class="context-fold">
-        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <summary class="context-toggle">▸ 文章脈絡（2 篇文章提及）</summary>
         <div class="context-body"><div class="mention-item">
           <div class="mention-meta">
             <span class="mono date-chip">2026-05-11</span>
@@ -2436,6 +3990,13 @@ body {
             <a href="https://vocus.cc/article/6a013e62fd89780001954887" target="_blank" class="art-link">會前已經漲的個股，會後還能不能追？本週除了三爺訪中議題外，還有哪一個板塊與個股需要關注？ ↗</a>
           </div>
           <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">加密貨幣板塊受惠 CLARITY Act 清晰法案共振，訪中題材多已被提前定價，但加密相關個股會前並未擁擠押注，剩餘 Alpha 空間較大（合理定價、政策共振象限）</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-04-12</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://mimivsjames.substack.com/p/7002" target="_blank" class="art-link">告別盲目猜底！量化推演第二季美股「獲利突圍」的兩大關鍵轉折點。7002高點何時能突破？ ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">五月若參議院推進CLARITY Act清晰法案，加密貨幣相關股有一波短線行情，屬偏短線交易機會，法案延遲須停損離場。</td></tr></table>
         </div></div>
       </details>
     </div></div>
@@ -2448,6 +4009,7 @@ body {
         <div class="group-meta">
           <span class="group-date mono">2026-05-07</span>
           <span class="group-count">6 檔</span>
+          <span class="source-badge source-vocus">Vocus</span>
         </div>
       </summary>
       <div class="group-body"><div class="card watch" data-ticker="AEHR" data-name="AEHR Test Systems">
@@ -2682,6 +4244,7 @@ body {
         <div class="group-meta">
           <span class="group-date mono">2026-05-06</span>
           <span class="group-count">1 檔</span>
+          <span class="source-badge source-vocus">Vocus</span>
         </div>
       </summary>
       <div class="group-body"><div class="card watch" data-ticker="AMBA" data-name="Ambarella">
@@ -2722,9 +4285,606 @@ body {
         </div></div>
       </details>
     </div></div>
+    </details><details class="stock-group" data-label="蘋果 AI 入口戰 Q4 重估" data-themes="AI 算力戰轉入口戰 蘋果估值重估 M2 流動性偏鬆 高 FCF 品質龍頭輪動 蘋概供應鏈領先指標">
+      <summary class="group-header">
+        <div class="group-summary-left">
+          <span class="group-label">蘋果 AI 入口戰 Q4 重估</span>
+          <div class="group-tickers"><span class="grp-tick mono">CRUS</span><span class="grp-tick mono">SWKS</span></div>
+        </div>
+        <div class="group-meta">
+          <span class="group-date mono">2026-05-03</span>
+          <span class="group-count">2 檔</span>
+          <span class="source-badge source-substack">Substack</span>
+        </div>
+      </summary>
+      <div class="group-body"><div class="card watch" data-ticker="CRUS" data-name="Cirrus Logic">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">CRUS</span>
+          <span class="stock-name">Cirrus Logic</span>
+          
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-05-03</span>
+          <span class="badge badge-yellow">觀察</span>
+        </div>
+      </div>
+      <div class="verdict waiting">iPhone 出貨領先指標，看 5/6 財報指引</div>
+      <p class="stock-logic">Apple 營收佔比 89%，最純的 iPhone 出貨領先指標。5/6 看財報與下一季指引，指引高於共識即強訊號，毛利率擴張代表規格升級。領先蘋果股價 1-2 個月，但波動度為蘋果 1.5-2.5 倍，目前買點未到，僅作觀察指標。</p>
+      <div class="price-row"></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（CRUS）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NASDAQ:CRUS","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（2 篇文章提及）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-05-03</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://mimivsjames.substack.com/p/ai-d1b" target="_blank" class="art-link">蘋果沒有站在 AI 聚光燈下，華爾街為什麼又開始回頭看它？蘋果股價長線還看好嗎？ ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">Apple 營收佔比 89%，最純的 iPhone 出貨領先指標。5/6 看財報與下一季指引，指引高於共識即強訊號，毛利率擴張代表規格升級。領先蘋果股價 1-2 個月，但波動度為蘋果 1.5-2.5 倍，目前買點未到，僅作觀察指標。</td></tr><tr><td class="ml-key">現況</td><td class="ml-val">iPhone 出貨領先指標，看 5/6 財報指引</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-05-03</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://mimivsjames.substack.com/p/ai-d87" target="_blank" class="art-link">蘋果沒有站在 AI 聚光燈下，華爾街為什麼又開始回頭看它？蘋果股價長線還看好嗎？PODCAST ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">作為純度較高的蘋果供應鏈標的，可作為判斷蘋果股價動能的領先指標</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card watch" data-ticker="SWKS" data-name="Skyworks">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">SWKS</span>
+          <span class="stock-name">Skyworks</span>
+          
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-05-03</span>
+          <span class="badge badge-yellow">觀察</span>
+        </div>
+      </div>
+      <div class="verdict waiting">iPhone ASP 升級領先指標，有合併案風險</div>
+      <p class="stock-logic">Apple 營收佔比 65-70%，反映 iPhone ASP 升級的 content per device 指標。營收年增快過出貨即代表單機含量提升、毛利率擴張。與 QRVO 合併案 2027 Q1 才完成，整合磨合期約一年為風險，目前僅作觀察。</p>
+      <div class="price-row"></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（SWKS）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NASDAQ:SWKS","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-05-03</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://mimivsjames.substack.com/p/ai-d1b" target="_blank" class="art-link">蘋果沒有站在 AI 聚光燈下，華爾街為什麼又開始回頭看它？蘋果股價長線還看好嗎？ ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">Apple 營收佔比 65-70%，反映 iPhone ASP 升級的 content per device 指標。營收年增快過出貨即代表單機含量提升、毛利率擴張。與 QRVO 合併案 2027 Q1 才完成，整合磨合期約一年為風險，目前僅作觀察。</td></tr><tr><td class="ml-key">現況</td><td class="ml-val">iPhone ASP 升級領先指標，有合併案風險</td></tr></table>
+        </div></div>
+      </details>
+    </div></div>
+    </details><details class="stock-group" data-label="EPS上修推升Q2突破7002" data-themes="EPS上修驅動 AI硬體供應鏈 Fed主席換屆 超級事件週 M7財報">
+      <summary class="group-header">
+        <div class="group-summary-left">
+          <span class="group-label">EPS上修推升Q2突破7002</span>
+          <div class="group-tickers"><span class="grp-tick mono">HOOD</span><span class="grp-tick mono">GLXY</span></div>
+        </div>
+        <div class="group-meta">
+          <span class="group-date mono">2026-04-12</span>
+          <span class="group-count">2 檔</span>
+          <span class="source-badge source-substack">Substack</span>
+        </div>
+      </summary>
+      <div class="group-body"><div class="card watch" data-ticker="HOOD" data-name="Robinhood">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">HOOD</span>
+          <span class="stock-name">Robinhood</span>
+          
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-04-12</span>
+          <span class="badge badge-yellow">觀察</span>
+        </div>
+      </div>
+      
+      <p class="stock-logic">CLARITY Act題材短線受惠標的，因事件進場就須因事件結束離場，賭對賭錯都要離場。</p>
+      <div class="price-row"></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（HOOD）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NASDAQ:HOOD","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-04-12</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://mimivsjames.substack.com/p/7002" target="_blank" class="art-link">告別盲目猜底！量化推演第二季美股「獲利突圍」的兩大關鍵轉折點。7002高點何時能突破？ ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">CLARITY Act題材短線受惠標的，因事件進場就須因事件結束離場，賭對賭錯都要離場。</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card watch" data-ticker="GLXY" data-name="Galaxy Digital">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">GLXY</span>
+          <span class="stock-name">Galaxy Digital</span>
+          
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-04-12</span>
+          <span class="badge badge-yellow">觀察</span>
+        </div>
+      </div>
+      
+      <p class="stock-logic">加密貨幣相關股，CLARITY Act清晰法案短線交易機會，須嚴守停損紀律。</p>
+      <div class="price-row"></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（GLXY）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NASDAQ:GLXY","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-04-12</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://mimivsjames.substack.com/p/7002" target="_blank" class="art-link">告別盲目猜底！量化推演第二季美股「獲利突圍」的兩大關鍵轉折點。7002高點何時能突破？ ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">加密貨幣相關股，CLARITY Act清晰法案短線交易機會，須嚴守停損紀律。</td></tr></table>
+        </div></div>
+      </details>
+    </div></div>
+    </details><details class="stock-group" data-label="AI晚週期：銅與電基建超級循環" data-themes="AI物理極限超級循環 銅與電基建 矽光子CPO液冷 核電基載電力 黃金去美元化避險 國際地緣分散">
+      <summary class="group-header">
+        <div class="group-summary-left">
+          <span class="group-label">AI晚週期：銅與電基建超級循環</span>
+          <div class="group-tickers"><span class="grp-tick mono">CEG</span><span class="grp-tick mono">DUK</span><span class="grp-tick mono">SO</span><span class="grp-tick mono">D</span></div>
+        </div>
+        <div class="group-meta">
+          <span class="group-date mono">2026-02-22</span>
+          <span class="group-count">4 檔</span>
+          <span class="source-badge source-substack">Substack</span>
+        </div>
+      </summary>
+      <div class="group-body"><div class="card watch" data-ticker="CEG" data-name="Constellation Energy">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">CEG</span>
+          <span class="stock-name">Constellation Energy</span>
+          
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-02-22</span>
+          <span class="badge badge-yellow">觀察</span>
+        </div>
+      </div>
+      
+      <p class="stock-logic">具備微軟20年核電長約護城河，但近期受政策雜音干擾股價跌破週季線，依右側交易先暫列觀察，等待帶量站回季線再佈局</p>
+      <div class="price-row"><span class="price-chip"><span class="chip-label">目標</span>帶量站回季線</span></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（CEG）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NASDAQ:CEG","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-02-22</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://mimivsjames.substack.com/p/ai20268" target="_blank" class="art-link">AI撞上物理極限，2026年「銅與電」超級循環的長線8檔股票與投資組合 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">具備微軟20年核電長約護城河，但近期受政策雜音干擾股價跌破週季線，依右側交易先暫列觀察，等待帶量站回季線再佈局</td></tr><tr><td class="ml-key">目標</td><td class="ml-val">帶量站回季線</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card watch" data-ticker="DUK" data-name="Duke Energy">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">DUK</span>
+          <span class="stock-name">Duke Energy</span>
+          
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-02-22</span>
+          <span class="badge badge-yellow">觀察</span>
+        </div>
+      </div>
+      
+      <p class="stock-logic">大型核電運營商，EPS穩定，可搭配電力配置考慮</p>
+      <div class="price-row"></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（DUK）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NYSE:DUK","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-02-22</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://mimivsjames.substack.com/p/ai20268" target="_blank" class="art-link">AI撞上物理極限，2026年「銅與電」超級循環的長線8檔股票與投資組合 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">大型核電運營商，EPS穩定，可搭配電力配置考慮</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card watch" data-ticker="SO" data-name="Southern Company">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">SO</span>
+          <span class="stock-name">Southern Company</span>
+          
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-02-22</span>
+          <span class="badge badge-yellow">觀察</span>
+        </div>
+      </div>
+      
+      <p class="stock-logic">核電加公用事業龍頭，符合長線配置已商業化、EPS正、現金流穩定</p>
+      <div class="price-row"></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（SO）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NYSE:SO","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-02-22</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://mimivsjames.substack.com/p/ai20268" target="_blank" class="art-link">AI撞上物理極限，2026年「銅與電」超級循環的長線8檔股票與投資組合 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">核電加公用事業龍頭，符合長線配置已商業化、EPS正、現金流穩定</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card watch" data-ticker="D" data-name="Dominion Energy">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">D</span>
+          <span class="stock-name">Dominion Energy</span>
+          
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-02-22</span>
+          <span class="badge badge-yellow">觀察</span>
+        </div>
+      </div>
+      
+      <p class="stock-logic">東岸核電主力龍頭，成熟公用事業適合長線配置</p>
+      <div class="price-row"></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（D）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NYSE:D","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-02-22</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://mimivsjames.substack.com/p/ai20268" target="_blank" class="art-link">AI撞上物理極限，2026年「銅與電」超級循環的長線8檔股票與投資組合 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">東岸核電主力龍頭，成熟公用事業適合長線配置</td></tr></table>
+        </div></div>
+      </details>
+    </div></div>
+    </details><details class="stock-group" data-label="Warsh重置鍵：能源金融逢低、貴金屬短空" data-themes="Warsh 流動性重置 能源地緣溢價 金融去監管 貴金屬短空長多 國防軍工對沖 成長轉價值品質">
+      <summary class="group-header">
+        <div class="group-summary-left">
+          <span class="group-label">Warsh重置鍵：能源金融逢低、貴金屬短空</span>
+          <div class="group-tickers"><span class="grp-tick mono">LMT</span><span class="grp-tick mono">RTX</span><span class="grp-tick mono">NEM</span><span class="grp-tick mono">JPM</span><span class="grp-tick mono">GS</span></div>
+        </div>
+        <div class="group-meta">
+          <span class="group-date mono">2026-02-01</span>
+          <span class="group-count">5 檔</span>
+          <span class="source-badge source-substack">Substack</span>
+        </div>
+      </summary>
+      <div class="group-body"><div class="card watch" data-ticker="LMT" data-name="Lockheed Martin">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">LMT</span>
+          <span class="stock-name">Lockheed Martin</span>
+          
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-02-01</span>
+          <span class="badge badge-yellow">觀察</span>
+        </div>
+      </div>
+      
+      <p class="stock-logic">最純粹的地緣衝突受惠股，中東局勢升溫利好導彈防禦系統訂單，不受油價漲跌影響，世界越亂訂單越多，用於對沖戰爭波動風險</p>
+      <div class="price-row"></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（LMT）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NYSE:LMT","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-02-01</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://mimivsjames.substack.com/p/warsh" target="_blank" class="art-link">金銀的閃崩只是開始嗎？現在可以進場嗎？三爺與 Warsh 聯手按下的「重置鍵」 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">最純粹的地緣衝突受惠股，中東局勢升溫利好導彈防禦系統訂單，不受油價漲跌影響，世界越亂訂單越多，用於對沖戰爭波動風險</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card watch" data-ticker="RTX" data-name="RTX Corporation">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">RTX</span>
+          <span class="stock-name">RTX Corporation</span>
+          
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-02-01</span>
+          <span class="badge badge-yellow">觀察</span>
+        </div>
+      </div>
+      
+      <p class="stock-logic">國防龍頭股，中東局勢升溫直接利好，與LMT同為地緣衝突避險配置，不擔心油價漲跌</p>
+      <div class="price-row"></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（RTX）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NYSE:RTX","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-02-01</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://mimivsjames.substack.com/p/warsh" target="_blank" class="art-link">金銀的閃崩只是開始嗎？現在可以進場嗎？三爺與 Warsh 聯手按下的「重置鍵」 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">國防龍頭股，中東局勢升溫直接利好，與LMT同為地緣衝突避險配置，不擔心油價漲跌</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card watch" data-ticker="NEM" data-name="Newmont">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">NEM</span>
+          <span class="stock-name">Newmont</span>
+          
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-02-01</span>
+          <span class="badge badge-yellow">觀察</span>
+        </div>
+      </div>
+      
+      <p class="stock-logic">全球最大金礦商配息穩定，礦業股跌幅約金價1.5倍反彈也最兇，目前跌破20MA不急著買，等下週反彈看強度或低檔連續縮量橫盤3天以上才是止穩激進進場點</p>
+      <div class="price-row"></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（NEM）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NYSE:NEM","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-02-01</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://mimivsjames.substack.com/p/warsh" target="_blank" class="art-link">金銀的閃崩只是開始嗎？現在可以進場嗎？三爺與 Warsh 聯手按下的「重置鍵」 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">全球最大金礦商配息穩定，礦業股跌幅約金價1.5倍反彈也最兇，目前跌破20MA不急著買，等下週反彈看強度或低檔連續縮量橫盤3天以上才是止穩激進進場點</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card watch" data-ticker="JPM" data-name="JPMorgan">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">JPM</span>
+          <span class="stock-name">JPMorgan</span>
+          
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-02-01</span>
+          <span class="badge badge-yellow">觀察</span>
+        </div>
+      </div>
+      
+      <p class="stock-logic">Warsh放鬆資本管制與殖利率曲線陡峭化下的金融龍頭受惠標的，有利淨利差擴大與股東回報提升</p>
+      <div class="price-row"></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（JPM）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NYSE:JPM","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-02-01</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://mimivsjames.substack.com/p/warsh" target="_blank" class="art-link">金銀的閃崩只是開始嗎？現在可以進場嗎？三爺與 Warsh 聯手按下的「重置鍵」 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">Warsh放鬆資本管制與殖利率曲線陡峭化下的金融龍頭受惠標的，有利淨利差擴大與股東回報提升</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card watch" data-ticker="GS" data-name="Goldman Sachs">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">GS</span>
+          <span class="stock-name">Goldman Sachs</span>
+          
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-02-01</span>
+          <span class="badge badge-yellow">觀察</span>
+        </div>
+      </div>
+      
+      <p class="stock-logic">Warsh時代去監管紅利受惠金融龍頭，受惠於利率結構變化與資本管制放鬆</p>
+      <div class="price-row"></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（GS）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NYSE:GS","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-02-01</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://mimivsjames.substack.com/p/warsh" target="_blank" class="art-link">金銀的閃崩只是開始嗎？現在可以進場嗎？三爺與 Warsh 聯手按下的「重置鍵」 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">Warsh時代去監管紅利受惠金融龍頭，受惠於利率結構變化與資本管制放鬆</td></tr></table>
+        </div></div>
+      </details>
+    </div></div>
+    </details><details class="stock-group" data-label="2026銅供需失衡＋AI算力剛需" data-themes="AI算力銅需求 銅供給缺口 貴金屬礦業配置 資源民族主義">
+      <summary class="group-header">
+        <div class="group-summary-left">
+          <span class="group-label">2026銅供需失衡＋AI算力剛需</span>
+          <div class="group-tickers"><span class="grp-tick mono">NAK</span></div>
+        </div>
+        <div class="group-meta">
+          <span class="group-date mono">2026-01-25</span>
+          <span class="group-count">1 檔</span>
+          <span class="source-badge source-substack">Substack</span>
+        </div>
+      </summary>
+      <div class="group-body"><div class="card watch" data-ticker="NAK" data-name="Northern Dynasty Minerals">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">NAK</span>
+          <span class="stock-name">Northern Dynasty Minerals</span>
+          
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-01-25</span>
+          <span class="badge badge-yellow">觀察</span>
+        </div>
+      </div>
+      
+      <p class="stock-logic">彩蛋樂透股，賭川普解禁阿拉斯加Pebble Project(世界最大未開發銅金鉬礦)。拜登EPA以保護鮭魚否決封殺，若川普推翻有機會漲10倍。僅用1%歸零也沒差的錢買，這不是投資是買樂透。</p>
+      <div class="price-row"></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（NAK）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"AMEX:NAK","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（2 篇文章提及）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-01-25</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://mimivsjames.substack.com/p/ai-2026" target="_blank" class="art-link">貴金屬投資三部曲最終章，銅博士的 AI 進化論，2026 供需失衡下的投資戰略。本文有彩蛋股 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">彩蛋樂透股，賭川普解禁阿拉斯加Pebble Project(世界最大未開發銅金鉬礦)。拜登EPA以保護鮭魚否決封殺，若川普推翻有機會漲10倍。僅用1%歸零也沒差的錢買，這不是投資是買樂透。</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-01-25</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://mimivsjames.substack.com/p/ai-2026-podcast" target="_blank" class="art-link">貴金屬投資三部曲最終章，銅博士的 AI 進化論，2026 供需失衡下的投資戰略。本文有彩蛋股Podc ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">高風險的政策博弈標的，適合積極投資者觀察，需具備應對高波動的心理素質。</td></tr></table>
+        </div></div>
+      </details>
+    </div></div>
     </details>
   </section><section class="section" id="section-reduce">
-    <div class="section-title">保護獲利 / 警示（7 檔）</div>
+    <div class="section-title">保護獲利 / 警示（10 檔）</div>
     <details class="stock-group" data-label="NVIDIA推AI PC新平台帶動台美PC供應鏈題材" data-themes="AI PC 本機運算 RTX Spark 新平台 CUDA 工具鏈 128GB 統一記憶體 LPDDR5X ARM 架構崛起 記憶體單機含量提升 本機 AI 換機週期">
       <summary class="group-header">
         <div class="group-summary-left">
@@ -2734,6 +4894,7 @@ body {
         <div class="group-meta">
           <span class="group-date mono">2026-06-02</span>
           <span class="group-count">2 檔</span>
+          <span class="source-badge source-vocus">Vocus</span>
         </div>
       </summary>
       <div class="group-body"><div class="card caution" data-ticker="INTC" data-name="Intel">
@@ -2763,7 +4924,7 @@ body {
       </div>
       </details>
       <details class="context-fold">
-        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <summary class="context-toggle">▸ 文章脈絡（2 篇文章提及）</summary>
         <div class="context-body"><div class="mention-item">
           <div class="mention-meta">
             <span class="mono date-chip">2026-06-02</span>
@@ -2771,6 +4932,13 @@ body {
             <a href="https://vocus.cc/article/6a1e6a43fd8978000164aa53" target="_blank" class="art-link">「AI PC 」這次真的不一樣，NVDA 宣布的AI PC為什麼讓整個台美股的PC 供應鏈重新沸騰？ ↗</a>
           </div>
           <table class="mention-table"><tr><td class="ml-key">原因</td><td class="ml-val">x86 陣營（Core Ultra 300 Panther Lake，NPU 約 50 TOPS），NVDA 進入本機大模型運算後 x86 相容優勢被弱化，當然也會受傷。</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">x86 過去靠相容性吃飯，AI 競爭標準改變後受壓</td></tr><tr><td class="ml-key">現況</td><td class="ml-val">⚠️ NVDA 進入後受傷</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-05-03</span>
+            <span class="badge badge-red">警示</span>
+            <a href="https://mimivsjames.substack.com/p/ai-d1b" target="_blank" class="art-link">蘋果沒有站在 AI 聚光燈下，華爾街為什麼又開始回頭看它？蘋果股價長線還看好嗎？ ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">原因</td><td class="ml-val">缺乏基本面支撐但股價不斷被拉，背後另有目的，媒體一吹易鬆懈，須警惕無基本面支撐的拉抬。</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">股價拉到三位數的終極目的須留意</td></tr><tr><td class="ml-key">現況</td><td class="ml-val">無基本面支撐的炒作須警惕</td></tr></table>
         </div></div>
       </details>
     </div><div class="card caution" data-ticker="AMD" data-name="AMD">
@@ -2800,7 +4968,7 @@ body {
       </div>
       </details>
       <details class="context-fold">
-        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <summary class="context-toggle">▸ 文章脈絡（2 篇文章提及）</summary>
         <div class="context-body"><div class="mention-item">
           <div class="mention-meta">
             <span class="mono date-chip">2026-06-02</span>
@@ -2808,6 +4976,13 @@ body {
             <a href="https://vocus.cc/article/6a1e6a43fd8978000164aa53" target="_blank" class="art-link">「AI PC 」這次真的不一樣，NVDA 宣布的AI PC為什麼讓整個台美股的PC 供應鏈重新沸騰？ ↗</a>
           </div>
           <table class="mention-table"><tr><td class="ml-key">原因</td><td class="ml-val">x86 陣營（Ryzen AI Max Strix Halo，NPU 約 50 TOPS、最高 128GB 統一記憶體），NVDA 進入本機大模型運算後也會受傷。</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">x86 相容優勢被弱化</td></tr><tr><td class="ml-key">現況</td><td class="ml-val">⚠️ NVDA 進入後受傷</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-05-10</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://mimivsjames.substack.com/p/ai-3-5" target="_blank" class="art-link">AI 霸主爭奪戰：未來 3 到 5 年，誰才是下一輪超額報酬長線贏家？ ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">MI400 2026 下半年出貨，HBM4 432GB 比 GB200 多 1.6 倍 memory，與 OpenAI 簽 6GW 合作約 150-250 億美元，2026 Q4 目標 AI 加速器市佔達 12-15%。搶的是 NVDA 陣營內份額，威脅 TPU 有限但壓低 NVDA 議價權。</td></tr></table>
         </div></div>
       </details>
     </div></div>
@@ -2820,6 +4995,7 @@ body {
         <div class="group-meta">
           <span class="group-date mono">2026-06-01</span>
           <span class="group-count">4 檔</span>
+          <span class="source-badge source-vocus">Vocus</span>
         </div>
       </summary>
       <div class="group-body"><div class="card caution" data-ticker="AAPL" data-name="Apple">
@@ -2849,7 +5025,7 @@ body {
       </div>
       </details>
       <details class="context-fold">
-        <summary class="context-toggle">▸ 文章脈絡（2 篇文章提及）</summary>
+        <summary class="context-toggle">▸ 文章脈絡（6 篇文章提及）</summary>
         <div class="context-body"><div class="mention-item">
           <div class="mention-meta">
             <span class="mono date-chip">2026-06-01</span>
@@ -2864,6 +5040,34 @@ body {
             <a href="https://vocus.cc/article/6a013e62fd89780001954887" target="_blank" class="art-link">會前已經漲的個股，會後還能不能追？本週除了三爺訪中議題外，還有哪一個板塊與個股需要關注？ ↗</a>
           </div>
           <table class="mention-table"><tr><td class="ml-key">原因</td><td class="ml-val">會前 30 日漲幅 +13%，部分反映區。交易的是中國市場折價修復與關稅風險下降，訪中對基本面直接影響有限。現價約 $293.30</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">若會後稍微拉回整理，反而可能提供波段資金進場契機</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-05-03</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://mimivsjames.substack.com/p/ai-d1b" target="_blank" class="art-link">蘋果沒有站在 AI 聚光燈下，華爾街為什麼又開始回頭看它？蘋果股價長線還看好嗎？ ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">第一順位</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">25 億台活躍裝置壟斷入口、服務部門毛利 76.7%、資本紀律佳、1000 億美元回購撐盤。AI 第二階段入口戰最大候選人，Q4 新 CEO Ternus 接班、WWDC、摺疊機、iPhone 18 多項催化劑撞期，估值將從硬體週期股向 SaaS 重估，預期階梯式緩升，未來 12 個月合理漲幅約 50%，對長線最友善。</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">有跌就慢慢分批佈局，不需 FOME，體量大可等好價格</td></tr><tr><td class="ml-key">現況</td><td class="ml-val">AI 入口戰第二階段最大贏家，階梯式緩升、回購撐盤</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-05-03</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://mimivsjames.substack.com/p/ai-d87" target="_blank" class="art-link">蘋果沒有站在 AI 聚光燈下，華爾街為什麼又開始回頭看它？蘋果股價長線還看好嗎？PODCAST ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">華爾街回頭看好蘋果在AI應用落地階段的戰略地位，憑藉用戶入口與硬體生態系、穩健現金流與千億回購，預期Q4新任執行長接班與產品週期更新為轉折點</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-04-12</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://mimivsjames.substack.com/p/7002" target="_blank" class="art-link">告別盲目猜底！量化推演第二季美股「獲利突圍」的兩大關鍵轉折點。7002高點何時能突破？ ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">6/8-6/12 WWDC市場預期蘋果AI追上GOOG與微軟，Siri 2.0升級、AI模型進化及為摺疊iPhone鋪路，為六月催化劑之一。</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-02-01</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://mimivsjames.substack.com/p/warsh" target="_blank" class="art-link">金銀的閃崩只是開始嗎？現在可以進場嗎？三爺與 Warsh 聯手按下的「重置鍵」 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">在流動性受限環境下，被列為現金流與財務體質好的長線股票，具定價權與回購能力，符合從成長轉向價值品質的選股標準</td></tr></table>
         </div></div>
       </details>
     </div><div class="card caution" data-ticker="PANW" data-name="Palo Alto Networks">
@@ -2978,6 +5182,56 @@ body {
         </div></div>
       </details>
     </div></div>
+    </details><details class="stock-group" data-label="AI軟體下半場變現驗證重定價" data-themes="AI軟體股重定價 非人頭計費商業模式 Rule of X篩選法則 AI production監控基礎設施 自由現金流與估值容錯率">
+      <summary class="group-header">
+        <div class="group-summary-left">
+          <span class="group-label">AI軟體下半場變現驗證重定價</span>
+          <div class="group-tickers"><span class="grp-tick mono">WDAY</span></div>
+        </div>
+        <div class="group-meta">
+          <span class="group-date mono">2026-05-31</span>
+          <span class="group-count">1 檔</span>
+          <span class="source-badge source-substack">Substack</span>
+        </div>
+      </summary>
+      <div class="group-body"><div class="card caution" data-ticker="WDAY" data-name="Workday">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">WDAY</span>
+          <span class="stock-name">Workday</span>
+          
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-05-31</span>
+          <span class="badge badge-red">警示</span>
+        </div>
+      </div>
+      
+      
+      <div class="price-row"></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（WDAY）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NASDAQ:WDAY","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-05-31</span>
+            <span class="badge badge-red">警示</span>
+            <a href="https://mimivsjames.substack.com/p/ai-1-3" target="_blank" class="art-link">「AI 軟體股」重定價：哪些公司長線能放 1 到 3 年，哪些只能當彩蛋？ ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">原因</td><td class="ml-val">長線投資人警戒的「區間陷阱」代表。Rule of X得分僅48.0%，商業模式跟人頭計費關係較大。當企業利用AI進行組織精簡、凍結招募時，這類軟體會面臨營收增長失速的逆風。</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">可短線操作反彈動能，但不適合長線投資</td></tr></table>
+        </div></div>
+      </details>
+    </div></div>
     </details><details class="stock-group" data-label="三爺訪中題材波音500架客機訂單催化" data-themes="三爺訪中題材 AI 科技股密集事件催化 加密貨幣 CLARITY 法案共振 稀土風險溢價 中國航空訂單">
       <summary class="group-header">
         <div class="group-summary-left">
@@ -2987,6 +5241,7 @@ body {
         <div class="group-meta">
           <span class="group-date mono">2026-05-11</span>
           <span class="group-count">1 檔</span>
+          <span class="source-badge source-vocus">Vocus</span>
         </div>
       </summary>
       <div class="group-body"><div class="card caution" data-ticker="MP" data-name="MP Materials">
@@ -3027,6 +5282,93 @@ body {
         </div></div>
       </details>
     </div></div>
+    </details><details class="stock-group" data-label="AI晚週期：銅與電基建超級循環" data-themes="AI物理極限超級循環 銅與電基建 矽光子CPO液冷 核電基載電力 黃金去美元化避險 國際地緣分散">
+      <summary class="group-header">
+        <div class="group-summary-left">
+          <span class="group-label">AI晚週期：銅與電基建超級循環</span>
+          <div class="group-tickers"><span class="grp-tick mono">OKLO</span><span class="grp-tick mono">OWL</span></div>
+        </div>
+        <div class="group-meta">
+          <span class="group-date mono">2026-02-22</span>
+          <span class="group-count">2 檔</span>
+          <span class="source-badge source-substack">Substack</span>
+        </div>
+      </summary>
+      <div class="group-body"><div class="card caution" data-ticker="OKLO" data-name="Oklo">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">OKLO</span>
+          <span class="stock-name">Oklo</span>
+          
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-02-22</span>
+          <span class="badge badge-red">警示</span>
+        </div>
+      </div>
+      
+      
+      <div class="price-row"></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（OKLO）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NYSE:OKLO","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-02-22</span>
+            <span class="badge badge-red">警示</span>
+            <a href="https://mimivsjames.substack.com/p/ai20268" target="_blank" class="art-link">AI撞上物理極限，2026年「銅與電」超級循環的長線8檔股票與投資組合 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">原因</td><td class="ml-val">尚未商業化的SMR概念股，不建議放入長線資產配置，缺乏穩定EPS與現金流</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card caution" data-ticker="OWL" data-name="Blue Owl Capital">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">OWL</span>
+          <span class="stock-name">Blue Owl Capital</span>
+          
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-02-22</span>
+          <span class="badge badge-red">警示</span>
+        </div>
+      </div>
+      
+      
+      <div class="price-row"></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（OWL）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NYSE:OWL","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-02-22</span>
+            <span class="badge badge-red">警示</span>
+            <a href="https://mimivsjames.substack.com/p/ai20268" target="_blank" class="art-link">AI撞上物理極限，2026年「銅與電」超級循環的長線8檔股票與投資組合 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">原因</td><td class="ml-val">晚週期高槓桿企業爆雷風險案例，軟體下殺引起流動性問題</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">文中作為流動性風險示警</td></tr></table>
+        </div></div>
+      </details>
+    </div></div>
     </details>
   </section>
 <section class="section" id="section-research">
@@ -3043,6 +5385,18 @@ body {
       <div class="sig-chips"><span class="sig-chip sig-bullish">ROBO 機器人與自動化</span><span class="sig-chip sig-bullish">SMH 半導體</span></div>
       
       <div class="watch-pills"><span class="pill">Physical AI物理人工智慧</span><span class="pill">人形機器人供應鏈</span><span class="pill">行星滾柱絲槓與諧波減速機</span><span class="pill">Optimus V3催化劑</span><span class="pill">Rubin量產</span></div>
+    </div><div class="card neutral summary-card">
+      <div class="card-header">
+        <div>
+          <span class="mono date-chip">2026-06-15</span>
+          <div class="summary-title"><a href="https://mimivsjames.substack.com/p/ai-09e" target="_blank" class="art-link">AI牛市進入下半場，當資金成本變貴後，誰才能真正賺到錢？ ↗</a></div>
+        </div>
+        <span class="badge badge-blue">研究</span>
+      </div>
+      <p class="summary-text">AI牛市尚未結束，但市場已從「獎勵資本支出」轉向「檢查資本支出品質」。AI建設大量依靠公司債、租賃、私人信貸與股權增發，帳面負債無法反映真實「經濟槓桿」。美國公債、AI公司債與大型IPO（OpenAI、Anthropic）正爭搶同一批長久期資金，推高期限溢價，壓縮高久期成長股估值。即使Fed不升息，higher-for-longer本身就是隱含緊縮。下一輪贏家不是燒錢最多者，而是現金流最早、最確定落袋者。建議將VRSN（已落袋複利）與SNOW（等待複利）視為一檔組合式標的同時配置。</p>
+      <div class="sig-chips"><span class="sig-chip sig-bearish">QQQ 那斯達克100</span><span class="sig-chip sig-neutral">SMH 半導體</span><span class="sig-chip sig-bearish">TLT 長天期美債</span><span class="sig-chip sig-bearish">ARKK 創新成長</span></div>
+      <div class="reduce-row"><span class="reduce-label">警示</span><span class="pill pill-red">APLD </span></div>
+      <div class="watch-pills"><span class="pill">資本成本上升與久期稀缺性</span><span class="pill">經濟槓桿與表外承諾風險</span><span class="pill">明斯基融資三階段（避險/投機/龐氏）</span><span class="pill">期限溢價推升與估值壓縮</span><span class="pill">現金流確定性優先於營收成長</span></div>
     </div><div class="card neutral summary-card">
       <div class="card-header">
         <div>
@@ -3070,6 +5424,30 @@ body {
     </div><div class="card neutral summary-card">
       <div class="card-header">
         <div>
+          <span class="mono date-chip">2026-05-24</span>
+          <div class="summary-title"><a href="https://mimivsjames.substack.com/p/cowos" target="_blank" class="art-link">台積電CoWoS 產能滿載之後，資金下一個定價的地方 ↗</a></div>
+        </div>
+        <span class="badge badge-blue">研究</span>
+      </div>
+      <p class="summary-text">台積電CoWoS產能滿載至2027年，催生第二封裝路徑INTC的EMIB/EMIB-T成為AI晶片客戶不得不評估的替代供應鏈。EMIB價值在於設計彈性、矽用量少、支援12倍光罩超大封裝，成本較CoWoS低3-10倍。投資曲線分三階段：2026-27年EMIB標準版量產、2027-28年EMIB-T升級解決高功耗供電、2028-30年玻璃基板與TGV成為長線主軸。Alpha不在台積電共識主線，而在二階受惠的設計工具、設備、OSAT與材料供應鏈。</p>
+      <div class="sig-chips"><span class="sig-chip sig-bullish">SMH 半導體</span><span class="sig-chip sig-bullish">SOXX 費城半導體</span></div>
+      
+      <div class="watch-pills"><span class="pill">CoWoS產能滿載催生第二封裝路徑</span><span class="pill">EMIB/EMIB-T彈性封裝架構崛起</span><span class="pill">先進封裝三階段升級地圖</span><span class="pill">玻璃基板與TGV長線材料升級</span><span class="pill">美國本土先進封裝產能紅利</span></div>
+    </div><div class="card neutral summary-card">
+      <div class="card-header">
+        <div>
+          <span class="mono date-chip">2026-05-24</span>
+          <div class="summary-title"><a href="https://mimivsjames.substack.com/p/cowos-podcast" target="_blank" class="art-link">台積電CoWoS 產能滿載之後，資金下一個定價的地方Podcast ↗</a></div>
+        </div>
+        <span class="badge badge-blue">研究</span>
+      </div>
+      <p class="summary-text">台積電CoWoS產能供不應求，市場資金轉向尋找第二供應鏈。INTC的EMIB技術憑藉成本優勢與設計彈性，成為科技巨頭避開產能瓶頸的關鍵替代路徑。文章解析從矽橋互連到玻璃基板的三階段技術演進，認為這波結構性轉變將帶動先進封裝設備、材料與設計工具廠商成長。點名CDNS、AMKR、LRCX、AMAT等領先企業將在未來三至五年迎來重新定價契機，建議長線投資者捕捉產能外溢所創造的Alpha價值。</p>
+      <div class="sig-chips"><span class="sig-chip sig-bullish">SMH 半導體</span><span class="sig-chip sig-bullish">SOXX 費城半導體</span></div>
+      
+      <div class="watch-pills"><span class="pill">AI先進封裝</span><span class="pill">CoWoS產能瓶頸</span><span class="pill">第二供應鏈</span><span class="pill">EMIB與玻璃基板</span><span class="pill">設備材料重新定價</span></div>
+    </div><div class="card neutral summary-card">
+      <div class="card-header">
+        <div>
           <span class="mono date-chip">2026-05-01</span>
           <div class="summary-title"><a href="https://vocus.cc/article/69f43e2afd89780001e20fcc" target="_blank" class="art-link">從四大CSP最新財報，解析為何NVDA今天大跌，但是半導體個股卻是大漲且大盤還創新高？帶你提早佈局下一波主升段 ↗</a></div>
         </div>
@@ -3079,11 +5457,226 @@ body {
       <div class="sig-chips"><span class="sig-chip sig-neutral">SMH 半導體</span><span class="sig-chip sig-neutral">QQQ 那斯達克</span></div>
       <div class="reduce-row"><span class="reduce-label">警示</span><span class="pill pill-red">MSFT Microsof</span><span class="pill pill-red">META Meta Pla</span><span class="pill pill-red">NVDA NVIDIA</span></div>
       <div class="watch-pills"><span class="pill">AI變現能力</span><span class="pill">自研晶片ASIC崛起</span><span class="pill">GPU壟斷敘事鬆動</span><span class="pill">矽光子與光纖互連</span><span class="pill">邊緣運算</span></div>
+    </div><div class="card neutral summary-card">
+      <div class="card-header">
+        <div>
+          <span class="mono date-chip">2026-04-26</span>
+          <div class="summary-title"><a href="https://mimivsjames.substack.com/p/qqq-13-18-alpha" target="_blank" class="art-link">QQQ 連 13 紅、費半連 18 紅後，財報季的 Alpha 在哪裡？ 長線投資人如何分辨「預期驗證」與「基本面拐點」 ↗</a></div>
+        </div>
+        <span class="badge badge-blue">研究</span>
+      </div>
+      <p class="summary-text">QQQ連13紅、費半連18紅、財報季88%公司EPS Beat三事齊發，但Alpha不在財報數字本身，而在「預期差」的重新定價。機構看財報是驗證假設，散戶看財報是後照鏡。NVDA因預期已滿、機構持倉擁擠、成長率減速(一階導數向下)而高檔盤整；TSM因結構性折價被拆解而續創高。真正的超額報酬來自基本面拐點股(如ALAB、CRDO、AMD)，機構從低配重新建倉。NVDA重啟需Rubin量產、比較基期重置、成長二階拐點三催化劑疊加，時點落在2026下半年。讀投行報告關鍵在評等與目標價的連動組合。</p>
+      <div class="sig-chips"><span class="sig-chip sig-bullish">SOXX 費城半導體</span><span class="sig-chip sig-neutral">QQQ 那斯達克100</span></div>
+      
+      <div class="watch-pills"><span class="pill">預期差重新定價</span><span class="pill">成長率一階導數方向</span><span class="pill">預期高低與基本面改善2x2矩陣</span><span class="pill">基本面拐點股的Alpha來源</span><span class="pill">NVDA重啟三大催化劑(Rubin量產/基期重置/二階拐點)</span></div>
+    </div><div class="card neutral summary-card">
+      <div class="card-header">
+        <div>
+          <span class="mono date-chip">2026-04-26</span>
+          <div class="summary-title"><a href="https://mimivsjames.substack.com/p/qqq-13-18-alpha-8fa" target="_blank" class="art-link">QQQ 連 13 紅、費半連 18 紅後，財報季的 Alpha 在哪裡？ 長線投資人如何分辨「預期驗證」與「基本面拐點」 ↗</a></div>
+        </div>
+        <span class="badge badge-blue">研究</span>
+      </div>
+      <p class="summary-text">本文剖析機構法人在財報季的核心投資邏輯，強調獲利來自「預期差的重新定價」而非數據絕對值。在 QQQ 連 13 紅、費半連 18 紅後，多數績優股已「預期已滿」，真正的 Alpha 在於辨識「基本面拐點股」，關鍵在於成長率的變化方向而非絕對數值。文中對比 NVDA 與 TSM 漲勢分歧，說明機構透過折現模型重估估值，並點出重啟漲勢的三大催化劑（營收二階拐點、新產品週期等），以及如何透過投行評等與目標價聯動解讀分析師真實意圖。</p>
+      <div class="sig-chips"><span class="sig-chip sig-neutral">QQQ 那斯達克</span><span class="sig-chip sig-neutral">SMH 費城半導體</span></div>
+      
+      <div class="watch-pills"><span class="pill">預期差重新定價</span><span class="pill">基本面拐點辨識</span><span class="pill">成長率變化方向</span><span class="pill">折現模型估值重估</span><span class="pill">投行報告隱藏訊號</span></div>
+    </div><div class="card neutral summary-card">
+      <div class="card-header">
+        <div>
+          <span class="mono date-chip">2026-04-12</span>
+          <div class="summary-title"><a href="https://mimivsjames.substack.com/p/7002podcast" target="_blank" class="art-link">告別盲目猜底！量化推演第二季美股「獲利突圍」的兩大關鍵轉折點。7002高點何時能突破？Podcast ↗</a></div>
+        </div>
+        <span class="badge badge-blue">研究</span>
+      </div>
+      <p class="summary-text">本文針對2026年第二季美股進行量化推演，探討標普500能否突破7002點前高。核心觀點為上漲動力已從聯準會降息預期轉向企業獲利（EPS）上修，並依不同本益比情境推演合理目標區間。季度行情分為財報驅動、政策消化與事件催化三階段，提醒留意AI供應鏈財報及五月超級事件週波動。同時分析聯準會主席換屆帶來的政策不確定性，並給出分段佈局與點位參考建議。</p>
+      <div class="sig-chips"><span class="sig-chip sig-bullish">QQQ 那斯達克</span><span class="sig-chip sig-neutral">SPY 標普500</span></div>
+      
+      <div class="watch-pills"><span class="pill">EPS獲利上修</span><span class="pill">標普7002前高突破</span><span class="pill">AI供應鏈財報</span><span class="pill">聯準會主席換屆</span><span class="pill">五月超級事件週</span></div>
+    </div><div class="card neutral summary-card">
+      <div class="card-header">
+        <div>
+          <span class="mono date-chip">2026-04-05</span>
+          <div class="summary-title"><a href="https://mimivsjames.substack.com/p/112" target="_blank" class="art-link">被錯估的尾部風險：看透 112 美元油價背後的「雙向收割」與流動性虹吸，美國重塑能源霸權如何定價長線資產 ↗</a></div>
+        </div>
+        <span class="badge badge-blue">研究</span>
+      </div>
+      <p class="summary-text">本文核心觀點：美伊衝突本質是美國重塑能源霸權，透過高油價（WTI 112美元）對歐亞製造業課徵「地緣摩擦稅」，並虹吸全球流動性回流美元。美國作為淨能源出口國，高油價形成「左手換右手」的宏觀對沖，由能源股獲利與401K財富效應緩衝GDP衝擊。掌控能源即掌控AI電力咽喉，資金將集中於具絕對成本轉嫁能力的科技與能源龍頭。技術面SPX周線TD低9確立賣壓耗竭，過去15年5次訊號4週內勝率100%，配合Fed中性與就業韌性，提供長線分批建倉窗口，但需警惕油價失控觸發衰退情境。</p>
+      <div class="sig-chips"><span class="sig-chip sig-bullish">XLE 能源類股</span><span class="sig-chip sig-bullish">QQQ 那斯達克／AI科技</span><span class="sig-chip sig-bullish">XLU 公用事業／電力</span><span class="sig-chip sig-bullish">SPY 標普500</span></div>
+      
+      <div class="watch-pills"><span class="pill">美國能源霸權重塑與雙向收割</span><span class="pill">高油價宏觀對沖與財富效應</span><span class="pill">AI電力瓶頸與能源定價權</span><span class="pill">全球流動性虹吸與美元回流</span><span class="pill">周線TD低9賣壓耗竭訊號</span></div>
+    </div><div class="card neutral summary-card">
+      <div class="card-header">
+        <div>
+          <span class="mono date-chip">2026-03-29</span>
+          <div class="summary-title"><a href="https://mimivsjames.substack.com/p/02b" target="_blank" class="art-link">中東地緣衝突風險下的重定價：市場低估的，不是戰爭時間，而是能源供應鏈的修復時間 ↗</a></div>
+        </div>
+        <span class="badge badge-blue">研究</span>
+      </div>
+      <p class="summary-text">本文核心觀點是市場低估的並非戰爭時間，而是能源供應鏈的「修復時間」。即使荷姆茲海峽停火，清雷、護航重建、保險正常化與船期重排仍需3-6個月。原油期貨呈極端逆價差（近月110、遠月84），反映市場僅當短期衝擊定價，存在錯配機會。若紅海（曼德海峽）疊加胡塞攻擊，將從油價上漲升級為全球通膨壓力。選股邏輯：上游避開中東曝險、首選美國頁岩油商（DVN、FANG、OXY）與低曝險巨頭（XOM、CVX）；下游鎖定具重油處理能力、受惠柴油與航空燃油利差擴大的煉油廠（VLO、MPC、DINO）。</p>
+      <div class="sig-chips"><span class="sig-chip sig-bullish">XLE 能源類股</span><span class="sig-chip sig-bearish">QQQ 那斯達克</span><span class="sig-chip sig-bearish">DIA 道瓊工業</span></div>
+      <div class="reduce-row"><span class="reduce-label">警示</span><span class="pill pill-red">TTE </span><span class="pill pill-red">BP </span><span class="pill pill-red">SHEL </span><span class="pill pill-red">E </span></div>
+      <div class="watch-pills"><span class="pill">能源供應鏈修復時間落差</span><span class="pill">原油期貨逆價差定價錯配</span><span class="pill">雙海峽危機疊加通膨風險</span><span class="pill">美國頁岩油商受惠全球油價</span><span class="pill">重油煉廠利差擴大</span></div>
+    </div><div class="card neutral summary-card">
+      <div class="card-header">
+        <div>
+          <span class="mono date-chip">2026-03-22</span>
+          <div class="summary-title"><a href="https://mimivsjames.substack.com/p/6500podcast" target="_blank" class="art-link">6500點是恐懼的底部還是噩夢的起點？美股下跌後的長線布局策略Podcast ↗</a></div>
+        </div>
+        <span class="badge badge-blue">研究</span>
+      </div>
+      <p class="summary-text">美股近期因地緣政治與油價飆升引發跌勢，但核心是「殺估值」而非「殺獲利」。量化模型推算標普500期望底部約6150點，建議長線投資人分批建倉而非預測絕對低點。企業EPS仍具韌性，只要分析師預期、ISM新訂單與油價三大領先指標未同時轉向，市場便不具備進入長期熊市的條件。文章主張結合基本面估值與技術面超賣訊號，建立高期望報酬的長線佈局方案。</p>
+      <div class="sig-chips"><span class="sig-chip sig-neutral">SPY 標普500</span><span class="sig-chip sig-bullish">XLE 能源類股</span></div>
+      
+      <div class="watch-pills"><span class="pill">殺估值非殺獲利</span><span class="pill">分批建倉策略</span><span class="pill">三大領先指標</span><span class="pill">EPS盈餘韌性</span><span class="pill">地緣政治與油價風險</span></div>
+    </div><div class="card neutral summary-card">
+      <div class="card-header">
+        <div>
+          <span class="mono date-chip">2026-03-15</span>
+          <div class="summary-title"><a href="https://mimivsjames.substack.com/p/2f3" target="_blank" class="art-link">私募暴雷是噪音？還是金融海嘯？看懂機構的資金「流動性」遷移 ↗</a></div>
+        </div>
+        <span class="badge badge-blue">研究</span>
+      </div>
+      <p class="summary-text">文章核心觀點是私募信貸暴雷並非2008式系統性金融危機，而是市場對「低波動、高收益」敘事的重新定價。私募信貸透過PIK條款與波動率洗錢延後揭露真實風險，AI崛起與高利率夾擊二三線SaaS企業現金流是危機根源。近期龍頭科技股下跌主因是機構為補非流動性資產缺口、被迫拋售高流動性優質資產的流動性傳導與錯殺，而非基本面惡化。建議長線投資人視此為佈局良機，核心配置標普500/那斯達克ETF，衛星部位只買各板塊龍頭股，並搭配黃金、美元避險。判斷系統性風險應觀察高收益債利差與TED Spread，目前均處低位。</p>
+      <div class="sig-chips"><span class="sig-chip sig-bullish">QQQ 那斯達克</span><span class="sig-chip sig-bullish">VOO 標普500</span><span class="sig-chip sig-bearish">IGV 軟體類股</span><span class="sig-chip sig-bullish">GLD 黃金</span></div>
+      
+      <div class="watch-pills"><span class="pill">私募信貸流動性危機</span><span class="pill">PIK條款與波動率洗錢</span><span class="pill">AI擠壓二三線SaaS現金流</span><span class="pill">流動性傳導與龍頭股錯殺</span><span class="pill">核心-衛星資產配置</span></div>
+    </div><div class="card neutral summary-card">
+      <div class="card-header">
+        <div>
+          <span class="mono date-chip">2026-03-15</span>
+          <div class="summary-title"><a href="https://mimivsjames.substack.com/p/podcast-0dd" target="_blank" class="art-link">私募暴雷是噪音？還是金融海嘯？看懂機構的資金「流動性」遷移Podcast ↗</a></div>
+        </div>
+        <span class="badge badge-blue">研究</span>
+      </div>
+      <p class="summary-text">私募信貸市場面臨贖回潮與流動性危機，許多基金透過實物支付利息（PIK）與人為壓低波動率掩蓋資產惡化，特別是AI競爭下現金流枯竭的中小型軟體公司。機構因私募資產流動性受阻被迫拋售流動性最高的大型科技股與指數基金換取現金，引發股市震盪。但此非2008年系統性金融海嘯，大型銀行資本結構依然穩健。投資者應視為資產重新定價契機，避開透明度低的金融商品，轉向高流動性、優質資產負債表的產業龍頭股。</p>
+      <div class="sig-chips"><span class="sig-chip sig-bearish">QQQ 那斯達克</span><span class="sig-chip sig-neutral">XLF 金融股</span><span class="sig-chip sig-bearish">IGV 軟體股</span></div>
+      
+      <div class="watch-pills"><span class="pill">私募信貸流動性危機</span><span class="pill">資產重新定價</span><span class="pill">PIK利息掩蓋風險</span><span class="pill">資金遷移至龍頭股</span><span class="pill">非系統性金融風險</span></div>
+    </div><div class="card neutral summary-card">
+      <div class="card-header">
+        <div>
+          <span class="mono date-chip">2026-03-08</span>
+          <div class="summary-title"><a href="https://mimivsjames.substack.com/p/fc7" target="_blank" class="art-link">不是油價本身，而是降息交易被打亂：原油飆升，美股配置要先看哪些重點 ↗</a></div>
+        </div>
+        <span class="badge badge-blue">研究</span>
+      </div>
+      <p class="summary-text">市場真正重新定價的並非油價本身，而是降息路徑遭打亂。油價急升疊加就業轉弱，引發停滯性通膨風險升溫，市場開始調高該情境機率，導致折現率與風險溢酬上升，高估值長久期資產（科技股）首當其衝。下週CPI是壓力測試而非事後驗證，重點觀察核心通膨黏滯度。風險定價分兩段：第一段殺估值（現階段），第二段下修獲利。SPX 6700點僅為短線技術支撐，長線買點需確認油價停留時間、核心通膨黏性與市場敘事三變數。停滯性通膨對股債現金均具殺傷力，被動指數投資並非萬靈丹。</p>
+      <div class="sig-chips"><span class="sig-chip sig-bearish">QQQ 那斯達克</span><span class="sig-chip sig-bearish">IWM 羅素2000中小型股</span><span class="sig-chip sig-bullish">XLE 能源類股</span><span class="sig-chip sig-neutral">XLP 必需消費品</span></div>
+      
+      <div class="watch-pills"><span class="pill">降息路徑重新定價</span><span class="pill">停滯性通膨風險升溫</span><span class="pill">折現率上升壓縮估值</span><span class="pill">CPI壓力測試核心通膨黏性</span><span class="pill">兩段式下跌邏輯</span></div>
+    </div><div class="card neutral summary-card">
+      <div class="card-header">
+        <div>
+          <span class="mono date-chip">2026-03-08</span>
+          <div class="summary-title"><a href="https://mimivsjames.substack.com/p/podcast-612" target="_blank" class="art-link">不是油價本身，而是降息交易被打亂：原油飆升，美股配置要先看哪些重點Podcast ↗</a></div>
+        </div>
+        <span class="badge badge-blue">研究</span>
+      </div>
+      <p class="summary-text">市場正從軟著陸預期轉向停滯性通膨風險重新定價。油價飆升疊加就業數據轉弱，打亂原有降息交易路徑，推升折現率並壓抑高估值資產。殺跌邏輯分為估值修正與獲利下修兩階段，建議將即將公布的CPI視為核心通膨黏性的壓力測試。極端宏觀環境下被動投資與指數ETF非萬靈丹，需觀察油價停留時間與聯準會決策函數轉變，並參照1970年代經驗強化動態風險管理。</p>
+      <div class="sig-chips"><span class="sig-chip sig-bearish">QQQ 那斯達克100</span><span class="sig-chip sig-bearish">SPY 標普500</span><span class="sig-chip sig-bullish">XLE 能源類股</span><span class="sig-chip sig-bullish">USO 原油</span></div>
+      
+      <div class="watch-pills"><span class="pill">停滯性通膨風險</span><span class="pill">降息交易被打亂</span><span class="pill">估值修正與獲利下修</span><span class="pill">油價飆升</span><span class="pill">被動投資局限性</span></div>
+    </div><div class="card neutral summary-card">
+      <div class="card-header">
+        <div>
+          <span class="mono date-chip">2026-03-01</span>
+          <div class="summary-title"><a href="https://mimivsjames.substack.com/p/operation-epic-fury" target="_blank" class="art-link">Operation Epic Fury：當戰爭開始定價流動性，「美債」與「油價」背後的資金轉向  ↗</a></div>
+        </div>
+        <span class="badge badge-blue">研究</span>
+      </div>
+      <p class="summary-text">美以對伊朗的軍事行動重新定價尾端風險，最先反映在美債與油價而非股票。機構在去槓桿時優先買進流動性與抵押品屬性最佳的美債，而非黃金，故TLT走勢強於GLD。油價上漲純屬霍爾木茲海峽運輸風險溢價，長線原油仍供過於求。科技龍頭如NVDA因財報利多出盡被當「流動性提款機」拋售，資金轉入TLT、XOM、CVX等防禦與能源股。但壓低美債殖利率為短期效應，長線1.9兆赤字與通膨風險仍存。回測顯示未引發衰退的中東衝突平均僅回撤約5%、21天觸底，殖利率下行反而支撐科技股DCF估值，故恐慌錯殺是長線分批進場機會。</p>
+      <div class="sig-chips"><span class="sig-chip sig-bearish">QQQ 那斯達克</span><span class="sig-chip sig-bullish">TLT 20年期以上美債</span><span class="sig-chip sig-bearish">XLE 能源類股</span><span class="sig-chip sig-neutral">GLD 黃金</span></div>
+      <div class="reduce-row"><span class="reduce-label">警示</span><span class="pill pill-red">CRWV </span><span class="pill pill-red">USO </span><span class="pill pill-red">XLE </span></div>
+      <div class="watch-pills"><span class="pill">地緣政治尾端風險定價</span><span class="pill">美債抵押品屬性優於黃金</span><span class="pill">原油風險溢價與供過於求</span><span class="pill">科技股流動性提款機效應</span><span class="pill">DCF折現率與科技股估值修復</span></div>
+    </div><div class="card neutral summary-card">
+      <div class="card-header">
+        <div>
+          <span class="mono date-chip">2026-03-01</span>
+          <div class="summary-title"><a href="https://mimivsjames.substack.com/p/operation-epic-fury-podcast" target="_blank" class="art-link">Operation Epic Fury：當戰爭開始定價流動性，「美債」與「油價」背後的資金轉向 Podcast ↗</a></div>
+        </div>
+        <span class="badge badge-blue">研究</span>
+      </div>
+      <p class="summary-text">文章解析2026年「史詩狂怒行動」地緣衝突下的資金轉向。機構法人因美債抵押品屬性與流動性極佳，避險順位優先於黃金，導致殖利率短期快速下行。原油噴發屬荷姆茲海峽封鎖的風險溢價交易，非供需結構改變，警告勿追高。大科技股如NVDA被當作獲利了結的流動性提款機，但若無滯脹，回撤反為布局良機。建議用XOM、CVX等強現金流能源龍頭進行防禦性對沖，並區分短期事件交易與長期財政赤字邏輯。</p>
+      <div class="sig-chips"><span class="sig-chip sig-bullish">TLT 20年期美債</span><span class="sig-chip sig-bullish">XLE 能源類股</span><span class="sig-chip sig-bearish">QQQ 那斯達克</span><span class="sig-chip sig-bullish">USO 原油</span></div>
+      
+      <div class="watch-pills"><span class="pill">地緣政治流動性定價</span><span class="pill">美債避險優先於黃金</span><span class="pill">原油風險溢價</span><span class="pill">能源龍頭防禦對沖</span><span class="pill">短期事件交易vs長期財政赤字</span></div>
+    </div><div class="card neutral summary-card">
+      <div class="card-header">
+        <div>
+          <span class="mono date-chip">2026-02-15</span>
+          <div class="summary-title"><a href="https://mimivsjames.substack.com/p/google" target="_blank" class="art-link">財政主導下的資產重定價：從美國例外論轉向全球價值套利。為什麼 Google發行百年債券，是美股科技股的「警鐘」？ ↗</a></div>
+        </div>
+        <span class="badge badge-blue">研究</span>
+      </div>
+      <p class="summary-text">文章核心論點是2026年市場機制轉換：美國因財政赤字與通膨黏性導致期限溢價結構性上升，殺估值（分母端）；同時Mag 7的AI鉅額資本支出侵蝕自由現金流（分子端），陷入索洛悖論2.0與J曲線底部。GOOG發行百年債券遭5倍超額認購被視為流動性末期的頂部訊號。標普500股權風險溢價壓縮至0.15%，持有美股大盤已不理性。資金將從『花錢的美國軟體巨頭』流向『賺錢的亞洲硬體製造商』，買進台積電、韓國HBM、日本設備材料等於用6折買進確定的AI現金流。</p>
+      <div class="sig-chips"><span class="sig-chip sig-bearish">QQQ 那斯達克</span><span class="sig-chip sig-bearish">SPY 標普500</span><span class="sig-chip sig-neutral">SMH 美國半導體</span><span class="sig-chip sig-bullish">EWT 台灣股市</span></div>
+      <div class="reduce-row"><span class="reduce-label">警示</span><span class="pill pill-red">GOOGL </span><span class="pill pill-red">MSFT </span><span class="pill pill-red">META </span><span class="pill pill-red">AMZN </span></div>
+      <div class="watch-pills"><span class="pill">財政主導與期限溢價</span><span class="pill">現金流地理錯配</span><span class="pill">索洛悖論2.0與J曲線</span><span class="pill">亞洲硬體估值套利</span><span class="pill">股權風險溢價消失</span></div>
+    </div><div class="card neutral summary-card">
+      <div class="card-header">
+        <div>
+          <span class="mono date-chip">2026-02-15</span>
+          <div class="summary-title"><a href="https://mimivsjames.substack.com/p/googlepodcast" target="_blank" class="art-link">財政主導下的資產重定價：從美國例外論轉向全球價值套利。為什麼 Google發行百年債券，是美股科技股的「警鐘」？Podc ↗</a></div>
+        </div>
+        <span class="badge badge-blue">研究</span>
+      </div>
+      <p class="summary-text">報告指出2026年全球資本市場正經歷機制轉換，財政主導推升利率，加上美股科技巨頭龐大AI資本支出，使其面臨估值與現金流雙重壓力。Google發行百年債券被視為市場頂部警訊，反映企業欲在利率長期走高前鎖定低廉資金。投資邏輯應從美國例外論轉向全球價值套利，避開高估值軟體夢想股，轉而佈局台日韓掌握物理層產能的半導體供應鏈，捕捉更具確定性的現金流，建構反脆弱投資組合。</p>
+      <div class="sig-chips"><span class="sig-chip sig-bearish">QQQ 那斯達克</span><span class="sig-chip sig-neutral">SMH 半導體</span><span class="sig-chip sig-bullish">EWT 台灣</span></div>
+      <div class="reduce-row"><span class="reduce-label">警示</span><span class="pill pill-red">NVDA </span><span class="pill pill-red">MSFT </span></div>
+      <div class="watch-pills"><span class="pill">財政主導與利率上升</span><span class="pill">AI資本支出壓力</span><span class="pill">全球價值套利</span><span class="pill">亞洲半導體供應鏈</span><span class="pill">資產重定價</span></div>
+    </div><div class="card neutral summary-card">
+      <div class="card-header">
+        <div>
+          <span class="mono date-chip">2026-02-08</span>
+          <div class="summary-title"><a href="https://mimivsjames.substack.com/p/2026qqqvoo1" target="_blank" class="art-link">2026年QQQ跑輸VOO？當科技巨頭燒掉1兆美元，長線投資者必須看懂的「陷阱」 ↗</a></div>
+        </div>
+        <span class="badge badge-blue">研究</span>
+      </div>
+      <p class="summary-text">2026年進入AI巨頭資本支出超級週期，四大CSP合計資本支出突破1兆美元。市場焦點將從TAM想像轉向ROIC現實檢驗，2027年後龐大折舊將侵蝕EPS與自由現金流。在中性利率3.5%以上的高WACC環境下，依賴遠期現金流的高估值科技股面臨估值雙重壓縮，QQQ隱含回撤空間達29%。建議核心配置由QQQ轉向VOO，因其包含公用事業、金融與工業等受益於AI實體建設的板塊。投資主軸轉向掌握電力、散熱、先進封裝等物理稀缺性的關鍵瓶頸供應鏈，並嚴守ROIC&gt;WACC的選股紀律。</p>
+      <div class="sig-chips"><span class="sig-chip sig-bearish">QQQ 那斯達克100</span><span class="sig-chip sig-bullish">VOO 標普500</span><span class="sig-chip sig-bullish">XLU 公用事業</span><span class="sig-chip sig-bullish">AMLP 能源基礎設施</span></div>
+      <div class="reduce-row"><span class="reduce-label">警示</span><span class="pill pill-red">ORCL </span><span class="pill pill-red">META </span></div>
+      <div class="watch-pills"><span class="pill">AI資本支出超級週期與折舊滯後效應</span><span class="pill">本夢比回歸本益比的估值重估</span><span class="pill">高WACC壓縮高估值科技股</span><span class="pill">硬體供應鏈大分流：擁抱物理稀缺性</span><span class="pill">核心持倉由QQQ轉向VOO再平衡</span></div>
+    </div><div class="card neutral summary-card">
+      <div class="card-header">
+        <div>
+          <span class="mono date-chip">2026-02-01</span>
+          <div class="summary-title"><a href="https://mimivsjames.substack.com/p/warsh-podcast" target="_blank" class="art-link">金銀的閃崩只是開始嗎？現在可以進場嗎？三爺與 Warsh 聯手按下的「重置鍵」Podcast ↗</a></div>
+        </div>
+        <span class="badge badge-blue">研究</span>
+      </div>
+      <p class="summary-text">聯準會主席提名人Warsh主張流動性重置與規則導向政策，引發市場波動。金銀閃崩反映高槓桿投機倉位踩踏出場，並非趨勢逆轉，短線應等待波動率收斂後再評估進場。政策轉向將不利純成長股，而有利具備穩定現金流的能源、金融與國防板塊。在地緣政治溢價與通膨風險背景下，投資邏輯應從成長股轉向實體資產與防禦性現金流資產。</p>
+      <div class="sig-chips"><span class="sig-chip sig-bullish">XLE 能源</span><span class="sig-chip sig-bullish">XLF 金融</span><span class="sig-chip sig-bullish">ITA 國防</span><span class="sig-chip sig-bearish">QQQ 那斯達克</span></div>
+      
+      <div class="watch-pills"><span class="pill">流動性重置</span><span class="pill">規則導向政策</span><span class="pill">金銀閃崩</span><span class="pill">成長轉實體資產</span><span class="pill">地緣政治溢價</span></div>
+    </div><div class="card neutral summary-card">
+      <div class="card-header">
+        <div>
+          <span class="mono date-chip">2026-01-18</span>
+          <div class="summary-title"><a href="https://mimivsjames.substack.com/p/podcast-254" target="_blank" class="art-link">黃金、白銀當避險成為剛需，我們正面臨泡沫還是新起點？Podcast ↗</a></div>
+        </div>
+        <span class="badge badge-blue">研究</span>
+      </div>
+      <p class="summary-text">報告指出2026年貴金屬進入超級週期，黃金與白銀從避險工具轉型為對抗法幣貶值的核心資產。美國龐大財政赤字與去美元化浪潮，推動全球央行持續買入黃金；白銀則因AI算力基建與綠能的剛性需求，陷入多年供給短缺與庫存枯竭。數據回測顯示美股組合中加入15%貴金屬比例，可提升夏普比率並強化抗跌性。作者認為貴金屬非泡沫末端，而是長期貨幣重置與供需失衡趨勢的中段，建議透過合理資產配置因應大通膨時代。</p>
+      <div class="sig-chips"><span class="sig-chip sig-bullish">GLD 黃金</span><span class="sig-chip sig-bullish">SLV 白銀</span><span class="sig-chip sig-neutral">QQQ 那斯達克</span></div>
+      
+      <div class="watch-pills"><span class="pill">貴金屬超級週期</span><span class="pill">去美元化與央行購金</span><span class="pill">白銀供需失衡</span><span class="pill">AI與綠能驅動工業需求</span><span class="pill">大通膨資產配置</span></div>
     </div>
   </section>
 <section class="section" id="section-tutorial">
     <div class="section-title">操作教學</div>
     <div class="card neutral summary-card">
+      <div class="card-header">
+        <div>
+          <span class="mono date-chip">2026-06-14</span>
+          <div class="summary-title"><a href="https://mimivsjames.substack.com/p/4f4" target="_blank" class="art-link">美股輕鬆談：設了停損，還要對沖嗎？美股投資小白一定要懂的風控順序 ↗</a></div>
+        </div>
+        <span class="badge badge-purple">教學</span>
+      </div>
+      <p class="summary-text">詳細解析風控的正確順序與邏輯。強調停損有限，關鍵在於識別風險類型（個股/產業/系統性），按順序採取停損、減碼、現金、對沖等措施，避免高度相關持股累加風險。</p>
+      <ul class="summary-list kp-list"><li>停損不等於風險管理，無法應對隔夜跳空與同時多檔股票破位</li><li>分散持股並不等於分散風險，需檢查持股的相關性與風險來源是否一致</li><li>風險有三層級：個股風險、板塊風險、系統性風險，需採用不同處理方式</li><li>正確風控順序：先識別風險類型→停損→減碼提高現金→對沖，而非盲目對沖</li><li>短線與長線交易的風控策略不同，不應盲目跨板塊分散而拖累績效</li></ul>
+      <div class="watch-pills"><span class="pill">風控邏輯與執行順序</span><span class="pill">個股vs產業vs系統性風險的區分與應對</span><span class="pill">停損、減碼、現金管理與對沖的角色定位</span><span class="pill">短線vs長線的差異化風控策略</span><span class="pill">帳戶層級的整體風險評估</span></div>
+    </div><div class="card neutral summary-card">
       <div class="card-header">
         <div>
           <span class="mono date-chip">2026-06-14</span>
@@ -3105,11 +5698,22 @@ body {
       <p class="summary-text">美股大跌後反彈時，搶反彈的核心目標不是猜最低點，而是取得超跌修復的短線價差。需要先控制風險、設定停損、選擇相對抗跌個股，避免追高與盲目加碼，事先計畫進出場位置與最大損失額度。</p>
       <ul class="summary-list kp-list"><li>重點一：反彈非反轉——反彈是短線修復行情，需確認『頭頭高、底底高』才算真正反轉，搞清楚交易定位才能控制倉位與停損</li><li>重點二：第一根大紅K不是最佳買點——快速拉升後面臨均線缺口與套牢賣壓，應找容易退出、看對仍有空間的位置進場</li><li>重點三：選股優先選相對抗跌股——不要挑跌最深的股票，而是率先止跌、相對強勢的個股，並觀察反彈廣度而非只看大盤漲幅</li><li>重點四：風控必須事先計算——先決定最多願意賠多少，再計算買量，設定時間停損與結構位停損，禁止向下攤平</li></ul>
       <div class="watch-pills"><span class="pill">風控</span><span class="pill">停損</span><span class="pill">反彈交易</span><span class="pill">進場時機</span><span class="pill">個股選擇</span></div>
+    </div><div class="card neutral summary-card">
+      <div class="card-header">
+        <div>
+          <span class="mono date-chip">2026-05-21</span>
+          <div class="summary-title"><a href="https://mimivsjames.substack.com/p/9d6" target="_blank" class="art-link">美股輕鬆談文章：什麼是短線？什麼是波段？小白傻傻分不清？ ↗</a></div>
+        </div>
+        <span class="badge badge-purple">教學</span>
+      </div>
+      <p class="summary-text">教導投資新手區分短線與波段交易的本質差異。強調交易前應先確認操作邏輯，而非單純以時間長短區分。不同交易類型需搭配不同的停損、資金配置與出場策略，才能建立有紀律的交易系統。</p>
+      <ul class="summary-list kp-list"><li>短線與波段的區分不在於持有時間長短，而在於交易邏輯與預期獲利來源不同</li><li>進場前必須先確認交易屬於短線或波段，再制定相應的停損、資金配置與出場策略</li><li>不同的股票特性、進場理由、資金規模和交易者身份（上班族/全職交易者），應採用完全不同的操作模式</li><li>常見錯誤：看錯股票不是主因，而是從一開始就沒有搞清楚自己在做哪一種交易</li></ul>
+      <div class="watch-pills"><span class="pill">交易邏輯與紀律</span><span class="pill">短線交易 vs 波段操作</span><span class="pill">風險管理與停損策略</span><span class="pill">資金配置</span></div>
     </div>
   </section>
 
   <div class="footer">
-    整理自 MimiVsJames Vocus 即時策略分享專欄 · 僅供個人參考，不構成投資建議
+    整理自 MimiVsJames Vocus + Substack 訂閱專欄 · 僅供個人參考，不構成投資建議
   </div>
 
 </div>
