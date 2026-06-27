@@ -67,25 +67,537 @@
     .fb-link:hover { text-decoration: underline; }
 
     .empty-msg { color: var(--muted); padding: 40px 0; text-align: center; }
+
+    /* ── 今日觀點速覽 ── */
+    .digest { padding: 20px 24px 4px; border-bottom: 1px solid var(--border); }
+    .digest-header { display: flex; align-items: baseline; gap: 12px; margin-bottom: 16px; }
+    .digest-title { font-size: 16px; font-weight: 700; color: var(--text); }
+    .digest-meta { font-size: 12px; color: var(--muted); }
+    .digest-sub { font-size: 12px; font-weight: 600; color: var(--muted);
+                   text-transform: uppercase; letter-spacing: .06em;
+                   margin: 0 0 10px; padding-left: 2px; }
+    .digest-sub2 { font-size: 11px; font-weight: 600; color: #4A9EFF88;
+                    letter-spacing: .08em; margin: 12px 0 6px; padding-left: 4px; }
+
+    .hot-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                 gap: 10px; margin-bottom: 20px; max-width: 1200px; }
+    .hot-card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px;
+                 padding: 12px 14px; }
+    .hot-card-top { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+    .hot-event { font-size: 14px; font-weight: 600; color: var(--text); flex: 1; }
+    .d-badge { padding: 2px 7px; border-radius: 4px; font-size: 11px; font-weight: 600;
+                white-space: nowrap; }
+    .d-creators { display: flex; gap: 5px; flex-wrap: wrap; margin-bottom: 6px; }
+    .d-creator { background: #1e2535; border: 1px solid #2d3748; color: #93c5fd;
+                  padding: 1px 7px; border-radius: 4px; font-size: 11px; }
+    .d-stocks { display: flex; gap: 5px; flex-wrap: wrap; margin-bottom: 6px; }
+    .d-stock { background: #1c2638; border: 1px solid #2a3a52; color: #7dd3fc;
+                padding: 1px 6px; border-radius: 3px; font-size: 11px; font-family: monospace; }
+    .d-consensus { font-size: 13px; color: #c8d3e0; line-height: 1.5; }
+    .d-divergence { font-size: 12px; color: #fbbf24; margin-top: 6px; line-height: 1.4;
+                     padding-left: 10px; border-left: 2px solid #f59e0b44; }
+
+    .signal-list { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; max-width: 860px; }
+    .signal-group { background: var(--surface); border: 1px solid var(--border);
+                     border-radius: 8px; overflow: hidden; }
+    .signal-group-header { display: flex; align-items: center; gap: 6px; flex-wrap: wrap;
+                            padding: 7px 12px; border-bottom: 1px solid var(--border);
+                            background: #15182200; }
+    .d-stock-dim { opacity: .65; }
+    .signal-count { font-size: 11px; color: var(--muted); margin-left: auto; }
+    .signal-view { display: grid; grid-template-columns: 120px 1fr; align-items: baseline;
+                    gap: 10px; padding: 8px 12px; text-decoration: none;
+                    transition: background .15s; cursor: pointer; }
+    .signal-view:hover { background: #1e2535; }
+    .signal-view + .signal-view { border-top: 1px solid var(--border); }
+    .signal-creator { font-size: 12px; color: var(--muted); white-space: nowrap;
+                       overflow: hidden; text-overflow: ellipsis; }
+    .signal-text { font-size: 13px; color: #c8d3e0; line-height: 1.4; }
   </style>
 </head>
 <body>
   <header>
     <h1>FB 粉專追蹤</h1>
-    <div class="updated">更新時間：2026-06-26 23:03</div>
+    <div class="updated">更新時間：2026-06-27 08:04</div>
   </header>
+  
+<section class="digest">
+  <div class="digest-header">
+    <span class="digest-title">今日觀點速覽</span>
+    <span class="digest-meta">分析 69 篇 · 06/27 08:04 更新</span>
+  </div>
+  <div class="digest-sub">今日熱點</div><div class="hot-grid">
+<div class="hot-card">
+  <div class="hot-card-top">
+    <span class="hot-event">美光MU財報超預期，記憶體AI需求強勁</span>
+    <span class="d-badge" style="background:#0d3320;color:#34d399">偏多</span>
+  </div>
+  <div class="d-creators"><span class="d-creator">股狼球隊</span><span class="d-creator">盤整之王 Consolidation</span><span class="d-creator">Yu Master Investment</span><span class="d-creator">海伊股倉 Hy's Stockhouse</span></div>
+  <div class="d-stocks"><span class="d-stock">MU</span><span class="d-stock">SNDK</span></div>
+  <div class="d-consensus">美光Q3財報大幅超預期，HBM供不應求，Q4指引強勁，記憶體為AI核心風向球</div>
+  <div class="d-divergence">分歧：盤整之王與股狼對SNDK盤前重挫態度不同：前者建議分批追跌，後者列為觀察股未明確進場</div>
+</div>
+<div class="hot-card">
+  <div class="hot-card-top">
+    <span class="hot-event">GOOGL納入道瓊，VZ遭汰換</span>
+    <span class="d-badge" style="background:#1e1e2e;color:#94a3b8">中性</span>
+  </div>
+  <div class="d-creators"><span class="d-creator">股狼球隊</span><span class="d-creator">盤整之王 Consolidation</span></div>
+  <div class="d-stocks"><span class="d-stock">GOOGL</span><span class="d-stock">VZ</span><span class="d-stock">DIA</span></div>
+  <div class="d-consensus">GOOGL於6/29正式取代VZ加入道瓊，反映AI時代指數成份股結構性調整</div>
+  
+</div>
+<div class="hot-card">
+  <div class="hot-card-top">
+    <span class="hot-event">MRNA流感mRNA疫苗獲VRBPAC全票支持</span>
+    <span class="d-badge" style="background:#0d3320;color:#34d399">偏多</span>
+  </div>
+  <div class="d-creators"><span class="d-creator">股狼球隊</span><span class="d-creator">股狼球隊</span></div>
+  <div class="d-stocks"><span class="d-stock">MRNA</span><span class="d-stock">XBI</span><span class="d-stock">IBB</span><span class="d-stock">XLV</span><span class="d-stock">MRK</span></div>
+  <div class="d-consensus">VRBPAC 9:0通過mRNA-1010，8月5日FDA最終核准為近期最大催化劑，生技族群多頭排列</div>
+  
+</div>
+<div class="hot-card">
+  <div class="hot-card-top">
+    <span class="hot-event">NVDA CUDA護城河與AI定價權討論</span>
+    <span class="d-badge" style="background:#0d3320;color:#34d399">偏多</span>
+  </div>
+  <div class="d-creators"><span class="d-creator">OP 凱文</span><span class="d-creator">Yu Master Investment</span></div>
+  <div class="d-stocks"><span class="d-stock">NVDA</span><span class="d-stock">AMZN</span><span class="d-stock">MU</span></div>
+  <div class="d-consensus">NVDA CUDA生態系壁壘深厚；AMZN調漲GPU算力價格20%，AI硬體定價權集中</div>
+  
+</div>
+<div class="hot-card">
+  <div class="hot-card-top">
+    <span class="hot-event">台股2308台達電股價異常重挫</span>
+    <span class="d-badge" style="background:#0d3320;color:#34d399">偏多</span>
+  </div>
+  <div class="d-creators"><span class="d-creator">菜鳥投資成長日記</span><span class="d-creator">杯米的股市筆記</span></div>
+  <div class="d-stocks"><span class="d-stock">2308</span></div>
+  <div class="d-consensus">台達電今日股價近跌停，但兩方皆認為無明顯利空，視為短暫修正或技術性賣壓</div>
+  <div class="d-divergence">分歧：杯米認為係漲停家數過多觸發被動基金釋出資金所致，菜鳥則單純認定為短期修正</div>
+</div>
+<div class="hot-card">
+  <div class="hot-card-top">
+    <span class="hot-event">SaaS軟體股走弱與資金輪動</span>
+    <span class="d-badge" style="background:#3b0d0d;color:#f87171">偏空</span>
+  </div>
+  <div class="d-creators"><span class="d-creator">股狼球隊</span><span class="d-creator">肥多多 DD 的筆記</span></div>
+  <div class="d-stocks"><span class="d-stock">GOOG</span><span class="d-stock">MSFT</span><span class="d-stock">PLTR</span><span class="d-stock">CRM</span><span class="d-stock">IGV</span><span class="d-stock">NOW</span><span class="d-stock">ADBE</span><span class="d-stock">SNOW</span><span class="d-stock">NET</span><span class="d-stock">MDB</span><span class="d-stock">TWLO</span></div>
+  <div class="d-consensus">IGV跌破季線，SaaS估值持續下修，資金輪動至半導體與硬體</div>
+  <div class="d-divergence">分歧：肥多多以財報三核心（ARR/毛利率/FCF）評估CRWD、MDB仍具投資價值，與股狼整體看空SaaS形成溫和分歧</div>
+</div>
+<div class="hot-card">
+  <div class="hot-card-top">
+    <span class="hot-event">比特幣戰略儲備立法推進</span>
+    <span class="d-badge" style="background:#0d3320;color:#34d399">偏多</span>
+  </div>
+  <div class="d-creators"><span class="d-creator">肥多多 DD 的筆記</span><span class="d-creator">肥多多 DD 的筆記</span></div>
+  <div class="d-stocks"><span class="d-stock">MARA</span><span class="d-stock">MSTR</span></div>
+  <div class="d-consensus">法案將川普戰略比特幣儲備行政命令正式寫入立法，強化比特幣國家級地位，MARA多元佈局受惠</div>
+  
+</div>
+<div class="hot-card">
+  <div class="hot-card-top">
+    <span class="hot-event">TLT/TMF長債Covered Call策略</span>
+    <span class="d-badge" style="background:#0d3320;color:#34d399">偏多</span>
+  </div>
+  <div class="d-creators"><span class="d-creator">善甲狼 a 機智生活</span><span class="d-creator">善甲狼 a 機智生活</span></div>
+  <div class="d-stocks"><span class="d-stock">TLT</span><span class="d-stock">TMF</span></div>
+  <div class="d-consensus">利用30年期公債期貨多頭搭配賣出Call選擇權，達到持倉同時賺取權利金的收益強化策略</div>
+  
+</div></div>
+  <div class="digest-sub">個股訊號</div><div class="digest-sub2">台股</div><div class="signal-list">
+<div class="signal-group">
+  <div class="signal-group-header">
+    <span class="d-stock">2313</span>
+    
+  </div>
+  
+<a href="https://www.facebook.com/doinvestfuture/posts/pfbid0nnZxxutTvfReuEkRmAuMU6stWUWrDwvbUCN4AiS4TjhuTQUfzQBQ1CxAronXNm5l" target="_blank" class="signal-view">
+  <span class="signal-creator">盤整之王 Consolidation</span>
+  <span class="signal-text">華通違約交割金額龐大遭彭博報導，台灣市場制度形象受損，看空</span>
+</a>
+</div>
+<div class="signal-group">
+  <div class="signal-group-header">
+    <span class="d-stock">2330</span><span class="d-stock d-stock-dim">2454</span>
+    
+  </div>
+  
+<a href="https://www.facebook.com/permalink.php?story_fbid=pfbid02TaRC1H7F4AjyhxWczGZqr3YjYGd2zDzxr9DxWFMrFZUxdhpn8z8AnmsLE1HB3BKil&id=100064496752266" target="_blank" class="signal-view">
+  <span class="signal-creator">菜鳥投資成長日記</span>
+  <span class="signal-text">台積電2330短期本益比偏高，看好EPS 80元但建議等待2028年再評估進場</span>
+</a>
+</div>
+<div class="signal-group">
+  <div class="signal-group-header">
+    <span class="d-stock">9988</span><span class="d-stock d-stock-dim">3690</span>
+    
+  </div>
+  
+<a href="https://www.facebook.com/yumasterinvestment/posts/pfbid02Mbg8AaBheJh34fqnZQ7onfbas6RXXKBCJS9ztYGfU8JaBrZJdUj1pTPdTBjaLcM1l" target="_blank" class="signal-view">
+  <span class="signal-creator">Yu Master Investment</span>
+  <span class="signal-text">阿里巴巴與美團股價持續下跌，回購措施未能有效提振市場信心，看空</span>
+</a>
+</div>
+<div class="signal-group">
+  <div class="signal-group-header">
+    <span class="d-stock">2303</span>
+    
+  </div>
+  
+<a href="https://www.facebook.com/OptionPlayerKevin/posts/pfbid0h6136eEMYEPSCMN79f85NAxmqfDojDmgR3qXotWXPBe9U2NeN4Ear8FmMaiM98Hnl" target="_blank" class="signal-view">
+  <span class="signal-creator">OP 凱文</span>
+  <span class="signal-text">聯電與英特爾結盟12奈米，切入CPO矽光子與先進封裝，成功加入AI供應鏈，股價從40-50元起漲看多</span>
+</a>
+</div>
+<div class="signal-group">
+  <div class="signal-group-header">
+    <span class="d-stock">6234</span>
+    
+  </div>
+  
+<a href="https://www.facebook.com/doinvestfuture/posts/pfbid0Vr1vKUpjLLF3k6X5ezciacm8ddZ68F5BF3V82neGaUPH5g2mZHPXXUV6yAnPPhR6l" target="_blank" class="signal-view">
+  <span class="signal-creator">盤整之王 Consolidation</span>
+  <span class="signal-text">旺矽在大盤弱勢日單日上漲7.41%，逆勢強漲具相對強度</span>
+</a>
+</div>
+<div class="signal-group">
+  <div class="signal-group-header">
+    <span class="d-stock">6451</span>
+    
+  </div>
+  
+<a href="https://www.facebook.com/permalink.php?story_fbid=pfbid0NyWVuBSDYyGdfjdafrNHX9PN6HCn11pfRgpBChT9BE9QGStuaEFcU7CmX3Nzsatjl&id=61569938009012" target="_blank" class="signal-view">
+  <span class="signal-creator">杯米的股市筆記</span>
+  <span class="signal-text">訊芯股價異常波動，引發市場關注，需追蹤後續</span>
+</a>
+</div>
+<div class="signal-group">
+  <div class="signal-group-header">
+    <span class="d-stock">5871</span>
+    
+  </div>
+  
+<a href="https://www.facebook.com/OptionPlayerKevin/posts/pfbid0TN5TnN5mjvAjSLAZcnzRR7nkjaKoFsjCzrMnxL1VbMaBJSGDoax4zsfqoK9VoXBql" target="_blank" class="signal-view">
+  <span class="signal-creator">OP 凱文</span>
+  <span class="signal-text">中租-KY為台灣最大租賃龍頭，業務橫跨企業金融、消費金融與綠能三大板塊，介紹性質中性</span>
+</a>
+</div></div><div class="digest-sub2">美股</div><div class="signal-list">
+<div class="signal-group">
+  <div class="signal-group-header">
+    <span class="d-stock">NBIS</span>
+    
+  </div>
+  
+<a href="https://www.facebook.com/Hy.Stockhouse/posts/pfbid02gsLDDunLRBoysKF6noV9uarqjZhdBWJKh6GzNNb4abLBwdxkWBug3MMLzVcLSPxpl" target="_blank" class="signal-view">
+  <span class="signal-creator">海伊股倉 Hy's Stockhouse</span>
+  <span class="signal-text">NBIS衝頂$300遭打回，60%正常了結40%假突破，下週$285為關鍵支撐</span>
+</a>
+</div>
+<div class="signal-group">
+  <div class="signal-group-header">
+    <span class="d-stock">SPCX</span>
+    
+  </div>
+  
+<a href="https://www.facebook.com/yumasterinvestment/videos/1745875519920935/" target="_blank" class="signal-view">
+  <span class="signal-creator">Yu Master Investment</span>
+  <span class="signal-text">SPCX靠Starlink獲利，毛利率48%、營業利益率39%，基本面強勁看多</span>
+</a>
+</div>
+<div class="signal-group">
+  <div class="signal-group-header">
+    <span class="d-stock">BE</span>
+    
+  </div>
+  
+<a href="https://www.facebook.com/yumasterinvestment/posts/pfbid02PkwTgGWJKdw6Wvcz3ceZFN4T6vem4Wt2npHtA9WExQwX1WzRDwkApZSZfrYMDsTil" target="_blank" class="signal-view">
+  <span class="signal-creator">Yu Master Investment</span>
+  <span class="signal-text">BE扭虧為盈里程碑，現金流逆轉正向，但311%負債比仍需警惕</span>
+</a>
+</div>
+<div class="signal-group">
+  <div class="signal-group-header">
+    <span class="d-stock">LLY</span>
+    
+  </div>
+  
+<a href="https://www.facebook.com/yumasterinvestment/posts/pfbid026cufxMGYTtAc6dq1p6FFYvqu6zhxuT3eMBB7TVZQMUKVo8n4c56xgreB5WHfWmqRl" target="_blank" class="signal-view">
+  <span class="signal-creator">Yu Master Investment</span>
+  <span class="signal-text">LLY股價創歷史新高，FDA推薦批准BTK抑制劑Jaypirca，技術面與基本面共振看多</span>
+</a>
+</div>
+<div class="signal-group">
+  <div class="signal-group-header">
+    <span class="d-stock">ON</span>
+    
+  </div>
+  
+<a href="https://www.facebook.com/yumasterinvestment/posts/pfbid0qwBMTk6E78iZ6Cds9vCrP15C1C1XdFAtadeaWQQGoEci855cQNHKmHZj9NpsRVval" target="_blank" class="signal-view">
+  <span class="signal-creator">Yu Master Investment</span>
+  <span class="signal-text">ON汽車ADAS影像感測器市占超60%，SiC垂直整合+AI資料中心成長，估值重評正面</span>
+</a>
+</div>
+<div class="signal-group">
+  <div class="signal-group-header">
+    <span class="d-stock">BABA</span><span class="d-stock d-stock-dim">9988</span>
+    
+  </div>
+  
+<a href="https://www.facebook.com/yumasterinvestment/posts/pfbid0eX9WuAtSLEyzQiHvxroUQuBK87c8z3jWHLx76pz7Qpj6zCYnfqsjdbHkX5yQyhxyl" target="_blank" class="signal-view">
+  <span class="signal-creator">Yu Master Investment</span>
+  <span class="signal-text">ARKK以$95虧損賣出BABA（買入$180），回購未能提振信心，看空中概</span>
+</a>
+</div>
+<div class="signal-group">
+  <div class="signal-group-header">
+    <span class="d-stock">LITE</span>
+    
+  </div>
+  
+<a href="https://www.facebook.com/yumasterinvestment/posts/pfbid0FbjU26VuHpcwRhTtUdvhjbjC53sLhduye2MAzW3WqZEaWVMCZujqi77FeBzLzRevl" target="_blank" class="signal-view">
+  <span class="signal-creator">Yu Master Investment</span>
+  <span class="signal-text">LITE正形成Bullish Flag看漲旗形技術形態，短線看多訊號</span>
+</a>
+</div>
+<div class="signal-group">
+  <div class="signal-group-header">
+    <span class="d-stock">JETS</span><span class="d-stock d-stock-dim">AAL</span><span class="d-stock d-stock-dim">DAL</span><span class="d-stock d-stock-dim">LUV</span><span class="d-stock d-stock-dim">UAL</span>
+    
+  </div>
+  
+<a href="https://www.facebook.com/stockwolfteams/posts/pfbid025emuCBLPHGMhVXLp6Ucn3JFdnrGGGL23XExGnyMxRYczWGSPUZCf5y4jqCbGCMgJl" target="_blank" class="signal-view">
+  <span class="signal-creator">股狼球隊</span>
+  <span class="signal-text">航空哩程計畫金融化核心驅動，DAL年收美國運通82億美元，授權業務毛利率50%+，看多航空股</span>
+</a>
+</div>
+<div class="signal-group">
+  <div class="signal-group-header">
+    <span class="d-stock">INTC</span>
+    
+  </div>
+  
+<a href="https://www.facebook.com/stockwolfteams/posts/pfbid04QhQ1e7HzBvoBHk4kowHhm4TuN3jGJm9hX93QMoTAwkWQwNi1uwvjKJ63BtrkF9dl" target="_blank" class="signal-view">
+  <span class="signal-creator">股狼球隊</span>
+  <span class="signal-text">18A-P製程進入風險試產，效能與散熱數據具競爭力，技術落地里程碑看多</span>
+</a>
+</div>
+<div class="signal-group">
+  <div class="signal-group-header">
+    <span class="d-stock">TSLA</span><span class="d-stock d-stock-dim">SPCX</span>
+    
+  </div>
+  
+<a href="https://www.facebook.com/stockwolfteams/posts/pfbid02ki7vi7oUT9t7z1SFZbd7niEkihi8k8dvkhWzvDY5A8wJav8vcMAUp8fqFaT6PbiJl" target="_blank" class="signal-view">
+  <span class="signal-creator">股狼球隊</span>
+  <span class="signal-text">SpaceX上市導致馬斯克概念資金分流，TSLA估值溢價面臨收斂壓力，看空</span>
+</a>
+</div>
+<div class="signal-group">
+  <div class="signal-group-header">
+    <span class="d-stock">MU</span>
+    
+  </div>
+  
+<a href="https://www.facebook.com/Hy.Stockhouse/posts/pfbid02vKRHALDPvNC6Jw4qjUFLEEiiShjKYTkxNL9z58AEdkHG46zPDX8KNsGmqUcEfasAl" target="_blank" class="signal-view">
+  <span class="signal-creator">海伊股倉 Hy's Stockhouse</span>
+  <span class="signal-text">16份SCA中14份以最低地板價計算累計營收約1000億美元，長期供貨合約支撐基本面看多</span>
+</a>
+</div>
+<div class="signal-group">
+  <div class="signal-group-header">
+    <span class="d-stock">MARA</span>
+    
+  </div>
+  
+<a href="https://www.facebook.com/permalink.php?story_fbid=pfbid09huTqkBKVRgu95FBnwPXZVVjkCJfwq7Q6kwfYkcuxVavXCLczTPJgBeuzabh7zqql&id=100080135961392" target="_blank" class="signal-view">
+  <span class="signal-creator">肥多多 DD 的筆記</span>
+  <span class="signal-text">MARA策略涵蓋挖礦、能源、主權AI、AI推理邊緣運算、美製ASIC，多元佈局看多</span>
+</a>
+</div></div>
+</section>
   <div class="tabs">
-    <button class="tab-btn" data-cat="全部" style="--accent:#94A3B8" onclick="switchTab(this)">全部 <span class="tab-count">114</span></button>
-<button class="tab-btn" data-cat="台股個股" style="--accent:#4A9EFF" onclick="switchTab(this)">台股個股 <span class="tab-count">18</span></button>
-<button class="tab-btn" data-cat="美股個股" style="--accent:#7C6FFF" onclick="switchTab(this)">美股個股 <span class="tab-count">31</span></button>
-<button class="tab-btn" data-cat="台股大盤" style="--accent:#2DC78A" onclick="switchTab(this)">台股大盤 <span class="tab-count">16</span></button>
-<button class="tab-btn" data-cat="美股大盤" style="--accent:#34D399" onclick="switchTab(this)">美股大盤 <span class="tab-count">11</span></button>
-<button class="tab-btn" data-cat="總經" style="--accent:#FF6B35" onclick="switchTab(this)">總經 <span class="tab-count">19</span></button>
-<button class="tab-btn" data-cat="操盤心法" style="--accent:#A78BFA" onclick="switchTab(this)">操盤心法 <span class="tab-count">68</span></button>
+    <button class="tab-btn" data-cat="全部" style="--accent:#94A3B8" onclick="switchTab(this)">全部 <span class="tab-count">69</span></button>
+<button class="tab-btn" data-cat="台股個股" style="--accent:#4A9EFF" onclick="switchTab(this)">台股個股 <span class="tab-count">11</span></button>
+<button class="tab-btn" data-cat="美股個股" style="--accent:#7C6FFF" onclick="switchTab(this)">美股個股 <span class="tab-count">30</span></button>
+<button class="tab-btn" data-cat="台股大盤" style="--accent:#2DC78A" onclick="switchTab(this)">台股大盤 <span class="tab-count">11</span></button>
+<button class="tab-btn" data-cat="美股大盤" style="--accent:#34D399" onclick="switchTab(this)">美股大盤 <span class="tab-count">8</span></button>
+<button class="tab-btn" data-cat="總經" style="--accent:#FF6B35" onclick="switchTab(this)">總經 <span class="tab-count">14</span></button>
+<button class="tab-btn" data-cat="操盤心法" style="--accent:#A78BFA" onclick="switchTab(this)">操盤心法 <span class="tab-count">31</span></button>
 
   </div>
   <div class="content">
     <div class="tab-panel" data-cat="全部">
+<div class="post-card">
+  <div class="post-header">
+    <span class="page-name">股狼球隊</span>
+    <span class="post-time">今日 08:02 抓取</span>
+    <span class="badge badge-bull">偏多</span>
+  </div>
+  <div class="cat-tags"><span class="cat-tag" style="background:#7C6FFF22;color:#7C6FFF;border:1px solid #7C6FFF44">美股個股</span><span class="cat-tag" style="background:#FF6B3522;color:#FF6B35;border:1px solid #FF6B3544">總經</span></div>
+  <div class="post-headline">MRNA VRBPAC全票支持流感疫苗，FDA最終獲批在即多頭排列</div>
+  <ul class="key-points"><li>mRNA-1010獲VRBPAC 9:0全票支持，8月5日FDA最終獲批障礙已除</li><li>帳上81億美元現金、削減22億營運支出，財務保護傘穩固</li><li>今年迄今漲+69.4%，股價多頭排列，伊波拉疫情警戒強化生技防禦資金動能</li></ul>
+  <div class="post-footer">
+    <div class="stock-tags"><span class="stock-tag">MRNA</span><span class="stock-tag">XBI</span><span class="stock-tag">MRK</span><span class="stock-tag">IBB</span><span class="stock-tag">XLV</span></div>
+    <a href="https://www.facebook.com/stockwolfteams/posts/pfbid02dP5JGa1j5LrCpJGC9F9gJKxi4RMqHWJ79rAdvsMW9oFEi5W4SB5hVFWwKjNYtMS8l" target="_blank" class="fb-link">查看原文 →</a>
+  </div>
+</div>
+<div class="post-card">
+  <div class="post-header">
+    <span class="page-name">盤整之王 Consolidation</span>
+    <span class="post-time">今日 08:02 抓取</span>
+    <span class="badge badge-bear">偏空</span>
+  </div>
+  <div class="cat-tags"><span class="cat-tag" style="background:#4A9EFF22;color:#4A9EFF;border:1px solid #4A9EFF44">台股個股</span><span class="cat-tag" style="background:#2DC78A22;color:#2DC78A;border:1px solid #2DC78A44">台股大盤</span></div>
+  <div class="post-headline">華通違約交割金額龐大遭彭博報導，台灣市場制度形象受損</div>
+  <ul class="key-points"><li>華通今日發生「併軌」違約交割，金額之高引發彭博國際媒體關注</li><li>此事件令台灣市場在外國投資人眼中形象受損，與韓國市場問題相提並論</li><li>作者認為此事令人尷尬，隱含對台股市場制度面的憂慮</li></ul>
+  <div class="post-footer">
+    <div class="stock-tags"><span class="stock-tag">2313</span></div>
+    <a href="https://www.facebook.com/doinvestfuture/posts/pfbid0nnZxxutTvfReuEkRmAuMU6stWUWrDwvbUCN4AiS4TjhuTQUfzQBQ1CxAronXNm5l" target="_blank" class="fb-link">查看原文 →</a>
+  </div>
+</div>
+<div class="post-card">
+  <div class="post-header">
+    <span class="page-name">盤整之王 Consolidation</span>
+    <span class="post-time">今日 08:02 抓取</span>
+    <span class="badge badge-neu">中性</span>
+  </div>
+  <div class="cat-tags"><span class="cat-tag" style="background:#7C6FFF22;color:#7C6FFF;border:1px solid #7C6FFF44">美股個股</span><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
+  <div class="post-headline">閃迪MU盤前跌爛但記憶體仍是AI風向球，回調-5%可分批追</div>
+  <ul class="key-points"><li>記憶體是美國AI市場重要風向球，記憶體穩則AI不會有問題</li><li>閃迪跌5%仍在2000以上，僅回吐上週一以來漲幅，屬正常回調</li><li>追閃迪策略：資金分三筆，見-5%以上追一筆，習慣記憶體鬼故事</li></ul>
+  <div class="post-footer">
+    <div class="stock-tags"><span class="stock-tag">SNDK</span><span class="stock-tag">MU</span></div>
+    <a href="https://www.facebook.com/doinvestfuture/posts/pfbid0312SmcEh4ghbvKJPXAZYS12NtiPLzjdnd3ahGuYuX4oePNcGzQWvANoRpWJd5PFvMl" target="_blank" class="fb-link">查看原文 →</a>
+  </div>
+</div>
+<div class="post-card">
+  <div class="post-header">
+    <span class="page-name">老墨 Mofi</span>
+    <span class="post-time">今日 08:01 抓取</span>
+    <span class="badge badge-neu">中性</span>
+  </div>
+  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
+  <div class="post-headline">老墨將自製XQ技術指標公開於GitHub，綁優惠碼可免費取用</div>
+  <ul class="key-points"><li>自製XQ腳本已上傳GitHub，綁優惠碼(@MOFI)可直接下載匯入使用</li><li>指標講求簡單有效：雙重颱風K線判趨勢、EXCEED CHARGE判盤整結束、RS STRONGER看資金</li><li>後續將陸續釋出籌碼、基本面、選股、警報器等腳本，客製化需求亦可提出</li></ul>
+  <div class="post-footer">
+    <div class="stock-tags"></div>
+    <a href="https://www.facebook.com/mofi.investment/posts/pfbid02bJBMWDXDNaEJjWrwps1kTAaB6bxYierAbjinmtctqgG33dXEYsfaP3aJC8p3pxinl" target="_blank" class="fb-link">查看原文 →</a>
+  </div>
+</div>
+<div class="post-card">
+  <div class="post-header">
+    <span class="page-name">老墨 Mofi</span>
+    <span class="post-time">今日 08:01 抓取</span>
+    <span class="badge badge-neu">中性</span>
+  </div>
+  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
+  <div class="post-headline">用AI訓練奇門遁甲算命機器人，量化命理邏輯比人更精準</div>
+  <ul class="key-points"><li>AI訓練後可量化奇門遁甲運算，效果不輸人工解讀</li><li>打造算命AI需三要素：曆法算法、盤面解讀skill、大量案例</li><li>考慮直播教學帶大家打造個人算命機器人</li></ul>
+  <div class="post-footer">
+    <div class="stock-tags"></div>
+    <a href="https://www.facebook.com/mofi.investment/posts/pfbid023E1ACB7zTGHJME3s2SWC7rY1EnYmdQWCEHLg6xpcQ7G7ZqETQvVcT21TXTD7ettGl" target="_blank" class="fb-link">查看原文 →</a>
+  </div>
+</div>
+<div class="post-card">
+  <div class="post-header">
+    <span class="page-name">OP 凱文</span>
+    <span class="post-time">今日 08:01 抓取</span>
+    <span class="badge badge-bull">偏多</span>
+  </div>
+  <div class="cat-tags"><span class="cat-tag" style="background:#FF6B3522;color:#FF6B35;border:1px solid #FF6B3544">總經</span></div>
+  <div class="post-headline">作者看好RWA（真實世界資產代幣化）未來發展潛力</div>
+  <ul class="key-points"><li>對RWA（真實世界資產代幣化）的發展抱持高度期待</li></ul>
+  <div class="post-footer">
+    <div class="stock-tags"></div>
+    <a href="https://www.facebook.com/OptionPlayerKevin/posts/pfbid028xDkgh2QZ2UoCFJe52nvrHncxaFun2GVt3UvwErqmwKMsN7g7SQJfPH1X317q2jyl" target="_blank" class="fb-link">查看原文 →</a>
+  </div>
+</div>
+<div class="post-card">
+  <div class="post-header">
+    <span class="page-name">OP 凱文</span>
+    <span class="post-time">今日 08:01 抓取</span>
+    <span class="badge badge-neu">中性</span>
+  </div>
+  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
+  <div class="post-headline">台指期貨(全)是什麼？新手必知夜盤報價看法</div>
+  <ul class="key-points"><li>台指近(全)代表日盤+夜盤的完整報價，非僅日盤數據</li><li>日盤收盤後報價不動屬正常，需切換至(全)才能看夜盤即時報價</li><li>夜盤交易時間為1500至隔日0500，新手容易誤以為系統異常</li></ul>
+  <div class="post-footer">
+    <div class="stock-tags"></div>
+    <a href="https://www.facebook.com/OptionPlayerKevin/posts/pfbid037Rm19Jno9AsDffvgfvxTgnkEGR4qc2jivJHa5jxLx2B9Lnpuc3aYgw2kpMZd562el" target="_blank" class="fb-link">查看原文 →</a>
+  </div>
+</div>
+<div class="post-card">
+  <div class="post-header">
+    <span class="page-name">善甲狼 a 機智生活</span>
+    <span class="post-time">今日 08:01 抓取</span>
+    <span class="badge badge-neu">中性</span>
+  </div>
+  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
+  <div class="post-headline">爆倉後體悟分散風險，八帳戶持有八顆雞蛋</div>
+  <ul class="key-points"><li>曾有爆倉慘痛經歷，深刻體悟分散風險的重要性</li><li>實踐雞蛋不放同一籃子，開設八個帳戶分散持倉</li><li>以八顆雞蛋比喻多元配置，具體落實資金分散管理</li></ul>
+  <div class="post-footer">
+    <div class="stock-tags"></div>
+    <a href="https://www.facebook.com/WinWin17888/posts/pfbid02AVZ9Fi39oJQJHjEp2AJt1cy7pntUqcaxkozb9qGX2rbLkJTsun8gUcYCsaFqu88Zl" target="_blank" class="fb-link">查看原文 →</a>
+  </div>
+</div>
+<div class="post-card">
+  <div class="post-header">
+    <span class="page-name">杯米的股市筆記</span>
+    <span class="post-time">今日 08:01 抓取</span>
+    <span class="badge badge-neu">中性</span>
+  </div>
+  <div class="cat-tags"><span class="cat-tag" style="background:#4A9EFF22;color:#4A9EFF;border:1px solid #4A9EFF44">台股個股</span></div>
+  <div class="post-headline">訊芯股價異常波動，引發市場關注</div>
+  <ul class="key-points"><li>訊芯近期走勢異常，作者對其行為感到困惑</li><li>留言區網友同樣認為訊芯表現瘋狂</li></ul>
+  <div class="post-footer">
+    <div class="stock-tags"><span class="stock-tag">6451</span></div>
+    <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid0NyWVuBSDYyGdfjdafrNHX9PN6HCn11pfRgpBChT9BE9QGStuaEFcU7CmX3Nzsatjl&id=61569938009012" target="_blank" class="fb-link">查看原文 →</a>
+  </div>
+</div>
+<div class="post-card">
+  <div class="post-header">
+    <span class="page-name">Yu Master Investment</span>
+    <span class="post-time">今日 08:00 抓取</span>
+    <span class="badge badge-bull">偏多</span>
+  </div>
+  <div class="cat-tags"><span class="cat-tag" style="background:#7C6FFF22;color:#7C6FFF;border:1px solid #7C6FFF44">美股個股</span><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
+  <div class="post-headline">某美股進入上升通道BUY ZONE，非PLTR，基本面尚可</div>
+  <ul class="key-points"><li>利用上升/下降通道交易策略，該美股已進入直博買入區間</li><li>個股基本面評估不差，具備進場條件</li><li>詳細標的與分析僅於會員區公開，非PLTR</li></ul>
+  <div class="post-footer">
+    <div class="stock-tags"></div>
+    <a href="https://www.facebook.com/yumasterinvestment/posts/pfbid02tdnYNP7yoFUxb9BFXuzYwiJvsika7AbHpC3QuEcFyqQjqDEeNe8GMBD6SAnmX9cil" target="_blank" class="fb-link">查看原文 →</a>
+  </div>
+</div>
+<div class="post-card">
+  <div class="post-header">
+    <span class="page-name">Yu Master Investment</span>
+    <span class="post-time">今日 08:00 抓取</span>
+    <span class="badge badge-bull">偏多</span>
+  </div>
+  <div class="cat-tags"><span class="cat-tag" style="background:#7C6FFF22;color:#7C6FFF;border:1px solid #7C6FFF44">美股個股</span></div>
+  <div class="post-headline">BE扭虧為盈里程碑，現金流逆轉但311%負債比仍需警惕</div>
+  <ul class="key-points"><li>2026年Q1 GAAP淨利潤7,070萬美元，成功扭虧為盈，服務毛利率轉正至13.3%</li><li>單季營運現金流達7,360萬美元，較去年同期負1.1億美元大幅逆轉，內生造血能力確立</li><li>債務權益比高達311.5%，但獲利改善後去槓桿能力逐步增強，違約風險大幅降低</li></ul>
+  <div class="post-footer">
+    <div class="stock-tags"><span class="stock-tag">BE</span></div>
+    <a href="https://www.facebook.com/yumasterinvestment/posts/pfbid02PkwTgGWJKdw6Wvcz3ceZFN4T6vem4Wt2npHtA9WExQwX1WzRDwkApZSZfrYMDsTil" target="_blank" class="fb-link">查看原文 →</a>
+  </div>
+</div>
+<div class="post-card">
+  <div class="post-header">
+    <span class="page-name">Yu Master Investment</span>
+    <span class="post-time">今日 08:00 抓取</span>
+    <span class="badge badge-bull">偏多</span>
+  </div>
+  <div class="cat-tags"><span class="cat-tag" style="background:#7C6FFF22;color:#7C6FFF;border:1px solid #7C6FFF44">美股個股</span></div>
+  <div class="post-headline">LLY股價創歷史新高，EMA推薦批准BTK抑制劑Jaypirca</div>
+  <ul class="key-points"><li>LLY大漲逾6%報1200.55美元，創歷史新高</li><li>EMA人用藥品委員會推薦批准Jaypirca用於治療CLL患者</li><li>此次批准涵蓋BTK抑制劑治療過或未治療過患者的全線療程</li></ul>
+  <div class="post-footer">
+    <div class="stock-tags"><span class="stock-tag">LLY</span></div>
+    <a href="https://www.facebook.com/yumasterinvestment/posts/pfbid026cufxMGYTtAc6dq1p6FFYvqu6zhxuT3eMBB7TVZQMUKVo8n4c56xgreB5WHfWmqRl" target="_blank" class="fb-link">查看原文 →</a>
+  </div>
+</div>
 <div class="post-card">
   <div class="post-header">
     <span class="page-name">股狼球隊</span>
@@ -130,20 +642,6 @@
 </div>
 <div class="post-card">
   <div class="post-header">
-    <span class="page-name">善甲狼 a 機智生活</span>
-    <span class="post-time">今日 23:01 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">曾經爆倉學到教訓：分八個帳戶持有八顆雞蛋分散風險</div>
-  <ul class="key-points"><li>親身爆倉經歷讓作者深刻體會分散風險的重要性</li><li>將資金拆分至八個帳戶，持有八種不同資產</li><li>實踐「雞蛋不放同一籃子」的分散投資原則</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/WinWin17888/posts/pfbid02g4hVL8sUANmVFgLp79frhcw7W6b7TTvseYgAN2QACgsV62WpEetD6ekb7JdMLajsl" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
     <span class="page-name">海伊股倉 Hy's Stockhouse</span>
     <span class="post-time">今日 23:00 抓取</span>
     <span class="badge badge-neu">中性</span>
@@ -154,20 +652,6 @@
   <div class="post-footer">
     <div class="stock-tags"><span class="stock-tag">NBIS</span></div>
     <a href="https://www.facebook.com/Hy.Stockhouse/posts/pfbid02gsLDDunLRBoysKF6noV9uarqjZhdBWJKh6GzNNb4abLBwdxkWBug3MMLzVcLSPxpl" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">菜鳥投資成長日記</span>
-    <span class="post-time">今日 23:00 抓取</span>
-    <span class="badge badge-bear">偏空</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#4A9EFF22;color:#4A9EFF;border:1px solid #4A9EFF44">台股個股</span><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">作者抱怨虧損，感嘆市場上仍有人持有愛金食</div>
-  <ul class="key-points"><li>作者目前持倉處於虧損狀態</li><li>市場上仍有不少人持有愛金食相關股票</li><li>言語中透露對目前投資處境的無奈與困惑</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid02D9eexSL3tTZb4BQddU24GyMotDAwLexe5S3g8B3MD3FgnfQyzC1BL78Gbqv8fvxwl&id=100064496752266" target="_blank" class="fb-link">查看原文 →</a>
   </div>
 </div>
 <div class="post-card">
@@ -258,34 +742,6 @@
   <div class="post-header">
     <span class="page-name">Yu Master Investment</span>
     <span class="post-time">今日 20:28 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#7C6FFF22;color:#7C6FFF;border:1px solid #7C6FFF44">美股個股</span><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">分析 MRVL（Marvell Technology）基本面及技術面，並提示需識別「聰明錢陷阱」</div>
-  <ul class="key-points"><li>推廣 Facebook 訂閱服務（HK$78/月），提供整合自 Bloomberg 及 Financial Times 的投資資訊與個人觀點</li><li>詳細分析內容僅限訂閱用戶查看，公開貼文未披露具體數據或操作建議</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"><span class="stock-tag">MRVL</span></div>
-    <a href="https://www.facebook.com/yumasterinvestment/posts/pfbid036eDeWo4n1dxYXPY6u31FaPzR4dvZdCsUWkSY5XxwREAAESFVDKtYqZ8FVCNfXS7hl" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">Yu Master Investment</span>
-    <span class="post-time">今日 20:28 抓取</span>
-    <span class="badge badge-bear">偏空</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#7C6FFF22;color:#7C6FFF;border:1px solid #7C6FFF44">美股個股</span><span class="cat-tag" style="background:#FF6B3522;color:#FF6B35;border:1px solid #FF6B3544">總經</span></div>
-  <div class="post-headline">蘋果因記憶體晶片成本急漲被迫調漲產品售價100至300美元，股價一度下跌6%</div>
-  <ul class="key-points"><li>中國內地消費疲弱（李寧、美團、618電商數據下滑），蘋果大幅加價恐進一步壓制需求</li><li>蘋果無法與SK海力士或三星議價，也沒有替代供應商，成本壓力難以轉移</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"><span class="stock-tag">AAPL</span><span class="stock-tag">TSM</span></div>
-    <a href="https://www.facebook.com/yumasterinvestment/posts/pfbid02vWfj2SbHP7c8GGMEaPGw921NFhdqwdFi9ZaM73PDYTi6Sr5YCCNV6Mcxvbf7975fl" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">Yu Master Investment</span>
-    <span class="post-time">今日 20:28 抓取</span>
     <span class="badge badge-bull">偏多</span>
   </div>
   <div class="cat-tags"><span class="cat-tag" style="background:#7C6FFF22;color:#7C6FFF;border:1px solid #7C6FFF44">美股個股</span></div>
@@ -312,20 +768,6 @@
 </div>
 <div class="post-card">
   <div class="post-header">
-    <span class="page-name">老墨 Mofi</span>
-    <span class="post-time">今日 20:02 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">AI訓練後可有效應用於奇門遁甲等命理運算，關鍵在於理解AI訓練方式與命理底層邏輯</div>
-  <ul class="key-points"><li>打造AI算命工具三要素：正確曆法算法、盤面解讀技術、大量案例</li><li>作者考慮直播教學如何打造個人算命機器人</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/mofi.investment/posts/pfbid036meM7LkMJU9Pk4aG8RXoEQsNNeKzc4oCig2YbGh2gk4rimZJzkMGymqJpp5DCgCWl" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
     <span class="page-name">OP 凱文</span>
     <span class="post-time">今日 20:02 抓取</span>
     <span class="badge badge-neu">中性</span>
@@ -336,48 +778,6 @@
   <div class="post-footer">
     <div class="stock-tags"><span class="stock-tag">5871</span></div>
     <a href="https://www.facebook.com/OptionPlayerKevin/posts/pfbid0TN5TnN5mjvAjSLAZcnzRR7nkjaKoFsjCzrMnxL1VbMaBJSGDoax4zsfqoK9VoXBql" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">善甲狼 a 機智生活</span>
-    <span class="post-time">今日 20:01 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">以幽默自嘲方式諷刺散戶常見行為：看到下跌想抄底、看到上漲想追高、半夜看美股等惡習</div>
-  <ul class="key-points"><li>點出過度沉迷股市的心理問題，如無法自制地研究題材（HBM、CoWoS、ASIC等）與頻繁看盤</li><li>文末拋出台積電（2330）是否還有機會的問題，顯示作者對台積電仍保有關注與潛在興趣</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"><span class="stock-tag">2330</span></div>
-    <a href="https://www.facebook.com/WinWin17888/posts/pfbid02ongM2iS6B5vhGfetbASHzw63uaJE7pw7iubqQW4w2tjxX47kRad65mmA5Rp2U8Knl" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">肥多多 DD 的筆記</span>
-    <span class="post-time">今日 20:01 抓取</span>
-    <span class="badge badge-bear">偏空</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#7C6FFF22;color:#7C6FFF;border:1px solid #7C6FFF44">美股個股</span><span class="cat-tag" style="background:#FF6B3522;color:#FF6B35;border:1px solid #FF6B3544">總經</span></div>
-  <div class="post-headline">中國政府嚴打走資與不法獲利，FUTU、TIGR首當其衝，現階段不宜接刀</div>
-  <ul class="key-points"><li>類比過去線上教育股遭監管重擊折價九成的歷史，暗示跌幅可能更深</li><li>作者預期後續仍有多波下跌（第二刀、第三刀），警告跌勢尚未結束</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"><span class="stock-tag">FUTU</span><span class="stock-tag">TIGR</span></div>
-    <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid02qUy67t49sGLL824YVSzvcy7jRZNccgEht71PZ5WV3awVokAHQHXUg67Kf1UKEKZKl&id=100080135961392" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">肥多多 DD 的筆記</span>
-    <span class="post-time">今日 20:01 抓取</span>
-    <span class="badge badge-bear">偏空</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#FF6B3522;color:#FF6B35;border:1px solid #FF6B3544">總經</span><span class="cat-tag" style="background:#7C6FFF22;color:#7C6FFF;border:1px solid #7C6FFF44">美股個股</span></div>
-  <div class="post-headline">川普剛公開指責台灣偷走晶片產業，地緣政治敏感度升高</div>
-  <ul class="key-points"><li>AMD在此敏感時機宣布加大台灣投資，被作者認為是挑釁川普</li><li>此舉可能加劇美台之間半導體產業的政治緊張局勢</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"><span class="stock-tag">AMD</span></div>
-    <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid01MzgdiwwtNdxF1eEfYqiFGPvwJC3Rk99rLXHKdUamoW2GcxmVfkBZ6uLQ6GuoNzVl&id=100080135961392" target="_blank" class="fb-link">查看原文 →</a>
   </div>
 </div>
 <div class="post-card">
@@ -396,34 +796,6 @@
 </div>
 <div class="post-card">
   <div class="post-header">
-    <span class="page-name">杯米的股市筆記</span>
-    <span class="post-time">今日 20:01 抓取</span>
-    <span class="badge badge-bear">偏空</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#2DC78A22;color:#2DC78A;border:1px solid #2DC78A44">台股大盤</span><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">本週台股從禮拜一創高到禮拜五急速破線，走勢急轉直下</div>
-  <ul class="key-points"><li>點名特定網路人物的行為（吃大餐、做多）作為市場反指標，帶有戲謔警示意味</li><li>作者自嘲後悔未提早信任這些『反指標』信號，情緒偏向懊悔與看空</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid0V9wJGLUYTfjbiJ7KzgiachzuBN2TzQGQX3oVXmKBigXWw5C4P9Yx5a7FpZx57HDMl&id=61569938009012" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">菜鳥投資成長日記</span>
-    <span class="post-time">今日 20:00 抓取</span>
-    <span class="badge badge-bull">偏多</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#4A9EFF22;color:#4A9EFF;border:1px solid #4A9EFF44">台股個股</span></div>
-  <div class="post-headline">台積電單日大漲4.15%，夜盤續漲2%，多頭氣勢強勁</div>
-  <ul class="key-points"><li>技術面突破上升通道上緣，視為強勢突破訊號</li><li>作者對台積電後市看法樂觀，預期持續創高</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"><span class="stock-tag">2330</span></div>
-    <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid033JNSbpmiKATs6KQDPXQqqBkXFVEmYYtqWRfjmE3bDtfnuyeZiRBbqnrGEGtiwqqzl&id=100064496752266" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
     <span class="page-name">Charlie 的操盤隨記</span>
     <span class="post-time">今日 20:00 抓取</span>
     <span class="badge badge-neu">中性</span>
@@ -434,20 +806,6 @@
   <div class="post-footer">
     <div class="stock-tags"></div>
     <a href="https://www.facebook.com/Charlie.Investing/posts/pfbid02s7erSq3rbtqvh1nMgmTZW5sJtyfbHKqBDtpEB8e5hqwh5UxKZmUFeVc5YY9JjyKYl" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">Yu Master Investment</span>
-    <span class="post-time">今日 20:00 抓取</span>
-    <span class="badge badge-bull">偏多</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span><span class="cat-tag" style="background:#34D39922;color:#34D399;border:1px solid #34D39944">美股大盤</span></div>
-  <div class="post-headline">美股近期大型科技股普遍下跌，但作者認為長期來看美股具信心保證，下跌後市場往往能夠挽回失地</div>
-  <ul class="key-points"><li>多數散戶虧損源於下跌期間缺乏信心、中途斬倉實現虧損，應避免此心理誤區</li><li>建議投資者慶祝小勝利、強化正向交易習慣，信心透過持續自律行動逐步建立</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"><span class="stock-tag">AAPL</span><span class="stock-tag">NVDA</span><span class="stock-tag">AVGO</span><span class="stock-tag">GOOGL</span><span class="stock-tag">AMZN</span></div>
-    <a href="https://www.facebook.com/yumasterinvestment/posts/pfbid0ARBnYMU8R3tTzRnc3nJ4QAd9n8o8AxdUVvraUrbd96E2vGNHH7CNxpzkjb4pBV8Fl" target="_blank" class="fb-link">查看原文 →</a>
   </div>
 </div>
 <div class="post-card">
@@ -494,20 +852,6 @@
 </div>
 <div class="post-card">
   <div class="post-header">
-    <span class="page-name">盤整之王 Consolidation</span>
-    <span class="post-time">今日 18:12 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">《脈動 2025》投資活動成功舉辦，一個多月準備期雖有意外但均被團隊妥善解決</div>
-  <ul class="key-points"><li>作者感謝主持人KoKo（MVP）、企劃溫溫、專員Iwen、大富翁股神K及攝影師Ian等核心團隊成員</li><li>作者承認自身能力有明顯不足，仍有進步空間，並推薦有辦活動需求者找KoKo與Ian合作</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/doinvestfuture/posts/pfbid02SqcAWbcVJ5b1UpcMB4UCq8YHfNMrhABcU3Dg1do9m9SeWFeM4Y32mXGLjdrqQnkhl" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
     <span class="page-name">老墨 Mofi</span>
     <span class="post-time">今日 18:12 抓取</span>
     <span class="badge badge-neu">中性</span>
@@ -522,34 +866,6 @@
 </div>
 <div class="post-card">
   <div class="post-header">
-    <span class="page-name">老墨 Mofi</span>
-    <span class="post-time">今日 18:12 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">LINE 社群重新開放加入，主要服務綁定 XQ 優惠碼 @MOFI 的朋友</div>
-  <ul class="key-points"><li>社群將提供獨家指標、介面及直播節目資訊，綁碼用戶可獲 PRO MAX 版本</li><li>加入連結請至原貼文留言區取得</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/mofi.investment/posts/pfbid06TJKjjkYCWwyCCbxBzqacAvBRbz8ivo9VkxeZ73byxrY9fPEKmvuSyiGhmmKefNil" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">老墨 Mofi</span>
-    <span class="post-time">今日 18:12 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">本文為愛神燈檯燈品牌業配，以親情故事包裝產品推廣</div>
-  <ul class="key-points"><li>作者提及自己踏入投資領域的契機來自母親的帶領，與投資內容關聯僅為背景鋪陳</li><li>無任何股票、市場分析或投資操作相關資訊</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/mofi.investment/posts/pfbid0hUPX8xK41m9VbZ72BpASbHC9xMhEuMDMq1GYFAmYvnEaQ5eAty5pqoPoESRtUvejl" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
     <span class="page-name">善甲狼 a 機智生活</span>
     <span class="post-time">今日 18:12 抓取</span>
     <span class="badge badge-bull">偏多</span>
@@ -560,20 +876,6 @@
   <div class="post-footer">
     <div class="stock-tags"></div>
     <a href="https://www.facebook.com/WinWin17888/posts/pfbid0784xdggXmZNWg1zH7Y1ELiLa7TcfBHaQ6GWZGLMccnA46WC8skJLXZZS2WayQRdvl" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">善甲狼 a 機智生活</span>
-    <span class="post-time">今日 18:12 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">群組採半實名制＋人工審核，每季升降制度，強調主動輸出才能成長</div>
-  <ul class="key-points"><li>每月需撰寫小作文（不限個股，涵蓋投資策略、經營方式或漏洞規則皆可）</li><li>進群門檻：填表申請＋私訊自我介紹，未收通知即代表未通過，群組主動篩選成員</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/WinWin17888/posts/pfbid022TzTVGKiUffSHPWWgrPLYUSqToogu3pfHrQ3kS14Kt8meo1hhN9rHncTdfSB45ril" target="_blank" class="fb-link">查看原文 →</a>
   </div>
 </div>
 <div class="post-card">
@@ -634,20 +936,6 @@
 </div>
 <div class="post-card">
   <div class="post-header">
-    <span class="page-name">杯米的股市筆記</span>
-    <span class="post-time">今日 18:11 抓取</span>
-    <span class="badge badge-bear">偏空</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#2DC78A22;color:#2DC78A;border:1px solid #2DC78A44">台股大盤</span></div>
-  <div class="post-headline">市場出現集體大跌，作者感到意外與無奈</div>
-  <ul class="key-points"><li>對於此波下跌是否為誘空陷阱，作者未明確表態</li><li>貼文情緒以驚訝與苦惱為主，缺乏具體操作建議</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid0aNzfYjs8ggsP1EJzLQPsvK3okns8G2U6WoVXT5LSTjuxgZrtqm41iUSSEsBwsfWyl&id=61569938009012" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
     <span class="page-name">海伊股倉 Hy's Stockhouse</span>
     <span class="post-time">今日 18:11 抓取</span>
     <span class="badge badge-bull">偏多</span>
@@ -662,34 +950,6 @@
 </div>
 <div class="post-card">
   <div class="post-header">
-    <span class="page-name">海伊股倉 Hy's Stockhouse</span>
-    <span class="post-time">今日 18:11 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">粉專官方聲明絕不會主動私訊任何粉絲</div>
-  <ul class="key-points"><li>目前存在冒充本粉專的假帳號（fake profile），請粉絲提高警覺</li><li>收到私訊請勿輕信，避免遭受詐騙</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/Hy.Stockhouse/posts/pfbid02Q36tu2Zqsymdub6fxzeYa51ULdzMxZhDrAaSR9TbzeMsFbB7DgbELT7a2RAMGBxVl" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">菜鳥投資成長日記</span>
-    <span class="post-time">今日 18:11 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#4A9EFF22;color:#4A9EFF;border:1px solid #4A9EFF44">台股個股</span></div>
-  <div class="post-headline">作者宣告這是最後一次撰寫台達電相關分析</div>
-  <ul class="key-points"><li>自評內容缺乏獨特見解，認為 AI 即可生成類似內容</li><li>無明確投資建議，僅為個人心情紀錄</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"><span class="stock-tag">2308</span></div>
-    <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid0zX4ufhvkYVgaZQDaqMCG8VHf9a889wiA3Sj4MpmxSXoiECmQSpSzrYaxC5p4AoGil&id=100064496752266" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
     <span class="page-name">菜鳥投資成長日記</span>
     <span class="post-time">今日 18:11 抓取</span>
     <span class="badge badge-neu">中性</span>
@@ -700,48 +960,6 @@
   <div class="post-footer">
     <div class="stock-tags"></div>
     <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid02YBKv9N3L9fj8zq7zbvpD7DECJRTC2igHd7L6RTTibtfD8ttdy3UvSgaDseyxBHKxl&id=100064496752266" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">Charlie 的操盤隨記</span>
-    <span class="post-time">今日 18:11 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">詐騙手法已從仿冒粉絲專頁改為個人帳號，主動加好友並私訊，請粉絲提高警覺</div>
-  <ul class="key-points"><li>作者聲明不會主動加好友、無Line群組，任何此類行為皆為詐騙</li><li>臉書檢舉機制形同虛設，作者認為平台難以期待主動改善，線圖分析更新暫緩</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/Charlie.Investing/posts/pfbid0248yDREXasTDHH49mEs1ZLm3FFGwF1CPwb7sggUCHSmxDX9LvZ5ytGJsY31xYh9vFl" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">Charlie 的操盤隨記</span>
-    <span class="post-time">今日 18:11 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">粉專定位為個人交易紀錄，非投資建議，強調讀者須自行研究，切勿盲目跟單</div>
-  <ul class="key-points"><li>技術分析人人可學，但找出行情方向與正確進出場點位需靠自身市場經驗與盤感養成</li><li>澄清本人未帶群組，建議新追蹤者從PTT五篇歷史文章搭配粉專文章系統性學習</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/Charlie.Investing/posts/pfbid02YEVdgUZtutzKNjM6h4eeMvSTVjsWMT5SWXzdTdLsHEratcvxQCRk2bLyZZkySVoHl" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">Yu Master Investment</span>
-    <span class="post-time">今日 18:10 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">課程融合技術分析與價值投資，涵蓋CWH、VCP、RSI、MACD等多種技術指標及EPS、FCF、護城河等基本面要素</div>
-  <ul class="key-points"><li>以港股及美股實際個案（騰訊、阿里、AAPL、AVGO等）作實戰操作教學，目標提升穩定獲利能力</li><li>課程費用港幣$3,988，錄製影片可自行觀看，附贈SanDisk USB教材及一年Whatsapp學習交流群</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"><span class="stock-tag">700</span><span class="stock-tag">9988</span><span class="stock-tag">27</span><span class="stock-tag">1299</span><span class="stock-tag">16</span><span class="stock-tag">AAPL</span><span class="stock-tag">META</span><span class="stock-tag">AVGO</span></div>
-    <a href="https://www.facebook.com/yumasterinvestment/posts/pfbid022nmwL88xA7RxY5AJgBxXgjUJdi6ijeyZc1BQyFSwAKLMSmLbJMcVTGnj9BFkbrLrl" target="_blank" class="fb-link">查看原文 →</a>
   </div>
 </div>
 <div class="post-card">
@@ -770,62 +988,6 @@
   <div class="post-footer">
     <div class="stock-tags"><span class="stock-tag">GOOGL</span><span class="stock-tag">VZ</span><span class="stock-tag">HON</span><span class="stock-tag">GE</span><span class="stock-tag">NKE</span><span class="stock-tag">DIA</span><span class="stock-tag">XLC</span></div>
     <a href="https://www.facebook.com/stockwolfteams/posts/pfbid02kKjREa5g8rTCm7x1vLmb2HyqNAe2gyvo1rpq2q5iHv1JLY5DqpPxpNQGQQH3P8aXl" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">盤整之王 Consolidation</span>
-    <span class="post-time">今日 16:46 抓取</span>
-    <span class="badge badge-bull">偏多</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#FF6B3522;color:#FF6B35;border:1px solid #FF6B3544">總經</span></div>
-  <div class="post-headline">今年不可能升息</div>
-  <ul class="key-points"><li>貨幣政策預期維持寬鬆</li><li>引用「杯米」觀點作為依據</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/doinvestfuture/posts/pfbid02DVrTLhKFo5EqSRhVbu7hdMkAjoDd5vzYU6p3j7BSBRBWMgzMFeRd8ACgsZkh35x5l" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">盤整之王 Consolidation</span>
-    <span class="post-time">今日 16:46 抓取</span>
-    <span class="badge badge-bull">偏多</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#4A9EFF22;color:#4A9EFF;border:1px solid #4A9EFF44">台股個股</span></div>
-  <div class="post-headline">作者後悔曾說過某句話，但未說明具體內容</div>
-  <ul class="key-points"><li>在留言中提及聯發科（2454），隱含正面態度</li><li>貼文資訊有限，核心觀點不明確</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"><span class="stock-tag">2454</span></div>
-    <a href="https://www.facebook.com/doinvestfuture/posts/pfbid02WPMmiRXtLoxrpUwJtGneGB3Pt6iNb7qh4cZe4asyos1PRWzydn2XuLUXT9SxTb5Ll" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">盤整之王 Consolidation</span>
-    <span class="post-time">今日 16:46 抓取</span>
-    <span class="badge badge-bear">偏空</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">30%的回調屬於預期內，呼籲交易員不必恐慌</div>
-  <ul class="key-points"><li>強調成熟交易員應控制倉位、不讓短期盈虧影響長期判斷</li><li>自嘲打開帳戶後倉位竟不見，以幽默方式暗示自身遭受重大損失</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/doinvestfuture/posts/pfbid02Cp6ozvbHsSFLT8ho6ANogXYCX9mHoFGt45fjcNdN879JaRngpk7ZSewrHTH92zHtl" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">老墨 Mofi</span>
-    <span class="post-time">今日 16:46 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">順勢而為是投資核心原則，不應與市場對抗</div>
-  <ul class="key-points"><li>應反思自身操作方向是否與行情一致，而非抱怨市場</li><li>投資心態調整優先於預測行情走向</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/mofi.investment/posts/pfbid07De1A2B37eExRPdsivPd6QhdX8tqkR3FhxdjALZaA3Pk8k3WBZ81bL5hGQQKxeyBl" target="_blank" class="fb-link">查看原文 →</a>
   </div>
 </div>
 <div class="post-card">
@@ -872,48 +1034,6 @@
 </div>
 <div class="post-card">
   <div class="post-header">
-    <span class="page-name">善甲狼 a 機智生活</span>
-    <span class="post-time">今日 16:46 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">以幽默筆法描述股市投資成癮的心理歷程，包含追高、抄底、半夜看美股等行為</div>
-  <ul class="key-points"><li>點出散戶常見的投資陷阱：衝動加碼、無法自制、越跌越想買的末期心態</li><li>結尾反諷式地詢問台積電後市，暗示即便知道問題所在，投資人仍難以自拔</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"><span class="stock-tag">2330</span></div>
-    <a href="https://www.facebook.com/WinWin17888/posts/pfbid0jwEdr3WGKc7Lh7GBi8eN6SwBuzxDNJnjZcuu3Tuti4chDhndm9CQCpBg9m6GMQzNl" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">善甲狼 a 機智生活</span>
-    <span class="post-time">今日 16:46 抓取</span>
-    <span class="badge badge-bear">偏空</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span><span class="cat-tag" style="background:#FF6B3522;color:#FF6B35;border:1px solid #FF6B3544">總經</span></div>
-  <div class="post-headline">大宗商品（石油、黃金、天然氣等）有自己的供需週期，研究透徹即可找到投資機會，不必局限於股票</div>
-  <ul class="key-points"><li>群友看空石油並放空，已獲數千萬美元等級報酬，市場常出現「送分題」</li><li>投資核心在於能否發現機會、做好準備，以及當機會來臨時敢不敢執行</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/WinWin17888/posts/pfbid02usY6sXyujdkbocs6GoMGpep9b68ZKriBCvTrZ56spWDw2MfpFT8TCdBf2eiaxEiUl" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">善甲狼 a 機智生活</span>
-    <span class="post-time">今日 16:46 抓取</span>
-    <span class="badge badge-bear">偏空</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span><span class="cat-tag" style="background:#2DC78A22;color:#2DC78A;border:1px solid #2DC78A44">台股大盤</span></div>
-  <div class="post-headline">社群炒作氛圍誇大獲利，吸引散戶追高後往往迎來暴跌，疑似存在「釣魚上車」現象</div>
-  <ul class="key-points"><li>融資、質押等高槓桿操作在投資社群中盛行，風險極高</li><li>跟風熱門題材（記憶體、被動元件、功率半導體）追漲，往往成為最後接盤者</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/WinWin17888/posts/pfbid0U7DVReqrHbNA28ejmeZ5yBqDsUf649yj5YRM7e82gdBstVnHCJnXgxMBa2fXZrDAl" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
     <span class="page-name">肥多多 DD 的筆記</span>
     <span class="post-time">今日 16:45 抓取</span>
     <span class="badge badge-neu">中性</span>
@@ -928,48 +1048,6 @@
 </div>
 <div class="post-card">
   <div class="post-header">
-    <span class="page-name">杯米的股市筆記</span>
-    <span class="post-time">今日 16:45 抓取</span>
-    <span class="badge badge-bear">偏空</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#4A9EFF22;color:#4A9EFF;border:1px solid #4A9EFF44">台股個股</span></div>
-  <div class="post-headline">作者對訊芯近期走勢感到困惑或不滿</div>
-  <ul class="key-points"><li>語氣帶有驚訝與調侃，暗示該股表現不如預期</li><li>未提供具體操作建議或數據，屬情緒性表達</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"><span class="stock-tag">6451</span></div>
-    <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid02SX9gpM4aQ7k48QAJPPo5tosQAmDKMTyACH16yTSbQchiLFqCQhWt2tNatB9jCWNXl&id=61569938009012" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">杯米的股市筆記</span>
-    <span class="post-time">今日 16:45 抓取</span>
-    <span class="badge badge-bear">偏空</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#2DC78A22;color:#2DC78A;border:1px solid #2DC78A44">台股大盤</span><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">週一創高、週五即跌破支撐，本週大盤急速反轉向下</div>
-  <ul class="key-points"><li>作者後悔未聽從市場警示訊號（摩股資本吃大餐、巴逆逆做多）提前應對</li><li>以自嘲語氣提醒自己與讀者，未來要重視關鍵警示訊號，不可輕忽</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid02YhaVBW6uJqy5hfb4BeMGaiF3ZJL9oL9P5hzLZkP7UWawAwBw9d8XG7L8naKrmKmwl&id=61569938009012" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">杯米的股市筆記</span>
-    <span class="post-time">今日 16:45 抓取</span>
-    <span class="badge badge-bear">偏空</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#2DC78A22;color:#2DC78A;border:1px solid #2DC78A44">台股大盤</span></div>
-  <div class="post-headline">市場出現集體大跌走勢，令作者感到意外</div>
-  <ul class="key-points"><li>作者對此波下跌未提出明確原因或解釋</li><li>整體語氣偏向無奈與情緒性反應，非理性分析</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid02eQbP2Z4hMiz5N9JTKUdXU9uGJRKPYEXkrKZJLFTPeRwi2vXjiCVjwH8883DXnB4Yl&id=61569938009012" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
     <span class="page-name">海伊股倉 Hy's Stockhouse</span>
     <span class="post-time">今日 16:45 抓取</span>
     <span class="badge badge-neu">中性</span>
@@ -980,20 +1058,6 @@
   <div class="post-footer">
     <div class="stock-tags"><span class="stock-tag">NVDA</span><span class="stock-tag">TSLA</span><span class="stock-tag">MSFT</span><span class="stock-tag">GOOG</span><span class="stock-tag">AMZN</span><span class="stock-tag">META</span><span class="stock-tag">PLTR</span><span class="stock-tag">AVGO</span></div>
     <a href="https://www.facebook.com/Hy.Stockhouse/posts/pfbid0eHVk3qYcHUd2tPt4tDxrsVB1NUqwvqj5E4grNWDg6KPh1zYxhX7rtqs2tqhJa6Vdl" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">菜鳥投資成長日記</span>
-    <span class="post-time">今日 16:45 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">發現一個新的「報平安」功能，讓用戶可向親友告知自身狀況</div>
-  <ul class="key-points"><li>若真正遇到緊急事故，當事人可能無法按下報平安，功能存在實用性矛盾</li><li>若親友未收到報平安訊息，反而可能引發不必要的擔憂</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid0EAjV64uBjBU8CFain3rxwYp6Hqt46UiNpTeGDwjvWppFQeJZaAagEYJbeoQ1Dakwl&id=100064496752266" target="_blank" class="fb-link">查看原文 →</a>
   </div>
 </div>
 <div class="post-card">
@@ -1026,20 +1090,6 @@
 </div>
 <div class="post-card">
   <div class="post-header">
-    <span class="page-name">Charlie 的操盤隨記</span>
-    <span class="post-time">今日 16:45 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">M6 Max 與 M6 Ultra 可能不會推出，產品線出現跳代情況</div>
-  <ul class="key-points"><li>Apple 產品漲價趨勢明顯，等待新品可能面臨更高購買成本</li><li>作者認為提早入手 M5 Max 是正確決策，避免既漲價又須繼續等待的雙重損失</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"><span class="stock-tag">AAPL</span></div>
-    <a href="https://www.facebook.com/Charlie.Investing/posts/pfbid0G1sM47wCJF3iFNJuaw1zSD1o3kmutfREY68yofm3ZLK6EDy75QrtPCJikQVjwXtLl" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
     <span class="page-name">Yu Master Investment</span>
     <span class="post-time">今日 16:44 抓取</span>
     <span class="badge badge-bear">偏空</span>
@@ -1050,48 +1100,6 @@
   <div class="post-footer">
     <div class="stock-tags"><span class="stock-tag">9988</span><span class="stock-tag">3690</span></div>
     <a href="https://www.facebook.com/yumasterinvestment/posts/pfbid02Mbg8AaBheJh34fqnZQ7onfbas6RXXKBCJS9ztYGfU8JaBrZJdUj1pTPdTBjaLcM1l" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">盤整之王 Consolidation</span>
-    <span class="post-time">今日 12:02 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">《脈動》活動成功舉辦，作者感謝企劃、主持人KoKo、專員Iwen及大富翁股神K等團隊的協助</div>
-  <ul class="key-points"><li>作者推薦KoKo為財經活動主持人首選，攝影推薦@yangwu_ian</li><li>活動雖獲好評，作者仍認為有進步空間，並坦承準備期只有一個多月且能力尚有不足</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/doinvestfuture/posts/pfbid02SqcAWbcVJ5b1UpcMB4UCq8YHfNMrhABcU3Dg1do9m9SeWFeM4Y32mXGLjdrqQnkhl" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">老墨 Mofi</span>
-    <span class="post-time">今日 12:02 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">貼文以感恩母親帶領自己接觸投資為引子，實為業配「愛神燈」檯燈產品</div>
-  <ul class="key-points"><li>無任何股票操作建議、個股分析或市場觀點</li><li>內容以親情敘事為主軸，投資內容僅為情感鋪陳背景</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/mofi.investment/posts/pfbid0hUPX8xK41m9VbZ72BpASbHC9xMhEuMDMq1GYFAmYvnEaQ5eAty5pqoPoESRtUvejl" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">肥多多 DD 的筆記</span>
-    <span class="post-time">今日 12:01 抓取</span>
-    <span class="badge badge-bear">偏空</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#7C6FFF22;color:#7C6FFF;border:1px solid #7C6FFF44">美股個股</span><span class="cat-tag" style="background:#FF6B3522;color:#FF6B35;border:1px solid #FF6B3544">總經</span></div>
-  <div class="post-headline">中國嚴打走資派政策直接衝擊富圖（FUTU）與老虎（TIGR），目前股價已大跌，呼籲勿接刀</div>
-  <ul class="key-points"><li>以線上教育股遭打壓後折價九成為先例，警示此波監管力道同樣不可低估</li><li>作者預期後續仍有多波下跌，跌勢將延續至極低點，建議完全迴避</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"><span class="stock-tag">FUTU</span><span class="stock-tag">TIGR</span></div>
-    <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid02qUy67t49sGLL824YVSzvcy7jRZNccgEht71PZ5WV3awVokAHQHXUg67Kf1UKEKZKl&id=100080135961392" target="_blank" class="fb-link">查看原文 →</a>
   </div>
 </div>
 <div class="post-card">
@@ -1168,20 +1176,6 @@
   <div class="post-header">
     <span class="page-name">盤整之王 Consolidation</span>
     <span class="post-time">今日 10:03 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">《脈動》活動成功舉辦，作者感謝團隊各成員在緊急狀況下的協力合作</div>
-  <ul class="key-points"><li>主持人KoKo被評為本次MVP，作者唯一推薦財經類活動主持，攝影推薦Ian</li><li>作者自省能力仍有不足，活動有改善空間，但整體結果令人滿意</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/doinvestfuture/posts/pfbid0NzATKvgfSms4ax1g4KyjooJBptPiW66oKjrQJADEePGboFDhYVANM2HDZpv6neozl" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">盤整之王 Consolidation</span>
-    <span class="post-time">今日 10:03 抓取</span>
     <span class="badge badge-bull">偏多</span>
   </div>
   <div class="cat-tags"><span class="cat-tag" style="background:#4A9EFF22;color:#4A9EFF;border:1px solid #4A9EFF44">台股個股</span></div>
@@ -1204,90 +1198,6 @@
   <div class="post-footer">
     <div class="stock-tags"></div>
     <a href="https://www.facebook.com/mofi.investment/posts/pfbid0XSjeKYbPX2evpfXmnXL2Jtyu3LsyQ7QJmXdPPERVLV5peUSJxADoJYaAjGoGM8d7l" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">老墨 Mofi</span>
-    <span class="post-time">今日 10:03 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">LINE 社群重新開放加入，優先服務已綁定 XQ 優惠碼（@MOFI）的追蹤者</div>
-  <ul class="key-points"><li>社群提供獨家指標、介面及直播節目資訊，綁碼朋友可獲得 PRO MAX 版本</li><li>加入連結置於留言區，非詐騙，可透過粉絲數（>4.8萬）確認帳號真實性</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/mofi.investment/posts/pfbid06TJKjjkYCWwyCCbxBzqacAvBRbz8ivo9VkxeZ73byxrY9fPEKmvuSyiGhmmKefNil" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">老墨 Mofi</span>
-    <span class="post-time">今日 10:03 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">貼文為業配內容，主要推廣「愛神燈」檯燈產品，投資相關內容極少</div>
-  <ul class="key-points"><li>作者提及投資啟蒙源自母親帶領，感恩母親對其投資路的影響</li><li>內容以家庭情感故事為主軸，無任何具體投資建議或市場分析</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/mofi.investment/posts/pfbid02m22i47wQsAVQ57QbX51QLGRDpd7r7Yji9L7Uqqiu77CZGfjhWV6GDn6Ct2cM3Dn4l" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">老墨 Mofi</span>
-    <span class="post-time">今日 10:03 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">6/27（六）14:00–16:00 在高雄舉辦免費 AI × XQ 交流會，名額有限</div>
-  <ul class="key-points"><li>作者以文科背景自學 AI 與 XQ 程式指標，強調邊做邊學，歡迎無程式基礎者參加</li><li>使用優惠碼 MOFI 綁定 XQ 全球贏家可獲 100 點折抵並解鎖作者自製指標</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/mofi.investment/posts/pfbid0dZzkapkFWAGy6FWnZunhJ2J65Nq5XXC9oE8AHGLYyTAv83tFatww3ftWMqsLBaFYl" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">老墨 Mofi</span>
-    <span class="post-time">今日 10:03 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span><span class="cat-tag" style="background:#4A9EFF22;color:#4A9EFF;border:1px solid #4A9EFF44">台股個股</span></div>
-  <div class="post-headline">媒體慣用「事後諸葛」式標題，漲跌皆可將台積電套入因果敘事</div>
-  <ul class="key-points"><li>此類新聞標題缺乏真正的因果分析，僅是結果導向的說法</li><li>投資人應對財經媒體標題保持批判性思考，不應被表面敘事誤導</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"><span class="stock-tag">2330</span></div>
-    <a href="https://www.facebook.com/mofi.investment/posts/pfbid02dKgtXpLWcqbgLtnsy2VdhGBafgYCMxy5aZXZ4nu6x9xNsxpjiWTv7whCR9Uitqhel" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">OP 凱文</span>
-    <span class="post-time">今日 10:02 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">投資工具無好壞之分，股票/ETF是必修，期貨/選擇權是進階工具，應依需求善加運用</div>
-  <ul class="key-points"><li>平台定位為系統化教學，不報明牌，著重培養投資者獨立判斷的「釣魚邏輯」</li><li>核心理念：腦袋決定口袋，學習正確知識是通往財務自由的關鍵</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/OptionPlayerKevin/posts/pfbid02pwd9pUojaxpM9C9nyr7v1f7wsbsgRJoZx6gvmD8UsEZk1z2MTG2KfSSfEQ4ThB48l" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">OP 凱文</span>
-    <span class="post-time">今日 10:02 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">6/27高雄免費AI×XQ交流會，強調雙向互動、不設程式門檻</div>
-  <ul class="key-points"><li>作者分享以AI輔助在XQ開發自製指標的實務摸索經驗</li><li>使用優惠碼MOFI綁定XQ可獲100點折抵並解鎖作者自製指標</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/OptionPlayerKevin/posts/pfbid0wKX6r8zZQYX4DPotwgCxh8RiWnqV7GRWAvARuqNx4KbCUhVXzEu4R1Vs4kuhpJchl" target="_blank" class="fb-link">查看原文 →</a>
   </div>
 </div>
 <div class="post-card">
@@ -1316,20 +1226,6 @@
   <div class="post-footer">
     <div class="stock-tags"></div>
     <a href="https://www.facebook.com/WinWin17888/posts/pfbid0784xdggXmZNWg1zH7Y1ELiLa7TcfBHaQ6GWZGLMccnA46WC8skJLXZZS2WayQRdvl" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">善甲狼 a 機智生活</span>
-    <span class="post-time">今日 10:02 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">打造強調主動輸出與互助的線上交易室社群，600+成員，設升降淘汰制度</div>
-  <ul class="key-points"><li>採半實名制與人工審核，每月需繳交投資相關小作文，強制輸出以促進成長</li><li>社群定位為學習型社群而非資訊聊天室，拒絕潛水與伸手，重視成員交流品質</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/WinWin17888/posts/pfbid022TzTVGKiUffSHPWWgrPLYUSqToogu3pfHrQ3kS14Kt8meo1hhN9rHncTdfSB45ril" target="_blank" class="fb-link">查看原文 →</a>
   </div>
 </div>
 <div class="post-card">
@@ -1432,20 +1328,6 @@
 </div>
 <div class="post-card">
   <div class="post-header">
-    <span class="page-name">肥多多 DD 的筆記</span>
-    <span class="post-time">今日 10:02 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#FF6B3522;color:#FF6B35;border:1px solid #FF6B3544">總經</span><span class="cat-tag" style="background:#7C6FFF22;color:#7C6FFF;border:1px solid #7C6FFF44">美股個股</span></div>
-  <div class="post-headline">川普剛公開指控台灣偷走晶片產業，地緣政治敏感度升高</div>
-  <ul class="key-points"><li>AMD在此敏感時機宣布加大對台灣投資，被視為與川普立場相左</li><li>作者以調侃口吻評論蘇姿丰此舉有挑釁川普之嫌</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"><span class="stock-tag">AMD</span></div>
-    <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid01MzgdiwwtNdxF1eEfYqiFGPvwJC3Rk99rLXHKdUamoW2GcxmVfkBZ6uLQ6GuoNzVl&id=100080135961392" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
     <span class="page-name">杯米的股市筆記</span>
     <span class="post-time">今日 10:02 抓取</span>
     <span class="badge badge-bear">偏空</span>
@@ -1470,132 +1352,6 @@
   <div class="post-footer">
     <div class="stock-tags"><span class="stock-tag">5483</span><span class="stock-tag">6985</span><span class="stock-tag">6803</span><span class="stock-tag">5347</span><span class="stock-tag">2303</span><span class="stock-tag">8046</span><span class="stock-tag">3189</span><span class="stock-tag">4966</span></div>
     <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid02gBgsq7B3abpxGshKJe9Bx3GcKcbpxCcLdXDBgTiShpzMRn9522VzX136tUcwj6BCl&id=61569938009012" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">杯米的股市筆記</span>
-    <span class="post-time">今日 10:02 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">貼文為玩笑性質，並非真正宣布離開股市或出清持股</div>
-  <ul class="key-points"><li>附有持股圖片，但無具體個股分析或操作建議</li><li>整體氛圍輕鬆，無實質投資資訊</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid0aAYYUQBj1pNe9Y6eqEm2RfzUx7c3rgFbmQDFWv2jQ2y3JJWU1Rr8TsviQxZ5dXxGl&id=61569938009012" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">杯米的股市筆記</span>
-    <span class="post-time">今日 10:02 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#34D39922;color:#34D399;border:1px solid #34D39944">美股大盤</span></div>
-  <div class="post-headline">貼文主要為招募投資交流群組成員，非具體投資分析</div>
-  <ul class="key-points"><li>有興趣加入群組者需在貼文留言「+0」，作者將以私訊聯繫</li><li>貼文標註為美股盤前時段發布，但未提供具體盤勢分析內容</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid022Wip4LC5gyVFtSkU5XMkfZ2UvtefmUqar1zq9ExKSNsJLqHz87xSYDid4v9evQXel&id=61569938009012" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">海伊股倉 Hy's Stockhouse</span>
-    <span class="post-time">今日 10:01 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">有假冒帳號正在仿冒「海伊股倉 Hy's Stockhouse」身份私訊粉絲</div>
-  <ul class="key-points"><li>作者本人絕對不會透過私訊聯繫任何人</li><li>呼籲粉絲提高警覺，收到私訊請勿輕信</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/Hy.Stockhouse/posts/pfbid02Q36tu2Zqsymdub6fxzeYa51ULdzMxZhDrAaSR9TbzeMsFbB7DgbELT7a2RAMGBxVl" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">菜鳥投資成長日記</span>
-    <span class="post-time">今日 10:01 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#4A9EFF22;color:#4A9EFF;border:1px solid #4A9EFF44">台股個股</span></div>
-  <div class="post-headline">作者宣告這是最後一次撰寫台達電相關貼文</div>
-  <ul class="key-points"><li>自認對台達電已無獨特洞見，內容缺乏實質投資參考價值</li><li>不特別推薦買進，純屬個人習慣記錄後發文</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"><span class="stock-tag">2308</span></div>
-    <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid0zX4ufhvkYVgaZQDaqMCG8VHf9a889wiA3Sj4MpmxSXoiECmQSpSzrYaxC5p4AoGil&id=100064496752266" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">菜鳥投資成長日記</span>
-    <span class="post-time">今日 10:01 抓取</span>
-    <span class="badge badge-bear">偏空</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span><span class="cat-tag" style="background:#2DC78A22;color:#2DC78A;border:1px solid #2DC78A44">台股大盤</span></div>
-  <div class="post-headline">做好資金控管，避免過度槓桿，活下去才有翻身機會</div>
-  <ul class="key-points"><li>衡量倉位風險的指標：大盤重跌幾千點時是否仍能安穩入睡</li><li>作者主觀感受台股大盤有越來越弱的跡象，不建議回檔重壓槓桿</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid02WnQHVBnLEJMYaVFcHWRMkDsdFtwSkJcN7iVrazjSAnZSd7hSpa9bH4FKubxsQznBl&id=100064496752266" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">菜鳥投資成長日記</span>
-    <span class="post-time">今日 10:01 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#4A9EFF22;color:#4A9EFF;border:1px solid #4A9EFF44">台股個股</span><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">台達電持股已翻8倍，目前從高點修正約25%，作者因看不懂後市選擇不再加碼</div>
-  <ul class="key-points"><li>投資人應回歸自身買進理由，重新評估台達電的競爭優勢是否依然成立</li><li>作者本身為電源產業從業者，認為台達電在電源領域的實力遠超飛宏、光寶、康舒等競爭對手</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"><span class="stock-tag">2308</span></div>
-    <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid0yqyFBv6LM8vtK1Po7NwPAw9F6WtWQe6kqdGyNhUYEiUmsansovhaZ8ccy9sNStFKl&id=100064496752266" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">菜鳥投資成長日記</span>
-    <span class="post-time">今日 10:01 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#4A9EFF22;color:#4A9EFF;border:1px solid #4A9EFF44">台股個股</span><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">補買台積電後遭遇大跌，承認操作時機不佳，情緒控制仍需改進</div>
-  <ul class="key-points"><li>槓桿控制在1.8倍，認為風險尚在可接受範圍</li><li>判斷此波DRAM下跌源於韓國清槓桿，依紀律小量布局DRAM</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"><span class="stock-tag">2330</span></div>
-    <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid02hR16oT1socr7hnHwiEgb9fQ1bqqNM7iVeikWAjdUpLf7i552uGWnkj9PtjPtZuvzl&id=100064496752266" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">Charlie 的操盤隨記</span>
-    <span class="post-time">今日 10:01 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">詐騙集團改用個人帳號仿冒作者，主動加好友私訊，作者重申不會主動聯繫粉絲且無Line群組</div>
-  <ul class="key-points"><li>臉書檢舉假帳號機制形同虛設，多次檢舉均被以未違反社群守則為由駁回</li><li>因擔心線圖分析內容被假帳號盜用，暫緩更新投資分析，以防詐宣導為優先</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/Charlie.Investing/posts/pfbid0248yDREXasTDHH49mEs1ZLm3FFGwF1CPwb7sggUCHSmxDX9LvZ5ytGJsY31xYh9vFl" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">Charlie 的操盤隨記</span>
-    <span class="post-time">今日 10:01 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span><span class="cat-tag" style="background:#34D39922;color:#34D399;border:1px solid #34D39944">美股大盤</span></div>
-  <div class="post-headline">粉專為個人交易紀錄，非投資建議，作者未帶任何群組，請讀者自行研究（DYOR）</div>
-  <ul class="key-points"><li>分析與交易是兩回事，盲目跟單而不懂出場時機極為危險</li><li>技術分析的核心難點在於判斷行情最可能的方向與正確進出場點位，需靠長期經驗與心態培養</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/Charlie.Investing/posts/pfbid0Us1T4TDGtCRdSJP5KcVsDH3ArbWaJfmUCyq4bPHGYZgze49MENFESTyYxnV5d2nal" target="_blank" class="fb-link">查看原文 →</a>
   </div>
 </div>
 <div class="post-card">
@@ -1630,34 +1386,6 @@
   <div class="post-header">
     <span class="page-name">Yu Master Investment</span>
     <span class="post-time">今日 10:01 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">課程融合技術分析與價值投資，涵蓋CWH、VCP、MACD、RSI等多種技術指標及基本面財務分析工具</div>
-  <ul class="key-points"><li>課程費用港幣$3,988，含SanDisk USB課程內容、電子書及12個月Whatsapp學習交流群，學費不退</li><li>以實戰操作為主，目標讓學員掌握選股方法、注碼控制及穩健獲利能力</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"><span class="stock-tag">700</span><span class="stock-tag">9988</span><span class="stock-tag">27</span><span class="stock-tag">1299</span><span class="stock-tag">16</span><span class="stock-tag">AAPL</span><span class="stock-tag">META</span><span class="stock-tag">AVGO</span></div>
-    <a href="https://www.facebook.com/yumasterinvestment/posts/pfbid022nmwL88xA7RxY5AJgBxXgjUJdi6ijeyZc1BQyFSwAKLMSmLbJMcVTGnj9BFkbrLrl" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">Yu Master Investment</span>
-    <span class="post-time">今日 10:01 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">出版《一個投機者的價值》，核心思想為基本面結合技術分析，電子版HK$200、實體書HK$258</div>
-  <ul class="key-points"><li>強調紀律、耐性與妥善風險管理是任何成功交易策略的核心要素</li><li>實體書於旺角仁安大廈領取，亦支持順豐本地及海外郵寄，接受多種付款方式</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/yumasterinvestment/posts/pfbid02bhzBXAQyuzd3JdKV41nRRUdozZCVUwBHRzfPVhrxF2DLRwF3mu157n1cBrsxEPDZl" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">Yu Master Investment</span>
-    <span class="post-time">今日 10:01 抓取</span>
     <span class="badge badge-bull">偏多</span>
   </div>
   <div class="cat-tags"><span class="cat-tag" style="background:#7C6FFF22;color:#7C6FFF;border:1px solid #7C6FFF44">美股個股</span><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
@@ -1667,34 +1395,34 @@
     <div class="stock-tags"><span class="stock-tag">LITE</span></div>
     <a href="https://www.facebook.com/yumasterinvestment/posts/pfbid0FbjU26VuHpcwRhTtUdvhjbjC53sLhduye2MAzW3WqZEaWVMCZujqi77FeBzLzRevl" target="_blank" class="fb-link">查看原文 →</a>
   </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">Yu Master Investment</span>
-    <span class="post-time">02/28 00:00</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">核心投資思想為基本面結合技術分析，強調紀律與耐性是成功交易不可或缺的要素</div>
-  <ul class="key-points"><li>電子版售價HK$200（優惠至2026年2月28日），實體書HK$258，支援多種付款方式及順豐郵寄</li><li>沒有任何交易策略萬無一失，妥善的風險管理與自律是成功交易的核心</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/yumasterinvestment/posts/pfbid02bhzBXAQyuzd3JdKV41nRRUdozZCVUwBHRzfPVhrxF2DLRwF3mu157n1cBrsxEPDZl" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
 </div></div>
 <div class="tab-panel" data-cat="台股個股">
 <div class="post-card">
   <div class="post-header">
-    <span class="page-name">菜鳥投資成長日記</span>
-    <span class="post-time">今日 23:00 抓取</span>
+    <span class="page-name">盤整之王 Consolidation</span>
+    <span class="post-time">今日 08:02 抓取</span>
     <span class="badge badge-bear">偏空</span>
   </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#4A9EFF22;color:#4A9EFF;border:1px solid #4A9EFF44">台股個股</span><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">作者抱怨虧損，感嘆市場上仍有人持有愛金食</div>
-  <ul class="key-points"><li>作者目前持倉處於虧損狀態</li><li>市場上仍有不少人持有愛金食相關股票</li><li>言語中透露對目前投資處境的無奈與困惑</li></ul>
+  <div class="cat-tags"><span class="cat-tag" style="background:#4A9EFF22;color:#4A9EFF;border:1px solid #4A9EFF44">台股個股</span><span class="cat-tag" style="background:#2DC78A22;color:#2DC78A;border:1px solid #2DC78A44">台股大盤</span></div>
+  <div class="post-headline">華通違約交割金額龐大遭彭博報導，台灣市場制度形象受損</div>
+  <ul class="key-points"><li>華通今日發生「併軌」違約交割，金額之高引發彭博國際媒體關注</li><li>此事件令台灣市場在外國投資人眼中形象受損，與韓國市場問題相提並論</li><li>作者認為此事令人尷尬，隱含對台股市場制度面的憂慮</li></ul>
   <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid02D9eexSL3tTZb4BQddU24GyMotDAwLexe5S3g8B3MD3FgnfQyzC1BL78Gbqv8fvxwl&id=100064496752266" target="_blank" class="fb-link">查看原文 →</a>
+    <div class="stock-tags"><span class="stock-tag">2313</span></div>
+    <a href="https://www.facebook.com/doinvestfuture/posts/pfbid0nnZxxutTvfReuEkRmAuMU6stWUWrDwvbUCN4AiS4TjhuTQUfzQBQ1CxAronXNm5l" target="_blank" class="fb-link">查看原文 →</a>
+  </div>
+</div>
+<div class="post-card">
+  <div class="post-header">
+    <span class="page-name">杯米的股市筆記</span>
+    <span class="post-time">今日 08:01 抓取</span>
+    <span class="badge badge-neu">中性</span>
+  </div>
+  <div class="cat-tags"><span class="cat-tag" style="background:#4A9EFF22;color:#4A9EFF;border:1px solid #4A9EFF44">台股個股</span></div>
+  <div class="post-headline">訊芯股價異常波動，引發市場關注</div>
+  <ul class="key-points"><li>訊芯近期走勢異常，作者對其行為感到困惑</li><li>留言區網友同樣認為訊芯表現瘋狂</li></ul>
+  <div class="post-footer">
+    <div class="stock-tags"><span class="stock-tag">6451</span></div>
+    <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid0NyWVuBSDYyGdfjdafrNHX9PN6HCn11pfRgpBChT9BE9QGStuaEFcU7CmX3Nzsatjl&id=61569938009012" target="_blank" class="fb-link">查看原文 →</a>
   </div>
 </div>
 <div class="post-card">
@@ -1727,20 +1455,6 @@
 </div>
 <div class="post-card">
   <div class="post-header">
-    <span class="page-name">菜鳥投資成長日記</span>
-    <span class="post-time">今日 20:00 抓取</span>
-    <span class="badge badge-bull">偏多</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#4A9EFF22;color:#4A9EFF;border:1px solid #4A9EFF44">台股個股</span></div>
-  <div class="post-headline">台積電單日大漲4.15%，夜盤續漲2%，多頭氣勢強勁</div>
-  <ul class="key-points"><li>技術面突破上升通道上緣，視為強勢突破訊號</li><li>作者對台積電後市看法樂觀，預期持續創高</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"><span class="stock-tag">2330</span></div>
-    <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid033JNSbpmiKATs6KQDPXQqqBkXFVEmYYtqWRfjmE3bDtfnuyeZiRBbqnrGEGtiwqqzl&id=100064496752266" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
     <span class="page-name">盤整之王 Consolidation</span>
     <span class="post-time">今日 18:12 抓取</span>
     <span class="badge badge-neu">中性</span>
@@ -1755,34 +1469,6 @@
 </div>
 <div class="post-card">
   <div class="post-header">
-    <span class="page-name">菜鳥投資成長日記</span>
-    <span class="post-time">今日 18:11 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#4A9EFF22;color:#4A9EFF;border:1px solid #4A9EFF44">台股個股</span></div>
-  <div class="post-headline">作者宣告這是最後一次撰寫台達電相關分析</div>
-  <ul class="key-points"><li>自評內容缺乏獨特見解，認為 AI 即可生成類似內容</li><li>無明確投資建議，僅為個人心情紀錄</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"><span class="stock-tag">2308</span></div>
-    <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid0zX4ufhvkYVgaZQDaqMCG8VHf9a889wiA3Sj4MpmxSXoiECmQSpSzrYaxC5p4AoGil&id=100064496752266" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">盤整之王 Consolidation</span>
-    <span class="post-time">今日 16:46 抓取</span>
-    <span class="badge badge-bull">偏多</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#4A9EFF22;color:#4A9EFF;border:1px solid #4A9EFF44">台股個股</span></div>
-  <div class="post-headline">作者後悔曾說過某句話，但未說明具體內容</div>
-  <ul class="key-points"><li>在留言中提及聯發科（2454），隱含正面態度</li><li>貼文資訊有限，核心觀點不明確</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"><span class="stock-tag">2454</span></div>
-    <a href="https://www.facebook.com/doinvestfuture/posts/pfbid02WPMmiRXtLoxrpUwJtGneGB3Pt6iNb7qh4cZe4asyos1PRWzydn2XuLUXT9SxTb5Ll" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
     <span class="page-name">OP 凱文</span>
     <span class="post-time">今日 16:46 抓取</span>
     <span class="badge badge-bull">偏多</span>
@@ -1793,20 +1479,6 @@
   <div class="post-footer">
     <div class="stock-tags"><span class="stock-tag">2303</span></div>
     <a href="https://www.facebook.com/OptionPlayerKevin/posts/pfbid0h6136eEMYEPSCMN79f85NAxmqfDojDmgR3qXotWXPBe9U2NeN4Ear8FmMaiM98Hnl" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">杯米的股市筆記</span>
-    <span class="post-time">今日 16:45 抓取</span>
-    <span class="badge badge-bear">偏空</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#4A9EFF22;color:#4A9EFF;border:1px solid #4A9EFF44">台股個股</span></div>
-  <div class="post-headline">作者對訊芯近期走勢感到困惑或不滿</div>
-  <ul class="key-points"><li>語氣帶有驚訝與調侃，暗示該股表現不如預期</li><li>未提供具體操作建議或數據，屬情緒性表達</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"><span class="stock-tag">6451</span></div>
-    <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid02SX9gpM4aQ7k48QAJPPo5tosQAmDKMTyACH16yTSbQchiLFqCQhWt2tNatB9jCWNXl&id=61569938009012" target="_blank" class="fb-link">查看原文 →</a>
   </div>
 </div>
 <div class="post-card">
@@ -1867,20 +1539,6 @@
 </div>
 <div class="post-card">
   <div class="post-header">
-    <span class="page-name">老墨 Mofi</span>
-    <span class="post-time">今日 10:03 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span><span class="cat-tag" style="background:#4A9EFF22;color:#4A9EFF;border:1px solid #4A9EFF44">台股個股</span></div>
-  <div class="post-headline">媒體慣用「事後諸葛」式標題，漲跌皆可將台積電套入因果敘事</div>
-  <ul class="key-points"><li>此類新聞標題缺乏真正的因果分析，僅是結果導向的說法</li><li>投資人應對財經媒體標題保持批判性思考，不應被表面敘事誤導</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"><span class="stock-tag">2330</span></div>
-    <a href="https://www.facebook.com/mofi.investment/posts/pfbid02dKgtXpLWcqbgLtnsy2VdhGBafgYCMxy5aZXZ4nu6x9xNsxpjiWTv7whCR9Uitqhel" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
     <span class="page-name">杯米的股市筆記</span>
     <span class="post-time">今日 10:02 抓取</span>
     <span class="badge badge-neu">中性</span>
@@ -1892,50 +1550,78 @@
     <div class="stock-tags"><span class="stock-tag">5483</span><span class="stock-tag">6985</span><span class="stock-tag">6803</span><span class="stock-tag">5347</span><span class="stock-tag">2303</span><span class="stock-tag">8046</span><span class="stock-tag">3189</span><span class="stock-tag">4966</span></div>
     <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid02gBgsq7B3abpxGshKJe9Bx3GcKcbpxCcLdXDBgTiShpzMRn9522VzX136tUcwj6BCl&id=61569938009012" target="_blank" class="fb-link">查看原文 →</a>
   </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">菜鳥投資成長日記</span>
-    <span class="post-time">今日 10:01 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#4A9EFF22;color:#4A9EFF;border:1px solid #4A9EFF44">台股個股</span></div>
-  <div class="post-headline">作者宣告這是最後一次撰寫台達電相關貼文</div>
-  <ul class="key-points"><li>自認對台達電已無獨特洞見，內容缺乏實質投資參考價值</li><li>不特別推薦買進，純屬個人習慣記錄後發文</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"><span class="stock-tag">2308</span></div>
-    <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid0zX4ufhvkYVgaZQDaqMCG8VHf9a889wiA3Sj4MpmxSXoiECmQSpSzrYaxC5p4AoGil&id=100064496752266" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">菜鳥投資成長日記</span>
-    <span class="post-time">今日 10:01 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#4A9EFF22;color:#4A9EFF;border:1px solid #4A9EFF44">台股個股</span><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">台達電持股已翻8倍，目前從高點修正約25%，作者因看不懂後市選擇不再加碼</div>
-  <ul class="key-points"><li>投資人應回歸自身買進理由，重新評估台達電的競爭優勢是否依然成立</li><li>作者本身為電源產業從業者，認為台達電在電源領域的實力遠超飛宏、光寶、康舒等競爭對手</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"><span class="stock-tag">2308</span></div>
-    <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid0yqyFBv6LM8vtK1Po7NwPAw9F6WtWQe6kqdGyNhUYEiUmsansovhaZ8ccy9sNStFKl&id=100064496752266" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">菜鳥投資成長日記</span>
-    <span class="post-time">今日 10:01 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#4A9EFF22;color:#4A9EFF;border:1px solid #4A9EFF44">台股個股</span><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">補買台積電後遭遇大跌，承認操作時機不佳，情緒控制仍需改進</div>
-  <ul class="key-points"><li>槓桿控制在1.8倍，認為風險尚在可接受範圍</li><li>判斷此波DRAM下跌源於韓國清槓桿，依紀律小量布局DRAM</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"><span class="stock-tag">2330</span></div>
-    <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid02hR16oT1socr7hnHwiEgb9fQ1bqqNM7iVeikWAjdUpLf7i552uGWnkj9PtjPtZuvzl&id=100064496752266" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
 </div></div>
 <div class="tab-panel" data-cat="美股個股">
+<div class="post-card">
+  <div class="post-header">
+    <span class="page-name">股狼球隊</span>
+    <span class="post-time">今日 08:02 抓取</span>
+    <span class="badge badge-bull">偏多</span>
+  </div>
+  <div class="cat-tags"><span class="cat-tag" style="background:#7C6FFF22;color:#7C6FFF;border:1px solid #7C6FFF44">美股個股</span><span class="cat-tag" style="background:#FF6B3522;color:#FF6B35;border:1px solid #FF6B3544">總經</span></div>
+  <div class="post-headline">MRNA VRBPAC全票支持流感疫苗，FDA最終獲批在即多頭排列</div>
+  <ul class="key-points"><li>mRNA-1010獲VRBPAC 9:0全票支持，8月5日FDA最終獲批障礙已除</li><li>帳上81億美元現金、削減22億營運支出，財務保護傘穩固</li><li>今年迄今漲+69.4%，股價多頭排列，伊波拉疫情警戒強化生技防禦資金動能</li></ul>
+  <div class="post-footer">
+    <div class="stock-tags"><span class="stock-tag">MRNA</span><span class="stock-tag">XBI</span><span class="stock-tag">MRK</span><span class="stock-tag">IBB</span><span class="stock-tag">XLV</span></div>
+    <a href="https://www.facebook.com/stockwolfteams/posts/pfbid02dP5JGa1j5LrCpJGC9F9gJKxi4RMqHWJ79rAdvsMW9oFEi5W4SB5hVFWwKjNYtMS8l" target="_blank" class="fb-link">查看原文 →</a>
+  </div>
+</div>
+<div class="post-card">
+  <div class="post-header">
+    <span class="page-name">盤整之王 Consolidation</span>
+    <span class="post-time">今日 08:02 抓取</span>
+    <span class="badge badge-neu">中性</span>
+  </div>
+  <div class="cat-tags"><span class="cat-tag" style="background:#7C6FFF22;color:#7C6FFF;border:1px solid #7C6FFF44">美股個股</span><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
+  <div class="post-headline">閃迪MU盤前跌爛但記憶體仍是AI風向球，回調-5%可分批追</div>
+  <ul class="key-points"><li>記憶體是美國AI市場重要風向球，記憶體穩則AI不會有問題</li><li>閃迪跌5%仍在2000以上，僅回吐上週一以來漲幅，屬正常回調</li><li>追閃迪策略：資金分三筆，見-5%以上追一筆，習慣記憶體鬼故事</li></ul>
+  <div class="post-footer">
+    <div class="stock-tags"><span class="stock-tag">SNDK</span><span class="stock-tag">MU</span></div>
+    <a href="https://www.facebook.com/doinvestfuture/posts/pfbid0312SmcEh4ghbvKJPXAZYS12NtiPLzjdnd3ahGuYuX4oePNcGzQWvANoRpWJd5PFvMl" target="_blank" class="fb-link">查看原文 →</a>
+  </div>
+</div>
+<div class="post-card">
+  <div class="post-header">
+    <span class="page-name">Yu Master Investment</span>
+    <span class="post-time">今日 08:00 抓取</span>
+    <span class="badge badge-bull">偏多</span>
+  </div>
+  <div class="cat-tags"><span class="cat-tag" style="background:#7C6FFF22;color:#7C6FFF;border:1px solid #7C6FFF44">美股個股</span><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
+  <div class="post-headline">某美股進入上升通道BUY ZONE，非PLTR，基本面尚可</div>
+  <ul class="key-points"><li>利用上升/下降通道交易策略，該美股已進入直博買入區間</li><li>個股基本面評估不差，具備進場條件</li><li>詳細標的與分析僅於會員區公開，非PLTR</li></ul>
+  <div class="post-footer">
+    <div class="stock-tags"></div>
+    <a href="https://www.facebook.com/yumasterinvestment/posts/pfbid02tdnYNP7yoFUxb9BFXuzYwiJvsika7AbHpC3QuEcFyqQjqDEeNe8GMBD6SAnmX9cil" target="_blank" class="fb-link">查看原文 →</a>
+  </div>
+</div>
+<div class="post-card">
+  <div class="post-header">
+    <span class="page-name">Yu Master Investment</span>
+    <span class="post-time">今日 08:00 抓取</span>
+    <span class="badge badge-bull">偏多</span>
+  </div>
+  <div class="cat-tags"><span class="cat-tag" style="background:#7C6FFF22;color:#7C6FFF;border:1px solid #7C6FFF44">美股個股</span></div>
+  <div class="post-headline">BE扭虧為盈里程碑，現金流逆轉但311%負債比仍需警惕</div>
+  <ul class="key-points"><li>2026年Q1 GAAP淨利潤7,070萬美元，成功扭虧為盈，服務毛利率轉正至13.3%</li><li>單季營運現金流達7,360萬美元，較去年同期負1.1億美元大幅逆轉，內生造血能力確立</li><li>債務權益比高達311.5%，但獲利改善後去槓桿能力逐步增強，違約風險大幅降低</li></ul>
+  <div class="post-footer">
+    <div class="stock-tags"><span class="stock-tag">BE</span></div>
+    <a href="https://www.facebook.com/yumasterinvestment/posts/pfbid02PkwTgGWJKdw6Wvcz3ceZFN4T6vem4Wt2npHtA9WExQwX1WzRDwkApZSZfrYMDsTil" target="_blank" class="fb-link">查看原文 →</a>
+  </div>
+</div>
+<div class="post-card">
+  <div class="post-header">
+    <span class="page-name">Yu Master Investment</span>
+    <span class="post-time">今日 08:00 抓取</span>
+    <span class="badge badge-bull">偏多</span>
+  </div>
+  <div class="cat-tags"><span class="cat-tag" style="background:#7C6FFF22;color:#7C6FFF;border:1px solid #7C6FFF44">美股個股</span></div>
+  <div class="post-headline">LLY股價創歷史新高，EMA推薦批准BTK抑制劑Jaypirca</div>
+  <ul class="key-points"><li>LLY大漲逾6%報1200.55美元，創歷史新高</li><li>EMA人用藥品委員會推薦批准Jaypirca用於治療CLL患者</li><li>此次批准涵蓋BTK抑制劑治療過或未治療過患者的全線療程</li></ul>
+  <div class="post-footer">
+    <div class="stock-tags"><span class="stock-tag">LLY</span></div>
+    <a href="https://www.facebook.com/yumasterinvestment/posts/pfbid026cufxMGYTtAc6dq1p6FFYvqu6zhxuT3eMBB7TVZQMUKVo8n4c56xgreB5WHfWmqRl" target="_blank" class="fb-link">查看原文 →</a>
+  </div>
+</div>
 <div class="post-card">
   <div class="post-header">
     <span class="page-name">股狼球隊</span>
@@ -2038,34 +1724,6 @@
   <div class="post-header">
     <span class="page-name">Yu Master Investment</span>
     <span class="post-time">今日 20:28 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#7C6FFF22;color:#7C6FFF;border:1px solid #7C6FFF44">美股個股</span><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">分析 MRVL（Marvell Technology）基本面及技術面，並提示需識別「聰明錢陷阱」</div>
-  <ul class="key-points"><li>推廣 Facebook 訂閱服務（HK$78/月），提供整合自 Bloomberg 及 Financial Times 的投資資訊與個人觀點</li><li>詳細分析內容僅限訂閱用戶查看，公開貼文未披露具體數據或操作建議</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"><span class="stock-tag">MRVL</span></div>
-    <a href="https://www.facebook.com/yumasterinvestment/posts/pfbid036eDeWo4n1dxYXPY6u31FaPzR4dvZdCsUWkSY5XxwREAAESFVDKtYqZ8FVCNfXS7hl" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">Yu Master Investment</span>
-    <span class="post-time">今日 20:28 抓取</span>
-    <span class="badge badge-bear">偏空</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#7C6FFF22;color:#7C6FFF;border:1px solid #7C6FFF44">美股個股</span><span class="cat-tag" style="background:#FF6B3522;color:#FF6B35;border:1px solid #FF6B3544">總經</span></div>
-  <div class="post-headline">蘋果因記憶體晶片成本急漲被迫調漲產品售價100至300美元，股價一度下跌6%</div>
-  <ul class="key-points"><li>中國內地消費疲弱（李寧、美團、618電商數據下滑），蘋果大幅加價恐進一步壓制需求</li><li>蘋果無法與SK海力士或三星議價，也沒有替代供應商，成本壓力難以轉移</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"><span class="stock-tag">AAPL</span><span class="stock-tag">TSM</span></div>
-    <a href="https://www.facebook.com/yumasterinvestment/posts/pfbid02vWfj2SbHP7c8GGMEaPGw921NFhdqwdFi9ZaM73PDYTi6Sr5YCCNV6Mcxvbf7975fl" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">Yu Master Investment</span>
-    <span class="post-time">今日 20:28 抓取</span>
     <span class="badge badge-bull">偏多</span>
   </div>
   <div class="cat-tags"><span class="cat-tag" style="background:#7C6FFF22;color:#7C6FFF;border:1px solid #7C6FFF44">美股個股</span></div>
@@ -2074,34 +1732,6 @@
   <div class="post-footer">
     <div class="stock-tags"><span class="stock-tag">ON</span></div>
     <a href="https://www.facebook.com/yumasterinvestment/posts/pfbid0qwBMTk6E78iZ6Cds9vCrP15C1C1XdFAtadeaWQQGoEci855cQNHKmHZj9NpsRVval" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">肥多多 DD 的筆記</span>
-    <span class="post-time">今日 20:01 抓取</span>
-    <span class="badge badge-bear">偏空</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#7C6FFF22;color:#7C6FFF;border:1px solid #7C6FFF44">美股個股</span><span class="cat-tag" style="background:#FF6B3522;color:#FF6B35;border:1px solid #FF6B3544">總經</span></div>
-  <div class="post-headline">中國政府嚴打走資與不法獲利，FUTU、TIGR首當其衝，現階段不宜接刀</div>
-  <ul class="key-points"><li>類比過去線上教育股遭監管重擊折價九成的歷史，暗示跌幅可能更深</li><li>作者預期後續仍有多波下跌（第二刀、第三刀），警告跌勢尚未結束</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"><span class="stock-tag">FUTU</span><span class="stock-tag">TIGR</span></div>
-    <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid02qUy67t49sGLL824YVSzvcy7jRZNccgEht71PZ5WV3awVokAHQHXUg67Kf1UKEKZKl&id=100080135961392" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">肥多多 DD 的筆記</span>
-    <span class="post-time">今日 20:01 抓取</span>
-    <span class="badge badge-bear">偏空</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#FF6B3522;color:#FF6B35;border:1px solid #FF6B3544">總經</span><span class="cat-tag" style="background:#7C6FFF22;color:#7C6FFF;border:1px solid #7C6FFF44">美股個股</span></div>
-  <div class="post-headline">川普剛公開指責台灣偷走晶片產業，地緣政治敏感度升高</div>
-  <ul class="key-points"><li>AMD在此敏感時機宣布加大台灣投資，被作者認為是挑釁川普</li><li>此舉可能加劇美台之間半導體產業的政治緊張局勢</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"><span class="stock-tag">AMD</span></div>
-    <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid01MzgdiwwtNdxF1eEfYqiFGPvwJC3Rk99rLXHKdUamoW2GcxmVfkBZ6uLQ6GuoNzVl&id=100080135961392" target="_blank" class="fb-link">查看原文 →</a>
   </div>
 </div>
 <div class="post-card">
@@ -2260,20 +1890,6 @@
 </div>
 <div class="post-card">
   <div class="post-header">
-    <span class="page-name">肥多多 DD 的筆記</span>
-    <span class="post-time">今日 12:01 抓取</span>
-    <span class="badge badge-bear">偏空</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#7C6FFF22;color:#7C6FFF;border:1px solid #7C6FFF44">美股個股</span><span class="cat-tag" style="background:#FF6B3522;color:#FF6B35;border:1px solid #FF6B3544">總經</span></div>
-  <div class="post-headline">中國嚴打走資派政策直接衝擊富圖（FUTU）與老虎（TIGR），目前股價已大跌，呼籲勿接刀</div>
-  <ul class="key-points"><li>以線上教育股遭打壓後折價九成為先例，警示此波監管力道同樣不可低估</li><li>作者預期後續仍有多波下跌，跌勢將延續至極低點，建議完全迴避</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"><span class="stock-tag">FUTU</span><span class="stock-tag">TIGR</span></div>
-    <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid02qUy67t49sGLL824YVSzvcy7jRZNccgEht71PZ5WV3awVokAHQHXUg67Kf1UKEKZKl&id=100080135961392" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
     <span class="page-name">股狼球隊</span>
     <span class="post-time">今日 10:03 抓取</span>
     <span class="badge badge-bear">偏空</span>
@@ -2344,20 +1960,6 @@
 </div>
 <div class="post-card">
   <div class="post-header">
-    <span class="page-name">肥多多 DD 的筆記</span>
-    <span class="post-time">今日 10:02 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#FF6B3522;color:#FF6B35;border:1px solid #FF6B3544">總經</span><span class="cat-tag" style="background:#7C6FFF22;color:#7C6FFF;border:1px solid #7C6FFF44">美股個股</span></div>
-  <div class="post-headline">川普剛公開指控台灣偷走晶片產業，地緣政治敏感度升高</div>
-  <ul class="key-points"><li>AMD在此敏感時機宣布加大對台灣投資，被視為與川普立場相左</li><li>作者以調侃口吻評論蘇姿丰此舉有挑釁川普之嫌</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"><span class="stock-tag">AMD</span></div>
-    <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid01MzgdiwwtNdxF1eEfYqiFGPvwJC3Rk99rLXHKdUamoW2GcxmVfkBZ6uLQ6GuoNzVl&id=100080135961392" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
     <span class="page-name">Yu Master Investment</span>
     <span class="post-time">今日 10:01 抓取</span>
     <span class="badge badge-bull">偏多</span>
@@ -2371,6 +1973,20 @@
   </div>
 </div></div>
 <div class="tab-panel" data-cat="台股大盤">
+<div class="post-card">
+  <div class="post-header">
+    <span class="page-name">盤整之王 Consolidation</span>
+    <span class="post-time">今日 08:02 抓取</span>
+    <span class="badge badge-bear">偏空</span>
+  </div>
+  <div class="cat-tags"><span class="cat-tag" style="background:#4A9EFF22;color:#4A9EFF;border:1px solid #4A9EFF44">台股個股</span><span class="cat-tag" style="background:#2DC78A22;color:#2DC78A;border:1px solid #2DC78A44">台股大盤</span></div>
+  <div class="post-headline">華通違約交割金額龐大遭彭博報導，台灣市場制度形象受損</div>
+  <ul class="key-points"><li>華通今日發生「併軌」違約交割，金額之高引發彭博國際媒體關注</li><li>此事件令台灣市場在外國投資人眼中形象受損，與韓國市場問題相提並論</li><li>作者認為此事令人尷尬，隱含對台股市場制度面的憂慮</li></ul>
+  <div class="post-footer">
+    <div class="stock-tags"><span class="stock-tag">2313</span></div>
+    <a href="https://www.facebook.com/doinvestfuture/posts/pfbid0nnZxxutTvfReuEkRmAuMU6stWUWrDwvbUCN4AiS4TjhuTQUfzQBQ1CxAronXNm5l" target="_blank" class="fb-link">查看原文 →</a>
+  </div>
+</div>
 <div class="post-card">
   <div class="post-header">
     <span class="page-name">杯米的股市筆記</span>
@@ -2387,20 +2003,6 @@
 </div>
 <div class="post-card">
   <div class="post-header">
-    <span class="page-name">杯米的股市筆記</span>
-    <span class="post-time">今日 20:01 抓取</span>
-    <span class="badge badge-bear">偏空</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#2DC78A22;color:#2DC78A;border:1px solid #2DC78A44">台股大盤</span><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">本週台股從禮拜一創高到禮拜五急速破線，走勢急轉直下</div>
-  <ul class="key-points"><li>點名特定網路人物的行為（吃大餐、做多）作為市場反指標，帶有戲謔警示意味</li><li>作者自嘲後悔未提早信任這些『反指標』信號，情緒偏向懊悔與看空</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid0V9wJGLUYTfjbiJ7KzgiachzuBN2TzQGQX3oVXmKBigXWw5C4P9Yx5a7FpZx57HDMl&id=61569938009012" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
     <span class="page-name">善甲狼 a 機智生活</span>
     <span class="post-time">今日 18:12 抓取</span>
     <span class="badge badge-bull">偏多</span>
@@ -2411,62 +2013,6 @@
   <div class="post-footer">
     <div class="stock-tags"></div>
     <a href="https://www.facebook.com/WinWin17888/posts/pfbid0784xdggXmZNWg1zH7Y1ELiLa7TcfBHaQ6GWZGLMccnA46WC8skJLXZZS2WayQRdvl" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">杯米的股市筆記</span>
-    <span class="post-time">今日 18:11 抓取</span>
-    <span class="badge badge-bear">偏空</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#2DC78A22;color:#2DC78A;border:1px solid #2DC78A44">台股大盤</span></div>
-  <div class="post-headline">市場出現集體大跌，作者感到意外與無奈</div>
-  <ul class="key-points"><li>對於此波下跌是否為誘空陷阱，作者未明確表態</li><li>貼文情緒以驚訝與苦惱為主，缺乏具體操作建議</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid0aNzfYjs8ggsP1EJzLQPsvK3okns8G2U6WoVXT5LSTjuxgZrtqm41iUSSEsBwsfWyl&id=61569938009012" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">善甲狼 a 機智生活</span>
-    <span class="post-time">今日 16:46 抓取</span>
-    <span class="badge badge-bear">偏空</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span><span class="cat-tag" style="background:#2DC78A22;color:#2DC78A;border:1px solid #2DC78A44">台股大盤</span></div>
-  <div class="post-headline">社群炒作氛圍誇大獲利，吸引散戶追高後往往迎來暴跌，疑似存在「釣魚上車」現象</div>
-  <ul class="key-points"><li>融資、質押等高槓桿操作在投資社群中盛行，風險極高</li><li>跟風熱門題材（記憶體、被動元件、功率半導體）追漲，往往成為最後接盤者</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/WinWin17888/posts/pfbid0U7DVReqrHbNA28ejmeZ5yBqDsUf649yj5YRM7e82gdBstVnHCJnXgxMBa2fXZrDAl" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">杯米的股市筆記</span>
-    <span class="post-time">今日 16:45 抓取</span>
-    <span class="badge badge-bear">偏空</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#2DC78A22;color:#2DC78A;border:1px solid #2DC78A44">台股大盤</span><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">週一創高、週五即跌破支撐，本週大盤急速反轉向下</div>
-  <ul class="key-points"><li>作者後悔未聽從市場警示訊號（摩股資本吃大餐、巴逆逆做多）提前應對</li><li>以自嘲語氣提醒自己與讀者，未來要重視關鍵警示訊號，不可輕忽</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid02YhaVBW6uJqy5hfb4BeMGaiF3ZJL9oL9P5hzLZkP7UWawAwBw9d8XG7L8naKrmKmwl&id=61569938009012" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">杯米的股市筆記</span>
-    <span class="post-time">今日 16:45 抓取</span>
-    <span class="badge badge-bear">偏空</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#2DC78A22;color:#2DC78A;border:1px solid #2DC78A44">台股大盤</span></div>
-  <div class="post-headline">市場出現集體大跌走勢，令作者感到意外</div>
-  <ul class="key-points"><li>作者對此波下跌未提出明確原因或解釋</li><li>整體語氣偏向無奈與情緒性反應，非理性分析</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid02eQbP2Z4hMiz5N9JTKUdXU9uGJRKPYEXkrKZJLFTPeRwi2vXjiCVjwH8883DXnB4Yl&id=61569938009012" target="_blank" class="fb-link">查看原文 →</a>
   </div>
 </div>
 <div class="post-card">
@@ -2565,20 +2111,6 @@
   <div class="post-footer">
     <div class="stock-tags"><span class="stock-tag">5483</span><span class="stock-tag">6985</span><span class="stock-tag">6803</span><span class="stock-tag">5347</span><span class="stock-tag">2303</span><span class="stock-tag">8046</span><span class="stock-tag">3189</span><span class="stock-tag">4966</span></div>
     <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid02gBgsq7B3abpxGshKJe9Bx3GcKcbpxCcLdXDBgTiShpzMRn9522VzX136tUcwj6BCl&id=61569938009012" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">菜鳥投資成長日記</span>
-    <span class="post-time">今日 10:01 抓取</span>
-    <span class="badge badge-bear">偏空</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span><span class="cat-tag" style="background:#2DC78A22;color:#2DC78A;border:1px solid #2DC78A44">台股大盤</span></div>
-  <div class="post-headline">做好資金控管，避免過度槓桿，活下去才有翻身機會</div>
-  <ul class="key-points"><li>衡量倉位風險的指標：大盤重跌幾千點時是否仍能安穩入睡</li><li>作者主觀感受台股大盤有越來越弱的跡象，不建議回檔重壓槓桿</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid02WnQHVBnLEJMYaVFcHWRMkDsdFtwSkJcN7iVrazjSAnZSd7hSpa9bH4FKubxsQznBl&id=100064496752266" target="_blank" class="fb-link">查看原文 →</a>
   </div>
 </div>
 <div class="post-card">
@@ -2654,20 +2186,6 @@
 </div>
 <div class="post-card">
   <div class="post-header">
-    <span class="page-name">Yu Master Investment</span>
-    <span class="post-time">今日 20:00 抓取</span>
-    <span class="badge badge-bull">偏多</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span><span class="cat-tag" style="background:#34D39922;color:#34D399;border:1px solid #34D39944">美股大盤</span></div>
-  <div class="post-headline">美股近期大型科技股普遍下跌，但作者認為長期來看美股具信心保證，下跌後市場往往能夠挽回失地</div>
-  <ul class="key-points"><li>多數散戶虧損源於下跌期間缺乏信心、中途斬倉實現虧損，應避免此心理誤區</li><li>建議投資者慶祝小勝利、強化正向交易習慣，信心透過持續自律行動逐步建立</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"><span class="stock-tag">AAPL</span><span class="stock-tag">NVDA</span><span class="stock-tag">AVGO</span><span class="stock-tag">GOOGL</span><span class="stock-tag">AMZN</span></div>
-    <a href="https://www.facebook.com/yumasterinvestment/posts/pfbid0ARBnYMU8R3tTzRnc3nJ4QAd9n8o8AxdUVvraUrbd96E2vGNHH7CNxpzkjb4pBV8Fl" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
     <span class="page-name">股狼球隊</span>
     <span class="post-time">今日 16:46 抓取</span>
     <span class="badge badge-neu">中性</span>
@@ -2710,34 +2228,6 @@
 </div>
 <div class="post-card">
   <div class="post-header">
-    <span class="page-name">杯米的股市筆記</span>
-    <span class="post-time">今日 10:02 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#34D39922;color:#34D399;border:1px solid #34D39944">美股大盤</span></div>
-  <div class="post-headline">貼文主要為招募投資交流群組成員，非具體投資分析</div>
-  <ul class="key-points"><li>有興趣加入群組者需在貼文留言「+0」，作者將以私訊聯繫</li><li>貼文標註為美股盤前時段發布，但未提供具體盤勢分析內容</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid022Wip4LC5gyVFtSkU5XMkfZ2UvtefmUqar1zq9ExKSNsJLqHz87xSYDid4v9evQXel&id=61569938009012" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">Charlie 的操盤隨記</span>
-    <span class="post-time">今日 10:01 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span><span class="cat-tag" style="background:#34D39922;color:#34D399;border:1px solid #34D39944">美股大盤</span></div>
-  <div class="post-headline">粉專為個人交易紀錄，非投資建議，作者未帶任何群組，請讀者自行研究（DYOR）</div>
-  <ul class="key-points"><li>分析與交易是兩回事，盲目跟單而不懂出場時機極為危險</li><li>技術分析的核心難點在於判斷行情最可能的方向與正確進出場點位，需靠長期經驗與心態培養</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/Charlie.Investing/posts/pfbid0Us1T4TDGtCRdSJP5KcVsDH3ArbWaJfmUCyq4bPHGYZgze49MENFESTyYxnV5d2nal" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
     <span class="page-name">Charlie 的操盤隨記</span>
     <span class="post-time">今日 10:01 抓取</span>
     <span class="badge badge-neu">中性</span>
@@ -2751,6 +2241,34 @@
   </div>
 </div></div>
 <div class="tab-panel" data-cat="總經">
+<div class="post-card">
+  <div class="post-header">
+    <span class="page-name">股狼球隊</span>
+    <span class="post-time">今日 08:02 抓取</span>
+    <span class="badge badge-bull">偏多</span>
+  </div>
+  <div class="cat-tags"><span class="cat-tag" style="background:#7C6FFF22;color:#7C6FFF;border:1px solid #7C6FFF44">美股個股</span><span class="cat-tag" style="background:#FF6B3522;color:#FF6B35;border:1px solid #FF6B3544">總經</span></div>
+  <div class="post-headline">MRNA VRBPAC全票支持流感疫苗，FDA最終獲批在即多頭排列</div>
+  <ul class="key-points"><li>mRNA-1010獲VRBPAC 9:0全票支持，8月5日FDA最終獲批障礙已除</li><li>帳上81億美元現金、削減22億營運支出，財務保護傘穩固</li><li>今年迄今漲+69.4%，股價多頭排列，伊波拉疫情警戒強化生技防禦資金動能</li></ul>
+  <div class="post-footer">
+    <div class="stock-tags"><span class="stock-tag">MRNA</span><span class="stock-tag">XBI</span><span class="stock-tag">MRK</span><span class="stock-tag">IBB</span><span class="stock-tag">XLV</span></div>
+    <a href="https://www.facebook.com/stockwolfteams/posts/pfbid02dP5JGa1j5LrCpJGC9F9gJKxi4RMqHWJ79rAdvsMW9oFEi5W4SB5hVFWwKjNYtMS8l" target="_blank" class="fb-link">查看原文 →</a>
+  </div>
+</div>
+<div class="post-card">
+  <div class="post-header">
+    <span class="page-name">OP 凱文</span>
+    <span class="post-time">今日 08:01 抓取</span>
+    <span class="badge badge-bull">偏多</span>
+  </div>
+  <div class="cat-tags"><span class="cat-tag" style="background:#FF6B3522;color:#FF6B35;border:1px solid #FF6B3544">總經</span></div>
+  <div class="post-headline">作者看好RWA（真實世界資產代幣化）未來發展潛力</div>
+  <ul class="key-points"><li>對RWA（真實世界資產代幣化）的發展抱持高度期待</li></ul>
+  <div class="post-footer">
+    <div class="stock-tags"></div>
+    <a href="https://www.facebook.com/OptionPlayerKevin/posts/pfbid028xDkgh2QZ2UoCFJe52nvrHncxaFun2GVt3UvwErqmwKMsN7g7SQJfPH1X317q2jyl" target="_blank" class="fb-link">查看原文 →</a>
+  </div>
+</div>
 <div class="post-card">
   <div class="post-header">
     <span class="page-name">盤整之王 Consolidation</span>
@@ -2781,20 +2299,6 @@
 </div>
 <div class="post-card">
   <div class="post-header">
-    <span class="page-name">Yu Master Investment</span>
-    <span class="post-time">今日 20:28 抓取</span>
-    <span class="badge badge-bear">偏空</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#7C6FFF22;color:#7C6FFF;border:1px solid #7C6FFF44">美股個股</span><span class="cat-tag" style="background:#FF6B3522;color:#FF6B35;border:1px solid #FF6B3544">總經</span></div>
-  <div class="post-headline">蘋果因記憶體晶片成本急漲被迫調漲產品售價100至300美元，股價一度下跌6%</div>
-  <ul class="key-points"><li>中國內地消費疲弱（李寧、美團、618電商數據下滑），蘋果大幅加價恐進一步壓制需求</li><li>蘋果無法與SK海力士或三星議價，也沒有替代供應商，成本壓力難以轉移</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"><span class="stock-tag">AAPL</span><span class="stock-tag">TSM</span></div>
-    <a href="https://www.facebook.com/yumasterinvestment/posts/pfbid02vWfj2SbHP7c8GGMEaPGw921NFhdqwdFi9ZaM73PDYTi6Sr5YCCNV6Mcxvbf7975fl" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
     <span class="page-name">肥多多 DD 的筆記</span>
     <span class="post-time">今日 20:24 抓取</span>
     <span class="badge badge-bear">偏空</span>
@@ -2805,34 +2309,6 @@
   <div class="post-footer">
     <div class="stock-tags"></div>
     <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid0YWYpRVQvpGHi6op266JQPmihRw11mCyv9TR1CyFgY3FEVRHTc1PpCRNL7aSGL2jul&id=100080135961392" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">肥多多 DD 的筆記</span>
-    <span class="post-time">今日 20:01 抓取</span>
-    <span class="badge badge-bear">偏空</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#7C6FFF22;color:#7C6FFF;border:1px solid #7C6FFF44">美股個股</span><span class="cat-tag" style="background:#FF6B3522;color:#FF6B35;border:1px solid #FF6B3544">總經</span></div>
-  <div class="post-headline">中國政府嚴打走資與不法獲利，FUTU、TIGR首當其衝，現階段不宜接刀</div>
-  <ul class="key-points"><li>類比過去線上教育股遭監管重擊折價九成的歷史，暗示跌幅可能更深</li><li>作者預期後續仍有多波下跌（第二刀、第三刀），警告跌勢尚未結束</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"><span class="stock-tag">FUTU</span><span class="stock-tag">TIGR</span></div>
-    <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid02qUy67t49sGLL824YVSzvcy7jRZNccgEht71PZ5WV3awVokAHQHXUg67Kf1UKEKZKl&id=100080135961392" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">肥多多 DD 的筆記</span>
-    <span class="post-time">今日 20:01 抓取</span>
-    <span class="badge badge-bear">偏空</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#FF6B3522;color:#FF6B35;border:1px solid #FF6B3544">總經</span><span class="cat-tag" style="background:#7C6FFF22;color:#7C6FFF;border:1px solid #7C6FFF44">美股個股</span></div>
-  <div class="post-headline">川普剛公開指責台灣偷走晶片產業，地緣政治敏感度升高</div>
-  <ul class="key-points"><li>AMD在此敏感時機宣布加大台灣投資，被作者認為是挑釁川普</li><li>此舉可能加劇美台之間半導體產業的政治緊張局勢</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"><span class="stock-tag">AMD</span></div>
-    <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid01MzgdiwwtNdxF1eEfYqiFGPvwJC3Rk99rLXHKdUamoW2GcxmVfkBZ6uLQ6GuoNzVl&id=100080135961392" target="_blank" class="fb-link">查看原文 →</a>
   </div>
 </div>
 <div class="post-card">
@@ -2893,34 +2369,6 @@
 </div>
 <div class="post-card">
   <div class="post-header">
-    <span class="page-name">盤整之王 Consolidation</span>
-    <span class="post-time">今日 16:46 抓取</span>
-    <span class="badge badge-bull">偏多</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#FF6B3522;color:#FF6B35;border:1px solid #FF6B3544">總經</span></div>
-  <div class="post-headline">今年不可能升息</div>
-  <ul class="key-points"><li>貨幣政策預期維持寬鬆</li><li>引用「杯米」觀點作為依據</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/doinvestfuture/posts/pfbid02DVrTLhKFo5EqSRhVbu7hdMkAjoDd5vzYU6p3j7BSBRBWMgzMFeRd8ACgsZkh35x5l" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">善甲狼 a 機智生活</span>
-    <span class="post-time">今日 16:46 抓取</span>
-    <span class="badge badge-bear">偏空</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span><span class="cat-tag" style="background:#FF6B3522;color:#FF6B35;border:1px solid #FF6B3544">總經</span></div>
-  <div class="post-headline">大宗商品（石油、黃金、天然氣等）有自己的供需週期，研究透徹即可找到投資機會，不必局限於股票</div>
-  <ul class="key-points"><li>群友看空石油並放空，已獲數千萬美元等級報酬，市場常出現「送分題」</li><li>投資核心在於能否發現機會、做好準備，以及當機會來臨時敢不敢執行</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/WinWin17888/posts/pfbid02usY6sXyujdkbocs6GoMGpep9b68ZKriBCvTrZ56spWDw2MfpFT8TCdBf2eiaxEiUl" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
     <span class="page-name">Yu Master Investment</span>
     <span class="post-time">今日 16:44 抓取</span>
     <span class="badge badge-bear">偏空</span>
@@ -2931,20 +2379,6 @@
   <div class="post-footer">
     <div class="stock-tags"><span class="stock-tag">9988</span><span class="stock-tag">3690</span></div>
     <a href="https://www.facebook.com/yumasterinvestment/posts/pfbid02Mbg8AaBheJh34fqnZQ7onfbas6RXXKBCJS9ztYGfU8JaBrZJdUj1pTPdTBjaLcM1l" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">肥多多 DD 的筆記</span>
-    <span class="post-time">今日 12:01 抓取</span>
-    <span class="badge badge-bear">偏空</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#7C6FFF22;color:#7C6FFF;border:1px solid #7C6FFF44">美股個股</span><span class="cat-tag" style="background:#FF6B3522;color:#FF6B35;border:1px solid #FF6B3544">總經</span></div>
-  <div class="post-headline">中國嚴打走資派政策直接衝擊富圖（FUTU）與老虎（TIGR），目前股價已大跌，呼籲勿接刀</div>
-  <ul class="key-points"><li>以線上教育股遭打壓後折價九成為先例，警示此波監管力道同樣不可低估</li><li>作者預期後續仍有多波下跌，跌勢將延續至極低點，建議完全迴避</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"><span class="stock-tag">FUTU</span><span class="stock-tag">TIGR</span></div>
-    <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid02qUy67t49sGLL824YVSzvcy7jRZNccgEht71PZ5WV3awVokAHQHXUg67Kf1UKEKZKl&id=100080135961392" target="_blank" class="fb-link">查看原文 →</a>
   </div>
 </div>
 <div class="post-card">
@@ -2991,20 +2425,6 @@
 </div>
 <div class="post-card">
   <div class="post-header">
-    <span class="page-name">肥多多 DD 的筆記</span>
-    <span class="post-time">今日 10:02 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#FF6B3522;color:#FF6B35;border:1px solid #FF6B3544">總經</span><span class="cat-tag" style="background:#7C6FFF22;color:#7C6FFF;border:1px solid #7C6FFF44">美股個股</span></div>
-  <div class="post-headline">川普剛公開指控台灣偷走晶片產業，地緣政治敏感度升高</div>
-  <ul class="key-points"><li>AMD在此敏感時機宣布加大對台灣投資，被視為與川普立場相左</li><li>作者以調侃口吻評論蘇姿丰此舉有挑釁川普之嫌</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"><span class="stock-tag">AMD</span></div>
-    <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid01MzgdiwwtNdxF1eEfYqiFGPvwJC3Rk99rLXHKdUamoW2GcxmVfkBZ6uLQ6GuoNzVl&id=100080135961392" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
     <span class="page-name">Charlie 的操盤隨記</span>
     <span class="post-time">今日 10:01 抓取</span>
     <span class="badge badge-neu">中性</span>
@@ -3021,6 +2441,90 @@
 <div class="post-card">
   <div class="post-header">
     <span class="page-name">盤整之王 Consolidation</span>
+    <span class="post-time">今日 08:02 抓取</span>
+    <span class="badge badge-neu">中性</span>
+  </div>
+  <div class="cat-tags"><span class="cat-tag" style="background:#7C6FFF22;color:#7C6FFF;border:1px solid #7C6FFF44">美股個股</span><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
+  <div class="post-headline">閃迪MU盤前跌爛但記憶體仍是AI風向球，回調-5%可分批追</div>
+  <ul class="key-points"><li>記憶體是美國AI市場重要風向球，記憶體穩則AI不會有問題</li><li>閃迪跌5%仍在2000以上，僅回吐上週一以來漲幅，屬正常回調</li><li>追閃迪策略：資金分三筆，見-5%以上追一筆，習慣記憶體鬼故事</li></ul>
+  <div class="post-footer">
+    <div class="stock-tags"><span class="stock-tag">SNDK</span><span class="stock-tag">MU</span></div>
+    <a href="https://www.facebook.com/doinvestfuture/posts/pfbid0312SmcEh4ghbvKJPXAZYS12NtiPLzjdnd3ahGuYuX4oePNcGzQWvANoRpWJd5PFvMl" target="_blank" class="fb-link">查看原文 →</a>
+  </div>
+</div>
+<div class="post-card">
+  <div class="post-header">
+    <span class="page-name">老墨 Mofi</span>
+    <span class="post-time">今日 08:01 抓取</span>
+    <span class="badge badge-neu">中性</span>
+  </div>
+  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
+  <div class="post-headline">老墨將自製XQ技術指標公開於GitHub，綁優惠碼可免費取用</div>
+  <ul class="key-points"><li>自製XQ腳本已上傳GitHub，綁優惠碼(@MOFI)可直接下載匯入使用</li><li>指標講求簡單有效：雙重颱風K線判趨勢、EXCEED CHARGE判盤整結束、RS STRONGER看資金</li><li>後續將陸續釋出籌碼、基本面、選股、警報器等腳本，客製化需求亦可提出</li></ul>
+  <div class="post-footer">
+    <div class="stock-tags"></div>
+    <a href="https://www.facebook.com/mofi.investment/posts/pfbid02bJBMWDXDNaEJjWrwps1kTAaB6bxYierAbjinmtctqgG33dXEYsfaP3aJC8p3pxinl" target="_blank" class="fb-link">查看原文 →</a>
+  </div>
+</div>
+<div class="post-card">
+  <div class="post-header">
+    <span class="page-name">老墨 Mofi</span>
+    <span class="post-time">今日 08:01 抓取</span>
+    <span class="badge badge-neu">中性</span>
+  </div>
+  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
+  <div class="post-headline">用AI訓練奇門遁甲算命機器人，量化命理邏輯比人更精準</div>
+  <ul class="key-points"><li>AI訓練後可量化奇門遁甲運算，效果不輸人工解讀</li><li>打造算命AI需三要素：曆法算法、盤面解讀skill、大量案例</li><li>考慮直播教學帶大家打造個人算命機器人</li></ul>
+  <div class="post-footer">
+    <div class="stock-tags"></div>
+    <a href="https://www.facebook.com/mofi.investment/posts/pfbid023E1ACB7zTGHJME3s2SWC7rY1EnYmdQWCEHLg6xpcQ7G7ZqETQvVcT21TXTD7ettGl" target="_blank" class="fb-link">查看原文 →</a>
+  </div>
+</div>
+<div class="post-card">
+  <div class="post-header">
+    <span class="page-name">OP 凱文</span>
+    <span class="post-time">今日 08:01 抓取</span>
+    <span class="badge badge-neu">中性</span>
+  </div>
+  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
+  <div class="post-headline">台指期貨(全)是什麼？新手必知夜盤報價看法</div>
+  <ul class="key-points"><li>台指近(全)代表日盤+夜盤的完整報價，非僅日盤數據</li><li>日盤收盤後報價不動屬正常，需切換至(全)才能看夜盤即時報價</li><li>夜盤交易時間為1500至隔日0500，新手容易誤以為系統異常</li></ul>
+  <div class="post-footer">
+    <div class="stock-tags"></div>
+    <a href="https://www.facebook.com/OptionPlayerKevin/posts/pfbid037Rm19Jno9AsDffvgfvxTgnkEGR4qc2jivJHa5jxLx2B9Lnpuc3aYgw2kpMZd562el" target="_blank" class="fb-link">查看原文 →</a>
+  </div>
+</div>
+<div class="post-card">
+  <div class="post-header">
+    <span class="page-name">善甲狼 a 機智生活</span>
+    <span class="post-time">今日 08:01 抓取</span>
+    <span class="badge badge-neu">中性</span>
+  </div>
+  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
+  <div class="post-headline">爆倉後體悟分散風險，八帳戶持有八顆雞蛋</div>
+  <ul class="key-points"><li>曾有爆倉慘痛經歷，深刻體悟分散風險的重要性</li><li>實踐雞蛋不放同一籃子，開設八個帳戶分散持倉</li><li>以八顆雞蛋比喻多元配置，具體落實資金分散管理</li></ul>
+  <div class="post-footer">
+    <div class="stock-tags"></div>
+    <a href="https://www.facebook.com/WinWin17888/posts/pfbid02AVZ9Fi39oJQJHjEp2AJt1cy7pntUqcaxkozb9qGX2rbLkJTsun8gUcYCsaFqu88Zl" target="_blank" class="fb-link">查看原文 →</a>
+  </div>
+</div>
+<div class="post-card">
+  <div class="post-header">
+    <span class="page-name">Yu Master Investment</span>
+    <span class="post-time">今日 08:00 抓取</span>
+    <span class="badge badge-bull">偏多</span>
+  </div>
+  <div class="cat-tags"><span class="cat-tag" style="background:#7C6FFF22;color:#7C6FFF;border:1px solid #7C6FFF44">美股個股</span><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
+  <div class="post-headline">某美股進入上升通道BUY ZONE，非PLTR，基本面尚可</div>
+  <ul class="key-points"><li>利用上升/下降通道交易策略，該美股已進入直博買入區間</li><li>個股基本面評估不差，具備進場條件</li><li>詳細標的與分析僅於會員區公開，非PLTR</li></ul>
+  <div class="post-footer">
+    <div class="stock-tags"></div>
+    <a href="https://www.facebook.com/yumasterinvestment/posts/pfbid02tdnYNP7yoFUxb9BFXuzYwiJvsika7AbHpC3QuEcFyqQjqDEeNe8GMBD6SAnmX9cil" target="_blank" class="fb-link">查看原文 →</a>
+  </div>
+</div>
+<div class="post-card">
+  <div class="post-header">
+    <span class="page-name">盤整之王 Consolidation</span>
     <span class="post-time">今日 23:02 抓取</span>
     <span class="badge badge-neu">中性</span>
   </div>
@@ -3030,20 +2534,6 @@
   <div class="post-footer">
     <div class="stock-tags"><span class="stock-tag">SNDK</span><span class="stock-tag">MU</span></div>
     <a href="https://www.facebook.com/doinvestfuture/posts/pfbid0wB14RZmEqBft7c3szMmgM91Vy2aKS1EZP1tEmy6uWqJkCQCGnoXXfpacDRbkQEMRl" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">善甲狼 a 機智生活</span>
-    <span class="post-time">今日 23:01 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">曾經爆倉學到教訓：分八個帳戶持有八顆雞蛋分散風險</div>
-  <ul class="key-points"><li>親身爆倉經歷讓作者深刻體會分散風險的重要性</li><li>將資金拆分至八個帳戶，持有八種不同資產</li><li>實踐「雞蛋不放同一籃子」的分散投資原則</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/WinWin17888/posts/pfbid02g4hVL8sUANmVFgLp79frhcw7W6b7TTvseYgAN2QACgsV62WpEetD6ekb7JdMLajsl" target="_blank" class="fb-link">查看原文 →</a>
   </div>
 </div>
 <div class="post-card">
@@ -3058,20 +2548,6 @@
   <div class="post-footer">
     <div class="stock-tags"><span class="stock-tag">NBIS</span></div>
     <a href="https://www.facebook.com/Hy.Stockhouse/posts/pfbid02gsLDDunLRBoysKF6noV9uarqjZhdBWJKh6GzNNb4abLBwdxkWBug3MMLzVcLSPxpl" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">菜鳥投資成長日記</span>
-    <span class="post-time">今日 23:00 抓取</span>
-    <span class="badge badge-bear">偏空</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#4A9EFF22;color:#4A9EFF;border:1px solid #4A9EFF44">台股個股</span><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">作者抱怨虧損，感嘆市場上仍有人持有愛金食</div>
-  <ul class="key-points"><li>作者目前持倉處於虧損狀態</li><li>市場上仍有不少人持有愛金食相關股票</li><li>言語中透露對目前投資處境的無奈與困惑</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid02D9eexSL3tTZb4BQddU24GyMotDAwLexe5S3g8B3MD3FgnfQyzC1BL78Gbqv8fvxwl&id=100064496752266" target="_blank" class="fb-link">查看原文 →</a>
   </div>
 </div>
 <div class="post-card">
@@ -3104,48 +2580,6 @@
 </div>
 <div class="post-card">
   <div class="post-header">
-    <span class="page-name">Yu Master Investment</span>
-    <span class="post-time">今日 20:28 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#7C6FFF22;color:#7C6FFF;border:1px solid #7C6FFF44">美股個股</span><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">分析 MRVL（Marvell Technology）基本面及技術面，並提示需識別「聰明錢陷阱」</div>
-  <ul class="key-points"><li>推廣 Facebook 訂閱服務（HK$78/月），提供整合自 Bloomberg 及 Financial Times 的投資資訊與個人觀點</li><li>詳細分析內容僅限訂閱用戶查看，公開貼文未披露具體數據或操作建議</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"><span class="stock-tag">MRVL</span></div>
-    <a href="https://www.facebook.com/yumasterinvestment/posts/pfbid036eDeWo4n1dxYXPY6u31FaPzR4dvZdCsUWkSY5XxwREAAESFVDKtYqZ8FVCNfXS7hl" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">老墨 Mofi</span>
-    <span class="post-time">今日 20:02 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">AI訓練後可有效應用於奇門遁甲等命理運算，關鍵在於理解AI訓練方式與命理底層邏輯</div>
-  <ul class="key-points"><li>打造AI算命工具三要素：正確曆法算法、盤面解讀技術、大量案例</li><li>作者考慮直播教學如何打造個人算命機器人</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/mofi.investment/posts/pfbid036meM7LkMJU9Pk4aG8RXoEQsNNeKzc4oCig2YbGh2gk4rimZJzkMGymqJpp5DCgCWl" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">善甲狼 a 機智生活</span>
-    <span class="post-time">今日 20:01 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">以幽默自嘲方式諷刺散戶常見行為：看到下跌想抄底、看到上漲想追高、半夜看美股等惡習</div>
-  <ul class="key-points"><li>點出過度沉迷股市的心理問題，如無法自制地研究題材（HBM、CoWoS、ASIC等）與頻繁看盤</li><li>文末拋出台積電（2330）是否還有機會的問題，顯示作者對台積電仍保有關注與潛在興趣</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"><span class="stock-tag">2330</span></div>
-    <a href="https://www.facebook.com/WinWin17888/posts/pfbid02ongM2iS6B5vhGfetbASHzw63uaJE7pw7iubqQW4w2tjxX47kRad65mmA5Rp2U8Knl" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
     <span class="page-name">杯米的股市筆記</span>
     <span class="post-time">今日 20:01 抓取</span>
     <span class="badge badge-neu">中性</span>
@@ -3156,34 +2590,6 @@
   <div class="post-footer">
     <div class="stock-tags"></div>
     <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid087jQkhBXwzutubzgWS7tS2edGTqV4BMY8Z3GpFkx5Bu2MdxL6nss262tyUuv6Rjfl&id=61569938009012" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">杯米的股市筆記</span>
-    <span class="post-time">今日 20:01 抓取</span>
-    <span class="badge badge-bear">偏空</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#2DC78A22;color:#2DC78A;border:1px solid #2DC78A44">台股大盤</span><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">本週台股從禮拜一創高到禮拜五急速破線，走勢急轉直下</div>
-  <ul class="key-points"><li>點名特定網路人物的行為（吃大餐、做多）作為市場反指標，帶有戲謔警示意味</li><li>作者自嘲後悔未提早信任這些『反指標』信號，情緒偏向懊悔與看空</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid0V9wJGLUYTfjbiJ7KzgiachzuBN2TzQGQX3oVXmKBigXWw5C4P9Yx5a7FpZx57HDMl&id=61569938009012" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">Yu Master Investment</span>
-    <span class="post-time">今日 20:00 抓取</span>
-    <span class="badge badge-bull">偏多</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span><span class="cat-tag" style="background:#34D39922;color:#34D399;border:1px solid #34D39944">美股大盤</span></div>
-  <div class="post-headline">美股近期大型科技股普遍下跌，但作者認為長期來看美股具信心保證，下跌後市場往往能夠挽回失地</div>
-  <ul class="key-points"><li>多數散戶虧損源於下跌期間缺乏信心、中途斬倉實現虧損，應避免此心理誤區</li><li>建議投資者慶祝小勝利、強化正向交易習慣，信心透過持續自律行動逐步建立</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"><span class="stock-tag">AAPL</span><span class="stock-tag">NVDA</span><span class="stock-tag">AVGO</span><span class="stock-tag">GOOGL</span><span class="stock-tag">AMZN</span></div>
-    <a href="https://www.facebook.com/yumasterinvestment/posts/pfbid0ARBnYMU8R3tTzRnc3nJ4QAd9n8o8AxdUVvraUrbd96E2vGNHH7CNxpzkjb4pBV8Fl" target="_blank" class="fb-link">查看原文 →</a>
   </div>
 </div>
 <div class="post-card">
@@ -3202,20 +2608,6 @@
 </div>
 <div class="post-card">
   <div class="post-header">
-    <span class="page-name">盤整之王 Consolidation</span>
-    <span class="post-time">今日 18:12 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">《脈動 2025》投資活動成功舉辦，一個多月準備期雖有意外但均被團隊妥善解決</div>
-  <ul class="key-points"><li>作者感謝主持人KoKo（MVP）、企劃溫溫、專員Iwen、大富翁股神K及攝影師Ian等核心團隊成員</li><li>作者承認自身能力有明顯不足，仍有進步空間，並推薦有辦活動需求者找KoKo與Ian合作</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/doinvestfuture/posts/pfbid02SqcAWbcVJ5b1UpcMB4UCq8YHfNMrhABcU3Dg1do9m9SeWFeM4Y32mXGLjdrqQnkhl" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
     <span class="page-name">老墨 Mofi</span>
     <span class="post-time">今日 18:12 抓取</span>
     <span class="badge badge-neu">中性</span>
@@ -3230,34 +2622,6 @@
 </div>
 <div class="post-card">
   <div class="post-header">
-    <span class="page-name">老墨 Mofi</span>
-    <span class="post-time">今日 18:12 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">LINE 社群重新開放加入，主要服務綁定 XQ 優惠碼 @MOFI 的朋友</div>
-  <ul class="key-points"><li>社群將提供獨家指標、介面及直播節目資訊，綁碼用戶可獲 PRO MAX 版本</li><li>加入連結請至原貼文留言區取得</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/mofi.investment/posts/pfbid06TJKjjkYCWwyCCbxBzqacAvBRbz8ivo9VkxeZ73byxrY9fPEKmvuSyiGhmmKefNil" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">老墨 Mofi</span>
-    <span class="post-time">今日 18:12 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">本文為愛神燈檯燈品牌業配，以親情故事包裝產品推廣</div>
-  <ul class="key-points"><li>作者提及自己踏入投資領域的契機來自母親的帶領，與投資內容關聯僅為背景鋪陳</li><li>無任何股票、市場分析或投資操作相關資訊</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/mofi.investment/posts/pfbid0hUPX8xK41m9VbZ72BpASbHC9xMhEuMDMq1GYFAmYvnEaQ5eAty5pqoPoESRtUvejl" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
     <span class="page-name">善甲狼 a 機智生活</span>
     <span class="post-time">今日 18:12 抓取</span>
     <span class="badge badge-bull">偏多</span>
@@ -3268,20 +2632,6 @@
   <div class="post-footer">
     <div class="stock-tags"></div>
     <a href="https://www.facebook.com/WinWin17888/posts/pfbid0784xdggXmZNWg1zH7Y1ELiLa7TcfBHaQ6GWZGLMccnA46WC8skJLXZZS2WayQRdvl" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">善甲狼 a 機智生活</span>
-    <span class="post-time">今日 18:12 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">群組採半實名制＋人工審核，每季升降制度，強調主動輸出才能成長</div>
-  <ul class="key-points"><li>每月需撰寫小作文（不限個股，涵蓋投資策略、經營方式或漏洞規則皆可）</li><li>進群門檻：填表申請＋私訊自我介紹，未收通知即代表未通過，群組主動篩選成員</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/WinWin17888/posts/pfbid022TzTVGKiUffSHPWWgrPLYUSqToogu3pfHrQ3kS14Kt8meo1hhN9rHncTdfSB45ril" target="_blank" class="fb-link">查看原文 →</a>
   </div>
 </div>
 <div class="post-card">
@@ -3314,20 +2664,6 @@
 </div>
 <div class="post-card">
   <div class="post-header">
-    <span class="page-name">海伊股倉 Hy's Stockhouse</span>
-    <span class="post-time">今日 18:11 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">粉專官方聲明絕不會主動私訊任何粉絲</div>
-  <ul class="key-points"><li>目前存在冒充本粉專的假帳號（fake profile），請粉絲提高警覺</li><li>收到私訊請勿輕信，避免遭受詐騙</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/Hy.Stockhouse/posts/pfbid02Q36tu2Zqsymdub6fxzeYa51ULdzMxZhDrAaSR9TbzeMsFbB7DgbELT7a2RAMGBxVl" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
     <span class="page-name">菜鳥投資成長日記</span>
     <span class="post-time">今日 18:11 抓取</span>
     <span class="badge badge-neu">中性</span>
@@ -3338,76 +2674,6 @@
   <div class="post-footer">
     <div class="stock-tags"></div>
     <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid02YBKv9N3L9fj8zq7zbvpD7DECJRTC2igHd7L6RTTibtfD8ttdy3UvSgaDseyxBHKxl&id=100064496752266" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">Charlie 的操盤隨記</span>
-    <span class="post-time">今日 18:11 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">詐騙手法已從仿冒粉絲專頁改為個人帳號，主動加好友並私訊，請粉絲提高警覺</div>
-  <ul class="key-points"><li>作者聲明不會主動加好友、無Line群組，任何此類行為皆為詐騙</li><li>臉書檢舉機制形同虛設，作者認為平台難以期待主動改善，線圖分析更新暫緩</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/Charlie.Investing/posts/pfbid0248yDREXasTDHH49mEs1ZLm3FFGwF1CPwb7sggUCHSmxDX9LvZ5ytGJsY31xYh9vFl" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">Charlie 的操盤隨記</span>
-    <span class="post-time">今日 18:11 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">粉專定位為個人交易紀錄，非投資建議，強調讀者須自行研究，切勿盲目跟單</div>
-  <ul class="key-points"><li>技術分析人人可學，但找出行情方向與正確進出場點位需靠自身市場經驗與盤感養成</li><li>澄清本人未帶群組，建議新追蹤者從PTT五篇歷史文章搭配粉專文章系統性學習</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/Charlie.Investing/posts/pfbid02YEVdgUZtutzKNjM6h4eeMvSTVjsWMT5SWXzdTdLsHEratcvxQCRk2bLyZZkySVoHl" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">Yu Master Investment</span>
-    <span class="post-time">今日 18:10 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">課程融合技術分析與價值投資，涵蓋CWH、VCP、RSI、MACD等多種技術指標及EPS、FCF、護城河等基本面要素</div>
-  <ul class="key-points"><li>以港股及美股實際個案（騰訊、阿里、AAPL、AVGO等）作實戰操作教學，目標提升穩定獲利能力</li><li>課程費用港幣$3,988，錄製影片可自行觀看，附贈SanDisk USB教材及一年Whatsapp學習交流群</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"><span class="stock-tag">700</span><span class="stock-tag">9988</span><span class="stock-tag">27</span><span class="stock-tag">1299</span><span class="stock-tag">16</span><span class="stock-tag">AAPL</span><span class="stock-tag">META</span><span class="stock-tag">AVGO</span></div>
-    <a href="https://www.facebook.com/yumasterinvestment/posts/pfbid022nmwL88xA7RxY5AJgBxXgjUJdi6ijeyZc1BQyFSwAKLMSmLbJMcVTGnj9BFkbrLrl" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">盤整之王 Consolidation</span>
-    <span class="post-time">今日 16:46 抓取</span>
-    <span class="badge badge-bear">偏空</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">30%的回調屬於預期內，呼籲交易員不必恐慌</div>
-  <ul class="key-points"><li>強調成熟交易員應控制倉位、不讓短期盈虧影響長期判斷</li><li>自嘲打開帳戶後倉位竟不見，以幽默方式暗示自身遭受重大損失</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/doinvestfuture/posts/pfbid02Cp6ozvbHsSFLT8ho6ANogXYCX9mHoFGt45fjcNdN879JaRngpk7ZSewrHTH92zHtl" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">老墨 Mofi</span>
-    <span class="post-time">今日 16:46 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">順勢而為是投資核心原則，不應與市場對抗</div>
-  <ul class="key-points"><li>應反思自身操作方向是否與行情一致，而非抱怨市場</li><li>投資心態調整優先於預測行情走向</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/mofi.investment/posts/pfbid07De1A2B37eExRPdsivPd6QhdX8tqkR3FhxdjALZaA3Pk8k3WBZ81bL5hGQQKxeyBl" target="_blank" class="fb-link">查看原文 →</a>
   </div>
 </div>
 <div class="post-card">
@@ -3440,62 +2706,6 @@
 </div>
 <div class="post-card">
   <div class="post-header">
-    <span class="page-name">善甲狼 a 機智生活</span>
-    <span class="post-time">今日 16:46 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">以幽默筆法描述股市投資成癮的心理歷程，包含追高、抄底、半夜看美股等行為</div>
-  <ul class="key-points"><li>點出散戶常見的投資陷阱：衝動加碼、無法自制、越跌越想買的末期心態</li><li>結尾反諷式地詢問台積電後市，暗示即便知道問題所在，投資人仍難以自拔</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"><span class="stock-tag">2330</span></div>
-    <a href="https://www.facebook.com/WinWin17888/posts/pfbid0jwEdr3WGKc7Lh7GBi8eN6SwBuzxDNJnjZcuu3Tuti4chDhndm9CQCpBg9m6GMQzNl" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">善甲狼 a 機智生活</span>
-    <span class="post-time">今日 16:46 抓取</span>
-    <span class="badge badge-bear">偏空</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span><span class="cat-tag" style="background:#FF6B3522;color:#FF6B35;border:1px solid #FF6B3544">總經</span></div>
-  <div class="post-headline">大宗商品（石油、黃金、天然氣等）有自己的供需週期，研究透徹即可找到投資機會，不必局限於股票</div>
-  <ul class="key-points"><li>群友看空石油並放空，已獲數千萬美元等級報酬，市場常出現「送分題」</li><li>投資核心在於能否發現機會、做好準備，以及當機會來臨時敢不敢執行</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/WinWin17888/posts/pfbid02usY6sXyujdkbocs6GoMGpep9b68ZKriBCvTrZ56spWDw2MfpFT8TCdBf2eiaxEiUl" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">善甲狼 a 機智生活</span>
-    <span class="post-time">今日 16:46 抓取</span>
-    <span class="badge badge-bear">偏空</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span><span class="cat-tag" style="background:#2DC78A22;color:#2DC78A;border:1px solid #2DC78A44">台股大盤</span></div>
-  <div class="post-headline">社群炒作氛圍誇大獲利，吸引散戶追高後往往迎來暴跌，疑似存在「釣魚上車」現象</div>
-  <ul class="key-points"><li>融資、質押等高槓桿操作在投資社群中盛行，風險極高</li><li>跟風熱門題材（記憶體、被動元件、功率半導體）追漲，往往成為最後接盤者</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/WinWin17888/posts/pfbid0U7DVReqrHbNA28ejmeZ5yBqDsUf649yj5YRM7e82gdBstVnHCJnXgxMBa2fXZrDAl" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">杯米的股市筆記</span>
-    <span class="post-time">今日 16:45 抓取</span>
-    <span class="badge badge-bear">偏空</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#2DC78A22;color:#2DC78A;border:1px solid #2DC78A44">台股大盤</span><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">週一創高、週五即跌破支撐，本週大盤急速反轉向下</div>
-  <ul class="key-points"><li>作者後悔未聽從市場警示訊號（摩股資本吃大餐、巴逆逆做多）提前應對</li><li>以自嘲語氣提醒自己與讀者，未來要重視關鍵警示訊號，不可輕忽</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid02YhaVBW6uJqy5hfb4BeMGaiF3ZJL9oL9P5hzLZkP7UWawAwBw9d8XG7L8naKrmKmwl&id=61569938009012" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
     <span class="page-name">海伊股倉 Hy's Stockhouse</span>
     <span class="post-time">今日 16:45 抓取</span>
     <span class="badge badge-neu">中性</span>
@@ -3506,20 +2716,6 @@
   <div class="post-footer">
     <div class="stock-tags"><span class="stock-tag">NVDA</span><span class="stock-tag">TSLA</span><span class="stock-tag">MSFT</span><span class="stock-tag">GOOG</span><span class="stock-tag">AMZN</span><span class="stock-tag">META</span><span class="stock-tag">PLTR</span><span class="stock-tag">AVGO</span></div>
     <a href="https://www.facebook.com/Hy.Stockhouse/posts/pfbid0eHVk3qYcHUd2tPt4tDxrsVB1NUqwvqj5E4grNWDg6KPh1zYxhX7rtqs2tqhJa6Vdl" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">菜鳥投資成長日記</span>
-    <span class="post-time">今日 16:45 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">發現一個新的「報平安」功能，讓用戶可向親友告知自身狀況</div>
-  <ul class="key-points"><li>若真正遇到緊急事故，當事人可能無法按下報平安，功能存在實用性矛盾</li><li>若親友未收到報平安訊息，反而可能引發不必要的擔憂</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid0EAjV64uBjBU8CFain3rxwYp6Hqt46UiNpTeGDwjvWppFQeJZaAagEYJbeoQ1Dakwl&id=100064496752266" target="_blank" class="fb-link">查看原文 →</a>
   </div>
 </div>
 <div class="post-card">
@@ -3538,48 +2734,6 @@
 </div>
 <div class="post-card">
   <div class="post-header">
-    <span class="page-name">Charlie 的操盤隨記</span>
-    <span class="post-time">今日 16:45 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">M6 Max 與 M6 Ultra 可能不會推出，產品線出現跳代情況</div>
-  <ul class="key-points"><li>Apple 產品漲價趨勢明顯，等待新品可能面臨更高購買成本</li><li>作者認為提早入手 M5 Max 是正確決策，避免既漲價又須繼續等待的雙重損失</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"><span class="stock-tag">AAPL</span></div>
-    <a href="https://www.facebook.com/Charlie.Investing/posts/pfbid0G1sM47wCJF3iFNJuaw1zSD1o3kmutfREY68yofm3ZLK6EDy75QrtPCJikQVjwXtLl" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">盤整之王 Consolidation</span>
-    <span class="post-time">今日 12:02 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">《脈動》活動成功舉辦，作者感謝企劃、主持人KoKo、專員Iwen及大富翁股神K等團隊的協助</div>
-  <ul class="key-points"><li>作者推薦KoKo為財經活動主持人首選，攝影推薦@yangwu_ian</li><li>活動雖獲好評，作者仍認為有進步空間，並坦承準備期只有一個多月且能力尚有不足</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/doinvestfuture/posts/pfbid02SqcAWbcVJ5b1UpcMB4UCq8YHfNMrhABcU3Dg1do9m9SeWFeM4Y32mXGLjdrqQnkhl" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">老墨 Mofi</span>
-    <span class="post-time">今日 12:02 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">貼文以感恩母親帶領自己接觸投資為引子，實為業配「愛神燈」檯燈產品</div>
-  <ul class="key-points"><li>無任何股票操作建議、個股分析或市場觀點</li><li>內容以親情敘事為主軸，投資內容僅為情感鋪陳背景</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/mofi.investment/posts/pfbid0hUPX8xK41m9VbZ72BpASbHC9xMhEuMDMq1GYFAmYvnEaQ5eAty5pqoPoESRtUvejl" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
     <span class="page-name">盤整之王 Consolidation</span>
     <span class="post-time">今日 10:03 抓取</span>
     <span class="badge badge-neu">中性</span>
@@ -3594,20 +2748,6 @@
 </div>
 <div class="post-card">
   <div class="post-header">
-    <span class="page-name">盤整之王 Consolidation</span>
-    <span class="post-time">今日 10:03 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">《脈動》活動成功舉辦，作者感謝團隊各成員在緊急狀況下的協力合作</div>
-  <ul class="key-points"><li>主持人KoKo被評為本次MVP，作者唯一推薦財經類活動主持，攝影推薦Ian</li><li>作者自省能力仍有不足，活動有改善空間，但整體結果令人滿意</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/doinvestfuture/posts/pfbid0NzATKvgfSms4ax1g4KyjooJBptPiW66oKjrQJADEePGboFDhYVANM2HDZpv6neozl" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
     <span class="page-name">老墨 Mofi</span>
     <span class="post-time">今日 10:03 抓取</span>
     <span class="badge badge-neu">中性</span>
@@ -3618,90 +2758,6 @@
   <div class="post-footer">
     <div class="stock-tags"></div>
     <a href="https://www.facebook.com/mofi.investment/posts/pfbid0XSjeKYbPX2evpfXmnXL2Jtyu3LsyQ7QJmXdPPERVLV5peUSJxADoJYaAjGoGM8d7l" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">老墨 Mofi</span>
-    <span class="post-time">今日 10:03 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">LINE 社群重新開放加入，優先服務已綁定 XQ 優惠碼（@MOFI）的追蹤者</div>
-  <ul class="key-points"><li>社群提供獨家指標、介面及直播節目資訊，綁碼朋友可獲得 PRO MAX 版本</li><li>加入連結置於留言區，非詐騙，可透過粉絲數（>4.8萬）確認帳號真實性</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/mofi.investment/posts/pfbid06TJKjjkYCWwyCCbxBzqacAvBRbz8ivo9VkxeZ73byxrY9fPEKmvuSyiGhmmKefNil" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">老墨 Mofi</span>
-    <span class="post-time">今日 10:03 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">貼文為業配內容，主要推廣「愛神燈」檯燈產品，投資相關內容極少</div>
-  <ul class="key-points"><li>作者提及投資啟蒙源自母親帶領，感恩母親對其投資路的影響</li><li>內容以家庭情感故事為主軸，無任何具體投資建議或市場分析</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/mofi.investment/posts/pfbid02m22i47wQsAVQ57QbX51QLGRDpd7r7Yji9L7Uqqiu77CZGfjhWV6GDn6Ct2cM3Dn4l" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">老墨 Mofi</span>
-    <span class="post-time">今日 10:03 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">6/27（六）14:00–16:00 在高雄舉辦免費 AI × XQ 交流會，名額有限</div>
-  <ul class="key-points"><li>作者以文科背景自學 AI 與 XQ 程式指標，強調邊做邊學，歡迎無程式基礎者參加</li><li>使用優惠碼 MOFI 綁定 XQ 全球贏家可獲 100 點折抵並解鎖作者自製指標</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/mofi.investment/posts/pfbid0dZzkapkFWAGy6FWnZunhJ2J65Nq5XXC9oE8AHGLYyTAv83tFatww3ftWMqsLBaFYl" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">老墨 Mofi</span>
-    <span class="post-time">今日 10:03 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span><span class="cat-tag" style="background:#4A9EFF22;color:#4A9EFF;border:1px solid #4A9EFF44">台股個股</span></div>
-  <div class="post-headline">媒體慣用「事後諸葛」式標題，漲跌皆可將台積電套入因果敘事</div>
-  <ul class="key-points"><li>此類新聞標題缺乏真正的因果分析，僅是結果導向的說法</li><li>投資人應對財經媒體標題保持批判性思考，不應被表面敘事誤導</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"><span class="stock-tag">2330</span></div>
-    <a href="https://www.facebook.com/mofi.investment/posts/pfbid02dKgtXpLWcqbgLtnsy2VdhGBafgYCMxy5aZXZ4nu6x9xNsxpjiWTv7whCR9Uitqhel" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">OP 凱文</span>
-    <span class="post-time">今日 10:02 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">投資工具無好壞之分，股票/ETF是必修，期貨/選擇權是進階工具，應依需求善加運用</div>
-  <ul class="key-points"><li>平台定位為系統化教學，不報明牌，著重培養投資者獨立判斷的「釣魚邏輯」</li><li>核心理念：腦袋決定口袋，學習正確知識是通往財務自由的關鍵</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/OptionPlayerKevin/posts/pfbid02pwd9pUojaxpM9C9nyr7v1f7wsbsgRJoZx6gvmD8UsEZk1z2MTG2KfSSfEQ4ThB48l" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">OP 凱文</span>
-    <span class="post-time">今日 10:02 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">6/27高雄免費AI×XQ交流會，強調雙向互動、不設程式門檻</div>
-  <ul class="key-points"><li>作者分享以AI輔助在XQ開發自製指標的實務摸索經驗</li><li>使用優惠碼MOFI綁定XQ可獲100點折抵並解鎖作者自製指標</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/OptionPlayerKevin/posts/pfbid0wKX6r8zZQYX4DPotwgCxh8RiWnqV7GRWAvARuqNx4KbCUhVXzEu4R1Vs4kuhpJchl" target="_blank" class="fb-link">查看原文 →</a>
   </div>
 </div>
 <div class="post-card">
@@ -3730,20 +2786,6 @@
   <div class="post-footer">
     <div class="stock-tags"></div>
     <a href="https://www.facebook.com/WinWin17888/posts/pfbid0784xdggXmZNWg1zH7Y1ELiLa7TcfBHaQ6GWZGLMccnA46WC8skJLXZZS2WayQRdvl" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">善甲狼 a 機智生活</span>
-    <span class="post-time">今日 10:02 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">打造強調主動輸出與互助的線上交易室社群，600+成員，設升降淘汰制度</div>
-  <ul class="key-points"><li>採半實名制與人工審核，每月需繳交投資相關小作文，強制輸出以促進成長</li><li>社群定位為學習型社群而非資訊聊天室，拒絕潛水與伸手，重視成員交流品質</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/WinWin17888/posts/pfbid022TzTVGKiUffSHPWWgrPLYUSqToogu3pfHrQ3kS14Kt8meo1hhN9rHncTdfSB45ril" target="_blank" class="fb-link">查看原文 →</a>
   </div>
 </div>
 <div class="post-card">
@@ -3804,104 +2846,6 @@
 </div>
 <div class="post-card">
   <div class="post-header">
-    <span class="page-name">杯米的股市筆記</span>
-    <span class="post-time">今日 10:02 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">貼文為玩笑性質，並非真正宣布離開股市或出清持股</div>
-  <ul class="key-points"><li>附有持股圖片，但無具體個股分析或操作建議</li><li>整體氛圍輕鬆，無實質投資資訊</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid0aAYYUQBj1pNe9Y6eqEm2RfzUx7c3rgFbmQDFWv2jQ2y3JJWU1Rr8TsviQxZ5dXxGl&id=61569938009012" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">海伊股倉 Hy's Stockhouse</span>
-    <span class="post-time">今日 10:01 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">有假冒帳號正在仿冒「海伊股倉 Hy's Stockhouse」身份私訊粉絲</div>
-  <ul class="key-points"><li>作者本人絕對不會透過私訊聯繫任何人</li><li>呼籲粉絲提高警覺，收到私訊請勿輕信</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/Hy.Stockhouse/posts/pfbid02Q36tu2Zqsymdub6fxzeYa51ULdzMxZhDrAaSR9TbzeMsFbB7DgbELT7a2RAMGBxVl" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">菜鳥投資成長日記</span>
-    <span class="post-time">今日 10:01 抓取</span>
-    <span class="badge badge-bear">偏空</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span><span class="cat-tag" style="background:#2DC78A22;color:#2DC78A;border:1px solid #2DC78A44">台股大盤</span></div>
-  <div class="post-headline">做好資金控管，避免過度槓桿，活下去才有翻身機會</div>
-  <ul class="key-points"><li>衡量倉位風險的指標：大盤重跌幾千點時是否仍能安穩入睡</li><li>作者主觀感受台股大盤有越來越弱的跡象，不建議回檔重壓槓桿</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid02WnQHVBnLEJMYaVFcHWRMkDsdFtwSkJcN7iVrazjSAnZSd7hSpa9bH4FKubxsQznBl&id=100064496752266" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">菜鳥投資成長日記</span>
-    <span class="post-time">今日 10:01 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#4A9EFF22;color:#4A9EFF;border:1px solid #4A9EFF44">台股個股</span><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">台達電持股已翻8倍，目前從高點修正約25%，作者因看不懂後市選擇不再加碼</div>
-  <ul class="key-points"><li>投資人應回歸自身買進理由，重新評估台達電的競爭優勢是否依然成立</li><li>作者本身為電源產業從業者，認為台達電在電源領域的實力遠超飛宏、光寶、康舒等競爭對手</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"><span class="stock-tag">2308</span></div>
-    <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid0yqyFBv6LM8vtK1Po7NwPAw9F6WtWQe6kqdGyNhUYEiUmsansovhaZ8ccy9sNStFKl&id=100064496752266" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">菜鳥投資成長日記</span>
-    <span class="post-time">今日 10:01 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#4A9EFF22;color:#4A9EFF;border:1px solid #4A9EFF44">台股個股</span><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">補買台積電後遭遇大跌，承認操作時機不佳，情緒控制仍需改進</div>
-  <ul class="key-points"><li>槓桿控制在1.8倍，認為風險尚在可接受範圍</li><li>判斷此波DRAM下跌源於韓國清槓桿，依紀律小量布局DRAM</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"><span class="stock-tag">2330</span></div>
-    <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid02hR16oT1socr7hnHwiEgb9fQ1bqqNM7iVeikWAjdUpLf7i552uGWnkj9PtjPtZuvzl&id=100064496752266" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">Charlie 的操盤隨記</span>
-    <span class="post-time">今日 10:01 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">詐騙集團改用個人帳號仿冒作者，主動加好友私訊，作者重申不會主動聯繫粉絲且無Line群組</div>
-  <ul class="key-points"><li>臉書檢舉假帳號機制形同虛設，多次檢舉均被以未違反社群守則為由駁回</li><li>因擔心線圖分析內容被假帳號盜用，暫緩更新投資分析，以防詐宣導為優先</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/Charlie.Investing/posts/pfbid0248yDREXasTDHH49mEs1ZLm3FFGwF1CPwb7sggUCHSmxDX9LvZ5ytGJsY31xYh9vFl" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">Charlie 的操盤隨記</span>
-    <span class="post-time">今日 10:01 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span><span class="cat-tag" style="background:#34D39922;color:#34D399;border:1px solid #34D39944">美股大盤</span></div>
-  <div class="post-headline">粉專為個人交易紀錄，非投資建議，作者未帶任何群組，請讀者自行研究（DYOR）</div>
-  <ul class="key-points"><li>分析與交易是兩回事，盲目跟單而不懂出場時機極為危險</li><li>技術分析的核心難點在於判斷行情最可能的方向與正確進出場點位，需靠長期經驗與心態培養</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/Charlie.Investing/posts/pfbid0Us1T4TDGtCRdSJP5KcVsDH3ArbWaJfmUCyq4bPHGYZgze49MENFESTyYxnV5d2nal" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
     <span class="page-name">Charlie 的操盤隨記</span>
     <span class="post-time">今日 10:01 抓取</span>
     <span class="badge badge-neu">中性</span>
@@ -3918,34 +2862,6 @@
   <div class="post-header">
     <span class="page-name">Yu Master Investment</span>
     <span class="post-time">今日 10:01 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">課程融合技術分析與價值投資，涵蓋CWH、VCP、MACD、RSI等多種技術指標及基本面財務分析工具</div>
-  <ul class="key-points"><li>課程費用港幣$3,988，含SanDisk USB課程內容、電子書及12個月Whatsapp學習交流群，學費不退</li><li>以實戰操作為主，目標讓學員掌握選股方法、注碼控制及穩健獲利能力</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"><span class="stock-tag">700</span><span class="stock-tag">9988</span><span class="stock-tag">27</span><span class="stock-tag">1299</span><span class="stock-tag">16</span><span class="stock-tag">AAPL</span><span class="stock-tag">META</span><span class="stock-tag">AVGO</span></div>
-    <a href="https://www.facebook.com/yumasterinvestment/posts/pfbid022nmwL88xA7RxY5AJgBxXgjUJdi6ijeyZc1BQyFSwAKLMSmLbJMcVTGnj9BFkbrLrl" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">Yu Master Investment</span>
-    <span class="post-time">今日 10:01 抓取</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">出版《一個投機者的價值》，核心思想為基本面結合技術分析，電子版HK$200、實體書HK$258</div>
-  <ul class="key-points"><li>強調紀律、耐性與妥善風險管理是任何成功交易策略的核心要素</li><li>實體書於旺角仁安大廈領取，亦支持順豐本地及海外郵寄，接受多種付款方式</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/yumasterinvestment/posts/pfbid02bhzBXAQyuzd3JdKV41nRRUdozZCVUwBHRzfPVhrxF2DLRwF3mu157n1cBrsxEPDZl" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">Yu Master Investment</span>
-    <span class="post-time">今日 10:01 抓取</span>
     <span class="badge badge-bull">偏多</span>
   </div>
   <div class="cat-tags"><span class="cat-tag" style="background:#7C6FFF22;color:#7C6FFF;border:1px solid #7C6FFF44">美股個股</span><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
@@ -3954,20 +2870,6 @@
   <div class="post-footer">
     <div class="stock-tags"><span class="stock-tag">LITE</span></div>
     <a href="https://www.facebook.com/yumasterinvestment/posts/pfbid0FbjU26VuHpcwRhTtUdvhjbjC53sLhduye2MAzW3WqZEaWVMCZujqi77FeBzLzRevl" target="_blank" class="fb-link">查看原文 →</a>
-  </div>
-</div>
-<div class="post-card">
-  <div class="post-header">
-    <span class="page-name">Yu Master Investment</span>
-    <span class="post-time">02/28 00:00</span>
-    <span class="badge badge-neu">中性</span>
-  </div>
-  <div class="cat-tags"><span class="cat-tag" style="background:#A78BFA22;color:#A78BFA;border:1px solid #A78BFA44">操盤心法</span></div>
-  <div class="post-headline">核心投資思想為基本面結合技術分析，強調紀律與耐性是成功交易不可或缺的要素</div>
-  <ul class="key-points"><li>電子版售價HK$200（優惠至2026年2月28日），實體書HK$258，支援多種付款方式及順豐郵寄</li><li>沒有任何交易策略萬無一失，妥善的風險管理與自律是成功交易的核心</li></ul>
-  <div class="post-footer">
-    <div class="stock-tags"></div>
-    <a href="https://www.facebook.com/yumasterinvestment/posts/pfbid02bhzBXAQyuzd3JdKV41nRRUdozZCVUwBHRzfPVhrxF2DLRwF3mu157n1cBrsxEPDZl" target="_blank" class="fb-link">查看原文 →</a>
   </div>
 </div></div>
 
