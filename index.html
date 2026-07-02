@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Joseph LifeOS — 投資筆記</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0d14;
+    --surface: #131720;
+    --border: #232839;
+    --text: #e2e8f0;
+    --muted: #64748b;
+    --accent: #7c6af5;
+    --green: #22c55e;
+    --blue: #3b82f6;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: 'IBM Plex Sans', -apple-system, 'Helvetica Neue', sans-serif;
+    min-height: 100vh;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    padding: 40px 24px;
+  }
+
+  .logo {
+    display: flex; align-items: center; gap: 10px; margin-bottom: 6px;
+  }
+  .logo-icon {
+    width: 36px; height: 36px; border-radius: 10px;
+    background: linear-gradient(135deg, #7c6af5, #3b82f6);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .logo-icon svg { width: 18px; height: 18px; color: white; }
+  .title { font-size: 22px; font-weight: 700; letter-spacing: -.02em; }
+  .subtitle { color: var(--muted); font-size: 12px; margin-bottom: 40px; margin-left: 46px; }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+    width: 100%;
+    max-width: 740px;
+  }
+
+  .market-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 20px 20px 16px;
+    transition: border-color .2s, box-shadow .2s;
+  }
+  .market-card:hover {
+    border-color: rgba(124,106,245,.3);
+    box-shadow: 0 4px 24px rgba(0,0,0,.4);
+  }
+
+  .market-header { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+
+  .market-badge {
+    width: 42px; height: 42px; border-radius: 11px; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 15px; font-weight: 700; letter-spacing: -.02em;
+  }
+  .market-badge.tw {
+    background: rgba(34,197,94,.1); color: var(--green);
+    border: 1px solid rgba(34,197,94,.2);
+  }
+  .market-badge.us {
+    background: rgba(59,130,246,.1); color: var(--blue);
+    border: 1px solid rgba(59,130,246,.2);
+  }
+
+  .market-info {}
+  .market-name { font-size: 17px; font-weight: 700; letter-spacing: -.01em; }
+  .market-name.tw { color: var(--green); }
+  .market-name.us { color: var(--blue); }
+  .market-desc { font-size: 11px; color: var(--muted); margin-top: 2px; line-height: 1.5; }
+
+  .divider { height: 1px; background: var(--border); margin-bottom: 12px; }
+
+  .source-list { display: flex; flex-direction: column; gap: 7px; }
+
+  .source-link {
+    display: flex; align-items: center; justify-content: space-between;
+    text-decoration: none; color: var(--text);
+    background: rgba(255,255,255,.03);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 10px 13px;
+    transition: border-color .15s, background .15s;
+    cursor: pointer;
+  }
+  .source-link:hover {
+    border-color: var(--accent);
+    background: rgba(124,106,245,.06);
+  }
+
+  .source-info { display: flex; flex-direction: column; gap: 4px; }
+  .source-name { font-size: 13px; font-weight: 600; }
+  .source-tags { display: flex; gap: 4px; flex-wrap: wrap; }
+
+  .tag {
+    font-size: 10px; padding: 1px 7px; border-radius: 8px; font-weight: 500;
+  }
+  .tag.tw {
+    background: rgba(34,197,94,.08); border: 1px solid rgba(34,197,94,.18); color: var(--green);
+  }
+  .tag.us {
+    background: rgba(59,130,246,.08); border: 1px solid rgba(59,130,246,.18); color: var(--blue);
+  }
+  .tag.macro {
+    background: rgba(124,106,245,.08); border: 1px solid rgba(124,106,245,.18); color: var(--accent);
+  }
+  .market-badge.macro {
+    background: rgba(124,106,245,.1); color: var(--accent);
+    border: 1px solid rgba(124,106,245,.2);
+  }
+  .market-name.macro { color: var(--accent); }
+
+  .source-arrow {
+    width: 22px; height: 22px; border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--muted); background: rgba(255,255,255,.04);
+    font-size: 14px; flex-shrink: 0;
+    transition: color .15s, background .15s, transform .15s;
+  }
+  .source-link:hover .source-arrow {
+    color: var(--accent);
+    background: rgba(124,106,245,.1);
+    transform: translateX(2px);
+  }
+
+  footer { margin-top: 40px; color: var(--muted); font-size: 11px; }
+</style>
+</head>
+<body>
+
+<div class="logo">
+  <div class="logo-icon">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+      <polyline points="16 7 22 7 22 13"></polyline>
+    </svg>
+  </div>
+  <span class="title">Joseph LifeOS</span>
+</div>
+<div class="subtitle">投資分析筆記整合</div>
+
+<div class="grid">
+
+  <div class="market-card">
+    <div class="market-header">
+      <div class="market-badge tw">台</div>
+      <div class="market-info">
+        <div class="market-name tw">台股</div>
+        <div class="market-desc">籌碼追蹤 · 分點動向 · ETF 持股 · 節目個股</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="source-list">
+      <a class="source-link" href="云式籌碼/">
+        <div class="source-info">
+          <span class="source-name">籌碼追蹤</span>
+          <div class="source-tags">
+            <span class="tag tw">分點</span>
+            <span class="tag tw">大戶散戶</span>
+            <span class="tag tw">ETF 持股</span>
+          </div>
+        </div>
+        <div class="source-arrow">›</div>
+      </a>
+      <a class="source-link" href="理財達人秀/">
+        <div class="source-info">
+          <span class="source-name">理財達人秀</span>
+          <div class="source-tags">
+            <span class="tag tw">個股分析</span>
+            <span class="tag tw">目標價</span>
+            <span class="tag tw">操作建議</span>
+          </div>
+        </div>
+        <div class="source-arrow">›</div>
+      </a>
+      <a class="source-link" href="兆華艾綸說/">
+        <div class="source-info">
+          <span class="source-name">兆華艾綸說</span>
+          <div class="source-tags">
+            <span class="tag tw">個股分析</span>
+            <span class="tag tw">台股</span>
+            <span class="tag us">美股</span>
+          </div>
+        </div>
+        <div class="source-arrow">›</div>
+      </a>
+      <a class="source-link" href="兆華與股惑仔/">
+        <div class="source-info">
+          <span class="source-name">兆華與股惑仔</span>
+          <div class="source-tags">
+            <span class="tag tw">Podcast</span>
+            <span class="tag tw">個股分析</span>
+            <span class="tag tw">台股</span>
+          </div>
+        </div>
+        <div class="source-arrow">›</div>
+      </a>
+    </div>
+  </div>
+
+  <div class="market-card">
+    <div class="market-header">
+      <div class="market-badge us">US</div>
+      <div class="market-info">
+        <div class="market-name us">美股</div>
+        <div class="market-desc">即時策略 · 個股建議 · 進出場位置 · 大環境判斷</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="source-list">
+      <a class="source-link" href="MimiVsJames/">
+        <div class="source-info">
+          <span class="source-name">MimiVsJames</span>
+          <div class="source-tags">
+            <span class="tag us">個股</span>
+            <span class="tag us">進出場</span>
+          </div>
+        </div>
+        <div class="source-arrow">›</div>
+      </a>
+      <a class="source-link" href="JG說真的/">
+        <div class="source-info">
+          <span class="source-name">JG說真的</span>
+          <div class="source-tags">
+            <span class="tag us">個股分析</span>
+            <span class="tag us">會員直播</span>
+            <span class="tag tw">台股</span>
+          </div>
+        </div>
+        <div class="source-arrow">›</div>
+      </a>
+      <a class="source-link" href="大叔美股筆記/">
+        <div class="source-info">
+          <span class="source-name">大叔美股筆記</span>
+          <div class="source-tags">
+            <span class="tag us">個股分析</span>
+            <span class="tag us">財報解讀</span>
+            <span class="tag us">Substack</span>
+          </div>
+        </div>
+        <div class="source-arrow">›</div>
+      </a>
+    </div>
+  </div>
+
+  <div class="market-card">
+    <div class="market-header">
+      <div class="market-badge macro">總經</div>
+      <div class="market-info">
+        <div class="market-name macro">總體市場</div>
+        <div class="market-desc">總經分析 · 市場觀點 · Podcast 筆記</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="source-list">
+      <a class="source-link" href="股癌/">
+        <div class="source-info">
+          <span class="source-name">股癌 Gooaye</span>
+          <div class="source-tags">
+            <span class="tag macro">總經</span>
+            <span class="tag macro">市場觀點</span>
+            <span class="tag macro">週更</span>
+          </div>
+        </div>
+        <div class="source-arrow">›</div>
+      </a>
+    </div>
+  </div>
+
+  <div class="market-card">
+    <div class="market-header">
+      <div class="market-badge" style="background:rgba(251,191,36,.1);color:#fbbf24;border:1px solid rgba(251,191,36,.2)">盯</div>
+      <div class="market-info">
+        <div class="market-name" style="color:#fbbf24">盯盤面板</div>
+        <div class="market-desc">自選股即時報價 · 多源觀點 · 籌碼訊號彙整</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="source-list">
+      <a class="source-link" href="盯盤面板/">
+        <div class="source-info">
+          <span class="source-name">台股 + 美股</span>
+          <div class="source-tags">
+            <span class="tag tw">即時報價</span>
+            <span class="tag us">美股</span>
+            <span class="tag" style="background:rgba(251,191,36,.08);color:#fbbf24;border:1px solid rgba(251,191,36,.18)">多源觀點</span>
+          </div>
+        </div>
+        <div class="source-arrow">›</div>
+      </a>
+    </div>
+  </div>
+
+  <div class="market-card">
+    <div class="market-header">
+      <div class="market-badge" style="background:#1877F220;color:#1877F2">FB</div>
+      <div class="market-info">
+        <div class="market-name" style="color:#1877F2">FB 粉專追蹤</div>
+        <div class="market-desc">台股 · 美股 KOL · 盤中快訊 · 即時分析</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="source-list">
+      <a class="source-link" href="FB粉專/">
+        <div class="source-info">
+          <span class="source-name">11 個粉專彙整</span>
+          <div class="source-tags">
+            <span class="tag" style="background:#1877F220;color:#1877F2">台股</span>
+            <span class="tag" style="background:#1877F220;color:#1877F2">美股</span>
+            <span class="tag" style="background:#1877F220;color:#1877F2">每日 4 次</span>
+          </div>
+        </div>
+        <div class="source-arrow">›</div>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<footer>Joseph LifeOS · 僅供個人學習參考，不構成投資建議</footer>
+
+</body>
+</html>
