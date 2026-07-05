@@ -439,7 +439,7 @@ body {
   <div class="drawer-title">目錄</div>
   <a class="drawer-item" href="#section-buy" onclick="closeDrawer()">
     個股建議
-    <span class="drawer-badge">49 檔</span>
+    <span class="drawer-badge">50 檔</span>
   </a>
   <a class="drawer-item" href="#section-research" onclick="closeDrawer()">
     產業研究
@@ -447,7 +447,7 @@ body {
   </a>
   <a class="drawer-item" href="#section-tutorial" onclick="closeDrawer()">
     操作教學
-    <span class="drawer-badge">4 篇</span>
+    <span class="drawer-badge">6 篇</span>
   </a>
 </nav>
 
@@ -466,7 +466,7 @@ body {
     </svg>
     <input id="stock-search" class="search-input" type="text" placeholder="搜尋 ABBV / 設備 / HBM">
   </div>
-  <span class="updated-chip mono">2026-01-18 – 2026-07-02 · 更新 2026-07-03 16:00</span>
+  <span class="updated-chip mono">2026-01-18 – 2026-07-05 · 更新 2026-07-05 16:01</span>
   <a href="../" class="back-link">← 回總覽</a>
 </header>
 
@@ -474,7 +474,17 @@ body {
 
 <section class="section">
     <div class="section-title">板塊訊號</div>
-    <div class="signals-row"><div class="sig-chip sig-bull">
+    <div class="signals-row"><div class="sig-chip sig-bear">
+        <div class="sig-etf mono">SOXX</div>
+        <div class="sig-name">費城半導體</div>
+        <div class="sig-dir">↓ 弱勢</div>
+        <div class="sig-related"><span class="rel-tick mono">NVDA</span></div>
+      </div><div class="sig-chip sig-bull">
+        <div class="sig-etf mono">XLV</div>
+        <div class="sig-name">醫療保健</div>
+        <div class="sig-dir">↑ 強勢</div>
+        
+      </div><div class="sig-chip sig-bull">
         <div class="sig-etf mono">SMH</div>
         <div class="sig-name">費城半導體</div>
         <div class="sig-dir">↑ 強勢</div>
@@ -484,11 +494,6 @@ body {
         <div class="sig-name">那斯達克</div>
         <div class="sig-dir">→ 中性</div>
         <div class="sig-related"><span class="rel-tick mono">NVDA</span></div>
-      </div><div class="sig-chip sig-bull">
-        <div class="sig-etf mono">XLV</div>
-        <div class="sig-name">醫療保健</div>
-        <div class="sig-dir">↑ 強勢</div>
-        <div class="sig-related"><span class="rel-tick mono">JNJ</span><span class="rel-tick mono">MRK</span><span class="rel-tick mono">LLY</span></div>
       </div><div class="sig-chip sig-bull">
         <div class="sig-etf mono">XLU</div>
         <div class="sig-name">公用事業</div>
@@ -502,11 +507,6 @@ body {
       </div><div class="sig-chip sig-bear">
         <div class="sig-etf mono">XLC</div>
         <div class="sig-name">通訊服務</div>
-        <div class="sig-dir">↓ 弱勢</div>
-        
-      </div><div class="sig-chip sig-bear">
-        <div class="sig-etf mono">SOXX</div>
-        <div class="sig-name">費城半導體</div>
         <div class="sig-dir">↓ 弱勢</div>
         
       </div><div class="sig-chip sig-bull">
@@ -662,8 +662,160 @@ body {
       </div></div>
   </section>
 <section class="section" id="section-buy">
-    <div class="section-title">建議買入（49 檔）</div>
-    <details class="stock-group" data-label="醫療防禦股—AI 修正下的資金輪動避風港" data-themes="醫療股短線避風港 資金輪動戰法 AI 板塊修正 估值修復">
+    <div class="section-title">建議買入（50 檔）</div>
+    <details class="stock-group" data-label="AI軟體落地股：硬體擁擠後的資金輪動窗口" data-themes="AI軟體輪動 AI落地應用 token價格戰 板塊輪動 醫療分散配置">
+      <summary class="group-header">
+        <div class="group-summary-left">
+          <span class="group-label">AI軟體落地股：硬體擁擠後的資金輪動窗口</span>
+          <div class="group-tickers"><span class="grp-tick mono">SNOW</span><span class="grp-tick mono">DDOG</span><span class="grp-tick mono">NOW</span></div>
+        </div>
+        <div class="group-meta">
+          <span class="group-date mono">2026-07-05</span>
+          <span class="group-count">3 檔</span>
+          <span class="source-badge source-vocus">Vocus</span>
+        </div>
+      </summary>
+      <div class="group-body"><div class="card buy" data-ticker="SNOW" data-name="Snowflake">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">SNOW</span>
+          <span class="stock-name">Snowflake</span>
+          
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-07-05</span>
+          <span class="badge badge-green">買入</span>
+        </div>
+      </div>
+      
+      <p class="stock-logic">定位AI資料層（AI Data Layer）。模型成本下降不代表價值消失，而是價值往企業落地方向轉移，AI價值從模型層往企業資料層回流時SNOW是最直接受惠股之一。動能中高，資料層估值重估股</p>
+      <div class="price-row"></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（SNOW）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NYSE:SNOW","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-07-05</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://vocus.cc/article/6a499514fd89780001e7c357" target="_blank" class="art-link">AI 硬體交易太擁擠，半導體急殺後，下一個波段板塊輪動窗口正在打開，AI軟體板塊機會在哪邊？推薦三檔 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">邏輯</td><td class="ml-val">定位AI資料層（AI Data Layer）。模型成本下降不代表價值消失，而是價值往企業落地方向轉移，AI價值從模型層往企業資料層回流時SNOW是最直接受惠股之一。動能中高，資料層估值重估股</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">資料層重估股，分批佈局，不適合追高</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card buy" data-ticker="DDOG" data-name="Datadog">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">DDOG</span>
+          <span class="stock-name">Datadog</span>
+          
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-07-05</span>
+          <span class="badge badge-green">買入</span>
+        </div>
+      </div>
+      
+      <p class="stock-logic">定位AI監控管理（AI Observability）。AI workload、Agentic AI進入production後企業更需要監控與資安，成本成為企業導入AI後最重要管理變數，影響ROI。動能最強，偏短線與波段</p>
+      <div class="price-row"></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（DDOG）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NASDAQ:DDOG","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（3 篇文章提及）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-07-05</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://vocus.cc/article/6a499514fd89780001e7c357" target="_blank" class="art-link">AI 硬體交易太擁擠，半導體急殺後，下一個波段板塊輪動窗口正在打開，AI軟體板塊機會在哪邊？推薦三檔 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">邏輯</td><td class="ml-val">定位AI監控管理（AI Observability）。AI workload、Agentic AI進入production後企業更需要監控與資安，成本成為企業導入AI後最重要管理變數，影響ROI。動能最強，偏短線與波段</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">動能高，短線波段操作</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-05-31</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://mimivsjames.substack.com/p/ai-1-3" target="_blank" class="art-link">「AI 軟體股」重定價：哪些公司長線能放 1 到 3 年，哪些只能當彩蛋？ ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">第三順位</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">AI進入production後企業一定需要的監控、安全、可觀測性與雲端成本管理基礎設施。靠用量、資料量、雲端工作負載計費，不綁人頭。最新一季營收10.06億YoY 32%、Non-GAAP營業利潤率22%、自由現金流2.89億。年經常性收入超10萬美元客戶數從3770增至4550家。LLM Observability、GPU Monitoring、Bits AI Security Agent為AI二階受惠者。</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">三檔中Beta最高、成長性最高但估值最高，更需要買進紀律，長線看好不代表可隨便追高</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-05-31</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://mimivsjames.substack.com/p/ai-1-3-podcast" target="_blank" class="art-link">「AI 軟體股」重定價：哪些公司長線能放 1 到 3 年，哪些只能當彩蛋？Podcast ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">第一順位</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">長線佈局鐵三角之一，代表監控基礎設施</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card buy" data-ticker="NOW" data-name="ServiceNow">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">NOW</span>
+          <span class="stock-name">ServiceNow</span>
+          
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-07-05</span>
+          <span class="badge badge-green">買入</span>
+        </div>
+      </div>
+      
+      <p class="stock-logic">定位企業AI Workflow平台。AI agent最終會嵌入IT、客服、HR、財務等企業流程，掌握企業workflow入口的公司是主要受惠者。穩定成長股，股價要漲需要等一下，節奏較穩</p>
+      <div class="price-row"></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（NOW）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NYSE:NOW","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（3 篇文章提及）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-07-05</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://vocus.cc/article/6a499514fd89780001e7c357" target="_blank" class="art-link">AI 硬體交易太擁擠，半導體急殺後，下一個波段板塊輪動窗口正在打開，AI軟體板塊機會在哪邊？推薦三檔 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">邏輯</td><td class="ml-val">定位企業AI Workflow平台。AI agent最終會嵌入IT、客服、HR、財務等企業流程，掌握企業workflow入口的公司是主要受惠者。穩定成長股，股價要漲需要等一下，節奏較穩</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">企業流程代表，節奏較穩</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-05-31</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://mimivsjames.substack.com/p/ai-1-3" target="_blank" class="art-link">「AI 軟體股」重定價：哪些公司長線能放 1 到 3 年，哪些只能當彩蛋？ ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">第二順位</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">企業工作流自動化的成長核心。非綁定人頭計費，而是收企業自動化工作流稅。Q1訂閱收入36.71億YoY 22%、cRPO 126.4億YoY 22.5%、RPO 277億YoY 25%、自由現金流率44%。Rule of X數據漂亮（20%以上成長+30%營業利潤率）。高轉換成本構成護城河，AI Agent越多越需要其治理編排平台。</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">估值不便宜，建議拉回分批買，不要在市場情緒上來時衝進場買滿</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-05-31</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://mimivsjames.substack.com/p/ai-1-3-podcast" target="_blank" class="art-link">「AI 軟體股」重定價：哪些公司長線能放 1 到 3 年，哪些只能當彩蛋？Podcast ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">第一順位</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">長線佈局鐵三角之一，代表自動化，能將 AI 轉化為 EPS 成長</td></tr></table>
+        </div></div>
+      </details>
+    </div></div>
+    </details><details class="stock-group" data-label="醫療防禦股—AI 修正下的資金輪動避風港" data-themes="醫療股短線避風港 資金輪動戰法 AI 板塊修正 估值修復">
       <summary class="group-header">
         <div class="group-summary-left">
           <span class="group-label">醫療防禦股—AI 修正下的資金輪動避風港</span>
@@ -1542,15 +1694,15 @@ body {
       <summary class="group-header">
         <div class="group-summary-left">
           <span class="group-label">AI軟體下半場變現驗證重定價</span>
-          <div class="group-tickers"><span class="grp-tick mono">CRM</span><span class="grp-tick mono">NOW</span><span class="grp-tick mono">DDOG</span></div>
+          <div class="group-tickers"><span class="grp-tick mono">CRM</span></div>
         </div>
         <div class="group-meta">
           <span class="group-date mono">2026-05-31</span>
-          <span class="group-count">3 檔</span>
+          <span class="group-count">1 檔</span>
           <span class="source-badge source-substack">Substack</span>
         </div>
       </summary>
-      <div class="group-body"><div class="sub-group-single-hd">第一順位</div><div class="card buy" data-ticker="CRM" data-name="Salesforce">
+      <div class="group-body"><div class="card buy" data-ticker="CRM" data-name="Salesforce">
       <div class="card-header">
         <div class="ticker-row">
           <span class="ticker mono">CRM</span>
@@ -1592,94 +1744,6 @@ body {
             <a href="https://mimivsjames.substack.com/p/ai-1-3-podcast" target="_blank" class="art-link">「AI 軟體股」重定價：哪些公司長線能放 1 到 3 年，哪些只能當彩蛋？Podcast ↗</a>
           </div>
           <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">第一順位</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">長線佈局鐵三角之一，代表成熟防禦，具備強大自由現金流</td></tr></table>
-        </div></div>
-      </details>
-    </div><div class="sub-group-single-hd">第二順位</div><div class="card buy" data-ticker="NOW" data-name="ServiceNow">
-      <div class="card-header">
-        <div class="ticker-row">
-          <span class="ticker mono">NOW</span>
-          <span class="stock-name">ServiceNow</span>
-          <span class="pri-chip">第二順位</span>
-        </div>
-        <div style="display:flex;align-items:center;gap:8px;">
-          <span class="latest-date mono">2026-05-31</span>
-          <span class="badge badge-green">買入</span>
-        </div>
-      </div>
-      
-      <p class="stock-logic">企業工作流自動化的成長核心。非綁定人頭計費，而是收企業自動化工作流稅。Q1訂閱收入36.71億YoY 22%、cRPO 126.4億YoY 22.5%、RPO 277億YoY 25%、自由現金流率44%。Rule of X數據漂亮（20%以上成長+30%營業利潤率）。高轉換成本構成護城河，AI Agent越多越需要其治理編排平台。</p>
-      <div class="price-row"></div>
-      <details class="chart-fold">
-        <summary class="chart-toggle">▸ K 線圖（NOW）</summary>
-        <div class="tv-wrap">
-        <div class="tradingview-widget-container">
-          <div class="tradingview-widget-container__widget"></div>
-          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-          {"symbol":"NYSE:NOW","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
-          </script>
-        </div>
-      </div>
-      </details>
-      <details class="context-fold">
-        <summary class="context-toggle">▸ 文章脈絡（2 篇文章提及）</summary>
-        <div class="context-body"><div class="mention-item">
-          <div class="mention-meta">
-            <span class="mono date-chip">2026-05-31</span>
-            <span class="badge badge-green">買入</span>
-            <a href="https://mimivsjames.substack.com/p/ai-1-3" target="_blank" class="art-link">「AI 軟體股」重定價：哪些公司長線能放 1 到 3 年，哪些只能當彩蛋？ ↗</a>
-          </div>
-          <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">第二順位</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">企業工作流自動化的成長核心。非綁定人頭計費，而是收企業自動化工作流稅。Q1訂閱收入36.71億YoY 22%、cRPO 126.4億YoY 22.5%、RPO 277億YoY 25%、自由現金流率44%。Rule of X數據漂亮（20%以上成長+30%營業利潤率）。高轉換成本構成護城河，AI Agent越多越需要其治理編排平台。</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">估值不便宜，建議拉回分批買，不要在市場情緒上來時衝進場買滿</td></tr></table>
-        </div><div class="mention-item">
-          <div class="mention-meta">
-            <span class="mono date-chip">2026-05-31</span>
-            <span class="badge badge-green">買入</span>
-            <a href="https://mimivsjames.substack.com/p/ai-1-3-podcast" target="_blank" class="art-link">「AI 軟體股」重定價：哪些公司長線能放 1 到 3 年，哪些只能當彩蛋？Podcast ↗</a>
-          </div>
-          <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">第一順位</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">長線佈局鐵三角之一，代表自動化，能將 AI 轉化為 EPS 成長</td></tr></table>
-        </div></div>
-      </details>
-    </div><div class="sub-group-single-hd">第三順位</div><div class="card buy" data-ticker="DDOG" data-name="Datadog">
-      <div class="card-header">
-        <div class="ticker-row">
-          <span class="ticker mono">DDOG</span>
-          <span class="stock-name">Datadog</span>
-          <span class="pri-chip">第三順位</span>
-        </div>
-        <div style="display:flex;align-items:center;gap:8px;">
-          <span class="latest-date mono">2026-05-31</span>
-          <span class="badge badge-green">買入</span>
-        </div>
-      </div>
-      
-      <p class="stock-logic">AI進入production後企業一定需要的監控、安全、可觀測性與雲端成本管理基礎設施。靠用量、資料量、雲端工作負載計費，不綁人頭。最新一季營收10.06億YoY 32%、Non-GAAP營業利潤率22%、自由現金流2.89億。年經常性收入超10萬美元客戶數從3770增至4550家。LLM Observability、GPU Monitoring、Bits AI Security Agent為AI二階受惠者。</p>
-      <div class="price-row"></div>
-      <details class="chart-fold">
-        <summary class="chart-toggle">▸ K 線圖（DDOG）</summary>
-        <div class="tv-wrap">
-        <div class="tradingview-widget-container">
-          <div class="tradingview-widget-container__widget"></div>
-          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-          {"symbol":"NASDAQ:DDOG","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
-          </script>
-        </div>
-      </div>
-      </details>
-      <details class="context-fold">
-        <summary class="context-toggle">▸ 文章脈絡（2 篇文章提及）</summary>
-        <div class="context-body"><div class="mention-item">
-          <div class="mention-meta">
-            <span class="mono date-chip">2026-05-31</span>
-            <span class="badge badge-green">買入</span>
-            <a href="https://mimivsjames.substack.com/p/ai-1-3" target="_blank" class="art-link">「AI 軟體股」重定價：哪些公司長線能放 1 到 3 年，哪些只能當彩蛋？ ↗</a>
-          </div>
-          <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">第三順位</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">AI進入production後企業一定需要的監控、安全、可觀測性與雲端成本管理基礎設施。靠用量、資料量、雲端工作負載計費，不綁人頭。最新一季營收10.06億YoY 32%、Non-GAAP營業利潤率22%、自由現金流2.89億。年經常性收入超10萬美元客戶數從3770增至4550家。LLM Observability、GPU Monitoring、Bits AI Security Agent為AI二階受惠者。</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">三檔中Beta最高、成長性最高但估值最高，更需要買進紀律，長線看好不代表可隨便追高</td></tr></table>
-        </div><div class="mention-item">
-          <div class="mention-meta">
-            <span class="mono date-chip">2026-05-31</span>
-            <span class="badge badge-green">買入</span>
-            <a href="https://mimivsjames.substack.com/p/ai-1-3-podcast" target="_blank" class="art-link">「AI 軟體股」重定價：哪些公司長線能放 1 到 3 年，哪些只能當彩蛋？Podcast ↗</a>
-          </div>
-          <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">第一順位</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">長線佈局鐵三角之一，代表監控基礎設施</td></tr></table>
         </div></div>
       </details>
     </div></div>
@@ -6248,6 +6312,28 @@ body {
 <section class="section" id="section-tutorial">
     <div class="section-title">操作教學</div>
     <div class="card neutral summary-card">
+      <div class="card-header">
+        <div>
+          <span class="mono date-chip">2026-07-04</span>
+          <div class="summary-title"><a href="https://mimivsjames.substack.com/p/aisop" target="_blank" class="art-link">賣飛怎麼辦？AI股震盪後，一賣就噴？你不是命不好，而是不懂方法，投資小白需要是一套「二度上車SOP」 ↗</a></div>
+        </div>
+        <div style="display:flex;gap:6px;align-items:center"><span class="source-badge source-substack">Substack</span><span class="badge badge-purple">教學</span></div>
+      </div>
+      <p class="summary-text">賣飛後的心態管理與操作策略最重要。需區分短線、波段、長線的交易屬性，避免把正常洗盤誤判為趨勢結束。建立「二度上車SOP」，用客觀條件而非情緒重新介入，方能規避追高套牢。</p>
+      <ul class="summary-list kp-list"><li>賣飛本身不可怕，可怕的是賣飛後心態失控導致高點追回，把獲利吐回</li><li>區分交易屬性（短線/波段/長線）是避免誤判的關鍵，強勢股洗盤是正常現象</li><li>賣飛後不急著買回，先重新評估趨勢、股價位置、回檔量能、停損位置是否合理</li><li>「二度上車」應在股票整理後仍維持多頭結構、出現轉強訊號時進場，不是情緒追高</li></ul>
+      <div class="watch-pills"><span class="pill">賣飛後的心理建設</span><span class="pill">波段與洗盤的區分</span><span class="pill">二度上車操作SOP</span><span class="pill">規避情緒追高</span><span class="pill">風險報酬評估</span></div>
+    </div><div class="card neutral summary-card">
+      <div class="card-header">
+        <div>
+          <span class="mono date-chip">2026-07-04</span>
+          <div class="summary-title"><a href="https://vocus.cc/article/6a483ec7fd897800018e2177" target="_blank" class="art-link">賣飛怎麼辦？AI股震盪後，一賣就噴？你不是命不好，而是不懂方法，投資小白需要是一套「二度上車SOP」 ↗</a></div>
+        </div>
+        <div style="display:flex;gap:6px;align-items:center"><span class="source-badge source-vocus">Vocus</span><span class="badge badge-purple">教學</span></div>
+      </div>
+      <p class="summary-text">賣飛後的心態管理與操作方法最重要。本文強調賣飛本身不是錯誤，問題在於之後的失控操作。作者提出「二度上車SOP」，教投資小白如何科學地重新進場，而非情緒追高。</p>
+      <ul class="summary-list kp-list"><li>重點一：賣飛的真正危害不在於少賺，而在於心態失控後的追高操作，把前面獲利全部吐回——需要認知賣飛後的情緒管理</li><li>重點二：區分交易類型很關鍵——短線反彈達標出場 vs 波段趨勢持股，判斷標準不同，不能混淆導致誤判為賣飛</li><li>重點三：強勢股上漲過程中必然有洗盤與整理，不應因短線黑K或平台跌破就急著出場，容易把籌碼交給機構大資金</li><li>重點四：賣飛後的正確做法是重新評估，確認趨勢仍在、股價回到合理觀察區、回檔量能未失控，才能視為新交易而非情緒追高</li></ul>
+      <div class="watch-pills"><span class="pill">心態管理</span><span class="pill">賣飛操作</span><span class="pill">波段交易</span><span class="pill">風險控制</span><span class="pill">情緒管理</span></div>
+    </div><div class="card neutral summary-card">
       <div class="card-header">
         <div>
           <span class="mono date-chip">2026-06-14</span>
