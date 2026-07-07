@@ -45,7 +45,7 @@
 </head>
 <body>
 <h1>台股訊號整合</h1>
-<div class="meta">更新時間：2026-07-08 00:19　共 379 支個股</div>
+<div class="meta">更新時間：2026-07-08 00:19　共 379 支個股<span id="fc" style="color:#818cf8"></span></div>
 
 <div class="filter-panel">
   <div class="filter-group">
@@ -710,14 +710,23 @@
     applyFilters();
   }
   function applyFilters() {
+    var visible = 0;
     document.querySelectorAll('#tbl-body tr').forEach(function(row) {
       var srcs   = (row.dataset.sources || '').split(',');
       var sector = row.dataset.sector || '';
       var srcOk  = actSrc.size === 0 ||
         Array.from(actSrc).every(function(f){ return srcs.indexOf(f) >= 0; });
       var secOk  = actSec.size === 0 || actSec.has(sector);
-      row.classList.toggle('hidden', !(srcOk && secOk));
+      var show   = srcOk && secOk;
+      row.classList.toggle('hidden', !show);
+      if (show) visible++;
     });
+    var fc = document.getElementById('fc');
+    if (actSrc.size === 0 && actSec.size === 0) {
+      fc.textContent = '';
+    } else {
+      fc.textContent = '　篩選出 ' + visible + ' 支';
+    }
   }
 </script>
 </body>
