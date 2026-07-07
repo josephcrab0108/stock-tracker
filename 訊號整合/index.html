@@ -616,7 +616,7 @@
     document.querySelectorAll('#tbl-body tr').forEach(function(row) {
       if (active.size === 0) { row.classList.remove('hidden'); return; }
       var srcs = (row.dataset.sources || '').split(',');
-      var match = Array.from(active).some(function(f){ return srcs.indexOf(f) >= 0; });
+      var match = Array.from(active).every(function(f){ return srcs.indexOf(f) >= 0; });
       row.classList.toggle('hidden', !match);
     });
   }
