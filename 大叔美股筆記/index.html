@@ -463,7 +463,7 @@ body {
     </svg>
     <input id="stock-search" class="search-input" type="text" placeholder="搜尋 ABBV / 設備 / HBM">
   </div>
-  <span class="updated-chip mono">2026-05-28 – 2026-07-04 · 更新 2026-07-05 16:00</span>
+  <span class="updated-chip mono">2026-05-28 – 2026-07-07 · 更新 2026-07-07 16:34</span>
   <a href="../" class="back-link">← 回總覽</a>
 </header>
 
@@ -3900,36 +3900,6 @@ inp.addEventListener('input', function() {
     sec.style.display = [...stocks].some(c => c.style.display !== 'none') ? '' : 'none';
   });
 });
-</script>
-
-<!-- LifeOS 問題回報按鈕 -->
-<button id="lifeos-report-btn" onclick="lifeosReport()">⚑ 回報問題</button>
-<style>
-#lifeos-report-btn {
-  position: fixed; bottom: 22px; right: 22px;
-  background: #e53e3e; color: #fff; border: none;
-  border-radius: 999px; padding: 12px 20px;
-  font-size: 15px; font-weight: 600;
-  cursor: pointer; z-index: 9999;
-  box-shadow: 0 3px 10px rgba(0,0,0,.35);
-  opacity: .88; transition: opacity .15s, transform .12s;
-  -webkit-tap-highlight-color: transparent;
-}
-#lifeos-report-btn:active { opacity: 1; transform: scale(.95); }
-</style>
-<script>
-function lifeosReport() {
-  var page = document.title || location.pathname.replace(/.*\//, '') || '未知頁面';
-  var msg = prompt('哪裡有問題？（一句話描述）');
-  if (!msg || !msg.trim()) return;
-  fetch('https://ntfy.sh/Joseph-lifeOS', {
-    method: 'POST',
-    headers: { 'Title': '⚠️ 頁面問題：' + page, 'Tags': 'warning', 'Priority': 'default' },
-    body: msg.trim()
-  }).then(function(r) {
-    alert(r.ok ? '已送出 👍 下次開 Claude Code 會處理' : '送出失敗，請稍後再試');
-  }).catch(function() { alert('送出失敗，請確認網路'); });
-}
 </script>
 </body>
 </html>
