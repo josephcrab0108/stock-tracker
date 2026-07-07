@@ -5,50 +5,77 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>訊號整合</title>
 <style>
-  body{background:#0f172a;color:#e2e8f0;font-family:system-ui,sans-serif;padding:20px;max-width:1280px;margin:0 auto}
-  h1{color:#f8fafc;font-size:1.4rem;margin-bottom:4px}
-  .meta{color:#64748b;font-size:13px;margin-bottom:12px}
-  .filter-row{display:flex;flex-wrap:wrap;align-items:center;gap:4px;margin-bottom:6px}
-  .filter-label{color:#64748b;font-size:11px;width:60px;flex-shrink:0}
-  .sb{background:rgba(0,0,0,0);padding:3px 9px;border-radius:4px;font-size:12px;
-       cursor:pointer;margin:2px;opacity:.5;transition:opacity .15s;border:1px solid #475569;color:#94a3b8}
-  .sb:hover{opacity:.8}
-  .sb.active{opacity:1;filter:brightness(1.15)}
-  .sec{border-color:#6366f1 !important;color:#a5b4fc !important}
-  .clear-btn{background:rgba(255,255,255,.05);border:1px solid #334155;color:#64748b;
-    padding:3px 9px;border-radius:4px;font-size:12px;cursor:pointer;margin:2px}
-  .hidden{display:none}
-  table{width:100%;border-collapse:collapse;font-size:13px}
-  th{color:#94a3b8;text-align:left;padding:8px 10px;border-bottom:1px solid #1e293b;font-weight:500;white-space:nowrap}
-  td{padding:7px 10px;border-bottom:1px solid #1e293b;vertical-align:middle}
-  tr:hover td{background:#1e293b}
+  *{box-sizing:border-box}
+  body{background:#0f172a;color:#e2e8f0;font-family:system-ui,sans-serif;
+       padding:16px;max-width:1280px;margin:0 auto}
+  h1{color:#f8fafc;font-size:1.3rem;margin:0 0 2px}
+  .meta{color:#475569;font-size:12px;margin-bottom:14px}
+
+  /* ── 篩選區 ── */
+  .filter-panel{background:#111827;border:1px solid #1e293b;border-radius:10px;
+                 padding:12px 14px;margin-bottom:14px}
+  .filter-group{margin-bottom:8px}
+  .filter-group:last-child{margin-bottom:0}
+  .fg-label{font-size:10px;color:#475569;letter-spacing:.08em;text-transform:uppercase;
+             margin-bottom:6px}
+  .fg-btns{display:flex;flex-wrap:wrap;gap:5px;align-items:center}
+  /* 來源按鈕：各自有顏色，用 CSS 變數 */
+  .sb{background:transparent;border:1px solid var(--bc,#475569);color:var(--bc,#94a3b8);
+       padding:4px 11px;border-radius:20px;font-size:12px;cursor:pointer;
+       opacity:.42;transition:opacity .15s,background .15s;white-space:nowrap;line-height:1.4}
+  .sb:hover{opacity:.75}
+  .sb.active{opacity:1;background:color-mix(in srgb,var(--bc,#475569) 18%,transparent)}
+  /* 族群按鈕：統一淡紫 */
+  .sb.sec{--bc:#6366f1;color:#a5b4fc}
+  .sb.sec.active{background:rgba(99,102,241,.18)}
+  .clear-btn{background:transparent;border:none;color:#334155;font-size:11px;
+              cursor:pointer;padding:4px 6px;margin-left:2px}
+  .clear-btn:hover{color:#64748b}
+
+  /* ── 表格 ── */
+  .hidden{display:none !important}
+  table{width:100%;border-collapse:collapse;font-size:13px;table-layout:fixed}
+  th{color:#64748b;text-align:left;padding:7px 8px;border-bottom:1px solid #1e293b;
+      font-weight:500;white-space:nowrap;overflow:hidden}
+  td{padding:6px 8px;border-bottom:1px solid #0f1a2a;vertical-align:middle;
+      overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  td.wrap{white-space:normal;word-break:break-all}
+  tr:hover td{background:#1a2535}
 </style>
 </head>
 <body>
 <h1>台股訊號整合</h1>
-<div class="meta">更新時間：2026-07-08 00:13　共 379 支個股</div>
-<div class="filter-row">
-  <span class="filter-label">來源 AND</span>
-  <button class="sb" data-src="gucai" onclick="toggleSrc(this)" style="border:1px solid #ef4444;color:#ef4444">股癌</button><button class="sb" data-src="broker" onclick="toggleSrc(this)" style="border:1px solid #f97316;color:#f97316">籌碼</button><button class="sb" data-src="retail_inst" onclick="toggleSrc(this)" style="border:1px solid #fb923c;color:#fb923c">大戶</button><button class="sb" data-src="liqian" onclick="toggleSrc(this)" style="border:1px solid #3b82f6;color:#3b82f6">達人秀</button><button class="sb" data-src="guhuazi" onclick="toggleSrc(this)" style="border:1px solid #6366f1;color:#6366f1">股惑仔</button><button class="sb" data-src="riveralan" onclick="toggleSrc(this)" style="border:1px solid #8b5cf6;color:#8b5cf6">艾綸</button><button class="sb" data-src="etf_change" onclick="toggleSrc(this)" style="border:1px solid #10b981;color:#10b981">ETF↑</button><button class="sb" data-src="etf_static" onclick="toggleSrc(this)" style="border:1px solid #6ee7b7;color:#6ee7b7">ETF</button><button class="sb" data-src="fb" onclick="toggleSrc(this)" style="border:1px solid #94a3b8;color:#94a3b8">FB</button>
-  <button class="clear-btn" onclick="clearSrc()">清除</button>
+<div class="meta">更新時間：2026-07-08 00:19　共 379 支個股</div>
+
+<div class="filter-panel">
+  <div class="filter-group">
+    <div class="fg-label">來源</div>
+    <div class="fg-btns">
+      <button class="sb" data-src="gucai" onclick="toggleSrc(this)" style="--bc:#ef4444">股癌</button><button class="sb" data-src="broker" onclick="toggleSrc(this)" style="--bc:#f97316">籌碼</button><button class="sb" data-src="retail_inst" onclick="toggleSrc(this)" style="--bc:#fb923c">大戶</button><button class="sb" data-src="liqian" onclick="toggleSrc(this)" style="--bc:#3b82f6">達人秀</button><button class="sb" data-src="guhuazi" onclick="toggleSrc(this)" style="--bc:#6366f1">股惑仔</button><button class="sb" data-src="riveralan" onclick="toggleSrc(this)" style="--bc:#8b5cf6">艾綸</button><button class="sb" data-src="etf_change" onclick="toggleSrc(this)" style="--bc:#10b981">ETF↑</button><button class="sb" data-src="etf_static" onclick="toggleSrc(this)" style="--bc:#6ee7b7">ETF</button><button class="sb" data-src="fb" onclick="toggleSrc(this)" style="--bc:#94a3b8">FB</button>
+      <button class="clear-btn" onclick="clearSrc()">清除</button>
+    </div>
+  </div>
+  <div class="filter-group">
+    <div class="fg-label">族群</div>
+    <div class="fg-btns">
+      <button class="sb sec" data-sec="被動元件" onclick="toggleSec(this)">被動元件</button><button class="sb sec" data-sec="晶圓代工" onclick="toggleSec(this)">晶圓代工</button><button class="sb sec" data-sec="ABF載板" onclick="toggleSec(this)">ABF載板</button><button class="sb sec" data-sec="封測" onclick="toggleSec(this)">封測</button><button class="sb sec" data-sec="IC設計" onclick="toggleSec(this)">IC設計</button><button class="sb sec" data-sec="矽晶圓" onclick="toggleSec(this)">矽晶圓</button><button class="sb sec" data-sec="功率元件" onclick="toggleSec(this)">功率元件</button><button class="sb sec" data-sec="半導體設備" onclick="toggleSec(this)">半導體設備</button><button class="sb sec" data-sec="網通" onclick="toggleSec(this)">網通</button><button class="sb sec" data-sec="記憶體" onclick="toggleSec(this)">記憶體</button><button class="sb sec" data-sec="光學鏡頭" onclick="toggleSec(this)">光學鏡頭</button><button class="sb sec" data-sec="AI伺服器(ODM)" onclick="toggleSec(this)">AI伺服器(ODM)</button><button class="sb sec" data-sec="PCB/CCL" onclick="toggleSec(this)">PCB/CCL</button>
+      <button class="clear-btn" onclick="clearSec()">清除</button>
+    </div>
+  </div>
 </div>
-<div class="filter-row">
-  <span class="filter-label">族群 OR</span>
-  <button class="sb sec" data-sec="被動元件" onclick="toggleSec(this)">被動元件</button><button class="sb sec" data-sec="晶圓代工" onclick="toggleSec(this)">晶圓代工</button><button class="sb sec" data-sec="ABF載板" onclick="toggleSec(this)">ABF載板</button><button class="sb sec" data-sec="封測" onclick="toggleSec(this)">封測</button><button class="sb sec" data-sec="IC設計" onclick="toggleSec(this)">IC設計</button><button class="sb sec" data-sec="矽晶圓" onclick="toggleSec(this)">矽晶圓</button><button class="sb sec" data-sec="功率元件" onclick="toggleSec(this)">功率元件</button><button class="sb sec" data-sec="半導體設備" onclick="toggleSec(this)">半導體設備</button><button class="sb sec" data-sec="網通" onclick="toggleSec(this)">網通</button><button class="sb sec" data-sec="記憶體" onclick="toggleSec(this)">記憶體</button><button class="sb sec" data-sec="光學鏡頭" onclick="toggleSec(this)">光學鏡頭</button><button class="sb sec" data-sec="AI伺服器(ODM)" onclick="toggleSec(this)">AI伺服器(ODM)</button><button class="sb sec" data-sec="PCB/CCL" onclick="toggleSec(this)">PCB/CCL</button>
-  <button class="clear-btn" onclick="clearSec()">清除</button>
-</div>
+
 <table>
   <thead>
     <tr>
-      <th style="width:36px">#</th>
-      <th style="width:56px">代號</th>
-      <th style="width:90px">名稱</th>
-      <th style="width:90px">族群</th>
-      <th style="width:52px;text-align:right">分數</th>
-      <th style="width:42px;text-align:center">來源</th>
-      <th style="width:60px;text-align:right">週漲</th>
-      <th style="width:66px;text-align:right">雙週漲</th>
-      <th>確認來源</th>
+      <th style="width:32px">#</th>
+      <th style="width:52px">代號</th>
+      <th style="width:80px">名稱</th>
+      <th style="width:80px">族群</th>
+      <th style="width:46px;text-align:right">分數</th>
+      <th style="width:36px;text-align:center">源</th>
+      <th style="width:54px;text-align:right">週漲</th>
+      <th style="width:60px;text-align:right">雙週漲</th>
+      <th style="width:180px">確認來源</th>
       <th>摘要</th>
     </tr>
   </thead>
