@@ -56,56 +56,90 @@
 </head>
 <body>
 <h1>台股訊號整合</h1>
-<div class="meta">更新時間：2026-07-10 23:16　共 344 支個股<span id="fc" style="color:#818cf8"></span>
+<div class="meta">更新時間：2026-07-10 23:27　共 344 支個股<span id="fc" style="color:#818cf8"></span>
   <button onclick="document.getElementById('scoring-info').classList.toggle('hidden')"
     style="margin-left:12px;background:transparent;border:1px solid #334155;color:#64748b;
            font-size:11px;padding:2px 8px;border-radius:4px;cursor:pointer">計分說明</button>
 </div>
 
 <div id="scoring-info" class="hidden" style="background:#111827;border:1px solid #1e293b;
-     border-radius:10px;padding:14px 16px;margin-bottom:14px;font-size:12px;line-height:1.7">
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px 24px">
+     border-radius:10px;padding:14px 16px;margin-bottom:14px;font-size:12px;line-height:1.6">
 
+  <!-- 第一列：計分公式 + 來源權重 -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px 32px;margin-bottom:14px">
     <div>
       <div style="color:#94a3b8;font-size:10px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px">計分公式</div>
-      <div style="color:#e2e8f0">分數 ＝ Σ（來源權重 × 信心值 × 時間衰減）</div>
+      <div style="color:#e2e8f0;font-size:13px">分數 ＝ Σ（來源權重 × 信心值 × 時間衰減）</div>
       <div style="color:#475569;margin-top:4px">同一來源只取最高分那筆；時間衰減以指數曲線，到達半衰期時剩 50%</div>
     </div>
-
     <div>
       <div style="color:#94a3b8;font-size:10px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px">來源權重（滿分 5）</div>
-      <table style="border-collapse:collapse;width:100%">
-        <tr><td style="padding:1px 6px 1px 0;color:#fbbf24">股癌</td><td style="color:#4ade80">5.0</td><td style="padding:1px 0 1px 12px;color:#fbbf24">云式籌碼</td><td style="color:#4ade80">4.0</td></tr>
-        <tr><td style="padding:1px 6px 1px 0;color:#fbbf24">達人秀 / 股惑仔 / 艾綸</td><td style="color:#4ade80">3.0</td><td style="padding:1px 0 1px 12px;color:#fbbf24">ETF 異動</td><td style="color:#4ade80">3.0</td></tr>
-        <tr><td style="padding:1px 6px 1px 0;color:#fbbf24">大戶散戶</td><td style="color:#4ade80">2.5</td><td style="padding:1px 0 1px 12px;color:#fbbf24">ETF 靜態 / FB</td><td style="color:#4ade80">2.0</td></tr>
+      <table style="border-collapse:collapse">
+        <tr>
+          <td style="padding:2px 16px 2px 0;color:#fbbf24;white-space:nowrap">股癌</td><td style="color:#4ade80;padding-right:24px">5.0</td>
+          <td style="padding:2px 16px 2px 0;color:#fbbf24;white-space:nowrap">云式籌碼</td><td style="color:#4ade80">4.0</td>
+        </tr>
+        <tr>
+          <td style="padding:2px 16px 2px 0;color:#fbbf24;white-space:nowrap">達人秀 / 股惑仔 / 艾綸</td><td style="color:#4ade80;padding-right:24px">3.0</td>
+          <td style="padding:2px 16px 2px 0;color:#fbbf24;white-space:nowrap">ETF 異動</td><td style="color:#4ade80">3.0</td>
+        </tr>
+        <tr>
+          <td style="padding:2px 16px 2px 0;color:#fbbf24;white-space:nowrap">大戶散戶</td><td style="color:#4ade80;padding-right:24px">2.5</td>
+          <td style="padding:2px 16px 2px 0;color:#fbbf24;white-space:nowrap">ETF 靜態 / FB</td><td style="color:#4ade80">2.0</td>
+        </tr>
       </table>
     </div>
-
-    <div>
-      <div style="color:#94a3b8;font-size:10px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px">信心值（推薦詞對應）</div>
-      <div style="display:flex;flex-wrap:wrap;gap:4px">
-        <span style="background:#1e3a2a;color:#4ade80;padding:1px 7px;border-radius:4px">強烈推薦 1.0</span>
-        <span style="background:#1e3a2a;color:#4ade80;padding:1px 7px;border-radius:4px">推薦/買進 0.85</span>
-        <span style="background:#1e3a2a;color:#4ade80;padding:1px 7px;border-radius:4px">看好 0.8</span>
-        <span style="background:#1e293b;color:#94a3b8;padding:1px 7px;border-radius:4px">分批 0.65</span>
-        <span style="background:#1e293b;color:#94a3b8;padding:1px 7px;border-radius:4px">等突破/回測 0.45</span>
-        <span style="background:#1e293b;color:#94a3b8;padding:1px 7px;border-radius:4px">持有 0.3</span>
-        <span style="background:#1e293b;color:#94a3b8;padding:1px 7px;border-radius:4px">觀察 0.2</span>
-        <span style="background:#3a1e1e;color:#f87171;padding:1px 7px;border-radius:4px">看空 −0.5</span>
-        <span style="background:#3a1e1e;color:#f87171;padding:1px 7px;border-radius:4px">賣出 −0.7</span>
-      </div>
-    </div>
-
-    <div>
-      <div style="color:#94a3b8;font-size:10px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px">時間衰減半衰期</div>
-      <table style="border-collapse:collapse;width:100%">
-        <tr><td style="padding:1px 6px 1px 0;color:#cbd5e1">股癌</td><td style="color:#94a3b8">10 天</td><td style="padding:1px 0 1px 12px;color:#cbd5e1">云式籌碼</td><td style="color:#94a3b8">5 天</td></tr>
-        <tr><td style="padding:1px 6px 1px 0;color:#cbd5e1">大戶散戶 / 達人秀 / 股惑仔 / 艾綸</td><td style="color:#94a3b8">7 天</td><td style="padding:1px 0 1px 12px;color:#cbd5e1">ETF</td><td style="color:#94a3b8">5 天</td></tr>
-        <tr><td style="padding:1px 6px 1px 0;color:#cbd5e1">FB 粉專</td><td style="color:#94a3b8">2 天</td></tr>
-      </table>
-    </div>
-
   </div>
+
+  <!-- 分隔線 -->
+  <div style="border-top:1px solid #1e293b;margin-bottom:14px"></div>
+
+  <!-- 第二列：信心值 + 時間衰減 -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px 32px">
+    <div>
+      <div style="color:#94a3b8;font-size:10px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px">信心值（推薦詞對應）</div>
+      <table style="border-collapse:collapse;width:100%">
+        <tr>
+          <td style="padding:2px 0;white-space:nowrap"><span style="background:#1e3a2a;color:#4ade80;padding:1px 7px;border-radius:4px;display:inline-block">強烈推薦</span></td>
+          <td style="padding:2px 12px 2px 6px;color:#4ade80;font-weight:600">1.0</td>
+          <td style="padding:2px 0;white-space:nowrap"><span style="background:#1e3a2a;color:#4ade80;padding:1px 7px;border-radius:4px;display:inline-block">推薦 / 買進</span></td>
+          <td style="padding:2px 12px 2px 6px;color:#4ade80;font-weight:600">0.85</td>
+          <td style="padding:2px 0;white-space:nowrap"><span style="background:#1e3a2a;color:#4ade80;padding:1px 7px;border-radius:4px;display:inline-block">看好</span></td>
+          <td style="padding:2px 0 2px 6px;color:#4ade80;font-weight:600">0.8</td>
+        </tr>
+        <tr>
+          <td style="padding:2px 0;white-space:nowrap"><span style="background:#1e293b;color:#94a3b8;padding:1px 7px;border-radius:4px;display:inline-block">分批</span></td>
+          <td style="padding:2px 12px 2px 6px;color:#94a3b8">0.65</td>
+          <td style="padding:2px 0;white-space:nowrap"><span style="background:#1e293b;color:#94a3b8;padding:1px 7px;border-radius:4px;display:inline-block">等突破 / 回測</span></td>
+          <td style="padding:2px 12px 2px 6px;color:#94a3b8">0.45</td>
+          <td style="padding:2px 0;white-space:nowrap"><span style="background:#1e293b;color:#94a3b8;padding:1px 7px;border-radius:4px;display:inline-block">持有</span></td>
+          <td style="padding:2px 0 2px 6px;color:#94a3b8">0.3</td>
+        </tr>
+        <tr>
+          <td style="padding:2px 0;white-space:nowrap"><span style="background:#1e293b;color:#94a3b8;padding:1px 7px;border-radius:4px;display:inline-block">觀察</span></td>
+          <td style="padding:2px 12px 2px 6px;color:#94a3b8">0.2</td>
+          <td style="padding:2px 0;white-space:nowrap"><span style="background:#3a1e1e;color:#f87171;padding:1px 7px;border-radius:4px;display:inline-block">看空</span></td>
+          <td style="padding:2px 12px 2px 6px;color:#f87171">−0.5</td>
+          <td style="padding:2px 0;white-space:nowrap"><span style="background:#3a1e1e;color:#f87171;padding:1px 7px;border-radius:4px;display:inline-block">賣出</span></td>
+          <td style="padding:2px 0 2px 6px;color:#f87171">−0.7</td>
+        </tr>
+      </table>
+    </div>
+    <div>
+      <div style="color:#94a3b8;font-size:10px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px">時間衰減半衰期</div>
+      <table style="border-collapse:collapse">
+        <tr>
+          <td style="padding:2px 16px 2px 0;color:#cbd5e1;white-space:nowrap">股癌</td><td style="color:#94a3b8;padding-right:24px;white-space:nowrap">10 天</td>
+          <td style="padding:2px 16px 2px 0;color:#cbd5e1;white-space:nowrap">云式籌碼 / ETF</td><td style="color:#94a3b8;white-space:nowrap">5 天</td>
+        </tr>
+        <tr>
+          <td style="padding:2px 16px 2px 0;color:#cbd5e1;white-space:nowrap">達人秀 / 股惑仔 / 艾綸 / 大戶散戶</td><td style="color:#94a3b8;padding-right:24px;white-space:nowrap">7 天</td>
+          <td style="padding:2px 16px 2px 0;color:#cbd5e1;white-space:nowrap">FB 粉專</td><td style="color:#94a3b8;white-space:nowrap">2 天</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
 </div>
 
 <div class="filter-panel">
