@@ -56,7 +56,57 @@
 </head>
 <body>
 <h1>台股訊號整合</h1>
-<div class="meta">更新時間：2026-07-10 23:00　共 344 支個股<span id="fc" style="color:#818cf8"></span></div>
+<div class="meta">更新時間：2026-07-10 23:16　共 344 支個股<span id="fc" style="color:#818cf8"></span>
+  <button onclick="document.getElementById('scoring-info').classList.toggle('hidden')"
+    style="margin-left:12px;background:transparent;border:1px solid #334155;color:#64748b;
+           font-size:11px;padding:2px 8px;border-radius:4px;cursor:pointer">計分說明</button>
+</div>
+
+<div id="scoring-info" class="hidden" style="background:#111827;border:1px solid #1e293b;
+     border-radius:10px;padding:14px 16px;margin-bottom:14px;font-size:12px;line-height:1.7">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px 24px">
+
+    <div>
+      <div style="color:#94a3b8;font-size:10px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px">計分公式</div>
+      <div style="color:#e2e8f0">分數 ＝ Σ（來源權重 × 信心值 × 時間衰減）</div>
+      <div style="color:#475569;margin-top:4px">同一來源只取最高分那筆；時間衰減以指數曲線，到達半衰期時剩 50%</div>
+    </div>
+
+    <div>
+      <div style="color:#94a3b8;font-size:10px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px">來源權重（滿分 5）</div>
+      <table style="border-collapse:collapse;width:100%">
+        <tr><td style="padding:1px 6px 1px 0;color:#fbbf24">股癌</td><td style="color:#4ade80">5.0</td><td style="padding:1px 0 1px 12px;color:#fbbf24">云式籌碼</td><td style="color:#4ade80">4.0</td></tr>
+        <tr><td style="padding:1px 6px 1px 0;color:#fbbf24">達人秀 / 股惑仔 / 艾綸</td><td style="color:#4ade80">3.0</td><td style="padding:1px 0 1px 12px;color:#fbbf24">ETF 異動</td><td style="color:#4ade80">3.0</td></tr>
+        <tr><td style="padding:1px 6px 1px 0;color:#fbbf24">大戶散戶</td><td style="color:#4ade80">2.5</td><td style="padding:1px 0 1px 12px;color:#fbbf24">ETF 靜態 / FB</td><td style="color:#4ade80">2.0</td></tr>
+      </table>
+    </div>
+
+    <div>
+      <div style="color:#94a3b8;font-size:10px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px">信心值（推薦詞對應）</div>
+      <div style="display:flex;flex-wrap:wrap;gap:4px">
+        <span style="background:#1e3a2a;color:#4ade80;padding:1px 7px;border-radius:4px">強烈推薦 1.0</span>
+        <span style="background:#1e3a2a;color:#4ade80;padding:1px 7px;border-radius:4px">推薦/買進 0.85</span>
+        <span style="background:#1e3a2a;color:#4ade80;padding:1px 7px;border-radius:4px">看好 0.8</span>
+        <span style="background:#1e293b;color:#94a3b8;padding:1px 7px;border-radius:4px">分批 0.65</span>
+        <span style="background:#1e293b;color:#94a3b8;padding:1px 7px;border-radius:4px">等突破/回測 0.45</span>
+        <span style="background:#1e293b;color:#94a3b8;padding:1px 7px;border-radius:4px">持有 0.3</span>
+        <span style="background:#1e293b;color:#94a3b8;padding:1px 7px;border-radius:4px">觀察 0.2</span>
+        <span style="background:#3a1e1e;color:#f87171;padding:1px 7px;border-radius:4px">看空 −0.5</span>
+        <span style="background:#3a1e1e;color:#f87171;padding:1px 7px;border-radius:4px">賣出 −0.7</span>
+      </div>
+    </div>
+
+    <div>
+      <div style="color:#94a3b8;font-size:10px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px">時間衰減半衰期</div>
+      <table style="border-collapse:collapse;width:100%">
+        <tr><td style="padding:1px 6px 1px 0;color:#cbd5e1">股癌</td><td style="color:#94a3b8">10 天</td><td style="padding:1px 0 1px 12px;color:#cbd5e1">云式籌碼</td><td style="color:#94a3b8">5 天</td></tr>
+        <tr><td style="padding:1px 6px 1px 0;color:#cbd5e1">大戶散戶 / 達人秀 / 股惑仔 / 艾綸</td><td style="color:#94a3b8">7 天</td><td style="padding:1px 0 1px 12px;color:#cbd5e1">ETF</td><td style="color:#94a3b8">5 天</td></tr>
+        <tr><td style="padding:1px 6px 1px 0;color:#cbd5e1">FB 粉專</td><td style="color:#94a3b8">2 天</td></tr>
+      </table>
+    </div>
+
+  </div>
+</div>
 
 <div class="filter-panel">
   <div class="filter-group">
@@ -276,8 +326,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">被動元件</span></td>
           <td style="text-align:right;color:#4ade80">10.6</td>
           <td style="text-align:center">3</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-1.8%</span></td>
+          <td style="text-align:right"><span style="color:#4ade80">+13.0%</span></td>
           <td><span style="background:#ef4444;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">股癌</span><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span><span style="background:#6366f1;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">股惑仔</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">看好｜**修正後率先轉強**，市場資金壓住在此 涨價數倍已反映，產業面仍持續cover</td>
         </tr>
@@ -288,8 +338,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">矽晶圓</span></td>
           <td style="text-align:right;color:#4ade80">10.6</td>
           <td style="text-align:center">4</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#4ade80">+7.6%</span></td>
+          <td style="text-align:right"><span style="color:#4ade80">+44.2%</span></td>
           <td><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span><span style="background:#6366f1;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">股惑仔</span><span style="background:#8b5cf6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">艾綸</span><span style="background:#6ee7b7;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">ETF</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">4檔ETF持有，合計3,730張（無法取得占比）</td>
         </tr>
@@ -300,8 +350,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">功率元件</span></td>
           <td style="text-align:right;color:#4ade80">10.5</td>
           <td style="text-align:center">3</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#fb923c">-5.1%</span></td>
+          <td style="text-align:right"><span style="color:#4ade80">+10.2%</span></td>
           <td><span style="background:#ef4444;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">股癌</span><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span><span style="background:#6366f1;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">股惑仔</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">看好｜市場**相對強勢**主流族群，多在五日十日線上 **market cap僅數百億</td>
         </tr>
@@ -432,8 +482,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">功率元件</span></td>
           <td style="text-align:right;color:#4ade80">8.9</td>
           <td style="text-align:center">1</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#fb923c">-8.5%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-0.8%</span></td>
           <td><span style="background:#ef4444;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">股癌</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">看好｜市場**相對強勢**主流族群，多在五日十日線上 **market cap僅數百億</td>
         </tr>
@@ -444,8 +494,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">光通訊/CPO</span></td>
           <td style="text-align:right;color:#4ade80">8.8</td>
           <td style="text-align:center">4</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-4.5%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-1.5%</span></td>
           <td><span style="background:#ef4444;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">股癌</span><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span><span style="background:#6366f1;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">股惑仔</span><span style="background:#8b5cf6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">艾綸</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">推薦｜光通訊股，過去EPS在平緩期，但預計從今年開始未來逐季爆發成長，畢竟要掌握CPO</td>
         </tr>
@@ -456,8 +506,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">矽晶圓</span></td>
           <td style="text-align:right;color:#4ade80">8.5</td>
           <td style="text-align:center">5</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#4ade80">+5.8%</span></td>
+          <td style="text-align:right"><span style="color:#4ade80">+44.4%</span></td>
           <td><span style="background:#f97316;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">籌碼</span><span style="background:#fb923c;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">大戶</span><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span><span style="background:#6366f1;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">股惑仔</span><span style="background:#6ee7b7;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">ETF</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">大戶+4.1% 散戶-3.5%⭐</td>
         </tr>
@@ -516,8 +566,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">PCB/CCL</span></td>
           <td style="text-align:right;color:#4ade80">7.8</td>
           <td style="text-align:center">5</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#fb923c">-12.3%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-0.6%</span></td>
           <td><span style="background:#ef4444;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">股癌</span><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span><span style="background:#6366f1;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">股惑仔</span><span style="background:#8b5cf6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">艾綸</span><span style="background:#6ee7b7;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">ETF</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">看好｜市場上**仍很強**的僵屍族群未破壞 屬可持續攻高的強勢主流之一</td>
         </tr>
@@ -564,8 +614,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">被動元件</span></td>
           <td style="text-align:right;color:#4ade80">7.0</td>
           <td style="text-align:center">1</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#fb923c">-15.0%</span></td>
+          <td style="text-align:right"><span style="color:#fb923c">-18.2%</span></td>
           <td><span style="background:#ef4444;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">股癌</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">看好｜**修正後率先轉強**，市場資金壓住在此 涨價數倍已反映，產業面仍持續cover</td>
         </tr>
@@ -612,8 +662,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">記憶體</span></td>
           <td style="text-align:right;color:#4ade80">5.9</td>
           <td style="text-align:center">3</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-3.3%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-3.2%</span></td>
           <td><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span><span style="background:#6366f1;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">股惑仔</span><span style="background:#6ee7b7;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">ETF</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">推薦｜從2880元最高跌至2130元附近，落點回到季線。獲利非常好。若點到季線可進場搶</td>
         </tr>
@@ -672,8 +722,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">光通訊/CPO</span></td>
           <td style="text-align:right;color:#4ade80">5.3</td>
           <td style="text-align:center">4</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">+4.6%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">+5.7%</span></td>
           <td><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span><span style="background:#6366f1;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">股惑仔</span><span style="background:#8b5cf6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">艾綸</span><span style="background:#6ee7b7;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">ETF</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">推薦｜最近高盛送暖，上詮真的漲。本來腰斬很慘，今天漲停。老CPO大家可以注意。</td>
         </tr>
@@ -684,8 +734,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">封測</span></td>
           <td style="text-align:right;color:#4ade80">5.3</td>
           <td style="text-align:center">3</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#4ade80">+13.9%</span></td>
+          <td style="text-align:right"><span style="color:#4ade80">+27.5%</span></td>
           <td><span style="background:#ef4444;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">股癌</span><span style="background:#fb923c;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">大戶</span><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">推薦｜台積電子公司精材今天直接衝上去。之前上來過壓回，看有沒有機會再上。投信有著墨，4</td>
         </tr>
@@ -720,8 +770,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">PCB/CCL</span></td>
           <td style="text-align:right;color:#4ade80">5.2</td>
           <td style="text-align:center">4</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#fb923c">-9.7%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-6.5%</span></td>
           <td><span style="background:#ef4444;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">股癌</span><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span><span style="background:#8b5cf6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">艾綸</span><span style="background:#6ee7b7;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">ETF</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">看好｜市場上**仍很強**的僵屍族群未破壞 屬可持續攻高的強勢主流之一</td>
         </tr>
@@ -732,8 +782,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">電源/BBU</span></td>
           <td style="text-align:right;color:#4ade80">5.1</td>
           <td style="text-align:center">3</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#4ade80">+13.2%</span></td>
+          <td style="text-align:right"><span style="color:#4ade80">+19.8%</span></td>
           <td><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span><span style="background:#6366f1;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">股惑仔</span><span style="background:#6ee7b7;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">ETF</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">推薦｜順達本來就較活潑，在GB200、GB300的BBU有領先地位。股價在三角形收斂即</td>
         </tr>
@@ -744,8 +794,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">AI伺服器(ODM)</span></td>
           <td style="text-align:right;color:#4ade80">5.1</td>
           <td style="text-align:center">2</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">+0.1%</span></td>
+          <td style="text-align:right"><span style="color:#4ade80">+29.6%</span></td>
           <td><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span><span style="background:#6366f1;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">股惑仔</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">推薦｜軍工無人機股，獲利沒長榮航太好但軟硬體全自主研發，是美國替代大疆首選。旗下中光電</td>
         </tr>
@@ -780,8 +830,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">封測</span></td>
           <td style="text-align:right;color:#4ade80">4.2</td>
           <td style="text-align:center">4</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-4.9%</span></td>
+          <td style="text-align:right"><span style="color:#4ade80">+11.7%</span></td>
           <td><span style="background:#ef4444;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">股癌</span><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span><span style="background:#8b5cf6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">艾綸</span><span style="background:#6ee7b7;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">ETF</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">4檔ETF持有，合計6,808張（無法取得占比）</td>
         </tr>
@@ -804,8 +854,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">AI伺服器(ODM)</span></td>
           <td style="text-align:right;color:#4ade80">4.2</td>
           <td style="text-align:center">3</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#4ade80">+7.4%</span></td>
+          <td style="text-align:right"><span style="color:#4ade80">+11.3%</span></td>
           <td><span style="background:#fb923c;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">大戶</span><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span><span style="background:#6366f1;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">股惑仔</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">推薦｜新盛力是我們覺得比較強力的個股，營收一直都非常漂亮，5月份營收年月雙增。BBU族</td>
         </tr>
@@ -828,8 +878,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">驅動IC</span></td>
           <td style="text-align:right;color:#4ade80">4.1</td>
           <td style="text-align:center">5</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">+0.7%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">+0.2%</span></td>
           <td><span style="background:#ef4444;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">股癌</span><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span><span style="background:#6366f1;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">股惑仔</span><span style="background:#8b5cf6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">艾綸</span><span style="background:#6ee7b7;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">ETF</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">推薦｜封測股，曾從50塊漲到300多塊（313），近期投信賣、下來。看好為AI黑馬：金</td>
         </tr>
@@ -876,8 +926,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">矽晶圓</span></td>
           <td style="text-align:right;color:#4ade80">3.9</td>
           <td style="text-align:center">4</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">+0.0%</span></td>
+          <td style="text-align:right"><span style="color:#4ade80">+28.4%</span></td>
           <td><span style="background:#fb923c;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">大戶</span><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span><span style="background:#6366f1;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">股惑仔</span><span style="background:#8b5cf6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">艾綸</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">推薦｜環球晶母公司，今天矽晶圓三雄加上中美晶全部亮燈漲停，法人出報告形容矽晶圓要迎接下</td>
         </tr>
@@ -972,8 +1022,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">半導體設備</span></td>
           <td style="text-align:right;color:#4ade80">3.4</td>
           <td style="text-align:center">4</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#fb923c">-14.2%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-5.9%</span></td>
           <td><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span><span style="background:#6366f1;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">股惑仔</span><span style="background:#8b5cf6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">艾綸</span><span style="background:#6ee7b7;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">ETF</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">推薦｜接近月線，大戶持股相對穩定，2026上半年開始認列。受惠代理式AI需求激增，半導</td>
         </tr>
@@ -1104,8 +1154,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">光通訊/CPO</span></td>
           <td style="text-align:right;color:#4ade80">3.0</td>
           <td style="text-align:center">4</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#fb923c">-8.8%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">+3.6%</span></td>
           <td><span style="background:#ef4444;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">股癌</span><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span><span style="background:#6366f1;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">股惑仔</span><span style="background:#8b5cf6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">艾綸</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">觀察｜**產業好但資金不在**，故事目前不在這 等資金流回與事件驅動才有補漲空間</td>
         </tr>
@@ -1140,8 +1190,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">封測</span></td>
           <td style="text-align:right;color:#4ade80">2.9</td>
           <td style="text-align:center">3</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-3.7%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">+9.3%</span></td>
           <td><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span><span style="background:#8b5cf6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">艾綸</span><span style="background:#6ee7b7;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">ETF</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">5檔ETF持有，合計4,606張（無法取得占比）</td>
         </tr>
@@ -1236,8 +1286,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">封測</span></td>
           <td style="text-align:right;color:#4ade80">2.6</td>
           <td style="text-align:center">2</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#fb923c">-6.2%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">+0.8%</span></td>
           <td><span style="background:#ef4444;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">股癌</span><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">推薦｜今年切入矽光子，與美系客戶合作開發CPO產品，提供研發後測試方案。今年EPS法人</td>
         </tr>
@@ -1260,8 +1310,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">記憶體</span></td>
           <td style="text-align:right;color:#4ade80">2.6</td>
           <td style="text-align:center">3</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#4ade80">+20.0%</span></td>
+          <td style="text-align:right"><span style="color:#4ade80">+12.5%</span></td>
           <td><span style="background:#fb923c;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">大戶</span><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span><span style="background:#6366f1;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">股惑仔</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">推薦｜IC設計記憶體股，過去像變色龍（元宇宙、無人機題材），本命是記憶體。四五六月營收</td>
         </tr>
@@ -1284,8 +1334,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">電源/BBU</span></td>
           <td style="text-align:right;color:#4ade80">2.3</td>
           <td style="text-align:center">2</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-1.1%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">+1.2%</span></td>
           <td><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span><span style="background:#8b5cf6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">艾綸</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">推薦｜新普6/9講過好像很難動，是AES-KY的媽媽，今天來了一根漲停。三星SDI全力</td>
         </tr>
@@ -1308,8 +1358,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">IC設計</span></td>
           <td style="text-align:right;color:#4ade80">2.3</td>
           <td style="text-align:center">2</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#fb923c">-5.7%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">+4.2%</span></td>
           <td><span style="background:#fb923c;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">大戶</span><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">大戶+4.1% 散戶-3.3%⭐</td>
         </tr>
@@ -1344,8 +1394,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">半導體設備</span></td>
           <td style="text-align:right;color:#4ade80">2.2</td>
           <td style="text-align:center">2</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-3.9%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">+2.0%</span></td>
           <td><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span><span style="background:#8b5cf6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">艾綸</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">推薦｜雍智科技做探針卡Probe Card，籌碼沉澱得漂亮，本來頭肩底打出來但缺口未補</td>
         </tr>
@@ -1356,8 +1406,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">記憶體</span></td>
           <td style="text-align:right;color:#4ade80">2.1</td>
           <td style="text-align:center">3</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#fb923c">-6.4%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-4.7%</span></td>
           <td><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span><span style="background:#8b5cf6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">艾綸</span><span style="background:#6ee7b7;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">ETF</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">1檔ETF持有，合計98張（無法取得占比）</td>
         </tr>
@@ -1440,8 +1490,8 @@
           <td><span style="font-size:11px;color:#475569;white-space:nowrap">半導體材料</span></td>
           <td style="text-align:right;color:#4ade80">2.0</td>
           <td style="text-align:center">3</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#fb923c">-8.3%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">+4.4%</span></td>
           <td><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span><span style="background:#6366f1;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">股惑仔</span><span style="background:#6ee7b7;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">ETF</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">1檔ETF持有，合計5,455張（無法取得占比）</td>
         </tr>
@@ -1452,8 +1502,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">先進封裝</span></td>
           <td style="text-align:right;color:#4ade80">2.0</td>
           <td style="text-align:center">2</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#fb923c">-6.5%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-0.7%</span></td>
           <td><span style="background:#fb923c;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">大戶</span><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">推薦｜玻璃基板概念，昨天甚至一度差點打到跌停板，今天化解所有問題重新站上月線。要趁回檔</td>
         </tr>
@@ -1488,8 +1538,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">半導體設備</span></td>
           <td style="text-align:right;color:#4ade80">2.0</td>
           <td style="text-align:center">2</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#fb923c">-10.1%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-4.1%</span></td>
           <td><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span><span style="background:#6ee7b7;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">ETF</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">推薦｜半導體高階先進封裝設備商，解決散熱與耗能問題，供應全球前七大封測大廠。5/29在</td>
         </tr>
@@ -1536,8 +1586,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">IC設計</span></td>
           <td style="text-align:right;color:#4ade80">1.9</td>
           <td style="text-align:center">3</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#fb923c">-15.3%</span></td>
+          <td style="text-align:right"><span style="color:#fb923c">-13.3%</span></td>
           <td><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span><span style="background:#6366f1;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">股惑仔</span><span style="background:#6ee7b7;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">ETF</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">4檔ETF持有，合計574張（無法取得占比）</td>
         </tr>
@@ -1572,8 +1622,8 @@
           <td><span style="color:#1e293b">—</span></td>
           <td style="text-align:right;color:#4ade80">1.9</td>
           <td style="text-align:center">2</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#4ade80">+5.7%</span></td>
+          <td style="text-align:right"><span style="color:#4ade80">+14.8%</span></td>
           <td><span style="background:#f97316;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">籌碼</span><span style="background:#fb923c;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">大戶</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">累積淨買+1388張</td>
         </tr>
@@ -1608,8 +1658,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">光通訊/CPO</span></td>
           <td style="text-align:right;color:#4ade80">1.8</td>
           <td style="text-align:center">2</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#fb923c">-9.4%</span></td>
+          <td style="text-align:right"><span style="color:#fb923c">-11.4%</span></td>
           <td><span style="background:#ef4444;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">股癌</span><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">觀察｜**產業好但資金不在**，故事目前不在這 等資金流回與事件驅動才有補漲空間</td>
         </tr>
@@ -1716,8 +1766,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">半導體設備</span></td>
           <td style="text-align:right;color:#4ade80">1.7</td>
           <td style="text-align:center">2</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">+1.9%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-2.3%</span></td>
           <td><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span><span style="background:#6ee7b7;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">ETF</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">3檔ETF持有，合計2,645張（無法取得占比）</td>
         </tr>
@@ -1836,8 +1886,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">砷化鎵</span></td>
           <td style="text-align:right;color:#4ade80">1.5</td>
           <td style="text-align:center">4</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-1.2%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-4.2%</span></td>
           <td><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span><span style="background:#6366f1;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">股惑仔</span><span style="background:#8b5cf6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">艾綸</span><span style="background:#6ee7b7;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">ETF</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">1檔ETF持有，合計4,143張（無法取得占比）</td>
         </tr>
@@ -1848,8 +1898,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">被動元件</span></td>
           <td style="text-align:right;color:#4ade80">1.5</td>
           <td style="text-align:center">2</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#fb923c">-5.8%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-6.9%</span></td>
           <td><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span><span style="background:#6366f1;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">股惑仔</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">推薦｜被動元件，漲得比較少但穩穩漲，曾創371塊高點。只要均線沒被破壞仍以多頭看，大跌</td>
         </tr>
@@ -1896,8 +1946,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">光通訊/CPO</span></td>
           <td style="text-align:right;color:#4ade80">1.3</td>
           <td style="text-align:center">1</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#fb923c">-5.5%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-2.9%</span></td>
           <td><span style="background:#ef4444;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">股癌</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">觀察｜**產業好但資金不在**，故事目前不在這 等資金流回與事件驅動才有補漲空間</td>
         </tr>
@@ -1908,8 +1958,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">被動元件</span></td>
           <td style="text-align:right;color:#4ade80">1.3</td>
           <td style="text-align:center">3</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#fb923c">-14.4%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">+0.4%</span></td>
           <td><span style="background:#fb923c;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">大戶</span><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span><span style="background:#8b5cf6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">艾綸</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">推薦｜被動元件的華容，到現在都還是一個多頭，所以拉回都可以做。</td>
         </tr>
@@ -1944,8 +1994,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">記憶體</span></td>
           <td style="text-align:right;color:#4ade80">1.3</td>
           <td style="text-align:center">3</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-0.4%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">+3.1%</span></td>
           <td><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span><span style="background:#8b5cf6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">艾綸</span><span style="background:#6ee7b7;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">ETF</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">1檔ETF持有，合計358張（無法取得占比）</td>
         </tr>
@@ -1956,8 +2006,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">機器人</span></td>
           <td style="text-align:right;color:#4ade80">1.3</td>
           <td style="text-align:center">1</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#fb923c">-14.6%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-5.4%</span></td>
           <td><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">推薦｜具三重題材：一做自動化倉儲物流（工業機器人），二有軍工題材（提供國防部軍備局高度</td>
         </tr>
@@ -1968,8 +2018,8 @@
           <td><span style="color:#1e293b">—</span></td>
           <td style="text-align:right;color:#4ade80">1.3</td>
           <td style="text-align:center">1</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">+2.5%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">+4.4%</span></td>
           <td><span style="background:#6366f1;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">股惑仔</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">推薦｜ABF設備裡最近很厲害的標的。ABF設備爛很久，去年之前沒人call，今年開始大</td>
         </tr>
@@ -1980,8 +2030,8 @@
           <td><span style="color:#1e293b">—</span></td>
           <td style="text-align:right;color:#4ade80">1.3</td>
           <td style="text-align:center">1</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#fb923c">-6.9%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">+9.7%</span></td>
           <td><span style="background:#6366f1;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">股惑仔</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">推薦｜ABF設備廠之一，下半年訂單能見度拉大，速度看起來會快，主要接景碩訂單。</td>
         </tr>
@@ -1992,8 +2042,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">石英元件</span></td>
           <td style="text-align:right;color:#4ade80">1.2</td>
           <td style="text-align:center">1</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#fb923c">-6.6%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">+7.2%</span></td>
           <td><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">等突破｜也是石英元件的多頭股，回檔今天不跌，看明天有沒有機會繼續往上。這種小型股技術面很</td>
         </tr>
@@ -2004,8 +2054,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">低軌衛星</span></td>
           <td style="text-align:right;color:#4ade80">1.2</td>
           <td style="text-align:center">2</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#fb923c">-5.2%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">+3.3%</span></td>
           <td><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span><span style="background:#6ee7b7;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">ETF</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">2檔ETF持有，合計968張（無法取得占比）</td>
         </tr>
@@ -2076,8 +2126,8 @@
           <td><span style="color:#1e293b">—</span></td>
           <td style="text-align:right;color:#4ade80">1.2</td>
           <td style="text-align:center">1</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">+3.6%</span></td>
+          <td style="text-align:right"><span style="color:#4ade80">+15.1%</span></td>
           <td><span style="background:#6366f1;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">股惑仔</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">推薦｜韓國指數靠三星、海力士兩檔拉抬，本益比低、獲利成長比股價快，儘管漲很多仍不存在泡</td>
         </tr>
@@ -2088,8 +2138,8 @@
           <td><span style="font-size:11px;color:#475569;white-space:nowrap">IP矽智財</span></td>
           <td style="text-align:right;color:#4ade80">1.1</td>
           <td style="text-align:center">2</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#fb923c">-6.0%</span></td>
+          <td style="text-align:right"><span style="color:#fb923c">-10.9%</span></td>
           <td><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span><span style="background:#6ee7b7;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">ETF</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">1檔ETF持有，合計50張（無法取得占比）</td>
         </tr>
@@ -2184,8 +2234,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">被動元件</span></td>
           <td style="text-align:right;color:#4ade80">1.1</td>
           <td style="text-align:center">1</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#fb923c">-6.1%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">+5.9%</span></td>
           <td><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">推薦｜主產品功率電感、保護元件，第一季EPS 1.89元。長得不像被動元件、大家都忽略</td>
         </tr>
@@ -2220,8 +2270,8 @@
           <td><span style="font-size:11px;color:#475569;white-space:nowrap">電源</span></td>
           <td style="text-align:right;color:#4ade80">0.9</td>
           <td style="text-align:center">1</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#fb923c">-9.9%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">+9.8%</span></td>
           <td><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">推薦｜與松川無關（只是都有松字），過去是PCB產業，切入被動元件與電源磁性元件（與開關</td>
         </tr>
@@ -2244,8 +2294,8 @@
           <td><span style="color:#1e293b">—</span></td>
           <td style="text-align:right;color:#4ade80">0.9</td>
           <td style="text-align:center">1</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-0.4%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">+2.9%</span></td>
           <td><span style="background:#8b5cf6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">艾綸</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">推薦｜崇友做電梯，受惠老人化、老公寓與新建案都要用電梯，裝電梯越來越貴還有維修費。EP</td>
         </tr>
@@ -2292,8 +2342,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">半導體設備</span></td>
           <td style="text-align:right;color:#4ade80">0.9</td>
           <td style="text-align:center">2</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#fb923c">-11.6%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">+7.9%</span></td>
           <td><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span><span style="background:#6366f1;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">股惑仔</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">持有｜與志聖、均華、東捷共同組成G2C聯盟，切入NVIDIA與台積電供應鏈，屬於設備股</td>
         </tr>
@@ -2340,8 +2390,8 @@
           <td><span style="color:#1e293b">—</span></td>
           <td style="text-align:right;color:#4ade80">0.8</td>
           <td style="text-align:center">2</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-0.8%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">+3.6%</span></td>
           <td><span style="background:#6366f1;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">股惑仔</span><span style="background:#8b5cf6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">艾綸</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">推薦｜東洋是富旭下半年加碼的除息早鳥股之一。</td>
         </tr>
@@ -2364,8 +2414,8 @@
           <td><span style="color:#1e293b">—</span></td>
           <td style="text-align:right;color:#4ade80">0.8</td>
           <td style="text-align:center">3</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-1.6%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-3.7%</span></td>
           <td><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span><span style="background:#6366f1;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">股惑仔</span><span style="background:#8b5cf6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">艾綸</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">持有｜國內半導體ETF，因有漲停板限制反而更厲害，00891今年漲了真的是翻倍了。</td>
         </tr>
@@ -2472,8 +2522,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">功率元件</span></td>
           <td style="text-align:right;color:#4ade80">0.7</td>
           <td style="text-align:center">2</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#fb923c">-5.7%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">+7.3%</span></td>
           <td><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span><span style="background:#6366f1;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">股惑仔</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">推薦｜廣閎科背後是茂迪（曾為台灣最大太陽能廠），專做高低壓調整IC元件，偏工業型。是三</td>
         </tr>
@@ -2496,8 +2546,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">砷化鎵</span></td>
           <td style="text-align:right;color:#4ade80">0.7</td>
           <td style="text-align:center">2</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#fb923c">-5.6%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-3.5%</span></td>
           <td><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span><span style="background:#8b5cf6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">艾綸</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">推薦｜沿上升軌道，目前又回到軌道線下緣，這種股票應找介入點，沿軌道來回操作即可，軌道下</td>
         </tr>
@@ -2580,8 +2630,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">功率元件</span></td>
           <td style="text-align:right;color:#4ade80">0.6</td>
           <td style="text-align:center">1</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#fb923c">-9.1%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-4.9%</span></td>
           <td><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">推薦｜之前較早就講，因MOSFET部分，致新收前出量突破。量放起來突破位階就要注意，沒</td>
         </tr>
@@ -2616,8 +2666,8 @@
           <td><span style="color:#1e293b">—</span></td>
           <td style="text-align:right;color:#4ade80">0.6</td>
           <td style="text-align:center">3</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#fb923c">-10.3%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">+4.2%</span></td>
           <td><span style="background:#fb923c;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">大戶</span><span style="background:#6366f1;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">股惑仔</span><span style="background:#8b5cf6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">艾綸</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">大戶+2.6% 散戶-6.0%</td>
         </tr>
@@ -2664,8 +2714,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">光通訊/CPO</span></td>
           <td style="text-align:right;color:#4ade80">0.5</td>
           <td style="text-align:center">1</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-1.6%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">+0.0%</span></td>
           <td><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">推薦｜光環是轉機股、中低價，為聯亞協力廠，負責後段晶粒切割封裝與測試，型態反而比聯亞強</td>
         </tr>
@@ -2676,8 +2726,8 @@
           <td><span style="color:#1e293b">—</span></td>
           <td style="text-align:right;color:#4ade80">0.5</td>
           <td style="text-align:center">1</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-3.3%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">+5.3%</span></td>
           <td><span style="background:#6366f1;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">股惑仔</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">觀望｜多題材股，除軍工外也切到半導體。多題材好處是別的題材發揮時OK，壞處是若自己主體</td>
         </tr>
@@ -2736,8 +2786,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">玻璃基板</span></td>
           <td style="text-align:right;color:#4ade80">0.5</td>
           <td style="text-align:center">1</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-2.8%</span></td>
+          <td style="text-align:right"><span style="color:#4ade80">+15.2%</span></td>
           <td><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">觀望｜做玻璃基板相關技術，之前是飆股，但股價型態不好看。玻璃基板應用也會超前，大家要注</td>
         </tr>
@@ -2772,8 +2822,8 @@
           <td><span style="color:#1e293b">—</span></td>
           <td style="text-align:right;color:#4ade80">0.5</td>
           <td style="text-align:center">1</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#fb923c">-15.3%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-9.6%</span></td>
           <td><span style="background:#8b5cf6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">艾綸</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">觀望｜瑞耘昨天殺到地板線，剛好跟布林通道下軌差不多，這邊也有點出量但量沒有很大。假如出</td>
         </tr>
@@ -2844,8 +2894,8 @@
           <td><span style="color:#1e293b">—</span></td>
           <td style="text-align:right;color:#4ade80">0.5</td>
           <td style="text-align:center">1</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#fb923c">-12.8%</span></td>
+          <td style="text-align:right"><span style="color:#fb923c">-20.2%</span></td>
           <td><span style="background:#fb923c;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">大戶</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">大戶+5.1% 散戶-7.8%</td>
         </tr>
@@ -2892,8 +2942,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">IC設計</span></td>
           <td style="text-align:right;color:#4ade80">0.5</td>
           <td style="text-align:center">1</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-2.9%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">+5.7%</span></td>
           <td><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">觀望｜創惟與立積連續兩週大戶增持，是IC設計族群大戶回籠現象。</td>
         </tr>
@@ -2904,8 +2954,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">半導體設備</span></td>
           <td style="text-align:right;color:#4ade80">0.5</td>
           <td style="text-align:center">1</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#fb923c">-5.2%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">+3.7%</span></td>
           <td><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">持有｜與志聖、均豪、均華共同組成G2C聯盟，切入NVIDIA與台積電供應鏈，屬於設備股</td>
         </tr>
@@ -2928,8 +2978,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">半導體設備</span></td>
           <td style="text-align:right;color:#4ade80">0.5</td>
           <td style="text-align:center">1</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#fb923c">-12.7%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-0.2%</span></td>
           <td><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">持有｜3131弘塑上次講過後莫名其妙慢慢漲上去，已是高價股還更高。公司的庫藏股都買得比</td>
         </tr>
@@ -2976,8 +3026,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">IC設計</span></td>
           <td style="text-align:right;color:#4ade80">0.4</td>
           <td style="text-align:center">2</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#fb923c">-6.0%</span></td>
+          <td style="text-align:right"><span style="color:#4ade80">+13.1%</span></td>
           <td><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span><span style="background:#6366f1;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">股惑仔</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">持有｜大中母公司，電源管理IC與大中功率元件有綜效搭配提供完整電源解決方案。國巨董事長</td>
         </tr>
@@ -2988,8 +3038,8 @@
           <td><span style="font-size:11px;color:#475569;white-space:nowrap">DRAM模組</span></td>
           <td style="text-align:right;color:#4ade80">0.4</td>
           <td style="text-align:center">1</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#fb923c">-6.0%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-8.2%</span></td>
           <td><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">推薦｜品安(8088)做記憶體模組，是記憶體裡最便宜的一檔，不到100塊現在68多。今</td>
         </tr>
@@ -3072,8 +3122,8 @@
           <td><span style="color:#1e293b">—</span></td>
           <td style="text-align:right;color:#4ade80">0.4</td>
           <td style="text-align:center">1</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-3.9%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">+2.2%</span></td>
           <td><span style="background:#f97316;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">籌碼</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">累積淨買+129張</td>
         </tr>
@@ -3144,8 +3194,8 @@
           <td><span style="color:#1e293b">—</span></td>
           <td style="text-align:right;color:#4ade80">0.4</td>
           <td style="text-align:center">1</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-2.1%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">+2.9%</span></td>
           <td><span style="background:#8b5cf6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">艾綸</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">持有｜鑽針領域中一個比較低價的標的，設備廠找大量、鑽針找尖點，凱崴為較低價選擇。</td>
         </tr>
@@ -3168,8 +3218,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">被動元件</span></td>
           <td style="text-align:right;color:#4ade80">0.3</td>
           <td style="text-align:center">3</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#fb923c">-8.7%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-5.4%</span></td>
           <td><span style="background:#fb923c;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">大戶</span><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span><span style="background:#8b5cf6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">艾綸</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">推薦｜立敦5月營收創歷史新高，年增率大於前5月累計。漲得比較緩但離前高也非常接近。剛好</td>
         </tr>
@@ -3180,8 +3230,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">半導體設備</span></td>
           <td style="text-align:right;color:#4ade80">0.3</td>
           <td style="text-align:center">2</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#fb923c">-5.6%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">+1.5%</span></td>
           <td><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span><span style="background:#8b5cf6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">艾綸</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">觀望｜群翊是PCB裡面設備的高材生，原本連續連年成長，去年疫情時衰退。因納入MSCI新</td>
         </tr>
@@ -3288,8 +3338,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">被動元件</span></td>
           <td style="text-align:right;color:#4ade80">0.3</td>
           <td style="text-align:center">1</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#fb923c">-10.6%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-8.6%</span></td>
           <td><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">推薦｜越峰是被動元件材料類，擴廠效應浮現，最近滿強，很多紅K、主力在買，最近籌碼真的滿</td>
         </tr>
@@ -3360,8 +3410,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">光通訊/CPO</span></td>
           <td style="text-align:right;color:#4ade80">0.3</td>
           <td style="text-align:center">1</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#fb923c">-14.2%</span></td>
+          <td style="text-align:right"><span style="color:#fb923c">-19.1%</span></td>
           <td><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">持有｜聯一光為CPO擴散概念股，前幾天創高，順勢操作。</td>
         </tr>
@@ -3372,8 +3422,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">石英元件</span></td>
           <td style="text-align:right;color:#4ade80">0.3</td>
           <td style="text-align:center">1</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#fb923c">-12.0%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-3.2%</span></td>
           <td><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">等回測｜加高為石英元件廠，全球排名與營運有知名度（台灣晶技、希華、加高），收紅。產業看好</td>
         </tr>
@@ -3420,8 +3470,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">光學鏡頭</span></td>
           <td style="text-align:right;color:#4ade80">0.3</td>
           <td style="text-align:center">1</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-3.7%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-5.3%</span></td>
           <td><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">推薦｜先進光今天漲停200塊左右，價位不高。高點在2024年，現在底部均線、架構與成交</td>
         </tr>
@@ -3504,8 +3554,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">MCU</span></td>
           <td style="text-align:right;color:#4ade80">0.2</td>
           <td style="text-align:center">1</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-3.3%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">+4.0%</span></td>
           <td><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">推薦｜九齊過去做消費性MCU，是新唐轉投資公司。新唐做高階MCU，中低階MCU供給缺口</td>
         </tr>
@@ -3528,8 +3578,8 @@
           <td><span style="color:#1e293b">—</span></td>
           <td style="text-align:right;color:#4ade80">0.2</td>
           <td style="text-align:center">1</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-1.7%</span></td>
+          <td style="text-align:right"><span style="color:#fb923c">-25.3%</span></td>
           <td><span style="background:#f97316;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">籌碼</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">累積淨買+908張</td>
         </tr>
@@ -3660,8 +3710,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">記憶體</span></td>
           <td style="text-align:right;color:#4ade80">0.2</td>
           <td style="text-align:center">1</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#fb923c">-11.7%</span></td>
+          <td style="text-align:right"><span style="color:#fb923c">-28.6%</span></td>
           <td><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">持有｜代理美光產品，今天股價明顯連動美光財報而反映上漲，屬記憶體模組通路。</td>
         </tr>
@@ -3708,8 +3758,8 @@
           <td><span style="color:#1e293b">—</span></td>
           <td style="text-align:right;color:#4ade80">0.2</td>
           <td style="text-align:center">1</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-0.9%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-3.8%</span></td>
           <td><span style="background:#6366f1;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">股惑仔</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">持有｜導線架族群今日漲停，近期開股東會/法說會提到通過NV的認證。電子產品必用元件，是</td>
         </tr>
@@ -3720,8 +3770,8 @@
           <td><span style="color:#1e293b">—</span></td>
           <td style="text-align:right;color:#4ade80">0.2</td>
           <td style="text-align:center">1</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-3.7%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-3.3%</span></td>
           <td><span style="background:#8b5cf6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">艾綸</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">持有｜帝寶去年是富旭第一大持股，去年跌40幾%，因產業前景變化停損，從60張減到10幾</td>
         </tr>
@@ -3732,8 +3782,8 @@
           <td><span style="color:#1e293b">—</span></td>
           <td style="text-align:right;color:#4ade80">0.2</td>
           <td style="text-align:center">1</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-3.3%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">+0.5%</span></td>
           <td><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">推薦｜國眾為大眾集團公司，提供企業IT顧問諮詢及AI、品G運用。近三個月營收YoY百分</td>
         </tr>
@@ -3744,8 +3794,8 @@
           <td><span style="color:#1e293b">—</span></td>
           <td style="text-align:right;color:#4ade80">0.2</td>
           <td style="text-align:center">1</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">+0.5%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">+7.5%</span></td>
           <td><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">推薦｜零壹（3029）軟體股，營收YoY出現兩位數成長，每年營收與EPS都成長。黃仁勳</td>
         </tr>
@@ -3756,8 +3806,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">半導體設備</span></td>
           <td style="text-align:right;color:#4ade80">0.2</td>
           <td style="text-align:center">1</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#fb923c">-11.2%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">+1.8%</span></td>
           <td><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">推薦｜大量（3167）從200多漲到1000塊，最近沒漲。AI伺服器熱潮下PCB是升級</td>
         </tr>
@@ -3768,8 +3818,8 @@
           <td><span style="color:#1e293b">—</span></td>
           <td style="text-align:right;color:#4ade80">0.1</td>
           <td style="text-align:center">1</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#4ade80">+5.6%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">+4.0%</span></td>
           <td><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">持有｜凱基金列入100元以下銅板股名單之一。</td>
         </tr>
@@ -3780,8 +3830,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">IC設計</span></td>
           <td style="text-align:right;color:#4ade80">0.1</td>
           <td style="text-align:center">1</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#fb923c">-7.7%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-4.4%</span></td>
           <td><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">持有｜聯陽屬聯家軍，今天為投信外資同買標的之一，篩選本益比小於30倍且有EPS的個股。</td>
         </tr>
@@ -3792,8 +3842,8 @@
           <td><span style="color:#1e293b">—</span></td>
           <td style="text-align:right;color:#4ade80">0.1</td>
           <td style="text-align:center">1</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-0.9%</span></td>
+          <td style="text-align:right"><span style="color:#4ade80">+13.6%</span></td>
           <td><span style="background:#6366f1;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">股惑仔</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">持有｜望隼（代號4771）做隱形眼鏡彩色鏡片，雖生技類今年較不受資金青睞，但仍交出EP</td>
         </tr>
@@ -3804,8 +3854,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">營建</span></td>
           <td style="text-align:right;color:#4ade80">0.1</td>
           <td style="text-align:center">1</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-0.1%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">+1.6%</span></td>
           <td><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">推薦｜去年到今年前三大推案公司。底部爆大量，有人比我們更早知道要停止信用管制。4月起就</td>
         </tr>
@@ -3816,8 +3866,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">營建</span></td>
           <td style="text-align:right;color:#4ade80">0.1</td>
           <td style="text-align:center">1</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-2.4%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-1.5%</span></td>
           <td><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">推薦｜高單價物件（台北市中心1坪200萬以上），週線型態與別人不同已先走。除息後遇股災</td>
         </tr>
@@ -3828,8 +3878,8 @@
           <td><span style="color:#1e293b">—</span></td>
           <td style="text-align:right;color:#4ade80">0.1</td>
           <td style="text-align:center">1</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#fb923c">-8.2%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-3.1%</span></td>
           <td><span style="background:#fb923c;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">大戶</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">大戶+3.4% 散戶-3.2%</td>
         </tr>
@@ -3840,8 +3890,8 @@
           <td><span style="color:#1e293b">—</span></td>
           <td style="text-align:right;color:#4ade80">0.1</td>
           <td style="text-align:center">1</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">+0.7%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">+8.2%</span></td>
           <td><span style="background:#6366f1;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">股惑仔</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">推薦｜高雄建商，曾是高股息ETF最愛因配息不佳而下跌。採先建後售模式，代表公司有實力不</td>
         </tr>
@@ -3852,8 +3902,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">IC設計</span></td>
           <td style="text-align:right;color:#4ade80">0.1</td>
           <td style="text-align:center">1</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-3.5%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-0.8%</span></td>
           <td><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">獲利了結｜聚積這兩天都有放大量，今天是撐盤要角，但因連續兩天在高檔放大量（非起漲量），看起</td>
         </tr>
@@ -3864,8 +3914,8 @@
           <td><span style="color:#1e293b">—</span></td>
           <td style="text-align:right;color:#4ade80">0.1</td>
           <td style="text-align:center">1</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#fb923c">-7.5%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-6.0%</span></td>
           <td><span style="background:#6366f1;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">股惑仔</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">觀望｜現金股息100多元已發，還有兩張股票（1變3）未除權。毛利率不高的公司，李兆華覺</td>
         </tr>
@@ -3876,8 +3926,8 @@
           <td><span style="color:#1e293b">—</span></td>
           <td style="text-align:right;color:#4ade80">0.1</td>
           <td style="text-align:center">1</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#fb923c">-5.2%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-5.8%</span></td>
           <td><span style="background:#6366f1;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">股惑仔</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">觀望｜今日9:57最晚漲停，是更慢的小資散戶因最便宜往這擠，籌碼上散戶最多。是面板族群</td>
         </tr>
@@ -3900,8 +3950,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">電子通路</span></td>
           <td style="text-align:right;color:#4ade80">0.1</td>
           <td style="text-align:center">1</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#fb923c">-6.6%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-4.6%</span></td>
           <td><span style="background:#8b5cf6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">艾綸</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">獲利了結｜富旭聯強成本只有50幾元，漲到80幾元時開始賣，今年賺很多。</td>
         </tr>
@@ -3912,8 +3962,8 @@
           <td><span style="color:#1e293b">—</span></td>
           <td style="text-align:right;color:#4ade80">0.1</td>
           <td style="text-align:center">1</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">+2.7%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">+8.3%</span></td>
           <td><span style="background:#8b5cf6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">艾綸</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">獲利了結｜豐祥-KY富旭原本套牢，到190元解套後全部處分掉。</td>
         </tr>
@@ -3924,8 +3974,8 @@
           <td><span style="color:#1e293b">—</span></td>
           <td style="text-align:right;color:#4ade80">0.1</td>
           <td style="text-align:center">1</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#fb923c">-5.7%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-3.7%</span></td>
           <td><span style="background:#8b5cf6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">艾綸</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">獲利了結｜遠東新是富旭今年進行部分獲利了結的標的之一。</td>
         </tr>
@@ -3936,8 +3986,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">金融</span></td>
           <td style="text-align:right;color:#4ade80">0.1</td>
           <td style="text-align:center">1</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">+1.6%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">+3.0%</span></td>
           <td><span style="background:#8b5cf6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">艾綸</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">獲利了結｜元大金是富旭今年進行部分與全部獲利了結的標的之一。</td>
         </tr>
@@ -3948,8 +3998,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">電競/主機板</span></td>
           <td style="text-align:right;color:#4ade80">0.1</td>
           <td style="text-align:center">1</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">+1.3%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">+3.8%</span></td>
           <td><span style="background:#8b5cf6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">艾綸</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">推薦｜華碩已創歷史新高，3月13號黃金右下角就講過。這次COMPUTEX秀出用RTX </td>
         </tr>
@@ -3960,8 +4010,8 @@
           <td><span style="color:#1e293b">—</span></td>
           <td style="text-align:right;color:#4ade80">0.1</td>
           <td style="text-align:center">1</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#fb923c">-7.9%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-8.9%</span></td>
           <td><span style="background:#fb923c;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">大戶</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">大戶+3.0% 散戶-2.5%</td>
         </tr>
@@ -3972,8 +4022,8 @@
           <td><span style="color:#1e293b">—</span></td>
           <td style="text-align:right;color:#4ade80">0.1</td>
           <td style="text-align:center">1</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#fb923c">-6.5%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-4.7%</span></td>
           <td><span style="background:#fb923c;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">大戶</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">大戶+5.5% 散戶-5.5%</td>
         </tr>
@@ -3984,8 +4034,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">半導體設備</span></td>
           <td style="text-align:right;color:#4ade80">0.1</td>
           <td style="text-align:center">1</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#fb923c">-11.4%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">+2.3%</span></td>
           <td><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">觀望｜200多塊的設備材料相關股，包含設備及材料都有代理，股價這次成為最近的新妖股。屬</td>
         </tr>
@@ -3996,8 +4046,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">半導體設備</span></td>
           <td style="text-align:right;color:#4ade80">0.1</td>
           <td style="text-align:center">1</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#fb923c">-10.3%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-6.7%</span></td>
           <td><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">觀望｜設備股，近期151元跌到120元，破季線稍微跌破，但整體在做收斂三角形整理。以6</td>
         </tr>
@@ -4008,8 +4058,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">半導體設備</span></td>
           <td style="text-align:right;color:#4ade80">0.1</td>
           <td style="text-align:center">1</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#fb923c">-6.3%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">+0.6%</span></td>
           <td><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">觀望｜特化股，大家熟悉，股價最近都有拉回。屬設備材料族群中大戶加持的中低價股。</td>
         </tr>
@@ -4020,8 +4070,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">半導體設備</span></td>
           <td style="text-align:right;color:#4ade80">0.1</td>
           <td style="text-align:center">1</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-1.9%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">+3.5%</span></td>
           <td><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">觀望｜特化股，大家熟悉，股價最近都有拉回。屬設備材料族群中大戶加持的中低價股。</td>
         </tr>
@@ -4032,8 +4082,8 @@
           <td><span style="color:#1e293b">—</span></td>
           <td style="text-align:right;color:#4ade80">0.1</td>
           <td style="text-align:center">1</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#fb923c">-6.0%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-5.2%</span></td>
           <td><span style="background:#8b5cf6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">艾綸</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">觀望｜漢偉哥以神盾為題材股範例：當年年底發動，後切入矽智財、併購等利多越來越多。但業績</td>
         </tr>
@@ -4044,8 +4094,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">玻璃基板</span></td>
           <td style="text-align:right;color:#4ade80">0.1</td>
           <td style="text-align:center">1</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#fb923c">-5.5%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-1.5%</span></td>
           <td><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">持有｜台玻是玻璃基板概念（非封裝），台積電找Amkor有卡位玻璃基板的用意。台灣玻璃基</td>
         </tr>
@@ -4080,8 +4130,8 @@
           <td><span style="color:#1e293b">—</span></td>
           <td style="text-align:right;color:#4ade80">0.1</td>
           <td style="text-align:center">1</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-2.8%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-4.4%</span></td>
           <td><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">持有｜加權指數現在站上5均（定法），回後買上漲，今天賺1000多點。上週三在恐慌位置出</td>
         </tr>
@@ -4104,8 +4154,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">碳化矽</span></td>
           <td style="text-align:right;color:#4ade80">0.1</td>
           <td style="text-align:center">1</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#fb923c">-12.6%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-2.6%</span></td>
           <td><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">持有｜漢民集團，世界先進入股成最大法人股東（等於台積電）。第一季EPS是負的還沒賺錢，</td>
         </tr>
@@ -4116,8 +4166,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">低軌衛星</span></td>
           <td style="text-align:right;color:#4ade80">0.1</td>
           <td style="text-align:center">1</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">+1.0%</span></td>
+          <td style="text-align:right"><span style="color:#4ade80">+12.2%</span></td>
           <td><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">等突破｜股價已先做拉回，季線有撐，上方有月線與10日線短壓。若能站上295元（昨日上影線</td>
         </tr>
@@ -4128,8 +4178,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">砷化鎵</span></td>
           <td style="text-align:right;color:#4ade80">0.1</td>
           <td style="text-align:center">1</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#fb923c">-20.2%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-9.0%</span></td>
           <td><span style="background:#6366f1;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">股惑仔</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">持有｜矽光子族群之一，今日相對強。光學概念股整體強勢，喜歡強股可追逐光學族群，但族群相</td>
         </tr>
@@ -4140,8 +4190,8 @@
           <td><span style="color:#1e293b">—</span></td>
           <td style="text-align:right;color:#4ade80">0.1</td>
           <td style="text-align:center">1</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#fb923c">-5.8%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-2.1%</span></td>
           <td><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">持有｜緯創與威剛籌碼不太會漲，但用今年股利算約3.5%以上殖利率，明年若賺錢配發更高，</td>
         </tr>
@@ -4152,8 +4202,8 @@
           <td><span style="color:#1e293b">—</span></td>
           <td style="text-align:right;color:#4ade80">0.1</td>
           <td style="text-align:center">1</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-2.9%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">+2.3%</span></td>
           <td><span style="background:#8b5cf6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">艾綸</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">等回測｜系統電較少人留意，11kW與5.5kW高階BBU產品已通過客戶認證，2026年第</td>
         </tr>
@@ -4164,8 +4214,8 @@
           <td><span style="color:#1e293b">—</span></td>
           <td style="text-align:right;color:#4ade80">0.1</td>
           <td style="text-align:center">1</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">+0.0%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">+4.9%</span></td>
           <td><span style="background:#6366f1;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">股惑仔</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">觀望｜群光今日除息嚴重貼息盤中跌停，非高股息成分股，偏向不想領息的氣息賣壓或籌碼面問題</td>
         </tr>
@@ -4176,8 +4226,8 @@
           <td><span style="color:#1e293b">—</span></td>
           <td style="text-align:right;color:#4ade80">0.1</td>
           <td style="text-align:center">1</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-1.6%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-2.9%</span></td>
           <td><span style="background:#6366f1;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">股惑仔</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">獲利了結｜豐泰投信連續好幾天買超5000多張，今日除息第一天嚴重貼息又跌停，提醒高股息成分</td>
         </tr>
@@ -4200,8 +4250,8 @@
           <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">營建</span></td>
           <td style="text-align:right;color:#4ade80">0.0</td>
           <td style="text-align:center">1</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-0.1%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">+8.1%</span></td>
           <td><span style="background:#6366f1;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">股惑仔</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">｜海悅為代銷公司，作為房市觀察指標。若海悅接下來營收持續成長，代表房子真的出現回溫</td>
         </tr>
@@ -4212,8 +4262,8 @@
           <td><span style="color:#1e293b">—</span></td>
           <td style="text-align:right;color:#4ade80">0.0</td>
           <td style="text-align:center">1</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">+1.2%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">+0.6%</span></td>
           <td><span style="background:#6366f1;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">股惑仔</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">獲利了結｜上礼拜討論過的涨多股票，涨了20幾根停板後現在跌了十幾根跌停板，今日與前兩天皆跌</td>
         </tr>
@@ -4224,8 +4274,8 @@
           <td><span style="color:#1e293b">—</span></td>
           <td style="text-align:right;color:#4ade80">0.0</td>
           <td style="text-align:center">1</td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
-          <td style="text-align:right"><span style="color:#475569">—</span></td>
+          <td style="text-align:right"><span style="color:#fb923c">-8.7%</span></td>
+          <td style="text-align:right"><span style="color:#94a3b8">-5.2%</span></td>
           <td><span style="background:#fb923c;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">大戶</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">大戶+0.1% 散戶-2.3%</td>
         </tr>
