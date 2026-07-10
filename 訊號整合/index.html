@@ -66,7 +66,7 @@
 </head>
 <body>
 <h1>台股訊號整合</h1>
-<div class="meta">更新時間：2026-07-11 00:22　共 344 支個股<span id="fc" style="color:#818cf8"></span>
+<div class="meta">更新時間：2026-07-11 00:38　共 344 支個股<span id="fc" style="color:#818cf8"></span>
   <button onclick="document.getElementById('scoring-info').classList.toggle('hidden')"
     style="margin-left:12px;background:transparent;border:1px solid #334155;color:#64748b;
            font-size:11px;padding:2px 8px;border-radius:4px;cursor:pointer">計分說明</button>
@@ -169,6 +169,15 @@
       <button class="clear-btn" onclick="clearFut()">清除</button>
     </div>
   </div>
+  <div class="filter-group" style="border-top:1px solid #1e293b;padding-top:10px;margin-top:2px">
+    <div class="fg-label" style="color:#f59e0b">族群待確認</div>
+    <div class="fg-btns">
+      <button class="sb" style="--bc:#f59e0b;color:#f59e0b" onclick="toggleUnconfirmed(this)" id="unc-btn">
+        ⚠ 2 支分數≥5 族群未手動確認
+      </button>
+      <span style="font-size:11px;color:#475569;margin-left:6px">族群旁有 <span style="color:#f59e0b">?</span> 即為待確認</span>
+    </div>
+  </div>
 </div>
 
 <div class="tbl-wrap">
@@ -225,11 +234,11 @@
           <td><span style="background:#ef4444;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">股癌</span><span style="background:#fb923c;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">大戶</span><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span><span style="background:#6366f1;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">股惑仔</span><span style="background:#8b5cf6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">艾綸</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">看好｜市場**相對強勢**主流族群，多在五日十日線上 **market cap僅數百億</td>
         </tr>
-        <tr data-sources="gucai,liqian,guhuazi,riveralan,etf_static" data-sector="ABF載板" data-futures="sf mf" data-q="2383 台光電">
+        <tr data-sources="gucai,liqian,guhuazi,riveralan,etf_static" data-sector="ABF載板" data-futures="sf mf" data-q="2383 台光電" data-unconfirmed="1">
           <td style="color:#64748b;text-align:center;white-space:nowrap">4</td>
           <td><code style="color:#fbbf24">2383</code></td>
           <td><b>台光電</b><span class="ft mf">小股期</span></td>
-          <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">ABF載板</span></td>
+          <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">ABF載板</span> <span title="來源標的族群（PCB/CCL）與目前標籤（ABF載板）不符，請確認" style="color:#f59e0b;font-size:10px;cursor:help">?</span></td>
           <td style="text-align:right;color:#4ade80">15.1</td>
           <td style="text-align:center">5</td>
           <td style="text-align:right"><span style="color:#fb923c">-12.9%</span></td>
@@ -681,11 +690,11 @@
           <td><span style="background:#f97316;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">籌碼</span><span style="background:#3b82f6;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">達人秀</span><span style="background:#6366f1;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">股惑仔</span><span style="background:#6ee7b7;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;margin:1px">ETF</span></td>
           <td class="ctx" style="color:#94a3b8;font-size:12px">推薦｜營收創歷史新高、獲利創高的個股，這兩天出現兩根黑K棒完全不客氣。把握原則誰跌得愈</td>
         </tr>
-        <tr data-sources="gucai,liqian,guhuazi,riveralan,etf_static" data-sector="ABF載板" data-futures="sf" data-q="4958 臻鼎-KY">
+        <tr data-sources="gucai,liqian,guhuazi,riveralan,etf_static" data-sector="ABF載板" data-futures="sf" data-q="4958 臻鼎-KY" data-unconfirmed="1">
           <td style="color:#64748b;text-align:center;white-space:nowrap">42</td>
           <td><code style="color:#fbbf24">4958</code></td>
           <td><b>臻鼎-KY</b><span class="ft sf">股期</span></td>
-          <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">ABF載板</span></td>
+          <td><span style="font-size:11px;color:#94a3b8;white-space:nowrap">ABF載板</span> <span title="來源標的族群（PCB/CCL）與目前標籤（ABF載板）不符，請確認" style="color:#f59e0b;font-size:10px;cursor:help">?</span></td>
           <td style="text-align:right;color:#4ade80">5.7</td>
           <td style="text-align:center">5</td>
           <td style="text-align:right"><span style="color:#94a3b8">-4.1%</span></td>
@@ -4325,6 +4334,13 @@
   var actSec = new Set();
   var actFut = new Set();
   var searchTerm = '';
+  var showUnconfirmedOnly = false;
+
+  function toggleUnconfirmed(btn) {
+    showUnconfirmedOnly = !showUnconfirmedOnly;
+    btn.classList.toggle('active', showUnconfirmedOnly);
+    applyFilters();
+  }
 
   function onSearch(val) {
     searchTerm = val.trim().toLowerCase();
@@ -4394,12 +4410,13 @@
       var futOk  = actFut.size === 0 ||
         Array.from(actFut).some(function(f){ return futs.indexOf(f) >= 0; });
       var srchOk = searchTerm === '' || q.indexOf(searchTerm) >= 0;
-      var show   = srcOk && secOk && futOk && srchOk;
+      var uncOk  = !showUnconfirmedOnly || row.dataset.unconfirmed === '1';
+      var show   = srcOk && secOk && futOk && srchOk && uncOk;
       row.classList.toggle('hidden', !show);
       if (show) visible++;
     });
     var fc = document.getElementById('fc');
-    var anyActive = actSrc.size > 0 || actSec.size > 0 || actFut.size > 0 || searchTerm !== '';
+    var anyActive = actSrc.size > 0 || actSec.size > 0 || actFut.size > 0 || searchTerm !== '' || showUnconfirmedOnly;
     fc.textContent = anyActive ? '　篩選出 ' + visible + ' 支' : '';
   }
 </script>
