@@ -45,6 +45,21 @@ a { color: inherit; text-decoration: none; }
 
 .container { max-width: 1200px; margin: 0 auto; padding: 24px 20px 60px; }
 
+/* Search */
+.search-wrap { position: relative; max-width: 1200px; margin: 16px auto 0; padding: 0 20px; }
+.search-input {
+  width: 100%; background: var(--surface); border: 1px solid var(--border);
+  border-radius: 8px; padding: 9px 14px 9px 34px;
+  font-size: 13px; color: var(--text); outline: none;
+  transition: border-color .2s; font-family: inherit;
+}
+.search-input::placeholder { color: var(--muted); }
+.search-input:focus { border-color: rgba(124,106,245,.4); }
+.search-icon {
+  position: absolute; left: 31px; top: 50%; transform: translateY(-50%);
+  font-size: 14px; color: var(--muted); pointer-events: none;
+}
+
 /* Section */
 .market-section { margin-bottom: 32px; }
 .section-header {
@@ -187,13 +202,17 @@ footer { text-align: center; padding: 20px; color: var(--muted); font-size: 11px
 
 <header class="top-header">
   <div class="header-left">
-    <a class="back-link" href="../">&#8592; LifeOS</a>
+    <a class="back-link" href="../">&#8592; 回總覽</a>
     <span class="header-title">盯盤面板</span>
   </div>
   <span class="header-ts">更新 2026-07-07 23:00</span>
 </header>
 
-<div class="container">
+<div class="search-wrap">
+  <span class="search-icon">⌕</span>
+  <input id="stock-search" class="search-input" type="text" placeholder="搜尋股票代號或名稱…">
+</div>
+<div class="container" id="stock-container">
 
   <section class="market-section">
     <div class="section-header">
@@ -2033,6 +2052,20 @@ footer { text-align: center; padding: 20px; color: var(--muted); font-size: 11px
 </div>
 
 <footer>Joseph LifeOS · 個人學習參考，不構成投資建議</footer>
+
+<script>
+(function(){
+  var inp = document.getElementById('stock-search');
+  var wrap = document.getElementById('stock-container');
+  function doFilter() {
+    var q = inp.value.toLowerCase().trim();
+    wrap.querySelectorAll('.stock-card').forEach(function(el){
+      el.style.display = (!q || el.textContent.toLowerCase().indexOf(q) >= 0) ? '' : 'none';
+    });
+  }
+  inp.addEventListener('input', doFilter);
+})();
+</script>
 
 </body>
 </html>

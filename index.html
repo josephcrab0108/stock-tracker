@@ -36,7 +36,47 @@
   }
   .logo-icon svg { width: 18px; height: 18px; color: white; }
   .title { font-size: 22px; font-weight: 700; letter-spacing: -.02em; }
-  .subtitle { color: var(--muted); font-size: 12px; margin-bottom: 40px; margin-left: 46px; }
+  .subtitle { color: var(--muted); font-size: 12px; margin-bottom: 24px; margin-left: 46px; }
+
+  /* ── 全域搜尋 ── */
+  .global-search { width: 100%; max-width: 740px; margin-bottom: 28px; }
+  .gs-wrap { position: relative; }
+  .gs-input {
+    width: 100%; background: var(--surface); border: 1px solid var(--border);
+    border-radius: 12px; padding: 12px 16px 12px 40px;
+    font-size: 14px; color: var(--text); outline: none;
+    font-family: inherit; transition: border-color .2s;
+  }
+  .gs-input::placeholder { color: var(--muted); }
+  .gs-input:focus { border-color: rgba(124,106,245,.4); }
+  .gs-icon {
+    position: absolute; left: 15px; top: 50%; transform: translateY(-50%);
+    font-size: 15px; color: var(--muted); pointer-events: none;
+  }
+  #gs-results { margin-top: 12px; display: flex; flex-direction: column; gap: 10px;
+    max-height: 60vh; overflow-y: auto; }
+  .gs-stock {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 12px; padding: 12px 14px;
+  }
+  .gs-stock-head { display: flex; align-items: baseline; gap: 8px; margin-bottom: 8px; }
+  .gs-code { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #fbbf24; font-weight: 600; }
+  .gs-name { font-size: 15px; font-weight: 700; }
+  .gs-us-tag { font-size: 10px; padding: 1px 6px; border-radius: 6px;
+    background: rgba(59,130,246,.12); color: var(--blue); }
+  .gs-count { font-size: 11px; color: var(--muted); margin-left: auto; }
+  .gs-mentions { display: flex; flex-direction: column; gap: 4px; }
+  .gs-mention {
+    display: flex; align-items: baseline; gap: 8px; font-size: 12px;
+    color: var(--muted); text-decoration: none; padding: 3px 0;
+    border-top: 1px solid rgba(35,40,57,.5);
+  }
+  .gs-mention:first-child { border-top: none; }
+  .gs-mention:hover .gs-m-title { color: var(--text); }
+  .gs-m-show { color: var(--accent); flex-shrink: 0; min-width: 84px; }
+  .gs-m-date { font-family: 'JetBrains Mono', monospace; font-size: 10px; flex-shrink: 0; }
+  .gs-m-title { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .gs-empty { color: var(--muted); font-size: 13px; text-align: center; padding: 20px; }
 
   .grid {
     display: grid;
@@ -149,6 +189,15 @@
   <span class="title">Joseph LifeOS</span>
 </div>
 <div class="subtitle">投資分析筆記整合</div>
+
+<div class="global-search">
+  <div class="gs-wrap">
+    <span class="gs-icon">⌕</span>
+    <input id="gs-input" class="gs-input" type="text" autocomplete="off"
+           placeholder="搜尋個股，看哪些節目講過…（例：2330、台積電、NVDA）">
+  </div>
+  <div id="gs-results"></div>
+</div>
 
 <div class="grid">
 
@@ -377,6 +426,90 @@
 </div>
 
 <footer>Joseph LifeOS · 僅供個人學習參考，不構成投資建議</footer>
+
+<script>
+(function() {
+  var input = document.getElementById('gs-input');
+  var results = document.getElementById('gs-results');
+  var grid = document.querySelector('.grid');
+  var INDEX = null;
+
+  // 節目名稱 → 對應頁面路徑（點股票代號本身可回到該節目彙整頁）
+  function loadIndex() {
+    if (INDEX) return Promise.resolve(INDEX);
+    return fetch('search_index.json')
+      .then(function(r) { return r.json(); })
+      .then(function(d) { INDEX = d; return d; });
+  }
+
+  function esc(s) {
+    return String(s || '').replace(/[&<>"]/g, function(c) {
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];
+    });
+  }
+
+  function render(matches) {
+    if (!matches.length) {
+      results.innerHTML = '<div class="gs-empty">找不到「' + esc(input.value) + '」的節目提及</div>';
+      return;
+    }
+    var html = '';
+    matches.slice(0, 20).forEach(function(m) {
+      var e = m.entry;
+      var usTag = e.is_us ? '<span class="gs-us-tag">美股</span>' : '';
+      var mentions = e.mentions.slice(0, 15).map(function(mm) {
+        return '<a class="gs-mention" href="' + esc(mm.url) + '" target="_blank" rel="noopener">' +
+          '<span class="gs-m-show">' + esc(mm.show) + '</span>' +
+          '<span class="gs-m-date">' + esc(mm.date) + '</span>' +
+          '<span class="gs-m-title">' + esc(mm.title) + '</span></a>';
+      }).join('');
+      html += '<div class="gs-stock"><div class="gs-stock-head">' +
+        '<span class="gs-code">' + esc(m.key) + '</span>' +
+        '<span class="gs-name">' + esc(e.name) + '</span>' + usTag +
+        '<span class="gs-count">' + e.mentions.length + ' 筆提及</span></div>' +
+        '<div class="gs-mentions">' + mentions + '</div></div>';
+    });
+    results.innerHTML = html;
+  }
+
+  function doSearch() {
+    var q = input.value.trim().toLowerCase();
+    if (!q) {
+      results.innerHTML = '';
+      grid.style.display = '';
+      return;
+    }
+    grid.style.display = 'none';
+    loadIndex().then(function(d) {
+      var matches = [];
+      Object.keys(d.entries).forEach(function(key) {
+        var e = d.entries[key];
+        var kl = key.toLowerCase();
+        var nl = (e.name || '').toLowerCase();
+        var score = -1;
+        if (kl === q || nl === q) score = 0;          // 完全符合
+        else if (kl.indexOf(q) === 0) score = 1;       // 代號前綴
+        else if (nl.indexOf(q) >= 0) score = 2;        // 名稱包含
+        else if (kl.indexOf(q) >= 0) score = 3;        // 代號包含
+        if (score >= 0) matches.push({ key: key, entry: e, score: score });
+      });
+      matches.sort(function(a, b) {
+        if (a.score !== b.score) return a.score - b.score;
+        return b.entry.mentions.length - a.entry.mentions.length;
+      });
+      render(matches);
+    }).catch(function() {
+      results.innerHTML = '<div class="gs-empty">搜尋索引載入失敗</div>';
+    });
+  }
+
+  var timer;
+  input.addEventListener('input', function() {
+    clearTimeout(timer);
+    timer = setTimeout(doSearch, 120);
+  });
+})();
+</script>
 
 
 <!-- LifeOS 問題回報按鈕 -->

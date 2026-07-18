@@ -37,6 +37,16 @@ body{background:var(--bg);color:var(--text);
 .episodes{max-width:800px;margin:28px auto 0;
   padding:0 16px;display:flex;flex-direction:column;gap:12px}
 
+/* ── Search ── */
+.search-wrap{position:relative;max-width:800px;margin:20px auto 0;padding:0 16px}
+.search-input{width:100%;background:var(--surface);border:1px solid var(--border);
+  border-radius:8px;padding:9px 14px 9px 34px;font-size:13px;color:var(--text);
+  outline:none;transition:border-color .2s;font-family:inherit}
+.search-input::placeholder{color:var(--muted)}
+.search-input:focus{border-color:rgba(124,106,245,.4)}
+.search-icon{position:absolute;left:27px;top:50%;transform:translateY(-50%);
+  font-size:14px;color:var(--muted);pointer-events:none}
+
 details summary{list-style:none;cursor:pointer}
 details summary::-webkit-details-marker{display:none}
 
@@ -229,7 +239,11 @@ footer{max-width:800px;margin:32px auto 0;padding:0 16px;
   </div>
 </div>
 
-<div class="episodes">
+<div class="search-wrap">
+  <span class="search-icon">⌕</span>
+  <input id="ep-search" class="search-input" type="text" placeholder="搜尋股票、主題、關鍵字…">
+</div>
+<div class="episodes" id="ep-list">
 <details class="episode-card">
   <summary class="episode-toggle">
     <div class="ep-toggle-left">
@@ -7389,5 +7403,18 @@ footer{max-width:800px;margin:32px auto 0;padding:0 16px;
 </div>
 
 <footer>僅供個人學習參考，不構成投資建議</footer>
+<script>
+(function(){
+  var inp = document.getElementById('ep-search');
+  var epList = document.getElementById('ep-list');
+  function doFilter() {
+    var q = inp.value.toLowerCase().trim();
+    epList.querySelectorAll('.episode-card').forEach(function(el){
+      el.style.display = (!q || el.textContent.toLowerCase().indexOf(q) >= 0) ? '' : 'none';
+    });
+  }
+  inp.addEventListener('input', doFilter);
+})();
+</script>
 </body>
 </html>
