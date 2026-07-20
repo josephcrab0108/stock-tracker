@@ -436,7 +436,7 @@ body {
   <div class="drawer-title">目錄</div>
   <a class="drawer-item" href="#section-buy" onclick="closeDrawer()">
     個股建議
-    <span class="drawer-badge">11 檔</span>
+    <span class="drawer-badge">12 檔</span>
   </a>
   <a class="drawer-item" href="#section-research" onclick="closeDrawer()">
     產業研究
@@ -463,7 +463,7 @@ body {
     </svg>
     <input id="stock-search" class="search-input" type="text" placeholder="搜尋 ABBV / 設備 / HBM">
   </div>
-  <span class="updated-chip mono">2026-05-28 – 2026-07-18 · 更新 2026-07-19 16:00</span>
+  <span class="updated-chip mono">2026-05-28 – 2026-07-20 · 更新 2026-07-20 16:01</span>
   <a href="../" class="back-link">← 回總覽</a>
 </header>
 
@@ -471,11 +471,21 @@ body {
 
 <section class="section">
     <div class="section-title">板塊訊號</div>
-    <div class="signals-row"><div class="sig-chip sig-bull">
+    <div class="signals-row"><div class="sig-chip sig-neutral">
         <div class="sig-etf mono">SOXX</div>
-        <div class="sig-name">費城半導體</div>
-        <div class="sig-dir">↑ 強勢</div>
-        <div class="sig-related"><span class="rel-tick mono">AMKR</span><span class="rel-tick mono">KLIC</span><span class="rel-tick mono">KLAC</span><span class="rel-tick mono">AMAT</span></div>
+        <div class="sig-name">iShares半導體</div>
+        <div class="sig-dir">→ 中性</div>
+        <div class="sig-related"><span class="rel-tick mono">NVDA</span><span class="rel-tick mono">AVGO</span><span class="rel-tick mono">TSM</span></div>
+      </div><div class="sig-chip sig-neutral">
+        <div class="sig-etf mono">SMH</div>
+        <div class="sig-name">VanEck半導體</div>
+        <div class="sig-dir">→ 中性</div>
+        <div class="sig-related"><span class="rel-tick mono">NVDA</span><span class="rel-tick mono">TSM</span><span class="rel-tick mono">AVGO</span></div>
+      </div><div class="sig-chip sig-neutral">
+        <div class="sig-etf mono">XLE</div>
+        <div class="sig-name">能源類股</div>
+        <div class="sig-dir">→ 中性</div>
+        
       </div><div class="sig-chip sig-bull">
         <div class="sig-etf mono">FOTO</div>
         <div class="sig-name">光通訊ETF</div>
@@ -489,8 +499,78 @@ body {
       </div></div>
   </section>
 <section class="section" id="section-buy">
-    <div class="section-title">建議買入（11 檔）</div>
-    <details class="stock-group" data-label="先進封裝瓶頸卡位2030實體AI" data-themes="先進封裝取代前段製程成為AI新瓶頸 日月光85億美元資本支出與15座新廠擴產 CoWoS產能外溢至OSAT與設備商雙引擎 FOPLP/FOCoS/FOCoS-Bridge技術路徑分工 半導體供應鏈全球化2.0：台美東南亞區域分工 OSAT定價權與AI capex消化風險並存">
+    <div class="section-title">建議買入（12 檔）</div>
+    <details class="stock-group" data-label="AI去槓桿重估×瓶頸選股先進封裝優先" data-themes="估值重估非基本面崩壞 韓國去槓桿與強制平倉 光通訊CPO時程博弈 先進封裝設備瓶頸 風險預算與部位控制 右側優先左側從嚴">
+      <summary class="group-header">
+        <div class="group-summary-left">
+          <span class="group-label">AI去槓桿重估×瓶頸選股先進封裝優先</span>
+          <div class="group-tickers"><span class="grp-tick mono">TSM</span></div>
+        </div>
+        <div class="group-meta">
+          <span class="group-date mono">2026-07-20</span>
+          <span class="group-count">1 檔</span>
+        </div>
+      </summary>
+      <div class="group-body"><div class="card buy" data-ticker="TSM" data-name="台積電">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">TSM</span>
+          <span class="stock-name">台積電</span>
+          <span class="pri-chip">第一順位</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-07-20</span>
+          <span class="badge badge-green">買入</span>
+        </div>
+      </div>
+      <div class="verdict waiting">生意品質改善但估值收縮，右側優先左側從嚴</div>
+      <p class="stock-logic">史上第五個創紀錄季度，營收年增33.7%、毛利率67.7%、淨利年增77%，全年營收指引上修至40%以上，資本支出上修至600-640億美元。先進製程與先進封裝需求最可驗證、地位難替代，屬核心龍頭。基本面持續上修可提前小額左側布局。</p>
+      <div class="price-row"><span class="price-chip"><span class="chip-label">進場</span>右側需站回7/14與7/16高點壓力區約416-431美元；左側可用小金字塔部位試單</span></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（TSM）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NYSE:TSM","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（4 篇文章提及）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-07-20</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://unclestocknotes.substack.com/p/d03" target="_blank" class="art-link">七月半導體重估 × 韓國去槓桿 × 光通訊去泡沫 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">第一順位</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">史上第五個創紀錄季度，營收年增33.7%、毛利率67.7%、淨利年增77%，全年營收指引上修至40%以上，資本支出上修至600-640億美元。先進製程與先進封裝需求最可驗證、地位難替代，屬核心龍頭。基本面持續上修可提前小額左側布局。</td></tr><tr><td class="ml-key">進場</td><td class="ml-val">右側需站回7/14與7/16高點壓力區約416-431美元；左側可用小金字塔部位試單</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">財報好但ADR收跌逾2%，市場在調整願支付倍數；分三段建倉，等市場重新接受更高估值</td></tr><tr><td class="ml-key">現況</td><td class="ml-val">生意品質改善但估值收縮，右側優先左側從嚴</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-07-18</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://unclestocknotes.substack.com/p/tsm2026" target="_blank" class="art-link">台積電 $TSM2026 財年第二季財報分析  ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">2Q26接近滿分財報，毛利率67.7%、營業利益率60.3%突破財測高標，全年營收成長上修至略高於40%，資本預算上修至600-640億美元。2奈米首度貢獻3%開始起跑，Agentic AI打開CPU成長曲線尚未計入官方AI指引。作者FY26 ADR EPS預估16.78美元高於市場共識15.91美元。但估值開始要求完美，合理估值區間366-486美元，跌到地板附近敢買、漲到天花板附近願賣。</td></tr><tr><td class="ml-key">目標</td><td class="ml-val">合理估值區間366-486美元</td></tr><tr><td class="ml-key">現況</td><td class="ml-val">基本面接近滿分，估值要求完美，價格合理才進場</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-06-28</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://unclestocknotes.substack.com/p/2a3" target="_blank" class="art-link">人工智慧晶片微縮極限與次世代半導體分工架構 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">封裝護城河從電晶體延伸到封裝，SoIC相對CoWoS有56倍互連密度、5倍能效，是AI時代最被低估卻最難繞過的壁壘。A16導入SPR背面供電，但量產延後至2027。</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-06-08</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://unclestocknotes.substack.com/p/20260606-0607-substack" target="_blank" class="art-link">每日重點 20260606-0607 Substack  ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">第一順位</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">第一大倉，先進封裝大家都要，台積電都做不完。長期真心覺得還會再上去，TSM、ASX都很穩。</td></tr><tr><td class="ml-key">進場</td><td class="ml-val">擔心跌不夠深因太多人要買，可參考打八折好價</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">主倉還有LRCX</td></tr></table>
+        </div></div>
+      </details>
+    </div></div>
+    </details><details class="stock-group" data-label="先進封裝瓶頸卡位2030實體AI" data-themes="先進封裝取代前段製程成為AI新瓶頸 日月光85億美元資本支出與15座新廠擴產 CoWoS產能外溢至OSAT與設備商雙引擎 FOPLP/FOCoS/FOCoS-Bridge技術路徑分工 半導體供應鏈全球化2.0：台美東南亞區域分工 OSAT定價權與AI capex消化風險並存">
       <summary class="group-header">
         <div class="group-summary-left">
           <span class="group-label">先進封裝瓶頸卡位2030實體AI</span>
@@ -1024,40 +1104,163 @@ body {
       </details></div>
     </details>
   </section><section class="section" id="section-watch">
-    <div class="section-title">觀察名單（69 檔）</div>
-    <details class="stock-group" data-label="台積電2Q26接近滿分但估值要求完美" data-themes="AI與HPC需求延續 2奈米量產起跑 Agentic AI帶動CPU復甦 資本支出創新高含設備通膨 先進封裝供不應求 估值要求完美">
+    <div class="section-title">觀察名單（65 檔）</div>
+    <details class="stock-group" data-label="AI去槓桿重估×瓶頸選股先進封裝優先" data-themes="估值重估非基本面崩壞 韓國去槓桿與強制平倉 光通訊CPO時程博弈 先進封裝設備瓶頸 風險預算與部位控制 右側優先左側從嚴">
       <summary class="group-header">
         <div class="group-summary-left">
-          <span class="group-label">台積電2Q26接近滿分但估值要求完美</span>
-          <div class="group-tickers"><span class="grp-tick mono">TSM</span></div>
+          <span class="group-label">AI去槓桿重估×瓶頸選股先進封裝優先</span>
+          <div class="group-tickers"><span class="grp-tick mono">MU</span><span class="grp-tick mono">NVDA</span><span class="grp-tick mono">AVGO</span><span class="grp-tick mono">LITE</span><span class="grp-tick mono">COHR</span></div>
         </div>
         <div class="group-meta">
-          <span class="group-date mono">2026-07-18</span>
-          <span class="group-count">1 檔</span>
+          <span class="group-date mono">2026-07-20</span>
+          <span class="group-count">5 檔</span>
         </div>
       </summary>
-      <div class="group-body"><div class="card watch" data-ticker="TSM" data-name="台積電">
+      <div class="group-body"><div class="card watch" data-ticker="MU" data-name="美光">
       <div class="card-header">
         <div class="ticker-row">
-          <span class="ticker mono">TSM</span>
-          <span class="stock-name">台積電</span>
+          <span class="ticker mono">MU</span>
+          <span class="stock-name">美光</span>
           
         </div>
         <div style="display:flex;align-items:center;gap:8px;">
-          <span class="latest-date mono">2026-07-18</span>
+          <span class="latest-date mono">2026-07-20</span>
           <span class="badge badge-yellow">觀察</span>
         </div>
       </div>
-      <div class="verdict waiting">基本面接近滿分，估值要求完美，價格合理才進場</div>
-      <p class="stock-logic">2Q26接近滿分財報，毛利率67.7%、營業利益率60.3%突破財測高標，全年營收成長上修至略高於40%，資本預算上修至600-640億美元。2奈米首度貢獻3%開始起跑，Agentic AI打開CPU成長曲線尚未計入官方AI指引。作者FY26 ADR EPS預估16.78美元高於市場共識15.91美元。但估值開始要求完美，合理估值區間366-486美元，跌到地板附近敢買、漲到天花板附近願賣。</p>
-      <div class="price-row"><span class="price-chip"><span class="chip-label">目標</span>合理估值區間366-486美元</span></div>
+      <div class="verdict waiting">長線故事更好但需右側確認參與</div>
+      <p class="stock-logic">SCA五年期Take-or-Pay合約累計約千億美元，提前鎖定兩成DRAM與三分之一NAND產能至2030，替記憶體建立降低循環振幅的新框架，長線更樂觀。但記憶體去槓桿未完成、部分市場仍以循環股定價。屬核心公司可提前小額左側布局，主部位需右側確認。</p>
+      <div class="price-row"><span class="price-chip"><span class="chip-label">目標</span>右側嚴格條件：趨勢重建、關鍵價收復、籌碼改善</span></div>
       <details class="chart-fold">
-        <summary class="chart-toggle">▸ K 線圖（TSM）</summary>
+        <summary class="chart-toggle">▸ K 線圖（MU）</summary>
         <div class="tv-wrap">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-          {"symbol":"NYSE:TSM","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          {"symbol":"NASDAQ:MU","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（4 篇文章提及）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-07-20</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://unclestocknotes.substack.com/p/d03" target="_blank" class="art-link">七月半導體重估 × 韓國去槓桿 × 光通訊去泡沫 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">SCA五年期Take-or-Pay合約累計約千億美元，提前鎖定兩成DRAM與三分之一NAND產能至2030，替記憶體建立降低循環振幅的新框架，長線更樂觀。但記憶體去槓桿未完成、部分市場仍以循環股定價。屬核心公司可提前小額左側布局，主部位需右側確認。</td></tr><tr><td class="ml-key">目標</td><td class="ml-val">右側嚴格條件：趨勢重建、關鍵價收復、籌碼改善</td></tr><tr><td class="ml-key">現況</td><td class="ml-val">長線故事更好但需右側確認參與</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-06-25</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://unclestocknotes.substack.com/p/mu-2026-12f" target="_blank" class="art-link">美光科技 #MU 2026 財年第三季分享 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">財報幾乎無可挑剔，資料中心年化破千億、HBM4領先放量、淨現金244億。但84.9%毛利率靠漲價非成本改善，管理層自承漲價趨緩、邊際貢獻遞減逼近天花板。SCA僅保護約25%營收，地板年化僅約一成跑速。當前是循環高點暴利，估值雖低（8-9倍）但好消息恐已price in。</td></tr><tr><td class="ml-key">目標</td><td class="ml-val">8x/10x/12x = $992/$1,240/$1,488，合理區間抓在 $1,240～$1,488</td></tr><tr><td class="ml-key">現況</td><td class="ml-val">當下品質極高、谷底被部分墊高，但現價反映循環高點暴利；管理層已踩煞車，保持冷靜緊盯領先指標</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-06-16</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://unclestocknotes.substack.com/p/mu-1600" target="_blank" class="art-link">#MU $1,600 目標價的蜜糖與未爆彈 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">Aletheia 給 Buy、目標價 $1,600（上行約 61%），核心為 SocAMM 實體落地與 KV Cache 結構性需求屬真需求，能見度高；但 $1,600 隱含 EPS 須從約 $48–49 拉到 CY27E 約 $160，是把循環高點盈餘當永續盈餘定價，存在 trade ratio、綠地新廠、低階替代與下游 CapEx Cliff 等破綻。大叔提醒風險思維，未明確建議買入。</td></tr><tr><td class="ml-key">目標</td><td class="ml-val">$1,600（Aletheia 券商目標價）</td></tr><tr><td class="ml-key">現況</td><td class="ml-val">看好真需求但警惕估值雙殺風險</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-06-08</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://unclestocknotes.substack.com/p/20260606-0607-substack" target="_blank" class="art-link">每日重點 20260606-0607 Substack  ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">第一順位</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">美光什麼產品都有，DDR5、LPDDR5、HBM輪流排擠也通吃，是最強。海力士上市短期擠壓但會把群組拉上來。川普AI入股推理標的，會關注期權池。</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">大叔一直拿著</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card watch" data-ticker="NVDA" data-name="NVIDIA">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">NVDA</span>
+          <span class="stock-name">NVIDIA</span>
+          
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-07-20</span>
+          <span class="badge badge-yellow">觀察</span>
+        </div>
+      </div>
+      <div class="verdict rising">龍頭抗跌、現金流可驗證</div>
+      <p class="stock-logic">本輪修正明顯比多數AI股抗跌，市場願給現金流可驗證、獲利穩定的龍頭較高估值容忍度，證明AI主線未被否定。CPO交換器Spectrum-X規劃2026下半年量產為關鍵裁判日。</p>
+      <div class="price-row"><span class="price-chip"><span class="chip-label">目標</span>未給具體進場價</span></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（NVDA）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NASDAQ:NVDA","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（5 篇文章提及）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-07-20</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://unclestocknotes.substack.com/p/d03" target="_blank" class="art-link">七月半導體重估 × 韓國去槓桿 × 光通訊去泡沫 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">本輪修正明顯比多數AI股抗跌，市場願給現金流可驗證、獲利穩定的龍頭較高估值容忍度，證明AI主線未被否定。CPO交換器Spectrum-X規劃2026下半年量產為關鍵裁判日。</td></tr><tr><td class="ml-key">目標</td><td class="ml-val">未給具體進場價</td></tr><tr><td class="ml-key">現況</td><td class="ml-val">龍頭抗跌、現金流可驗證</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-07-01</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://unclestocknotes.substack.com/p/glw-glassbridge" target="_blank" class="art-link">#GLW 康寧 GlassBridge 對產業影響 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">推動 CPO 路線圖，但目前公開 CPO die photo 仍採 Vertical Grating，這一代綁定 TSMC COUPE / FOCI / Himax 的 Grating Coupling 路線。</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-06-19</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://unclestocknotes.substack.com/p/copos-oscop" target="_blank" class="art-link">玻璃核心載板：台積電 CoPoS 真正的勝負手在「oS」，不在「CoP」 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">對玻璃核心載板態度積極，Rubin/Rubin Ultra 封裝放大使玻璃成 must-have，惟受惠的是整個 AI 生態系，非設備材料純度標的。</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-06-03</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://unclestocknotes.substack.com/p/marvell-mrvl" target="_blank" class="art-link">黃仁勳「Marvell 是下一家萬億公司」#MRVL ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">市值逾5兆美元，AI產業最有份量聲音。一邊投資Marvell、一邊自建矽光子(Quantum-X、Spectrum-X光子交換機)，既是合作夥伴也是潛在最大競爭者，最有能力垂直整合吃下光下沉計算層的TAM。</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-05-30</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://unclestocknotes.substack.com/p/20-1ce" target="_blank" class="art-link">美國的 20 億美元量子豪賭 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">與PsiQuantum、Quantinuum深度合作GPU與量子處理器整合，做即時解碼與校準後盾，量子＋古典＋AI混合架構受惠者，並參與PsiQuantum E輪募資。</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card watch" data-ticker="AVGO" data-name="Broadcom">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">AVGO</span>
+          <span class="stock-name">Broadcom</span>
+          
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-07-20</span>
+          <span class="badge badge-yellow">觀察</span>
+        </div>
+      </div>
+      <div class="verdict rising">龍頭抗跌、競爭優勢明確</div>
+      <p class="stock-logic">與NVIDIA同樣明顯比多數AI股抗跌，市場願給現金流最可驗證的龍頭更高估值容忍度。表示2027-2028前短距離連接不太可能全面轉光學。</p>
+      <div class="price-row"><span class="price-chip"><span class="chip-label">目標</span>未給具體進場價</span></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（AVGO）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NASDAQ:AVGO","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
           </script>
         </div>
       </div>
@@ -1066,25 +1269,134 @@ body {
         <summary class="context-toggle">▸ 文章脈絡（3 篇文章提及）</summary>
         <div class="context-body"><div class="mention-item">
           <div class="mention-meta">
-            <span class="mono date-chip">2026-07-18</span>
+            <span class="mono date-chip">2026-07-20</span>
             <span class="badge badge-yellow">觀察</span>
-            <a href="https://unclestocknotes.substack.com/p/tsm2026" target="_blank" class="art-link">台積電 $TSM2026 財年第二季財報分析  ↗</a>
+            <a href="https://unclestocknotes.substack.com/p/d03" target="_blank" class="art-link">七月半導體重估 × 韓國去槓桿 × 光通訊去泡沫 ↗</a>
           </div>
-          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">2Q26接近滿分財報，毛利率67.7%、營業利益率60.3%突破財測高標，全年營收成長上修至略高於40%，資本預算上修至600-640億美元。2奈米首度貢獻3%開始起跑，Agentic AI打開CPU成長曲線尚未計入官方AI指引。作者FY26 ADR EPS預估16.78美元高於市場共識15.91美元。但估值開始要求完美，合理估值區間366-486美元，跌到地板附近敢買、漲到天花板附近願賣。</td></tr><tr><td class="ml-key">目標</td><td class="ml-val">合理估值區間366-486美元</td></tr><tr><td class="ml-key">現況</td><td class="ml-val">基本面接近滿分，估值要求完美，價格合理才進場</td></tr></table>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">與NVIDIA同樣明顯比多數AI股抗跌，市場願給現金流最可驗證的龍頭更高估值容忍度。表示2027-2028前短距離連接不太可能全面轉光學。</td></tr><tr><td class="ml-key">目標</td><td class="ml-val">未給具體進場價</td></tr><tr><td class="ml-key">現況</td><td class="ml-val">龍頭抗跌、競爭優勢明確</td></tr></table>
         </div><div class="mention-item">
           <div class="mention-meta">
-            <span class="mono date-chip">2026-06-28</span>
+            <span class="mono date-chip">2026-06-04</span>
             <span class="badge badge-yellow">觀察</span>
-            <a href="https://unclestocknotes.substack.com/p/2a3" target="_blank" class="art-link">人工智慧晶片微縮極限與次世代半導體分工架構 ↗</a>
+            <a href="https://unclestocknotes.substack.com/p/broadcom-avgo-2026" target="_blank" class="art-link">Broadcom #AVGO 2026 財年第二季財報 ↗</a>
           </div>
-          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">封裝護城河從電晶體延伸到封裝，SoIC相對CoWoS有56倍互連密度、5倍能效，是AI時代最被低估卻最難繞過的壁壘。A16導入SPR背面供電，但量產延後至2027。</td></tr></table>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">Q2營收221.9億年增48%創新高，AI半導體108億年增143%。Book-to-Bill 2.8倍、能見度延伸到2028、2027 AI營收有望破千億。XPU平台聯手Apollo/Blackstone想當AI生態系協調者。最大風險是市場預期極高、客戶集中度（六大客戶）、毛利率組合變化與前所未見的循環融資架構。</td></tr><tr><td class="ml-key">現況</td><td class="ml-val">本業強勁但AI略低於最樂觀預期，長線護城河深、短線波動風險高</td></tr></table>
         </div><div class="mention-item">
           <div class="mention-meta">
-            <span class="mono date-chip">2026-06-08</span>
-            <span class="badge badge-green">買入</span>
-            <a href="https://unclestocknotes.substack.com/p/20260606-0607-substack" target="_blank" class="art-link">每日重點 20260606-0607 Substack  ↗</a>
+            <span class="mono date-chip">2026-06-03</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://unclestocknotes.substack.com/p/marvell-mrvl" target="_blank" class="art-link">黃仁勳「Marvell 是下一家萬億公司」#MRVL ↗</a>
           </div>
-          <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">第一順位</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">第一大倉，先進封裝大家都要，台積電都做不完。長期真心覺得還會再上去，TSM、ASX都很穩。</td></tr><tr><td class="ml-key">進場</td><td class="ml-val">擔心跌不夠深因太多人要買，可參考打八折好價</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">主倉還有LRCX</td></tr></table>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">Bailly CPO交換機從2023年就出貨給超大規模客戶，節奏比Marvell更早，宣稱約30%功耗節省與40%更低每位元光學成本，是CPO賽道領跑者。</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card watch" data-ticker="LITE" data-name="Lumentum">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">LITE</span>
+          <span class="stock-name">Lumentum</span>
+          
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-07-20</span>
+          <span class="badge badge-yellow">觀察</span>
+        </div>
+      </div>
+      <div class="verdict alert">衛星倉、等催化劑</div>
+      <p class="stock-logic">光通訊高彈性衛星倉，SemiAnalysis CPO利空當天跌8%，波動高。7/9成交量倍增顯示放量換手。適合等CPO催化劑而非用信仰撐波動，部位需嚴格控制。</p>
+      <div class="price-row"><span class="price-chip"><span class="chip-label">目標</span>未給具體進場價</span></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（LITE）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NASDAQ:LITE","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（4 篇文章提及）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-07-20</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://unclestocknotes.substack.com/p/d03" target="_blank" class="art-link">七月半導體重估 × 韓國去槓桿 × 光通訊去泡沫 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">光通訊高彈性衛星倉，SemiAnalysis CPO利空當天跌8%，波動高。7/9成交量倍增顯示放量換手。適合等CPO催化劑而非用信仰撐波動，部位需嚴格控制。</td></tr><tr><td class="ml-key">目標</td><td class="ml-val">未給具體進場價</td></tr><tr><td class="ml-key">現況</td><td class="ml-val">衛星倉、等催化劑</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-07-01</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://unclestocknotes.substack.com/p/glw-glassbridge" target="_blank" class="art-link">#GLW 康寧 GlassBridge 對產業影響 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">屬第一層發電廠（雷射／光源），GlassBridge 未改變其長期邏輯。CPO 普及反而讓外部雷射需求更高，市場恐慌下常被錯殺。</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-06-17</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://unclestocknotes.substack.com/p/lumentum-holdings-inc-lite-2026" target="_blank" class="art-link">Lumentum Holdings Inc. #LITE 2026 財年第三季度財報 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">FY26 Q3營收年增90%至8.08億美元，非GAAP營業利益率從25.2%躍升至32.2%，單季增量營業利益率達65%，營運槓桿強勁。掌握光學互連關鍵零組件，獲NVIDIA約20億美元可轉換優先股注資。但估值已透支完美執行（130倍本益比、27倍市銷率），股數稀釋持續，毛利含週期性定價成分，供給為財測天花板。大叔立場：很看好公司但不羨慕現在追高的人，既有持股可續抱，新進場應等估值消化或需求降溫訊號分批佈局。</td></tr><tr><td class="ml-key">目標</td><td class="ml-val">管理層季營收目標$2B（年化約$80億），多頭情境股價也僅屬合理；建議等估值消化或情緒性回檔</td></tr><tr><td class="ml-key">現況</td><td class="ml-val">優質公司但估值透支，等回檔分批佈局</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-06-15</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://unclestocknotes.substack.com/p/coherent-corp-cohr-2026" target="_blank" class="art-link">Coherent Corp. #COHR 2026 財年第三季度財報、法說會分析。 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">在LITE與COHR二選一時，大叔選COHR，原因是COHR六吋InP成本革命(產出4倍、成本減半、良率更佳)；LITE被視為潛在的定價競爭對手。</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card watch" data-ticker="COHR" data-name="Coherent">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">COHR</span>
+          <span class="stock-name">Coherent</span>
+          
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-07-20</span>
+          <span class="badge badge-yellow">觀察</span>
+        </div>
+      </div>
+      <div class="verdict alert">高Beta衛星倉、風險偏高</div>
+      <p class="stock-logic">光通訊高Beta名字，CPO利空當天跌11%，位於同一條槓桿與風險傳導鏈上，去槓桿時跌幅大於大盤。屬高彈性衛星倉，需等右側訊號。</p>
+      <div class="price-row"><span class="price-chip"><span class="chip-label">目標</span>未給具體進場價</span></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（COHR）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NYSE:COHR","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（3 篇文章提及）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-07-20</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://unclestocknotes.substack.com/p/d03" target="_blank" class="art-link">七月半導體重估 × 韓國去槓桿 × 光通訊去泡沫 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">光通訊高Beta名字，CPO利空當天跌11%，位於同一條槓桿與風險傳導鏈上，去槓桿時跌幅大於大盤。屬高彈性衛星倉，需等右側訊號。</td></tr><tr><td class="ml-key">目標</td><td class="ml-val">未給具體進場價</td></tr><tr><td class="ml-key">現況</td><td class="ml-val">高Beta衛星倉、風險偏高</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-07-01</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://unclestocknotes.substack.com/p/glw-glassbridge" target="_blank" class="art-link">#GLW 康寧 GlassBridge 對產業影響 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">發電廠層雷射公司，長期邏輯未被 GlassBridge 改變，屬市場恐慌下的錯殺對象。</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-06-15</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://unclestocknotes.substack.com/p/coherent-corp-cohr-2026" target="_blank" class="art-link">Coherent Corp. #COHR 2026 財年第三季度財報、法說會分析。 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">營運近乎完美：營收年增21%(pro forma 27%)、非GAAP EPS年增55%、營業利益率20.3%、六吋InP成本革命結構性可持續，能見度到2028、LTA延伸至本十年末，與NVIDIA跨十年合作。但現金流歸零、存貨膨脹48%、自由現金流深度為負，近50倍前瞻本益比已price-in大量未來成功，大叔看好但不放棄紀律追價，需現金流驗證。</td></tr><tr><td class="ml-key">目標</td><td class="ml-val">基準380-420美元，悲觀240-270美元，樂觀500美元以上</td></tr><tr><td class="ml-key">現況</td><td class="ml-val">營運面近乎完美，現金流仍待驗證</td></tr></table>
         </div></div>
       </details>
     </div></div>
@@ -1396,65 +1708,14 @@ body {
       <summary class="group-header">
         <div class="group-summary-left">
           <span class="group-label">半導體專利戰：WOLF 告 NVTS 的商戰真相</span>
-          <div class="group-tickers"><span class="grp-tick mono">NVTS</span><span class="grp-tick mono">WOLF</span></div>
+          <div class="group-tickers"><span class="grp-tick mono">WOLF</span></div>
         </div>
         <div class="group-meta">
           <span class="group-date mono">2026-07-10</span>
-          <span class="group-count">2 檔</span>
+          <span class="group-count">1 檔</span>
         </div>
       </summary>
-      <div class="group-body"><div class="card watch" data-ticker="NVTS" data-name="Navitas Semiconductor">
-      <div class="card-header">
-        <div class="ticker-row">
-          <span class="ticker mono">NVTS</span>
-          <span class="stock-name">Navitas Semiconductor</span>
-          
-        </div>
-        <div style="display:flex;align-items:center;gap:8px;">
-          <span class="latest-date mono">2026-07-10</span>
-          <span class="badge badge-yellow">觀察</span>
-        </div>
-      </div>
-      <div class="verdict waiting">對訴訟 Noise，對股票 Neutral 觀望，重點在 7/27 財報</div>
-      <p class="stock-logic">GaN 整合技術與 NVIDIA 800V 生態卡位是真的，龍頭花錢告你某程度是技術背書。但估值 85-95 倍市銷率過高，2025 全年營收衰退 44.9%，7/27 Q2 財報市場預期營收年減 31%，訴訟對技術利多、對估值無幫助。</p>
-      <div class="price-row"><span class="price-chip"><span class="chip-label">目標</span>訴訟評級 Noise，股票評級 Neutral/觀望</span></div>
-      <details class="chart-fold">
-        <summary class="chart-toggle">▸ K 線圖（NVTS）</summary>
-        <div class="tv-wrap">
-        <div class="tradingview-widget-container">
-          <div class="tradingview-widget-container__widget"></div>
-          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-          {"symbol":"NASDAQ:NVTS","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
-          </script>
-        </div>
-      </div>
-      </details>
-      <details class="context-fold">
-        <summary class="context-toggle">▸ 文章脈絡（3 篇文章提及）</summary>
-        <div class="context-body"><div class="mention-item">
-          <div class="mention-meta">
-            <span class="mono date-chip">2026-07-10</span>
-            <span class="badge badge-yellow">觀察</span>
-            <a href="https://unclestocknotes.substack.com/p/wolfspeed-navitas-nvts" target="_blank" class="art-link">Wolfspeed 控告 Navitas $NVTS 專利侵權 ↗</a>
-          </div>
-          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">GaN 整合技術與 NVIDIA 800V 生態卡位是真的，龍頭花錢告你某程度是技術背書。但估值 85-95 倍市銷率過高，2025 全年營收衰退 44.9%，7/27 Q2 財報市場預期營收年減 31%，訴訟對技術利多、對估值無幫助。</td></tr><tr><td class="ml-key">目標</td><td class="ml-val">訴訟評級 Noise，股票評級 Neutral/觀望</td></tr><tr><td class="ml-key">現況</td><td class="ml-val">對訴訟 Noise，對股票 Neutral 觀望，重點在 7/27 財報</td></tr></table>
-        </div><div class="mention-item">
-          <div class="mention-meta">
-            <span class="mono date-chip">2026-06-08</span>
-            <span class="badge badge-green">買入</span>
-            <a href="https://unclestocknotes.substack.com/p/20260606-0607-substack" target="_blank" class="art-link">每日重點 20260606-0607 Substack  ↗</a>
-          </div>
-          <table class="mention-table"><tr><td class="ml-key">邏輯</td><td class="ml-val">800V/SST看好標的，TXN配NVTS，一個強配一個成長沒問題。</td></tr></table>
-        </div><div class="mention-item">
-          <div class="mention-meta">
-            <span class="mono date-chip">2026-06-07</span>
-            <span class="badge badge-yellow">觀察</span>
-            <a href="https://unclestocknotes.substack.com/p/ai-aba" target="_blank" class="art-link">AI 數據中心電力革命  ↗</a>
-          </div>
-          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">覆蓋 GaNFast 與 GeneSiC，NVIDIA MGX 生態系活躍夥伴，與 EPFL 合作 SST 示範系統，展示 800V 轉 6V 配電板達約 97.5% 效率。小型高波動股，對單一消息反應劇烈。</td></tr><tr><td class="ml-key">現況</td><td class="ml-val">生態系活躍但股性波動劇烈</td></tr></table>
-        </div></div>
-      </details>
-    </div><div class="card watch" data-ticker="WOLF" data-name="Wolfspeed">
+      <div class="group-body"><div class="card watch" data-ticker="WOLF" data-name="Wolfspeed">
       <div class="card-header">
         <div class="ticker-row">
           <span class="ticker mono">WOLF</span>
@@ -1773,146 +2034,14 @@ body {
       <summary class="group-header">
         <div class="group-summary-left">
           <span class="group-label">康寧 GlassBridge 重塑 CPO 玻璃封裝價值鏈</span>
-          <div class="group-tickers"><span class="grp-tick mono">LITE</span><span class="grp-tick mono">COHR</span><span class="grp-tick mono">AAOI</span><span class="grp-tick mono">MRVL</span><span class="grp-tick mono">NVDA</span><span class="grp-tick-more">+1</span></div>
+          <div class="group-tickers"><span class="grp-tick mono">MRVL</span><span class="grp-tick mono">POET</span></div>
         </div>
         <div class="group-meta">
           <span class="group-date mono">2026-07-01</span>
-          <span class="group-count">6 檔</span>
+          <span class="group-count">2 檔</span>
         </div>
       </summary>
-      <div class="group-body"><div class="card watch" data-ticker="LITE" data-name="Lumentum">
-      <div class="card-header">
-        <div class="ticker-row">
-          <span class="ticker mono">LITE</span>
-          <span class="stock-name">Lumentum</span>
-          
-        </div>
-        <div style="display:flex;align-items:center;gap:8px;">
-          <span class="latest-date mono">2026-07-01</span>
-          <span class="badge badge-yellow">觀察</span>
-        </div>
-      </div>
-      
-      <p class="stock-logic">屬第一層發電廠（雷射／光源），GlassBridge 未改變其長期邏輯。CPO 普及反而讓外部雷射需求更高，市場恐慌下常被錯殺。</p>
-      <div class="price-row"></div>
-      <details class="chart-fold">
-        <summary class="chart-toggle">▸ K 線圖（LITE）</summary>
-        <div class="tv-wrap">
-        <div class="tradingview-widget-container">
-          <div class="tradingview-widget-container__widget"></div>
-          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-          {"symbol":"NASDAQ:LITE","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
-          </script>
-        </div>
-      </div>
-      </details>
-      <details class="context-fold">
-        <summary class="context-toggle">▸ 文章脈絡（3 篇文章提及）</summary>
-        <div class="context-body"><div class="mention-item">
-          <div class="mention-meta">
-            <span class="mono date-chip">2026-07-01</span>
-            <span class="badge badge-yellow">觀察</span>
-            <a href="https://unclestocknotes.substack.com/p/glw-glassbridge" target="_blank" class="art-link">#GLW 康寧 GlassBridge 對產業影響 ↗</a>
-          </div>
-          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">屬第一層發電廠（雷射／光源），GlassBridge 未改變其長期邏輯。CPO 普及反而讓外部雷射需求更高，市場恐慌下常被錯殺。</td></tr></table>
-        </div><div class="mention-item">
-          <div class="mention-meta">
-            <span class="mono date-chip">2026-06-17</span>
-            <span class="badge badge-yellow">觀察</span>
-            <a href="https://unclestocknotes.substack.com/p/lumentum-holdings-inc-lite-2026" target="_blank" class="art-link">Lumentum Holdings Inc. #LITE 2026 財年第三季度財報 ↗</a>
-          </div>
-          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">FY26 Q3營收年增90%至8.08億美元，非GAAP營業利益率從25.2%躍升至32.2%，單季增量營業利益率達65%，營運槓桿強勁。掌握光學互連關鍵零組件，獲NVIDIA約20億美元可轉換優先股注資。但估值已透支完美執行（130倍本益比、27倍市銷率），股數稀釋持續，毛利含週期性定價成分，供給為財測天花板。大叔立場：很看好公司但不羨慕現在追高的人，既有持股可續抱，新進場應等估值消化或需求降溫訊號分批佈局。</td></tr><tr><td class="ml-key">目標</td><td class="ml-val">管理層季營收目標$2B（年化約$80億），多頭情境股價也僅屬合理；建議等估值消化或情緒性回檔</td></tr><tr><td class="ml-key">現況</td><td class="ml-val">優質公司但估值透支，等回檔分批佈局</td></tr></table>
-        </div><div class="mention-item">
-          <div class="mention-meta">
-            <span class="mono date-chip">2026-06-15</span>
-            <span class="badge badge-yellow">觀察</span>
-            <a href="https://unclestocknotes.substack.com/p/coherent-corp-cohr-2026" target="_blank" class="art-link">Coherent Corp. #COHR 2026 財年第三季度財報、法說會分析。 ↗</a>
-          </div>
-          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">在LITE與COHR二選一時，大叔選COHR，原因是COHR六吋InP成本革命(產出4倍、成本減半、良率更佳)；LITE被視為潛在的定價競爭對手。</td></tr></table>
-        </div></div>
-      </details>
-    </div><div class="card watch" data-ticker="COHR" data-name="Coherent">
-      <div class="card-header">
-        <div class="ticker-row">
-          <span class="ticker mono">COHR</span>
-          <span class="stock-name">Coherent</span>
-          
-        </div>
-        <div style="display:flex;align-items:center;gap:8px;">
-          <span class="latest-date mono">2026-07-01</span>
-          <span class="badge badge-yellow">觀察</span>
-        </div>
-      </div>
-      
-      <p class="stock-logic">發電廠層雷射公司，長期邏輯未被 GlassBridge 改變，屬市場恐慌下的錯殺對象。</p>
-      <div class="price-row"></div>
-      <details class="chart-fold">
-        <summary class="chart-toggle">▸ K 線圖（COHR）</summary>
-        <div class="tv-wrap">
-        <div class="tradingview-widget-container">
-          <div class="tradingview-widget-container__widget"></div>
-          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-          {"symbol":"NYSE:COHR","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
-          </script>
-        </div>
-      </div>
-      </details>
-      <details class="context-fold">
-        <summary class="context-toggle">▸ 文章脈絡（2 篇文章提及）</summary>
-        <div class="context-body"><div class="mention-item">
-          <div class="mention-meta">
-            <span class="mono date-chip">2026-07-01</span>
-            <span class="badge badge-yellow">觀察</span>
-            <a href="https://unclestocknotes.substack.com/p/glw-glassbridge" target="_blank" class="art-link">#GLW 康寧 GlassBridge 對產業影響 ↗</a>
-          </div>
-          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">發電廠層雷射公司，長期邏輯未被 GlassBridge 改變，屬市場恐慌下的錯殺對象。</td></tr></table>
-        </div><div class="mention-item">
-          <div class="mention-meta">
-            <span class="mono date-chip">2026-06-15</span>
-            <span class="badge badge-yellow">觀察</span>
-            <a href="https://unclestocknotes.substack.com/p/coherent-corp-cohr-2026" target="_blank" class="art-link">Coherent Corp. #COHR 2026 財年第三季度財報、法說會分析。 ↗</a>
-          </div>
-          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">營運近乎完美：營收年增21%(pro forma 27%)、非GAAP EPS年增55%、營業利益率20.3%、六吋InP成本革命結構性可持續，能見度到2028、LTA延伸至本十年末，與NVIDIA跨十年合作。但現金流歸零、存貨膨脹48%、自由現金流深度為負，近50倍前瞻本益比已price-in大量未來成功，大叔看好但不放棄紀律追價，需現金流驗證。</td></tr><tr><td class="ml-key">目標</td><td class="ml-val">基準380-420美元，悲觀240-270美元，樂觀500美元以上</td></tr><tr><td class="ml-key">現況</td><td class="ml-val">營運面近乎完美，現金流仍待驗證</td></tr></table>
-        </div></div>
-      </details>
-    </div><div class="card watch" data-ticker="AAOI" data-name="Applied Optoelectronics">
-      <div class="card-header">
-        <div class="ticker-row">
-          <span class="ticker mono">AAOI</span>
-          <span class="stock-name">Applied Optoelectronics</span>
-          
-        </div>
-        <div style="display:flex;align-items:center;gap:8px;">
-          <span class="latest-date mono">2026-07-01</span>
-          <span class="badge badge-yellow">觀察</span>
-        </div>
-      </div>
-      
-      <p class="stock-logic">發電廠層光源公司，GlassBridge 未讓光源消失，屬錯殺一群。</p>
-      <div class="price-row"></div>
-      <details class="chart-fold">
-        <summary class="chart-toggle">▸ K 線圖（AAOI）</summary>
-        <div class="tv-wrap">
-        <div class="tradingview-widget-container">
-          <div class="tradingview-widget-container__widget"></div>
-          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-          {"symbol":"NASDAQ:AAOI","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
-          </script>
-        </div>
-      </div>
-      </details>
-      <details class="context-fold">
-        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
-        <div class="context-body"><div class="mention-item">
-          <div class="mention-meta">
-            <span class="mono date-chip">2026-07-01</span>
-            <span class="badge badge-yellow">觀察</span>
-            <a href="https://unclestocknotes.substack.com/p/glw-glassbridge" target="_blank" class="art-link">#GLW 康寧 GlassBridge 對產業影響 ↗</a>
-          </div>
-          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">發電廠層光源公司，GlassBridge 未讓光源消失，屬錯殺一群。</td></tr></table>
-        </div></div>
-      </details>
-    </div><div class="card watch" data-ticker="MRVL" data-name="Marvell">
+      <div class="group-body"><div class="card watch" data-ticker="MRVL" data-name="Marvell">
       <div class="card-header">
         <div class="ticker-row">
           <span class="ticker mono">MRVL</span>
@@ -1954,64 +2083,6 @@ body {
             <a href="https://unclestocknotes.substack.com/p/marvell-mrvl" target="_blank" class="art-link">黃仁勳「Marvell 是下一家萬億公司」#MRVL ↗</a>
           </div>
           <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">黃仁勳稱其為下一家萬億公司，站在光通訊與客製晶片關鍵位置，有Nvidia 20億美元資本綁定、互連業務成長逾70%、76%營收來自資料中心。但CPO三強格局中為強者非穩贏者，LPO可能繞過其DSP核心優勢，scale-up仍是銅天下，Nvidia自建光子可能吃走TAM。估值已把愿景大部分提前定價。</td></tr><tr><td class="ml-key">現況</td><td class="ml-val">長線核心倉可拿著讓趨勢做工，但勿追歷史高點靠場面話的短線加倉</td></tr></table>
-        </div></div>
-      </details>
-    </div><div class="card watch" data-ticker="NVDA" data-name="Nvidia">
-      <div class="card-header">
-        <div class="ticker-row">
-          <span class="ticker mono">NVDA</span>
-          <span class="stock-name">Nvidia</span>
-          
-        </div>
-        <div style="display:flex;align-items:center;gap:8px;">
-          <span class="latest-date mono">2026-07-01</span>
-          <span class="badge badge-yellow">觀察</span>
-        </div>
-      </div>
-      
-      <p class="stock-logic">推動 CPO 路線圖，但目前公開 CPO die photo 仍採 Vertical Grating，這一代綁定 TSMC COUPE / FOCI / Himax 的 Grating Coupling 路線。</p>
-      <div class="price-row"></div>
-      <details class="chart-fold">
-        <summary class="chart-toggle">▸ K 線圖（NVDA）</summary>
-        <div class="tv-wrap">
-        <div class="tradingview-widget-container">
-          <div class="tradingview-widget-container__widget"></div>
-          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-          {"symbol":"NASDAQ:NVDA","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
-          </script>
-        </div>
-      </div>
-      </details>
-      <details class="context-fold">
-        <summary class="context-toggle">▸ 文章脈絡（4 篇文章提及）</summary>
-        <div class="context-body"><div class="mention-item">
-          <div class="mention-meta">
-            <span class="mono date-chip">2026-07-01</span>
-            <span class="badge badge-yellow">觀察</span>
-            <a href="https://unclestocknotes.substack.com/p/glw-glassbridge" target="_blank" class="art-link">#GLW 康寧 GlassBridge 對產業影響 ↗</a>
-          </div>
-          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">推動 CPO 路線圖，但目前公開 CPO die photo 仍採 Vertical Grating，這一代綁定 TSMC COUPE / FOCI / Himax 的 Grating Coupling 路線。</td></tr></table>
-        </div><div class="mention-item">
-          <div class="mention-meta">
-            <span class="mono date-chip">2026-06-19</span>
-            <span class="badge badge-yellow">觀察</span>
-            <a href="https://unclestocknotes.substack.com/p/copos-oscop" target="_blank" class="art-link">玻璃核心載板：台積電 CoPoS 真正的勝負手在「oS」，不在「CoP」 ↗</a>
-          </div>
-          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">對玻璃核心載板態度積極，Rubin/Rubin Ultra 封裝放大使玻璃成 must-have，惟受惠的是整個 AI 生態系，非設備材料純度標的。</td></tr></table>
-        </div><div class="mention-item">
-          <div class="mention-meta">
-            <span class="mono date-chip">2026-06-03</span>
-            <span class="badge badge-yellow">觀察</span>
-            <a href="https://unclestocknotes.substack.com/p/marvell-mrvl" target="_blank" class="art-link">黃仁勳「Marvell 是下一家萬億公司」#MRVL ↗</a>
-          </div>
-          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">市值逾5兆美元，AI產業最有份量聲音。一邊投資Marvell、一邊自建矽光子(Quantum-X、Spectrum-X光子交換機)，既是合作夥伴也是潛在最大競爭者，最有能力垂直整合吃下光下沉計算層的TAM。</td></tr></table>
-        </div><div class="mention-item">
-          <div class="mention-meta">
-            <span class="mono date-chip">2026-05-30</span>
-            <span class="badge badge-yellow">觀察</span>
-            <a href="https://unclestocknotes.substack.com/p/20-1ce" target="_blank" class="art-link">美國的 20 億美元量子豪賭 ↗</a>
-          </div>
-          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">與PsiQuantum、Quantinuum深度合作GPU與量子處理器整合，做即時解碼與校準後盾，量子＋古典＋AI混合架構受惠者，並參與PsiQuantum E輪募資。</td></tr></table>
         </div></div>
       </details>
     </div><div class="card watch" data-ticker="POET" data-name="POET Technologies">
@@ -2056,11 +2127,11 @@ body {
       <summary class="group-header">
         <div class="group-summary-left">
           <span class="group-label">次1奈米與量子代工的矽紀元分工革命</span>
-          <div class="group-tickers"><span class="grp-tick mono">ASML</span><span class="grp-tick mono">IBM</span><span class="grp-tick mono">INTC</span></div>
+          <div class="group-tickers"><span class="grp-tick mono">ASML</span><span class="grp-tick mono">IBM</span></div>
         </div>
         <div class="group-meta">
           <span class="group-date mono">2026-06-28</span>
-          <span class="group-count">3 檔</span>
+          <span class="group-count">2 檔</span>
         </div>
       </summary>
       <div class="group-body"><div class="card watch" data-ticker="ASML" data-name="ASML">
@@ -2144,57 +2215,6 @@ body {
           <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">拿走近半補貼（10億美元）建300毫米量子代工廠，押的是基礎設施與超導路線。容錯路線圖最清晰，2029交付Starling、2033 Blue Jay，qLDPC碼削減九成冗餘，槓桿最高。</td></tr></table>
         </div></div>
       </details>
-    </div><div class="card watch" data-ticker="INTC" data-name="Intel">
-      <div class="card-header">
-        <div class="ticker-row">
-          <span class="ticker mono">INTC</span>
-          <span class="stock-name">Intel</span>
-          
-        </div>
-        <div style="display:flex;align-items:center;gap:8px;">
-          <span class="latest-date mono">2026-06-28</span>
-          <span class="badge badge-yellow">觀察</span>
-        </div>
-      </div>
-      
-      <p class="stock-logic">國家隊變數。靠High-NA EUV與14A想重奪製程旗，18A已率先量產搭載PowerVia背面供電，是台積電一家獨大格局在2030前後的邊際變數。</p>
-      <div class="price-row"></div>
-      <details class="chart-fold">
-        <summary class="chart-toggle">▸ K 線圖（INTC）</summary>
-        <div class="tv-wrap">
-        <div class="tradingview-widget-container">
-          <div class="tradingview-widget-container__widget"></div>
-          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-          {"symbol":"NASDAQ:INTC","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
-          </script>
-        </div>
-      </div>
-      </details>
-      <details class="context-fold">
-        <summary class="context-toggle">▸ 文章脈絡（3 篇文章提及）</summary>
-        <div class="context-body"><div class="mention-item">
-          <div class="mention-meta">
-            <span class="mono date-chip">2026-06-28</span>
-            <span class="badge badge-yellow">觀察</span>
-            <a href="https://unclestocknotes.substack.com/p/2a3" target="_blank" class="art-link">人工智慧晶片微縮極限與次世代半導體分工架構 ↗</a>
-          </div>
-          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">國家隊變數。靠High-NA EUV與14A想重奪製程旗，18A已率先量產搭載PowerVia背面供電，是台積電一家獨大格局在2030前後的邊際變數。</td></tr></table>
-        </div><div class="mention-item">
-          <div class="mention-meta">
-            <span class="mono date-chip">2026-06-08</span>
-            <span class="badge badge-yellow">觀察</span>
-            <a href="https://unclestocknotes.substack.com/p/20260606-0607-substack" target="_blank" class="art-link">每日重點 20260606-0607 Substack  ↗</a>
-          </div>
-          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">美國半導體龍頭、有IP、封裝、CPU，川普AI入股推理最合理標的，CPU報價調漲供給吃緊。</td></tr></table>
-        </div><div class="mention-item">
-          <div class="mention-meta">
-            <span class="mono date-chip">2026-05-30</span>
-            <span class="badge badge-yellow">觀察</span>
-            <a href="https://unclestocknotes.substack.com/p/20-1ce" target="_blank" class="art-link">美國的 20 億美元量子豪賭 ↗</a>
-          </div>
-          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">商務部以約89億美元換取約一成股份，是國家資本主義劇本的一環，反映政府入股關鍵科技企業的趨勢。</td></tr></table>
-        </div></div>
-      </details>
     </div></div>
     </details><details class="stock-group" data-label="IonQ量子財報卸妝：獲利是會計幻覺" data-themes="量子計算商業化 認股權證評價利益會計幻覺 併購推升營收 股權補貼循環交易 離子阱雙雄競爭 Q-Day後量子密碼題材">
       <summary class="group-header">
@@ -2242,69 +2262,6 @@ body {
             <a href="https://unclestocknotes.substack.com/p/ionq-ionq-2026" target="_blank" class="art-link">IonQ #IONQ 2026 第一季財報分析 ↗</a>
           </div>
           <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">技術領先可驗證（保真度、Walking Cat架構、DARPA HARQ唯一硬體得主），國防訂單是真現金流。但獲利是會計幻覺，755%成長靠併購，逾兩成營收靠股權補貼循環交易，毛利率塌到24%且CFO拒答，估值極端。好公司不代表好價格，等市場把量子超循環從信仰變回可被數字驗證的假設再談估值。</td></tr><tr><td class="ml-key">目標</td><td class="ml-val">分析師均價約66-70美元，區間48.5-100</td></tr><tr><td class="ml-key">現況</td><td class="ml-val">看起來賺很多但素顏仍虧損，技術真領先但商業化未到，好公司不代表好價格</td></tr></table>
-        </div></div>
-      </details>
-    </div></div>
-    </details><details class="stock-group" data-label="美光循環高點暴利與SCA轉型考驗" data-themes="記憶體價格驅動超級循環 毛利率逼近天花板、漲價動能趨緩 SCA戰略客戶協議重寫商業模式 DRAM/HBM寡占定價權 應收帳款膨脹需季季追蹤 重資本支出循環埋下未來供給隱憂">
-      <summary class="group-header">
-        <div class="group-summary-left">
-          <span class="group-label">美光循環高點暴利與SCA轉型考驗</span>
-          <div class="group-tickers"><span class="grp-tick mono">MU</span></div>
-        </div>
-        <div class="group-meta">
-          <span class="group-date mono">2026-06-25</span>
-          <span class="group-count">1 檔</span>
-        </div>
-      </summary>
-      <div class="group-body"><div class="card watch" data-ticker="MU" data-name="Micron">
-      <div class="card-header">
-        <div class="ticker-row">
-          <span class="ticker mono">MU</span>
-          <span class="stock-name">Micron</span>
-          
-        </div>
-        <div style="display:flex;align-items:center;gap:8px;">
-          <span class="latest-date mono">2026-06-25</span>
-          <span class="badge badge-yellow">觀察</span>
-        </div>
-      </div>
-      <div class="verdict alert">當下品質極高、谷底被部分墊高，但現價反映循環高點暴利；管理層已踩煞車，保持冷靜緊盯領先指標</div>
-      <p class="stock-logic">財報幾乎無可挑剔，資料中心年化破千億、HBM4領先放量、淨現金244億。但84.9%毛利率靠漲價非成本改善，管理層自承漲價趨緩、邊際貢獻遞減逼近天花板。SCA僅保護約25%營收，地板年化僅約一成跑速。當前是循環高點暴利，估值雖低（8-9倍）但好消息恐已price in。</p>
-      <div class="price-row"><span class="price-chip"><span class="chip-label">目標</span>8x/10x/12x = $992/$1,240/$1,488，合理區間抓在 $1,240～$1,488</span></div>
-      <details class="chart-fold">
-        <summary class="chart-toggle">▸ K 線圖（MU）</summary>
-        <div class="tv-wrap">
-        <div class="tradingview-widget-container">
-          <div class="tradingview-widget-container__widget"></div>
-          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-          {"symbol":"NASDAQ:MU","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
-          </script>
-        </div>
-      </div>
-      </details>
-      <details class="context-fold">
-        <summary class="context-toggle">▸ 文章脈絡（3 篇文章提及）</summary>
-        <div class="context-body"><div class="mention-item">
-          <div class="mention-meta">
-            <span class="mono date-chip">2026-06-25</span>
-            <span class="badge badge-yellow">觀察</span>
-            <a href="https://unclestocknotes.substack.com/p/mu-2026-12f" target="_blank" class="art-link">美光科技 #MU 2026 財年第三季分享 ↗</a>
-          </div>
-          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">財報幾乎無可挑剔，資料中心年化破千億、HBM4領先放量、淨現金244億。但84.9%毛利率靠漲價非成本改善，管理層自承漲價趨緩、邊際貢獻遞減逼近天花板。SCA僅保護約25%營收，地板年化僅約一成跑速。當前是循環高點暴利，估值雖低（8-9倍）但好消息恐已price in。</td></tr><tr><td class="ml-key">目標</td><td class="ml-val">8x/10x/12x = $992/$1,240/$1,488，合理區間抓在 $1,240～$1,488</td></tr><tr><td class="ml-key">現況</td><td class="ml-val">當下品質極高、谷底被部分墊高，但現價反映循環高點暴利；管理層已踩煞車，保持冷靜緊盯領先指標</td></tr></table>
-        </div><div class="mention-item">
-          <div class="mention-meta">
-            <span class="mono date-chip">2026-06-16</span>
-            <span class="badge badge-yellow">觀察</span>
-            <a href="https://unclestocknotes.substack.com/p/mu-1600" target="_blank" class="art-link">#MU $1,600 目標價的蜜糖與未爆彈 ↗</a>
-          </div>
-          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">Aletheia 給 Buy、目標價 $1,600（上行約 61%），核心為 SocAMM 實體落地與 KV Cache 結構性需求屬真需求，能見度高；但 $1,600 隱含 EPS 須從約 $48–49 拉到 CY27E 約 $160，是把循環高點盈餘當永續盈餘定價，存在 trade ratio、綠地新廠、低階替代與下游 CapEx Cliff 等破綻。大叔提醒風險思維，未明確建議買入。</td></tr><tr><td class="ml-key">目標</td><td class="ml-val">$1,600（Aletheia 券商目標價）</td></tr><tr><td class="ml-key">現況</td><td class="ml-val">看好真需求但警惕估值雙殺風險</td></tr></table>
-        </div><div class="mention-item">
-          <div class="mention-meta">
-            <span class="mono date-chip">2026-06-08</span>
-            <span class="badge badge-green">買入</span>
-            <a href="https://unclestocknotes.substack.com/p/20260606-0607-substack" target="_blank" class="art-link">每日重點 20260606-0607 Substack  ↗</a>
-          </div>
-          <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">第一順位</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">美光什麼產品都有，DDR5、LPDDR5、HBM輪流排擠也通吃，是最強。海力士上市短期擠壓但會把群組拉上來。川普AI入股推理標的，會關注期權池。</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">大叔一直拿著</td></tr></table>
         </div></div>
       </details>
     </div></div>
@@ -3666,62 +3623,6 @@ body {
         </div></div>
       </details>
     </div></div>
-    </details><details class="stock-group" data-label="Broadcom財報：AI訂單爆發但預期過高的雙面刃" data-themes="AI ASIC/XPU爆發 訂單能見度延伸2028 供應鏈融資XPU平台 網路高毛利護城河 毛利率組合稀釋">
-      <summary class="group-header">
-        <div class="group-summary-left">
-          <span class="group-label">Broadcom財報：AI訂單爆發但預期過高的雙面刃</span>
-          <div class="group-tickers"><span class="grp-tick mono">AVGO</span></div>
-        </div>
-        <div class="group-meta">
-          <span class="group-date mono">2026-06-04</span>
-          <span class="group-count">1 檔</span>
-        </div>
-      </summary>
-      <div class="group-body"><div class="card watch" data-ticker="AVGO" data-name="Broadcom">
-      <div class="card-header">
-        <div class="ticker-row">
-          <span class="ticker mono">AVGO</span>
-          <span class="stock-name">Broadcom</span>
-          
-        </div>
-        <div style="display:flex;align-items:center;gap:8px;">
-          <span class="latest-date mono">2026-06-04</span>
-          <span class="badge badge-yellow">觀察</span>
-        </div>
-      </div>
-      <div class="verdict waiting">本業強勁但AI略低於最樂觀預期，長線護城河深、短線波動風險高</div>
-      <p class="stock-logic">Q2營收221.9億年增48%創新高，AI半導體108億年增143%。Book-to-Bill 2.8倍、能見度延伸到2028、2027 AI營收有望破千億。XPU平台聯手Apollo/Blackstone想當AI生態系協調者。最大風險是市場預期極高、客戶集中度（六大客戶）、毛利率組合變化與前所未見的循環融資架構。</p>
-      <div class="price-row"></div>
-      <details class="chart-fold">
-        <summary class="chart-toggle">▸ K 線圖（AVGO）</summary>
-        <div class="tv-wrap">
-        <div class="tradingview-widget-container">
-          <div class="tradingview-widget-container__widget"></div>
-          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-          {"symbol":"NASDAQ:AVGO","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
-          </script>
-        </div>
-      </div>
-      </details>
-      <details class="context-fold">
-        <summary class="context-toggle">▸ 文章脈絡（2 篇文章提及）</summary>
-        <div class="context-body"><div class="mention-item">
-          <div class="mention-meta">
-            <span class="mono date-chip">2026-06-04</span>
-            <span class="badge badge-yellow">觀察</span>
-            <a href="https://unclestocknotes.substack.com/p/broadcom-avgo-2026" target="_blank" class="art-link">Broadcom #AVGO 2026 財年第二季財報 ↗</a>
-          </div>
-          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">Q2營收221.9億年增48%創新高，AI半導體108億年增143%。Book-to-Bill 2.8倍、能見度延伸到2028、2027 AI營收有望破千億。XPU平台聯手Apollo/Blackstone想當AI生態系協調者。最大風險是市場預期極高、客戶集中度（六大客戶）、毛利率組合變化與前所未見的循環融資架構。</td></tr><tr><td class="ml-key">現況</td><td class="ml-val">本業強勁但AI略低於最樂觀預期，長線護城河深、短線波動風險高</td></tr></table>
-        </div><div class="mention-item">
-          <div class="mention-meta">
-            <span class="mono date-chip">2026-06-03</span>
-            <span class="badge badge-yellow">觀察</span>
-            <a href="https://unclestocknotes.substack.com/p/marvell-mrvl" target="_blank" class="art-link">黃仁勳「Marvell 是下一家萬億公司」#MRVL ↗</a>
-          </div>
-          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">Bailly CPO交換機從2023年就出貨給超大規模客戶，節奏比Marvell更早，宣稱約30%功耗節省與40%更低每位元光學成本，是CPO賽道領跑者。</td></tr></table>
-        </div></div>
-      </details>
-    </div></div>
     </details><details class="stock-group" data-label="Alphabet Cloud 爆發但 CapEx 稀釋疑慮" data-themes="Google Cloud 加速 Backlog 翻倍 TPU 對外硬體銷售狙擊 NVIDIA AI CapEx 暴增與股權融資稀釋 本業獲利品質打折 Agentic AI 基礎建設卡位">
       <summary class="group-header">
         <div class="group-summary-left">
@@ -4129,8 +4030,180 @@ body {
     </div></div>
     </details>
   </section><section class="section" id="section-reduce">
-    <div class="section-title">保護獲利 / 警示（3 檔）</div>
-    <details class="stock-group" data-label="康寧 GlassBridge 重塑 CPO 玻璃封裝價值鏈" data-themes="GlassBridge 改變價值分配非產業翻車 玻璃成下一代先進封裝核心材料 Edge Coupling vs Grating Coupling 路線之爭 CPO 普及推升外部雷射需求 衝擊落點在 2028～2030 新建置市場">
+    <div class="section-title">保護獲利 / 警示（6 檔）</div>
+    <details class="stock-group" data-label="AI去槓桿重估×瓶頸選股先進封裝優先" data-themes="估值重估非基本面崩壞 韓國去槓桿與強制平倉 光通訊CPO時程博弈 先進封裝設備瓶頸 風險預算與部位控制 右側優先左側從嚴">
+      <summary class="group-header">
+        <div class="group-summary-left">
+          <span class="group-label">AI去槓桿重估×瓶頸選股先進封裝優先</span>
+          <div class="group-tickers"><span class="grp-tick mono">AAOI</span><span class="grp-tick mono">INTC</span><span class="grp-tick mono">NVTS</span></div>
+        </div>
+        <div class="group-meta">
+          <span class="group-date mono">2026-07-20</span>
+          <span class="group-count">3 檔</span>
+        </div>
+      </summary>
+      <div class="group-body"><div class="card caution" data-ticker="AAOI" data-name="Applied Optoelectronics">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">AAOI</span>
+          <span class="stock-name">Applied Optoelectronics</span>
+          
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-07-20</span>
+          <span class="badge badge-red">警示</span>
+        </div>
+      </div>
+      <div class="verdict alert">超高波動、去泡沫中不宜重倉</div>
+      
+      <div class="price-row"></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（AAOI）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NASDAQ:AAOI","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（2 篇文章提及）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-07-20</span>
+            <span class="badge badge-red">警示</span>
+            <a href="https://unclestocknotes.substack.com/p/d03" target="_blank" class="art-link">七月半導體重估 × 韓國去槓桿 × 光通訊去泡沫 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">原因</td><td class="ml-val">年化波動率高達122%，CPO利空當天跌17%，本質上是高彈性高波動交易型資產。跳空開低時實際虧損往往超過理論值，部位若超標應果斷處理，不能用成本降低安慰自己。</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">帳戶約一萬美元者建議直接放棄單一光通訊股，只透過ETF參與或等右側</td></tr><tr><td class="ml-key">現況</td><td class="ml-val">超高波動、去泡沫中不宜重倉</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-07-01</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://unclestocknotes.substack.com/p/glw-glassbridge" target="_blank" class="art-link">#GLW 康寧 GlassBridge 對產業影響 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">發電廠層光源公司，GlassBridge 未讓光源消失，屬錯殺一群。</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card caution" data-ticker="INTC" data-name="Intel">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">INTC</span>
+          <span class="stock-name">Intel</span>
+          
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-07-20</span>
+          <span class="badge badge-red">警示</span>
+        </div>
+      </div>
+      <div class="verdict alert">擁擠部位回檔最深</div>
+      
+      <div class="price-row"></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（INTC）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NASDAQ:INTC","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（4 篇文章提及）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-07-20</span>
+            <span class="badge badge-red">警示</span>
+            <a href="https://unclestocknotes.substack.com/p/d03" target="_blank" class="art-link">七月半導體重估 × 韓國去槓桿 × 光通訊去泡沫 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">原因</td><td class="ml-val">18A-P良率進度延後，七個交易日內下跌約21%；此前上半年曾漲278%。漲最多、敘事最陡、籌碼最擁擠的公司回檔最深，屬去槓桿受懲罰典型案例。</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">跌幅排序即籌碼結構X光片</td></tr><tr><td class="ml-key">現況</td><td class="ml-val">擁擠部位回檔最深</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-06-28</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://unclestocknotes.substack.com/p/2a3" target="_blank" class="art-link">人工智慧晶片微縮極限與次世代半導體分工架構 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">國家隊變數。靠High-NA EUV與14A想重奪製程旗，18A已率先量產搭載PowerVia背面供電，是台積電一家獨大格局在2030前後的邊際變數。</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-06-08</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://unclestocknotes.substack.com/p/20260606-0607-substack" target="_blank" class="art-link">每日重點 20260606-0607 Substack  ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">美國半導體龍頭、有IP、封裝、CPU，川普AI入股推理最合理標的，CPU報價調漲供給吃緊。</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-05-30</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://unclestocknotes.substack.com/p/20-1ce" target="_blank" class="art-link">美國的 20 億美元量子豪賭 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">商務部以約89億美元換取約一成股份，是國家資本主義劇本的一環，反映政府入股關鍵科技企業的趨勢。</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card caution" data-ticker="NVTS" data-name="Navitas">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">NVTS</span>
+          <span class="stock-name">Navitas</span>
+          
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-07-20</span>
+          <span class="badge badge-red">警示</span>
+        </div>
+      </div>
+      <div class="verdict alert">高波動、超標須先降部位</div>
+      
+      <div class="price-row"></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（NVTS）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NASDAQ:NVTS","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（4 篇文章提及）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-07-20</span>
+            <span class="badge badge-red">警示</span>
+            <a href="https://unclestocknotes.substack.com/p/d03" target="_blank" class="art-link">七月半導體重估 × 韓國去槓桿 × 光通訊去泡沫 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">原因</td><td class="ml-val">本身年化波動高達66%-122%，若部位明顯超標須更果斷處理。最大危險是價格波動太大，加碼節奏一錯虧損累積遠快於大型半導體。第一步先降到公式上限內。</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">超標部位攤平是提高同一錯誤對組合的傷害</td></tr><tr><td class="ml-key">現況</td><td class="ml-val">高波動、超標須先降部位</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-07-10</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://unclestocknotes.substack.com/p/wolfspeed-navitas-nvts" target="_blank" class="art-link">Wolfspeed 控告 Navitas $NVTS 專利侵權 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">GaN 整合技術與 NVIDIA 800V 生態卡位是真的，龍頭花錢告你某程度是技術背書。但估值 85-95 倍市銷率過高，2025 全年營收衰退 44.9%，7/27 Q2 財報市場預期營收年減 31%，訴訟對技術利多、對估值無幫助。</td></tr><tr><td class="ml-key">目標</td><td class="ml-val">訴訟評級 Noise，股票評級 Neutral/觀望</td></tr><tr><td class="ml-key">現況</td><td class="ml-val">對訴訟 Noise，對股票 Neutral 觀望，重點在 7/27 財報</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-06-08</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://unclestocknotes.substack.com/p/20260606-0607-substack" target="_blank" class="art-link">每日重點 20260606-0607 Substack  ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">邏輯</td><td class="ml-val">800V/SST看好標的，TXN配NVTS，一個強配一個成長沒問題。</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-06-07</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://unclestocknotes.substack.com/p/ai-aba" target="_blank" class="art-link">AI 數據中心電力革命  ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">覆蓋 GaNFast 與 GeneSiC，NVIDIA MGX 生態系活躍夥伴，與 EPFL 合作 SST 示範系統，展示 800V 轉 6V 配電板達約 97.5% 效率。小型高波動股，對單一消息反應劇烈。</td></tr><tr><td class="ml-key">現況</td><td class="ml-val">生態系活躍但股性波動劇烈</td></tr></table>
+        </div></div>
+      </details>
+    </div></div>
+    </details><details class="stock-group" data-label="康寧 GlassBridge 重塑 CPO 玻璃封裝價值鏈" data-themes="GlassBridge 改變價值分配非產業翻車 玻璃成下一代先進封裝核心材料 Edge Coupling vs Grating Coupling 路線之爭 CPO 普及推升外部雷射需求 衝擊落點在 2028～2030 新建置市場">
       <summary class="group-header">
         <div class="group-summary-left">
           <span class="group-label">康寧 GlassBridge 重塑 CPO 玻璃封裝價值鏈</span>
