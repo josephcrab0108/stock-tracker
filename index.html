@@ -333,30 +333,6 @@
 
   <div class="market-card">
     <div class="market-header">
-      <div class="market-badge" style="background:rgba(251,191,36,.1);color:#fbbf24;border:1px solid rgba(251,191,36,.2)">盯</div>
-      <div class="market-info">
-        <div class="market-name" style="color:#fbbf24">盯盤面板</div>
-        <div class="market-desc">自選股即時報價 · 多源觀點 · 籌碼訊號彙整</div>
-      </div>
-    </div>
-    <div class="divider"></div>
-    <div class="source-list">
-      <a class="source-link" href="盯盤面板/">
-        <div class="source-info">
-          <span class="source-name">台股 + 美股</span>
-          <div class="source-tags">
-            <span class="tag tw">即時報價</span>
-            <span class="tag us">美股</span>
-            <span class="tag" style="background:rgba(251,191,36,.08);color:#fbbf24;border:1px solid rgba(251,191,36,.18)">多源觀點</span>
-          </div>
-        </div>
-        <div class="source-arrow">›</div>
-      </a>
-    </div>
-  </div>
-
-  <div class="market-card">
-    <div class="market-header">
       <div class="market-badge" style="background:rgba(239,68,68,.1);color:#ef4444;border:1px solid rgba(239,68,68,.2)">🔥</div>
       <div class="market-info">
         <div class="market-name" style="color:#ef4444">族群強弱</div>
@@ -543,34 +519,5 @@
 </script>
 
 
-<!-- LifeOS 問題回報按鈕 -->
-<button id="lifeos-report-btn" onclick="lifeosReport()">⚑ 回報問題</button>
-<style>
-#lifeos-report-btn {
-  position: fixed; bottom: 22px; right: 22px;
-  background: #e53e3e; color: #fff; border: none;
-  border-radius: 999px; padding: 12px 20px;
-  font-size: 15px; font-weight: 600;
-  cursor: pointer; z-index: 9999;
-  box-shadow: 0 3px 10px rgba(0,0,0,.35);
-  opacity: .88; transition: opacity .15s, transform .12s;
-  -webkit-tap-highlight-color: transparent;
-}
-#lifeos-report-btn:active { opacity: 1; transform: scale(.95); }
-</style>
-<script>
-function lifeosReport() {
-  var page = document.title || location.pathname.replace(/.*\//, '') || '未知頁面';
-  var msg = prompt('哪裡有問題？（一句話描述）');
-  if (!msg || !msg.trim()) return;
-  fetch('https://ntfy.sh/Joseph-lifeOS', {
-    method: 'POST',
-    headers: { 'Title': '⚠️ 頁面問題：' + page, 'Tags': 'warning', 'Priority': 'default' },
-    body: msg.trim()
-  }).then(function(r) {
-    alert(r.ok ? '已送出 👍 下次開 Claude Code 會處理' : '送出失敗，請稍後再試');
-  }).catch(function() { alert('送出失敗，請確認網路'); });
-}
-</script>
 </body>
 </html>
