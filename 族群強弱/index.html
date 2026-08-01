@@ -11,6 +11,7 @@
 :root {
   --bg:      #0a0d14;
   --surface: #131720;
+  --surface2: rgba(28,33,48,.5);
   --border:  #232839;
   --text:    #e2e8f0;
   --muted:   #64748b;
@@ -111,15 +112,19 @@ body {
   border-bottom: 1px solid var(--border);
 }
 
-/* ── 共用頁首/頁尾（render_header / render_footer 用） ── */
-.page-header {
+/* ── 共用頁首/頁尾（render_header / render_footer 用） ──
+   注意：class 特意取名 .site-header 不叫 .page-header——guhuazi/riveralan/
+   liqian/jg 這幾頁已經各自用 .page-header 當自己 sticky header 的 class
+   name，撞名會讓這裡的 gap/flex-wrap 透過 CSS cascade 漏進那些頁面的
+   header，造成非預期的版面跑位。 */
+.site-header {
   display: flex; align-items: center; justify-content: space-between;
   gap: 12px; flex-wrap: wrap;
   padding: 20px 24px 12px;
   border-bottom: 1px solid var(--border);
 }
-.page-header h1 { font-size: 20px; font-weight: 700; }
-.page-header .page-subtitle { color: var(--muted); font-size: 12px; margin-top: 4px; }
+.site-header h1 { font-size: 20px; font-weight: 700; }
+.site-header .site-subtitle { color: var(--muted); font-size: 12px; margin-top: 4px; }
 
 .page-footer {
   margin-top: 24px;
@@ -137,11 +142,11 @@ body {
   .jump-nav { overflow-x: auto; flex-wrap: nowrap; scrollbar-width: none; }
   .jump-nav::-webkit-scrollbar { display: none; }
   .container { padding: 14px 10px; }
-  .page-header { padding: 14px 16px 10px; }
+  .site-header { padding: 14px 16px 10px; }
 }
 
 
-:root{--surface2:rgba(28,33,48,.5);--up:#ef4444;--strong:#f97316;--limit:#dc2626}
+:root{--up:#ef4444;--strong:#f97316;--limit:#dc2626}
 body{max-width:860px;margin:0 auto;padding:24px 16px 60px}
 h1{font-size:22px;margin-bottom:4px}
 .meta{color:var(--muted);font-size:12px;margin-bottom:20px}
