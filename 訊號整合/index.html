@@ -86,7 +86,7 @@
 </head>
 <body>
 <h1>台股訊號整合<a class="back-link" href="../">← 回總覽</a></h1>
-<div class="meta">更新時間：2026-08-10 13:51　共 275 支個股<span id="fc" style="color:#818cf8"></span>
+<div class="meta">更新時間：2026-08-10 14:03　共 275 支個股<span id="fc" style="color:#818cf8"></span>
   <button onclick="document.getElementById('scoring-info').classList.toggle('hidden')"
     style="margin-left:12px;background:transparent;border:1px solid #334155;color:#64748b;
            font-size:11px;padding:2px 8px;border-radius:4px;cursor:pointer">計分說明</button>
@@ -105,37 +105,23 @@
     </div>
     <div style="flex:none">
       <div style="color:#94a3b8;font-size:10px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px">來源權重（滿分 5）</div>
-      <table style="border-collapse:collapse">
-        <tr>
-          <td style="padding:2px 10px 2px 0;color:#fbbf24;white-space:nowrap">股癌</td><td style="color:#4ade80;padding-right:20px;white-space:nowrap">5.0</td>
-          <td style="padding:2px 10px 2px 0;color:#fbbf24;white-space:nowrap">云式籌碼</td><td style="color:#4ade80;white-space:nowrap">4.0</td>
-        </tr>
-        <tr>
-          <td style="padding:2px 10px 2px 0;color:#fbbf24;white-space:nowrap">達人秀 / 股惑仔 / 艾綸</td><td style="color:#4ade80;padding-right:20px;white-space:nowrap">3.0</td>
-          <td style="padding:2px 10px 2px 0;color:#fbbf24;white-space:nowrap">ETF 異動</td><td style="color:#4ade80;white-space:nowrap">3.0</td>
-        </tr>
-        <tr>
-          <td style="padding:2px 10px 2px 0;color:#fbbf24;white-space:nowrap">大戶散戶</td><td style="color:#4ade80;padding-right:20px;white-space:nowrap">2.5</td>
-          <td style="padding:2px 10px 2px 0;color:#fbbf24;white-space:nowrap">ETF 靜態 / FB</td><td style="color:#4ade80;white-space:nowrap">2.0</td>
-        </tr>
-      </table>
+      <div style="display:grid;grid-template-columns:max-content max-content;gap:2px 8px;align-items:baseline">
+        <span style="color:#fbbf24">股癌</span><span style="color:#4ade80">5.0</span>
+        <span style="color:#fbbf24">云式籌碼</span><span style="color:#4ade80">4.0</span>
+        <span style="color:#fbbf24">達人秀 / 股惑仔 / 艾綸</span><span style="color:#4ade80">3.0</span>
+        <span style="color:#fbbf24">ETF 異動</span><span style="color:#4ade80">3.0</span>
+        <span style="color:#fbbf24">大戶散戶</span><span style="color:#4ade80">2.5</span>
+        <span style="color:#fbbf24">ETF 靜態 / FB</span><span style="color:#4ade80">2.0</span>
+      </div>
     </div>
     <div style="flex:none">
       <div style="color:#94a3b8;font-size:10px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px">時間衰減半衰期</div>
-      <table style="border-collapse:collapse">
-        <tr>
-          <td style="padding:2px 10px 2px 0;color:#cbd5e1;white-space:nowrap">股癌</td>
-          <td style="color:#94a3b8;padding-right:20px;white-space:nowrap">10 天</td>
-          <td style="padding:2px 10px 2px 0;color:#cbd5e1;white-space:nowrap">云式籌碼 / ETF</td>
-          <td style="color:#94a3b8;white-space:nowrap">5 天</td>
-        </tr>
-        <tr>
-          <td style="padding:2px 10px 2px 0;color:#cbd5e1;white-space:nowrap">達人秀 / 股惑仔 / 艾綸 / 大戶散戶</td>
-          <td style="color:#94a3b8;padding-right:20px;white-space:nowrap">7 天</td>
-          <td style="padding:2px 10px 2px 0;color:#cbd5e1;white-space:nowrap">FB 粉專</td>
-          <td style="color:#94a3b8;white-space:nowrap">2 天</td>
-        </tr>
-      </table>
+      <div style="display:grid;grid-template-columns:max-content max-content;gap:2px 8px;align-items:baseline">
+        <span style="color:#cbd5e1">股癌</span><span style="color:#94a3b8">10 天</span>
+        <span style="color:#cbd5e1">云式籌碼 / ETF</span><span style="color:#94a3b8">5 天</span>
+        <span style="color:#cbd5e1">達人秀 / 股惑仔 / 艾綸 / 大戶散戶</span><span style="color:#94a3b8">7 天</span>
+        <span style="color:#cbd5e1">FB 粉專</span><span style="color:#94a3b8">2 天</span>
+      </div>
     </div>
   </div>
 
@@ -174,33 +160,26 @@
   <!-- 第三列：標記定義 -->
   <div>
     <div style="color:#94a3b8;font-size:10px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px">標記定義（不影響分數）</div>
-    <table style="border-collapse:collapse;width:100%">
-      <tr style="vertical-align:top">
-        <td style="padding:3px 12px 3px 0;white-space:nowrap"><span class="wbadge wdiv" style="margin-left:0">⚠️背離</span></td>
-        <td style="padding:3px 0;color:#94a3b8">確認來源 <b style="color:#cbd5e1">≥ 4</b> 且雙週（10 交易日）報酬 <b style="color:#cbd5e1">≤ −15%</b>。很多人在講、價格卻在跌，聲量與價格背離，訊號可能已失效</td>
-      </tr>
-      <tr style="vertical-align:top">
-        <td style="padding:3px 12px 3px 0;white-space:nowrap"><span class="wbadge whead" style="margin-left:0">🧊逆風</span></td>
-        <td style="padding:3px 0;color:#94a3b8">所屬族群在<b style="color:#cbd5e1">近 5 個交易日</b>的族群跌幅弱勢榜出現 <b style="color:#cbd5e1">≥ 3 次</b>（弱勢榜資料不足 5 天時門檻按比例降，最低 1 次）。個股本身不一定弱，是整個族群在退潮<br>
-        <span style="color:#475569">⚠ 弱勢榜與強勢榜是各自從跌幅前 100／漲幅前 100 獨立統計的，<b>成員分歧大的族群會同時上兩榜</b>（如 8/07 的 PCB、IC設計）。所以這個標記測到的有一部分是「族群內部分歧」而不是「族群變弱」，當參考不當判準</span></td>
-      </tr>
-      <tr style="vertical-align:top">
-        <td style="padding:3px 12px 3px 0;white-space:nowrap"><span style="color:#f59e0b">族群旁 ?</span></td>
-        <td style="padding:3px 0;color:#94a3b8">分數 <b style="color:#cbd5e1">≥ 5</b> 但族群沒有在 <code style="color:#64748b">stock_sector_tags.json</code> 手動登記，族群完全靠自動推斷（族群名為深灰色時代表是節目原文字串，未正規化）。高分股的族群標錯會連累族群篩選與熱門族群判斷，所以只對高分股提醒</td>
-      </tr>
-      <tr style="vertical-align:top">
-        <td style="padding:3px 12px 3px 0;white-space:nowrap"><span class="ft sf" style="margin-left:0">股期</span> <span class="ft mf">小股期</span></td>
-        <td style="padding:3px 0;color:#94a3b8">該股有股票期貨／小型股票期貨可交易（來源：云式籌碼）。兩者都有時只顯示「小股期」</td>
-      </tr>
-      <tr style="vertical-align:top">
-        <td style="padding:3px 12px 3px 0;white-space:nowrap"><span style="color:#4ade80;font-size:11px">▲N</span> <span style="color:#f87171;font-size:11px">▼N</span> <span style="color:#38bdf8;font-size:11px">NEW</span></td>
-        <td style="padding:3px 0;color:#94a3b8">名次與<b style="color:#cbd5e1">上一次跑批</b>相比的變動（▲＝往前 N 名）。NEW＝上次不在榜上</td>
-      </tr>
-      <tr style="vertical-align:top">
-        <td style="padding:3px 12px 3px 0;white-space:nowrap"><span style="color:#f97316;font-size:11px">🔥 HOT</span></td>
-        <td style="padding:3px 0;color:#94a3b8">族群篩選鈕上的標記。條件：族群內分數 ≥5 的個股 <b style="color:#cbd5e1">≥ 5 支</b>，或 <b style="color:#cbd5e1">≥ 2 支且佔該族群 ≥ 65%</b>。最多標 4 個，按「支數 × 佔比<sup>1.5</sup>」取前四</td>
-      </tr>
-    </table>
+    <div style="display:grid;grid-template-columns:max-content minmax(0,1fr);gap:7px 14px;align-items:start">
+      <div style="white-space:nowrap"><span class="wbadge wdiv" style="margin-left:0">⚠️背離</span></div>
+      <div style="color:#94a3b8">確認來源 <b style="color:#cbd5e1">≥ 4</b> 且雙週（10 交易日）報酬 <b style="color:#cbd5e1">≤ −15%</b>。很多人在講、價格卻在跌，聲量與價格背離，訊號可能已失效</div>
+
+      <div style="white-space:nowrap"><span class="wbadge whead" style="margin-left:0">🧊逆風</span></div>
+      <div style="color:#94a3b8">所屬族群在<b style="color:#cbd5e1">近 5 個交易日</b>的族群跌幅弱勢榜出現 <b style="color:#cbd5e1">≥ 3 次</b>（弱勢榜資料不足 5 天時門檻按比例降，最低 1 次）。個股本身不一定弱，是整個族群在退潮
+        <div style="color:#475569;margin-top:2px">⚠ 弱勢榜與強勢榜是各自從跌幅前 100／漲幅前 100 獨立統計的，<b>成員分歧大的族群會同時上兩榜</b>（如 8/07 的 PCB、IC設計）。所以這個標記測到的有一部分是「族群內部分歧」而不是「族群變弱」，當參考不當判準</div></div>
+
+      <div style="white-space:nowrap;color:#f59e0b">族群旁 ?</div>
+      <div style="color:#94a3b8">該股的族群標籤<b style="color:#cbd5e1">沒有經過人工確認</b>，完全由 AI 自動判定。只對分數 <b style="color:#cbd5e1">≥ 5</b> 的個股提醒——高分股族群標錯會連累族群篩選與熱門族群判斷。<span style="color:#475569">族群名顯示為深灰色時，代表用的是節目原文字串、還沒正規化</span></div>
+
+      <div style="white-space:nowrap"><span class="ft sf" style="margin-left:0">股期</span> <span class="ft mf">小股期</span></div>
+      <div style="color:#94a3b8">該股有股票期貨／小型股票期貨可交易（來源：云式籌碼）。兩者都有時只顯示「小股期」</div>
+
+      <div style="white-space:nowrap"><span style="color:#4ade80;font-size:11px">▲N</span> <span style="color:#f87171;font-size:11px">▼N</span> <span style="color:#38bdf8;font-size:11px">NEW</span></div>
+      <div style="color:#94a3b8">名次與<b style="color:#cbd5e1">上一次跑批</b>相比的變動（▲＝往前 N 名）。NEW＝上次不在榜上</div>
+
+      <div style="white-space:nowrap;color:#f97316">🔥 HOT</div>
+      <div style="color:#94a3b8">族群篩選鈕上的標記。條件：族群內分數 ≥5 的個股 <b style="color:#cbd5e1">≥ 5 支</b>，或 <b style="color:#cbd5e1">≥ 2 支且佔該族群 ≥ 65%</b>。最多標 4 個，按「支數 × 佔比<sup>1.5</sup>」取前四</div>
+    </div>
   </div>
 
   <!-- 分隔線 -->
@@ -209,24 +188,19 @@
   <!-- 第四列：欄位與排序 -->
   <div>
     <div style="color:#94a3b8;font-size:10px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px">欄位與排序</div>
-    <table style="border-collapse:collapse;width:100%">
-      <tr style="vertical-align:top">
-        <td style="padding:3px 12px 3px 0;white-space:nowrap;color:#cbd5e1">來源數</td>
-        <td style="padding:3px 0;color:#94a3b8">有幾個<b style="color:#cbd5e1">不同大來源</b>提過。同系列算一個——ETF 靜態持倉與 ETF 異動合計只算 1，不是 2</td>
-      </tr>
-      <tr style="vertical-align:top">
-        <td style="padding:3px 12px 3px 0;white-space:nowrap;color:#cbd5e1">週漲 / 雙週漲</td>
-        <td style="padding:3px 0;color:#94a3b8">5 日 / 10 交易日報酬（yfinance）。<span style="color:#4ade80">綠</span>＝週漲 &gt;+5% 或雙週 &gt;+10%；<span style="color:#fb923c">橘</span>＝週漲 &lt;−5% 或雙週 &lt;−10%；灰＝之間。<span style="color:#475569">「—」代表抓不到報價</span></td>
-      </tr>
-      <tr style="vertical-align:top">
-        <td style="padding:3px 12px 3px 0;white-space:nowrap;color:#f97316">🔥 動能排序</td>
-        <td style="padding:3px 0;color:#94a3b8">分數 × max(0.2, 1 + 雙週漲跌% ÷ 50)。雙週 −25% 降權到 0.5 倍、+25% 加權到 1.5 倍，最低不低於 0.2 倍。<b style="color:#cbd5e1">預設關閉</b>，預設排序是純聲量分數</td>
-      </tr>
-      <tr style="vertical-align:top">
-        <td style="padding:3px 12px 3px 0;white-space:nowrap;color:#cbd5e1">誰不會出現</td>
-        <td style="padding:3px 0;color:#94a3b8"><b style="color:#cbd5e1">只被 ETF 持有、沒有任何分析師提過</b>的個股會被移除——那是 ETF 的成分股清單，不是選股訊號</td>
-      </tr>
-    </table>
+    <div style="display:grid;grid-template-columns:max-content minmax(0,1fr);gap:7px 14px;align-items:start">
+      <div style="white-space:nowrap;color:#cbd5e1">來源數</div>
+      <div style="color:#94a3b8">有幾個<b style="color:#cbd5e1">不同大來源</b>提過。同系列算一個——ETF 靜態持倉與 ETF 異動合計只算 1，不是 2</div>
+
+      <div style="white-space:nowrap;color:#cbd5e1">週漲 / 雙週漲</div>
+      <div style="color:#94a3b8">5 日 / 10 交易日報酬（yfinance）。<span style="color:#4ade80">綠</span>＝週漲 &gt;+5% 或雙週 &gt;+10%；<span style="color:#fb923c">橘</span>＝週漲 &lt;−5% 或雙週 &lt;−10%；灰＝之間。<span style="color:#475569">「—」代表抓不到報價</span></div>
+
+      <div style="white-space:nowrap;color:#f97316">🔥 動能排序</div>
+      <div style="color:#94a3b8">分數 × max(0.2, 1 + 雙週漲跌% ÷ 50)。雙週 −25% 降權到 0.5 倍、+25% 加權到 1.5 倍，最低不低於 0.2 倍。<b style="color:#cbd5e1">預設關閉</b>，預設排序是純聲量分數</div>
+
+      <div style="white-space:nowrap;color:#cbd5e1">誰不會出現</div>
+      <div style="color:#94a3b8"><b style="color:#cbd5e1">只被 ETF 持有、沒有任何分析師提過</b>的個股會被移除——那是 ETF 的成分股清單，不是選股訊號</div>
+    </div>
   </div>
 
 </div>
