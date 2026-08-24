@@ -1,6 +1,6 @@
 {
  "date": "2026-08-24",
- "updated_at": "2026-08-24T12:30:00.585588+08:00",
+ "updated_at": "2026-08-24T13:00:00.632271+08:00",
  "mode": "intraday",
  "min_value": 50000000,
  "timeline": [
@@ -377,29 +377,81 @@
      "median_pct": -2.97
     }
    ]
+  },
+  {
+   "time": "13:00",
+   "mode": "intraday",
+   "top3": [
+    {
+     "sector": "半導體設備",
+     "hits": 4,
+     "median_pct": 3.2
+    },
+    {
+     "sector": "光通訊/CPO",
+     "hits": 2,
+     "median_pct": 7.07
+    },
+    {
+     "sector": "電源/BBU",
+     "hits": 2,
+     "median_pct": 5.43
+    }
+   ],
+   "weak3": [
+    {
+     "sector": "記憶體",
+     "hits": 3,
+     "median_pct": -3.74
+    },
+    {
+     "sector": "PCB",
+     "hits": 3,
+     "median_pct": -2.67
+    },
+    {
+     "sector": "半導體設備",
+     "hits": 3,
+     "median_pct": -2.38
+    }
+   ]
   }
  ],
  "top_sectors": [
   {
-   "sector": "連接器",
-   "hits": 2,
+   "sector": "半導體設備",
+   "hits": 4,
    "member_total": 7,
-   "median_pct": 7.05,
+   "median_pct": 3.2,
    "source": "curated",
    "stocks": [
     {
-     "code": "3605",
-     "name": "宏致",
-     "pct": 7.37,
-     "value": 1447745500.0,
+     "code": "1711",
+     "name": "永光",
+     "pct": 4.11,
+     "value": 313584250.0,
      "market": "tse"
     },
     {
-     "code": "2392",
-     "name": "正崴",
-     "pct": 6.73,
-     "value": 290154000.0,
+     "code": "6691",
+     "name": "洋基工程",
+     "pct": 3.2,
+     "value": 245412000.0,
      "market": "tse"
+    },
+    {
+     "code": "7795",
+     "name": "長廣",
+     "pct": 3.19,
+     "value": 348634000.0,
+     "market": "tse"
+    },
+    {
+     "code": "6223",
+     "name": "旺矽",
+     "pct": 2.74,
+     "value": 2234770000.0,
+     "market": "otc"
     }
    ],
    "reviewed": null
@@ -408,117 +460,45 @@
    "sector": "光通訊/CPO",
    "hits": 2,
    "member_total": 7,
-   "median_pct": 6.06,
+   "median_pct": 7.07,
    "source": "curated",
    "stocks": [
     {
      "code": "3234",
      "name": "光環",
      "pct": 9.93,
-     "value": 1188062000.0,
+     "value": 1217112000.0,
      "market": "otc"
     },
     {
-     "code": "2426",
-     "name": "鼎元",
-     "pct": 2.19,
-     "value": 4721556000.0,
-     "market": "tse"
+     "code": "3441",
+     "name": "聯一光",
+     "pct": 4.21,
+     "value": 2579887000.0,
+     "market": "otc"
     }
    ],
    "reviewed": null
   },
   {
-   "sector": "電子通路",
+   "sector": "電源/BBU",
    "hits": 2,
-   "member_total": 5,
-   "median_pct": 2.64,
+   "member_total": 6,
+   "median_pct": 5.43,
    "source": "curated",
    "stocks": [
     {
-     "code": "6265",
-     "name": "方土昶",
-     "pct": 4.37,
-     "value": 586534500.0,
-     "market": "otc"
+     "code": "2301",
+     "name": "光寶科",
+     "pct": 9.96,
+     "value": 12136943000.0,
+     "market": "tse"
     },
     {
-     "code": "3702",
-     "name": "大聯大",
+     "code": "6282",
+     "name": "康舒",
      "pct": 0.9,
-     "value": 747152000.0,
-     "market": "tse"
-    }
-   ],
-   "reviewed": null
-  },
-  {
-   "sector": "鋼鐵",
-   "hits": 2,
-   "member_total": 4,
-   "median_pct": 2.37,
-   "source": "curated",
-   "stocks": [
-    {
-     "code": "1605",
-     "name": "華新",
-     "pct": 2.95,
-     "value": 1012608000.0,
-     "market": "tse"
-    },
-    {
-     "code": "2027",
-     "name": "大成鋼",
-     "pct": 1.79,
-     "value": 615577600.0,
-     "market": "tse"
-    }
-   ],
-   "reviewed": null
-  },
-  {
-   "sector": "工業電腦",
-   "hits": 2,
-   "member_total": 29,
-   "median_pct": 1.9,
-   "source": "curated",
-   "stocks": [
-    {
-     "code": "3693",
-     "name": "營邦",
-     "pct": 3.69,
-     "value": 362586000.0,
-     "market": "otc"
-    },
-    {
-     "code": "4916",
-     "name": "事欣科",
-     "pct": 0.1,
-     "value": 70642000.0,
-     "market": "tse"
-    }
-   ],
-   "reviewed": "2026-07-21"
-  },
-  {
-   "sector": "半導體設備",
-   "hits": 2,
-   "member_total": 7,
-   "median_pct": 1.84,
-   "source": "curated",
-   "stocks": [
-    {
-     "code": "7795",
-     "name": "長廣",
-     "pct": 3.54,
-     "value": 333450000.0,
-     "market": "tse"
-    },
-    {
-     "code": "6944",
-     "name": "兆聯實業",
-     "pct": 0.14,
-     "value": 52466000.0,
+     "value": 194718650.0,
      "market": "tse"
     }
    ],
@@ -528,22 +508,22 @@
    "sector": "封測",
    "hits": 2,
    "member_total": 9,
-   "median_pct": 1.76,
+   "median_pct": 2.35,
    "source": "curated",
    "stocks": [
     {
-     "code": "2449",
-     "name": "京元電子",
-     "pct": 3.23,
-     "value": 2232619000.0,
-     "market": "tse"
+     "code": "6223",
+     "name": "旺矽",
+     "pct": 2.74,
+     "value": 2234770000.0,
+     "market": "otc"
     },
     {
-     "code": "3265",
-     "name": "台星科",
-     "pct": 0.3,
-     "value": 94416000.0,
-     "market": "otc"
+     "code": "8150",
+     "name": "南茂",
+     "pct": 1.96,
+     "value": 1058236400.0000001,
+     "market": "tse"
     }
    ],
    "reviewed": null
@@ -552,21 +532,21 @@
    "sector": "無人機",
    "hits": 2,
    "member_total": 8,
-   "median_pct": 0.32,
+   "median_pct": 0.18,
    "source": "curated",
    "stocks": [
     {
      "code": "8033",
      "name": "雷虎",
-     "pct": 0.54,
-     "value": 71243000.0,
+     "pct": 0.27,
+     "value": 87978000.0,
      "market": "tse"
     },
     {
      "code": "4916",
      "name": "事欣科",
      "pct": 0.1,
-     "value": 70642000.0,
+     "value": 76372400.0,
      "market": "tse"
     }
    ],
@@ -575,156 +555,148 @@
  ],
  "single_hits": [
   {
-   "code": "7749",
-   "name": "意騰-KY",
-   "pct": 9.93,
-   "value": 65704000.0,
-   "market": "tse",
-   "sector": "半導體"
-  },
-  {
    "code": "6226",
    "name": "光鼎",
    "pct": 9.91,
-   "value": 427974400.0,
+   "value": 431189800.0,
    "market": "tse",
    "sector": "光電"
   },
   {
-   "code": "7712",
-   "name": "博盛半導體",
-   "pct": 5.65,
-   "value": 53969500.0,
+   "code": "2221",
+   "name": "大甲",
+   "pct": 9.9,
+   "value": 69883200.0,
    "market": "otc",
-   "sector": "功率元件"
+   "sector": "其他"
   },
   {
-   "code": "2340",
-   "name": "台亞",
-   "pct": 4.33,
-   "value": 169552949.99999997,
+   "code": "3605",
+   "name": "宏致",
+   "pct": 7.37,
+   "value": 1514966000.0,
    "market": "tse",
-   "sector": "半導體"
+   "sector": "連接器"
   },
   {
-   "code": "6617",
-   "name": "共信-KY",
-   "pct": 4.19,
-   "value": 133728000.0,
-   "market": "otc",
-   "sector": "生技醫療"
-  },
-  {
-   "code": "2485",
-   "name": "兆赫",
-   "pct": 3.79,
-   "value": 191109900.00000003,
-   "market": "tse",
-   "sector": "通信網路"
-  },
-  {
-   "code": "8390",
-   "name": "金益鼎",
-   "pct": 2.53,
-   "value": 78459500.0,
-   "market": "otc",
-   "sector": "綠能環保"
-  },
-  {
-   "code": "3707",
-   "name": "漢磊",
-   "pct": 2.12,
-   "value": 297600400.0,
-   "market": "otc",
-   "sector": "碳化矽"
-  },
-  {
-   "code": "6141",
-   "name": "柏承",
-   "pct": 2.09,
-   "value": 198563400.0,
-   "market": "tse",
-   "sector": "電子零組件"
-  },
-  {
-   "code": "7610",
-   "name": "聯友金屬-創",
-   "pct": 2.08,
-   "value": 1260760000.0,
-   "market": "tse",
-   "sector": "綠能環保"
-  },
-  {
-   "code": "2377",
-   "name": "微星",
-   "pct": 1.77,
-   "value": 551952000.0,
-   "market": "tse",
-   "sector": "電競/主機板"
-  },
-  {
-   "code": "3491",
-   "name": "昇達科",
-   "pct": 1.56,
-   "value": 1398800000.0,
-   "market": "otc",
-   "sector": "低軌衛星"
-  },
-  {
-   "code": "1609",
-   "name": "大亞",
-   "pct": 1.21,
-   "value": 78562500.0,
-   "market": "tse",
-   "sector": "電器電纜"
-  },
-  {
-   "code": "6834",
-   "name": "天二科技",
-   "pct": 1.11,
-   "value": 91244200.0,
-   "market": "tse",
-   "sector": "電子零組件"
-  },
-  {
-   "code": "7792",
-   "name": "安葆",
-   "pct": 1.02,
-   "value": 96850000.0,
-   "market": "otc",
-   "sector": "其他電子"
-  },
-  {
-   "code": "1718",
-   "name": "中纖",
-   "pct": 0.93,
-   "value": 142938000.0,
+   "code": "1709",
+   "name": "和益",
+   "pct": 4.2,
+   "value": 663325200.0000001,
    "market": "tse",
    "sector": "化學"
   },
   {
-   "code": "2382",
-   "name": "廣達",
-   "pct": 0.93,
-   "value": 1167226500.0,
-   "market": "tse",
-   "sector": "AI伺服器(ODM)"
+   "code": "5483",
+   "name": "中美晶",
+   "pct": 3.69,
+   "value": 5215485000.0,
+   "market": "otc",
+   "sector": "矽晶圓"
   },
   {
-   "code": "1904",
-   "name": "正隆",
-   "pct": 0.58,
-   "value": 67907950.0,
+   "code": "3033",
+   "name": "威健",
+   "pct": 3.41,
+   "value": 209808000.0,
    "market": "tse",
-   "sector": "造紙"
+   "sector": "電子通路"
   },
   {
-   "code": "3504",
-   "name": "揚明光",
-   "pct": 0.25,
-   "value": 171225700.0,
+   "code": "6829",
+   "name": "千附精密",
+   "pct": 2.62,
+   "value": 112275500.0,
+   "market": "otc",
+   "sector": "半導體"
+  },
+  {
+   "code": "3707",
+   "name": "漢磊",
+   "pct": 2.28,
+   "value": 305537100.00000006,
+   "market": "otc",
+   "sector": "碳化矽"
+  },
+  {
+   "code": "2377",
+   "name": "微星",
+   "pct": 2.12,
+   "value": 715564000.0,
    "market": "tse",
-   "sector": "光電"
+   "sector": "電競/主機板"
+  },
+  {
+   "code": "8155",
+   "name": "博智",
+   "pct": 1.11,
+   "value": 164480000.0,
+   "market": "otc",
+   "sector": "電子零組件"
+  },
+  {
+   "code": "4967",
+   "name": "十銓",
+   "pct": 1.09,
+   "value": 3135960000.0,
+   "market": "tse",
+   "sector": "半導體"
+  },
+  {
+   "code": "1609",
+   "name": "大亞",
+   "pct": 1.08,
+   "value": 80854550.0,
+   "market": "tse",
+   "sector": "電器電纜"
+  },
+  {
+   "code": "9105",
+   "name": "泰金寶-DR",
+   "pct": 1.07,
+   "value": 146993230.0,
+   "market": "tse",
+   "sector": null
+  },
+  {
+   "code": "6141",
+   "name": "柏承",
+   "pct": 0.77,
+   "value": 208025250.0,
+   "market": "tse",
+   "sector": "電子零組件"
+  },
+  {
+   "code": "1316",
+   "name": "上曜",
+   "pct": 0.45,
+   "value": 106335000.0,
+   "market": "tse",
+   "sector": "建材營造"
+  },
+  {
+   "code": "5388",
+   "name": "中磊",
+   "pct": 0.39,
+   "value": 121524000.00000001,
+   "market": "tse",
+   "sector": "網通"
+  },
+  {
+   "code": "2609",
+   "name": "陽明",
+   "pct": 0.16,
+   "value": 9716662600.0,
+   "market": "tse",
+   "sector": "航運"
+  },
+  {
+   "code": "3673",
+   "name": "TPK-KY",
+   "pct": 0.16,
+   "value": 509292200.0,
+   "market": "tse",
+   "sector": "玻璃基板"
   }
  ],
  "weak_sectors": [
@@ -732,100 +704,90 @@
    "sector": "記憶體",
    "hits": 3,
    "member_total": 8,
-   "median_pct": -3.66,
+   "median_pct": -3.74,
    "source": "curated",
    "stocks": [
     {
      "code": "2408",
      "name": "南亞科",
-     "pct": -4.17,
-     "value": 28240366000.0,
+     "pct": -3.79,
+     "value": 29680916000.0,
      "market": "tse"
-    },
-    {
-     "code": "5351",
-     "name": "鈺創",
-     "pct": -3.66,
-     "value": 1798830000.0,
-     "market": "otc"
     },
     {
      "code": "6531",
      "name": "愛普*",
-     "pct": -3.28,
-     "value": 1880508000.0,
-     "market": "tse"
-    }
-   ],
-   "reviewed": null
-  },
-  {
-   "sector": "石化",
-   "hits": 2,
-   "member_total": 8,
-   "median_pct": -5.87,
-   "source": "curated",
-   "stocks": [
-    {
-     "code": "6505",
-     "name": "台塑化",
-     "pct": -7.52,
-     "value": 2413543000.0,
+     "pct": -3.74,
+     "value": 2134350000.0,
      "market": "tse"
     },
     {
-     "code": "1301",
-     "name": "台塑",
-     "pct": -4.21,
-     "value": 1936932900.0,
-     "market": "tse"
-    }
-   ],
-   "reviewed": null
-  },
-  {
-   "sector": "石英元件",
-   "hits": 2,
-   "member_total": 8,
-   "median_pct": -2.97,
-   "source": "curated",
-   "stocks": [
-    {
-     "code": "2484",
-     "name": "希華",
-     "pct": -3.69,
-     "value": 580569000.0,
-     "market": "tse"
-    },
-    {
-     "code": "3221",
-     "name": "台嘉碩",
-     "pct": -2.25,
-     "value": 51617750.0,
+     "code": "4973",
+     "name": "廣穎",
+     "pct": -0.63,
+     "value": 337014000.0,
      "market": "otc"
     }
    ],
-   "reviewed": "2026-07-22"
+   "reviewed": null
   },
   {
-   "sector": "半導體設備",
-   "hits": 2,
-   "member_total": 7,
-   "median_pct": -2.8,
+   "sector": "PCB",
+   "hits": 3,
+   "member_total": 4,
+   "median_pct": -2.67,
    "source": "curated",
    "stocks": [
     {
-     "code": "3167",
-     "name": "大量",
-     "pct": -5.1,
-     "value": 3052656000.0,
+     "code": "8358",
+     "name": "金居",
+     "pct": -3.67,
+     "value": 4509540000.0,
+     "market": "otc"
+    },
+    {
+     "code": "5340",
+     "name": "建榮",
+     "pct": -2.67,
+     "value": 93636000.0,
+     "market": "otc"
+    },
+    {
+     "code": "8021",
+     "name": "尖點",
+     "pct": -1.39,
+     "value": 939600000.0,
      "market": "tse"
+    }
+   ],
+   "reviewed": "2026-07-21"
+  },
+  {
+   "sector": "半導體設備",
+   "hits": 3,
+   "member_total": 7,
+   "median_pct": -2.38,
+   "source": "curated",
+   "stocks": [
+    {
+     "code": "6640",
+     "name": "均華",
+     "pct": -6.41,
+     "value": 224940000.0,
+     "market": "otc"
+    },
+    {
+     "code": "5443",
+     "name": "均豪",
+     "pct": -2.38,
+     "value": 52275000.0,
+     "market": "otc"
     },
     {
      "code": "8064",
      "name": "東捷",
      "pct": -0.51,
-     "value": 72122400.00000001,
+     "value": 75232800.0,
      "market": "otc"
     }
    ],
@@ -833,23 +795,126 @@
   },
   {
    "sector": "金融",
-   "hits": 2,
+   "hits": 3,
    "member_total": 10,
-   "median_pct": -1.09,
+   "median_pct": -1.54,
    "source": "curated",
    "stocks": [
     {
      "code": "5876",
      "name": "上海商銀",
      "pct": -1.59,
-     "value": 111796850.0,
+     "value": 122442100.0,
      "market": "tse"
     },
     {
-     "code": "2834",
-     "name": "臺企銀",
-     "pct": -0.6,
-     "value": 258429500.0,
+     "code": "2891",
+     "name": "中信金",
+     "pct": -1.54,
+     "value": 630784000.0,
+     "market": "tse"
+    },
+    {
+     "code": "2886",
+     "name": "兆豐金",
+     "pct": -0.85,
+     "value": 700717149.9999999,
+     "market": "tse"
+    }
+   ],
+   "reviewed": null
+  },
+  {
+   "sector": "鋼鐵",
+   "hits": 2,
+   "member_total": 4,
+   "median_pct": -2.29,
+   "source": "curated",
+   "stocks": [
+    {
+     "code": "9958",
+     "name": "世紀鋼",
+     "pct": -3.82,
+     "value": 351198000.0,
+     "market": "tse"
+    },
+    {
+     "code": "2002",
+     "name": "中鋼",
+     "pct": -0.77,
+     "value": 360427500.0,
+     "market": "tse"
+    }
+   ],
+   "reviewed": null
+  },
+  {
+   "sector": "軍工/國防",
+   "hits": 2,
+   "member_total": 5,
+   "median_pct": -1.02,
+   "source": "curated",
+   "stocks": [
+    {
+     "code": "2630",
+     "name": "亞航",
+     "pct": -1.17,
+     "value": 51866100.00000001,
+     "market": "tse"
+    },
+    {
+     "code": "2634",
+     "name": "漢翔",
+     "pct": -0.87,
+     "value": 1144748100.0,
+     "market": "tse"
+    }
+   ],
+   "reviewed": null
+  },
+  {
+   "sector": "無人機",
+   "hits": 2,
+   "member_total": 8,
+   "median_pct": -1.02,
+   "source": "curated",
+   "stocks": [
+    {
+     "code": "2630",
+     "name": "亞航",
+     "pct": -1.17,
+     "value": 51866100.00000001,
+     "market": "tse"
+    },
+    {
+     "code": "2634",
+     "name": "漢翔",
+     "pct": -0.87,
+     "value": 1144748100.0,
+     "market": "tse"
+    }
+   ],
+   "reviewed": "2026-07-20"
+  },
+  {
+   "sector": "食品",
+   "hits": 2,
+   "member_total": 34,
+   "median_pct": -0.39,
+   "source": "official",
+   "stocks": [
+    {
+     "code": "1216",
+     "name": "統一",
+     "pct": -0.39,
+     "value": 642226800.0,
+     "market": "tse"
+    },
+    {
+     "code": "1210",
+     "name": "大成",
+     "pct": -0.38,
+     "value": 54222500.0,
      "market": "tse"
     }
    ],
@@ -859,474 +924,481 @@
  "unclassified": [],
  "top100": [
   {
+   "code": "2301",
+   "name": "光寶科",
+   "pct": 9.96,
+   "value": 12136943000.0,
+   "market": "tse"
+  },
+  {
    "code": "3234",
    "name": "光環",
    "pct": 9.93,
-   "value": 1188062000.0,
+   "value": 1217112000.0,
    "market": "otc"
-  },
-  {
-   "code": "7749",
-   "name": "意騰-KY",
-   "pct": 9.93,
-   "value": 65704000.0,
-   "market": "tse"
   },
   {
    "code": "6226",
    "name": "光鼎",
    "pct": 9.91,
-   "value": 427974400.0,
+   "value": 431189800.0,
    "market": "tse"
+  },
+  {
+   "code": "2221",
+   "name": "大甲",
+   "pct": 9.9,
+   "value": 69883200.0,
+   "market": "otc"
   },
   {
    "code": "3605",
    "name": "宏致",
    "pct": 7.37,
-   "value": 1447745500.0,
+   "value": 1514966000.0,
    "market": "tse"
   },
   {
-   "code": "2392",
-   "name": "正崴",
-   "pct": 6.73,
-   "value": 290154000.0,
-   "market": "tse"
-  },
-  {
-   "code": "7712",
-   "name": "博盛半導體",
-   "pct": 5.65,
-   "value": 53969500.0,
+   "code": "3441",
+   "name": "聯一光",
+   "pct": 4.21,
+   "value": 2579887000.0,
    "market": "otc"
   },
   {
-   "code": "6265",
-   "name": "方土昶",
-   "pct": 4.37,
-   "value": 586534500.0,
-   "market": "otc"
-  },
-  {
-   "code": "2340",
-   "name": "台亞",
-   "pct": 4.33,
-   "value": 169552949.99999997,
+   "code": "1709",
+   "name": "和益",
+   "pct": 4.2,
+   "value": 663325200.0000001,
    "market": "tse"
   },
   {
-   "code": "6617",
-   "name": "共信-KY",
-   "pct": 4.19,
-   "value": 133728000.0,
-   "market": "otc"
-  },
-  {
-   "code": "2485",
-   "name": "兆赫",
-   "pct": 3.79,
-   "value": 191109900.00000003,
+   "code": "1711",
+   "name": "永光",
+   "pct": 4.11,
+   "value": 313584250.0,
    "market": "tse"
   },
   {
-   "code": "3693",
-   "name": "營邦",
+   "code": "5483",
+   "name": "中美晶",
    "pct": 3.69,
-   "value": 362586000.0,
+   "value": 5215485000.0,
    "market": "otc"
+  },
+  {
+   "code": "3033",
+   "name": "威健",
+   "pct": 3.41,
+   "value": 209808000.0,
+   "market": "tse"
+  },
+  {
+   "code": "6691",
+   "name": "洋基工程",
+   "pct": 3.2,
+   "value": 245412000.0,
+   "market": "tse"
   },
   {
    "code": "7795",
    "name": "長廣",
-   "pct": 3.54,
-   "value": 333450000.0,
+   "pct": 3.19,
+   "value": 348634000.0,
    "market": "tse"
   },
   {
-   "code": "2449",
-   "name": "京元電子",
-   "pct": 3.23,
-   "value": 2232619000.0,
-   "market": "tse"
-  },
-  {
-   "code": "1605",
-   "name": "華新",
-   "pct": 2.95,
-   "value": 1012608000.0,
-   "market": "tse"
-  },
-  {
-   "code": "8390",
-   "name": "金益鼎",
-   "pct": 2.53,
-   "value": 78459500.0,
+   "code": "6223",
+   "name": "旺矽",
+   "pct": 2.74,
+   "value": 2234770000.0,
    "market": "otc"
   },
   {
-   "code": "2426",
-   "name": "鼎元",
-   "pct": 2.19,
-   "value": 4721556000.0,
-   "market": "tse"
+   "code": "6829",
+   "name": "千附精密",
+   "pct": 2.62,
+   "value": 112275500.0,
+   "market": "otc"
   },
   {
    "code": "3707",
    "name": "漢磊",
-   "pct": 2.12,
-   "value": 297600400.0,
+   "pct": 2.28,
+   "value": 305537100.00000006,
    "market": "otc"
-  },
-  {
-   "code": "6141",
-   "name": "柏承",
-   "pct": 2.09,
-   "value": 198563400.0,
-   "market": "tse"
-  },
-  {
-   "code": "7610",
-   "name": "聯友金屬-創",
-   "pct": 2.08,
-   "value": 1260760000.0,
-   "market": "tse"
-  },
-  {
-   "code": "2027",
-   "name": "大成鋼",
-   "pct": 1.79,
-   "value": 615577600.0,
-   "market": "tse"
   },
   {
    "code": "2377",
    "name": "微星",
-   "pct": 1.77,
-   "value": 551952000.0,
+   "pct": 2.12,
+   "value": 715564000.0,
    "market": "tse"
   },
   {
-   "code": "3491",
-   "name": "昇達科",
-   "pct": 1.56,
-   "value": 1398800000.0,
+   "code": "8150",
+   "name": "南茂",
+   "pct": 1.96,
+   "value": 1058236400.0000001,
+   "market": "tse"
+  },
+  {
+   "code": "8155",
+   "name": "博智",
+   "pct": 1.11,
+   "value": 164480000.0,
    "market": "otc"
+  },
+  {
+   "code": "4967",
+   "name": "十銓",
+   "pct": 1.09,
+   "value": 3135960000.0,
+   "market": "tse"
   },
   {
    "code": "1609",
    "name": "大亞",
-   "pct": 1.21,
-   "value": 78562500.0,
+   "pct": 1.08,
+   "value": 80854550.0,
    "market": "tse"
   },
   {
-   "code": "6834",
-   "name": "天二科技",
-   "pct": 1.11,
-   "value": 91244200.0,
+   "code": "9105",
+   "name": "泰金寶-DR",
+   "pct": 1.07,
+   "value": 146993230.0,
    "market": "tse"
   },
   {
-   "code": "7792",
-   "name": "安葆",
-   "pct": 1.02,
-   "value": 96850000.0,
-   "market": "otc"
-  },
-  {
-   "code": "1718",
-   "name": "中纖",
-   "pct": 0.93,
-   "value": 142938000.0,
-   "market": "tse"
-  },
-  {
-   "code": "2382",
-   "name": "廣達",
-   "pct": 0.93,
-   "value": 1167226500.0,
-   "market": "tse"
-  },
-  {
-   "code": "3702",
-   "name": "大聯大",
+   "code": "6282",
+   "name": "康舒",
    "pct": 0.9,
-   "value": 747152000.0,
+   "value": 194718650.0,
    "market": "tse"
   },
   {
-   "code": "1904",
-   "name": "正隆",
-   "pct": 0.58,
-   "value": 67907950.0,
+   "code": "6141",
+   "name": "柏承",
+   "pct": 0.77,
+   "value": 208025250.0,
+   "market": "tse"
+  },
+  {
+   "code": "1316",
+   "name": "上曜",
+   "pct": 0.45,
+   "value": 106335000.0,
+   "market": "tse"
+  },
+  {
+   "code": "5388",
+   "name": "中磊",
+   "pct": 0.39,
+   "value": 121524000.00000001,
    "market": "tse"
   },
   {
    "code": "8033",
    "name": "雷虎",
-   "pct": 0.54,
-   "value": 71243000.0,
+   "pct": 0.27,
+   "value": 87978000.0,
    "market": "tse"
   },
   {
-   "code": "3265",
-   "name": "台星科",
-   "pct": 0.3,
-   "value": 94416000.0,
-   "market": "otc"
-  },
-  {
-   "code": "3504",
-   "name": "揚明光",
-   "pct": 0.25,
-   "value": 171225700.0,
+   "code": "2609",
+   "name": "陽明",
+   "pct": 0.16,
+   "value": 9716662600.0,
    "market": "tse"
   },
   {
-   "code": "6944",
-   "name": "兆聯實業",
-   "pct": 0.14,
-   "value": 52466000.0,
+   "code": "3673",
+   "name": "TPK-KY",
+   "pct": 0.16,
+   "value": 509292200.0,
    "market": "tse"
   },
   {
    "code": "4916",
    "name": "事欣科",
    "pct": 0.1,
-   "value": 70642000.0,
+   "value": 76372400.0,
    "market": "tse"
   }
  ],
  "bottom100": [
   {
+   "code": "6715",
+   "name": "嘉基",
+   "pct": -9.93,
+   "value": 356290500.0,
+   "market": "tse"
+  },
+  {
    "code": "6108",
    "name": "競國",
    "pct": -9.83,
-   "value": 89668799.99999999,
+   "value": 90019799.99999999,
    "market": "tse"
   },
   {
-   "code": "6505",
-   "name": "台塑化",
-   "pct": -7.52,
-   "value": 2413543000.0,
-   "market": "tse"
+   "code": "6640",
+   "name": "均華",
+   "pct": -6.41,
+   "value": 224940000.0,
+   "market": "otc"
   },
   {
-   "code": "3167",
-   "name": "大量",
-   "pct": -5.1,
-   "value": 3052656000.0,
+   "code": "3490",
+   "name": "單井",
+   "pct": -5.75,
+   "value": 233476800.0,
+   "market": "otc"
+  },
+  {
+   "code": "1326",
+   "name": "台化",
+   "pct": -4.66,
+   "value": 1604629200.0,
    "market": "tse"
   },
   {
    "code": "2455",
    "name": "全新",
-   "pct": -4.68,
-   "value": 948150000.0,
+   "pct": -4.43,
+   "value": 992116000.0,
    "market": "tse"
   },
   {
-   "code": "4764",
-   "name": "雙鍵",
-   "pct": -4.57,
-   "value": 159676000.0,
-   "market": "tse"
+   "code": "6125",
+   "name": "廣運",
+   "pct": -4.02,
+   "value": 66832500.0,
+   "market": "otc"
   },
   {
-   "code": "1301",
-   "name": "台塑",
-   "pct": -4.21,
-   "value": 1936932900.0,
+   "code": "9958",
+   "name": "世紀鋼",
+   "pct": -3.82,
+   "value": 351198000.0,
    "market": "tse"
   },
   {
    "code": "2408",
    "name": "南亞科",
-   "pct": -4.17,
-   "value": 28240366000.0,
-   "market": "tse"
-  },
-  {
-   "code": "2484",
-   "name": "希華",
-   "pct": -3.69,
-   "value": 580569000.0,
-   "market": "tse"
-  },
-  {
-   "code": "5351",
-   "name": "鈺創",
-   "pct": -3.66,
-   "value": 1798830000.0,
-   "market": "otc"
-  },
-  {
-   "code": "6805",
-   "name": "富世達",
-   "pct": -3.4,
-   "value": 1135530000.0,
+   "pct": -3.79,
+   "value": 29680916000.0,
    "market": "tse"
   },
   {
    "code": "6531",
    "name": "愛普*",
-   "pct": -3.28,
-   "value": 1880508000.0,
+   "pct": -3.74,
+   "value": 2134350000.0,
    "market": "tse"
   },
   {
-   "code": "5292",
-   "name": "華懋",
-   "pct": -3.21,
-   "value": 109509000.0,
+   "code": "8358",
+   "name": "金居",
+   "pct": -3.67,
+   "value": 4509540000.0,
+   "market": "otc"
+  },
+  {
+   "code": "9914",
+   "name": "美利達",
+   "pct": -3.53,
+   "value": 136451700.0,
    "market": "tse"
   },
   {
-   "code": "6173",
-   "name": "信昌電",
-   "pct": -3.07,
-   "value": 1308829500.0,
+   "code": "2915",
+   "name": "潤泰全",
+   "pct": -3.11,
+   "value": 218092800.00000003,
+   "market": "tse"
+  },
+  {
+   "code": "5340",
+   "name": "建榮",
+   "pct": -2.67,
+   "value": 93636000.0,
    "market": "otc"
   },
   {
-   "code": "3221",
-   "name": "台嘉碩",
-   "pct": -2.25,
-   "value": 51617750.0,
+   "code": "5443",
+   "name": "均豪",
+   "pct": -2.38,
+   "value": 52275000.0,
    "market": "otc"
+  },
+  {
+   "code": "4566",
+   "name": "時碩工業",
+   "pct": -2.09,
+   "value": 65928000.0,
+   "market": "tse"
   },
   {
    "code": "4912",
    "name": "聯德控股-KY",
    "pct": -2.09,
-   "value": 63956400.0,
+   "value": 66008000.0,
    "market": "tse"
   },
   {
-   "code": "8111",
-   "name": "立碁",
-   "pct": -1.69,
-   "value": 534331799.99999994,
-   "market": "otc"
+   "code": "2883",
+   "name": "凱基金",
+   "pct": -1.9,
+   "value": 938682549.9999999,
+   "market": "tse"
   },
   {
    "code": "5876",
    "name": "上海商銀",
    "pct": -1.59,
-   "value": 111796850.0,
+   "value": 122442100.0,
    "market": "tse"
   },
   {
-   "code": "2316",
-   "name": "楠梓電",
-   "pct": -1.58,
-   "value": 157872000.0,
+   "code": "2891",
+   "name": "中信金",
+   "pct": -1.54,
+   "value": 630784000.0,
    "market": "tse"
   },
   {
-   "code": "2476",
-   "name": "鉅祥",
-   "pct": -1.29,
-   "value": 65090000.0,
+   "code": "8021",
+   "name": "尖點",
+   "pct": -1.39,
+   "value": 939600000.0,
    "market": "tse"
   },
   {
-   "code": "6533",
-   "name": "晶心科",
-   "pct": -1.0,
-   "value": 73507500.0,
+   "code": "2630",
+   "name": "亞航",
+   "pct": -1.17,
+   "value": 51866100.00000001,
    "market": "tse"
-  },
-  {
-   "code": "6190",
-   "name": "萬泰科",
-   "pct": -0.76,
-   "value": 58670100.00000001,
-   "market": "otc"
   },
   {
    "code": "1722",
    "name": "台肥",
-   "pct": -0.75,
-   "value": 132316800.00000001,
+   "pct": -0.97,
+   "value": 162640800.00000003,
    "market": "tse"
   },
   {
-   "code": "2105",
-   "name": "正新",
+   "code": "8932",
+   "name": "智通*",
+   "pct": -0.94,
+   "value": 84525000.0,
+   "market": "otc"
+  },
+  {
+   "code": "2634",
+   "name": "漢翔",
+   "pct": -0.87,
+   "value": 1144748100.0,
+   "market": "tse"
+  },
+  {
+   "code": "2201",
+   "name": "裕隆",
+   "pct": -0.85,
+   "value": 63851900.0,
+   "market": "tse"
+  },
+  {
+   "code": "2886",
+   "name": "兆豐金",
+   "pct": -0.85,
+   "value": 700717149.9999999,
+   "market": "tse"
+  },
+  {
+   "code": "2002",
+   "name": "中鋼",
+   "pct": -0.77,
+   "value": 360427500.0,
+   "market": "tse"
+  },
+  {
+   "code": "2880",
+   "name": "華南金",
+   "pct": -0.76,
+   "value": 357826500.0,
+   "market": "tse"
+  },
+  {
+   "code": "4973",
+   "name": "廣穎",
    "pct": -0.63,
-   "value": 57934800.0,
-   "market": "tse"
+   "value": 337014000.0,
+   "market": "otc"
   },
   {
-   "code": "2834",
-   "name": "臺企銀",
+   "code": "2603",
+   "name": "長榮",
    "pct": -0.6,
-   "value": 258429500.0,
-   "market": "tse"
-  },
-  {
-   "code": "1802",
-   "name": "台玻",
-   "pct": -0.52,
-   "value": 813373500.0,
+   "value": 4597750000.0,
    "market": "tse"
   },
   {
    "code": "8064",
    "name": "東捷",
    "pct": -0.51,
-   "value": 72122400.00000001,
+   "value": 75232800.0,
    "market": "otc"
   },
   {
-   "code": "3045",
-   "name": "台灣大",
-   "pct": -0.43,
-   "value": 566202500.0,
+   "code": "2105",
+   "name": "正新",
+   "pct": -0.48,
+   "value": 62140600.0,
    "market": "tse"
   },
   {
-   "code": "1504",
-   "name": "東元",
-   "pct": -0.42,
-   "value": 942805799.9999999,
+   "code": "1216",
+   "name": "統一",
+   "pct": -0.39,
+   "value": 642226800.0,
    "market": "tse"
   },
   {
-   "code": "1717",
-   "name": "長興",
-   "pct": -0.42,
-   "value": 336536000.0,
+   "code": "2409",
+   "name": "友達",
+   "pct": -0.39,
+   "value": 1468927500.0,
    "market": "tse"
   },
   {
-   "code": "2317",
-   "name": "鴻海",
-   "pct": -0.41,
-   "value": 3777036000.0,
+   "code": "1210",
+   "name": "大成",
+   "pct": -0.38,
+   "value": 54222500.0,
    "market": "tse"
   },
   {
-   "code": "6525",
-   "name": "捷敏-KY",
-   "pct": -0.36,
-   "value": 97762500.0,
+   "code": "5534",
+   "name": "長虹",
+   "pct": -0.37,
+   "value": 137611800.0,
    "market": "tse"
   },
   {
-   "code": "2617",
-   "name": "台航",
-   "pct": -0.16,
-   "value": 78232000.0,
-   "market": "tse"
+   "code": "3265",
+   "name": "台星科",
+   "pct": -0.3,
+   "value": 126252000.0,
+   "market": "otc"
   },
   {
-   "code": "4976",
-   "name": "佳凌",
-   "pct": -0.13,
-   "value": 75748200.00000001,
+   "code": "2371",
+   "name": "大同",
+   "pct": -0.18,
+   "value": 166126500.0,
    "market": "tse"
   }
  ]
