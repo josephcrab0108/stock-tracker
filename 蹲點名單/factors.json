@@ -1,0 +1,2130 @@
+{
+  "date": "2026-08-12",
+  "market_state": "正常",
+  "taiex_return_20d": -0.25,
+  "strong_pool": [
+    "ABF載板",
+    "玻璃基板",
+    "銅箔基板/CCL",
+    "磷化銦",
+    "銅箔",
+    "矽晶圓",
+    "MLCC",
+    "石英元件",
+    "濾波器",
+    "氮化鎵",
+    "半導體設備",
+    "砷化鎵",
+    "被動元件",
+    "探針卡/測試介面",
+    "類比IC",
+    "記憶體",
+    "電子通路",
+    "電競/主機板",
+    "光學鏡頭"
+  ],
+  "strong_pool_typical_return_120d": 69.54,
+  "regime_warning_text": null,
+  "regime_retrigger_needed": false,
+  "regime_retrigger_reasons": [],
+  "market_dispersion": {
+    "n_total": 34,
+    "n_over_threshold": 28,
+    "median_ratio": 2.38,
+    "over_fraction": 0.824,
+    "exceeds_one_third": true,
+    "warning_text": "多數族群同時分歧＝市況特徵，不是 28 件待辦。此時族群層級的分區普遍不可用，請逐支看。",
+    "warning_source": "tasks/leading_watchlist.md 已知風險第 11 條"
+  },
+  "eliminated_candidates": [
+    {
+      "stock": "中光電",
+      "sector": "AI伺服器ODM/OEM",
+      "reason": "90d_silent",
+      "last_mention": "2025-09-20"
+    },
+    {
+      "stock": "台星科",
+      "sector": "封測",
+      "reason": "90d_silent",
+      "last_mention": "2026-01-17"
+    },
+    {
+      "stock": "華航",
+      "sector": "航空",
+      "reason": "90d_silent",
+      "last_mention": "2026-04-02"
+    },
+    {
+      "stock": "金像電",
+      "sector": "PCB",
+      "reason": "90d_silent",
+      "last_mention": "2026-03-21"
+    },
+    {
+      "stock": "新復興",
+      "sector": "低軌衛星",
+      "reason": "90d_silent",
+      "last_mention": "2026-03-07"
+    },
+    {
+      "stock": "正崴",
+      "sector": "連接器",
+      "reason": "90d_silent",
+      "last_mention": "2026-02-07"
+    },
+    {
+      "stock": "漢翔",
+      "sector": "軍工/國防",
+      "reason": "90d_silent",
+      "last_mention": "2025-04-05"
+    },
+    {
+      "stock": "長榮航太",
+      "sector": "軍工/國防",
+      "reason": "90d_silent",
+      "last_mention": "2026-01-24"
+    },
+    {
+      "stock": "中光電",
+      "sector": "無人機",
+      "reason": "90d_silent",
+      "last_mention": "2025-09-20"
+    },
+    {
+      "stock": "雷虎",
+      "sector": "無人機",
+      "reason": "90d_silent",
+      "last_mention": "2026-01-10"
+    },
+    {
+      "stock": "漢翔",
+      "sector": "無人機",
+      "reason": "90d_silent",
+      "last_mention": "2025-04-05"
+    },
+    {
+      "stock": "聖暉*",
+      "sector": "半導體設備",
+      "reason": "90d_silent",
+      "last_mention": "2025-07-12"
+    },
+    {
+      "stock": "金居",
+      "sector": "銅箔",
+      "reason": "90d_silent",
+      "last_mention": "2025-11-22"
+    },
+    {
+      "stock": "亞力",
+      "sector": "重電/電力",
+      "reason": "90d_silent",
+      "last_mention": "2025-03-01"
+    },
+    {
+      "stock": "華城",
+      "sector": "重電/電力",
+      "reason": "90d_silent",
+      "last_mention": "2025-11-08"
+    },
+    {
+      "stock": "至上",
+      "sector": "電子通路",
+      "reason": "90d_silent",
+      "last_mention": "2025-10-18"
+    }
+  ],
+  "core_queue": [
+    "磷化銦",
+    "光通訊/CPO",
+    "MLCC",
+    "被動元件",
+    "先進封裝",
+    "矽晶圓",
+    "半導體設備",
+    "驅動IC",
+    "探針卡/測試介面",
+    "電源/BBU",
+    "機器人",
+    "光學鏡頭",
+    "網通",
+    "ABF載板",
+    "砷化鎵",
+    "IC設計",
+    "功率元件",
+    "AI伺服器ODM/OEM",
+    "PCB",
+    "封測",
+    "玻璃基板",
+    "晶圓代工",
+    "銅箔",
+    "石英元件",
+    "銅箔基板/CCL",
+    "MCU",
+    "石化",
+    "電子通路",
+    "玻纖布",
+    "電競/主機板",
+    "軍工/國防",
+    "航空",
+    "重電/電力",
+    "氮化鎵"
+  ],
+  "watchlist_gap_sectors": [
+    "磷化銦",
+    "銅箔"
+  ],
+  "sectors": {
+    "ABF載板": {
+      "region": "core_undefined",
+      "core_not_applicable_reason": null,
+      "core_not_applicable_note": null,
+      "core_blocked_reason": null,
+      "n_candidates": 3,
+      "candidates": [
+        "南電",
+        "景碩",
+        "欣興"
+      ],
+      "core_defined": false,
+      "n_members_used": 4,
+      "n_members_defined": 4,
+      "primary_agg": "mean",
+      "secondary_agg": "median",
+      "zone": null,
+      "zone_primary": "熱水",
+      "zone_secondary": "溫水",
+      "agg_gap": {
+        "rel": 45.49,
+        "dd": 1.0
+      },
+      "dispersion": {
+        "n": 4,
+        "iqr_rel": 53.21,
+        "range_rel": 93.58,
+        "iqr_dd": 8.12,
+        "range_dd": 23.5
+      },
+      "dispersion_ratio": 2.66,
+      "dispersion_flag": true,
+      "core_priority": 1,
+      "near_boundary": [
+        "dd_pct",
+        "days_since_high"
+      ],
+      "detection_blind": false,
+      "detection_weak": false,
+      "factors": {
+        "rel_strength_vs_taiex_120d": 178.5,
+        "rel_strength_vs_pool_120d": 152.18,
+        "abs_return_120d": 221.72,
+        "dd_pct": -7.0,
+        "days_since_high": 30,
+        "semantic_mentions_90d": 15
+      },
+      "factors_secondary_method": {
+        "rel_strength_vs_taiex_120d": 133.01,
+        "abs_return_120d": 176.23,
+        "dd_pct": -8.0,
+        "days_since_high": 30
+      },
+      "in_strong_pool": true
+    },
+    "AI伺服器ODM/OEM": {
+      "region": "core_undefined",
+      "core_not_applicable_reason": null,
+      "core_not_applicable_note": null,
+      "core_blocked_reason": null,
+      "n_candidates": 5,
+      "candidates": [
+        "廣達",
+        "神達",
+        "緯穎",
+        "英業達",
+        "鴻海"
+      ],
+      "core_defined": false,
+      "n_members_used": 9,
+      "n_members_defined": 9,
+      "primary_agg": "median",
+      "secondary_agg": "mean",
+      "zone": null,
+      "zone_primary": "落難",
+      "zone_secondary": "熱水",
+      "agg_gap": {
+        "rel": 45.87,
+        "dd": 8.9
+      },
+      "dispersion": {
+        "n": 9,
+        "iqr_rel": 48.65,
+        "range_rel": 303.65,
+        "iqr_dd": 12.8,
+        "range_dd": 32.5
+      },
+      "dispersion_ratio": 2.43,
+      "dispersion_flag": true,
+      "core_priority": 1,
+      "near_boundary": [
+        "dd_pct"
+      ],
+      "detection_blind": false,
+      "detection_weak": false,
+      "factors": {
+        "rel_strength_vs_taiex_120d": -29.14,
+        "rel_strength_vs_pool_120d": -55.46,
+        "abs_return_120d": 14.08,
+        "dd_pct": -8.9,
+        "days_since_high": 48,
+        "semantic_mentions_90d": 11
+      },
+      "factors_secondary_method": {
+        "rel_strength_vs_taiex_120d": 16.73,
+        "abs_return_120d": 59.95,
+        "dd_pct": 0.0,
+        "days_since_high": 0
+      },
+      "in_strong_pool": false
+    },
+    "IC設計": {
+      "region": "core_undefined",
+      "core_not_applicable_reason": null,
+      "core_not_applicable_note": null,
+      "core_blocked_reason": null,
+      "n_candidates": 4,
+      "candidates": [
+        "世芯-KY",
+        "瑞昱",
+        "聯發科",
+        "聯詠"
+      ],
+      "core_defined": false,
+      "n_members_used": 10,
+      "n_members_defined": 10,
+      "primary_agg": "median",
+      "secondary_agg": "mean",
+      "zone": null,
+      "zone_primary": "落難",
+      "zone_secondary": "溫水",
+      "agg_gap": {
+        "rel": 36.33,
+        "dd": 2.4
+      },
+      "dispersion": {
+        "n": 10,
+        "iqr_rel": 51.61,
+        "range_rel": 154.61,
+        "iqr_dd": 19.05,
+        "range_dd": 32.9
+      },
+      "dispersion_ratio": 2.58,
+      "dispersion_flag": true,
+      "core_priority": 1,
+      "near_boundary": [],
+      "detection_blind": false,
+      "detection_weak": false,
+      "factors": {
+        "rel_strength_vs_taiex_120d": -32.01,
+        "rel_strength_vs_pool_120d": -58.33,
+        "abs_return_120d": 11.21,
+        "dd_pct": -11.6,
+        "days_since_high": 55,
+        "semantic_mentions_90d": 10
+      },
+      "factors_secondary_method": {
+        "rel_strength_vs_taiex_120d": 4.32,
+        "abs_return_120d": 47.54,
+        "dd_pct": -9.2,
+        "days_since_high": 36
+      },
+      "in_strong_pool": false
+    },
+    "MCU": {
+      "region": "core_undefined",
+      "core_not_applicable_reason": null,
+      "core_not_applicable_note": null,
+      "core_blocked_reason": null,
+      "n_candidates": 1,
+      "candidates": [
+        "新唐"
+      ],
+      "core_defined": false,
+      "n_members_used": 5,
+      "n_members_defined": 5,
+      "primary_agg": "mean",
+      "secondary_agg": "median",
+      "zone": null,
+      "zone_primary": "溫水",
+      "zone_secondary": "落難",
+      "agg_gap": {
+        "rel": 42.31,
+        "dd": 0.6
+      },
+      "dispersion": {
+        "n": 5,
+        "iqr_rel": 31.04,
+        "range_rel": 92.49,
+        "iqr_dd": 4.3,
+        "range_dd": 32.8
+      },
+      "dispersion_ratio": 1.55,
+      "dispersion_flag": true,
+      "core_priority": 1,
+      "near_boundary": [
+        "days_since_high"
+      ],
+      "detection_blind": false,
+      "detection_weak": false,
+      "factors": {
+        "rel_strength_vs_taiex_120d": 23.75,
+        "rel_strength_vs_pool_120d": -2.57,
+        "abs_return_120d": 66.97,
+        "dd_pct": -17.9,
+        "days_since_high": 36,
+        "semantic_mentions_90d": 1
+      },
+      "factors_secondary_method": {
+        "rel_strength_vs_taiex_120d": -18.56,
+        "abs_return_120d": 24.66,
+        "dd_pct": -17.3,
+        "days_since_high": 36
+      },
+      "in_strong_pool": false
+    },
+    "MLCC": {
+      "region": "core_undefined",
+      "core_not_applicable_reason": null,
+      "core_not_applicable_note": null,
+      "core_blocked_reason": null,
+      "n_candidates": 5,
+      "candidates": [
+        "信昌電",
+        "國巨*",
+        "日電貿",
+        "禾伸堂",
+        "華新科"
+      ],
+      "core_defined": false,
+      "n_members_used": 7,
+      "n_members_defined": 7,
+      "primary_agg": "median",
+      "secondary_agg": "mean",
+      "zone": null,
+      "zone_primary": "燙傷",
+      "zone_secondary": "冷水",
+      "agg_gap": {
+        "rel": 68.56,
+        "dd": 8.4
+      },
+      "dispersion": {
+        "n": 7,
+        "iqr_rel": 89.89,
+        "range_rel": 512.95,
+        "iqr_dd": 10.3,
+        "range_dd": 21.3
+      },
+      "dispersion_ratio": 4.49,
+      "dispersion_flag": true,
+      "core_priority": 1,
+      "near_boundary": [
+        "dd_pct"
+      ],
+      "detection_blind": false,
+      "detection_weak": false,
+      "factors": {
+        "rel_strength_vs_taiex_120d": 66.06,
+        "rel_strength_vs_pool_120d": 39.74,
+        "abs_return_120d": 109.28,
+        "dd_pct": -45.9,
+        "days_since_high": 29,
+        "semantic_mentions_90d": 12
+      },
+      "factors_secondary_method": {
+        "rel_strength_vs_taiex_120d": 134.62,
+        "abs_return_120d": 177.84,
+        "dd_pct": -37.5,
+        "days_since_high": 36
+      },
+      "in_strong_pool": true
+    },
+    "PCB": {
+      "region": "core_undefined",
+      "core_not_applicable_reason": null,
+      "core_not_applicable_note": null,
+      "core_blocked_reason": null,
+      "n_candidates": 1,
+      "candidates": [
+        "健鼎"
+      ],
+      "core_defined": false,
+      "n_members_used": 4,
+      "n_members_defined": 4,
+      "primary_agg": "mean",
+      "secondary_agg": "median",
+      "zone": null,
+      "zone_primary": "溫水",
+      "zone_secondary": "落難",
+      "agg_gap": {
+        "rel": 37.63,
+        "dd": 4.0
+      },
+      "dispersion": {
+        "n": 4,
+        "iqr_rel": 46.87,
+        "range_rel": 176.34,
+        "iqr_dd": 8.6,
+        "range_dd": 19.7
+      },
+      "dispersion_ratio": 2.34,
+      "dispersion_flag": true,
+      "core_priority": 1,
+      "near_boundary": [
+        "days_since_high"
+      ],
+      "detection_blind": false,
+      "detection_weak": false,
+      "factors": {
+        "rel_strength_vs_taiex_120d": 3.68,
+        "rel_strength_vs_pool_120d": -22.64,
+        "abs_return_120d": 46.9,
+        "dd_pct": -18.4,
+        "days_since_high": 36,
+        "semantic_mentions_90d": 1
+      },
+      "factors_secondary_method": {
+        "rel_strength_vs_taiex_120d": -33.95,
+        "abs_return_120d": 9.27,
+        "dd_pct": -22.4,
+        "days_since_high": 36
+      },
+      "in_strong_pool": false
+    },
+    "先進封裝": {
+      "region": "core_undefined",
+      "core_not_applicable_reason": null,
+      "core_not_applicable_note": null,
+      "core_blocked_reason": null,
+      "n_candidates": 5,
+      "candidates": [
+        "京元電子",
+        "力成",
+        "台積電",
+        "日月光投控",
+        "精材"
+      ],
+      "core_defined": false,
+      "n_members_used": 5,
+      "n_members_defined": 5,
+      "primary_agg": "mean",
+      "secondary_agg": "median",
+      "zone": null,
+      "zone_primary": "溫水",
+      "zone_secondary": "落難",
+      "agg_gap": {
+        "rel": 27.78,
+        "dd": 7.8
+      },
+      "dispersion": {
+        "n": 5,
+        "iqr_rel": 85.95,
+        "range_rel": 117.69,
+        "iqr_dd": 9.1,
+        "range_dd": 20.5
+      },
+      "dispersion_ratio": 4.3,
+      "dispersion_flag": true,
+      "core_priority": 1,
+      "near_boundary": [],
+      "detection_blind": false,
+      "detection_weak": false,
+      "factors": {
+        "rel_strength_vs_taiex_120d": 10.87,
+        "rel_strength_vs_pool_120d": -15.45,
+        "abs_return_120d": 54.09,
+        "dd_pct": -9.7,
+        "days_since_high": 19,
+        "semantic_mentions_90d": 20
+      },
+      "factors_secondary_method": {
+        "rel_strength_vs_taiex_120d": -16.91,
+        "abs_return_120d": 26.31,
+        "dd_pct": -17.5,
+        "days_since_high": 26
+      },
+      "in_strong_pool": false
+    },
+    "光學鏡頭": {
+      "region": "core_undefined",
+      "core_not_applicable_reason": null,
+      "core_not_applicable_note": null,
+      "core_blocked_reason": null,
+      "n_candidates": 1,
+      "candidates": [
+        "亞光"
+      ],
+      "core_defined": false,
+      "n_members_used": 5,
+      "n_members_defined": 5,
+      "primary_agg": "mean",
+      "secondary_agg": "median",
+      "zone": null,
+      "zone_primary": "溫水",
+      "zone_secondary": "落難",
+      "agg_gap": {
+        "rel": 18.1,
+        "dd": 8.5
+      },
+      "dispersion": {
+        "n": 5,
+        "iqr_rel": 54.82,
+        "range_rel": 103.38,
+        "iqr_dd": 2.0,
+        "range_dd": 13.6
+      },
+      "dispersion_ratio": 2.74,
+      "dispersion_flag": true,
+      "core_priority": 1,
+      "near_boundary": [
+        "days_since_high"
+      ],
+      "detection_blind": false,
+      "detection_weak": false,
+      "factors": {
+        "rel_strength_vs_taiex_120d": 3.08,
+        "rel_strength_vs_pool_120d": -23.24,
+        "abs_return_120d": 46.3,
+        "dd_pct": -14.4,
+        "days_since_high": 37,
+        "semantic_mentions_90d": 1
+      },
+      "factors_secondary_method": {
+        "rel_strength_vs_taiex_120d": -15.02,
+        "abs_return_120d": 28.2,
+        "dd_pct": -22.9,
+        "days_since_high": 37
+      },
+      "in_strong_pool": true
+    },
+    "光通訊/CPO": {
+      "region": "core_undefined",
+      "core_not_applicable_reason": null,
+      "core_not_applicable_note": null,
+      "core_blocked_reason": null,
+      "n_candidates": 4,
+      "candidates": [
+        "亞光",
+        "波若威",
+        "聯亞",
+        "華星光"
+      ],
+      "core_defined": false,
+      "n_members_used": 7,
+      "n_members_defined": 7,
+      "primary_agg": "median",
+      "secondary_agg": "mean",
+      "zone": null,
+      "zone_primary": "落難",
+      "zone_secondary": "溫水",
+      "agg_gap": {
+        "rel": 41.69,
+        "dd": 8.1
+      },
+      "dispersion": {
+        "n": 7,
+        "iqr_rel": 90.43,
+        "range_rel": 203.37,
+        "iqr_dd": 20.85,
+        "range_dd": 39.6
+      },
+      "dispersion_ratio": 4.52,
+      "dispersion_flag": true,
+      "core_priority": 1,
+      "near_boundary": [],
+      "detection_blind": false,
+      "detection_weak": false,
+      "factors": {
+        "rel_strength_vs_taiex_120d": -16.01,
+        "rel_strength_vs_pool_120d": -42.33,
+        "abs_return_120d": 27.21,
+        "dd_pct": -30.1,
+        "days_since_high": 54,
+        "semantic_mentions_90d": 9
+      },
+      "factors_secondary_method": {
+        "rel_strength_vs_taiex_120d": 25.68,
+        "abs_return_120d": 68.9,
+        "dd_pct": -22.0,
+        "days_since_high": 54
+      },
+      "in_strong_pool": false
+    },
+    "功率元件": {
+      "region": "core_undefined",
+      "core_not_applicable_reason": null,
+      "core_not_applicable_note": null,
+      "core_blocked_reason": null,
+      "n_candidates": 5,
+      "candidates": [
+        "台半",
+        "富鼎",
+        "強茂",
+        "德微",
+        "麗正"
+      ],
+      "core_defined": false,
+      "n_members_used": 15,
+      "n_members_defined": 15,
+      "primary_agg": "median",
+      "secondary_agg": "mean",
+      "zone": null,
+      "zone_primary": "落難",
+      "zone_secondary": "冷水",
+      "agg_gap": {
+        "rel": 59.65,
+        "dd": 8.3
+      },
+      "dispersion": {
+        "n": 15,
+        "iqr_rel": 50.33,
+        "range_rel": 135.91,
+        "iqr_dd": 11.8,
+        "range_dd": 29.2
+      },
+      "dispersion_ratio": 2.52,
+      "dispersion_flag": true,
+      "core_priority": 1,
+      "near_boundary": [],
+      "detection_blind": false,
+      "detection_weak": false,
+      "factors": {
+        "rel_strength_vs_taiex_120d": -24.01,
+        "rel_strength_vs_pool_120d": -50.33,
+        "abs_return_120d": 19.21,
+        "dd_pct": -37.5,
+        "days_since_high": 26,
+        "semantic_mentions_90d": 9
+      },
+      "factors_secondary_method": {
+        "rel_strength_vs_taiex_120d": 35.64,
+        "abs_return_120d": 78.86,
+        "dd_pct": -29.2,
+        "days_since_high": 26
+      },
+      "in_strong_pool": false
+    },
+    "半導體設備": {
+      "region": "core_undefined",
+      "core_not_applicable_reason": null,
+      "core_not_applicable_note": null,
+      "core_blocked_reason": null,
+      "n_candidates": 5,
+      "candidates": [
+        "亞翔",
+        "帆宣",
+        "漢唐",
+        "盟立",
+        "辛耘"
+      ],
+      "core_defined": false,
+      "n_members_used": 7,
+      "n_members_defined": 7,
+      "primary_agg": "median",
+      "secondary_agg": "mean",
+      "zone": null,
+      "zone_primary": "溫水",
+      "zone_secondary": "溫水",
+      "agg_gap": {
+        "rel": 25.67,
+        "dd": 2.0
+      },
+      "dispersion": {
+        "n": 7,
+        "iqr_rel": 65.84,
+        "range_rel": 145.67,
+        "iqr_dd": 13.1,
+        "range_dd": 34.7
+      },
+      "dispersion_ratio": 3.29,
+      "dispersion_flag": true,
+      "core_priority": 1,
+      "near_boundary": [],
+      "detection_blind": false,
+      "detection_weak": false,
+      "factors": {
+        "rel_strength_vs_taiex_120d": 22.68,
+        "rel_strength_vs_pool_120d": -3.64,
+        "abs_return_120d": 65.9,
+        "dd_pct": -16.0,
+        "days_since_high": 28,
+        "semantic_mentions_90d": 10
+      },
+      "factors_secondary_method": {
+        "rel_strength_vs_taiex_120d": 48.35,
+        "abs_return_120d": 91.57,
+        "dd_pct": -18.0,
+        "days_since_high": 28
+      },
+      "in_strong_pool": true
+    },
+    "封測": {
+      "region": "core_undefined",
+      "core_not_applicable_reason": null,
+      "core_not_applicable_note": null,
+      "core_blocked_reason": null,
+      "n_candidates": 5,
+      "candidates": [
+        "京元電子",
+        "力成",
+        "日月光投控",
+        "欣銓",
+        "精材"
+      ],
+      "core_defined": false,
+      "n_members_used": 9,
+      "n_members_defined": 9,
+      "primary_agg": "median",
+      "secondary_agg": "mean",
+      "zone": null,
+      "zone_primary": "落難",
+      "zone_secondary": "溫水",
+      "agg_gap": {
+        "rel": 39.24,
+        "dd": 8.5
+      },
+      "dispersion": {
+        "n": 9,
+        "iqr_rel": 44.56,
+        "range_rel": 117.69,
+        "iqr_dd": 9.1,
+        "range_dd": 15.6
+      },
+      "dispersion_ratio": 2.23,
+      "dispersion_flag": true,
+      "core_priority": 1,
+      "near_boundary": [
+        "dd_pct"
+      ],
+      "detection_blind": false,
+      "detection_weak": false,
+      "factors": {
+        "rel_strength_vs_taiex_120d": -20.36,
+        "rel_strength_vs_pool_120d": -46.68,
+        "abs_return_120d": 22.86,
+        "dd_pct": -22.0,
+        "days_since_high": 26,
+        "semantic_mentions_90d": 11
+      },
+      "factors_secondary_method": {
+        "rel_strength_vs_taiex_120d": 18.88,
+        "abs_return_120d": 62.1,
+        "dd_pct": -13.5,
+        "days_since_high": 26
+      },
+      "in_strong_pool": false
+    },
+    "探針卡/測試介面": {
+      "region": "core_undefined",
+      "core_not_applicable_reason": null,
+      "core_not_applicable_note": null,
+      "core_blocked_reason": null,
+      "n_candidates": 1,
+      "candidates": [
+        "旺矽"
+      ],
+      "core_defined": false,
+      "n_members_used": 4,
+      "n_members_defined": 4,
+      "primary_agg": "mean",
+      "secondary_agg": "median",
+      "zone": null,
+      "zone_primary": "溫水",
+      "zone_secondary": "冷水",
+      "agg_gap": {
+        "rel": 12.04,
+        "dd": 6.3
+      },
+      "dispersion": {
+        "n": 4,
+        "iqr_rel": 57.92,
+        "range_rel": 171.28,
+        "iqr_dd": 10.5,
+        "range_dd": 39.9
+      },
+      "dispersion_ratio": 2.9,
+      "dispersion_flag": true,
+      "core_priority": 1,
+      "near_boundary": [
+        "dd_pct"
+      ],
+      "detection_blind": false,
+      "detection_weak": false,
+      "factors": {
+        "rel_strength_vs_taiex_120d": 19.8,
+        "rel_strength_vs_pool_120d": -6.52,
+        "abs_return_120d": 63.02,
+        "dd_pct": -22.2,
+        "days_since_high": 62,
+        "semantic_mentions_90d": 1
+      },
+      "factors_secondary_method": {
+        "rel_strength_vs_taiex_120d": 7.76,
+        "abs_return_120d": 50.98,
+        "dd_pct": -28.5,
+        "days_since_high": 62
+      },
+      "in_strong_pool": true
+    },
+    "散熱": {
+      "region": "core_defined_dispersed",
+      "core_not_applicable_reason": null,
+      "core_not_applicable_note": null,
+      "core_blocked_reason": null,
+      "n_candidates": 5,
+      "candidates": [
+        "健策",
+        "台達電",
+        "奇鋐",
+        "建準",
+        "雙鴻"
+      ],
+      "core_defined": true,
+      "n_members_used": 5,
+      "n_members_defined": 5,
+      "primary_agg": "mean",
+      "secondary_agg": "median",
+      "zone": null,
+      "zone_primary": "熱水",
+      "zone_secondary": "落難",
+      "agg_gap": {
+        "rel": 29.2,
+        "dd": 4.2
+      },
+      "dispersion": {
+        "n": 5,
+        "iqr_rel": 32.67,
+        "range_rel": 79.34,
+        "iqr_dd": 0.4,
+        "range_dd": 25.2
+      },
+      "dispersion_ratio": 1.63,
+      "dispersion_flag": true,
+      "core_priority": null,
+      "near_boundary": [
+        "days_since_high"
+      ],
+      "detection_blind": false,
+      "detection_weak": false,
+      "factors": {
+        "rel_strength_vs_taiex_120d": 3.11,
+        "rel_strength_vs_pool_120d": -23.21,
+        "abs_return_120d": 46.33,
+        "dd_pct": -6.8,
+        "days_since_high": 70,
+        "semantic_mentions_90d": 12
+      },
+      "factors_secondary_method": {
+        "rel_strength_vs_taiex_120d": -26.09,
+        "abs_return_120d": 17.13,
+        "dd_pct": -11.0,
+        "days_since_high": 77
+      },
+      "in_strong_pool": false
+    },
+    "晶圓代工": {
+      "region": "core_undefined",
+      "core_not_applicable_reason": null,
+      "core_not_applicable_note": null,
+      "core_blocked_reason": null,
+      "n_candidates": 2,
+      "candidates": [
+        "台積電",
+        "聯電"
+      ],
+      "core_defined": false,
+      "n_members_used": 3,
+      "n_members_defined": 4,
+      "primary_agg": "mean",
+      "secondary_agg": "median",
+      "zone": null,
+      "zone_primary": "溫水",
+      "zone_secondary": "落難",
+      "agg_gap": {
+        "rel": 28.17,
+        "dd": 10.8
+      },
+      "dispersion": {
+        "n": 3,
+        "iqr_rel": 43.03,
+        "range_rel": 86.05,
+        "iqr_dd": 13.05,
+        "range_dd": 26.1
+      },
+      "dispersion_ratio": 2.15,
+      "dispersion_flag": true,
+      "core_priority": 1,
+      "near_boundary": [
+        "days_since_high"
+      ],
+      "detection_blind": false,
+      "detection_weak": true,
+      "factors": {
+        "rel_strength_vs_taiex_120d": 10.38,
+        "rel_strength_vs_pool_120d": -15.94,
+        "abs_return_120d": 53.6,
+        "dd_pct": -14.2,
+        "days_since_high": 34,
+        "semantic_mentions_90d": 14
+      },
+      "factors_secondary_method": {
+        "rel_strength_vs_taiex_120d": -17.79,
+        "abs_return_120d": 25.43,
+        "dd_pct": -25.0,
+        "days_since_high": 34
+      },
+      "in_strong_pool": false
+    },
+    "機器人": {
+      "region": "core_undefined",
+      "core_not_applicable_reason": null,
+      "core_not_applicable_note": null,
+      "core_blocked_reason": "reviewed=false，母體不全。Joseph 憑印象列的候選裡有 3 支不在現有 stocks：所羅門(2359)/大銀微系統(4576)/台灣精銳(4583)，減速機與驅動是機器人最核心的兩個零組件，母體缺這些在談 core 沒有意義。撤回理由是名單缺口，不是判準選錯——達明／亞光的裁定本身沒有問題，見票 04 完成記錄 2026-08-10 該筆，補完名單後大概率重新入選。",
+      "n_candidates": 4,
+      "candidates": [
+        "上銀",
+        "亞光",
+        "亞德客-KY",
+        "盟立"
+      ],
+      "core_defined": false,
+      "n_members_used": 10,
+      "n_members_defined": 10,
+      "primary_agg": "median",
+      "secondary_agg": "mean",
+      "zone": null,
+      "zone_primary": "落難",
+      "zone_secondary": "落難",
+      "agg_gap": {
+        "rel": 39.36,
+        "dd": 12.1
+      },
+      "dispersion": {
+        "n": 10,
+        "iqr_rel": 56.59,
+        "range_rel": 188.02,
+        "iqr_dd": 10.03,
+        "range_dd": 37.2
+      },
+      "dispersion_ratio": 2.83,
+      "dispersion_flag": true,
+      "core_priority": 1,
+      "near_boundary": [],
+      "detection_blind": false,
+      "detection_weak": false,
+      "factors": {
+        "rel_strength_vs_taiex_120d": -53.33,
+        "rel_strength_vs_pool_120d": -79.65,
+        "abs_return_120d": -10.11,
+        "dd_pct": -16.9,
+        "days_since_high": 55,
+        "semantic_mentions_90d": 4
+      },
+      "factors_secondary_method": {
+        "rel_strength_vs_taiex_120d": -13.97,
+        "abs_return_120d": 29.25,
+        "dd_pct": -4.8,
+        "days_since_high": 50
+      },
+      "in_strong_pool": false
+    },
+    "氮化鎵": {
+      "region": "observation",
+      "core_not_applicable_reason": null,
+      "core_not_applicable_note": null,
+      "core_blocked_reason": null,
+      "n_candidates": 2,
+      "candidates": [
+        "環宇-KY",
+        "穩懋"
+      ],
+      "core_defined": false,
+      "n_members_used": 3,
+      "n_members_defined": 3,
+      "primary_agg": "mean",
+      "secondary_agg": "median",
+      "zone": "冷水",
+      "zone_primary": "冷水",
+      "zone_secondary": "冷水",
+      "agg_gap": {
+        "rel": 27.91,
+        "dd": 10.8
+      },
+      "dispersion": {
+        "n": 3,
+        "iqr_rel": 2.23,
+        "range_rel": 4.46,
+        "iqr_dd": 6.4,
+        "range_dd": 12.8
+      },
+      "dispersion_ratio": 0.32,
+      "dispersion_flag": false,
+      "core_priority": 3,
+      "near_boundary": [],
+      "detection_blind": false,
+      "detection_weak": true,
+      "factors": {
+        "rel_strength_vs_taiex_120d": 54.23,
+        "rel_strength_vs_pool_120d": 27.91,
+        "abs_return_120d": 97.45,
+        "dd_pct": -28.9,
+        "days_since_high": 54,
+        "semantic_mentions_90d": 2
+      },
+      "factors_secondary_method": {
+        "rel_strength_vs_taiex_120d": 26.32,
+        "abs_return_120d": 69.54,
+        "dd_pct": -39.7,
+        "days_since_high": 54
+      },
+      "in_strong_pool": true
+    },
+    "無人機": {
+      "region": "core_not_applicable",
+      "core_not_applicable_reason": "sector_too_early",
+      "core_not_applicable_note": "8 支全員深查，0 入、7 明確不入、1 兩可，且每一支不入都有正面證據撐著——漢翔官方營收結構「維修60.18%＋引擎35.50%＋工業技術服務4.33%＝100%」，無人機根本不在表上；攸泰自己揭露無人機佔比<10%；中光電把無人機併進「其他」。題材是真的但還沒進任何人的損益表，此刻無論怎麼定 core 都沒有意義：只取雷虎 1 支，指數就是雷虎不是題材；取全員 8 支，量的是一群主業不是無人機的公司。2026-08-11 判定，見 tasks/leading_watchlist.md 第五節。",
+      "core_blocked_reason": null,
+      "n_candidates": 1,
+      "candidates": [
+        "亞航"
+      ],
+      "core_defined": false,
+      "n_members_used": 8,
+      "n_members_defined": 8,
+      "primary_agg": "median",
+      "secondary_agg": "mean",
+      "zone": null,
+      "zone_primary": "落難",
+      "zone_secondary": "落難",
+      "agg_gap": {
+        "rel": 19.22,
+        "dd": 4.4
+      },
+      "dispersion": {
+        "n": 8,
+        "iqr_rel": 22.66,
+        "range_rel": 85.13,
+        "iqr_dd": 11.65,
+        "range_dd": 22.1
+      },
+      "dispersion_ratio": 1.13,
+      "dispersion_flag": true,
+      "core_priority": null,
+      "near_boundary": [],
+      "detection_blind": false,
+      "detection_weak": false,
+      "factors": {
+        "rel_strength_vs_taiex_120d": -46.47,
+        "rel_strength_vs_pool_120d": -72.79,
+        "abs_return_120d": -3.25,
+        "dd_pct": -20.0,
+        "days_since_high": 20,
+        "semantic_mentions_90d": 1
+      },
+      "factors_secondary_method": {
+        "rel_strength_vs_taiex_120d": -27.25,
+        "abs_return_120d": 15.97,
+        "dd_pct": -15.6,
+        "days_since_high": 21
+      },
+      "in_strong_pool": false
+    },
+    "玻璃基板": {
+      "region": "core_undefined",
+      "core_not_applicable_reason": null,
+      "core_not_applicable_note": null,
+      "core_blocked_reason": null,
+      "n_candidates": 3,
+      "candidates": [
+        "日月光投控",
+        "欣興",
+        "群創"
+      ],
+      "core_defined": false,
+      "n_members_used": 3,
+      "n_members_defined": 3,
+      "primary_agg": "mean",
+      "secondary_agg": "median",
+      "zone": null,
+      "zone_primary": "溫水",
+      "zone_secondary": "溫水",
+      "agg_gap": {
+        "rel": 3.93,
+        "dd": 3.0
+      },
+      "dispersion": {
+        "n": 3,
+        "iqr_rel": 44.46,
+        "range_rel": 88.92,
+        "iqr_dd": 10.65,
+        "range_dd": 21.3
+      },
+      "dispersion_ratio": 2.22,
+      "dispersion_flag": true,
+      "core_priority": 1,
+      "near_boundary": [
+        "days_since_high"
+      ],
+      "detection_blind": false,
+      "detection_weak": true,
+      "factors": {
+        "rel_strength_vs_taiex_120d": 114.12,
+        "rel_strength_vs_pool_120d": 87.8,
+        "abs_return_120d": 157.34,
+        "dd_pct": -13.3,
+        "days_since_high": 30,
+        "semantic_mentions_90d": 9
+      },
+      "factors_secondary_method": {
+        "rel_strength_vs_taiex_120d": 118.05,
+        "abs_return_120d": 161.27,
+        "dd_pct": -10.3,
+        "days_since_high": 30
+      },
+      "in_strong_pool": true
+    },
+    "玻纖布": {
+      "region": "observation",
+      "core_not_applicable_reason": null,
+      "core_not_applicable_note": null,
+      "core_blocked_reason": null,
+      "n_candidates": 1,
+      "candidates": [
+        "富喬"
+      ],
+      "core_defined": false,
+      "n_members_used": 4,
+      "n_members_defined": 4,
+      "primary_agg": "mean",
+      "secondary_agg": "median",
+      "zone": "落難",
+      "zone_primary": "落難",
+      "zone_secondary": "落難",
+      "agg_gap": {
+        "rel": 7.32,
+        "dd": 2.3
+      },
+      "dispersion": {
+        "n": 4,
+        "iqr_rel": 15.15,
+        "range_rel": 42.46,
+        "iqr_dd": 17.85,
+        "range_dd": 38.1
+      },
+      "dispersion_ratio": 0.89,
+      "dispersion_flag": false,
+      "core_priority": 2,
+      "near_boundary": [
+        "dd_pct",
+        "days_since_high"
+      ],
+      "detection_blind": false,
+      "detection_weak": false,
+      "factors": {
+        "rel_strength_vs_taiex_120d": -37.06,
+        "rel_strength_vs_pool_120d": -63.38,
+        "abs_return_120d": 6.16,
+        "dd_pct": -38.3,
+        "days_since_high": 80,
+        "semantic_mentions_90d": 1
+      },
+      "factors_secondary_method": {
+        "rel_strength_vs_taiex_120d": -44.38,
+        "abs_return_120d": -1.16,
+        "dd_pct": -36.0,
+        "days_since_high": 80
+      },
+      "in_strong_pool": false
+    },
+    "石化": {
+      "region": "core_undefined",
+      "core_not_applicable_reason": null,
+      "core_not_applicable_note": null,
+      "core_blocked_reason": null,
+      "n_candidates": 1,
+      "candidates": [
+        "台化"
+      ],
+      "core_defined": false,
+      "n_members_used": 8,
+      "n_members_defined": 8,
+      "primary_agg": "median",
+      "secondary_agg": "mean",
+      "zone": null,
+      "zone_primary": "落難",
+      "zone_secondary": "落難",
+      "agg_gap": {
+        "rel": 19.68,
+        "dd": 8.3
+      },
+      "dispersion": {
+        "n": 8,
+        "iqr_rel": 25.94,
+        "range_rel": 63.57,
+        "iqr_dd": 10.97,
+        "range_dd": 18.9
+      },
+      "dispersion_ratio": 1.3,
+      "dispersion_flag": true,
+      "core_priority": 1,
+      "near_boundary": [
+        "dd_pct"
+      ],
+      "detection_blind": false,
+      "detection_weak": false,
+      "factors": {
+        "rel_strength_vs_taiex_120d": -41.29,
+        "rel_strength_vs_pool_120d": -67.61,
+        "abs_return_120d": 1.93,
+        "dd_pct": -22.0,
+        "days_since_high": 27,
+        "semantic_mentions_90d": 1
+      },
+      "factors_secondary_method": {
+        "rel_strength_vs_taiex_120d": -21.61,
+        "abs_return_120d": 21.61,
+        "dd_pct": -13.7,
+        "days_since_high": 14
+      },
+      "in_strong_pool": false
+    },
+    "石英元件": {
+      "region": "core_undefined",
+      "core_not_applicable_reason": null,
+      "core_not_applicable_note": null,
+      "core_blocked_reason": null,
+      "n_candidates": 4,
+      "candidates": [
+        "加高",
+        "安碁",
+        "希華",
+        "晶技"
+      ],
+      "core_defined": false,
+      "n_members_used": 6,
+      "n_members_defined": 8,
+      "primary_agg": "median",
+      "secondary_agg": "mean",
+      "zone": null,
+      "zone_primary": "冷水",
+      "zone_secondary": "冷水",
+      "agg_gap": {
+        "rel": 27.9,
+        "dd": 2.6
+      },
+      "dispersion": {
+        "n": 6,
+        "iqr_rel": 37.95,
+        "range_rel": 125.51,
+        "iqr_dd": 3.73,
+        "range_dd": 14.2
+      },
+      "dispersion_ratio": 1.9,
+      "dispersion_flag": true,
+      "core_priority": 1,
+      "near_boundary": [],
+      "detection_blind": false,
+      "detection_weak": false,
+      "factors": {
+        "rel_strength_vs_taiex_120d": 33.54,
+        "rel_strength_vs_pool_120d": 7.22,
+        "abs_return_120d": 76.76,
+        "dd_pct": -29.1,
+        "days_since_high": 27,
+        "semantic_mentions_90d": 8
+      },
+      "factors_secondary_method": {
+        "rel_strength_vs_taiex_120d": 61.44,
+        "abs_return_120d": 104.66,
+        "dd_pct": -26.5,
+        "days_since_high": 27
+      },
+      "in_strong_pool": true
+    },
+    "矽晶圓": {
+      "region": "core_undefined",
+      "core_not_applicable_reason": null,
+      "core_not_applicable_note": null,
+      "core_blocked_reason": null,
+      "n_candidates": 3,
+      "candidates": [
+        "中美晶",
+        "合晶",
+        "環球晶"
+      ],
+      "core_defined": false,
+      "n_members_used": 3,
+      "n_members_defined": 3,
+      "primary_agg": "mean",
+      "secondary_agg": "median",
+      "zone": null,
+      "zone_primary": "冷水",
+      "zone_secondary": "冷水",
+      "agg_gap": {
+        "rel": 1.73,
+        "dd": 5.4
+      },
+      "dispersion": {
+        "n": 3,
+        "iqr_rel": 72.79,
+        "range_rel": 145.58,
+        "iqr_dd": 6.45,
+        "range_dd": 12.9
+      },
+      "dispersion_ratio": 3.64,
+      "dispersion_flag": true,
+      "core_priority": 1,
+      "near_boundary": [],
+      "detection_blind": false,
+      "detection_weak": true,
+      "factors": {
+        "rel_strength_vs_taiex_120d": 78.15,
+        "rel_strength_vs_pool_120d": 51.83,
+        "abs_return_120d": 121.37,
+        "dd_pct": -37.0,
+        "days_since_high": 20,
+        "semantic_mentions_90d": 8
+      },
+      "factors_secondary_method": {
+        "rel_strength_vs_taiex_120d": 79.88,
+        "abs_return_120d": 123.1,
+        "dd_pct": -42.4,
+        "days_since_high": 21
+      },
+      "in_strong_pool": true
+    },
+    "砷化鎵": {
+      "region": "core_undefined",
+      "core_not_applicable_reason": null,
+      "core_not_applicable_note": null,
+      "core_blocked_reason": null,
+      "n_candidates": 5,
+      "candidates": [
+        "全新",
+        "宏捷科",
+        "環宇-KY",
+        "穩懋",
+        "訊芯-KY"
+      ],
+      "core_defined": false,
+      "n_members_used": 5,
+      "n_members_defined": 5,
+      "primary_agg": "mean",
+      "secondary_agg": "median",
+      "zone": null,
+      "zone_primary": "冷水",
+      "zone_secondary": "冷水",
+      "agg_gap": {
+        "rel": 38.58,
+        "dd": 0.8
+      },
+      "dispersion": {
+        "n": 5,
+        "iqr_rel": 52.33,
+        "range_rel": 146.06,
+        "iqr_dd": 4.2,
+        "range_dd": 31.5
+      },
+      "dispersion_ratio": 2.62,
+      "dispersion_flag": true,
+      "core_priority": 1,
+      "near_boundary": [
+        "dd_pct"
+      ],
+      "detection_blind": false,
+      "detection_weak": false,
+      "factors": {
+        "rel_strength_vs_taiex_120d": 53.85,
+        "rel_strength_vs_pool_120d": 27.53,
+        "abs_return_120d": 97.07,
+        "dd_pct": -27.9,
+        "days_since_high": 54,
+        "semantic_mentions_90d": 7
+      },
+      "factors_secondary_method": {
+        "rel_strength_vs_taiex_120d": 15.27,
+        "abs_return_120d": 58.49,
+        "dd_pct": -27.1,
+        "days_since_high": 54
+      },
+      "in_strong_pool": true
+    },
+    "磷化銦": {
+      "region": "observation",
+      "core_not_applicable_reason": null,
+      "core_not_applicable_note": null,
+      "core_blocked_reason": null,
+      "n_candidates": 1,
+      "candidates": [
+        "全新"
+      ],
+      "core_defined": false,
+      "n_members_used": 1,
+      "n_members_defined": 1,
+      "primary_agg": "median",
+      "secondary_agg": "mean",
+      "zone": "溫水",
+      "zone_primary": "溫水",
+      "zone_secondary": "溫水",
+      "agg_gap": {
+        "rel": 0.0,
+        "dd": 0.0
+      },
+      "dispersion": null,
+      "dispersion_ratio": null,
+      "dispersion_flag": null,
+      "core_priority": "N/A",
+      "near_boundary": [],
+      "detection_blind": true,
+      "detection_weak": false,
+      "factors": {
+        "rel_strength_vs_taiex_120d": 92.11,
+        "rel_strength_vs_pool_120d": 65.79,
+        "abs_return_120d": 135.33,
+        "dd_pct": -12.8,
+        "days_since_high": 55,
+        "semantic_mentions_90d": 1
+      },
+      "factors_secondary_method": {
+        "rel_strength_vs_taiex_120d": 92.11,
+        "abs_return_120d": 135.33,
+        "dd_pct": -12.8,
+        "days_since_high": 55
+      },
+      "in_strong_pool": true
+    },
+    "網通": {
+      "region": "core_undefined",
+      "core_not_applicable_reason": null,
+      "core_not_applicable_note": null,
+      "core_blocked_reason": null,
+      "n_candidates": 1,
+      "candidates": [
+        "智邦"
+      ],
+      "core_defined": false,
+      "n_members_used": 4,
+      "n_members_defined": 4,
+      "primary_agg": "mean",
+      "secondary_agg": "median",
+      "zone": null,
+      "zone_primary": "溫水",
+      "zone_secondary": "落難",
+      "agg_gap": {
+        "rel": 33.98,
+        "dd": 6.3
+      },
+      "dispersion": {
+        "n": 4,
+        "iqr_rel": 54.25,
+        "range_rel": 92.43,
+        "iqr_dd": 8.18,
+        "range_dd": 18.6
+      },
+      "dispersion_ratio": 2.71,
+      "dispersion_flag": true,
+      "core_priority": 1,
+      "near_boundary": [
+        "dd_pct"
+      ],
+      "detection_blind": false,
+      "detection_weak": false,
+      "factors": {
+        "rel_strength_vs_taiex_120d": -9.73,
+        "rel_strength_vs_pool_120d": -36.05,
+        "abs_return_120d": 33.49,
+        "dd_pct": -9.1,
+        "days_since_high": 22,
+        "semantic_mentions_90d": 1
+      },
+      "factors_secondary_method": {
+        "rel_strength_vs_taiex_120d": -43.71,
+        "abs_return_120d": -0.49,
+        "dd_pct": -15.4,
+        "days_since_high": 49
+      },
+      "in_strong_pool": false
+    },
+    "航空": {
+      "region": "observation",
+      "core_not_applicable_reason": null,
+      "core_not_applicable_note": null,
+      "core_blocked_reason": null,
+      "n_candidates": 1,
+      "candidates": [
+        "台灣虎航"
+      ],
+      "core_defined": false,
+      "n_members_used": 4,
+      "n_members_defined": 4,
+      "primary_agg": "mean",
+      "secondary_agg": "median",
+      "zone": "落難",
+      "zone_primary": "落難",
+      "zone_secondary": "落難",
+      "agg_gap": {
+        "rel": 5.58,
+        "dd": 1.7
+      },
+      "dispersion": {
+        "n": 4,
+        "iqr_rel": 8.58,
+        "range_rel": 25.28,
+        "iqr_dd": 2.12,
+        "range_dd": 7.9
+      },
+      "dispersion_ratio": 0.43,
+      "dispersion_flag": false,
+      "core_priority": 3,
+      "near_boundary": [
+        "dd_pct",
+        "days_since_high"
+      ],
+      "detection_blind": false,
+      "detection_weak": false,
+      "factors": {
+        "rel_strength_vs_taiex_120d": -46.33,
+        "rel_strength_vs_pool_120d": -72.65,
+        "abs_return_120d": -3.11,
+        "dd_pct": -7.7,
+        "days_since_high": 33,
+        "semantic_mentions_90d": 1
+      },
+      "factors_secondary_method": {
+        "rel_strength_vs_taiex_120d": -40.75,
+        "abs_return_120d": 2.47,
+        "dd_pct": -6.0,
+        "days_since_high": 33
+      },
+      "in_strong_pool": false
+    },
+    "被動元件": {
+      "region": "core_undefined",
+      "core_not_applicable_reason": null,
+      "core_not_applicable_note": null,
+      "core_blocked_reason": null,
+      "n_candidates": 8,
+      "candidates": [
+        "信昌電",
+        "光頡",
+        "凱美",
+        "國巨*",
+        "日電貿",
+        "禾伸堂",
+        "興勤",
+        "華新科"
+      ],
+      "core_defined": false,
+      "n_members_used": 22,
+      "n_members_defined": 22,
+      "primary_agg": "median",
+      "secondary_agg": "mean",
+      "zone": null,
+      "zone_primary": "冷水",
+      "zone_secondary": "冷水",
+      "agg_gap": {
+        "rel": 49.3,
+        "dd": 7.2
+      },
+      "dispersion": {
+        "n": 22,
+        "iqr_rel": 86.22,
+        "range_rel": 602.99,
+        "iqr_dd": 14.72,
+        "range_dd": 38.3
+      },
+      "dispersion_ratio": 4.31,
+      "dispersion_flag": true,
+      "core_priority": 1,
+      "near_boundary": [
+        "dd_pct",
+        "days_since_high"
+      ],
+      "detection_blind": false,
+      "detection_weak": false,
+      "factors": {
+        "rel_strength_vs_taiex_120d": 8.6,
+        "rel_strength_vs_pool_120d": -17.72,
+        "abs_return_120d": 51.82,
+        "dd_pct": -40.7,
+        "days_since_high": 37,
+        "semantic_mentions_90d": 15
+      },
+      "factors_secondary_method": {
+        "rel_strength_vs_taiex_120d": 57.9,
+        "abs_return_120d": 101.12,
+        "dd_pct": -33.5,
+        "days_since_high": 37
+      },
+      "in_strong_pool": true
+    },
+    "記憶體": {
+      "region": "core_not_applicable",
+      "core_not_applicable_reason": "sector_too_broad",
+      "core_not_applicable_note": "族群名即產業名，成員第一順位業務本來就幾乎都是記憶體（6/8 明確通過自我定位測試、1 邊界/力積電、僅新唐不通過），core 機制在此無效益。2026-08-10 判定，見 tasks/xq_taxonomy_correction.md，建議拆成更窄子題材（利基型DRAM／記憶體模組品牌等）再重估。",
+      "core_blocked_reason": null,
+      "n_candidates": 5,
+      "candidates": [
+        "南亞科",
+        "威剛",
+        "新唐",
+        "晶豪科",
+        "華邦電"
+      ],
+      "core_defined": false,
+      "n_members_used": 8,
+      "n_members_defined": 8,
+      "primary_agg": "median",
+      "secondary_agg": "mean",
+      "zone": null,
+      "zone_primary": "溫水",
+      "zone_secondary": "溫水",
+      "agg_gap": {
+        "rel": 36.88,
+        "dd": 5.2
+      },
+      "dispersion": {
+        "n": 8,
+        "iqr_rel": 43.65,
+        "range_rel": 105.28,
+        "iqr_dd": 9.1,
+        "range_dd": 42.2
+      },
+      "dispersion_ratio": 2.18,
+      "dispersion_flag": true,
+      "core_priority": null,
+      "near_boundary": [
+        "days_since_high"
+      ],
+      "detection_blind": false,
+      "detection_weak": false,
+      "factors": {
+        "rel_strength_vs_taiex_120d": -6.38,
+        "rel_strength_vs_pool_120d": -32.7,
+        "abs_return_120d": 36.84,
+        "dd_pct": -17.6,
+        "days_since_high": 36,
+        "semantic_mentions_90d": 12
+      },
+      "factors_secondary_method": {
+        "rel_strength_vs_taiex_120d": 30.5,
+        "abs_return_120d": 73.72,
+        "dd_pct": -12.4,
+        "days_since_high": 36
+      },
+      "in_strong_pool": true
+    },
+    "軍工/國防": {
+      "region": "observation",
+      "core_not_applicable_reason": null,
+      "core_not_applicable_note": null,
+      "core_blocked_reason": null,
+      "n_candidates": 2,
+      "candidates": [
+        "亞航",
+        "龍德造船"
+      ],
+      "core_defined": false,
+      "n_members_used": 5,
+      "n_members_defined": 5,
+      "primary_agg": "mean",
+      "secondary_agg": "median",
+      "zone": "落難",
+      "zone_primary": "落難",
+      "zone_secondary": "落難",
+      "agg_gap": {
+        "rel": 14.77,
+        "dd": 4.2
+      },
+      "dispersion": {
+        "n": 5,
+        "iqr_rel": 15.95,
+        "range_rel": 33.12,
+        "iqr_dd": 13.8,
+        "range_dd": 16.6
+      },
+      "dispersion_ratio": 0.8,
+      "dispersion_flag": false,
+      "core_priority": 2,
+      "near_boundary": [],
+      "detection_blind": false,
+      "detection_weak": false,
+      "factors": {
+        "rel_strength_vs_taiex_120d": -35.98,
+        "rel_strength_vs_pool_120d": -62.3,
+        "abs_return_120d": 7.24,
+        "dd_pct": -18.5,
+        "days_since_high": 21,
+        "semantic_mentions_90d": 2
+      },
+      "factors_secondary_method": {
+        "rel_strength_vs_taiex_120d": -50.75,
+        "abs_return_120d": -7.53,
+        "dd_pct": -22.7,
+        "days_since_high": 22
+      },
+      "in_strong_pool": false
+    },
+    "重電/電力": {
+      "region": "observation",
+      "core_not_applicable_reason": null,
+      "core_not_applicable_note": null,
+      "core_blocked_reason": null,
+      "n_candidates": 1,
+      "candidates": [
+        "東元"
+      ],
+      "core_defined": false,
+      "n_members_used": 4,
+      "n_members_defined": 5,
+      "primary_agg": "mean",
+      "secondary_agg": "median",
+      "zone": "落難",
+      "zone_primary": "落難",
+      "zone_secondary": "落難",
+      "agg_gap": {
+        "rel": 9.0,
+        "dd": 5.4
+      },
+      "dispersion": {
+        "n": 4,
+        "iqr_rel": 5.69,
+        "range_rel": 21.66,
+        "iqr_dd": 8.38,
+        "range_dd": 20.6
+      },
+      "dispersion_ratio": 0.42,
+      "dispersion_flag": false,
+      "core_priority": 3,
+      "near_boundary": [],
+      "detection_blind": false,
+      "detection_weak": false,
+      "factors": {
+        "rel_strength_vs_taiex_120d": -49.47,
+        "rel_strength_vs_pool_120d": -75.79,
+        "abs_return_120d": -6.25,
+        "dd_pct": -17.3,
+        "days_since_high": 47,
+        "semantic_mentions_90d": 1
+      },
+      "factors_secondary_method": {
+        "rel_strength_vs_taiex_120d": -58.47,
+        "abs_return_120d": -15.25,
+        "dd_pct": -22.7,
+        "days_since_high": 113
+      },
+      "in_strong_pool": false
+    },
+    "銅箔": {
+      "region": "core_undefined",
+      "core_not_applicable_reason": null,
+      "core_not_applicable_note": null,
+      "core_blocked_reason": null,
+      "n_candidates": 1,
+      "candidates": [
+        "南亞"
+      ],
+      "core_defined": false,
+      "n_members_used": 2,
+      "n_members_defined": 2,
+      "primary_agg": "median",
+      "secondary_agg": "mean",
+      "zone": null,
+      "zone_primary": "溫水",
+      "zone_secondary": "溫水",
+      "agg_gap": {
+        "rel": 0.0,
+        "dd": 0.0
+      },
+      "dispersion": {
+        "n": 2,
+        "iqr_rel": 40.86,
+        "range_rel": 81.73,
+        "iqr_dd": 11.5,
+        "range_dd": 23.0
+      },
+      "dispersion_ratio": 2.04,
+      "dispersion_flag": true,
+      "core_priority": 1,
+      "near_boundary": [],
+      "detection_blind": false,
+      "detection_weak": true,
+      "factors": {
+        "rel_strength_vs_taiex_120d": 82.44,
+        "rel_strength_vs_pool_120d": 56.12,
+        "abs_return_120d": 125.66,
+        "dd_pct": -15.8,
+        "days_since_high": 27,
+        "semantic_mentions_90d": 1
+      },
+      "factors_secondary_method": {
+        "rel_strength_vs_taiex_120d": 82.44,
+        "abs_return_120d": 125.66,
+        "dd_pct": -15.8,
+        "days_since_high": 27
+      },
+      "in_strong_pool": true
+    },
+    "銅箔基板/CCL": {
+      "region": "core_undefined",
+      "core_not_applicable_reason": null,
+      "core_not_applicable_note": null,
+      "core_blocked_reason": null,
+      "n_candidates": 3,
+      "candidates": [
+        "台光電",
+        "台燿",
+        "聯茂"
+      ],
+      "core_defined": false,
+      "n_members_used": 5,
+      "n_members_defined": 5,
+      "primary_agg": "mean",
+      "secondary_agg": "median",
+      "zone": null,
+      "zone_primary": "熱水",
+      "zone_secondary": "熱水",
+      "agg_gap": {
+        "rel": 86.04,
+        "dd": 1.8
+      },
+      "dispersion": {
+        "n": 5,
+        "iqr_rel": 36.3,
+        "range_rel": 177.63,
+        "iqr_dd": 10.0,
+        "range_dd": 70.5
+      },
+      "dispersion_ratio": 1.81,
+      "dispersion_flag": true,
+      "core_priority": 1,
+      "near_boundary": [],
+      "detection_blind": false,
+      "detection_weak": false,
+      "factors": {
+        "rel_strength_vs_taiex_120d": 186.5,
+        "rel_strength_vs_pool_120d": 160.18,
+        "abs_return_120d": 229.72,
+        "dd_pct": -1.9,
+        "days_since_high": 51,
+        "semantic_mentions_90d": 14
+      },
+      "factors_secondary_method": {
+        "rel_strength_vs_taiex_120d": 100.46,
+        "abs_return_120d": 143.68,
+        "dd_pct": -3.7,
+        "days_since_high": 27
+      },
+      "in_strong_pool": true
+    },
+    "電子通路": {
+      "region": "core_undefined",
+      "core_not_applicable_reason": null,
+      "core_not_applicable_note": null,
+      "core_blocked_reason": null,
+      "n_candidates": 1,
+      "candidates": [
+        "文曄"
+      ],
+      "core_defined": false,
+      "n_members_used": 5,
+      "n_members_defined": 5,
+      "primary_agg": "mean",
+      "secondary_agg": "median",
+      "zone": null,
+      "zone_primary": "熱水",
+      "zone_secondary": "熱水",
+      "agg_gap": {
+        "rel": 31.14,
+        "dd": 1.8
+      },
+      "dispersion": {
+        "n": 5,
+        "iqr_rel": 21.47,
+        "range_rel": 49.65,
+        "iqr_dd": 13.7,
+        "range_dd": 22.7
+      },
+      "dispersion_ratio": 1.07,
+      "dispersion_flag": true,
+      "core_priority": 1,
+      "near_boundary": [],
+      "detection_blind": false,
+      "detection_weak": false,
+      "factors": {
+        "rel_strength_vs_taiex_120d": 21.03,
+        "rel_strength_vs_pool_120d": -5.29,
+        "abs_return_120d": 64.25,
+        "dd_pct": -5.2,
+        "days_since_high": 49,
+        "semantic_mentions_90d": 1
+      },
+      "factors_secondary_method": {
+        "rel_strength_vs_taiex_120d": -10.11,
+        "abs_return_120d": 33.11,
+        "dd_pct": -7.0,
+        "days_since_high": 49
+      },
+      "in_strong_pool": true
+    },
+    "電源/BBU": {
+      "region": "core_undefined",
+      "core_not_applicable_reason": null,
+      "core_not_applicable_note": null,
+      "core_blocked_reason": null,
+      "n_candidates": 2,
+      "candidates": [
+        "光寶科",
+        "台達電"
+      ],
+      "core_defined": false,
+      "n_members_used": 6,
+      "n_members_defined": 6,
+      "primary_agg": "median",
+      "secondary_agg": "mean",
+      "zone": null,
+      "zone_primary": "落難",
+      "zone_secondary": "落難",
+      "agg_gap": {
+        "rel": 31.84,
+        "dd": 7.3
+      },
+      "dispersion": {
+        "n": 6,
+        "iqr_rel": 57.63,
+        "range_rel": 114.07,
+        "iqr_dd": 20.7,
+        "range_dd": 30.0
+      },
+      "dispersion_ratio": 2.88,
+      "dispersion_flag": true,
+      "core_priority": 1,
+      "near_boundary": [],
+      "detection_blind": false,
+      "detection_weak": false,
+      "factors": {
+        "rel_strength_vs_taiex_120d": -44.35,
+        "rel_strength_vs_pool_120d": -70.67,
+        "abs_return_120d": -1.13,
+        "dd_pct": -19.2,
+        "days_since_high": 47,
+        "semantic_mentions_90d": 7
+      },
+      "factors_secondary_method": {
+        "rel_strength_vs_taiex_120d": -12.51,
+        "abs_return_120d": 30.71,
+        "dd_pct": -11.9,
+        "days_since_high": 47
+      },
+      "in_strong_pool": false
+    },
+    "電競/主機板": {
+      "region": "observation",
+      "core_not_applicable_reason": null,
+      "core_not_applicable_note": null,
+      "core_blocked_reason": null,
+      "n_candidates": 1,
+      "candidates": [
+        "華碩"
+      ],
+      "core_defined": false,
+      "n_members_used": 5,
+      "n_members_defined": 5,
+      "primary_agg": "mean",
+      "secondary_agg": "median",
+      "zone": "熱水",
+      "zone_primary": "熱水",
+      "zone_secondary": "落難",
+      "agg_gap": {
+        "rel": 41.36,
+        "dd": 10.4
+      },
+      "dispersion": {
+        "n": 5,
+        "iqr_rel": 16.62,
+        "range_rel": 100.65,
+        "iqr_dd": 15.6,
+        "range_dd": 19.6
+      },
+      "dispersion_ratio": 0.83,
+      "dispersion_flag": false,
+      "core_priority": 2,
+      "near_boundary": [],
+      "detection_blind": false,
+      "detection_weak": false,
+      "factors": {
+        "rel_strength_vs_taiex_120d": 27.6,
+        "rel_strength_vs_pool_120d": 1.28,
+        "abs_return_120d": 70.82,
+        "dd_pct": -2.9,
+        "days_since_high": 49,
+        "semantic_mentions_90d": 2
+      },
+      "factors_secondary_method": {
+        "rel_strength_vs_taiex_120d": -13.76,
+        "abs_return_120d": 29.46,
+        "dd_pct": -13.3,
+        "days_since_high": 48
+      },
+      "in_strong_pool": true
+    },
+    "驅動IC": {
+      "region": "core_undefined",
+      "core_not_applicable_reason": null,
+      "core_not_applicable_note": null,
+      "core_blocked_reason": null,
+      "n_candidates": 1,
+      "candidates": [
+        "聯詠"
+      ],
+      "core_defined": false,
+      "n_members_used": 11,
+      "n_members_defined": 11,
+      "primary_agg": "median",
+      "secondary_agg": "mean",
+      "zone": null,
+      "zone_primary": "落難",
+      "zone_secondary": "溫水",
+      "agg_gap": {
+        "rel": 49.7,
+        "dd": 5.5
+      },
+      "dispersion": {
+        "n": 11,
+        "iqr_rel": 63.16,
+        "range_rel": 206.25,
+        "iqr_dd": 16.4,
+        "range_dd": 45.8
+      },
+      "dispersion_ratio": 3.16,
+      "dispersion_flag": true,
+      "core_priority": 1,
+      "near_boundary": [],
+      "detection_blind": false,
+      "detection_weak": false,
+      "factors": {
+        "rel_strength_vs_taiex_120d": -47.47,
+        "rel_strength_vs_pool_120d": -73.79,
+        "abs_return_120d": -4.25,
+        "dd_pct": -17.5,
+        "days_since_high": 50,
+        "semantic_mentions_90d": 1
+      },
+      "factors_secondary_method": {
+        "rel_strength_vs_taiex_120d": 2.23,
+        "abs_return_120d": 45.45,
+        "dd_pct": -12.0,
+        "days_since_high": 26
+      },
+      "in_strong_pool": false
+    }
+  }
+}
