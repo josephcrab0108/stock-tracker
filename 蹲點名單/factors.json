@@ -1,37 +1,40 @@
 {
-  "date": "2026-08-12",
-  "market_state": "正常",
-  "taiex_return_20d": -0.25,
+  "date": "2026-08-29",
+  "market_state": "多頭",
+  "taiex_return_20d": 6.62,
   "strong_pool": [
+    "軟性銅箔基板/FCCL",
+    "被動元件",
     "ABF載板",
-    "玻璃基板",
-    "銅箔基板/CCL",
-    "磷化銦",
     "銅箔",
+    "銅箔基板/CCL",
+    "AI伺服器機構件",
     "矽晶圓",
+    "玻璃基板",
     "MLCC",
+    "磷化銦",
+    "記憶體IC設計",
     "石英元件",
     "濾波器",
     "氮化鎵",
-    "半導體設備",
-    "砷化鎵",
-    "被動元件",
-    "探針卡/測試介面",
-    "類比IC",
+    "記憶體模組",
+    "光學鏡頭",
     "記憶體",
-    "電子通路",
-    "電競/主機板",
-    "光學鏡頭"
+    "類比IC",
+    "記憶體顆粒",
+    "PCB設備",
+    "PCB材料",
+    "半導體設備"
   ],
-  "strong_pool_typical_return_120d": 69.54,
+  "strong_pool_typical_return_120d": 74.08,
   "regime_warning_text": null,
   "regime_retrigger_needed": false,
   "regime_retrigger_reasons": [],
   "market_dispersion": {
-    "n_total": 34,
+    "n_total": 33,
     "n_over_threshold": 28,
-    "median_ratio": 2.38,
-    "over_fraction": 0.824,
+    "median_ratio": 2.07,
+    "over_fraction": 0.848,
     "exceeds_one_third": true,
     "warning_text": "多數族群同時分歧＝市況特徵，不是 28 件待辦。此時族群層級的分區普遍不可用，請逐支看。",
     "warning_source": "tasks/leading_watchlist.md 已知風險第 11 條"
@@ -44,10 +47,28 @@
       "last_mention": "2025-09-20"
     },
     {
+      "stock": "雙鴻",
+      "sector": "散熱",
+      "reason": "90d_silent",
+      "last_mention": "2026-05-18"
+    },
+    {
       "stock": "台星科",
       "sector": "封測",
       "reason": "90d_silent",
       "last_mention": "2026-01-17"
+    },
+    {
+      "stock": "上銀",
+      "sector": "機器人",
+      "reason": "90d_silent",
+      "last_mention": "2026-05-16"
+    },
+    {
+      "stock": "亞德客-KY",
+      "sector": "機器人",
+      "reason": "90d_silent",
+      "last_mention": "2026-05-16"
     },
     {
       "stock": "華航",
@@ -74,28 +95,28 @@
       "last_mention": "2026-02-07"
     },
     {
-      "stock": "漢翔",
-      "sector": "軍工/國防",
-      "reason": "90d_silent",
-      "last_mention": "2025-04-05"
-    },
-    {
       "stock": "長榮航太",
       "sector": "軍工/國防",
       "reason": "90d_silent",
       "last_mention": "2026-01-24"
     },
     {
-      "stock": "中光電",
-      "sector": "無人機",
+      "stock": "漢翔",
+      "sector": "軍工/國防",
       "reason": "90d_silent",
-      "last_mention": "2025-09-20"
+      "last_mention": "2025-04-05"
     },
     {
       "stock": "雷虎",
       "sector": "無人機",
       "reason": "90d_silent",
       "last_mention": "2026-01-10"
+    },
+    {
+      "stock": "中光電",
+      "sector": "無人機",
+      "reason": "90d_silent",
+      "last_mention": "2025-09-20"
     },
     {
       "stock": "漢翔",
@@ -136,39 +157,35 @@
   ],
   "core_queue": [
     "磷化銦",
-    "光通訊/CPO",
     "MLCC",
-    "被動元件",
-    "先進封裝",
-    "矽晶圓",
-    "半導體設備",
-    "驅動IC",
-    "探針卡/測試介面",
-    "電源/BBU",
-    "機器人",
     "光學鏡頭",
-    "網通",
-    "ABF載板",
-    "砷化鎵",
+    "電源/BBU",
+    "矽晶圓",
+    "光通訊/CPO",
+    "半導體設備",
     "IC設計",
-    "功率元件",
-    "AI伺服器ODM/OEM",
     "PCB",
-    "封測",
-    "玻璃基板",
-    "晶圓代工",
-    "銅箔",
+    "先進封裝",
     "石英元件",
+    "砷化鎵",
     "銅箔基板/CCL",
     "MCU",
-    "石化",
-    "電子通路",
-    "玻纖布",
+    "驅動IC",
+    "功率元件",
     "電競/主機板",
-    "軍工/國防",
-    "航空",
+    "機器人",
+    "玻璃基板",
+    "網通",
+    "探針卡/測試介面",
+    "銅箔",
+    "晶圓代工",
+    "石化",
+    "玻纖布",
+    "電子通路",
+    "氮化鎵",
     "重電/電力",
-    "氮化鎵"
+    "軍工/國防",
+    "航空"
   ],
   "watchlist_gap_sectors": [
     "磷化銦",
@@ -176,7 +193,7 @@
   ],
   "sectors": {
     "ABF載板": {
-      "region": "core_undefined",
+      "region": "core_defined_dispersed",
       "core_not_applicable_reason": null,
       "core_not_applicable_note": null,
       "core_blocked_reason": null,
@@ -186,52 +203,49 @@
         "景碩",
         "欣興"
       ],
-      "core_defined": false,
-      "n_members_used": 4,
-      "n_members_defined": 4,
+      "core_defined": true,
+      "n_members_used": 3,
+      "n_members_defined": 3,
       "primary_agg": "mean",
       "secondary_agg": "median",
       "zone": null,
       "zone_primary": "熱水",
-      "zone_secondary": "溫水",
+      "zone_secondary": "熱水",
       "agg_gap": {
-        "rel": 45.49,
-        "dd": 1.0
+        "rel": 30.32,
+        "dd": 0.3
       },
       "dispersion": {
-        "n": 4,
-        "iqr_rel": 53.21,
-        "range_rel": 93.58,
-        "iqr_dd": 8.12,
-        "range_dd": 23.5
+        "n": 3,
+        "iqr_rel": 25.73,
+        "range_rel": 51.46,
+        "iqr_dd": 5.4,
+        "range_dd": 10.8
       },
-      "dispersion_ratio": 2.66,
+      "dispersion_ratio": 1.29,
       "dispersion_flag": true,
-      "core_priority": 1,
-      "near_boundary": [
-        "dd_pct",
-        "days_since_high"
-      ],
+      "core_priority": null,
+      "near_boundary": [],
       "detection_blind": false,
-      "detection_weak": false,
+      "detection_weak": true,
       "factors": {
-        "rel_strength_vs_taiex_120d": 178.5,
-        "rel_strength_vs_pool_120d": 152.18,
-        "abs_return_120d": 221.72,
-        "dd_pct": -7.0,
-        "days_since_high": 30,
-        "semantic_mentions_90d": 15
+        "rel_strength_vs_taiex_120d": 148.14,
+        "rel_strength_vs_pool_120d": 110.89,
+        "abs_return_120d": 184.97,
+        "dd_pct": -3.9,
+        "days_since_high": 1,
+        "semantic_mentions_90d": 14
       },
       "factors_secondary_method": {
-        "rel_strength_vs_taiex_120d": 133.01,
-        "abs_return_120d": 176.23,
-        "dd_pct": -8.0,
-        "days_since_high": 30
+        "rel_strength_vs_taiex_120d": 117.82,
+        "abs_return_120d": 154.65,
+        "dd_pct": -4.2,
+        "days_since_high": 1
       },
       "in_strong_pool": true
     },
     "AI伺服器ODM/OEM": {
-      "region": "core_undefined",
+      "region": "core_defined_dispersed",
       "core_not_applicable_reason": null,
       "core_not_applicable_note": null,
       "core_blocked_reason": null,
@@ -243,46 +257,44 @@
         "英業達",
         "鴻海"
       ],
-      "core_defined": false,
-      "n_members_used": 9,
-      "n_members_defined": 9,
-      "primary_agg": "median",
-      "secondary_agg": "mean",
+      "core_defined": true,
+      "n_members_used": 5,
+      "n_members_defined": 5,
+      "primary_agg": "mean",
+      "secondary_agg": "median",
       "zone": null,
-      "zone_primary": "落難",
-      "zone_secondary": "熱水",
+      "zone_primary": "熱水",
+      "zone_secondary": "溫水",
       "agg_gap": {
-        "rel": 45.87,
-        "dd": 8.9
+        "rel": 13.78,
+        "dd": 3.8
       },
       "dispersion": {
-        "n": 9,
-        "iqr_rel": 48.65,
-        "range_rel": 303.65,
-        "iqr_dd": 12.8,
-        "range_dd": 32.5
+        "n": 5,
+        "iqr_rel": 40.34,
+        "range_rel": 58.94,
+        "iqr_dd": 7.3,
+        "range_dd": 21.5
       },
-      "dispersion_ratio": 2.43,
+      "dispersion_ratio": 2.02,
       "dispersion_flag": true,
-      "core_priority": 1,
-      "near_boundary": [
-        "dd_pct"
-      ],
+      "core_priority": null,
+      "near_boundary": [],
       "detection_blind": false,
       "detection_weak": false,
       "factors": {
-        "rel_strength_vs_taiex_120d": -29.14,
-        "rel_strength_vs_pool_120d": -55.46,
-        "abs_return_120d": 14.08,
-        "dd_pct": -8.9,
-        "days_since_high": 48,
+        "rel_strength_vs_taiex_120d": 7.29,
+        "rel_strength_vs_pool_120d": -29.96,
+        "abs_return_120d": 44.12,
+        "dd_pct": -6.1,
+        "days_since_high": 60,
         "semantic_mentions_90d": 11
       },
       "factors_secondary_method": {
-        "rel_strength_vs_taiex_120d": 16.73,
-        "abs_return_120d": 59.95,
-        "dd_pct": 0.0,
-        "days_since_high": 0
+        "rel_strength_vs_taiex_120d": -6.49,
+        "abs_return_120d": 30.34,
+        "dd_pct": -9.9,
+        "days_since_high": 60
       },
       "in_strong_pool": false
     },
@@ -307,35 +319,37 @@
       "zone_primary": "落難",
       "zone_secondary": "溫水",
       "agg_gap": {
-        "rel": 36.33,
-        "dd": 2.4
+        "rel": 34.8,
+        "dd": 3.3
       },
       "dispersion": {
         "n": 10,
-        "iqr_rel": 51.61,
-        "range_rel": 154.61,
-        "iqr_dd": 19.05,
-        "range_dd": 32.9
+        "iqr_rel": 55.59,
+        "range_rel": 145.61,
+        "iqr_dd": 14.65,
+        "range_dd": 30.6
       },
-      "dispersion_ratio": 2.58,
+      "dispersion_ratio": 2.78,
       "dispersion_flag": true,
       "core_priority": 1,
-      "near_boundary": [],
+      "near_boundary": [
+        "days_since_high"
+      ],
       "detection_blind": false,
       "detection_weak": false,
       "factors": {
-        "rel_strength_vs_taiex_120d": -32.01,
-        "rel_strength_vs_pool_120d": -58.33,
-        "abs_return_120d": 11.21,
-        "dd_pct": -11.6,
-        "days_since_high": 55,
-        "semantic_mentions_90d": 10
+        "rel_strength_vs_taiex_120d": -24.28,
+        "rel_strength_vs_pool_120d": -61.53,
+        "abs_return_120d": 12.55,
+        "dd_pct": -12.9,
+        "days_since_high": 67,
+        "semantic_mentions_90d": 7
       },
       "factors_secondary_method": {
-        "rel_strength_vs_taiex_120d": 4.32,
-        "abs_return_120d": 47.54,
-        "dd_pct": -9.2,
-        "days_since_high": 36
+        "rel_strength_vs_taiex_120d": 10.52,
+        "abs_return_120d": 47.35,
+        "dd_pct": -9.6,
+        "days_since_high": 48
       },
       "in_strong_pool": false
     },
@@ -357,37 +371,35 @@
       "zone_primary": "溫水",
       "zone_secondary": "落難",
       "agg_gap": {
-        "rel": 42.31,
-        "dd": 0.6
+        "rel": 33.16,
+        "dd": 1.3
       },
       "dispersion": {
         "n": 5,
-        "iqr_rel": 31.04,
-        "range_rel": 92.49,
-        "iqr_dd": 4.3,
-        "range_dd": 32.8
+        "iqr_rel": 48.59,
+        "range_rel": 64.24,
+        "iqr_dd": 9.5,
+        "range_dd": 36.5
       },
-      "dispersion_ratio": 1.55,
+      "dispersion_ratio": 2.43,
       "dispersion_flag": true,
       "core_priority": 1,
-      "near_boundary": [
-        "days_since_high"
-      ],
+      "near_boundary": [],
       "detection_blind": false,
       "detection_weak": false,
       "factors": {
-        "rel_strength_vs_taiex_120d": 23.75,
-        "rel_strength_vs_pool_120d": -2.57,
-        "abs_return_120d": 66.97,
-        "dd_pct": -17.9,
-        "days_since_high": 36,
+        "rel_strength_vs_taiex_120d": -1.3,
+        "rel_strength_vs_pool_120d": -38.55,
+        "abs_return_120d": 35.53,
+        "dd_pct": -16.7,
+        "days_since_high": 48,
         "semantic_mentions_90d": 1
       },
       "factors_secondary_method": {
-        "rel_strength_vs_taiex_120d": -18.56,
-        "abs_return_120d": 24.66,
-        "dd_pct": -17.3,
-        "days_since_high": 36
+        "rel_strength_vs_taiex_120d": -34.46,
+        "abs_return_120d": 2.37,
+        "dd_pct": -18.0,
+        "days_since_high": 48
       },
       "in_strong_pool": false
     },
@@ -410,20 +422,20 @@
       "primary_agg": "median",
       "secondary_agg": "mean",
       "zone": null,
-      "zone_primary": "燙傷",
+      "zone_primary": "冷水",
       "zone_secondary": "冷水",
       "agg_gap": {
-        "rel": 68.56,
-        "dd": 8.4
+        "rel": 65.54,
+        "dd": 7.9
       },
       "dispersion": {
         "n": 7,
-        "iqr_rel": 89.89,
-        "range_rel": 512.95,
-        "iqr_dd": 10.3,
-        "range_dd": 21.3
+        "iqr_rel": 102.54,
+        "range_rel": 532.21,
+        "iqr_dd": 15.4,
+        "range_dd": 22.7
       },
-      "dispersion_ratio": 4.49,
+      "dispersion_ratio": 5.13,
       "dispersion_flag": true,
       "core_priority": 1,
       "near_boundary": [
@@ -432,18 +444,18 @@
       "detection_blind": false,
       "detection_weak": false,
       "factors": {
-        "rel_strength_vs_taiex_120d": 66.06,
-        "rel_strength_vs_pool_120d": 39.74,
-        "abs_return_120d": 109.28,
-        "dd_pct": -45.9,
-        "days_since_high": 29,
-        "semantic_mentions_90d": 12
+        "rel_strength_vs_taiex_120d": 77.43,
+        "rel_strength_vs_pool_120d": 40.18,
+        "abs_return_120d": 114.26,
+        "dd_pct": -41.8,
+        "days_since_high": 41,
+        "semantic_mentions_90d": 11
       },
       "factors_secondary_method": {
-        "rel_strength_vs_taiex_120d": 134.62,
-        "abs_return_120d": 177.84,
-        "dd_pct": -37.5,
-        "days_since_high": 36
+        "rel_strength_vs_taiex_120d": 142.97,
+        "abs_return_120d": 179.8,
+        "dd_pct": -33.9,
+        "days_since_high": 48
       },
       "in_strong_pool": true
     },
@@ -465,37 +477,35 @@
       "zone_primary": "溫水",
       "zone_secondary": "落難",
       "agg_gap": {
-        "rel": 37.63,
-        "dd": 4.0
+        "rel": 36.59,
+        "dd": 7.2
       },
       "dispersion": {
         "n": 4,
-        "iqr_rel": 46.87,
-        "range_rel": 176.34,
-        "iqr_dd": 8.6,
-        "range_dd": 19.7
+        "iqr_rel": 55.01,
+        "range_rel": 188.6,
+        "iqr_dd": 6.38,
+        "range_dd": 13.5
       },
-      "dispersion_ratio": 2.34,
+      "dispersion_ratio": 2.75,
       "dispersion_flag": true,
       "core_priority": 1,
-      "near_boundary": [
-        "days_since_high"
-      ],
+      "near_boundary": [],
       "detection_blind": false,
       "detection_weak": false,
       "factors": {
-        "rel_strength_vs_taiex_120d": 3.68,
-        "rel_strength_vs_pool_120d": -22.64,
-        "abs_return_120d": 46.9,
-        "dd_pct": -18.4,
-        "days_since_high": 36,
+        "rel_strength_vs_taiex_120d": 16.24,
+        "rel_strength_vs_pool_120d": -21.01,
+        "abs_return_120d": 53.07,
+        "dd_pct": -15.6,
+        "days_since_high": 48,
         "semantic_mentions_90d": 1
       },
       "factors_secondary_method": {
-        "rel_strength_vs_taiex_120d": -33.95,
-        "abs_return_120d": 9.27,
-        "dd_pct": -22.4,
-        "days_since_high": 36
+        "rel_strength_vs_taiex_120d": -20.35,
+        "abs_return_120d": 16.48,
+        "dd_pct": -22.8,
+        "days_since_high": 48
       },
       "in_strong_pool": false
     },
@@ -518,38 +528,40 @@
       "primary_agg": "mean",
       "secondary_agg": "median",
       "zone": null,
-      "zone_primary": "溫水",
-      "zone_secondary": "落難",
+      "zone_primary": "熱水",
+      "zone_secondary": "溫水",
       "agg_gap": {
-        "rel": 27.78,
-        "dd": 7.8
+        "rel": 27.23,
+        "dd": 8.6
       },
       "dispersion": {
         "n": 5,
-        "iqr_rel": 85.95,
-        "range_rel": 117.69,
-        "iqr_dd": 9.1,
-        "range_dd": 20.5
+        "iqr_rel": 54.44,
+        "range_rel": 119.86,
+        "iqr_dd": 11.9,
+        "range_dd": 19.2
       },
-      "dispersion_ratio": 4.3,
+      "dispersion_ratio": 2.72,
       "dispersion_flag": true,
       "core_priority": 1,
-      "near_boundary": [],
+      "near_boundary": [
+        "days_since_high"
+      ],
       "detection_blind": false,
       "detection_weak": false,
       "factors": {
-        "rel_strength_vs_taiex_120d": 10.87,
-        "rel_strength_vs_pool_120d": -15.45,
-        "abs_return_120d": 54.09,
-        "dd_pct": -9.7,
-        "days_since_high": 19,
-        "semantic_mentions_90d": 20
+        "rel_strength_vs_taiex_120d": 16.53,
+        "rel_strength_vs_pool_120d": -20.72,
+        "abs_return_120d": 53.36,
+        "dd_pct": -5.3,
+        "days_since_high": 31,
+        "semantic_mentions_90d": 17
       },
       "factors_secondary_method": {
-        "rel_strength_vs_taiex_120d": -16.91,
-        "abs_return_120d": 26.31,
-        "dd_pct": -17.5,
-        "days_since_high": 26
+        "rel_strength_vs_taiex_120d": -10.7,
+        "abs_return_120d": 26.13,
+        "dd_pct": -13.9,
+        "days_since_high": 38
       },
       "in_strong_pool": false
     },
@@ -568,40 +580,38 @@
       "primary_agg": "mean",
       "secondary_agg": "median",
       "zone": null,
-      "zone_primary": "溫水",
-      "zone_secondary": "落難",
+      "zone_primary": "熱水",
+      "zone_secondary": "溫水",
       "agg_gap": {
-        "rel": 18.1,
-        "dd": 8.5
+        "rel": 40.93,
+        "dd": 15.0
       },
       "dispersion": {
         "n": 5,
-        "iqr_rel": 54.82,
-        "range_rel": 103.38,
-        "iqr_dd": 2.0,
-        "range_dd": 13.6
+        "iqr_rel": 94.91,
+        "range_rel": 199.2,
+        "iqr_dd": 10.8,
+        "range_dd": 13.0
       },
-      "dispersion_ratio": 2.74,
+      "dispersion_ratio": 4.75,
       "dispersion_flag": true,
       "core_priority": 1,
-      "near_boundary": [
-        "days_since_high"
-      ],
+      "near_boundary": [],
       "detection_blind": false,
       "detection_weak": false,
       "factors": {
-        "rel_strength_vs_taiex_120d": 3.08,
-        "rel_strength_vs_pool_120d": -23.24,
-        "abs_return_120d": 46.3,
-        "dd_pct": -14.4,
-        "days_since_high": 37,
+        "rel_strength_vs_taiex_120d": 51.26,
+        "rel_strength_vs_pool_120d": 14.01,
+        "abs_return_120d": 88.09,
+        "dd_pct": 0.0,
+        "days_since_high": 0,
         "semantic_mentions_90d": 1
       },
       "factors_secondary_method": {
-        "rel_strength_vs_taiex_120d": -15.02,
-        "abs_return_120d": 28.2,
-        "dd_pct": -22.9,
-        "days_since_high": 37
+        "rel_strength_vs_taiex_120d": 10.33,
+        "abs_return_120d": 47.16,
+        "dd_pct": -15.0,
+        "days_since_high": 49
       },
       "in_strong_pool": true
     },
@@ -626,35 +636,38 @@
       "zone_primary": "落難",
       "zone_secondary": "溫水",
       "agg_gap": {
-        "rel": 41.69,
-        "dd": 8.1
+        "rel": 33.41,
+        "dd": 10.4
       },
       "dispersion": {
         "n": 7,
-        "iqr_rel": 90.43,
-        "range_rel": 203.37,
-        "iqr_dd": 20.85,
-        "range_dd": 39.6
+        "iqr_rel": 73.18,
+        "range_rel": 153.15,
+        "iqr_dd": 19.3,
+        "range_dd": 33.5
       },
-      "dispersion_ratio": 4.52,
+      "dispersion_ratio": 3.66,
       "dispersion_flag": true,
       "core_priority": 1,
-      "near_boundary": [],
+      "near_boundary": [
+        "dd_pct",
+        "days_since_high"
+      ],
       "detection_blind": false,
       "detection_weak": false,
       "factors": {
-        "rel_strength_vs_taiex_120d": -16.01,
-        "rel_strength_vs_pool_120d": -42.33,
-        "abs_return_120d": 27.21,
-        "dd_pct": -30.1,
-        "days_since_high": 54,
-        "semantic_mentions_90d": 9
+        "rel_strength_vs_taiex_120d": -22.96,
+        "rel_strength_vs_pool_120d": -60.21,
+        "abs_return_120d": 13.87,
+        "dd_pct": -25.1,
+        "days_since_high": 66,
+        "semantic_mentions_90d": 8
       },
       "factors_secondary_method": {
-        "rel_strength_vs_taiex_120d": 25.68,
-        "abs_return_120d": 68.9,
-        "dd_pct": -22.0,
-        "days_since_high": 54
+        "rel_strength_vs_taiex_120d": 10.45,
+        "abs_return_120d": 47.28,
+        "dd_pct": -14.7,
+        "days_since_high": 66
       },
       "in_strong_pool": false
     },
@@ -680,35 +693,37 @@
       "zone_primary": "落難",
       "zone_secondary": "冷水",
       "agg_gap": {
-        "rel": 59.65,
-        "dd": 8.3
+        "rel": 58.94,
+        "dd": 11.1
       },
       "dispersion": {
         "n": 15,
-        "iqr_rel": 50.33,
-        "range_rel": 135.91,
-        "iqr_dd": 11.8,
-        "range_dd": 29.2
+        "iqr_rel": 41.42,
+        "range_rel": 112.16,
+        "iqr_dd": 11.15,
+        "range_dd": 35.1
       },
-      "dispersion_ratio": 2.52,
+      "dispersion_ratio": 2.07,
       "dispersion_flag": true,
       "core_priority": 1,
-      "near_boundary": [],
+      "near_boundary": [
+        "days_since_high"
+      ],
       "detection_blind": false,
       "detection_weak": false,
       "factors": {
-        "rel_strength_vs_taiex_120d": -24.01,
-        "rel_strength_vs_pool_120d": -50.33,
-        "abs_return_120d": 19.21,
-        "dd_pct": -37.5,
-        "days_since_high": 26,
+        "rel_strength_vs_taiex_120d": -18.22,
+        "rel_strength_vs_pool_120d": -55.47,
+        "abs_return_120d": 18.61,
+        "dd_pct": -37.4,
+        "days_since_high": 38,
         "semantic_mentions_90d": 9
       },
       "factors_secondary_method": {
-        "rel_strength_vs_taiex_120d": 35.64,
-        "abs_return_120d": 78.86,
-        "dd_pct": -29.2,
-        "days_since_high": 26
+        "rel_strength_vs_taiex_120d": 40.72,
+        "abs_return_120d": 77.55,
+        "dd_pct": -26.3,
+        "days_since_high": 38
       },
       "in_strong_pool": false
     },
@@ -726,50 +741,52 @@
         "辛耘"
       ],
       "core_defined": false,
-      "n_members_used": 7,
-      "n_members_defined": 7,
+      "n_members_used": 8,
+      "n_members_defined": 8,
       "primary_agg": "median",
       "secondary_agg": "mean",
       "zone": null,
       "zone_primary": "溫水",
       "zone_secondary": "溫水",
       "agg_gap": {
-        "rel": 25.67,
-        "dd": 2.0
+        "rel": 23.26,
+        "dd": 3.0
       },
       "dispersion": {
-        "n": 7,
-        "iqr_rel": 65.84,
-        "range_rel": 145.67,
-        "iqr_dd": 13.1,
-        "range_dd": 34.7
+        "n": 8,
+        "iqr_rel": 60.23,
+        "range_rel": 179.37,
+        "iqr_dd": 17.93,
+        "range_dd": 29.3
       },
-      "dispersion_ratio": 3.29,
+      "dispersion_ratio": 3.01,
       "dispersion_flag": true,
       "core_priority": 1,
-      "near_boundary": [],
+      "near_boundary": [
+        "days_since_high"
+      ],
       "detection_blind": false,
       "detection_weak": false,
       "factors": {
-        "rel_strength_vs_taiex_120d": 22.68,
-        "rel_strength_vs_pool_120d": -3.64,
-        "abs_return_120d": 65.9,
-        "dd_pct": -16.0,
-        "days_since_high": 28,
+        "rel_strength_vs_taiex_120d": 2.12,
+        "rel_strength_vs_pool_120d": -35.13,
+        "abs_return_120d": 38.95,
+        "dd_pct": -16.3,
+        "days_since_high": 40,
         "semantic_mentions_90d": 10
       },
       "factors_secondary_method": {
-        "rel_strength_vs_taiex_120d": 48.35,
-        "abs_return_120d": 91.57,
-        "dd_pct": -18.0,
-        "days_since_high": 28
+        "rel_strength_vs_taiex_120d": 25.38,
+        "abs_return_120d": 62.21,
+        "dd_pct": -19.3,
+        "days_since_high": 40
       },
       "in_strong_pool": true
     },
     "封測": {
-      "region": "core_undefined",
-      "core_not_applicable_reason": null,
-      "core_not_applicable_note": null,
+      "region": "core_not_applicable",
+      "core_not_applicable_reason": "sector_too_broad",
+      "core_not_applicable_note": "不定 core。族群名即產業名，成員第一順位業務本來就都是封測，core 等於全員。建議日後拆成更窄子題材（驅動IC封測／功率封測／晶圓級封裝）再評估。",
       "core_blocked_reason": null,
       "n_candidates": 5,
       "candidates": [
@@ -780,45 +797,45 @@
         "精材"
       ],
       "core_defined": false,
-      "n_members_used": 9,
-      "n_members_defined": 9,
+      "n_members_used": 13,
+      "n_members_defined": 13,
       "primary_agg": "median",
       "secondary_agg": "mean",
       "zone": null,
-      "zone_primary": "落難",
+      "zone_primary": "溫水",
       "zone_secondary": "溫水",
       "agg_gap": {
-        "rel": 39.24,
-        "dd": 8.5
+        "rel": 38.17,
+        "dd": 6.8
       },
       "dispersion": {
-        "n": 9,
-        "iqr_rel": 44.56,
-        "range_rel": 117.69,
-        "iqr_dd": 9.1,
-        "range_dd": 15.6
+        "n": 13,
+        "iqr_rel": 46.31,
+        "range_rel": 250.59,
+        "iqr_dd": 12.3,
+        "range_dd": 36.4
       },
-      "dispersion_ratio": 2.23,
+      "dispersion_ratio": 2.32,
       "dispersion_flag": true,
-      "core_priority": 1,
+      "core_priority": null,
       "near_boundary": [
-        "dd_pct"
+        "days_since_high"
       ],
       "detection_blind": false,
       "detection_weak": false,
       "factors": {
-        "rel_strength_vs_taiex_120d": -20.36,
-        "rel_strength_vs_pool_120d": -46.68,
-        "abs_return_120d": 22.86,
-        "dd_pct": -22.0,
-        "days_since_high": 26,
-        "semantic_mentions_90d": 11
+        "rel_strength_vs_taiex_120d": -6.48,
+        "rel_strength_vs_pool_120d": -43.73,
+        "abs_return_120d": 30.35,
+        "dd_pct": -19.3,
+        "days_since_high": 38,
+        "semantic_mentions_90d": 10
       },
       "factors_secondary_method": {
-        "rel_strength_vs_taiex_120d": 18.88,
-        "abs_return_120d": 62.1,
-        "dd_pct": -13.5,
-        "days_since_high": 26
+        "rel_strength_vs_taiex_120d": 31.69,
+        "abs_return_120d": 68.52,
+        "dd_pct": -12.5,
+        "days_since_high": 38
       },
       "in_strong_pool": false
     },
@@ -837,55 +854,55 @@
       "primary_agg": "mean",
       "secondary_agg": "median",
       "zone": null,
-      "zone_primary": "溫水",
-      "zone_secondary": "冷水",
+      "zone_primary": "冷水",
+      "zone_secondary": "落難",
       "agg_gap": {
-        "rel": 12.04,
-        "dd": 6.3
+        "rel": 10.38,
+        "dd": 6.0
       },
       "dispersion": {
         "n": 4,
-        "iqr_rel": 57.92,
-        "range_rel": 171.28,
-        "iqr_dd": 10.5,
-        "range_dd": 39.9
+        "iqr_rel": 34.11,
+        "range_rel": 97.31,
+        "iqr_dd": 9.78,
+        "range_dd": 21.4
       },
-      "dispersion_ratio": 2.9,
+      "dispersion_ratio": 1.71,
       "dispersion_flag": true,
       "core_priority": 1,
       "near_boundary": [
-        "dd_pct"
+        "rel_taiex",
+        "days_since_high"
       ],
       "detection_blind": false,
       "detection_weak": false,
       "factors": {
-        "rel_strength_vs_taiex_120d": 19.8,
-        "rel_strength_vs_pool_120d": -6.52,
-        "abs_return_120d": 63.02,
-        "dd_pct": -22.2,
-        "days_since_high": 62,
+        "rel_strength_vs_taiex_120d": -10.53,
+        "rel_strength_vs_pool_120d": -47.78,
+        "abs_return_120d": 26.3,
+        "dd_pct": -31.2,
+        "days_since_high": 74,
         "semantic_mentions_90d": 1
       },
       "factors_secondary_method": {
-        "rel_strength_vs_taiex_120d": 7.76,
-        "abs_return_120d": 50.98,
-        "dd_pct": -28.5,
-        "days_since_high": 62
+        "rel_strength_vs_taiex_120d": -20.91,
+        "abs_return_120d": 15.92,
+        "dd_pct": -37.2,
+        "days_since_high": 74
       },
-      "in_strong_pool": true
+      "in_strong_pool": false
     },
     "散熱": {
       "region": "core_defined_dispersed",
       "core_not_applicable_reason": null,
       "core_not_applicable_note": null,
       "core_blocked_reason": null,
-      "n_candidates": 5,
+      "n_candidates": 4,
       "candidates": [
         "健策",
         "台達電",
         "奇鋐",
-        "建準",
-        "雙鴻"
+        "建準"
       ],
       "core_defined": true,
       "n_members_used": 5,
@@ -894,39 +911,37 @@
       "secondary_agg": "median",
       "zone": null,
       "zone_primary": "熱水",
-      "zone_secondary": "落難",
+      "zone_secondary": "熱水",
       "agg_gap": {
-        "rel": 29.2,
-        "dd": 4.2
+        "rel": 32.43,
+        "dd": 0.0
       },
       "dispersion": {
         "n": 5,
-        "iqr_rel": 32.67,
-        "range_rel": 79.34,
-        "iqr_dd": 0.4,
-        "range_dd": 25.2
+        "iqr_rel": 42.46,
+        "range_rel": 66.6,
+        "iqr_dd": 9.9,
+        "range_dd": 20.4
       },
-      "dispersion_ratio": 1.63,
+      "dispersion_ratio": 2.12,
       "dispersion_flag": true,
       "core_priority": null,
-      "near_boundary": [
-        "days_since_high"
-      ],
+      "near_boundary": [],
       "detection_blind": false,
       "detection_weak": false,
       "factors": {
-        "rel_strength_vs_taiex_120d": 3.11,
-        "rel_strength_vs_pool_120d": -23.21,
-        "abs_return_120d": 46.33,
-        "dd_pct": -6.8,
-        "days_since_high": 70,
-        "semantic_mentions_90d": 12
+        "rel_strength_vs_taiex_120d": 23.13,
+        "rel_strength_vs_pool_120d": -14.12,
+        "abs_return_120d": 59.96,
+        "dd_pct": 0.0,
+        "days_since_high": 0,
+        "semantic_mentions_90d": 9
       },
       "factors_secondary_method": {
-        "rel_strength_vs_taiex_120d": -26.09,
-        "abs_return_120d": 17.13,
-        "dd_pct": -11.0,
-        "days_since_high": 77
+        "rel_strength_vs_taiex_120d": -9.3,
+        "abs_return_120d": 27.53,
+        "dd_pct": 0.0,
+        "days_since_high": 0
       },
       "in_strong_pool": false
     },
@@ -941,7 +956,7 @@
         "聯電"
       ],
       "core_defined": false,
-      "n_members_used": 3,
+      "n_members_used": 4,
       "n_members_defined": 4,
       "primary_agg": "mean",
       "secondary_agg": "median",
@@ -949,37 +964,35 @@
       "zone_primary": "溫水",
       "zone_secondary": "落難",
       "agg_gap": {
-        "rel": 28.17,
+        "rel": 25.96,
         "dd": 10.8
       },
       "dispersion": {
-        "n": 3,
-        "iqr_rel": 43.03,
-        "range_rel": 86.05,
-        "iqr_dd": 13.05,
-        "range_dd": 26.1
+        "n": 4,
+        "iqr_rel": 28.54,
+        "range_rel": 104.05,
+        "iqr_dd": 10.12,
+        "range_dd": 25.2
       },
-      "dispersion_ratio": 2.15,
+      "dispersion_ratio": 1.43,
       "dispersion_flag": true,
       "core_priority": 1,
-      "near_boundary": [
-        "days_since_high"
-      ],
+      "near_boundary": [],
       "detection_blind": false,
-      "detection_weak": true,
+      "detection_weak": false,
       "factors": {
-        "rel_strength_vs_taiex_120d": 10.38,
-        "rel_strength_vs_pool_120d": -15.94,
-        "abs_return_120d": 53.6,
-        "dd_pct": -14.2,
-        "days_since_high": 34,
-        "semantic_mentions_90d": 14
+        "rel_strength_vs_taiex_120d": 10.4,
+        "rel_strength_vs_pool_120d": -26.85,
+        "abs_return_120d": 47.23,
+        "dd_pct": -17.0,
+        "days_since_high": 45,
+        "semantic_mentions_90d": 12
       },
       "factors_secondary_method": {
-        "rel_strength_vs_taiex_120d": -17.79,
-        "abs_return_120d": 25.43,
-        "dd_pct": -25.0,
-        "days_since_high": 34
+        "rel_strength_vs_taiex_120d": -15.56,
+        "abs_return_120d": 21.27,
+        "dd_pct": -27.8,
+        "days_since_high": 45
       },
       "in_strong_pool": false
     },
@@ -988,11 +1001,9 @@
       "core_not_applicable_reason": null,
       "core_not_applicable_note": null,
       "core_blocked_reason": "reviewed=false，母體不全。Joseph 憑印象列的候選裡有 3 支不在現有 stocks：所羅門(2359)/大銀微系統(4576)/台灣精銳(4583)，減速機與驅動是機器人最核心的兩個零組件，母體缺這些在談 core 沒有意義。撤回理由是名單缺口，不是判準選錯——達明／亞光的裁定本身沒有問題，見票 04 完成記錄 2026-08-10 該筆，補完名單後大概率重新入選。",
-      "n_candidates": 4,
+      "n_candidates": 2,
       "candidates": [
-        "上銀",
         "亞光",
-        "亞德客-KY",
         "盟立"
       ],
       "core_defined": false,
@@ -1002,37 +1013,39 @@
       "secondary_agg": "mean",
       "zone": null,
       "zone_primary": "落難",
-      "zone_secondary": "落難",
+      "zone_secondary": "熱水",
       "agg_gap": {
-        "rel": 39.36,
-        "dd": 12.1
+        "rel": 39.14,
+        "dd": 13.0
       },
       "dispersion": {
         "n": 10,
-        "iqr_rel": 56.59,
-        "range_rel": 188.02,
-        "iqr_dd": 10.03,
-        "range_dd": 37.2
+        "iqr_rel": 39.33,
+        "range_rel": 189.93,
+        "iqr_dd": 9.62,
+        "range_dd": 31.0
       },
-      "dispersion_ratio": 2.83,
+      "dispersion_ratio": 1.97,
       "dispersion_flag": true,
       "core_priority": 1,
-      "near_boundary": [],
+      "near_boundary": [
+        "days_since_high"
+      ],
       "detection_blind": false,
       "detection_weak": false,
       "factors": {
-        "rel_strength_vs_taiex_120d": -53.33,
-        "rel_strength_vs_pool_120d": -79.65,
-        "abs_return_120d": -10.11,
-        "dd_pct": -16.9,
-        "days_since_high": 55,
-        "semantic_mentions_90d": 4
+        "rel_strength_vs_taiex_120d": -45.57,
+        "rel_strength_vs_pool_120d": -82.82,
+        "abs_return_120d": -8.74,
+        "dd_pct": -20.6,
+        "days_since_high": 67,
+        "semantic_mentions_90d": 2
       },
       "factors_secondary_method": {
-        "rel_strength_vs_taiex_120d": -13.97,
-        "abs_return_120d": 29.25,
-        "dd_pct": -4.8,
-        "days_since_high": 50
+        "rel_strength_vs_taiex_120d": -6.43,
+        "abs_return_120d": 30.4,
+        "dd_pct": -7.6,
+        "days_since_high": 62
       },
       "in_strong_pool": false
     },
@@ -1055,35 +1068,38 @@
       "zone_primary": "冷水",
       "zone_secondary": "冷水",
       "agg_gap": {
-        "rel": 27.91,
-        "dd": 10.8
+        "rel": 14.13,
+        "dd": 8.6
       },
       "dispersion": {
         "n": 3,
-        "iqr_rel": 2.23,
-        "range_rel": 4.46,
-        "iqr_dd": 6.4,
-        "range_dd": 12.8
+        "iqr_rel": 13.72,
+        "range_rel": 27.44,
+        "iqr_dd": 5.8,
+        "range_dd": 11.6
       },
-      "dispersion_ratio": 0.32,
+      "dispersion_ratio": 0.69,
       "dispersion_flag": false,
-      "core_priority": 3,
-      "near_boundary": [],
+      "core_priority": 2,
+      "near_boundary": [
+        "dd_pct",
+        "days_since_high"
+      ],
       "detection_blind": false,
       "detection_weak": true,
       "factors": {
-        "rel_strength_vs_taiex_120d": 54.23,
-        "rel_strength_vs_pool_120d": 27.91,
-        "abs_return_120d": 97.45,
-        "dd_pct": -28.9,
-        "days_since_high": 54,
+        "rel_strength_vs_taiex_120d": 31.47,
+        "rel_strength_vs_pool_120d": -5.78,
+        "abs_return_120d": 68.3,
+        "dd_pct": -25.6,
+        "days_since_high": 66,
         "semantic_mentions_90d": 2
       },
       "factors_secondary_method": {
-        "rel_strength_vs_taiex_120d": 26.32,
-        "abs_return_120d": 69.54,
-        "dd_pct": -39.7,
-        "days_since_high": 54
+        "rel_strength_vs_taiex_120d": 17.34,
+        "abs_return_120d": 54.17,
+        "dd_pct": -34.2,
+        "days_since_high": 66
       },
       "in_strong_pool": true
     },
@@ -1105,35 +1121,37 @@
       "zone_primary": "落難",
       "zone_secondary": "落難",
       "agg_gap": {
-        "rel": 19.22,
-        "dd": 4.4
+        "rel": 17.41,
+        "dd": 3.9
       },
       "dispersion": {
         "n": 8,
-        "iqr_rel": 22.66,
-        "range_rel": 85.13,
-        "iqr_dd": 11.65,
-        "range_dd": 22.1
+        "iqr_rel": 25.73,
+        "range_rel": 77.83,
+        "iqr_dd": 5.98,
+        "range_dd": 22.2
       },
-      "dispersion_ratio": 1.13,
+      "dispersion_ratio": 1.29,
       "dispersion_flag": true,
       "core_priority": null,
-      "near_boundary": [],
+      "near_boundary": [
+        "days_since_high"
+      ],
       "detection_blind": false,
       "detection_weak": false,
       "factors": {
-        "rel_strength_vs_taiex_120d": -46.47,
-        "rel_strength_vs_pool_120d": -72.79,
-        "abs_return_120d": -3.25,
-        "dd_pct": -20.0,
-        "days_since_high": 20,
+        "rel_strength_vs_taiex_120d": -38.8,
+        "rel_strength_vs_pool_120d": -76.05,
+        "abs_return_120d": -1.97,
+        "dd_pct": -16.2,
+        "days_since_high": 32,
         "semantic_mentions_90d": 1
       },
       "factors_secondary_method": {
-        "rel_strength_vs_taiex_120d": -27.25,
-        "abs_return_120d": 15.97,
-        "dd_pct": -15.6,
-        "days_since_high": 21
+        "rel_strength_vs_taiex_120d": -21.39,
+        "abs_return_120d": 15.44,
+        "dd_pct": -12.3,
+        "days_since_high": 33
       },
       "in_strong_pool": false
     },
@@ -1155,44 +1173,42 @@
       "secondary_agg": "median",
       "zone": null,
       "zone_primary": "溫水",
-      "zone_secondary": "溫水",
+      "zone_secondary": "熱水",
       "agg_gap": {
-        "rel": 3.93,
-        "dd": 3.0
+        "rel": 0.4,
+        "dd": 4.7
       },
       "dispersion": {
         "n": 3,
-        "iqr_rel": 44.46,
-        "range_rel": 88.92,
-        "iqr_dd": 10.65,
-        "range_dd": 21.3
+        "iqr_rel": 38.33,
+        "range_rel": 76.66,
+        "iqr_dd": 12.8,
+        "range_dd": 25.6
       },
-      "dispersion_ratio": 2.22,
+      "dispersion_ratio": 1.92,
       "dispersion_flag": true,
       "core_priority": 1,
-      "near_boundary": [
-        "days_since_high"
-      ],
+      "near_boundary": [],
       "detection_blind": false,
       "detection_weak": true,
       "factors": {
-        "rel_strength_vs_taiex_120d": 114.12,
-        "rel_strength_vs_pool_120d": 87.8,
-        "abs_return_120d": 157.34,
-        "dd_pct": -13.3,
-        "days_since_high": 30,
+        "rel_strength_vs_taiex_120d": 78.98,
+        "rel_strength_vs_pool_120d": 41.73,
+        "abs_return_120d": 115.81,
+        "dd_pct": -11.0,
+        "days_since_high": 42,
         "semantic_mentions_90d": 9
       },
       "factors_secondary_method": {
-        "rel_strength_vs_taiex_120d": 118.05,
-        "abs_return_120d": 161.27,
-        "dd_pct": -10.3,
-        "days_since_high": 30
+        "rel_strength_vs_taiex_120d": 79.38,
+        "abs_return_120d": 116.21,
+        "dd_pct": -6.3,
+        "days_since_high": 42
       },
       "in_strong_pool": true
     },
     "玻纖布": {
-      "region": "observation",
+      "region": "core_undefined",
       "core_not_applicable_reason": null,
       "core_not_applicable_note": null,
       "core_blocked_reason": null,
@@ -1205,42 +1221,41 @@
       "n_members_defined": 4,
       "primary_agg": "mean",
       "secondary_agg": "median",
-      "zone": "落難",
+      "zone": null,
       "zone_primary": "落難",
       "zone_secondary": "落難",
       "agg_gap": {
-        "rel": 7.32,
-        "dd": 2.3
+        "rel": 14.51,
+        "dd": 4.4
       },
       "dispersion": {
         "n": 4,
-        "iqr_rel": 15.15,
-        "range_rel": 42.46,
-        "iqr_dd": 17.85,
-        "range_dd": 38.1
+        "iqr_rel": 14.32,
+        "range_rel": 43.53,
+        "iqr_dd": 23.92,
+        "range_dd": 48.6
       },
-      "dispersion_ratio": 0.89,
-      "dispersion_flag": false,
-      "core_priority": 2,
+      "dispersion_ratio": 1.2,
+      "dispersion_flag": true,
+      "core_priority": 1,
       "near_boundary": [
-        "dd_pct",
-        "days_since_high"
+        "dd_pct"
       ],
       "detection_blind": false,
       "detection_weak": false,
       "factors": {
-        "rel_strength_vs_taiex_120d": -37.06,
-        "rel_strength_vs_pool_120d": -63.38,
-        "abs_return_120d": 6.16,
-        "dd_pct": -38.3,
-        "days_since_high": 80,
+        "rel_strength_vs_taiex_120d": -35.22,
+        "rel_strength_vs_pool_120d": -72.47,
+        "abs_return_120d": 1.61,
+        "dd_pct": -25.1,
+        "days_since_high": 92,
         "semantic_mentions_90d": 1
       },
       "factors_secondary_method": {
-        "rel_strength_vs_taiex_120d": -44.38,
-        "abs_return_120d": -1.16,
-        "dd_pct": -36.0,
-        "days_since_high": 80
+        "rel_strength_vs_taiex_120d": -49.73,
+        "abs_return_120d": -12.9,
+        "dd_pct": -29.5,
+        "days_since_high": 92
       },
       "in_strong_pool": false
     },
@@ -1262,37 +1277,37 @@
       "zone_primary": "落難",
       "zone_secondary": "落難",
       "agg_gap": {
-        "rel": 19.68,
-        "dd": 8.3
+        "rel": 15.35,
+        "dd": 6.5
       },
       "dispersion": {
         "n": 8,
-        "iqr_rel": 25.94,
-        "range_rel": 63.57,
-        "iqr_dd": 10.97,
-        "range_dd": 18.9
+        "iqr_rel": 27.52,
+        "range_rel": 57.39,
+        "iqr_dd": 13.45,
+        "range_dd": 27.9
       },
-      "dispersion_ratio": 1.3,
+      "dispersion_ratio": 1.38,
       "dispersion_flag": true,
       "core_priority": 1,
       "near_boundary": [
-        "dd_pct"
+        "days_since_high"
       ],
       "detection_blind": false,
       "detection_weak": false,
       "factors": {
-        "rel_strength_vs_taiex_120d": -41.29,
-        "rel_strength_vs_pool_120d": -67.61,
-        "abs_return_120d": 1.93,
-        "dd_pct": -22.0,
-        "days_since_high": 27,
+        "rel_strength_vs_taiex_120d": -43.62,
+        "rel_strength_vs_pool_120d": -80.87,
+        "abs_return_120d": -6.79,
+        "dd_pct": -16.9,
+        "days_since_high": 39,
         "semantic_mentions_90d": 1
       },
       "factors_secondary_method": {
-        "rel_strength_vs_taiex_120d": -21.61,
-        "abs_return_120d": 21.61,
-        "dd_pct": -13.7,
-        "days_since_high": 14
+        "rel_strength_vs_taiex_120d": -28.27,
+        "abs_return_120d": 8.56,
+        "dd_pct": -10.4,
+        "days_since_high": 26
       },
       "in_strong_pool": false
     },
@@ -1310,42 +1325,44 @@
       ],
       "core_defined": false,
       "n_members_used": 6,
-      "n_members_defined": 8,
+      "n_members_defined": 7,
       "primary_agg": "median",
       "secondary_agg": "mean",
       "zone": null,
       "zone_primary": "冷水",
       "zone_secondary": "冷水",
       "agg_gap": {
-        "rel": 27.9,
-        "dd": 2.6
+        "rel": 22.89,
+        "dd": 4.6
       },
       "dispersion": {
         "n": 6,
-        "iqr_rel": 37.95,
-        "range_rel": 125.51,
-        "iqr_dd": 3.73,
-        "range_dd": 14.2
+        "iqr_rel": 54.43,
+        "range_rel": 149.89,
+        "iqr_dd": 5.07,
+        "range_dd": 18.3
       },
-      "dispersion_ratio": 1.9,
+      "dispersion_ratio": 2.72,
       "dispersion_flag": true,
       "core_priority": 1,
-      "near_boundary": [],
+      "near_boundary": [
+        "days_since_high"
+      ],
       "detection_blind": false,
       "detection_weak": false,
       "factors": {
-        "rel_strength_vs_taiex_120d": 33.54,
-        "rel_strength_vs_pool_120d": 7.22,
-        "abs_return_120d": 76.76,
-        "dd_pct": -29.1,
-        "days_since_high": 27,
+        "rel_strength_vs_taiex_120d": 31.59,
+        "rel_strength_vs_pool_120d": -5.66,
+        "abs_return_120d": 68.42,
+        "dd_pct": -30.2,
+        "days_since_high": 39,
         "semantic_mentions_90d": 8
       },
       "factors_secondary_method": {
-        "rel_strength_vs_taiex_120d": 61.44,
-        "abs_return_120d": 104.66,
-        "dd_pct": -26.5,
-        "days_since_high": 27
+        "rel_strength_vs_taiex_120d": 54.48,
+        "abs_return_120d": 91.31,
+        "dd_pct": -25.6,
+        "days_since_high": 39
       },
       "in_strong_pool": true
     },
@@ -1369,35 +1386,37 @@
       "zone_primary": "冷水",
       "zone_secondary": "冷水",
       "agg_gap": {
-        "rel": 1.73,
-        "dd": 5.4
+        "rel": 6.08,
+        "dd": 8.6
       },
       "dispersion": {
         "n": 3,
-        "iqr_rel": 72.79,
-        "range_rel": 145.58,
-        "iqr_dd": 6.45,
-        "range_dd": 12.9
+        "iqr_rel": 82.32,
+        "range_rel": 164.64,
+        "iqr_dd": 4.35,
+        "range_dd": 8.7
       },
-      "dispersion_ratio": 3.64,
+      "dispersion_ratio": 4.12,
       "dispersion_flag": true,
       "core_priority": 1,
-      "near_boundary": [],
+      "near_boundary": [
+        "days_since_high"
+      ],
       "detection_blind": false,
       "detection_weak": true,
       "factors": {
-        "rel_strength_vs_taiex_120d": 78.15,
-        "rel_strength_vs_pool_120d": 51.83,
-        "abs_return_120d": 121.37,
-        "dd_pct": -37.0,
-        "days_since_high": 20,
+        "rel_strength_vs_taiex_120d": 92.75,
+        "rel_strength_vs_pool_120d": 55.5,
+        "abs_return_120d": 129.58,
+        "dd_pct": -34.7,
+        "days_since_high": 32,
         "semantic_mentions_90d": 8
       },
       "factors_secondary_method": {
-        "rel_strength_vs_taiex_120d": 79.88,
-        "abs_return_120d": 123.1,
-        "dd_pct": -42.4,
-        "days_since_high": 21
+        "rel_strength_vs_taiex_120d": 86.67,
+        "abs_return_120d": 123.5,
+        "dd_pct": -43.3,
+        "days_since_high": 33
       },
       "in_strong_pool": true
     },
@@ -1420,42 +1439,43 @@
       "primary_agg": "mean",
       "secondary_agg": "median",
       "zone": null,
-      "zone_primary": "冷水",
-      "zone_secondary": "冷水",
+      "zone_primary": "溫水",
+      "zone_secondary": "溫水",
       "agg_gap": {
-        "rel": 38.58,
-        "dd": 0.8
+        "rel": 30.43,
+        "dd": 0.6
       },
       "dispersion": {
         "n": 5,
-        "iqr_rel": 52.33,
-        "range_rel": 146.06,
-        "iqr_dd": 4.2,
-        "range_dd": 31.5
+        "iqr_rel": 53.67,
+        "range_rel": 145.55,
+        "iqr_dd": 8.7,
+        "range_dd": 38.6
       },
-      "dispersion_ratio": 2.62,
+      "dispersion_ratio": 2.68,
       "dispersion_flag": true,
       "core_priority": 1,
       "near_boundary": [
-        "dd_pct"
+        "dd_pct",
+        "days_since_high"
       ],
       "detection_blind": false,
       "detection_weak": false,
       "factors": {
-        "rel_strength_vs_taiex_120d": 53.85,
-        "rel_strength_vs_pool_120d": 27.53,
-        "abs_return_120d": 97.07,
-        "dd_pct": -27.9,
-        "days_since_high": 54,
+        "rel_strength_vs_taiex_120d": 32.19,
+        "rel_strength_vs_pool_120d": -5.06,
+        "abs_return_120d": 69.02,
+        "dd_pct": -23.5,
+        "days_since_high": 66,
         "semantic_mentions_90d": 7
       },
       "factors_secondary_method": {
-        "rel_strength_vs_taiex_120d": 15.27,
-        "abs_return_120d": 58.49,
-        "dd_pct": -27.1,
-        "days_since_high": 54
+        "rel_strength_vs_taiex_120d": 1.76,
+        "abs_return_120d": 38.59,
+        "dd_pct": -24.1,
+        "days_since_high": 66
       },
-      "in_strong_pool": true
+      "in_strong_pool": false
     },
     "磷化銦": {
       "region": "observation",
@@ -1471,9 +1491,9 @@
       "n_members_defined": 1,
       "primary_agg": "median",
       "secondary_agg": "mean",
-      "zone": "溫水",
-      "zone_primary": "溫水",
-      "zone_secondary": "溫水",
+      "zone": "熱水",
+      "zone_primary": "熱水",
+      "zone_secondary": "熱水",
       "agg_gap": {
         "rel": 0.0,
         "dd": 0.0
@@ -1482,22 +1502,24 @@
       "dispersion_ratio": null,
       "dispersion_flag": null,
       "core_priority": "N/A",
-      "near_boundary": [],
+      "near_boundary": [
+        "days_since_high"
+      ],
       "detection_blind": true,
       "detection_weak": false,
       "factors": {
-        "rel_strength_vs_taiex_120d": 92.11,
-        "rel_strength_vs_pool_120d": 65.79,
-        "abs_return_120d": 135.33,
-        "dd_pct": -12.8,
-        "days_since_high": 55,
+        "rel_strength_vs_taiex_120d": 64.53,
+        "rel_strength_vs_pool_120d": 27.28,
+        "abs_return_120d": 101.36,
+        "dd_pct": -1.6,
+        "days_since_high": 67,
         "semantic_mentions_90d": 1
       },
       "factors_secondary_method": {
-        "rel_strength_vs_taiex_120d": 92.11,
-        "abs_return_120d": 135.33,
-        "dd_pct": -12.8,
-        "days_since_high": 55
+        "rel_strength_vs_taiex_120d": 64.53,
+        "abs_return_120d": 101.36,
+        "dd_pct": -1.6,
+        "days_since_high": 67
       },
       "in_strong_pool": true
     },
@@ -1516,40 +1538,40 @@
       "primary_agg": "mean",
       "secondary_agg": "median",
       "zone": null,
-      "zone_primary": "溫水",
+      "zone_primary": "落難",
       "zone_secondary": "落難",
       "agg_gap": {
-        "rel": 33.98,
-        "dd": 6.3
+        "rel": 22.82,
+        "dd": 5.8
       },
       "dispersion": {
         "n": 4,
-        "iqr_rel": 54.25,
-        "range_rel": 92.43,
-        "iqr_dd": 8.18,
-        "range_dd": 18.6
+        "iqr_rel": 36.07,
+        "range_rel": 64.3,
+        "iqr_dd": 4.03,
+        "range_dd": 14.0
       },
-      "dispersion_ratio": 2.71,
+      "dispersion_ratio": 1.8,
       "dispersion_flag": true,
       "core_priority": 1,
       "near_boundary": [
-        "dd_pct"
+        "days_since_high"
       ],
       "detection_blind": false,
       "detection_weak": false,
       "factors": {
-        "rel_strength_vs_taiex_120d": -9.73,
-        "rel_strength_vs_pool_120d": -36.05,
-        "abs_return_120d": 33.49,
-        "dd_pct": -9.1,
-        "days_since_high": 22,
+        "rel_strength_vs_taiex_120d": -21.14,
+        "rel_strength_vs_pool_120d": -58.39,
+        "abs_return_120d": 15.69,
+        "dd_pct": -13.4,
+        "days_since_high": 34,
         "semantic_mentions_90d": 1
       },
       "factors_secondary_method": {
-        "rel_strength_vs_taiex_120d": -43.71,
-        "abs_return_120d": -0.49,
-        "dd_pct": -15.4,
-        "days_since_high": 49
+        "rel_strength_vs_taiex_120d": -43.96,
+        "abs_return_120d": -7.13,
+        "dd_pct": -19.2,
+        "days_since_high": 61
       },
       "in_strong_pool": false
     },
@@ -1571,43 +1593,42 @@
       "zone_primary": "落難",
       "zone_secondary": "落難",
       "agg_gap": {
-        "rel": 5.58,
-        "dd": 1.7
+        "rel": 2.32,
+        "dd": 1.9
       },
       "dispersion": {
         "n": 4,
-        "iqr_rel": 8.58,
-        "range_rel": 25.28,
-        "iqr_dd": 2.12,
-        "range_dd": 7.9
+        "iqr_rel": 8.7,
+        "range_rel": 33.32,
+        "iqr_dd": 6.57,
+        "range_dd": 7.4
       },
       "dispersion_ratio": 0.43,
       "dispersion_flag": false,
       "core_priority": 3,
       "near_boundary": [
-        "dd_pct",
-        "days_since_high"
+        "dd_pct"
       ],
       "detection_blind": false,
       "detection_weak": false,
       "factors": {
-        "rel_strength_vs_taiex_120d": -46.33,
-        "rel_strength_vs_pool_120d": -72.65,
-        "abs_return_120d": -3.11,
+        "rel_strength_vs_taiex_120d": -25.23,
+        "rel_strength_vs_pool_120d": -62.48,
+        "abs_return_120d": 11.6,
         "dd_pct": -7.7,
-        "days_since_high": 33,
+        "days_since_high": 45,
         "semantic_mentions_90d": 1
       },
       "factors_secondary_method": {
-        "rel_strength_vs_taiex_120d": -40.75,
-        "abs_return_120d": 2.47,
-        "dd_pct": -6.0,
-        "days_since_high": 33
+        "rel_strength_vs_taiex_120d": -22.91,
+        "abs_return_120d": 13.92,
+        "dd_pct": -5.8,
+        "days_since_high": 45
       },
       "in_strong_pool": false
     },
     "被動元件": {
-      "region": "core_undefined",
+      "region": "core_defined_dispersed",
       "core_not_applicable_reason": null,
       "core_not_applicable_note": null,
       "core_blocked_reason": null,
@@ -1622,54 +1643,51 @@
         "興勤",
         "華新科"
       ],
-      "core_defined": false,
-      "n_members_used": 22,
-      "n_members_defined": 22,
-      "primary_agg": "median",
-      "secondary_agg": "mean",
+      "core_defined": true,
+      "n_members_used": 3,
+      "n_members_defined": 3,
+      "primary_agg": "mean",
+      "secondary_agg": "median",
       "zone": null,
       "zone_primary": "冷水",
       "zone_secondary": "冷水",
       "agg_gap": {
-        "rel": 49.3,
-        "dd": 7.2
+        "rel": 56.97,
+        "dd": 2.1
       },
       "dispersion": {
-        "n": 22,
-        "iqr_rel": 86.22,
-        "range_rel": 602.99,
-        "iqr_dd": 14.72,
-        "range_dd": 38.3
+        "n": 3,
+        "iqr_rel": 227.55,
+        "range_rel": 455.11,
+        "iqr_dd": 11.35,
+        "range_dd": 22.7
       },
-      "dispersion_ratio": 4.31,
+      "dispersion_ratio": 11.38,
       "dispersion_flag": true,
-      "core_priority": 1,
-      "near_boundary": [
-        "dd_pct",
-        "days_since_high"
-      ],
+      "core_priority": null,
+      "near_boundary": [],
       "detection_blind": false,
-      "detection_weak": false,
+      "detection_weak": true,
       "factors": {
-        "rel_strength_vs_taiex_120d": 8.6,
-        "rel_strength_vs_pool_120d": -17.72,
-        "abs_return_120d": 51.82,
-        "dd_pct": -40.7,
-        "days_since_high": 37,
-        "semantic_mentions_90d": 15
+        "rel_strength_vs_taiex_120d": 210.39,
+        "rel_strength_vs_pool_120d": 173.14,
+        "abs_return_120d": 247.22,
+        "dd_pct": -38.0,
+        "days_since_high": 41,
+        "semantic_mentions_90d": 14
       },
       "factors_secondary_method": {
-        "rel_strength_vs_taiex_120d": 57.9,
-        "abs_return_120d": 101.12,
-        "dd_pct": -33.5,
-        "days_since_high": 37
+        "rel_strength_vs_taiex_120d": 153.42,
+        "abs_return_120d": 190.25,
+        "dd_pct": -40.1,
+        "days_since_high": 41
       },
       "in_strong_pool": true
     },
     "記憶體": {
       "region": "core_not_applicable",
       "core_not_applicable_reason": "sector_too_broad",
-      "core_not_applicable_note": "族群名即產業名，成員第一順位業務本來就幾乎都是記憶體（6/8 明確通過自我定位測試、1 邊界/力積電、僅新唐不通過），core 機制在此無效益。2026-08-10 判定，見 tasks/xq_taxonomy_correction.md，建議拆成更窄子題材（利基型DRAM／記憶體模組品牌等）再重估。",
+      "core_not_applicable_note": "族群名即產業名，core 機制無效益。2026-08-28 已依 skill 建議拆成記憶體顆粒／記憶體IC設計／記憶體模組三個子族群，本族群保留為聯集，供「整個記憶體產業」層級的訊號使用。⚠️ 三個子族群同樣是產業型、同樣不定 core——拆窄改善的是族群指數的乾淨度（原 8 支混著顆粒＋模組＋fabless＋一支 MCU），不是 core 的可行性。",
       "core_blocked_reason": null,
       "n_candidates": 5,
       "candidates": [
@@ -1680,45 +1698,45 @@
         "華邦電"
       ],
       "core_defined": false,
-      "n_members_used": 8,
-      "n_members_defined": 8,
+      "n_members_used": 15,
+      "n_members_defined": 15,
       "primary_agg": "median",
       "secondary_agg": "mean",
       "zone": null,
       "zone_primary": "溫水",
       "zone_secondary": "溫水",
       "agg_gap": {
-        "rel": 36.88,
-        "dd": 5.2
+        "rel": 32.96,
+        "dd": 13.7
       },
       "dispersion": {
-        "n": 8,
-        "iqr_rel": 43.65,
-        "range_rel": 105.28,
-        "iqr_dd": 9.1,
-        "range_dd": 42.2
+        "n": 15,
+        "iqr_rel": 69.75,
+        "range_rel": 271.29,
+        "iqr_dd": 13.0,
+        "range_dd": 32.1
       },
-      "dispersion_ratio": 2.18,
+      "dispersion_ratio": 3.49,
       "dispersion_flag": true,
       "core_priority": null,
       "near_boundary": [
-        "days_since_high"
+        "dd_pct"
       ],
       "detection_blind": false,
       "detection_weak": false,
       "factors": {
-        "rel_strength_vs_taiex_120d": -6.38,
-        "rel_strength_vs_pool_120d": -32.7,
-        "abs_return_120d": 36.84,
-        "dd_pct": -17.6,
-        "days_since_high": 36,
+        "rel_strength_vs_taiex_120d": 9.68,
+        "rel_strength_vs_pool_120d": -27.57,
+        "abs_return_120d": 46.51,
+        "dd_pct": -22.3,
+        "days_since_high": 61,
         "semantic_mentions_90d": 12
       },
       "factors_secondary_method": {
-        "rel_strength_vs_taiex_120d": 30.5,
-        "abs_return_120d": 73.72,
-        "dd_pct": -12.4,
-        "days_since_high": 36
+        "rel_strength_vs_taiex_120d": 42.64,
+        "abs_return_120d": 79.47,
+        "dd_pct": -8.6,
+        "days_since_high": 48
       },
       "in_strong_pool": true
     },
@@ -1741,35 +1759,37 @@
       "zone_primary": "落難",
       "zone_secondary": "落難",
       "agg_gap": {
-        "rel": 14.77,
-        "dd": 4.2
+        "rel": 12.86,
+        "dd": 4.3
       },
       "dispersion": {
         "n": 5,
-        "iqr_rel": 15.95,
-        "range_rel": 33.12,
-        "iqr_dd": 13.8,
-        "range_dd": 16.6
+        "iqr_rel": 8.71,
+        "range_rel": 34.85,
+        "iqr_dd": 8.4,
+        "range_dd": 23.3
       },
-      "dispersion_ratio": 0.8,
+      "dispersion_ratio": 0.44,
       "dispersion_flag": false,
-      "core_priority": 2,
-      "near_boundary": [],
+      "core_priority": 3,
+      "near_boundary": [
+        "days_since_high"
+      ],
       "detection_blind": false,
       "detection_weak": false,
       "factors": {
-        "rel_strength_vs_taiex_120d": -35.98,
-        "rel_strength_vs_pool_120d": -62.3,
-        "abs_return_120d": 7.24,
-        "dd_pct": -18.5,
-        "days_since_high": 21,
+        "rel_strength_vs_taiex_120d": -30.66,
+        "rel_strength_vs_pool_120d": -67.91,
+        "abs_return_120d": 6.17,
+        "dd_pct": -15.3,
+        "days_since_high": 33,
         "semantic_mentions_90d": 2
       },
       "factors_secondary_method": {
-        "rel_strength_vs_taiex_120d": -50.75,
-        "abs_return_120d": -7.53,
-        "dd_pct": -22.7,
-        "days_since_high": 22
+        "rel_strength_vs_taiex_120d": -43.52,
+        "abs_return_120d": -6.69,
+        "dd_pct": -19.6,
+        "days_since_high": 34
       },
       "in_strong_pool": false
     },
@@ -1783,7 +1803,7 @@
         "東元"
       ],
       "core_defined": false,
-      "n_members_used": 4,
+      "n_members_used": 5,
       "n_members_defined": 5,
       "primary_agg": "mean",
       "secondary_agg": "median",
@@ -1791,35 +1811,35 @@
       "zone_primary": "落難",
       "zone_secondary": "落難",
       "agg_gap": {
-        "rel": 9.0,
-        "dd": 5.4
+        "rel": 14.8,
+        "dd": 5.7
       },
       "dispersion": {
-        "n": 4,
-        "iqr_rel": 5.69,
-        "range_rel": 21.66,
-        "iqr_dd": 8.38,
-        "range_dd": 20.6
+        "n": 5,
+        "iqr_rel": 10.22,
+        "range_rel": 17.57,
+        "iqr_dd": 11.9,
+        "range_dd": 19.9
       },
-      "dispersion_ratio": 0.42,
+      "dispersion_ratio": 0.59,
       "dispersion_flag": false,
-      "core_priority": 3,
+      "core_priority": 2,
       "near_boundary": [],
       "detection_blind": false,
       "detection_weak": false,
       "factors": {
-        "rel_strength_vs_taiex_120d": -49.47,
-        "rel_strength_vs_pool_120d": -75.79,
-        "abs_return_120d": -6.25,
-        "dd_pct": -17.3,
-        "days_since_high": 47,
+        "rel_strength_vs_taiex_120d": -37.42,
+        "rel_strength_vs_pool_120d": -74.67,
+        "abs_return_120d": -0.59,
+        "dd_pct": -15.3,
+        "days_since_high": 59,
         "semantic_mentions_90d": 1
       },
       "factors_secondary_method": {
-        "rel_strength_vs_taiex_120d": -58.47,
-        "abs_return_120d": -15.25,
-        "dd_pct": -22.7,
-        "days_since_high": 113
+        "rel_strength_vs_taiex_120d": -52.22,
+        "abs_return_120d": -15.39,
+        "dd_pct": -21.0,
+        "days_since_high": 59
       },
       "in_strong_pool": false
     },
@@ -1838,38 +1858,38 @@
       "primary_agg": "median",
       "secondary_agg": "mean",
       "zone": null,
-      "zone_primary": "溫水",
-      "zone_secondary": "溫水",
+      "zone_primary": "熱水",
+      "zone_secondary": "熱水",
       "agg_gap": {
         "rel": 0.0,
         "dd": 0.0
       },
       "dispersion": {
         "n": 2,
-        "iqr_rel": 40.86,
-        "range_rel": 81.73,
-        "iqr_dd": 11.5,
-        "range_dd": 23.0
+        "iqr_rel": 28.89,
+        "range_rel": 57.79,
+        "iqr_dd": 9.5,
+        "range_dd": 19.0
       },
-      "dispersion_ratio": 2.04,
+      "dispersion_ratio": 1.44,
       "dispersion_flag": true,
       "core_priority": 1,
       "near_boundary": [],
       "detection_blind": false,
       "detection_weak": true,
       "factors": {
-        "rel_strength_vs_taiex_120d": 82.44,
-        "rel_strength_vs_pool_120d": 56.12,
-        "abs_return_120d": 125.66,
-        "dd_pct": -15.8,
-        "days_since_high": 27,
+        "rel_strength_vs_taiex_120d": 115.12,
+        "rel_strength_vs_pool_120d": 77.87,
+        "abs_return_120d": 151.95,
+        "dd_pct": 0.0,
+        "days_since_high": 0,
         "semantic_mentions_90d": 1
       },
       "factors_secondary_method": {
-        "rel_strength_vs_taiex_120d": 82.44,
-        "abs_return_120d": 125.66,
-        "dd_pct": -15.8,
-        "days_since_high": 27
+        "rel_strength_vs_taiex_120d": 115.12,
+        "abs_return_120d": 151.95,
+        "dd_pct": 0.0,
+        "days_since_high": 0
       },
       "in_strong_pool": true
     },
@@ -1893,40 +1913,40 @@
       "zone_primary": "熱水",
       "zone_secondary": "熱水",
       "agg_gap": {
-        "rel": 86.04,
-        "dd": 1.8
+        "rel": 85.49,
+        "dd": 3.5
       },
       "dispersion": {
         "n": 5,
-        "iqr_rel": 36.3,
-        "range_rel": 177.63,
-        "iqr_dd": 10.0,
-        "range_dd": 70.5
+        "iqr_rel": 51.45,
+        "range_rel": 226.62,
+        "iqr_dd": 13.5,
+        "range_dd": 72.9
       },
-      "dispersion_ratio": 1.81,
+      "dispersion_ratio": 2.57,
       "dispersion_flag": true,
       "core_priority": 1,
       "near_boundary": [],
       "detection_blind": false,
       "detection_weak": false,
       "factors": {
-        "rel_strength_vs_taiex_120d": 186.5,
-        "rel_strength_vs_pool_120d": 160.18,
-        "abs_return_120d": 229.72,
-        "dd_pct": -1.9,
-        "days_since_high": 51,
-        "semantic_mentions_90d": 14
+        "rel_strength_vs_taiex_120d": 192.67,
+        "rel_strength_vs_pool_120d": 155.42,
+        "abs_return_120d": 229.5,
+        "dd_pct": -1.3,
+        "days_since_high": 2,
+        "semantic_mentions_90d": 11
       },
       "factors_secondary_method": {
-        "rel_strength_vs_taiex_120d": 100.46,
-        "abs_return_120d": 143.68,
-        "dd_pct": -3.7,
-        "days_since_high": 27
+        "rel_strength_vs_taiex_120d": 107.18,
+        "abs_return_120d": 144.01,
+        "dd_pct": -4.8,
+        "days_since_high": 9
       },
       "in_strong_pool": true
     },
     "電子通路": {
-      "region": "core_undefined",
+      "region": "observation",
       "core_not_applicable_reason": null,
       "core_not_applicable_note": null,
       "core_blocked_reason": null,
@@ -1939,41 +1959,41 @@
       "n_members_defined": 5,
       "primary_agg": "mean",
       "secondary_agg": "median",
-      "zone": null,
-      "zone_primary": "熱水",
-      "zone_secondary": "熱水",
+      "zone": "溫水",
+      "zone_primary": "溫水",
+      "zone_secondary": "落難",
       "agg_gap": {
-        "rel": 31.14,
-        "dd": 1.8
+        "rel": 21.39,
+        "dd": 2.4
       },
       "dispersion": {
         "n": 5,
-        "iqr_rel": 21.47,
-        "range_rel": 49.65,
-        "iqr_dd": 13.7,
-        "range_dd": 22.7
+        "iqr_rel": 14.93,
+        "range_rel": 56.45,
+        "iqr_dd": 14.0,
+        "range_dd": 24.0
       },
-      "dispersion_ratio": 1.07,
-      "dispersion_flag": true,
-      "core_priority": 1,
+      "dispersion_ratio": 0.75,
+      "dispersion_flag": false,
+      "core_priority": 2,
       "near_boundary": [],
       "detection_blind": false,
       "detection_weak": false,
       "factors": {
-        "rel_strength_vs_taiex_120d": 21.03,
-        "rel_strength_vs_pool_120d": -5.29,
-        "abs_return_120d": 64.25,
-        "dd_pct": -5.2,
-        "days_since_high": 49,
+        "rel_strength_vs_taiex_120d": -3.61,
+        "rel_strength_vs_pool_120d": -40.86,
+        "abs_return_120d": 33.22,
+        "dd_pct": -13.5,
+        "days_since_high": 61,
         "semantic_mentions_90d": 1
       },
       "factors_secondary_method": {
-        "rel_strength_vs_taiex_120d": -10.11,
-        "abs_return_120d": 33.11,
-        "dd_pct": -7.0,
-        "days_since_high": 49
+        "rel_strength_vs_taiex_120d": -25.0,
+        "abs_return_120d": 11.83,
+        "dd_pct": -15.9,
+        "days_since_high": 61
       },
-      "in_strong_pool": true
+      "in_strong_pool": false
     },
     "電源/BBU": {
       "region": "core_undefined",
@@ -1992,42 +2012,42 @@
       "secondary_agg": "mean",
       "zone": null,
       "zone_primary": "落難",
-      "zone_secondary": "落難",
+      "zone_secondary": "溫水",
       "agg_gap": {
-        "rel": 31.84,
-        "dd": 7.3
+        "rel": 37.78,
+        "dd": 11.0
       },
       "dispersion": {
         "n": 6,
-        "iqr_rel": 57.63,
-        "range_rel": 114.07,
-        "iqr_dd": 20.7,
-        "range_dd": 30.0
+        "iqr_rel": 86.48,
+        "range_rel": 125.45,
+        "iqr_dd": 21.42,
+        "range_dd": 34.9
       },
-      "dispersion_ratio": 2.88,
+      "dispersion_ratio": 4.32,
       "dispersion_flag": true,
       "core_priority": 1,
       "near_boundary": [],
       "detection_blind": false,
       "detection_weak": false,
       "factors": {
-        "rel_strength_vs_taiex_120d": -44.35,
-        "rel_strength_vs_pool_120d": -70.67,
-        "abs_return_120d": -1.13,
-        "dd_pct": -19.2,
-        "days_since_high": 47,
+        "rel_strength_vs_taiex_120d": -36.15,
+        "rel_strength_vs_pool_120d": -73.4,
+        "abs_return_120d": 0.68,
+        "dd_pct": -20.1,
+        "days_since_high": 59,
         "semantic_mentions_90d": 7
       },
       "factors_secondary_method": {
-        "rel_strength_vs_taiex_120d": -12.51,
-        "abs_return_120d": 30.71,
-        "dd_pct": -11.9,
-        "days_since_high": 47
+        "rel_strength_vs_taiex_120d": 1.63,
+        "abs_return_120d": 38.46,
+        "dd_pct": -9.1,
+        "days_since_high": 59
       },
       "in_strong_pool": false
     },
     "電競/主機板": {
-      "region": "observation",
+      "region": "core_undefined",
       "core_not_applicable_reason": null,
       "core_not_applicable_note": null,
       "core_blocked_reason": null,
@@ -2040,41 +2060,41 @@
       "n_members_defined": 5,
       "primary_agg": "mean",
       "secondary_agg": "median",
-      "zone": "熱水",
+      "zone": null,
       "zone_primary": "熱水",
       "zone_secondary": "落難",
       "agg_gap": {
-        "rel": 41.36,
-        "dd": 10.4
+        "rel": 44.77,
+        "dd": 14.6
       },
       "dispersion": {
         "n": 5,
-        "iqr_rel": 16.62,
-        "range_rel": 100.65,
-        "iqr_dd": 15.6,
-        "range_dd": 19.6
+        "iqr_rel": 40.43,
+        "range_rel": 91.2,
+        "iqr_dd": 3.0,
+        "range_dd": 15.7
       },
-      "dispersion_ratio": 0.83,
-      "dispersion_flag": false,
-      "core_priority": 2,
+      "dispersion_ratio": 2.02,
+      "dispersion_flag": true,
+      "core_priority": 1,
       "near_boundary": [],
       "detection_blind": false,
       "detection_weak": false,
       "factors": {
-        "rel_strength_vs_taiex_120d": 27.6,
-        "rel_strength_vs_pool_120d": 1.28,
-        "abs_return_120d": 70.82,
-        "dd_pct": -2.9,
-        "days_since_high": 49,
+        "rel_strength_vs_taiex_120d": 31.71,
+        "rel_strength_vs_pool_120d": -5.54,
+        "abs_return_120d": 68.54,
+        "dd_pct": -3.7,
+        "days_since_high": 10,
         "semantic_mentions_90d": 2
       },
       "factors_secondary_method": {
-        "rel_strength_vs_taiex_120d": -13.76,
-        "abs_return_120d": 29.46,
-        "dd_pct": -13.3,
-        "days_since_high": 48
+        "rel_strength_vs_taiex_120d": -13.06,
+        "abs_return_120d": 23.77,
+        "dd_pct": -18.3,
+        "days_since_high": 60
       },
-      "in_strong_pool": true
+      "in_strong_pool": false
     },
     "驅動IC": {
       "region": "core_undefined",
@@ -2094,35 +2114,35 @@
       "zone_primary": "落難",
       "zone_secondary": "溫水",
       "agg_gap": {
-        "rel": 49.7,
-        "dd": 5.5
+        "rel": 49.94,
+        "dd": 7.5
       },
       "dispersion": {
         "n": 11,
-        "iqr_rel": 63.16,
-        "range_rel": 206.25,
-        "iqr_dd": 16.4,
-        "range_dd": 45.8
+        "iqr_rel": 47.22,
+        "range_rel": 262.13,
+        "iqr_dd": 15.65,
+        "range_dd": 37.3
       },
-      "dispersion_ratio": 3.16,
+      "dispersion_ratio": 2.36,
       "dispersion_flag": true,
       "core_priority": 1,
       "near_boundary": [],
       "detection_blind": false,
       "detection_weak": false,
       "factors": {
-        "rel_strength_vs_taiex_120d": -47.47,
-        "rel_strength_vs_pool_120d": -73.79,
-        "abs_return_120d": -4.25,
-        "dd_pct": -17.5,
-        "days_since_high": 50,
+        "rel_strength_vs_taiex_120d": -44.48,
+        "rel_strength_vs_pool_120d": -81.73,
+        "abs_return_120d": -7.65,
+        "dd_pct": -21.0,
+        "days_since_high": 62,
         "semantic_mentions_90d": 1
       },
       "factors_secondary_method": {
-        "rel_strength_vs_taiex_120d": 2.23,
-        "abs_return_120d": 45.45,
-        "dd_pct": -12.0,
-        "days_since_high": 26
+        "rel_strength_vs_taiex_120d": 5.46,
+        "abs_return_120d": 42.29,
+        "dd_pct": -13.5,
+        "days_since_high": 38
       },
       "in_strong_pool": false
     }
