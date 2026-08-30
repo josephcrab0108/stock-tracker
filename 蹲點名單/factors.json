@@ -31,15 +31,21 @@
   "regime_retrigger_needed": false,
   "regime_retrigger_reasons": [],
   "market_dispersion": {
-    "n_total": 34,
-    "n_over_threshold": 29,
-    "median_ratio": 2.09,
-    "over_fraction": 0.853,
+    "n_total": 33,
+    "n_over_threshold": 28,
+    "median_ratio": 2.07,
+    "over_fraction": 0.848,
     "exceeds_one_third": true,
-    "warning_text": "多數族群同時分歧＝市況特徵，不是 29 件待辦。此時族群層級的分區普遍不可用，請逐支看。",
+    "warning_text": "多數族群同時分歧＝市況特徵，不是 28 件待辦。此時族群層級的分區普遍不可用，請逐支看。",
     "warning_source": "tasks/leading_watchlist.md 已知風險第 11 條"
   },
   "eliminated_candidates": [
+    {
+      "stock": "全訊",
+      "sector": "砷化鎵",
+      "reason": "90d_silent",
+      "last_mention": "2025-09-06"
+    },
     {
       "stock": "宜鼎",
       "sector": "記憶體",
@@ -71,13 +77,19 @@
       "last_mention": "2026-03-07"
     },
     {
-      "stock": "志聖",
+      "stock": "牧德",
+      "sector": "PCB設備",
+      "reason": "90d_silent",
+      "last_mention": "2026-03-07"
+    },
+    {
+      "stock": "群翊",
       "sector": "PCB設備",
       "reason": "90d_silent",
       "last_mention": "2025-12-13"
     },
     {
-      "stock": "群翊",
+      "stock": "志聖",
       "sector": "PCB設備",
       "reason": "90d_silent",
       "last_mention": "2025-12-13"
@@ -87,12 +99,6 @@
       "sector": "PCB設備",
       "reason": "90d_silent",
       "last_mention": "2025-12-13"
-    },
-    {
-      "stock": "牧德",
-      "sector": "PCB設備",
-      "reason": "90d_silent",
-      "last_mention": "2026-03-07"
     },
     {
       "stock": "正崴",
@@ -113,16 +119,16 @@
       "last_mention": "2025-03-01"
     },
     {
-      "stock": "長榮航太",
-      "sector": "軍工/國防",
-      "reason": "90d_silent",
-      "last_mention": "2026-01-24"
-    },
-    {
       "stock": "漢翔",
       "sector": "軍工/國防",
       "reason": "90d_silent",
       "last_mention": "2025-04-05"
+    },
+    {
+      "stock": "長榮航太",
+      "sector": "軍工/國防",
+      "reason": "90d_silent",
+      "last_mention": "2026-01-24"
     },
     {
       "stock": "漢翔",
@@ -159,16 +165,15 @@
     "磷化銦",
     "AI伺服器機構件",
     "MLCC",
+    "光通訊/CPO",
     "光學鏡頭",
     "電源/BBU",
     "矽晶圓",
-    "光通訊/CPO",
     "半導體設備",
     "IC設計",
     "PCB",
     "先進封裝",
     "石英元件",
-    "砷化鎵",
     "銅箔基板/CCL",
     "PCB材料",
     "功率元件",
@@ -726,32 +731,33 @@
       "core_not_applicable_reason": null,
       "core_not_applicable_note": null,
       "core_blocked_reason": null,
-      "n_candidates": 3,
+      "n_candidates": 4,
       "candidates": [
         "波若威",
         "聯亞",
-        "華星光"
+        "華星光",
+        "訊芯-KY"
       ],
       "core_defined": false,
-      "n_members_used": 7,
-      "n_members_defined": 7,
+      "n_members_used": 8,
+      "n_members_defined": 8,
       "primary_agg": "median",
       "secondary_agg": "mean",
       "zone": null,
-      "zone_primary": "落難",
+      "zone_primary": "溫水",
       "zone_secondary": "溫水",
       "agg_gap": {
-        "rel": 33.41,
-        "dd": 10.4
+        "rel": 30.3,
+        "dd": 7.1
       },
       "dispersion": {
-        "n": 7,
-        "iqr_rel": 73.18,
+        "n": 8,
+        "iqr_rel": 100.49,
         "range_rel": 153.15,
-        "iqr_dd": 19.3,
-        "range_dd": 33.5
+        "iqr_dd": 20.75,
+        "range_dd": 35.4
       },
-      "dispersion_ratio": 3.66,
+      "dispersion_ratio": 5.02,
       "dispersion_flag": true,
       "core_priority": 1,
       "near_boundary": [
@@ -761,17 +767,17 @@
       "detection_blind": false,
       "detection_weak": false,
       "factors": {
-        "rel_strength_vs_taiex_120d": -22.96,
-        "rel_strength_vs_pool_120d": -60.21,
-        "abs_return_120d": 13.87,
-        "dd_pct": -25.1,
+        "rel_strength_vs_taiex_120d": -8.24,
+        "rel_strength_vs_pool_120d": -45.49,
+        "abs_return_120d": 28.59,
+        "dd_pct": -23.2,
         "days_since_high": 66,
-        "semantic_mentions_90d": 10
+        "semantic_mentions_90d": 12
       },
       "factors_secondary_method": {
-        "rel_strength_vs_taiex_120d": 10.45,
-        "abs_return_120d": 47.28,
-        "dd_pct": -14.7,
+        "rel_strength_vs_taiex_120d": 22.06,
+        "abs_return_120d": 58.89,
+        "dd_pct": -16.1,
         "days_since_high": 66
       },
       "in_strong_pool": false
@@ -1526,9 +1532,9 @@
       "in_strong_pool": true
     },
     "砷化鎵": {
-      "region": "core_undefined",
-      "core_not_applicable_reason": null,
-      "core_not_applicable_note": null,
+      "region": "core_not_applicable",
+      "core_not_applicable_reason": "sector_too_broad",
+      "core_not_applicable_note": "2026-08-30 判定產業型，不定 core。**理由不是判準問題，是這個族群現在沒有題材。**\n全部 14 筆事件的 sector_raw（節目自己說的族群）沒有一筆是砷化鎵——全是 CPO／矽光子：\n  全新→CPO×3、穩懋→CPO、環宇-KY→CPO×2、聯亞→CPO×2、訊芯-KY→CPO/矽光子\n內容也一致：全新「轉型往磷化銦，磷化銦真的超級缺」、聯亞「注意這個磷化銦族群」、環宇「資本支出 50 億擴增 CPO 產線先進封裝，首批 12 吋矽光子晶圓」。\n**砷化鎵是這些公司的材料技術，不是市場在交易的題材。** 題材是 CPO／矽光子／磷化銦，那三個都已經是獨立族群。定 core 等於為一個沒人在講的框做純度籃子。\n另外通過率也超過 60% 門檻（穩懋／宏捷科／全新／環宇第一順位業務都是 GaAs），符合 skill 對產業型的定義。\n⚠️ 若日後 GaAs 本身成為題材（例如衛星／國防射頻獨立起漲），回頭重評。",
       "core_blocked_reason": null,
       "n_candidates": 5,
       "candidates": [
@@ -1536,48 +1542,47 @@
         "宏捷科",
         "環宇-KY",
         "穩懋",
-        "訊芯-KY"
+        "聯亞"
       ],
       "core_defined": false,
-      "n_members_used": 5,
-      "n_members_defined": 5,
-      "primary_agg": "mean",
-      "secondary_agg": "median",
+      "n_members_used": 7,
+      "n_members_defined": 7,
+      "primary_agg": "median",
+      "secondary_agg": "mean",
       "zone": null,
-      "zone_primary": "溫水",
+      "zone_primary": "落難",
       "zone_secondary": "溫水",
       "agg_gap": {
-        "rel": 30.43,
-        "dd": 0.6
+        "rel": 37.63,
+        "dd": 14.5
       },
       "dispersion": {
-        "n": 5,
-        "iqr_rel": 53.67,
-        "range_rel": 145.55,
-        "iqr_dd": 8.7,
+        "n": 7,
+        "iqr_rel": 63.44,
+        "range_rel": 156.2,
+        "iqr_dd": 24.35,
         "range_dd": 38.6
       },
-      "dispersion_ratio": 2.68,
+      "dispersion_ratio": 3.17,
       "dispersion_flag": true,
-      "core_priority": 1,
+      "core_priority": null,
       "near_boundary": [
-        "dd_pct",
         "days_since_high"
       ],
       "detection_blind": false,
       "detection_weak": false,
       "factors": {
-        "rel_strength_vs_taiex_120d": 32.19,
-        "rel_strength_vs_pool_120d": -5.06,
-        "abs_return_120d": 69.02,
-        "dd_pct": -23.5,
+        "rel_strength_vs_taiex_120d": -22.78,
+        "rel_strength_vs_pool_120d": -60.03,
+        "abs_return_120d": 14.05,
+        "dd_pct": -29.6,
         "days_since_high": 66,
-        "semantic_mentions_90d": 12
+        "semantic_mentions_90d": 14
       },
       "factors_secondary_method": {
-        "rel_strength_vs_taiex_120d": 1.76,
-        "abs_return_120d": 38.59,
-        "dd_pct": -24.1,
+        "rel_strength_vs_taiex_120d": 14.85,
+        "abs_return_120d": 51.68,
+        "dd_pct": -15.1,
         "days_since_high": 66
       },
       "in_strong_pool": false
