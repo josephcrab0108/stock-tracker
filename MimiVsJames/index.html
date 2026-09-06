@@ -563,7 +563,7 @@ body {
   <div class="drawer-title">目錄</div>
   <a class="drawer-item" href="#section-buy" onclick="closeDrawer()">
     個股建議
-    <span class="drawer-badge">59 檔</span>
+    <span class="drawer-badge">61 檔</span>
   </a>
   <a class="drawer-item" href="#section-research" onclick="closeDrawer()">
     產業研究
@@ -590,7 +590,7 @@ body {
     </svg>
     <input id="stock-search" class="search-input" type="text" placeholder="搜尋 ABBV / 設備 / HBM">
   </div>
-  <span class="updated-chip mono">2026-01-18 – 2026-09-03 · 更新 2026-09-04 16:05</span>
+  <span class="updated-chip mono">2026-01-18 – 2026-09-06 · 更新 2026-09-06 16:06</span>
   <a href="../" class="back-link">← 回總覽</a>
 </header>
 
@@ -598,7 +598,12 @@ body {
 
 <section class="section">
     <div class="section-title">板塊訊號</div>
-    <div class="signals-row"><div class="sig-chip sig-bear">
+    <div class="signals-row"><div class="sig-chip sig-bull">
+        <div class="sig-etf mono">XLE</div>
+        <div class="sig-name">能源板塊（下游煉油）</div>
+        <div class="sig-dir">↑ 強勢</div>
+        <div class="sig-related"><span class="rel-tick mono">MPC</span><span class="rel-tick mono">VLO</span><span class="rel-tick mono">PSX</span><span class="rel-tick mono">DINO</span></div>
+      </div><div class="sig-chip sig-bear">
         <div class="sig-etf mono">SOXX</div>
         <div class="sig-name">費城半導體／AI 硬體</div>
         <div class="sig-dir">↓ 弱勢</div>
@@ -648,11 +653,6 @@ body {
         <div class="sig-name">必需消費</div>
         <div class="sig-dir">↑ 強勢</div>
         <div class="sig-related"><span class="rel-tick mono">PG</span><span class="rel-tick mono">KO</span><span class="rel-tick mono">WMT</span><span class="rel-tick mono">COST</span></div>
-      </div><div class="sig-chip sig-bull">
-        <div class="sig-etf mono">XLE</div>
-        <div class="sig-name">能源</div>
-        <div class="sig-dir">↑ 強勢</div>
-        <div class="sig-related"><span class="rel-tick mono">XOM</span><span class="rel-tick mono">CVX</span><span class="rel-tick mono">COP</span></div>
       </div><div class="sig-chip sig-bear">
         <div class="sig-etf mono">XLF</div>
         <div class="sig-name">金融</div>
@@ -831,8 +831,241 @@ body {
       </div></div>
   </section>
 <section class="section" id="section-buy">
-    <div class="section-title">建議買入（59 檔）</div>
-    <details class="stock-group" data-label="DELL AI 伺服器財報爆發，獲利能力大幅超預期帶動估值重定價" data-themes="AI 伺服器獲利能力提升 EPS 上修交易 硬體公司估值重定價 自由現金流成長 Storage 高毛利產品結構改善">
+    <div class="section-title">建議買入（61 檔）</div>
+    <details class="stock-group" data-label="Fed升息風險重燃＋裂解價差擴大驅動煉油股第三波" data-themes="裂解價差擴大驅動下游煉油股第三波行情 Fed升息尾端風險重燃，CPI數據為關鍵 石油板塊投資邏輯從上游地緣政治切換至下游成品油短缺 全球煉油產能結構性受損，供給缺口延續至2026年 景氣循環股正常化估值陷阱警示 美加貿易衝突對原油供應實質影響有限">
+      <summary class="group-header">
+        <div class="group-summary-left">
+          <span class="group-label">Fed升息風險重燃＋裂解價差擴大驅動煉油股第三波</span>
+          <div class="group-tickers"><span class="grp-tick mono">MPC</span><span class="grp-tick mono">VLO</span><span class="grp-tick mono">PSX</span><span class="grp-tick mono">DINO</span><span class="grp-tick mono">CVI</span></div>
+        </div>
+        <div class="group-meta">
+          <span class="group-date mono">2026-09-06</span>
+          <span class="group-count">5 檔</span>
+          <span class="source-badge source-substack">Substack</span>
+        </div>
+      </summary>
+      <div class="group-body"><details class="sub-fold">
+        <summary class="sub-fold-header">
+          <span class="sub-fold-label">第一順位</span>
+          <div class="sub-fold-ticks"><span class="grp-tick mono">MPC</span><span class="grp-tick mono">VLO</span></div>
+          <span class="sub-count">2 檔</span>
+        </summary>
+        <div class="sub-fold-body"><div class="card buy" data-ticker="MPC" data-name="Marathon Petroleum">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">MPC</span>
+          <span class="stock-name">Marathon Petroleum</span>
+          <span class="pri-chip">第一順位</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-09-06</span>
+          <span class="badge badge-green">買入</span>
+        </div>
+      </div>
+      
+      <p class="stock-logic">下游煉油代表股，受惠裂解價差擴大。第二季EPS 17.73元，煉油與行銷利潤每桶36.33元，墨西哥灣廠區開工率100%。機構第三波主力標的，股價持續創波段新高且與油價下跌脫鉤。</p>
+      <div class="price-row"><span class="price-chip"><span class="chip-label">進場</span>回測20MA或以下波段進場</span></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（MPC）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NYSE:MPC","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（2 篇文章提及）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-09-06</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://mimivsjames.substack.com/p/999fed" target="_blank" class="art-link">個股推薦：散戶99%都看錯！9月Fed升息風險重燃，別只會買那兩檔石油龍頭股，下半年「原油跌也能大賺 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">第一順位</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">下游煉油代表股，受惠裂解價差擴大。第二季EPS 17.73元，煉油與行銷利潤每桶36.33元，墨西哥灣廠區開工率100%。機構第三波主力標的，股價持續創波段新高且與油價下跌脫鉤。</td></tr><tr><td class="ml-key">進場</td><td class="ml-val">回測20MA或以下波段進場</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">短線可於10MA止穩搶短；波段等回測20MA以下進場</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-03-30</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://mimivsjames.substack.com/p/pocast" target="_blank" class="art-link">中東地緣衝突風險下的重定價：市場低估的，不是戰爭時間，而是能源供應鏈的修復時間Pocast ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">邏輯</td><td class="ml-val">受惠供應鏈重組與燃油利差擴大的核心煉油廠標的</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card buy" data-ticker="VLO" data-name="Valero Energy">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">VLO</span>
+          <span class="stock-name">Valero Energy</span>
+          <span class="pri-chip">第一順位</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-09-06</span>
+          <span class="badge badge-green">買入</span>
+        </div>
+      </div>
+      
+      <p class="stock-logic">下游煉油代表股，煉油複雜度高於同業可多吃一段利潤。第二季煉油營業利益44.7億（去年同期12.7億），走勢與MPC同步創波段新高。柴油與航空燃油結構性受惠，Benicia廠停產使整體產能更緊。</p>
+      <div class="price-row"><span class="price-chip"><span class="chip-label">進場</span>回測20MA或以下波段進場</span></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（VLO）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NYSE:VLO","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（2 篇文章提及）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-09-06</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://mimivsjames.substack.com/p/999fed" target="_blank" class="art-link">個股推薦：散戶99%都看錯！9月Fed升息風險重燃，別只會買那兩檔石油龍頭股，下半年「原油跌也能大賺 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">第一順位</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">下游煉油代表股，煉油複雜度高於同業可多吃一段利潤。第二季煉油營業利益44.7億（去年同期12.7億），走勢與MPC同步創波段新高。柴油與航空燃油結構性受惠，Benicia廠停產使整體產能更緊。</td></tr><tr><td class="ml-key">進場</td><td class="ml-val">回測20MA或以下波段進場</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">短線可於10MA止穩搶短；波段等回測20MA以下進場</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-03-30</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://mimivsjames.substack.com/p/pocast" target="_blank" class="art-link">中東地緣衝突風險下的重定價：市場低估的，不是戰爭時間，而是能源供應鏈的修復時間Pocast ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">邏輯</td><td class="ml-val">能處理中密度原油並受惠柴油與航空燃油利差擴大的核心受惠煉油廠</td></tr></table>
+        </div></div>
+      </details>
+    </div></div>
+      </details><details class="sub-fold">
+        <summary class="sub-fold-header">
+          <span class="sub-fold-label">第二順位</span>
+          <div class="sub-fold-ticks"><span class="grp-tick mono">PSX</span><span class="grp-tick mono">DINO</span></div>
+          <span class="sub-count">2 檔</span>
+        </summary>
+        <div class="sub-fold-body"><div class="card buy" data-ticker="PSX" data-name="Phillips 66">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">PSX</span>
+          <span class="stock-name">Phillips 66</span>
+          <span class="pri-chip">第二順位</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-09-06</span>
+          <span class="badge badge-green">買入</span>
+        </div>
+      </div>
+      
+      <p class="stock-logic">下游煉油，本季淨負債由219.7億降至164.7億，財務體質改善明顯。第二季煉油利潤每桶24.08元（第一季10.11元），開工率96%。洛杉磯廠2025年10月關閉使整體供給更緊，長線選股符合正常化現金流與股東回報標準。</p>
+      <div class="price-row"></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（PSX）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NYSE:PSX","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-09-06</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://mimivsjames.substack.com/p/999fed" target="_blank" class="art-link">個股推薦：散戶99%都看錯！9月Fed升息風險重燃，別只會買那兩檔石油龍頭股，下半年「原油跌也能大賺 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">第二順位</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">下游煉油，本季淨負債由219.7億降至164.7億，財務體質改善明顯。第二季煉油利潤每桶24.08元（第一季10.11元），開工率96%。洛杉磯廠2025年10月關閉使整體供給更緊，長線選股符合正常化現金流與股東回報標準。</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">適合有長線倉位者持續關注</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card buy" data-ticker="DINO" data-name="HF Sinclair">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">DINO</span>
+          <span class="stock-name">HF Sinclair</span>
+          <span class="pri-chip">第二順位</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-09-06</span>
+          <span class="badge badge-green">買入</span>
+        </div>
+      </div>
+      
+      <p class="stock-logic">獲利主要來自下游煉油，第二季煉油EBITDA由4.76億增至10.23億，成長117%。中游部門穩定貢獻1.12億不拖累整體表現。裂解價差擴大主要受惠標的，文中多次提及為關注重點。</p>
+      <div class="price-row"></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（DINO）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NYSE:DINO","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（2 篇文章提及）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-09-06</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://mimivsjames.substack.com/p/999fed" target="_blank" class="art-link">個股推薦：散戶99%都看錯！9月Fed升息風險重燃，別只會買那兩檔石油龍頭股，下半年「原油跌也能大賺 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">第二順位</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">獲利主要來自下游煉油，第二季煉油EBITDA由4.76億增至10.23億，成長117%。中游部門穩定貢獻1.12億不拖累整體表現。裂解價差擴大主要受惠標的，文中多次提及為關注重點。</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">曾為先前推薦標的，此輪第三波續看多</td></tr></table>
+        </div><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-03-30</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://mimivsjames.substack.com/p/pocast" target="_blank" class="art-link">中東地緣衝突風險下的重定價：市場低估的，不是戰爭時間，而是能源供應鏈的修復時間Pocast ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">邏輯</td><td class="ml-val">能處理中密度原油並受惠柴油與航空燃油利差擴大的煉油廠</td></tr></table>
+        </div></div>
+      </details>
+    </div></div>
+      </details><div class="sub-group-single-hd">第三順位</div><div class="card buy" data-ticker="CVI" data-name="CVR Energy">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">CVI</span>
+          <span class="stock-name">CVR Energy</span>
+          <span class="pri-chip">第三順位</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-09-06</span>
+          <span class="badge badge-green">買入</span>
+        </div>
+      </div>
+      
+      <p class="stock-logic">具有政策因素與營運利多，受惠「好朋友」政策加持。屬於裂解價差擴大受惠族群，但政策依賴性較高，風險相對較大。</p>
+      <div class="price-row"></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（CVI）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NYSE:CVI","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-09-06</span>
+            <span class="badge badge-green">買入</span>
+            <a href="https://mimivsjames.substack.com/p/999fed" target="_blank" class="art-link">個股推薦：散戶99%都看錯！9月Fed升息風險重燃，別只會買那兩檔石油龍頭股，下半年「原油跌也能大賺 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">順位</td><td class="ml-val">第三順位</td></tr><tr><td class="ml-key">邏輯</td><td class="ml-val">具有政策因素與營運利多，受惠「好朋友」政策加持。屬於裂解價差擴大受惠族群，但政策依賴性較高，風險相對較大。</td></tr><tr><td class="ml-key">備註</td><td class="ml-val">政策面加持，需留意政策變動風險</td></tr></table>
+        </div></div>
+      </details>
+    </div></div>
+    </details><details class="stock-group" data-label="DELL AI 伺服器財報爆發，獲利能力大幅超預期帶動估值重定價" data-themes="AI 伺服器獲利能力提升 EPS 上修交易 硬體公司估值重定價 自由現金流成長 Storage 高毛利產品結構改善">
       <summary class="group-header">
         <div class="group-summary-left">
           <span class="group-label">DELL AI 伺服器財報爆發，獲利能力大幅超預期帶動估值重定價</span>
@@ -3061,11 +3294,11 @@ body {
       <summary class="group-header">
         <div class="group-summary-left">
           <span class="group-label">中東衝突下能源供應鏈重定價</span>
-          <div class="group-tickers"><span class="grp-tick mono">DVN</span><span class="grp-tick mono">FANG</span><span class="grp-tick mono">OXY</span><span class="grp-tick mono">VLO</span><span class="grp-tick mono">MPC</span><span class="grp-tick-more">+1</span></div>
+          <div class="group-tickers"><span class="grp-tick mono">DVN</span><span class="grp-tick mono">FANG</span><span class="grp-tick mono">OXY</span></div>
         </div>
         <div class="group-meta">
           <span class="group-date mono">2026-03-30</span>
-          <span class="group-count">6 檔</span>
+          <span class="group-count">3 檔</span>
           <span class="source-badge source-substack">Substack</span>
         </div>
       </summary>
@@ -3192,117 +3425,6 @@ body {
             <a href="https://mimivsjames.substack.com/p/warsh" target="_blank" class="art-link">金銀的閃崩只是開始嗎？現在可以進場嗎？三爺與 Warsh 聯手按下的「重置鍵」 ↗</a>
           </div>
           <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">巴菲特概念股，槓桿率高對油價極度敏感，若走外科手術打擊或全面戰爭路徑，漲幅通常是XLE的1.5倍以上，適合短線或波段激進投資人</td></tr></table>
-        </div></div>
-      </details>
-    </div><div class="card buy" data-ticker="VLO" data-name="Valero Energy">
-      <div class="card-header">
-        <div class="ticker-row">
-          <span class="ticker mono">VLO</span>
-          <span class="stock-name">Valero Energy</span>
-          
-        </div>
-        <div style="display:flex;align-items:center;gap:8px;">
-          <span class="latest-date mono">2026-03-30</span>
-          <span class="badge badge-green">買入</span>
-        </div>
-      </div>
-      
-      <p class="stock-logic">能處理中密度原油並受惠柴油與航空燃油利差擴大的核心受惠煉油廠</p>
-      <div class="price-row"></div>
-      <details class="chart-fold">
-        <summary class="chart-toggle">▸ K 線圖（VLO）</summary>
-        <div class="tv-wrap">
-        <div class="tradingview-widget-container">
-          <div class="tradingview-widget-container__widget"></div>
-          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-          {"symbol":"NYSE:VLO","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
-          </script>
-        </div>
-      </div>
-      </details>
-      <details class="context-fold">
-        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
-        <div class="context-body"><div class="mention-item">
-          <div class="mention-meta">
-            <span class="mono date-chip">2026-03-30</span>
-            <span class="badge badge-green">買入</span>
-            <a href="https://mimivsjames.substack.com/p/pocast" target="_blank" class="art-link">中東地緣衝突風險下的重定價：市場低估的，不是戰爭時間，而是能源供應鏈的修復時間Pocast ↗</a>
-          </div>
-          <table class="mention-table"><tr><td class="ml-key">邏輯</td><td class="ml-val">能處理中密度原油並受惠柴油與航空燃油利差擴大的核心受惠煉油廠</td></tr></table>
-        </div></div>
-      </details>
-    </div><div class="card buy" data-ticker="MPC" data-name="Marathon Petroleum">
-      <div class="card-header">
-        <div class="ticker-row">
-          <span class="ticker mono">MPC</span>
-          <span class="stock-name">Marathon Petroleum</span>
-          
-        </div>
-        <div style="display:flex;align-items:center;gap:8px;">
-          <span class="latest-date mono">2026-03-30</span>
-          <span class="badge badge-green">買入</span>
-        </div>
-      </div>
-      
-      <p class="stock-logic">受惠供應鏈重組與燃油利差擴大的核心煉油廠標的</p>
-      <div class="price-row"></div>
-      <details class="chart-fold">
-        <summary class="chart-toggle">▸ K 線圖（MPC）</summary>
-        <div class="tv-wrap">
-        <div class="tradingview-widget-container">
-          <div class="tradingview-widget-container__widget"></div>
-          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-          {"symbol":"NYSE:MPC","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
-          </script>
-        </div>
-      </div>
-      </details>
-      <details class="context-fold">
-        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
-        <div class="context-body"><div class="mention-item">
-          <div class="mention-meta">
-            <span class="mono date-chip">2026-03-30</span>
-            <span class="badge badge-green">買入</span>
-            <a href="https://mimivsjames.substack.com/p/pocast" target="_blank" class="art-link">中東地緣衝突風險下的重定價：市場低估的，不是戰爭時間，而是能源供應鏈的修復時間Pocast ↗</a>
-          </div>
-          <table class="mention-table"><tr><td class="ml-key">邏輯</td><td class="ml-val">受惠供應鏈重組與燃油利差擴大的核心煉油廠標的</td></tr></table>
-        </div></div>
-      </details>
-    </div><div class="card buy" data-ticker="DINO" data-name="HF Sinclair">
-      <div class="card-header">
-        <div class="ticker-row">
-          <span class="ticker mono">DINO</span>
-          <span class="stock-name">HF Sinclair</span>
-          
-        </div>
-        <div style="display:flex;align-items:center;gap:8px;">
-          <span class="latest-date mono">2026-03-30</span>
-          <span class="badge badge-green">買入</span>
-        </div>
-      </div>
-      
-      <p class="stock-logic">能處理中密度原油並受惠柴油與航空燃油利差擴大的煉油廠</p>
-      <div class="price-row"></div>
-      <details class="chart-fold">
-        <summary class="chart-toggle">▸ K 線圖（DINO）</summary>
-        <div class="tv-wrap">
-        <div class="tradingview-widget-container">
-          <div class="tradingview-widget-container__widget"></div>
-          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-          {"symbol":"NYSE:DINO","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
-          </script>
-        </div>
-      </div>
-      </details>
-      <details class="context-fold">
-        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
-        <div class="context-body"><div class="mention-item">
-          <div class="mention-meta">
-            <span class="mono date-chip">2026-03-30</span>
-            <span class="badge badge-green">買入</span>
-            <a href="https://mimivsjames.substack.com/p/pocast" target="_blank" class="art-link">中東地緣衝突風險下的重定價：市場低估的，不是戰爭時間，而是能源供應鏈的修復時間Pocast ↗</a>
-          </div>
-          <table class="mention-table"><tr><td class="ml-key">邏輯</td><td class="ml-val">能處理中密度原油並受惠柴油與航空燃油利差擴大的煉油廠</td></tr></table>
         </div></div>
       </details>
     </div></div>
@@ -3658,8 +3780,132 @@ body {
     </div></div>
     </details>
   </section><section class="section" id="section-watch">
-    <div class="section-title">觀察名單（56 檔）</div>
-    <details class="stock-group" data-label="九月防禦佈局：雲端AI變現龍頭AMZN與GOOGL接棒" data-themes="AI雲端軟體變現輪動 九月季節性回檔防禦佈局 聯準會框架改變與點陣圖消失風險 晶片關稅不確定性壓制AI硬體 自研晶片降低雲端成本競爭優勢 美債殖利率高檔壓縮成長股估值 選前兩個月期中大選行情佈局 委內瑞拉石油協議短期有限影響">
+    <div class="section-title">觀察名單（59 檔）</div>
+    <details class="stock-group" data-label="Fed升息風險重燃＋裂解價差擴大驅動煉油股第三波" data-themes="裂解價差擴大驅動下游煉油股第三波行情 Fed升息尾端風險重燃，CPI數據為關鍵 石油板塊投資邏輯從上游地緣政治切換至下游成品油短缺 全球煉油產能結構性受損，供給缺口延續至2026年 景氣循環股正常化估值陷阱警示 美加貿易衝突對原油供應實質影響有限">
+      <summary class="group-header">
+        <div class="group-summary-left">
+          <span class="group-label">Fed升息風險重燃＋裂解價差擴大驅動煉油股第三波</span>
+          <div class="group-tickers"><span class="grp-tick mono">PBF</span><span class="grp-tick mono">PARR</span><span class="grp-tick mono">MPLX</span></div>
+        </div>
+        <div class="group-meta">
+          <span class="group-date mono">2026-09-06</span>
+          <span class="group-count">3 檔</span>
+          <span class="source-badge source-substack">Substack</span>
+        </div>
+      </summary>
+      <div class="group-body"><div class="card watch" data-ticker="PBF" data-name="PBF Logistics">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">PBF</span>
+          <span class="stock-name">PBF Logistics</span>
+          
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-09-06</span>
+          <span class="badge badge-yellow">觀察</span>
+        </div>
+      </div>
+      
+      <p class="stock-logic">列為景氣彈性較大的關注標的，適合在裂解價差維持高檔期間觀察，尚未給出明確買入時機與進場條件。</p>
+      <div class="price-row"></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（PBF）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NYSE:PBF","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-09-06</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://mimivsjames.substack.com/p/999fed" target="_blank" class="art-link">個股推薦：散戶99%都看錯！9月Fed升息風險重燃，別只會買那兩檔石油龍頭股，下半年「原油跌也能大賺 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">列為景氣彈性較大的關注標的，適合在裂解價差維持高檔期間觀察，尚未給出明確買入時機與進場條件。</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card watch" data-ticker="PARR" data-name="Par Pacific Holdings">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">PARR</span>
+          <span class="stock-name">Par Pacific Holdings</span>
+          
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-09-06</span>
+          <span class="badge badge-yellow">觀察</span>
+        </div>
+      </div>
+      
+      <p class="stock-logic">與PBF同列為景氣彈性較大的關注標的，屬於裂解價差受惠族群但彈性更大，風險亦相對較高，待進一步觀察。</p>
+      <div class="price-row"></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（PARR）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NYSE:PARR","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-09-06</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://mimivsjames.substack.com/p/999fed" target="_blank" class="art-link">個股推薦：散戶99%都看錯！9月Fed升息風險重燃，別只會買那兩檔石油龍頭股，下半年「原油跌也能大賺 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">與PBF同列為景氣彈性較大的關注標的，屬於裂解價差受惠族群但彈性更大，風險亦相對較高，待進一步觀察。</td></tr></table>
+        </div></div>
+      </details>
+    </div><div class="card watch" data-ticker="MPLX" data-name="MPLX LP">
+      <div class="card-header">
+        <div class="ticker-row">
+          <span class="ticker mono">MPLX</span>
+          <span class="stock-name">MPLX LP</span>
+          
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="latest-date mono">2026-09-06</span>
+          <span class="badge badge-yellow">觀察</span>
+        </div>
+      </div>
+      
+      <p class="stock-logic">MPC旗下中游管線資產，走量不走油價，吃過路費邏輯。文中提及作為中游代表說明用，股價受利率影響最大，對沖基金較少參與，短線操作者相對無聊。</p>
+      <div class="price-row"></div>
+      <details class="chart-fold">
+        <summary class="chart-toggle">▸ K 線圖（MPLX）</summary>
+        <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {"symbol":"NYSE:MPLX","autosize":true,"interval":"D","timezone":"Asia/Taipei","theme":"dark","style":"1","locale":"zh_TW","allow_symbol_change":false,"studies":[{"id":"MASimple@tv-basicstudies","inputs":{"length":10}}],"width":"100%","height":220}
+          </script>
+        </div>
+      </div>
+      </details>
+      <details class="context-fold">
+        <summary class="context-toggle">▸ 文章脈絡（1 篇文章）</summary>
+        <div class="context-body"><div class="mention-item">
+          <div class="mention-meta">
+            <span class="mono date-chip">2026-09-06</span>
+            <span class="badge badge-yellow">觀察</span>
+            <a href="https://mimivsjames.substack.com/p/999fed" target="_blank" class="art-link">個股推薦：散戶99%都看錯！9月Fed升息風險重燃，別只會買那兩檔石油龍頭股，下半年「原油跌也能大賺 ↗</a>
+          </div>
+          <table class="mention-table"><tr><td class="ml-key">分析</td><td class="ml-val">MPC旗下中游管線資產，走量不走油價，吃過路費邏輯。文中提及作為中游代表說明用，股價受利率影響最大，對沖基金較少參與，短線操作者相對無聊。</td></tr></table>
+        </div></div>
+      </details>
+    </div></div>
+    </details><details class="stock-group" data-label="九月防禦佈局：雲端AI變現龍頭AMZN與GOOGL接棒" data-themes="AI雲端軟體變現輪動 九月季節性回檔防禦佈局 聯準會框架改變與點陣圖消失風險 晶片關稅不確定性壓制AI硬體 自研晶片降低雲端成本競爭優勢 美債殖利率高檔壓縮成長股估值 選前兩個月期中大選行情佈局 委內瑞拉石油協議短期有限影響">
       <summary class="group-header">
         <div class="group-summary-left">
           <span class="group-label">九月防禦佈局：雲端AI變現龍頭AMZN與GOOGL接棒</span>
