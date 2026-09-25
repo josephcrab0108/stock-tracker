@@ -1,6 +1,6 @@
 {
  "date": "2026-09-25",
- "updated_at": "2026-09-25T11:30:00.513113+08:00",
+ "updated_at": "2026-09-25T12:00:00.886418+08:00",
  "mode": "intraday",
  "min_value": 50000000,
  "timeline": [
@@ -348,6 +348,44 @@
   },
   {
    "time": "11:30",
+   "mode": "intraday",
+   "top3": [
+    {
+     "sector": "PCB設備",
+     "hits": 6,
+     "median_pct": 6.19
+    },
+    {
+     "sector": "工業電腦",
+     "hits": 6,
+     "median_pct": 3.44
+    },
+    {
+     "sector": "半導體設備",
+     "hits": 5,
+     "median_pct": 2.91
+    }
+   ],
+   "weak3": [
+    {
+     "sector": "記憶體",
+     "hits": 6,
+     "median_pct": -1.59
+    },
+    {
+     "sector": "探針卡/測試介面",
+     "hits": 4,
+     "median_pct": -3.04
+    },
+    {
+     "sector": "功率元件",
+     "hits": 3,
+     "median_pct": -2.49
+    }
+   ]
+  },
+  {
+   "time": "12:00",
    "mode": "intraday",
    "top3": [
     {
@@ -1636,6 +1674,30 @@
     }
    ],
    "reviewed": null
+  },
+  {
+   "sector": "石化",
+   "hits": 2,
+   "member_total": 8,
+   "median_pct": -1.73,
+   "source": "curated",
+   "stocks": [
+    {
+     "code": "1710",
+     "name": "東聯",
+     "pct": -1.8,
+     "value": 54775999.99999999,
+     "market": "tse"
+    },
+    {
+     "code": "1314",
+     "name": "中石化",
+     "pct": -1.66,
+     "value": 373076880.0,
+     "market": "tse"
+    }
+   ],
+   "reviewed": null
   }
  ],
  "unclassified": [],
@@ -2791,6 +2853,13 @@
    "market": "tse"
   },
   {
+   "code": "1314",
+   "name": "中石化",
+   "pct": -1.66,
+   "value": 373076880.0,
+   "market": "tse"
+  },
+  {
    "code": "6547",
    "name": "高端疫苗",
    "pct": -1.64,
@@ -3033,13 +3102,6 @@
    "name": "可成",
    "pct": -1.2,
    "value": 380579500.0,
-   "market": "tse"
-  },
-  {
-   "code": "4906",
-   "name": "正文",
-   "pct": -1.18,
-   "value": 88439849.99999999,
    "market": "tse"
   }
  ]
