@@ -1,6 +1,6 @@
 {
  "date": "2026-09-25",
- "updated_at": "2026-09-25T12:00:00.886418+08:00",
+ "updated_at": "2026-09-25T12:30:01.064557+08:00",
  "mode": "intraday",
  "min_value": 50000000,
  "timeline": [
@@ -421,6 +421,44 @@
      "median_pct": -2.49
     }
    ]
+  },
+  {
+   "time": "12:30",
+   "mode": "intraday",
+   "top3": [
+    {
+     "sector": "PCB設備",
+     "hits": 6,
+     "median_pct": 6.19
+    },
+    {
+     "sector": "工業電腦",
+     "hits": 6,
+     "median_pct": 3.44
+    },
+    {
+     "sector": "半導體設備",
+     "hits": 5,
+     "median_pct": 2.91
+    }
+   ],
+   "weak3": [
+    {
+     "sector": "記憶體",
+     "hits": 6,
+     "median_pct": -1.59
+    },
+    {
+     "sector": "探針卡/測試介面",
+     "hits": 4,
+     "median_pct": -3.04
+    },
+    {
+     "sector": "功率元件",
+     "hits": 3,
+     "median_pct": -2.49
+    }
+   ]
   }
  ],
  "top_sectors": [
@@ -763,28 +801,28 @@
    "reviewed": "2026-07-22"
   },
   {
-   "sector": "銅箔",
+   "sector": "ABF載板",
    "hits": 2,
-   "member_total": 2,
-   "median_pct": 3.72,
+   "member_total": 4,
+   "median_pct": 4.33,
    "source": "curated",
    "stocks": [
     {
-     "code": "1303",
-     "name": "南亞",
-     "pct": 4.62,
-     "value": 15703954000.0,
+     "code": "3189",
+     "name": "景碩",
+     "pct": 6.18,
+     "value": 39704626000.0,
      "market": "tse"
     },
     {
-     "code": "8358",
-     "name": "金居",
-     "pct": 2.82,
-     "value": 1515626000.0,
-     "market": "otc"
+     "code": "8046",
+     "name": "南電",
+     "pct": 2.48,
+     "value": 16665600000.0,
+     "market": "tse"
     }
    ],
-   "reviewed": "2026-07-22"
+   "reviewed": "2026-08-28"
   },
   {
    "sector": "電子通路",
@@ -923,14 +961,6 @@
    "value": 52145400.0,
    "market": "otc",
    "sector": "光電"
-  },
-  {
-   "code": "3189",
-   "name": "景碩",
-   "pct": 6.18,
-   "value": 39704626000.0,
-   "market": "tse",
-   "sector": "ABF載板"
   },
   {
    "code": "3430",
@@ -1243,6 +1273,14 @@
    "value": 888391750.0,
    "market": "tse",
    "sector": "太陽能/綠能"
+  },
+  {
+   "code": "8358",
+   "name": "金居",
+   "pct": 2.82,
+   "value": 1515626000.0,
+   "market": "otc",
+   "sector": "銅箔"
   },
   {
    "code": "3535",
@@ -1674,30 +1712,6 @@
     }
    ],
    "reviewed": null
-  },
-  {
-   "sector": "石化",
-   "hits": 2,
-   "member_total": 8,
-   "median_pct": -1.73,
-   "source": "curated",
-   "stocks": [
-    {
-     "code": "1710",
-     "name": "東聯",
-     "pct": -1.8,
-     "value": 54775999.99999999,
-     "market": "tse"
-    },
-    {
-     "code": "1314",
-     "name": "中石化",
-     "pct": -1.66,
-     "value": 373076880.0,
-     "market": "tse"
-    }
-   ],
-   "reviewed": null
   }
  ],
  "unclassified": [],
@@ -2008,13 +2022,6 @@
    "name": "南茂",
    "pct": 4.67,
    "value": 9301040000.0,
-   "market": "tse"
-  },
-  {
-   "code": "1303",
-   "name": "南亞",
-   "pct": 4.62,
-   "value": 15703954000.0,
    "market": "tse"
   },
   {
@@ -2400,6 +2407,13 @@
    "name": "緯創",
    "pct": 2.5,
    "value": 5008621500.0,
+   "market": "tse"
+  },
+  {
+   "code": "8046",
+   "name": "南電",
+   "pct": 2.48,
+   "value": 16665600000.0,
    "market": "tse"
   }
  ],
@@ -2853,13 +2867,6 @@
    "market": "tse"
   },
   {
-   "code": "1314",
-   "name": "中石化",
-   "pct": -1.66,
-   "value": 373076880.0,
-   "market": "tse"
-  },
-  {
    "code": "6547",
    "name": "高端疫苗",
    "pct": -1.64,
@@ -2920,13 +2927,6 @@
    "name": "凌航",
    "pct": -1.57,
    "value": 89987500.0,
-   "market": "tse"
-  },
-  {
-   "code": "1101",
-   "name": "台泥",
-   "pct": -1.56,
-   "value": 985305500.0,
    "market": "tse"
   },
   {
@@ -3102,6 +3102,20 @@
    "name": "可成",
    "pct": -1.2,
    "value": 380579500.0,
+   "market": "tse"
+  },
+  {
+   "code": "4906",
+   "name": "正文",
+   "pct": -1.18,
+   "value": 88439849.99999999,
+   "market": "tse"
+  },
+  {
+   "code": "1795",
+   "name": "美時",
+   "pct": -1.13,
+   "value": 70024500.0,
    "market": "tse"
   }
  ]
